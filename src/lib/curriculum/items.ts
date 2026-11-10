@@ -986,10 +986,22 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
   };
   const perms = <T,>(a: T[]): T[][] => (a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((r) => [x, ...r])));
   return chords.map((c) => {
-    const tones = c.length >= 4 ? c.slice(1, 4) : [c[0], c[1], c[2]];
+    // Doubling (triads): root position doubles the root; first inversion (3rd in the bass)
+    // doubles the ROOT, never the bass: in V6 the bass is the leading tone; second
+    // inversion doubles the bass (5th), as in the cadential 6/4.
+    // Seventh chords: the three tones above the bass.
+    const root = c.find((r) => c.every((n) => n === r || [2, 4, 6].includes((n.letter - r.letter + 7) % 7))) ?? c[0];
+    const tones =
+      c.length >= 4
+        ? c.slice(1, 4)
+        : c[0].letter === root.letter && c[0].acc === root.acc
+          ? [c[0], c[1], c[2]]
+          : (c[0].letter - root.letter + 7) % 7 === 2
+            ? [root, root, c.find((n) => (n.letter - root.letter + 7) % 7 === 4)!]
+            : [c[0], c[1], c[2]];
     let best: { midis: number[]; notes: Note[] } | null = null;
     let bestCost = Infinity;
-    const bass = toMidi({ ...c[0], octave: 3 });
+    const bass = toMidi({ ...c[0], octave: 3 });  // c[0] is the bass (romanChord puts the inversion's bass first)
     for (const order of perms(tones)) {
       // upper voices stay strictly above the bass (no unison with it)
       const midis = order.map((n, v) => {

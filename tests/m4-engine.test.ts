@@ -209,3 +209,14 @@ describe("smooth voicing edge cases + inverted bass lines", () => {
     expect(it0.expect.map((m) => m % 12)).toEqual([0, 11, 0]); // C, B (3rd of V), C
   });
 });
+
+describe("smooth voicing doubling", () => {
+  it("V6 never doubles the leading tone; I64 doubles the bass", () => {
+    const v = smoothVoicing(["I", "V6", "I"].map((r) => romanChord("C4", "major", r)));
+    const v6 = v[1].map((n) => toM(n) % 12);
+    expect(v6[0]).toBe(11); // B in the bass
+    expect(v6.filter((p) => p === 11).length).toBe(1); // ... and only there
+    const k64 = smoothVoicing(["I64", "V7", "I"].map((r) => romanChord("C4", "major", r)))[0].map((n) => toM(n) % 12);
+    expect(k64.filter((p) => p === 7).length).toBe(2); // G doubled
+  });
+});
