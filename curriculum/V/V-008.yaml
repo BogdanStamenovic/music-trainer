@@ -1,0 +1,93 @@
+id: V-008
+track: V
+order: 8
+title: {en: "Steady tones: sustain and stability", sr: "Mirni tonovi: trajanje i stabilnost"}
+prereqs: [V-007]
+minutes: 10
+tags: [voice, sustain, support, intonation]
+explain:
+  en: |
+    A **steady tone** stays on the same pitch and the same easy loudness from start to end. It puts together everything so far:
+    low breath, **support** (*oslonac*), a balanced onset and pitch matching.
+
+    What usually goes wrong, and the fix:
+
+    - **The pitch sags at the end** (goes flat): you are running out of air or letting the ribs collapse. Breathe lower, keep the ribs open, and stop a bit earlier.
+    - **The pitch creeps up** (goes sharp): usually tension or pushing. Sing quieter, loosen the jaw and tongue.
+    - **The tone shakes**: often the breath is uneven. Go back to the slow, even hiss feeling from lesson 2.
+
+    A gentle, regular wave in the tone, **vibrato**, may appear by itself in a free voice. Do not force it and do not suppress it;
+    the tracker looks at the average pitch, so a small natural wobble is fine.
+
+    Today's notes are held 4–5 seconds and checked more strictly than before (within 50 cents, a quarter of a whole step, for full credit).
+    Sing in whatever octave is comfortable. Never get louder to make a note last; quieter lasts longer.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Miran ton** ostaje na istoj visini i istoj lakoj jačini od početka do kraja. Spaja sve dosadašnje:
+    nisko disanje, **oslonac** (engl. *support*), uravnoteženu ataku i pogađanje tona.
+
+    Šta obično krene naopako, i kako se ispravlja:
+
+    - **Ton na kraju pada** (snižava se): ponestaje ti vazduha ili rebra popuštaju. Udahni niže, drži rebra otvorena i stani malo ranije.
+    - **Ton se penje** (povišava se): obično napetost ili guranje. Pevaj tiše, opusti vilicu i jezik.
+    - **Ton podrhtava**: često je izdisaj neravnomeran. Vrati se osećaju sporog, ravnomernog šištanja iz 2. lekcije.
+
+    Blag, pravilan talas u tonu, **vibrato**, može sam da se pojavi kod slobodnog glasa. Ne forsiraj ga i ne guši ga;
+    merač gleda prosečnu visinu, pa je malo prirodnog talasanja u redu.
+
+    Današnji tonovi se drže 4–5 sekundi i proveravaju strože nego ranije (u okviru 50 centi, četvrtine celog stepena, za pun broj poena).
+    Pevaj u oktavi koja ti prija. Nikad ne pojačavaj da bi ton trajao duže; tiši ton traje duže.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-008-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-008-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 2 slow hisses on 'sss' (aim for 20 s, no squeezing), 3 quiet sirens on 'ng', then lip trills on the five notes."
+      sr: "Zagrevanje: 2 spora šištanja na „sss” (cilj 20 s, bez stezanja), 3 tihe sirene na „ng”, pa treperenje usnama na pet tonova."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-008-3
+    type: sing-pitch
+    prompt:
+      en: "Steady tone: sing the note on 'ah' and hold it for 4 seconds, same pitch, same easy volume."
+      sr: "Miran ton: otpevaj ton na „a” i drži ga 4 sekunde, ista visina, ista laka jačina."
+    notes: [A3]
+    sustain: 4
+    tolerance: 50
+    pass: 0.65
+  - id: V-008-4
+    type: sing-pitch
+    prompt:
+      en: "Steady tone on 'oo', 5 seconds. Keep the ribs open to the very end."
+      sr: "Miran ton na „u”, 5 sekundi. Drži rebra otvorena do samog kraja."
+    notes: [G3]
+    sustain: 5
+    tolerance: 50
+    pass: 0.65
+  - id: V-008-5
+    type: sing-pitch
+    prompt:
+      en: "Steady tone on 'ah', 5 seconds. Watch for the end going flat; stop a little early rather than squeeze."
+      sr: "Miran ton na „a”, 5 sekundi. Pazi da kraj ne padne; radije stani malo ranije nego da stežeš."
+    notes: [C4]
+    sustain: 5
+    tolerance: 50
+    pass: 0.65
+  - id: V-008-6
+    type: generated
+    prompt: {en: "Steady tones anywhere in your range", sr: "Mirni tonovi bilo gde u tvom opsegu"}
+    count: 2
+    pass: 0.65
+    gen: {kind: pitch-match, range: [F3, C4], sustain: 4, tolerance: 50}

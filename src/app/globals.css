@@ -62,3 +62,11 @@ details.explain summary { cursor: pointer; font-weight: 600; }
 .legend { margin-right: 12px; font-size: 0.85rem; } .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }
 input[type="number"] { width: 5em; font: inherit; }
 select { font: inherit; padding: 4px; }
+.meter { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin: 6px 0; max-width: 320px; }
+.meter i { display: block; height: 100%; background: var(--good); transition: width 50ms linear; }
+.rec { background: var(--bad); border-color: var(--bad); }
+.targets { font-family: ui-monospace, monospace; font-size: 1.05rem; }
+.sing audio, .recs audio { height: 32px; max-width: 100%; }
+.sing-fb table td { padding: 2px 10px 2px 0; } .sing-fb tr.good td { color: var(--good); } .sing-fb tr.bad td { color: var(--bad); }
+.card.rest { border-color: var(--bad); }
+ul.recs { list-style: none; padding: 0; } ul.recs li { padding: 8px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }

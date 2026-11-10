@@ -2,6 +2,7 @@ import { getPlan, todayIn } from "@/lib/server/planner";
 import { getCurriculum } from "@/lib/curriculum/loader";
 import { getSettings } from "@/lib/server/settings";
 import { placementDone } from "@/lib/server/progress";
+import { voiceRest } from "@/lib/server/recordings";
 import { json, fail } from "@/lib/server/http";
 export const dynamic = "force-dynamic";
 
@@ -13,7 +14,7 @@ export async function GET(req: Request) {
     const c = getCurriculum();
     const titles: Record<string, { en: string; sr: string }> = {};
     for (const l of c.lessons) titles[l.id] = l.title;
-    return json({ plan, titles, settings: getSettings(), placementDone: placementDone(), curriculumErrors: c.errors.length });
+    return json({ plan, titles, settings: getSettings(), placementDone: placementDone(), voiceRest: voiceRest(date), curriculumErrors: c.errors.length });
   } catch (e) {
     return fail(e, 500);
   }

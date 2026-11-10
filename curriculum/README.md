@@ -33,6 +33,10 @@ after every change; both must be clean.
 | `midi-play` | play on the piano | `mode: chord|sequence|chords`, `expect`/`expectChords`/`derive`, `octave: exact|any`, `bass`, `tempo?` (timing graded) |
 | `midi-echo` | app plays, learner plays back | as midi-play; `play?` (defaults to the expected notes) |
 | `practice` | self-rated routine | `minutes`, `play?` |
+| `sing-pitch` | sing note(s); sustain applies to the last | `notes`, `sustain`, `tolerance` (cents), `octaveAgnostic`, `fitRange` |
+| `sing-phrase` | sing a phrase in time | `notes` or `derive`, `beats?`, `tempo`, `tolerance` |
+| `voice-range` | low glide + high glide; stores the range | — |
+| `checkin` | fatigue/hoarseness check-in; anything but "fine" ends voice work for the day | — |
 | `generated` | items made by a generator | `count`, `gen: {kind: …}` (see below) |
 
 `derive`: `{chord: {root: C4, quality: maj, inversion: 0}}`, `{scale: {tonic: D4, type: major}}`,
@@ -43,7 +47,12 @@ i…vii with optional figure 6, 64, 7, 65, 43, 42.
 
 Generators (`gen.kind`): note-read, interval-name, interval-build, interval-ear, semitones,
 chord-ear, chord-build, chord-name, scale-build, keysig, roman, progression, melody-echo,
-degree-ear, bass-echo. Their parameters are in `schema.ts` (`Gen`) and their behaviour in
+degree-ear, bass-echo, pitch-match (single notes, or root + interval with `intervals`;
+in intervals mode beats are fixed at 2+2 at ♩=60 and `sustain` is ignored), phrase-sing.
+
+Voice rules (validation enforces them): every V lesson starts with `checkin`, then a
+`practice` warm-up; singing types exist only in the V track. Sung items are graded
+octave-agnostic and moved into the learner's stored comfortable range. Their parameters are in `schema.ts` (`Gen`) and their behaviour in
 `src/lib/curriculum/items.ts`.
 
 `checks` examples:

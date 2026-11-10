@@ -1,0 +1,74 @@
+id: V-003
+track: V
+order: 3
+title: {en: "Finding your range", sr: "Pronađi svoj opseg"}
+prereqs: [V-002]
+minutes: 8
+tags: [voice, range]
+explain:
+  en: |
+    Your **range** (Serbian: *opseg*) is the span of notes you can sing. Every later voice lesson uses it:
+    the app moves its notes into **your** range, so nothing is written for "a tenor" or "a soprano". You do not need to know your voice type.
+
+    Two kinds of range matter:
+
+    - **Comfortable range**: notes you can sing quietly, with an easy, clear tone and no strain. This is what we measure and train in.
+    - **Extreme range**: the last squeaky or croaky notes you can just about reach. Do **not** chase these today;
+      untrained voices often lose them in a week or gain them in a month anyway.
+
+    How the measurement works:
+
+    1. **Low glide**: start on a comfortable speaking-level note and slide slowly **down** on "ah" or "oo", quietly.
+       Stop where the tone becomes breathy, croaky or you can no longer hear a clear pitch.
+    2. **High glide**: start in the same place and slide slowly **up** on "oo" or "ng" (as in *sing*), light and quiet.
+       Your voice may flip into a lighter, thinner sound on the way up; that is normal, keep going if it is easy.
+       Stop where it starts to feel tight, thin and effortful, **before** it squeezes.
+
+    Quiet glides measure better than loud ones, and they are safer. You can redo this lesson any time your range changes.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Opseg** (engl. *range*) je raspon tonova koje možeš da otpevaš. Koristi ga svaka kasnija lekcija glasa:
+    aplikacija pomera tonove u **tvoj** opseg, pa ništa nije pisano „za tenora” ili „za sopran”. Ne moraš da znaš svoj glasovni tip.
+
+    Važne su dve vrste opsega:
+
+    - **Udoban opseg**: tonovi koje možeš tiho da otpevaš, lakim i čistim tonom, bez napora. To merimo i u njemu vežbamo.
+    - **Krajnji opseg**: poslednji škripavi ili krkljavi tonovi do kojih jedva stižeš. **Ne** juri ih danas;
+      neškolovani glas ih često izgubi za nedelju dana ili dobije za mesec.
+
+    Kako merenje ide:
+
+    1. **Klizanje naniže**: počni od udobnog tona, visine kao u govoru, i polako klizi **naniže** na „a” ili „u”, tiho.
+       Stani kad ton postane šuškav, krkljav ili više ne čuješ jasnu visinu.
+    2. **Klizanje naviše**: počni sa istog mesta i polako klizi **naviše** na „u” ili „ng” (kao u engl. *sing*), lagano i tiho.
+       Glas može usput da preskoči u lakši, tanji zvuk; to je normalno, nastavi ako je lako.
+       Stani kad počne da biva tesno, tanko i naporno, **pre** nego što se stegne.
+
+    Tiho klizanje se meri bolje od glasnog i bezbednije je. Lekciju možeš da ponoviš kad god ti se opseg promeni.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-003-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-003-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, then gentle hums on 'mm' sliding up and down a little around your speaking pitch, then 3 quiet lip-trill sirens."
+      sr: "Zagrevanje: 4 niska udaha, pa nežno pevušenje na „mm” uz malo klizanje gore-dole oko visine govora, pa 3 tihe sirene treperenjem usana."
+  - id: V-003-3
+    type: voice-range
+    pass: 0.6
+    prompt:
+      en: "Range: record a slow, quiet glide down to your lowest comfortable note, then a glide up to your highest comfortable note. Comfortable, not extreme."
+      sr: "Opseg: snimi sporo, tiho klizanje naniže do najdubljeg udobnog tona, pa klizanje naviše do najvišeg udobnog tona. Udobnog, ne krajnjeg."
+  - id: V-003-4
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet hums sliding gently downward, then breathe normally. Did either end feel tight? If yes, redo the range next time a little narrower."
+      sr: "Smirivanje: 3 tiha pevušenja uz blago klizanje naniže, pa diši normalno. Da li je neki kraj bio stegnut? Ako jeste, sledeći put ponovi merenje malo uže."

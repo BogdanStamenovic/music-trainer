@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { GenCtx } from "@/lib/curriculum/items";
 import type { Exercise } from "@/lib/curriculum/schema";
 import { ExerciseRunner, RunnerDone } from "./ExerciseRunner";
 import { useI18n } from "@/lib/client/i18n";
@@ -12,7 +13,7 @@ export interface QueueEntry {
 }
 
 /** Runs exercises one after another; failed ones can be retried with fresh items. */
-export function ExerciseQueue({ entries, context, date, count, onFinished, startAt = 0, initial = {} }: { entries: QueueEntry[]; context: Context; date: string; count?: number; onFinished?: (r: RunnerDone[]) => void; startAt?: number; initial?: Record<string, { best: number; passed: number }> }) {
+export function ExerciseQueue({ entries, context, date, count, onFinished, startAt = 0, initial = {}, ctx, voiceLesson = false }: { entries: QueueEntry[]; context: Context; date: string; count?: number; onFinished?: (r: RunnerDone[]) => void; startAt?: number; initial?: Record<string, { best: number; passed: number }>; ctx?: GenCtx; voiceLesson?: boolean }) {
   // placement measures a first attempt; retrying would defeat it
   const allowRetry = context !== "placement";
   const { t, l } = useI18n();
@@ -20,11 +21,19 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
   const [attempt, setAttempt] = useState<Record<string, number>>({});
   const [done, setDone] = useState<Record<string, RunnerDone>>({});
   const [current, setCurrent] = useState<RunnerDone | null>(null);
+  // Voice safety: a check-in of "tired"/"hoarse" (today, anywhere) ends voice work for the day.
+  const [rest, setRest] = useState<string | null>(null);
+  const checkRest = () => {
+    if (!voiceLesson) return;
+    fetch(`/api/voice/rest?date=${date}`).then((r) => r.json()).then((j) => setRest(j.rest)).catch(() => {});
+  };
+  useEffect(checkRest, [voiceLesson, date]); // eslint-disable-line react-hooks/exhaustive-deps
   const finished = i >= entries.length;
   const e = entries[i];
   const onDone = (r: RunnerDone) => {
     setCurrent(r);
     setDone((d) => ({ ...d, [r.exerciseId]: r }));
+    if (entries[i]?.ex.type === "checkin") checkRest();
   };
   const next = () => {
     setCurrent(null);
@@ -36,6 +45,12 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
     setCurrent(null);
     setAttempt((a) => ({ ...a, [e.ex.id]: (a[e.ex.id] ?? 0) + 1 }));
   };
+  if (rest)
+    return (
+      <div className="card rest" data-testid="voice-rest">
+        <p>🛑 {t("voiceRestToday")}</p>
+      </div>
+    );
   return (
     <div className="queue">
       <ol className="steps">
@@ -58,7 +73,7 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
           <h3>
             {t("exercise")} {i + 1}/{entries.length}
           </h3>
-          <ExerciseRunner key={`${e.ex.id}:${attempt[e.ex.id] ?? 0}`} ex={e.ex} seed={`${date}:${attempt[e.ex.id] ?? 0}`} count={e.ex.type === "generated" ? count : undefined} context={context} date={date} lessonId={e.lessonId} onDone={onDone} />
+          <ExerciseRunner key={`${e.ex.id}:${attempt[e.ex.id] ?? 0}`} ex={e.ex} seed={`${date}:${attempt[e.ex.id] ?? 0}`} count={e.ex.type === "generated" ? count : undefined} context={context} date={date} lessonId={e.lessonId} ctx={ctx} onDone={onDone} />
           {current ? (
             <div className="row">
               {!current.pass && allowRetry ? (

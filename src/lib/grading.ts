@@ -1,7 +1,7 @@
 // Deterministic grading for T (answers), E/K (MIDI performance, optional timing).
 // Shared by client (instant feedback, offline) and server (authoritative re-grade).
 
-import type { Item, MidiItem } from "./curriculum/items";
+import type { Item, MidiItem, SingItem } from "./curriculum/items";
 import { parseNoteLoose, pcName, Locale } from "./music/pitch";
 
 export interface MidiEvent {
@@ -15,7 +15,27 @@ export type Response =
   | { kind: "mcq"; choice: number }
   | { kind: "names"; text: string; locale: Locale }
   | { kind: "midi"; events: MidiEvent[] }
-  | { kind: "practice"; selfScore: number }; // 0..1
+  | { kind: "practice"; selfScore: number } // 0..1
+  | { kind: "sing"; recordingId: string; analysis: VoiceAnalysis | null; reason?: string }
+  | { kind: "range"; recordingIds: string[]; lowMidi: number | null; highMidi: number | null }
+  | { kind: "checkin"; state: "fine" | "tired" | "hoarse" };
+
+/** The subset of a voice-score /analyze result that grading uses (server and browser share the shape). */
+export interface VoiceNote {
+  index: number;
+  target_midi: number | null;
+  cents_error: number | null;
+  sustain_s: number | null;
+  voiced_ratio?: number | null;
+  octave_offset?: number | null;
+  sung_note?: string | null;
+}
+export interface VoiceAnalysis {
+  tracker: string;
+  version?: string;
+  notes: VoiceNote[];
+  summary?: { range?: { low_note?: string; high_note?: string; low_hz?: number; high_hz?: number } | null; longest_sustain_s?: number | null; mean_abs_cents?: number | null };
+}
 
 export interface Grade {
   score: number; // 0..1
@@ -44,6 +64,16 @@ function gradeRaw(item: Item, r: Response): { score: number; detail: Record<stri
       return gradeMidi(item, (r as { events: MidiEvent[] }).events);
     case "practice":
       return { score: (r as { selfScore: number }).selfScore, detail: { self: true } };
+    case "sing":
+      return gradeSing(item, r as Extract<Response, { kind: "sing" }>);
+    case "range": {
+      const rr = r as Extract<Response, { kind: "range" }>;
+      const ok = rr.lowMidi != null && rr.highMidi != null && rr.highMidi > rr.lowMidi;
+      return { score: ok ? 1 : 0, detail: { lowMidi: rr.lowMidi, highMidi: rr.highMidi } };
+    }
+    case "checkin":
+      // not a skill: always "passes"; the state is what matters (it can end the voice block)
+      return { score: 1, detail: { state: (r as { state: string }).state } };
   }
 }
 
@@ -213,4 +243,27 @@ export function gradeMidi(item: MidiItem, events: MidiEvent[]) {
 /** Mean of item scores; exercise passes when the mean reaches its threshold. */
 export function exerciseScore(scores: number[]): number {
   return scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
+}
+
+/**
+ * Sung notes vs targets, from voice-score metrics. Per target: full credit within
+ * `tolerance` cents of the median sung pitch, linearly down to 0 at 3x tolerance;
+ * a held note shorter than the required sustain scales down proportionally. A
+ * target with no matching sung note scores 0. This is a screen for "clearly on/off
+ * pitch", not a fine judgement: pitch trackers have their own error.
+ */
+export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; reason?: string }) {
+  const a = r.analysis;
+  if (!a) return { score: 0, detail: { reason: r.reason ?? "no analysis" } };
+  const per = item.targets.map((t, i) => {
+    const n = a.notes.find((x) => x.index === i);
+    if (!n || n.cents_error == null) return { target: t, score: 0, cents: null as number | null, sustain: null as number | null };
+    let c = Math.abs(n.cents_error);
+    if (!item.octaveAgnostic && n.octave_offset) c += 1200 * Math.abs(n.octave_offset);
+    let sc = c <= item.tolerance ? 1 : Math.max(0, 1 - (c - item.tolerance) / (2 * item.tolerance));
+    const need = item.sustain && i === item.targets.length - 1 ? item.sustain : 0;
+    if (need && (n.sustain_s ?? 0) < need) sc *= Math.max(0, (n.sustain_s ?? 0) / need);
+    return { target: t, score: Math.round(sc * 1000) / 1000, cents: n.cents_error, sustain: n.sustain_s };
+  });
+  return { score: per.reduce((s, p) => s + p.score, 0) / per.length, detail: { tracker: a.tracker, notes: per } };
 }

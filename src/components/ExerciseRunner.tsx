@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import type { Exercise } from "@/lib/curriculum/schema";
-import { generateItems, Item, MidiItem } from "@/lib/curriculum/items";
+import { generateItems, Item, MidiItem, GenCtx } from "@/lib/curriculum/items";
+import { SingInput, RangeInput, CheckinInput, SingFeedback } from "./VoiceInputs";
 import { grade, Response, MidiEvent, heldChord, clusterChords } from "@/lib/grading";
 import { midiToNote, noteName, parseNote } from "@/lib/music/pitch";
 import { midi } from "@/lib/client/midi";
@@ -30,12 +31,13 @@ interface Props {
   context: Context;
   date: string;
   lessonId: string | null;
+  ctx?: GenCtx;
   onDone: (r: RunnerDone) => void;
 }
 
-export function ExerciseRunner({ ex, seed, count, context, date, lessonId, onDone }: Props) {
+export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, onDone }: Props) {
   const { t, l } = useI18n();
-  const items = useMemo(() => generateItems(ex, seed, count), [ex, seed, count]);
+  const items = useMemo(() => generateItems(ex, seed, count, ctx ?? {}), [ex, seed, count, ctx]);
   const [idx, setIdx] = useState(0);
   const [results, setResults] = useState<{ itemId: string; response: Response; clientScore: number }[]>([]);
   const [final, setFinal] = useState<RunnerDone | null>(null);
@@ -50,13 +52,13 @@ export function ExerciseRunner({ ex, seed, count, context, date, lessonId, onDon
       if (sentRef.current) return;
       sentRef.current = true;
       const local = all.reduce((a, r) => a + r.clientScore, 0) / Math.max(1, items.length);
-      const { result, queued } = await send({ uuid: uuid(), date, context, lessonId, exerciseId: ex.id, seed, count: ex.type === "generated" ? items.length : undefined, responses: all });
+      const { result, queued } = await send({ uuid: uuid(), date, context, lessonId, exerciseId: ex.id, seed, count: ex.type === "generated" ? items.length : undefined, ctx, responses: all });
       const score = result?.score ?? local;
       const done: RunnerDone = { exerciseId: ex.id, score, pass: result?.pass ?? local >= ex.pass, queued, server: result };
       setFinal(done);
       onDone(done);
     },
-    [items.length, date, context, lessonId, ex.id, ex.type, ex.pass, seed, onDone],
+    [items.length, date, context, lessonId, ex.id, ex.type, ex.pass, seed, onDone, ctx],
   );
 
   if (final)
@@ -79,7 +81,7 @@ export function ExerciseRunner({ ex, seed, count, context, date, lessonId, onDon
       <div className="muted small">
         {l(ex.prompt)} · {idx + 1} {t("of")} {items.length}
       </div>
-      <ItemView key={`${seed}-${item.id}`} item={item} pass={ex.pass} onAnswer={(resp, score) => record(item.id, resp, score)} onNext={advance} last={idx + 1 === items.length} />
+      <ItemView key={`${seed}-${item.id}`} item={item} pass={ex.pass} meta={{ date, lessonId }} onAnswer={(resp, score) => record(item.id, resp, score)} onNext={advance} last={idx + 1 === items.length} />
     </div>
   );
 }
@@ -88,7 +90,7 @@ function names(ms: number[], locale: "en" | "sr") {
   return ms.map((m) => noteName(midiToNote(m), locale, true)).join(" ");
 }
 
-function ItemView({ item, pass, onAnswer, onNext, last }: { item: Item; pass: number; onAnswer: (r: Response, score: number) => void; onNext: () => void; last: boolean }) {
+function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pass: number; meta: { date: string; lessonId: string | null }; onAnswer: (r: Response, score: number) => void; onNext: () => void; last: boolean }) {
   const { t, l, locale } = useI18n();
   const [fb, setFb] = useState<null | { score: number; detail: Record<string, unknown>; resp: Response }>(null);
   const answer = (resp: Response) => {
@@ -137,6 +139,9 @@ function ItemView({ item, pass, onAnswer, onNext, last }: { item: Item; pass: nu
       ) : null}
       {item.kind === "names" ? <NamesInput onSubmit={(text) => answer({ kind: "names", text, locale })} disabled={!!fb} /> : null}
       {item.kind === "midi" ? <MidiInput item={item} onSubmit={(events) => answer({ kind: "midi", events })} disabled={!!fb} /> : null}
+      {item.kind === "sing" ? <SingInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "range" ? <RangeInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "practice" ? (
         <div className="practice">
           <p className="muted">
@@ -157,7 +162,7 @@ function ItemView({ item, pass, onAnswer, onNext, last }: { item: Item; pass: nu
       ) : null}
       {fb ? (
         <div className={`feedback ${fb.score >= pass ? "good" : "bad"}`} data-testid="feedback">
-          <strong>{item.kind === "practice" ? t("saved") : fb.score >= 0.999 ? t("correct") : fb.score >= pass ? `${Math.round(fb.score * 100)}%` : t("wrong")}</strong>
+          <strong>{item.kind === "practice" || item.kind === "checkin" || item.kind === "range" ? t("saved") : fb.score >= 0.999 ? t("correct") : fb.score >= pass ? `${Math.round(fb.score * 100)}%` : t("wrong")}</strong>
           {item.kind === "midi" && fb.score < 0.999 ? (
             <>
               <div>
@@ -170,6 +175,7 @@ function ItemView({ item, pass, onAnswer, onNext, last }: { item: Item; pass: nu
             </>
           ) : null}
           {item.kind === "midi" && fb.score >= 0.999 && item.noteLabels ? <div className="muted">{l(item.noteLabels)}</div> : null}
+          {item.kind === "sing" ? <SingFeedback item={item} detail={fb.detail} resp={fb.resp} /> : null}
           {item.kind === "names" && fb.score < 0.999 ? (
             <div>
               {t("expected")}: {(fb.detail.expect as string[]).map((n) => noteName(parseNote(n), locale)).join(" ")}

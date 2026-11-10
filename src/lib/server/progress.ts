@@ -1,6 +1,8 @@
 import { getDb, now } from "./db";
 import { getCurriculum } from "../curriculum/loader";
-import { generateItems, Item } from "../curriculum/items";
+import { generateItems, Item, GenCtx } from "../curriculum/items";
+import { getRecording, bestAnalysis, setVoiceDay } from "./recordings";
+import { setVoiceRange } from "./settings";
 import { grade, exerciseScore, Response, Grade } from "../grading";
 import type { Exercise, Lesson } from "../curriculum/schema";
 
@@ -14,6 +16,7 @@ export interface Submission {
   exerciseId: string;
   seed: string;
   count?: number; // item count used for generated exercises (reviews use fewer)
+  ctx?: GenCtx; // learner state the items were generated with (e.g. voice range)
   responses: { itemId: string; response: Response; clientScore?: number }[];
 }
 
@@ -122,7 +125,7 @@ function setLesson(lessonId: string, status: string, score: number | null, sourc
 /** Lesson passes when every non-practice exercise has passed at least once. */
 function refreshLesson(lesson: Lesson): boolean {
   const st = new Map(exerciseStates(lesson.id).map((r) => [r.exercise_id, r]));
-  const graded = lesson.exercises.filter((e) => e.type !== "practice");
+  const graded = lesson.exercises.filter((e) => e.type !== "practice" && e.type !== "checkin");
   const passed = graded.every((e) => st.get(e.id)?.passed);
   const cur = lessonStatuses().get(lesson.id);
   const mean = graded.length ? graded.reduce((a, e) => a + (st.get(e.id)?.best ?? 0), 0) / graded.length : 1;
@@ -150,7 +153,8 @@ export function submit(sub: Submission): SubmissionResult {
   if (!found) throw new Error(`unknown exercise ${sub.exerciseId}`);
   const { ex, lesson } = found;
   const count = ex.type === "generated" ? Math.max(1, Math.min(30, sub.count ?? ex.count)) : undefined;
-  const items = generateItems(ex, sub.seed, count);
+  const ctx: GenCtx = sub.ctx?.voiceRange && sub.ctx.voiceRange.length === 2 ? { voiceRange: [Number(sub.ctx.voiceRange[0]), Number(sub.ctx.voiceRange[1])] } : {};
+  const items = generateItems(ex, sub.seed, count, ctx);
   const byId = new Map<string, Item>(items.map((i) => [i.id, i]));
   const graded: SubmissionResult["items"] = [];
   const ins = db.prepare(
@@ -162,9 +166,14 @@ export function submit(sub: Submission): SubmissionResult {
     for (const r of sub.responses) {
       const it = byId.get(r.itemId);
       if (!it) throw new Error(`item ${r.itemId} not in ${sub.exerciseId} for seed ${sub.seed}`);
-      const g: Grade = grade(it, r.response, ex.pass);
+      let resp = r.response;
+      // sung items: grade from the analysis stored with the recording, not from client numbers
+      if (resp.kind === "sing") resp = { ...resp, analysis: bestAnalysis(getRecording(resp.recordingId)) ?? resp.analysis };
+      if (resp.kind === "checkin") setVoiceDay(sub.date, resp.state);
+      if (resp.kind === "range" && resp.lowMidi != null && resp.highMidi != null && resp.highMidi > resp.lowMidi) setVoiceRange(resp.lowMidi, resp.highMidi);
+      const g: Grade = grade(it, resp, ex.pass);
       graded.push({ itemId: r.itemId, score: g.score, pass: g.pass, detail: g.detail, clientScore: r.clientScore });
-      ins.run(sub.uuid, sub.date, sub.context, lesson?.id ?? null, ex.id, it.id, sub.seed, JSON.stringify(r.response), g.score, JSON.stringify(g.detail), r.clientScore ?? null, now());
+      ins.run(sub.uuid, sub.date, sub.context, lesson?.id ?? null, ex.id, it.id, sub.seed, JSON.stringify(resp), g.score, JSON.stringify(g.detail), r.clientScore ?? null, now());
     }
     // unanswered items count as 0
     const score = exerciseScore([...graded.map((g) => g.score), ...items.filter((i) => !sub.responses.some((r) => r.itemId === i.id)).map(() => 0)]);
@@ -176,7 +185,8 @@ export function submit(sub: Submission): SubmissionResult {
          ON CONFLICT(exercise_id) DO UPDATE SET best=max(best, excluded.best), last=excluded.last, passed=max(passed, excluded.passed),
          attempts=attempts+1, updated_at=excluded.updated_at`,
       ).run(ex.id, lesson.id, score, score, pass ? 1 : 0, now());
-      if (ex.type !== "practice" && !lesson.tags.includes("maintenance")) result.srsDue = updateSrs(ex.id, lesson.id, score, ex.pass, sub.date);
+      // voice is kept out of SRS: singing load is set by the day's plan and the check-in, not by a review queue
+      if (ex.type !== "practice" && ex.type !== "checkin" && lesson.track !== "V" && !lesson.tags.includes("maintenance")) result.srsDue = updateSrs(ex.id, lesson.id, score, ex.pass, sub.date);
       result.lessonPassed = refreshLesson(lesson);
     }
     db.prepare("INSERT INTO submissions(uuid, received_at, result) VALUES (?,?,?)").run(sub.uuid, now(), JSON.stringify(result));

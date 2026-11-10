@@ -1,0 +1,75 @@
+id: V-009
+track: V
+order: 9
+title: {en: "Short phrases", sr: "Kratke fraze"}
+prereqs: [V-008]
+minutes: 11
+tags: [voice, phrases, intonation]
+explain:
+  en: |
+    Time to sing **melodies**: short phrases of 3–5 notes that move **by step** (to the neighbouring note of the scale), in C, G or F major.
+    Every phrase starts on the key note (the tonic, *tonika*).
+
+    How to do it:
+
+    1. **Listen** to the whole phrase once. Notice the shape: up, down, or up-and-back.
+    2. **Breathe low** before you start; one breath is enough for the whole phrase.
+    3. **Sing it back on "la"**, one beat per note, smooth and connected (*legato*). Use a balanced onset on the first note only.
+
+    Keep the volume easy and even; do not push the highest note. If the phrase sits too high or low, sing it an octave away.
+    The pitch of every note is checked, so a phrase with one shaky note still earns most of the credit.
+
+    Last, one longer line: the **major pentatonic** scale up from C (C D E G A), the same shape as a run of black keys on the piano.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Vreme je za **melodije**: kratke fraze od 3–5 tonova koje se kreću **postupno** (na susedni ton lestvice), u C, G ili F-duru.
+    Svaka fraza počinje na osnovnom tonu (**tonika**).
+
+    Kako se radi:
+
+    1. **Slušaj** celu frazu jednom. Primeti oblik: naviše, naniže ili gore pa nazad.
+    2. **Udahni nisko** pre početka; jedan dah je dovoljan za celu frazu.
+    3. **Otpevaj je na „la”**, jedna doba po tonu, povezano (*legato*). Uravnoteženu ataku koristi samo na prvom tonu.
+
+    Jačina neka bude laka i ujednačena; ne guraj najviši ton. Ako je fraza previsoka ili preduboka, pevaj je oktavu dalje.
+    Proverava se visina svakog tona, pa fraza sa jednim nesigurnim tonom i dalje donosi većinu poena.
+
+    Na kraju jedna duža linija: **durska pentatonika** naviše od C (C D E G A), isti oblik kao niz crnih dirki na klaviru.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-009-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-009-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then 'la' along with the five notes up and down, smooth and connected."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa „la” uz pet tonova gore i dole, glatko i povezano."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-009-3
+    type: generated
+    prompt: {en: "Sing back the phrase", sr: "Otpevaj frazu"}
+    count: 5
+    pass: 0.6
+    gen: {kind: phrase-sing, tonics: [C, G, F], type: major, length: [3, 5], degrees: [1, 2, 3, 4, 5], maxLeap: 1, tempo: 72, tolerance: 50}
+  - id: V-009-4
+    type: sing-phrase
+    prompt:
+      en: "C major pentatonic, up: listen, then sing the five notes on 'la', one beat each, in one breath."
+      sr: "C-dur pentatonika, naviše: slušaj, pa otpevaj pet tonova na „la”, po jednu dobu, u jednom dahu."
+    derive: {scale: {tonic: C4, type: major-pentatonic, octave: false}}
+    tempo: 66
+    tolerance: 50
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major-pentatonic, is: [C, D, E, G, A]}

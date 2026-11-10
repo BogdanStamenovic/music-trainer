@@ -8,6 +8,7 @@ import { getJson } from "@/lib/client/api";
 import { Markdown } from "@/components/Markdown";
 import { ExerciseQueue } from "@/components/ExerciseQueue";
 import { RunnerDone } from "@/components/ExerciseRunner";
+import type { GenCtx } from "@/lib/curriculum/items";
 
 interface LessonResp {
   lesson: Lesson;
@@ -35,11 +36,16 @@ function LessonInner({ id }: { id: string }) {
   const [d, setD] = useState<LessonResp | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [finished, setFinished] = useState<RunnerDone[] | null>(null);
+  const [ctx, setCtx] = useState<GenCtx | null>(null);
   useEffect(() => {
     getJson<LessonResp>(`/api/lesson/${id}`).then(({ data }) => setD(data)).catch((e) => setErr(String(e)));
+    // generated voice items are fitted to the stored comfortable range
+    getJson<{ voiceRange: { comfortLow: number; comfortHigh: number } | null }>("/api/settings")
+      .then(({ data }) => setCtx(data.voiceRange ? { voiceRange: [data.voiceRange.comfortLow, data.voiceRange.comfortHigh] } : {}))
+      .catch(() => setCtx({}));
   }, [id]);
   if (err) return <p className="bad">{err}</p>;
-  if (!d) return <p className="muted">…</p>;
+  if (!d || !ctx) return <p className="muted">…</p>;
   const { lesson } = d;
   const initial = Object.fromEntries(d.exercises.map((e) => [e.exercise_id, e]));
   const firstOpen = Math.max(0, lesson.exercises.findIndex((e) => !initial[e.id]?.passed));
@@ -60,7 +66,7 @@ function LessonInner({ id }: { id: string }) {
         <Markdown text={l(lesson.explain)} />
       </details>
       <h2>{t("exercises")}</h2>
-      <ExerciseQueue entries={lesson.exercises.map((ex) => ({ ex, lessonId: lesson.id }))} context="lesson" date={date} startAt={d.status?.status === "passed" ? 0 : firstOpen === -1 ? 0 : firstOpen} initial={initial} onFinished={setFinished} />
+      <ExerciseQueue entries={lesson.exercises.map((ex) => ({ ex, lessonId: lesson.id }))} context="lesson" date={date} startAt={d.status?.status === "passed" ? 0 : firstOpen === -1 ? 0 : firstOpen} initial={initial} onFinished={setFinished} ctx={ctx} voiceLesson={lesson.track === "V"} />
       {finished ? (
         <section className={`card ${passedNow ? "good" : ""}`} data-testid="lesson-finished">
           <p>{passedNow ? `✓ ${t("lessonDone")}` : t("notPassed")}</p>

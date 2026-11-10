@@ -1,0 +1,88 @@
+id: V-007
+track: V
+order: 7
+title: {en: "Pitch matching II: intervals", sr: "Pogađanje tona II: intervali"}
+prereqs: [V-006]
+minutes: 10
+tags: [voice, pitch-matching, intervals, intonation]
+explain:
+  en: |
+    Now you hear **one** note, sing it, and then sing a second note **above it** from your own ear. An **interval** is the distance between two notes;
+    on the keyboard you count it in half steps (one key to the very next, black or white).
+
+    | interval | half steps | on the keyboard | a tune that starts with it |
+    |---|---|---|---|
+    | major 2nd (M2) | 2 | C up to D | "Happy Birthday": from "*-py*" up to "*birth-*" |
+    | major 3rd (M3) | 4 | C up to E | "When the Saints Go Marching In": "*Oh when*" |
+    | perfect 4th (P4) | 5 | C up to F | the Wedding March from *Lohengrin*: "*Here comes*" |
+    | perfect 5th (P5) | 7 | C up to G | "Twinkle, Twinkle, Little Star": from "*-kle*" up to the second "*twin-*" |
+
+    Tips:
+
+    - **Hear it before you sing it.** Imagine the second note (use the tune if it helps), then sing.
+    - Seconds and thirds feel like **steps** up a scale; fourths and fifths feel like **jumps**.
+    - Sing both notes on "ah" or "la", about two beats each, in whatever octave is comfortable.
+
+    Both notes are checked. Being a little off on the second note is normal at first; it trains your inner ear more than the voice.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Sada čuješ **jedan** ton, otpevaš ga, pa iz sopstvenog uva otpevaš drugi ton **iznad njega**. **Interval** je razmak između dva tona;
+    na klavijaturi ga brojiš u polustepenima (jedna dirka do prve sledeće, crna ili bela).
+
+    | interval | polustepeni | na klavijaturi | pesma koja njime počinje |
+    |---|---|---|---|
+    | velika sekunda (M2) | 2 | od C do D | „Srećan rođendan”: od „*-ćan*” do „*ro-*” |
+    | velika terca (M3) | 4 | od C do E | „When the Saints Go Marching In”: „*Oh when*” |
+    | čista kvarta (P4) | 5 | od C do F | svadbeni marš iz *Lohengrina*: prva dva tona |
+    | čista kvinta (P5) | 7 | od C do G | „Twinkle, Twinkle, Little Star” (Mocartove varijacije „Ah, vous dirai-je, maman”): sa 2. na 3. ton |
+
+    Saveti:
+
+    - **Čuj pre nego što otpevaš.** Zamisli drugi ton (pomozi se pesmom), pa ga otpevaj.
+    - Sekunde i terce se osećaju kao **koraci** naviše po lestvici; kvarte i kvinte kao **skokovi**.
+    - Otpevaj oba tona na „a” ili „la”, po dve dobe, u oktavi koja ti prija.
+
+    Proveravaju se oba tona. Malo promašivanje drugog tona je u početku normalno; to više trenira unutrašnji sluh nego glas.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-007-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-007-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then hum along with the five notes up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa pevuši uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-007-3
+    type: generated
+    prompt: {en: "Steps: sing the note you hear, then a 2nd or 3rd above", sr: "Koraci: otpevaj ton koji čuješ, pa sekundu ili tercu iznad"}
+    count: 3
+    pass: 0.6
+    gen: {kind: pitch-match, range: [F3, C4], tolerance: 75, intervals: [M2, M3]}
+    checks:
+      - semitones: {from: C4, to: D4, is: 2}
+      - semitones: {from: C4, to: E4, is: 4}
+      - interval: {from: G4, to: A4, is: M2}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-007-4
+    type: generated
+    prompt: {en: "Jumps: sing the note you hear, then a 4th or 5th above", sr: "Skokovi: otpevaj ton koji čuješ, pa kvartu ili kvintu iznad"}
+    count: 3
+    pass: 0.6
+    gen: {kind: pitch-match, range: [F3, C4], tolerance: 75, intervals: [P4, P5]}
+    checks:
+      - semitones: {from: C4, to: F4, is: 5}
+      - semitones: {from: C4, to: G4, is: 7}
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: C4, to: G4, is: P5}

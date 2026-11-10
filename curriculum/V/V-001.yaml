@@ -1,6 +1,6 @@
 # Daily maintenance warm-up (tags: maintenance, warmup). Never planned as a focus
-# lesson; the planner puts it in the maintenance block. Self-rated in M1; pitch
-# matching gets graded once voice-score (M2) is wired in.
+# lesson; the planner puts it in the maintenance block. Pitch matching is graded
+# from voice-score metrics; the check-in can end voice work for the day.
 id: V-001
 track: V
 order: 0
@@ -26,11 +26,10 @@ explain:
     4. **Pogađanje tona**: aplikacija pusti ton; otpevuši ga, pa otpevaj na "a". Previsoko ili prenisko? Pevaj oktavu niže ili više.
 exercises:
   - id: V-001-1
-    type: practice
+    type: checkin
     prompt:
-      en: "Check-in: hum softly for 10 seconds. If your voice is hoarse, sore or tired, rate 'Couldn't' and skip voice work today."
-      sr: "Provera: tiho pevuši 10 sekundi. Ako je glas promukao, boli ili je umoran, oceni 'Nije išlo' i danas preskoči pevanje."
-    minutes: 0.5
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-001-2
     type: practice
     prompt: {en: "Lip trills on 1-2-3-4-5-4-3-2-1 (listen, then trill along; repeat a step higher if easy).", sr: "Treperenje usnama na 1-2-3-4-5-4-3-2-1 (slušaj, pa ponovi; ako je lako, ponovi korak više)."}
@@ -41,7 +40,8 @@ exercises:
     prompt: {en: "Sirens on 'ng' or 'oo': low to high and back, 4 times, quiet and easy.", sr: "Sirene na 'ng' ili 'u': od dubokog do visokog i nazad, 4 puta, tiho i lako."}
     minutes: 1
   - id: V-001-4
-    type: practice
-    prompt: {en: "Pitch match: hum each note, then sing it on 'ah' (play again as needed).", sr: "Pogađanje tona: otpevuši svaki ton, pa ga otpevaj na 'a' (pusti ponovo po potrebi)."}
-    minutes: 1.5
-    play: {notes: [G3, C3, E3, A3, D3], mode: melodic, tempo: 30}
+    type: generated
+    prompt: {en: "Pitch match: listen, hum, then sing on 'ah'", sr: "Pogađanje tona: slušaj, otpevuši, pa otpevaj na 'a'"}
+    count: 3
+    pass: 0.6
+    gen: {kind: pitch-match, range: [C3, A3], sustain: 2, tolerance: 50}

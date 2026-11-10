@@ -1,0 +1,94 @@
+id: V-002
+track: V
+order: 2
+title: {en: "Breath and support", sr: "Disanje i oslonac"}
+minutes: 10
+tags: [voice, breath, support]
+explain:
+  en: |
+    Singing is air turned into sound. Before any note, learn to **breathe low** and to **let the air out slowly and evenly**.
+    That steady, controlled outflow is what singers call **support** (Serbian: *oslonac*).
+
+    **Posture**: stand (or sit on the front of the chair) tall but not stiff. Feet hip-width, knees soft,
+    shoulders down and loose, chin level. Imagine a thread lifting the top of your head.
+
+    **Low breath**: breathe in through the nose or an open, relaxed mouth. Your belly, lower ribs and sides
+    expand; your **shoulders and upper chest stay still**. The diaphragm does the work underneath;
+    you feel it as the belly and lower ribs moving outward. A hand on the belly and one on the side ribs helps you check.
+
+    **Support** is not squeezing or pushing. On the way out, keep the ribs gently open for as long as is comfortable,
+    so the air leaves slowly instead of collapsing all at once. The hiss exercises below train exactly that.
+
+    Then a few **long tones**: one note on "ah", held steadily for 3–4 seconds.
+    Sing in whatever octave is comfortable; the app counts the note in any octave. Soft and easy beats loud.
+
+    **Stop if anything hurts, scratches or you get hoarse.** Dizzy from breathing? Pause and breathe normally.
+  sr: |
+    Pevanje je vazduh pretvoren u zvuk. Pre bilo kog tona nauči da **dišeš nisko** i da **izdišeš polako i ravnomerno**.
+    Taj stabilan, kontrolisan izdisaj pevači zovu **oslonac** (engl. *support*).
+
+    **Držanje tela**: stoj (ili sedi na prednjem delu stolice) uspravno, ali ne ukočeno. Stopala u širini kukova,
+    kolena opuštena, ramena spuštena i labava, brada ravno. Zamisli konac koji ti podiže teme.
+
+    **Nisko disanje**: udahni na nos ili kroz otvorena, opuštena usta. Šire se stomak, donja rebra i bokovi;
+    **ramena i gornji deo grudi miruju**. Ispod radi dijafragma (prečaga);
+    ti je osećaš kao pomeranje stomaka i donjih rebara ka spolja. Jedna ruka na stomaku, druga na rebrima pomaže da proveriš.
+
+    **Oslonac** nije stezanje ni guranje. Pri izdisaju drži rebra blago otvorena koliko ti je prijatno,
+    da vazduh izlazi polako umesto da se sve odjednom „sruši”. Vežbe šištanja ispod treniraju upravo to.
+
+    Zatim nekoliko **dugih tonova**: jedan ton na „a”, mirno zadržan 3–4 sekunde.
+    Pevaj u oktavi koja ti prija; aplikacija priznaje ton u bilo kojoj oktavi. Tiho i lako je bolje od glasnog.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ako ti se zavrti u glavi od disanja, zastani i diši normalno.
+exercises:
+  - id: V-002-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-002-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Posture and low breath: one hand on the belly, one on the side ribs. 6 slow breaths in through the nose (4 counts), out through the mouth (6 counts). Shoulders stay still."
+      sr: "Držanje i nisko disanje: jedna ruka na stomaku, druga na rebrima. 6 sporih udaha na nos (4 dobe), izdah kroz usta (6 doba). Ramena miruju."
+  - id: V-002-3
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Hiss: breathe low, then let the air out on a quiet, even 'sss' while counting. Aim for 15–20 s without squeezing; stop before you run completely out. 3 times. Note your best count."
+      sr: "Šištanje: udahni nisko, pa ispuštaj vazduh na tiho, ravnomerno „sss” i broji. Cilj 15–20 s bez stezanja; prekini pre nego što potpuno ostaneš bez daha. 3 puta. Zapamti najbolji rezultat."
+  - id: V-002-4
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Pulsed hiss: 'ts-ts-ts-ts' in short bursts, 8 per breath. Feel the belly give a small inward bounce on each one, no throat effort. 3 rounds."
+      sr: "Isprekidano šištanje: „c-c-c-c” u kratkim impulsima, 8 na jedan dah. Oseti mali odskok stomaka ka unutra pri svakom, bez napora u grlu. 3 runde."
+  - id: V-002-5
+    type: sing-pitch
+    prompt:
+      en: "Long tone: listen, take a low breath, then sing the note on 'ah' and hold it steadily for 3 seconds. Quiet and easy."
+      sr: "Dug ton: slušaj, udahni nisko, pa otpevaj ton na „a” i mirno ga drži 3 sekunde. Tiho i lako."
+    notes: [A3]
+    sustain: 3
+    tolerance: 100
+    pass: 0.6
+  - id: V-002-6
+    type: sing-pitch
+    prompt:
+      en: "Another long tone, 3 seconds on 'ah'. Same low breath, same calm outflow as in the hiss."
+      sr: "Još jedan dug ton, 3 sekunde na „a”. Isti nizak udah, isti miran izdisaj kao kod šištanja."
+    notes: [G3]
+    sustain: 3
+    tolerance: 100
+    pass: 0.6
+  - id: V-002-7
+    type: sing-pitch
+    prompt:
+      en: "Last one: 4 seconds on 'ah'. Keep the ribs open; if the tone starts to shake, it is fine to stop early."
+      sr: "Poslednji: 4 sekunde na „a”. Drži rebra otvorena; ako ton počne da podrhtava, slobodno prekini ranije."
+    notes: [B3]
+    sustain: 4
+    tolerance: 100
+    pass: 0.6

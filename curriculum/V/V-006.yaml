@@ -1,0 +1,111 @@
+id: V-006
+track: V
+order: 6
+title: {en: "Sirens and smooth register transitions", sr: "Sirene i glatki prelazi registara"}
+prereqs: [V-005]
+minutes: 10
+tags: [voice, registers, sirens]
+explain:
+  en: |
+    As you slide from low to high, the voice changes **feel**. Singers describe this with **registers** (Serbian: *registri*):
+
+    - **Chest voice** (*grudni glas*): the lower, speech-like part. You feel buzzing in the chest; it sounds fuller.
+    - **Head voice** (*glavni glas*): the higher, lighter part. The buzz moves into the face and head; it sounds thinner and more floaty.
+    - The zone between them, where the voice may **crack or flip**, is the **transition** (*prelaz*, also called *passaggio*).
+      Later, a blended **mix** (*mešani glas*) smooths it over; that is a long-term goal, not today's.
+
+    These are **sensations**, not boxes, and they sit in different places for different voices.
+    The app does **not** grade which register you use; it only checks the pitches. Your job today is to make the slide **smooth**.
+
+    **Sirens** (*sirene*) are the tool: a slow, quiet slide through the whole comfortable range on "ng", "oo" or a lip trill,
+    like a gentle siren. These sounds keep the throat easy and let the voice pass the transition without strain.
+
+    - A crack is normal and harmless; it just shows where your transition is. Do not fight it by pushing; go **lighter and quieter** through it.
+    - Stay inside your comfortable range. No reaching for the extremes.
+
+    Then three slow **glides** between notes of a chord: slide from note to note instead of jumping, and land on each one.
+    Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Dok klizaš od dubokog ka visokom, glas menja **osećaj**. Pevači to opisuju **registrima**:
+
+    - **Grudni glas** (engl. *chest voice*): niži deo, sličan govoru. Vibraciju osećaš u grudima; zvuči punije.
+    - **Glavni glas** (engl. *head voice*): viši, lakši deo. Vibracija prelazi u lice i glavu; zvuči tanje i „lebdi”.
+    - Zona između njih, gde glas može da **pukne ili preskoči**, je **prelaz** (ital. *passaggio*).
+      Kasnije ga izglađuje stopljeni **mešani glas** (engl. *mix*); to je dugoročni cilj, ne današnji.
+
+    To su **osećaji**, ne fioke, i kod različitih glasova su na različitim mestima.
+    Aplikacija **ne** ocenjuje koji registar koristiš; proverava samo visine. Tvoj današnji zadatak je da klizanje bude **glatko**.
+
+    Alat su **sirene**: sporo, tiho klizanje kroz ceo udoban opseg na „ng”, „u” ili treperenjem usana,
+    kao blaga sirena. Ti glasovi drže grlo opuštenim i puštaju glas kroz prelaz bez napora.
+
+    - Pucanje je normalno i bezopasno; samo pokazuje gde ti je prelaz. Ne bori se guranjem; kroz njega idi **lakše i tiše**.
+    - Ostani u udobnom opsegu. Bez posezanja za krajnjim tonovima.
+
+    Zatim tri spora **klizanja** između tonova akorda: klizi od tona do tona umesto da skačeš, i sleti na svaki.
+    Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-006-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-006-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, then lip trills (or 'mm') on five notes up and down, twice."
+      sr: "Zagrevanje: 4 niska udaha, pa treperenje usnama (ili „mm”) na pet tonova gore i dole, dva puta."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-006-3
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Sirens: 5 slow, quiet slides on 'ng' (then 'oo') from low to high and back down. Notice where the feel changes or the voice flips; go lighter there, never louder."
+      sr: "Sirene: 5 sporih, tihih klizanja na „ng” (pa na „u”) od dubokog do visokog i nazad. Primeti gde se osećaj menja ili glas preskače; tu idi lakše, nikad glasnije."
+  - id: V-006-4
+    type: sing-phrase
+    prompt:
+      en: "Glide 1-5-1 on 'oo': slide slowly up to the fifth and back, landing on each note for 2 beats."
+      sr: "Klizanje 1-5-1 na „u”: polako klizi do kvinte i nazad, sleti na svaki ton na 2 dobe."
+    notes: [G3, D4, G3]
+    beats: [2, 2, 2]
+    tempo: 60
+    tolerance: 100
+    pass: 0.6
+    checks:
+      - interval: {from: G3, to: D4, is: P5}
+  - id: V-006-5
+    type: sing-phrase
+    prompt:
+      en: "Glide 1-3-5-3-1 on 'oo' (the notes of a major chord), smooth slides between them."
+      sr: "Klizanje 1-3-5-3-1 na „u” (tonovi durskog akorda), glatko klizi između njih."
+    notes: [G3, B3, D4, B3, G3]
+    beats: [1.5, 1.5, 2, 1.5, 2]
+    tempo: 60
+    tolerance: 100
+    pass: 0.6
+    checks:
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj, inversion: 0}
+      - interval: {from: G3, to: B3, is: M3}
+  - id: V-006-6
+    type: sing-phrase
+    prompt:
+      en: "Descending glide 5-1 on 'ah': start light on the top note and let it float down, no heaviness at the bottom."
+      sr: "Silazno klizanje 5-1 na „a”: počni lagano na gornjem tonu i pusti ga da se spusti, bez otežavanja na dnu."
+    notes: [D4, G3]
+    beats: [2, 2]
+    tempo: 60
+    tolerance: 100
+    pass: 0.6
+    checks:
+      - interval: {from: G3, to: D4, is: P5}

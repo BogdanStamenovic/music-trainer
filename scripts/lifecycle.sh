@@ -67,7 +67,7 @@ write_config() {
 build() {
   cd "$SRC"
   local avail; avail=$(df -Pm "$SRC" | awk 'NR==2{print $4}')
-  [ "$avail" -ge 700 ] || die "only ${avail} MB free where the checkout lives; the build needs ~700 MB temporarily"
+  [ "$avail" -ge 900 ] || die "only ${avail} MB free where the checkout lives; the build needs ~900 MB temporarily"
   log "installing build dependencies"
   npm ci --no-audit --no-fund --loglevel=error
   log "validating curriculum + running tests"

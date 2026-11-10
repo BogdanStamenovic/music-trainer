@@ -5,9 +5,10 @@ grades the work, from multiple-choice answers to what you play on a MIDI piano, 
 schedules what to learn and review next. Built for one learner: a fluent pianist
 with almost no theory, in English and Serbian.
 
-Spec: [SPEC.md](SPEC.md). This repo is milestone M1 (trainer skeleton + seed content).
-Singing analysis is a separate service,
-[voice-score](https://github.com/BogdanStamenovic/voice-score) (M2).
+Spec: [SPEC.md](SPEC.md). This repo covers milestone M1 (trainer skeleton + seed
+content) and the trainer side of M2 (voice track). Singing analysis is a separate
+service, [voice-score](https://github.com/BogdanStamenovic/voice-score); its browser
+fallback is vendored here.
 
 ## How it works
 
@@ -22,6 +23,9 @@ Singing analysis is a separate service,
 | Piano I/O | Web MIDI in (notes, velocity, pedal) and out (playback on the piano itself), Web Audio synth fallback, on-screen keyboard | `src/lib/client/midi.ts` |
 | Offline | Service worker caches the app shell and today's lessons; submissions queue in IndexedDB and sync later | `public/sw.js`, `src/lib/client/queue.ts` |
 | voice-score client | URL from config; `/health` with a 3 s timeout; `down` is a typed result, not an error | `src/lib/server/voiceScore.ts` |
+| Voice | Records in the browser (mic processing off), stores the take on the data disk, analyzes it on voice-score. When voice-score is down, the vendored voice-score-lite analyzes in the browser; offline, the take is queued in IndexedDB. Takes made while it was down get a server analysis later | `src/lib/client/voice.ts`, `src/lib/server/recordings.ts` |
+| Voice grading | Per target note: full credit within the tolerance (cents), linear down to 0 at 3x; a short sustain scales the score down. Octave-agnostic, and items are moved by octaves into the stored comfortable range | `gradeSing` in `src/lib/grading.ts` |
+| Voice safety | Validation forces every V lesson to open with a fatigue/hoarseness check-in and then a warm-up. "Tired" or "hoarse" makes the day a voice-rest day: every voice lesson is blocked until tomorrow. Voice stays out of SRS | `src/lib/curriculum/validate.ts`, `ExerciseQueue` |
 
 Correctness of content is enforced, not assumed:
 
@@ -44,7 +48,8 @@ it to `~/.local/lib/music-trainer/app`, writes `~/.config/music-trainer/env` (on
 never overwritten), installs and starts the user unit `music-trainer.service` on
 127.0.0.1:3310, and runs `tailscale serve --bg --https=8448` (skipped with a
 warning if 8448 is taken by something else). It then deletes `node_modules` from
-the checkout, since the deployed server is self-contained (~55 MB).
+the checkout, since the deployed server is self-contained (~70 MB, of which 15 MB is
+the browser voice fallback).
 
 `install.update` does the same, plus:
 
@@ -70,6 +75,17 @@ on the root disk; the unit retries every 20 s.
 - Writing content: [curriculum/README.md](curriculum/README.md).
 - Browser E2E: `scripts/dev/e2e.py BASE_URL /dev/snd/midiC<N>D0 OUT_DIR` drives
   real Chrome and plays the answers on a virtual MIDI device (snd-virmidi).
+  `scripts/dev/e2e_voice.py BASE_URL OUT_DIR [--fallback]` does the voice track with a
+  faked microphone (an oscillator at the target pitch).
+- Voice history and the consent switch: `/voice`.
+
+### Recordings for voice-score validation
+
+`GET /api/voice/validation-set?limit=N` returns the learner's first recordings
+(oldest first), each with its absolute file path, the targets sent, and both the
+server and browser analyses. It works **only while consent is on** (the switch on
+`/voice`, off by default; the time consent was given is stored); otherwise it
+returns 403. The files stay on archserver under `$MT_DATA_DIR/recordings/`.
 
 Config (`~/.config/music-trainer/env`):
 
@@ -83,7 +99,9 @@ Config (`~/.config/music-trainer/env`):
 
 ## Measured
 
-- Tests: 37 (theory facts, grading, planner/SRS, all content).
+- Tests: 48 (theory facts, grading, planner/SRS, voice, all content). The voice tests
+  send synthesized tones through the real voice-score when it is up. A tone a semitone
+  sharp fails; an in-tune tone is within 20 cents.
 - Full E2E on 2026-11-10 used google-chrome-stable 157 (headless) and a **virtual** MIDI
   device (snd-virmidi on archserver; no real piano was attached). It covered:
   - placement: 22 probes
@@ -92,13 +110,30 @@ Config (`~/.config/music-trainer/env`):
   - offline: lesson rendered from cache, the submission was queued, then synced
   - Serbian UI
   - only expected console errors (offline fetches)
-- Deployed size: ~55 MB. A build needs ~700 MB free while it runs.
+- Voice E2E on 2026-11-10, real Chrome with a **faked microphone** (an oscillator; no
+  human voice yet), logs in `docs/`:
+  - real voice-score: range stored as sung (A2–E4, comfortable B2–D4); pitch matches
+    within ±8 cents; the take a semitone sharp measured +94 cents and scored 0
+  - 3–5 note phrases segmented and graded per note
+  - consent gate: 403 → 200 → 403
+  - history playback serves Range requests (206)
+  - a "hoarse" check-in blocks voice lessons for the day
+  - fallback (voice-score unreachable): 6 takes analyzed by swiftf0-web in Chrome;
+    offline, a take was analyzed locally, queued, and uploaded on reconnect; once
+    voice-score was back, all 7 takes were re-analyzed. Browser vs server on the
+    same takes: within 2 cents per note.
+- Added size of the browser fallback: 14.9 MB (onnxruntime-web WASM build only:
+  14.85 MB WASM + 78 KB loaders, + the vendored lite module and 135 KB model). It
+  is loaded only when voice-score is down, then cached by the service worker.
+- Deployed size: ~70 MB. A build needs ~850 MB free while it runs.
 
 ## Limitations
 
 What works today:
 
 - T/E/K lessons with deterministic grading
+- V lessons (breath, range, pitch matching, onsets, sirens, intervals, steady tones,
+  phrases) graded from voice-score metrics, with the browser fallback
 - placement, planner, SRS, the M1 weekly test
 - EN/SR
 - MIDI in/out
@@ -106,9 +141,17 @@ What works today:
 
 What does not exist yet:
 
-- **Voice is not graded.** V-001 (the warm-up) is self-rated. voice-score is up
-  and its client and proxy route exist, but no V exercise sends audio yet (M2).
-  The browser pitch fallback (`voice-score-lite.mjs`) is not vendored yet.
+- **Voice grading is pitch and duration only.** Onset quality, registers, breath
+  and tone are self-judged; technique classification will come from voice-score
+  as low-confidence hints, never as grades (SPEC). Nothing about distortion exists
+  yet; it is gated to a later module.
+- **No human voice has gone through it yet.** The E2E fed oscillator tones. Real
+  voices bring vibrato, scoops and glides, and how voice-score segments a sung
+  glide (V-006) is untested.
+- **Voice is not in the weekly test or SRS.** Daily singing load comes from the
+  plan and the check-in; recorded vocal pieces are an M3 project.
+- **No daily cap on singing minutes yet** beyond lesson length; the spec's cap
+  applies to the (not yet built) distortion module.
 - **No mic fallback for piano exercises.** Without Web MIDI (e.g. iPhone Safari)
   the on-screen keyboard is the only input.
 - **The weekly test is basic.** It takes one exercise from each lesson passed in
@@ -121,7 +164,7 @@ What does not exist yet:
 - **Timing grading is a screen, not a verdict.** It checks evenness (RMS
   deviation from a fitted beat grid, 0.25 beat = zero score) and penalises tempo
   that is more than 15% off. Swing and rubato are not modelled.
-- **Content is hand-written, about two weeks of it** (34 lessons). Terminology
+- **Content is hand-written, about two weeks of it** (42 lessons + warm-up). Terminology
   that `checks` cannot verify (degree names, cadence names) was reviewed but
   not machine-checked.
 - **One user, no auth.** It is reachable only via localhost and the tailnet.

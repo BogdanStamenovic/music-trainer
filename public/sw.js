@@ -2,8 +2,8 @@
 // - navigations and /_next/static: stale-while-revalidate (pages work offline)
 // - GET /api/today, /api/lesson/*: network-first, cached copy when offline
 // - POST /api/submit is never cached: the page queues it in IndexedDB instead
-const VERSION = "mt-v1";
-const SHELL = ["/", "/review", "/test", "/placement", "/progress", "/settings", "/manifest.webmanifest", "/icon-192.png"];
+const VERSION = "mt-v2";
+const SHELL = ["/", "/review", "/test", "/placement", "/progress", "/settings", "/voice", "/manifest.webmanifest", "/icon-192.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL).catch(() => {})).then(() => self.skipWaiting()));
@@ -50,7 +50,10 @@ self.addEventListener("fetch", (e) => {
   if (url.origin !== location.origin) return;
   if (url.pathname.startsWith("/api/today") || url.pathname.startsWith("/api/lesson/") || url.pathname === "/api/settings") {
     e.respondWith(networkFirst(req));
-  } else if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icon") || url.pathname.endsWith(".webmanifest")) {
+  } else if (url.pathname.startsWith("/api/voice/")) {
+    return; // recordings and uploads: always live
+  } else if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icon") || url.pathname.endsWith(".webmanifest") || url.pathname.startsWith("/ort/") || url.pathname.startsWith("/voice-score/")) {
+    // /ort and /voice-score: the browser voice fallback (15 MB WASM) is cached after first use so it works offline
     e.respondWith(staleWhileRevalidate(req));
   } else if (req.mode === "navigate" || (url.pathname.startsWith("/lesson/") && !req.headers.get("RSC"))) {
     // pages: fresh when online; offline, the cached copy (query ignored) or the home shell

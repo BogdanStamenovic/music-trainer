@@ -1,0 +1,43 @@
+voice-score as seen by the server: {'up': True, 'url': 'http://127.0.0.1:3311', 'version': '0.1.0', 'trackers': ['swiftf0', 'rmvpe']}
+V-003 (range):
+  V-003-1: Score: 100% · Passed
+      checkin fine
+  V-003-2: Score: 100% · Passed
+      practice
+  V-003-3: Score: 100% · Passed
+      Your range: A2 – E4 (comfortable B2 – D4)
+  V-003-4: Score: 100% · Passed
+      practice
+stored voiceRange: {'low': 45, 'high': 64, 'comfortLow': 47, 'comfortHigh': 62, 'measuredAt': 1794326708983}
+V-004 (pitch matching; item 2 sung a semitone sharp on purpose):
+  V-004-1: Score: 100% · Passed
+      checkin fine
+  V-004-2: Score: 100% · Passed
+      practice
+  V-004-3: Score: 83% · Passed
+      Correct | D#3	-13 cents	held 2.6 s	100% | analyzed by voice-score · ±75 cents | Next →
+      Not quite | G#3	+94 cents	held 0.0 s	0% | analyzed by voice-score · ±75 cents | Next →
+      Correct | A#3	0 cents	held 2.6 s	100% | analyzed by voice-score · ±75 cents | Next →
+      Correct | C#3	-8 cents	held 2.6 s	100% | analyzed by voice-score · ±75 cents | Next →
+      Correct | C3	-5 cents	held 2.6 s	100% | analyzed by voice-score · ±75 cents | Next →
+      Correct | B2	-6 cents	held 2.6 s	100% | analyzed by voice-score · ±75 cents | Finish →
+V-009 (phrases):
+  V-009-1: Score: 100% · Passed
+      checkin fine
+  V-009-2: Score: 100% · Passed
+      practice
+  V-009-3: Score: 100% · Passed
+      Correct | F3	-3 cents	held 0.8 s	100% | G3	-5 cents	held 0.8 s	100% | A3	-6 cents	held 0.8 s	100% | A#3	0 cents	held 0.8 s	100% | analyzed by voice-score · ±50 cents | Next →
+      Correct | G3	-7 cents	held 0.8 s	100% | A3	-6 cents	held 0.8 s	100% | B3	-2 cents	held 0.8 s	100% | C4	+4 cents	held 0.8 s	100% | D4	-2 cents	held 0.7 s	100% | analyzed by voice-score · ±50 cents | Next →
+      Correct | C3	-4 cents	held 0.8 s	100% | D3	-7 cents	held 0.8 s	100% | E3	-6 cents	held 0.8 s	100% | F3	-4 cents	held 0.7 s	100% | G3	-6 cents	held 0.8 s	100% | analyzed by voice-score · ±50 cents | Next →
+      Correct | C3	-5 cents	held 0.8 s	100% | D3	-6 cents	held 0.8 s	100% | E3	-6 cents	held 0.8 s	100% | analyzed by voice-score · ±50 cents | Next →
+      Correct | C3	-5 cents	held 0.8 s	100% | D3	-6 cents	held 0.8 s	100% | E3	-6 cents	held 0.8 s	100% | F3	-4 cents	held 0.8 s	100% | analyzed by voice-score · ±50 cents | Finish →
+  V-009-4: Score: 100% · Passed
+      Correct | C3	-5 cents	held 0.8 s	100% | D3	-6 cents	held 0.8 s	100% | E3	-6 cents	held 0.8 s	100% | G3	-7 cents	held 0.8 s	100% | A3	-6 cents	held 0.8 s	100% | analyzed by voice-score · ±50 cents | Finish →
+V-004 status: {'lesson_id': 'V-004', 'status': 'passed', 'score': 0.8333333333333334, 'source': 'lesson'}
+validation-set: before consent HTTP 403; after consent 3 recordings, first path /tmp/claude-1000/mt-v1/recordings/2026-11/d8e09afd-b9eb-4d2c-9779-7b9ba9b7aed5.webm
+validation-set after consent withdrawn: HTTP 403
+/voice history: 14 recordings listed; audio range request -> [206, 'audio/webm']
+check-in hoarse -> voice rest shown: 🛑 Voice rest today. You said your voice is tired or hoarse: no singing until tom
+other voice lesson same day -> also blocked
+console errors: 2 ['error: Failed to load resource: the server responded with a status of 403 (Forbidden)', 'error: Failed to load resource: the server responded with a status of 403 (Forbidden)']

@@ -23,6 +23,12 @@ const MIGRATIONS: string[] = [
      reps INTEGER NOT NULL, lapses INTEGER NOT NULL, due TEXT NOT NULL, last_score REAL, updated_at INTEGER NOT NULL);
    CREATE TABLE placement_results (id INTEGER PRIMARY KEY, taken_at INTEGER NOT NULL, result TEXT NOT NULL);
    CREATE TABLE submissions (uuid TEXT PRIMARY KEY, received_at INTEGER NOT NULL, result TEXT NOT NULL);`,
+  // 2: voice recordings (files live in <data>/recordings) and per-day voice rest
+  `CREATE TABLE recordings (id TEXT PRIMARY KEY, created_at INTEGER NOT NULL, date TEXT NOT NULL, lesson_id TEXT,
+     exercise_id TEXT NOT NULL, item_id TEXT NOT NULL, file TEXT NOT NULL, mime TEXT NOT NULL, size INTEGER NOT NULL,
+     params TEXT NOT NULL, server_analysis TEXT, browser_analysis TEXT, status TEXT NOT NULL, error TEXT);
+   CREATE INDEX recordings_created ON recordings(created_at);
+   CREATE TABLE voice_days (date TEXT PRIMARY KEY, state TEXT NOT NULL, at INTEGER NOT NULL);`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

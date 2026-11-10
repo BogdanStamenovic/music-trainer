@@ -1,0 +1,19 @@
+voice-score as seen by the server: {'up': False, 'url': 'http://127.0.0.1:9', 'error': 'fetch failed'}
+FALLBACK run (server points at a dead voice-score):
+  V-004-1: Score: 100% · Passed
+      checkin fine
+  V-004-2: Score: 100% · Passed
+      practice
+  V-004-3: Score: 100% · Passed
+      Correct | G3	-6 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+      Correct | A3	-7 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+      Correct | A#3	-2 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+      Correct | F#3	-3 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+      Correct | F3	-4 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+      Correct | G#3	-6 cents	held 2.6 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Finish →
+  V-004 done in 33s with browser analysis
+  recordings: [('browser', 'swiftf0-web', False), ('browser', 'swiftf0-web', False), ('browser', 'swiftf0-web', False), ('browser', 'swiftf0-web', False), ('browser', 'swiftf0-web', False), ('browser', 'swiftf0-web', False)]
+  offline sing item: Correct | G#3	-6 cents	held 1.8 s	100% | C4	+4 cents	held 1.8 s	100% | analyzed in the browser (voice-score down) · ±75 cents | Next →
+  queued uploads while offline: 1
+  after reconnect: queued uploads 0; server has 7 recordings (was 6)
+console errors: 4 ['error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED']

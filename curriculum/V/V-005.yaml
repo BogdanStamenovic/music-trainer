@@ -1,0 +1,113 @@
+id: V-005
+track: V
+order: 5
+title: {en: "Onsets: soft, hard, balanced", sr: "Početak tona: meka, tvrda i uravnotežena ataka"}
+prereqs: [V-004]
+minutes: 10
+tags: [voice, onset]
+explain:
+  en: |
+    The **onset** (Serbian: *ataka* or *početak tona*) is how a note begins: how the air and the vocal folds meet. There are three kinds:
+
+    | onset | how it starts | try it | feels like |
+    |---|---|---|---|
+    | **soft** (breathy) | air first, then tone | "**h**-ah" | gentle, a little airy |
+    | **hard** (glottal) | folds closed, then a small click | the start of "**uh**-oh" | sharp, a tiny "catch" in the throat |
+    | **balanced** | air and tone start together | "ah", clean | clear, easy, no air puff, no click |
+
+    The **balanced onset** (*uravnotežena ataka*) is the everyday goal: it is the most efficient and the kindest to the voice.
+    The other two are tools, and feeling them makes the balanced one easier to find: it sits **between** the airy "h" and the click.
+
+    Do the hard onset **lightly and only a few times**: a small catch, never a bark or a cough. If it scratches, skip it.
+
+    The app checks the **pitch** of each short note; how the note starts is for **you** to feel and judge.
+    Sing in whatever octave is comfortable.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Ataka** ili **početak tona** (engl. *onset*) je način na koji ton počinje: kako se susreću vazduh i glasnice. Postoje tri vrste:
+
+    | ataka | kako počinje | probaj | osećaj |
+    |---|---|---|---|
+    | **meka** (dahtava) | prvo vazduh, pa ton | „**h**-a” | nežno, malo vazdušasto |
+    | **tvrda** (glotalna) | glasnice zatvorene, pa mali „klik” | početak uzvika „**o**-o!” (kad nešto pođe naopako) | oštro, malo „zakačinjanje” u grlu |
+    | **uravnotežena** | vazduh i ton kreću zajedno | čisto „a” | jasno, lako, bez dašaka i bez klika |
+
+    **Uravnotežena ataka** je svakodnevni cilj: najefikasnija je i najblaža prema glasu.
+    Druge dve su alati, a kad ih osetiš, lakše nalaziš uravnoteženu: ona je **između** vazdušastog „h” i klika.
+
+    Tvrdu ataku radi **lagano i samo nekoliko puta**: malo zakačinjanje, nikad lavež ili kašalj. Ako grebe, preskoči je.
+
+    Aplikacija proverava **visinu** svakog kratkog tona; kako ton počinje, **ti** osećaš i procenjuješ.
+    Pevaj u oktavi koja ti prija.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-005-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-005-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then 'mm' hums along with the five notes up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa pevušenje na „mm” uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-005-3
+    type: sing-pitch
+    prompt:
+      en: "Soft onset: sing the note as 'h-ah', letting a little air out before the tone. Short, 1 second."
+      sr: "Meka ataka: otpevaj ton kao „h-a”, pusti malo vazduha pre tona. Kratko, 1 sekunda."
+    notes: [A3]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-005-4
+    type: sing-pitch
+    prompt:
+      en: "Hard onset, lightly: start the 'ah' with a small catch, like the start of 'uh-oh'. Gentle, 1 second. Skip it if it scratches."
+      sr: "Tvrda ataka, lagano: počni „a” malim zakačinjanjem, kao početak „o-o!”. Nežno, 1 sekunda. Preskoči ako grebe."
+    notes: [A3]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-005-5
+    type: sing-pitch
+    prompt:
+      en: "Balanced onset: think 'h' but do not let the air out; air and tone start together on a clean 'ah'. 1 second."
+      sr: "Uravnotežena ataka: pomisli „h”, ali ne puštaj vazduh; vazduh i ton kreću zajedno na čisto „a”. 1 sekunda."
+    notes: [A3]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-005-6
+    type: sing-pitch
+    prompt:
+      en: "Balanced onset on a new note, on 'ee'. 1 second, clean start."
+      sr: "Uravnotežena ataka na novom tonu, na „i”. 1 sekunda, čist početak."
+    notes: [C4]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-005-7
+    type: sing-pitch
+    prompt:
+      en: "Balanced onset on 'oh'. 1 second, clean start."
+      sr: "Uravnotežena ataka na „o”. 1 sekunda, čist početak."
+    notes: [G3]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-005-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: 5 short balanced onsets on 'ah', 'eh', 'ee', 'oh', 'oo' on any easy note. Rate how often the start was clean (no puff, no click)."
+      sr: "Samoprocena: 5 kratkih uravnoteženih ataka na „a”, „e”, „i”, „o”, „u” na bilo kom lakom tonu. Oceni koliko puta je početak bio čist (bez dašaka, bez klika)."

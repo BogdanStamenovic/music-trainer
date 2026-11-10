@@ -15,6 +15,9 @@ export interface Settings {
   playback: "auto" | "midi" | "webaudio";
   midiIn: string | null; // input id, null = all inputs
   midiOut: string | null;
+  voiceRange: null | { low: number; high: number; comfortLow: number; comfortHigh: number; measuredAt: number }; // MIDI
+  shareRecordings: boolean; // consent: voice-score's developer agent may use early recordings for validation
+  shareConsentAt: number | null;
 }
 
 // Default weekly schedule from Bogdan (2026-11-10, relayed by manager-15).
@@ -28,6 +31,9 @@ export const DEFAULTS: Settings = {
   playback: "auto",
   midiIn: null,
   midiOut: null,
+  voiceRange: null,
+  shareRecordings: false,
+  shareConsentAt: null,
 };
 
 export function getSettings(): Settings {
@@ -59,7 +65,18 @@ export function updateSettings(patch: Partial<Settings>): Settings {
   if (patch.playback && ["auto", "midi", "webaudio"].includes(patch.playback)) clean.playback = patch.playback;
   if (patch.midiIn !== undefined) clean.midiIn = patch.midiIn;
   if (patch.midiOut !== undefined) clean.midiOut = patch.midiOut;
+  if (typeof patch.shareRecordings === "boolean") {
+    clean.shareRecordings = patch.shareRecordings;
+    clean.shareConsentAt = patch.shareRecordings ? Date.now() : null;
+  }
   const st = getDb().prepare("INSERT INTO settings(key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value");
   for (const [k, v] of Object.entries(clean)) st.run(k, JSON.stringify(v));
   return getSettings();
+}
+
+/** Store a measured range; the comfortable range is 2 semitones inside each extreme. */
+export function setVoiceRange(low: number, high: number) {
+  const v = { low, high, comfortLow: Math.min(low + 2, high), comfortHigh: Math.max(high - 2, low), measuredAt: Date.now() };
+  getDb().prepare("INSERT INTO settings(key, value) VALUES ('voiceRange', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(JSON.stringify(v));
+  return v;
 }

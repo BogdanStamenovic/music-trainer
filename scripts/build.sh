@@ -2,6 +2,7 @@
 # Production build: Next standalone server + its static assets.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+bash scripts/copy-ort.sh
 npx next build
 cp -r public .next/standalone/
 mkdir -p .next/standalone/.next

@@ -78,6 +78,23 @@ const MidiCommon = {
 export const MidiPlay = z.object({ ...Base, type: z.literal("midi-play"), ...MidiCommon });
 export const MidiEcho = z.object({ ...Base, type: z.literal("midi-echo"), ...MidiCommon, play: Playback.optional(), showNotes: z.boolean().default(false) });
 
+// ---------- voice ----------
+// Sung pitches are graded from voice-score metrics (server, or the browser fallback).
+// Octave-agnostic by default: a note sung an octave away from the written one counts,
+// so content works for any voice type before the learner's range is known.
+const SingCommon = {
+  tolerance: z.number().min(10).max(200).default(50), // cents; full credit inside, zero at 3x
+  octaveAgnostic: z.boolean().default(true),
+  reference: z.boolean().default(true), // play the target(s) before recording
+  fitRange: z.boolean().default(true), // move written notes into the stored comfortable range (by octaves)
+};
+export const SingPitch = z.object({ ...Base, type: z.literal("sing-pitch"), ...SingCommon, notes: z.array(NoteS).min(1), sustain: z.number().min(0).max(15).default(2) });
+export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(NoteS).optional(), derive: Derive.optional(), beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
+/** Records a low glide and a high glide; stores the learner's range. */
+export const VoiceRange = z.object({ ...Base, type: z.literal("voice-range") });
+/** Fatigue/hoarseness check-in. Anything but "fine" ends voice work for the day. */
+export const Checkin = z.object({ ...Base, type: z.literal("checkin") });
+
 /** Self-reported activity (warm-ups, practice routines). Scored by the learner. */
 export const Practice = z.object({ ...Base, type: z.literal("practice"), minutes: z.number().min(0.5).max(30).default(3), play: Playback.optional() });
 
@@ -98,13 +115,15 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("progression"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), tempo: z.number().optional(), octave: z.enum(["exact", "any"]).default("any"), echo: z.boolean().default(false) }),
   z.object({ kind: z.literal("melody-echo"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(1), z.number().int().min(1)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), startOnTonic: z.boolean().default(true), octave: z.number().int().default(4), tempo: z.number().default(80) }),
   z.object({ kind: z.literal("degree-ear"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(8)).min(2), answer: z.enum(["choose", "play"]).default("choose"), octave: z.number().int().default(4) }),
+  z.object({ kind: z.literal("pitch-match"), range: Range.optional(), sustain: z.number().min(0).max(10).default(2), tolerance: z.number().min(10).max(200).default(50), intervals: z.array(IvS).optional() }),
+  z.object({ kind: z.literal("phrase-sing"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(2), z.number().int().min(2)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), tempo: z.number().default(72), tolerance: z.number().min(10).max(200).default(50) }),
   z.object({ kind: z.literal("bass-echo"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), length: z.number().int().min(2).max(8).default(4), octave: z.number().int().default(2), tempo: z.number().default(70) }),
 ]);
 export type Gen = z.infer<typeof Gen>;
 
 export const Generated = z.object({ ...Base, type: z.literal("generated"), count: z.number().int().min(1).max(30).default(5), gen: Gen });
 
-export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated]);
+export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated, SingPitch, SingPhrase, VoiceRange, Checkin]);
 export type Exercise = z.infer<typeof Exercise>;
 
 export const Lesson = z.object({

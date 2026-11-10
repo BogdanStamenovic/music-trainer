@@ -1,0 +1,61 @@
+id: V-004
+track: V
+order: 4
+title: {en: "Pitch matching I: unison", sr: "Pogađanje tona I: unisono"}
+prereqs: [V-003]
+minutes: 10
+tags: [voice, pitch-matching, intonation]
+explain:
+  en: |
+    **Pitch matching** means singing exactly the note you hear: a **unison** with the piano.
+    It is the base of all singing in tune (**intonation**, Serbian: *intonacija*).
+
+    How to do it:
+
+    1. **Listen** to the whole note before you breathe. Hear it "inside" first; a pianist's ear is already good at this.
+    2. **Hum it** quietly. Humming is easy to adjust and gentle on the voice.
+    3. **Open to "ah"** and hold it. Small slides at the start are normal; aim to settle on the note and stay there.
+
+    If the note feels too high or too low, sing it **an octave lower or higher**: the app counts the same note in any octave.
+    The notes are picked from the comfortable range you measured.
+
+    Off a little? Do not push or get louder. Listen again, imagine it, and slide gently until it "locks" with the sound in your head.
+    The pitch tracker is a helpful screen, not a judge: a single bad score can be the microphone, not you.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Pogađanje tona** znači otpevati tačno ton koji čuješ: **unisono** sa klavirom.
+    To je osnova čistog pevanja (**intonacija**, engl. *intonation*).
+
+    Kako se radi:
+
+    1. **Slušaj** ceo ton pre nego što udahneš. Prvo ga čuj „u sebi”; uvo pijaniste je u tome već dobro.
+    2. **Otpevuši ga** tiho. Pevušenje se lako ispravlja i nežno je prema glasu.
+    3. **Otvori na „a”** i drži ga. Malo klizanje na početku je normalno; cilj je da se smiriš na tonu i ostaneš na njemu.
+
+    Ako ti je ton previsok ili predubok, pevaj ga **oktavu niže ili više**: aplikacija priznaje isti ton u bilo kojoj oktavi.
+    Tonovi se biraju iz udobnog opsega koji si izmerio.
+
+    Malo promašuješ? Ne guraj i ne pojačavaj. Ponovo slušaj, zamisli ton i nežno klizi dok se ne „uklopi” sa zvukom u glavi.
+    Merač visine je korisna provera, ne sudija: jedan loš rezultat može da bude do mikrofona, a ne do tebe.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-004-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-004-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then hum along with the five notes (any octave)."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa pevuši uz pet tonova (bilo koja oktava)."
+    play: {derive: {scale: {tonic: C4, type: major-pentatonic, octave: false}}, mode: melodic, tempo: 72}
+  - id: V-004-3
+    type: generated
+    prompt: {en: "Unison: listen, hum, then sing the note on 'ah'", sr: "Unisono: slušaj, otpevuši, pa otpevaj ton na „a”"}
+    count: 6
+    pass: 0.6
+    gen: {kind: pitch-match, range: [F3, C4], sustain: 2, tolerance: 75}

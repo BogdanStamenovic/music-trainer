@@ -61,3 +61,34 @@ describe("grading", () => {
     expect(s).toBeLessThan(1);
   });
 });
+
+import { gradeSing } from "@/lib/grading";
+import { fitToRange } from "@/lib/curriculum/items";
+import type { SingItem } from "@/lib/curriculum/items";
+
+const sing = (o: Partial<SingItem>): SingItem => ({ id: "v#0", exerciseId: "v", kind: "sing", prompt: { en: "", sr: "" }, targets: [60], tolerance: 50, octaveAgnostic: true, noteLabels: { en: "", sr: "" }, ...o });
+const note = (index: number, cents: number, sustain = 2, octave = 0) => ({ index, target_midi: 60, cents_error: cents, sustain_s: sustain, octave_offset: octave });
+
+describe("sing grading", () => {
+  it("tolerance band, linear falloff to 3x", () => {
+    expect(gradeSing(sing({}), { analysis: { tracker: "t", notes: [note(0, -40)] } }).score).toBe(1);
+    expect(gradeSing(sing({}), { analysis: { tracker: "t", notes: [note(0, 100)] } }).score).toBe(0.5);
+    expect(gradeSing(sing({}), { analysis: { tracker: "t", notes: [note(0, 160)] } }).score).toBe(0);
+  });
+  it("missing note and no analysis score 0", () => {
+    expect(gradeSing(sing({ targets: [60, 62] }), { analysis: { tracker: "t", notes: [note(0, 0)] } }).score).toBe(0.5);
+    expect(gradeSing(sing({}), { analysis: null, reason: "nothing-voiced" }).score).toBe(0);
+  });
+  it("sustain shortfall scales the last note", () => {
+    expect(gradeSing(sing({ sustain: 4 }), { analysis: { tracker: "t", notes: [note(0, 0, 2)] } }).score).toBe(0.5);
+  });
+  it("octave offset only counts when not octave-agnostic", () => {
+    expect(gradeSing(sing({}), { analysis: { tracker: "t", notes: [note(0, 0, 2, 1)] } }).score).toBe(1);
+    expect(gradeSing(sing({ octaveAgnostic: false }), { analysis: { tracker: "t", notes: [note(0, 0, 2, 1)] } }).score).toBe(0);
+  });
+  it("fitToRange moves by octaves into the range", () => {
+    expect(fitToRange([60, 64, 67], [45, 64])).toEqual([48, 52, 55]);
+    expect(fitToRange([48, 52], [57, 76])).toEqual([60, 64]);
+    expect(fitToRange([60], undefined)).toEqual([60]);
+  });
+});

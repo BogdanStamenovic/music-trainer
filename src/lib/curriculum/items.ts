@@ -47,7 +47,46 @@ export interface PracticeItem extends ItemBase {
   kind: "practice";
   minutes: number;
 }
-export type Item = McqItem | NamesItem | MidiItem | PracticeItem;
+export interface SingItem extends ItemBase {
+  kind: "sing";
+  targets: number[]; // MIDI notes to sing, in order
+  beats?: number[]; // phrase: duration of each target in beats (with tempo)
+  tempo?: number;
+  sustain?: number; // pitch: seconds to hold the (last) note
+  tolerance: number; // cents
+  octaveAgnostic: boolean;
+  noteLabels: Loc;
+}
+export interface RangeItem extends ItemBase {
+  kind: "range";
+}
+export interface CheckinItem extends ItemBase {
+  kind: "checkin";
+}
+export type Item = McqItem | NamesItem | MidiItem | PracticeItem | SingItem | RangeItem | CheckinItem;
+
+/** Learner state that shapes generated items. Stored with each submission so the server regenerates the same items. */
+export interface GenCtx {
+  voiceRange?: [number, number]; // comfortable range, MIDI low..high
+}
+
+/** Move a group of notes by whole octaves so it sits inside the comfortable range (best effort). */
+export function fitToRange(ms: number[], range?: [number, number]): number[] {
+  if (!range || !ms.length) return ms;
+  const [lo, hi] = range;
+  const mid = (lo + hi) / 2;
+  const center = (Math.min(...ms) + Math.max(...ms)) / 2;
+  let shift = Math.round((mid - center) / 12) * 12;
+  // prefer a shift that keeps every note inside the range, if one exists
+  for (const k of [shift, shift - 12, shift + 12]) {
+    if (Math.min(...ms) + k >= lo && Math.max(...ms) + k <= hi) {
+      shift = k;
+      break;
+    }
+  }
+  return ms.map((m) => m + shift);
+}
+const midiLabels = (ms: number[]): Loc => join(ms.map((m) => nno(midiToNote(m, false))));
 
 // ---------- seeded RNG ----------
 function hash(s: string): number {
@@ -180,7 +219,7 @@ function mcq(rng: Rng, correct: string, pool: string[], k = 4): { options: strin
 }
 
 // ---------- static exercises ----------
-function staticItem(ex: Exclude<Exercise, { type: "generated" }>): Item {
+function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = {}): Item {
   const base = { id: `${ex.id}#0`, exerciseId: ex.id, prompt: ex.prompt, abc: ex.abc };
   switch (ex.type) {
     case "mcq":
@@ -210,11 +249,25 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>): Item {
     }
     case "practice":
       return { ...base, kind: "practice", minutes: ex.minutes, play: playSpec(ex.play) };
+    case "sing-pitch": {
+      const ms = ex.fitRange ? fitToRange(ex.notes.map((n) => toMidi(parseNote(n))), ctx.voiceRange) : ex.notes.map((n) => toMidi(parseNote(n)));
+      return { ...base, kind: "sing", targets: ms, sustain: ex.sustain, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: midiLabels(ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: 50 } : undefined };
+    }
+    case "sing-phrase": {
+      const raw = ex.notes ? ex.notes.map((n) => toMidi(parseNote(n))) : derive(ex.derive!)[0].map(toMidi);
+      const ms = ex.fitRange ? fitToRange(raw, ctx.voiceRange) : raw;
+      const beats = ex.beats ?? ms.map(() => 1);
+      return { ...base, kind: "sing", targets: ms, beats, tempo: ex.tempo, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: midiLabels(ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: ex.tempo } : undefined };
+    }
+    case "voice-range":
+      return { ...base, kind: "range" };
+    case "checkin":
+      return { ...base, kind: "checkin" };
   }
 }
 
 // ---------- generators ----------
-function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng, idx: number): Item {
+function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng, idx: number, ctx: GenCtx = {}): Item {
   const id = `${ex.id}#${idx}`;
   const base = { id, exerciseId: ex.id };
   switch (g.kind) {
@@ -608,6 +661,80 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         answer,
       };
     }
+    case "pitch-match": {
+      // in the learner's comfortable range when known; written range otherwise (graded octave-agnostic)
+      const [lo, hi] = ctx.voiceRange ?? [toMidi(parseNote(g.range?.[0] ?? "C3")), toMidi(parseNote(g.range?.[1] ?? "C4"))];
+      if (g.intervals) {
+        for (let t = 0; t < 200; t++) {
+          const iv = rng.pick(g.intervals);
+          const root = midiToNote(rng.int(lo, hi), rng.next() < 0.5);
+          let top: Note;
+          try {
+            top = transpose(root, iv);
+          } catch {
+            continue;
+          }
+          if (toMidi(top) > hi || Math.abs(top.acc) > 1) continue;
+          const ms = [toMidi(root), toMidi(top)];
+          const ivl = ivLoc(iv);
+          return {
+            ...base,
+            kind: "sing",
+            targets: ms,
+            beats: [2, 2],
+            tempo: 60,
+            tolerance: g.tolerance,
+            octaveAgnostic: true,
+            noteLabels: midiLabels(ms),
+            play: { mode: "melodic", notes: [ms[0]], tempo: 40 },
+            prompt: L(`You hear ${noteStr(root)}. Sing it, then the note a ${ivl.en} above (two beats each).`, `Čuješ ${noteNameSr(root, true)}. Otpevaj ga, pa ton koji je ${ivl.sr} iznad (po dve dobe).`),
+          };
+        }
+        throw new Error(`pitch-match: could not generate for ${ex.id}`);
+      }
+      const m = rng.int(lo, hi);
+      return {
+        ...base,
+        kind: "sing",
+        targets: [m],
+        sustain: g.sustain,
+        tolerance: g.tolerance,
+        octaveAgnostic: true,
+        noteLabels: midiLabels([m]),
+        play: { mode: "melodic", notes: [m], tempo: 40 },
+        prompt: L(`Listen, then sing the note on "ah" and hold it ~${g.sustain} s.`, `Slušaj, pa otpevaj ton na "a" i drži ga ~${g.sustain} s.`),
+      };
+    }
+    case "phrase-sing": {
+      const tonic = parseNote(rng.pick(g.tonics), 3);
+      const sc = scale(tonic, g.type, true);
+      const allowed = (g.degrees ?? sc.map((_, i) => i + 1)).map((d) => d - 1).filter((i) => i < sc.length);
+      const len = rng.int(g.length[0], g.length[1]);
+      let cur = 0;
+      const seq = [cur];
+      for (let i = 1; i < len; i++) {
+        const cand = allowed.filter((d) => Math.abs(d - cur) <= g.maxLeap && d !== cur);
+        // avoid see-saw phrases (G A G A): do not return to the note before last when there is another way on
+        const fresh = cand.filter((d) => d !== seq[seq.length - 2]);
+        cur = rng.pick(fresh.length ? fresh : cand.length ? cand : allowed);
+        seq.push(cur);
+      }
+      const raw = seq.map((i) => toMidi(sc[i]));
+      const ms = fitToRange(raw, ctx.voiceRange);
+      const kl = keyName(tonic, g.type, g.type !== "natural-minor").nom;
+      return {
+        ...base,
+        kind: "sing",
+        targets: ms,
+        beats: ms.map(() => 1),
+        tempo: g.tempo,
+        tolerance: g.tolerance,
+        octaveAgnostic: true,
+        noteLabels: join(seq.map((i) => nn(sc[i]))),
+        play: { mode: "melodic", notes: ms, tempo: g.tempo },
+        prompt: L(`${kl.en}: listen to the ${len}-note phrase, then sing it back on "la" (one beat per note).`, `${kl.sr}: slušaj frazu od ${len} ${len <= 4 ? "tona" : "tonova"}, pa je otpevaj na "la" (jedna doba po tonu).`),
+      };
+    }
     case "bass-echo": {
       const key = parseNote(rng.pick(g.keys), g.octave);
       const roots: Note[] = [];
@@ -638,15 +765,15 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
 }
 
 /** Items for one exercise. `seed` must be stored with the attempt for re-grading. */
-export function generateItems(ex: Exercise, seed: string, countOverride?: number): Item[] {
-  if (ex.type !== "generated") return [staticItem(ex)];
+export function generateItems(ex: Exercise, seed: string, countOverride?: number, ctx: GenCtx = {}): Item[] {
+  if (ex.type !== "generated") return [staticItem(ex, ctx)];
   const rng = new Rng(`${ex.id}|${seed}`);
   const count = countOverride ?? ex.count;
   const items: Item[] = [];
   const seen = new Set<string>();
   for (let i = 0, tries = 0; items.length < count && tries < count * 20; tries++) {
-    const it = genItem(ex, ex.gen, rng, i);
-    const key = JSON.stringify([it.prompt.en, it.abc, (it as McqItem).answer, (it as MidiItem).expect, it.play]);
+    const it = genItem(ex, ex.gen, rng, i, ctx);
+    const key = JSON.stringify([it.prompt.en, it.abc, (it as McqItem).answer, (it as MidiItem).expect, (it as SingItem).targets, it.play]);
     if (seen.has(key) && tries < count * 10) continue; // avoid identical repeats when the space allows it
     seen.add(key);
     items.push({ ...it, id: `${ex.id}#${i}` });

@@ -6,6 +6,7 @@ import { LocaleProvider, useI18n } from "@/lib/client/i18n";
 import { MidiStatus } from "./MidiStatus";
 import { startSync, onQueueChange, queued } from "@/lib/client/queue";
 import { midi } from "@/lib/client/midi";
+import { flushUploads } from "@/lib/client/voice";
 
 function Bar() {
   const { t, locale, setLocale } = useI18n();
@@ -14,6 +15,7 @@ function Bar() {
   const [pending, setPending] = useState(0);
   useEffect(() => {
     startSync();
+    void flushUploads();
     midi();
     const upd = () => void queued().then((q) => setPending(q.length)).catch(() => {});
     upd();
@@ -37,7 +39,7 @@ function Bar() {
       window.removeEventListener("offline", on);
     };
   }, [setLocale]);
-  const nav: [string, "today" | "progress" | "settings"][] = [["/", "today"], ["/progress", "progress"], ["/settings", "settings"]];
+  const nav: [string, "today" | "progress" | "settings" | "voice"][] = [["/", "today"], ["/progress", "progress"], ["/voice", "voice"], ["/settings", "settings"]];
   return (
     <header className="bar">
       <Link href="/" className="brand">♪ music-trainer</Link>

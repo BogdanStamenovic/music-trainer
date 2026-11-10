@@ -60,6 +60,8 @@ function checkExercise(ex: Exercise, where: string): string[] {
       errs.push(`${where}: check threw ${(e as Error).message}`);
     }
   }
+  if (ex.type === "sing-phrase" && !ex.notes && !ex.derive) errs.push(`${where}: sing-phrase needs notes or derive`);
+  if (ex.type === "sing-phrase" && ex.beats && ex.notes && ex.beats.length !== ex.notes.length) errs.push(`${where}: beats length != notes length`);
   if (ex.type === "mcq" && ex.answer >= ex.options.length) errs.push(`${where}: answer index ${ex.answer} out of range`);
   if ((ex.type === "midi-play" || ex.type === "midi-echo" || ex.type === "notation-input") && !ex.derive && !ex.expect && !("expectChords" in ex && ex.expectChords))
     errs.push(`${where}: needs expect or derive`);
@@ -73,9 +75,9 @@ function checkExercise(ex: Exercise, where: string): string[] {
     const d = derive(ex.derive)[0].map((n) => pcName(n));
     if (JSON.stringify(d) !== JSON.stringify(ex.expect)) errs.push(`${where}: expect ${ex.expect.join(" ")} != derived ${d.join(" ")}`);
   }
-  for (const seed of ["a", "b", "c"]) {
+  for (const [seed, ctx] of [["a", {}], ["b", { voiceRange: [45, 64] as [number, number] }], ["c", { voiceRange: [57, 76] as [number, number] }]] as const) {
     try {
-      const items = generateItems(ex, seed);
+      const items = generateItems(ex, seed, undefined, ctx);
       if (items.length === 0) errs.push(`${where}: generated no items`);
     } catch (e) {
       errs.push(`${where}: generation failed: ${(e as Error).message}`);
@@ -92,6 +94,15 @@ export function validateLessons(lessons: Lesson[]): string[] {
     if (ids.has(l.id)) errs.push(`duplicate lesson id ${l.id}`);
     ids.add(l.id);
     if (!l.id.startsWith(l.track + "-")) errs.push(`${l.id}: id does not match track ${l.track}`);
+    // Voice safety (spec): every voice lesson opens with the fatigue/hoarseness check-in,
+    // which can end the block, followed by a warm-up.
+    if (l.track === "V") {
+      if (l.exercises[0]?.type !== "checkin") errs.push(`${l.id}: voice lessons must start with a checkin exercise`);
+      if (!l.tags.includes("maintenance") && l.exercises[1]?.type !== "practice") errs.push(`${l.id}: voice lessons need a warm-up (practice) right after the check-in`);
+    }
+    for (const ex of l.exercises)
+      if (["sing-pitch", "sing-phrase", "voice-range", "checkin"].includes(ex.type) || (ex.type === "generated" && ["pitch-match", "phrase-sing"].includes(ex.gen.kind)))
+        if (l.track !== "V") errs.push(`${ex.id}: singing exercises belong in the V track (check-in + warm-up rules)`);
     for (const ex of l.exercises) {
       if (exIds.has(ex.id)) errs.push(`duplicate exercise id ${ex.id}`);
       exIds.add(ex.id);

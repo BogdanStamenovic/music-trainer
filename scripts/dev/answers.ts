@@ -1,12 +1,12 @@
 // Dev/E2E helper: print the items (with correct answers) the UI will generate
-// for an exercise and seed. Usage: tsx scripts/dev/answers.ts <exerciseId> <seed> [count]
+// for an exercise and seed. Usage: tsx scripts/dev/answers.ts <exerciseId> <seed> [count] [ctx JSON]
 import { loadCurriculum } from "../../src/lib/curriculum/loader";
 import { generateItems } from "../../src/lib/curriculum/items";
-const [exId, seed, count] = process.argv.slice(2);
+const [exId, seed, count, ctxJson] = process.argv.slice(2);
 const c = loadCurriculum();
 const ex = [...c.lessons.flatMap((l) => l.exercises), ...(c.placement?.sections.flatMap((s) => s.exercises) ?? [])].find((e) => e.id === exId);
 if (!ex) throw new Error(`no exercise ${exId}`);
-const items = generateItems(ex, seed, count ? Number(count) : undefined).map((it) => {
+const items = generateItems(ex, seed, count ? Number(count) : undefined, ctxJson ? JSON.parse(ctxJson) : {}).map((it) => {
   let playSec = 0;
   if (it.play) {
     const beat = 60 / it.play.tempo;

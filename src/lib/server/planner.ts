@@ -122,8 +122,9 @@ export function buildPlan(date: string, s: Settings = getSettings()): DayPlan {
     const exercises: { exerciseId: string; lessonId: string }[] = [];
     for (const r of rows) {
       const l = c.byId.get(r.lesson_id);
-      if (!l) continue;
-      const graded = l.exercises.filter((e) => e.type !== "practice");
+      // voice is assessed by recorded projects (M3), not in the quick weekly test
+      if (!l || l.track === "V") continue;
+      const graded = l.exercises.filter((e) => e.type !== "practice" && e.type !== "checkin");
       // prefer generated exercises: fresh items test the skill, not memory of the item
       const pick = graded.find((e) => e.type === "generated") ?? graded[0];
       if (pick) exercises.push({ exerciseId: pick.id, lessonId: l.id });

@@ -19,6 +19,9 @@ describe("curriculum content", () => {
           if (it.kind === "mcq") r = { kind: "mcq" as const, choice: it.answer };
           else if (it.kind === "names") r = { kind: "names" as const, text: it.expect.join(" "), locale: "en" as const };
           else if (it.kind === "practice") r = { kind: "practice" as const, selfScore: 1 };
+          else if (it.kind === "checkin") r = { kind: "checkin" as const, state: "fine" as const };
+          else if (it.kind === "range") r = { kind: "range" as const, recordingIds: [], lowMidi: 45, highMidi: 67 };
+          else if (it.kind === "sing") r = { kind: "sing" as const, recordingId: "x", analysis: { tracker: "test", notes: it.targets.map((t, i) => ({ index: i, target_midi: t, cents_error: 3, sustain_s: (it.sustain ?? 0) + 0.5 })) } };
           else {
             const evs: { t: number; type: "on" | "off"; note: number }[] = [];
             const beat = it.tempo ? 60000 / it.tempo : 500;
