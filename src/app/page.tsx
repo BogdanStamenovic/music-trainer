@@ -51,6 +51,21 @@ export default function TodayPage() {
         {p.kind === "focus" && p.focusUsed.length ? <span className="muted"> · {p.focusUsed.map((x) => t(x)).join(" + ")}</span> : null}
       </h1>
       {stale ? <p className="pill warn">{t("offline")}</p> : null}
+      {p.kind === "focus" || p.kind === "test" ? (
+        <p>
+          <button
+            type="button"
+            className={p.noPiano ? "primary" : "secondary"}
+            data-testid="no-piano"
+            onClick={async () => {
+              await fetch("/api/plan/no-piano", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ on: !p.noPiano, date: p.date }) });
+              await load();
+            }}
+          >
+            {p.noPiano ? `🎹 ${t("noPianoOff")}` : `🚫🎹 ${t("noPiano")}`}
+          </button>
+        </p>
+      ) : null}
       {p.note ? <p className="note">{l(p.note)}</p> : null}
 
       {d.settings?.placementPending?.length ? (

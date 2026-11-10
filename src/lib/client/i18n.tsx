@@ -112,6 +112,9 @@ const D = {
   placementLaterNote: ["Still to do (it is offered on the home page; until then that part starts from lesson 1)", "Ostalo za kasnije (nudi se na početnoj strani; do tada taj deo kreće od 1. lekcije)"],
   placementPendingBanner: ["Placement still to do", "Plasman još nije završen"],
   placementPendingHint: ["Takes a few minutes at the piano. Until then these lessons start from the beginning.", "Traje nekoliko minuta za klavirom. Do tada te lekcije kreću od početka."],
+  noPiano: ["No piano today", "Danas bez klavira"],
+  noPianoOff: ["Piano is back: normal plan", "Klavir je tu: običan plan"],
+  needsPiano: ["needs the piano: later", "treba klavir: kasnije"],
   mon: ["Mon", "Pon"], tue: ["Tue", "Uto"], wed: ["Wed", "Sre"], thu: ["Thu", "Čet"], fri: ["Fri", "Pet"], sat: ["Sat", "Sub"], sun: ["Sun", "Ned"],
   T: ["Theory", "Teorija"], E: ["Ear", "Sluh"], K: ["Keys", "Klavir"], V: ["Voice", "Glas"], C: ["Composition", "Kompozicija"], L: ["Lyrics", "Tekstovi"], test: ["Test", "Test"], rest: ["Rest", "Odmor"],
 } as const;

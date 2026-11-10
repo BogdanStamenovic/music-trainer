@@ -4,6 +4,9 @@ import { getSettings, Settings, WEEKDAYS, Weekday, Focus } from "./settings";
 import { lessonStatuses, dueReviews, placementDone, addDays } from "./progress";
 import { config } from "./config";
 import type { Lesson, Track } from "../curriculum/schema";
+import { needsPiano } from "../curriculum/items";
+export { needsPiano };
+import { voiceRest } from "./recordings";
 
 // One focus part per day, picked by weekday (spec change 2026-11-10), plus an
 // optional short maintenance block (SRS reviews + vocal warm-up).
@@ -26,7 +29,22 @@ export interface DayPlan {
   focusMinutes: number;
   maintenance: null | { reviews: { exerciseId: string; lessonId: string }[]; warmup: string | null; minutes: number };
   test: null | { exercises: { exerciseId: string; lessonId: string }[] };
+  noPiano?: boolean; // "no piano today": non-piano focus, no piano-only reviews (this day only)
   createdAt: number;
+}
+
+/**
+ * Theory is "ahead of schedule" when the learner has done at least one T-day's worth
+ * (~3 lessons) more than the T days on the schedule since the first planned day.
+ */
+export function theoryAhead(date: string, s: Settings): boolean {
+  const c = getCurriculum();
+  const st = lessonStatuses();
+  const doneT = c.lessons.filter((l) => l.track === "T" && done(st.get(l.id)?.status)).length;
+  const first = (getDb().prepare("SELECT min(date) d FROM day_plans").get() as { d: string | null }).d ?? date;
+  let tDays = 0;
+  for (let d = first; d < date; d = addDays(d, 1)) if (s.schedule[weekdayOf(d)].includes("T")) tDays++;
+  return doneT >= tDays * 3 + 3;
 }
 
 export function todayIn(tz = config.timezone, d = new Date()): string {
@@ -97,7 +115,7 @@ const TRACK_NAMES: Record<string, { en: string; sr: string }> = {
   L: { en: "Lyrics", sr: "Tekstovi" },
 };
 
-export function buildPlan(date: string, s: Settings = getSettings()): DayPlan {
+export function buildPlan(date: string, s: Settings = getSettings(), opts: { noPiano?: boolean } = {}): DayPlan {
   const c = getCurriculum();
   const weekday = weekdayOf(date);
   const focus = s.schedule[weekday];
@@ -108,12 +126,37 @@ export function buildPlan(date: string, s: Settings = getSettings()): DayPlan {
 
   const maintenance = (): DayPlan["maintenance"] => {
     if (!s.maintenance) return null;
-    const reviews = dueReviews(date, s.reviewLimit).map((r) => ({ exerciseId: r.exercise_id, lessonId: r.lesson_id }));
+    let due = dueReviews(date, opts.noPiano ? 100 : s.reviewLimit);
+    if (opts.noPiano) due = due.filter((r) => { const ex = c.byId.get(r.lesson_id)?.exercises.find((e) => e.id === r.exercise_id); return ex && !needsPiano(ex); }).slice(0, s.reviewLimit);
+    const reviews = due.map((r) => ({ exerciseId: r.exercise_id, lessonId: r.lesson_id }));
     const warm = c.lessons.find((l) => l.tags.includes("maintenance") && l.tags.includes("warmup"));
     return { reviews, warmup: warm?.id ?? null, minutes: Math.min(10, reviews.length * 1 + (warm ? 4 : 0)) };
   };
 
   if (focus.includes("rest")) return { ...base, kind: "rest", maintenance: maintenance() };
+
+  if (opts.noPiano) {
+    // theory unless it is ahead of schedule (then voice); voice never on a voice-rest day
+    let tracks: Track[] = theoryAhead(date, s) && !voiceRest(date) ? ["V"] : ["T"];
+    let lessons = fillFocus(tracks, s.focusMinutes, statuses);
+    if (!lessons.length) {
+      const alt: Track[] = tracks[0] === "T" && !voiceRest(date) ? ["V"] : ["T"];
+      const got = fillFocus(alt, s.focusMinutes, statuses);
+      if (got.length) [tracks, lessons] = [alt, got];
+    }
+    const name = tracks.map((t) => TRACK_NAMES[t]);
+    return {
+      ...base,
+      noPiano: true,
+      focusUsed: tracks,
+      lessons,
+      maintenance: maintenance(),
+      note: {
+        en: `No piano today: ${name.map((x) => x.en).join(" + ")} instead of the scheduled part. Exercises that need the keyboard are left for later.`,
+        sr: `Danas bez klavira: ${name.map((x) => x.sr).join(" + ")} umesto zakazanog dela. Vežbe kojima treba klavijatura ostaju za kasnije.`,
+      },
+    };
+  }
 
   if (focus.includes("test")) {
     // Weekly test (M1 version): one exercise from each lesson passed in the last 7 days.
@@ -173,6 +216,13 @@ export function getPlan(date: string): DayPlan {
   const st = lessonStatuses();
   for (const l of plan.lessons) l.status = st.get(l.id)?.status ?? "new";
   return plan;
+}
+
+/** Rebuild one day's plan with/without the "no piano today" override (the weekly schedule is untouched). */
+export function setNoPiano(date: string, on: boolean): DayPlan {
+  const plan = buildPlan(date, getSettings(), { noPiano: on });
+  if (plan.kind !== "placement") getDb().prepare("INSERT OR REPLACE INTO day_plans(date, plan, created_at) VALUES (?,?,?)").run(date, JSON.stringify(plan), now());
+  return getPlan(date);
 }
 
 export function resetPlan(date: string) {

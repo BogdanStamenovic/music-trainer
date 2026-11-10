@@ -783,3 +783,14 @@ export function generateItems(ex: Exercise, seed: string, countOverride?: number
 }
 
 export { SCALES, CHORDS };
+
+/** True when an exercise can only be done at a (MIDI) keyboard (used by "no piano today"). */
+export function needsPiano(ex: Exercise): boolean {
+  if (ex.type === "midi-play" || ex.type === "midi-echo") return true;
+  if (ex.type !== "generated") return false;
+  try {
+    return generateItems(ex, "probe", 1)[0]?.kind === "midi";
+  } catch {
+    return false;
+  }
+}

@@ -103,3 +103,24 @@ describe("progress + SRS", () => {
     expect(finishPlacement([{ exerciseId: "nope", score: 1, pass: true }]).skipped).toEqual([]);
   });
 });
+
+describe("no piano today", () => {
+  it("rebuilds the day with theory (or voice when theory is ahead), only for that day", async () => {
+    const { setNoPiano, getPlan, buildPlan: bp } = await import("@/lib/server/planner");
+    updateSettings({ placementSkipped: true, focusMinutes: 25 });
+    const normal = getPlan("2026-11-10"); // Tuesday: E/K
+    expect(normal.focusUsed).toEqual(["E", "K"]);
+    const np = setNoPiano("2026-11-10", true);
+    expect(np.noPiano).toBe(true);
+    expect(np.focusUsed).toEqual(["T"]);
+    expect(np.note?.sr).toMatch(/bez klavira/);
+    expect(getPlan("2026-11-10").noPiano).toBe(true); // persisted for the day
+    expect(bp("2026-11-17").focusUsed).toEqual(["E", "K"]); // next Tuesday untouched
+    expect(setNoPiano("2026-11-10", false).focusUsed).toEqual(["E", "K"]);
+  });
+  it("needsPiano: midi exercises yes, mcq no", async () => {
+    const { needsPiano } = await import("@/lib/curriculum/items");
+    expect(needsPiano({ id: "K-001-1", type: "midi-play", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], mode: "sequence", expect: ["C4"], octave: "exact", bass: false, showNotes: true })).toBe(true);
+    expect(needsPiano({ id: "T-001-1", type: "mcq", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], options: ["a", "b"], answer: 0 })).toBe(false);
+  });
+});
