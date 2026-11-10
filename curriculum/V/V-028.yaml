@@ -1,0 +1,131 @@
+id: V-028
+track: V
+order: 28
+title: {en: "Falsetto vs head voice: feeling the difference", sr: "Falset ili glavni glas: osetiti razliku"}
+prereqs: [V-027, V-015]
+minutes: 10
+tags: [voice, register]
+explain:
+  en: |
+    In lessons 14 and 15 you met two light ways of singing high: **head voice** and **falsetto**. They can sit on exactly the same pitch.
+    The difference is not how high, it is **how the vocal folds close**:
+
+    | | falsetto | head voice |
+    |---|---|---|
+    | the folds | vibrate at the edges, **do not fully close** | thin and light, but **they close** on every cycle |
+    | in the sound | air you can hear, hollow, "flutey" | clear, a small bright core, still light |
+    | the breath | runs out fast | lasts noticeably longer |
+    | the feel | almost nothing at the throat, air rushing | a little buzz in the face or the top of the head |
+
+    Why it matters: head voice is the light end of your **singing** voice, and it can later be blended with chest (the next two lessons: mix).
+    Falsetto is a colour of its own: lovely for effect, but it cannot carry weight. To mix you need to know which one you are in.
+
+    How to move from falsetto into head voice **without adding volume**:
+
+    - add a little **"edge"**: a soft **whimper**, like a puppy asking for food, or start the note with "n" or "ng";
+    - change "hoo" to **"oo"** with no "h", or to a narrow **"ee"**;
+    - **less air**, not more push. If it gets louder, it is the wrong move.
+
+    Going the other way (head into falsetto) you simply let more air through and let the sound go hollow.
+
+    The app checks **pitch only**. Which register you were in is for you to judge; register detection is not graded in this course.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    U 14. i 15. lekciji upoznao si dva laka načina za visoko pevanje: **glavni glas** i **falset**. Mogu da budu na potpuno istoj visini.
+    Razlika nije u tome koliko visoko, nego **kako se glasnice zatvaraju**:
+
+    | | falset | glavni glas |
+    |---|---|---|
+    | glasnice | trepere ivicama, **ne zatvaraju se potpuno** | tanke i lake, ali **zatvaraju se** u svakom titraju |
+    | u zvuku | vazduh koji se čuje, šuplje, „kao flauta” | jasno, malo svetlo jezgro, i dalje lagano |
+    | dah | brzo se potroši | traje primetno duže |
+    | osećaj | skoro ništa u grlu, vazduh juri | malo zujanja u licu ili na temenu |
+
+    Zašto je to važno: glavni glas je laki kraj tvog **pevačkog** glasa i kasnije može da se spoji sa grudnim (sledeće dve lekcije: miks).
+    Falset je posebna boja: lep kao efekat, ali ne može da nosi težinu. Da bi miksovao, moraš da znaš u kom si.
+
+    Kako preći iz falseta u glavni glas **bez dodavanja jačine**:
+
+    - dodaj malo **„ivice”**: tiho **cviljenje**, kao štene koje traži hranu, ili počni ton sa „n” ili „ng”;
+    - promeni „hu” u **„u”** bez „h”, ili u usko **„i”**;
+    - **manje vazduha**, ne više guranja. Ako postane glasnije, to je pogrešan potez.
+
+    U suprotnom smeru (iz glavnog glasa u falset) samo pustiš više vazduha i pustiš zvuk da postane šupalj.
+
+    Aplikacija proverava **samo visinu**. U kom si registru bio, procenjuješ ti; prepoznavanje registra se u ovom kursu ne ocenjuje.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-028-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-028-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens through the break, then 3 light owl hoots ('hoo') sliding down from high."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana kroz lom, pa 3 lagana huktanja („hu”) uz klizanje odozgo naniže."
+  - id: V-028-3
+    type: sing-pitch
+    prompt:
+      en: "Falsetto: an airy 'hoo' on the note for 2 seconds. Hollow and breathy is right here. An octave higher if that is easier."
+      sr: "Falset: vazdušasto „hu” na tonu 2 sekunde. Ovde je šuplje i dahtavo ispravno. Oktavu više ako je lakše."
+    notes: [F4]
+    sustain: 2
+    fitRange: high
+    tolerance: 75
+    pass: 0.6
+  - id: V-028-4
+    type: sing-pitch
+    prompt:
+      en: "Head voice on the same note: start with a tiny whimper or an 'n', then a clear 'oo', 3 seconds. Same volume as the falsetto, less air."
+      sr: "Glavni glas na istom tonu: počni malim cviljenjem ili sa „n”, pa jasno „u”, 3 sekunde. Ista jačina kao falset, manje vazduha."
+    notes: [F4]
+    sustain: 3
+    fitRange: high
+    tolerance: 75
+    pass: 0.6
+  - id: V-028-5
+    type: sing-phrase
+    prompt:
+      en: "Switch on one note, with a short breath in each rest: falsetto 'hoo', head 'noo', falsetto 'hoo', head 'noo'. The pitch stays; only the air and the colour change."
+      sr: "Menjaj na jednom tonu, sa kratkim udahom u svakoj pauzi: falset „hu”, glavni „nu”, falset „hu”, glavni „nu”. Visina stoji; menjaju se samo vazduh i boja."
+    notes: [E4, r, E4, r, E4, r, E4]
+    beats: [2, 1, 2, 1, 2, 1, 2]
+    tempo: 60
+    fitRange: high
+    tolerance: 75
+    pass: 0.6
+  - id: V-028-6
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 down in head voice on 'nee' (narrow, light, a little buzz in the face). If it turns hollow and airy, you slipped into falsetto: add a touch of whimper."
+      sr: "5-4-3-2-1 naniže u glavnom glasu na „ni” (usko, lagano, malo zujanja u licu). Ako postane šuplje i vazdušasto, skliznuo si u falset: dodaj malo cviljenja."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-028-7
+    type: mcq
+    prompt:
+      en: "You sing a high note and run out of air after 3 seconds; the sound is hollow and you hear the breath in it. Most likely you are in..."
+      sr: "Pevaš visok ton i ostaneš bez vazduha posle 3 sekunde; zvuk je šupalj i čuje se dah u njemu. Najverovatnije si u..."
+    options:
+      - {en: "falsetto", sr: "falsetu"}
+      - {en: "head voice", sr: "glavnom glasu"}
+      - {en: "chest voice", sr: "grudnom glasu"}
+    answer: 0
+  - id: V-028-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: on two easy high notes, switch falsetto - head - falsetto without changing the volume. Rate: could you switch at will, and which one lasted longer on a breath? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: na dva laka visoka tona menjaj falset - glavni - falset bez promene jačine. Oceni: da li možeš da menjaš po volji i koji traje duže na jedan dah? Pa 3 tiha pevušenja uz klizanje naniže."

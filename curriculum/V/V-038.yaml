@@ -1,0 +1,148 @@
+id: V-038
+track: V
+order: 38
+title: {en: "Singing in minor: natural vs harmonic", sr: "Pevanje u molu: prirodni i harmonski"}
+prereqs: [V-037, V-018]
+minutes: 11
+tags: [voice, minor]
+explain:
+  en: |
+    You know both scales from the keyboard. In A minor:
+
+    | | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|
+    | natural minor | E | F | **G** | A |
+    | harmonic minor | E | F | **G#** | A |
+
+    Only the **7th degree** changes. In natural minor it is a **whole step** below the tonic: the line can rest on G and the tonic does not feel urgent.
+    Raised to G# it becomes a **leading tone** (*vođica*), a half step below the tonic that **pulls up** into it. That pull is what makes a minor-key cadence (E major chord to A minor) sound final.
+
+    What changes for the **singer**:
+
+    - The **leading tone tends to be sung flat.** Untrained ears hear G# as "near G". Aim it high and let it resolve up to A.
+    - Between F and G# there is an **augmented 2nd** (*prekomerna sekunda*): 3 semitones, the same size as a minor 3rd, but written as a 2nd.
+      It sounds "exotic" (it is typical in Balkan and Middle Eastern melodies). Hear it as a minor 3rd and it becomes easy.
+    - **Natural minor** steps are all familiar (whole and half steps), but the G **going down** to F and E gives that dark, modal, folk-like colour. Do not let it drift sharp toward G#.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    E F G A | z E F ^G | A4 |]
+    ```
+
+    The app grades pitch; the 7th is where to listen hardest. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Obe lestvice znaš sa klavijature. U a-molu:
+
+    | | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|
+    | prirodni mol | E | F | **G** | A |
+    | harmonski mol | E | F | **Gis** | A |
+
+    Menja se samo **sedmi stupanj**. U prirodnom molu on je **ceo stepen** ispod toničnog tona: linija može da se odmori na G, a tonika ne deluje hitno.
+    Povišen u Gis postaje **vođica**, polustepen ispod tonike koji je **vuče naviše**. Ta privlačnost je ono što kadencu u molu (E-dur akord u a-mol) čini završnom.
+
+    Šta se menja za **pevača**:
+
+    - **Vođica se obično peva nisko.** Neškolovano uho čuje Gis kao „blizu G”. Ciljaj je visoko i pusti je da se razreši naviše u A.
+    - Između F i Gis je **prekomerna sekunda**: 3 polustepena, iste veličine kao mala terca, ali zapisana kao sekunda.
+      Zvuči „egzotično” (tipična je za balkanske i bliskoistočne melodije). Čuj je kao malu tercu i postaje laka.
+    - Koraci **prirodnog mola** su svi poznati (celi stepeni i polustepeni), ali G koje ide **naniže** u F i E daje onu tamnu, modalnu, narodsku boju. Ne dozvoli da ode visoko ka Gis.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    E F G A | z E F ^G | A4 |]
+    ```
+
+    Aplikacija ocenjuje visinu; sedmi stupanj je mesto gde treba najpažljivije slušati. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-038-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-038-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then hum along with the first five notes of A minor, up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa pevuši uz prvih pet tonova a-mola, gore i dole."
+    play: {notes: [A3, B3, C4, D4, E4, D4, C4, B3, A3], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+  - id: V-038-3
+    type: mcq
+    prompt:
+      en: "Listen to the scale. Which minor is it?"
+      sr: "Slušaj lestvicu. Koji je to mol?"
+    play: {derive: {scale: {tonic: D4, type: harmonic-minor}}, mode: melodic, tempo: 100}
+    options:
+      - {en: "harmonic minor (raised 7th, a leading tone)", sr: "harmonski mol (povišen 7. stupanj, vođica)"}
+      - {en: "natural minor (7th a whole step below the tonic)", sr: "prirodni mol (7. stupanj ceo stepen ispod tonike)"}
+      - {en: "major", sr: "dur"}
+    answer: 0
+    checks:
+      - scale: {tonic: D, type: harmonic-minor, is: [D, E, F, G, A, Bb, C#]}
+  - id: V-038-4
+    type: sing-phrase
+    prompt:
+      en: "Natural minor, 5 up to 8 and back down: E-F-G-A-G-F-E on 'la'. On the way down keep the G low (a whole step under A), dark and calm."
+      sr: "Prirodni mol, od 5 do 8 i nazad: E-F-G-A-G-F-E na „la”. Na putu naniže drži G nisko (ceo stepen ispod A), tamno i mirno."
+    notes: [E4, F4, G4, A4, G4, F4, E4]
+    beats: [1, 1, 1, 2, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - interval: {from: G4, to: A4, is: M2}
+  - id: V-038-5
+    type: sing-phrase
+    prompt:
+      en: "Harmonic minor, 5 up to 8 and back: E-F-G#-A-G#-F-E. Hear F to G# as a minor 3rd's distance; aim the G# high."
+      sr: "Harmonski mol, od 5 do 8 i nazad: E-F-Gis-A-Gis-F-E. Čuj korak F-Gis kao razmak male terce; ciljaj Gis visoko."
+    notes: [E4, F4, G#4, A4, G#4, F4, E4]
+    beats: [1, 1, 1, 2, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: F4, to: G#4, is: A2}
+      - semitones: {from: F4, to: G#4, is: 3}
+      - interval: {from: G#4, to: A4, is: m2}
+  - id: V-038-6
+    type: sing-phrase
+    prompt:
+      en: "Both in one breath: the full A minor scale down in natural minor (8 to 1), then the harmonic ending 3-2-7-1 (C-B-G#-A)."
+      sr: "Oba u jednom dahu: cela a-mol lestvica naniže u prirodnom molu (od 8 do 1), pa harmonski završetak 3-2-7-1 (C-H-Gis-A)."
+    notes: [A4, G4, F4, E4, D4, C4, B3, A3, r, C4, B3, G#3, A3]
+    beats: [1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: G#3, to: A3, is: m2}
+  - id: V-038-7
+    type: generated
+    prompt: {en: "Sing back the phrase in harmonic minor", sr: "Otpevaj frazu u harmonskom molu"}
+    count: 3
+    pass: 0.6
+    gen: {kind: phrase-sing, tonics: [A, D, E], type: harmonic-minor, length: [4, 6], maxLeap: 2, tempo: 66, tolerance: 50}
+  - id: V-038-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: play an E major chord, then sing G#-A and hold the A. Then play E minor and sing G-A. Rate whether you can feel the leading tone's pull in the first and its absence in the second. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: odsviraj E-dur akord, pa otpevaj Gis-A i zadrži A. Pa odsviraj e-mol i otpevaj G-A. Oceni da li osećaš privlačnost vođice u prvom i njeno odsustvo u drugom. Pa 3 tiha pevušenja uz klizanje naniže."

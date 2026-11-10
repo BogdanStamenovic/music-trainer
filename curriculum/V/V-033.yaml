@@ -1,0 +1,116 @@
+id: V-033
+track: V
+order: 33
+title: {en: "Agility I: slow 5-note runs", sr: "Okretnost I: spori nizovi od pet tonova"}
+prereqs: [V-032, V-023]
+minutes: 10
+tags: [voice, agility]
+explain:
+  en: |
+    A **run** (Serbian: *pasaž* or *brzi niz*) is a group of quick notes on one vowel. Lesson 23 touched it; today it gets its own method,
+    the same one you used for fast passages on the piano: **slow, exact, then a little faster**.
+
+    What a clean run needs:
+
+    - **Only the pitch moves.** Same vowel, same volume, same steady air on every note. Jaw, tongue and head stay still; no chewing, no nodding.
+    - **No "h" between notes.** Sneaking an "h" in (ah-hah-hah) makes each note separate and wastes air. Aim for a smooth "ah-ah-ah" where the notes
+      are distinct but joined, like a clean finger legato.
+    - **Light.** Heavy voices are slow voices. The faster the run, the smaller the sound.
+    - **Group the notes.** Feel the run in beats: a tiny lean on the first note of each group of two (eighths) or three (triplets) organises it,
+      the way a pianist thinks in hand positions instead of single notes.
+
+    Tempo strategy: the first runs are at a speed where every note can be **heard and placed**. Speed comes from repetition at a clean tempo, never from
+    rushing an unclean one. On your own, raise the metronome by a few clicks only after three clean repetitions.
+
+    The app grades pitch loosely (runs are hard to measure note by note); what you listen for is evenness.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Pasaž** (ili **brzi niz**, engl. *run*) je grupa brzih tonova na jednom samoglasniku. 23. lekcija ga je dotakla; danas dobija svoju metodu,
+    istu koju koristiš za brze pasaže na klaviru: **sporo, tačno, pa malo brže**.
+
+    Šta treba čistom pasažu:
+
+    - **Pomera se samo visina.** Isti samoglasnik, ista jačina, isti ravnomeran dah na svakom tonu. Vilica, jezik i glava miruju; bez žvakanja, bez klimanja.
+    - **Bez „h” između tonova.** Ubačeno „h” (a-ha-ha) odvaja svaki ton i troši vazduh. Cilj je glatko „a-a-a” u kome su tonovi
+      jasni, ali povezani, kao čist legato prstima.
+    - **Lagano.** Težak glas je spor glas. Što je pasaž brži, zvuk je manji.
+    - **Grupiši tonove.** Oseti pasaž po dobama: sićušan naglasak na prvom tonu svake grupe od dva (osmine) ili tri (triole) ga organizuje,
+      kao kad pijanista misli u položajima ruke umesto u pojedinačnim tonovima.
+
+    Strategija tempa: prvi pasaži su u brzini u kojoj svaki ton može da se **čuje i postavi**. Brzina dolazi od ponavljanja u čistom tempu, nikad od
+    žurenja u nečistom. Samostalno, podigni metronom za nekoliko udaraca tek posle tri čista ponavljanja.
+
+    Aplikacija ocenjuje visinu blago (pasaže je teško meriti ton po ton); ti slušaš ujednačenost.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-033-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-033-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 quiet lip-trill sirens, then lip trills on the five-note scale with the piano, twice; then once on 'ah' in quarter notes."
+      sr: "Zagrevanje: 3 tihe sirene treperenjem usana, pa treperenje usnama na lestvici od pet tonova uz klavir, dva puta; pa jednom na „a” u četvrtinama."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-033-3
+    type: sing-phrase
+    prompt:
+      en: "Slow run: 1-2-3-4-5-4-3-2-1 on 'ah' in eighth notes at a slow tempo, last note held. Every note placed; no 'h'."
+      sr: "Spori pasaž: 1-2-3-4-5-4-3-2-1 na „a” u osminama, u sporom tempu, poslednji ton zadržan. Svaki ton postavljen; bez „h”."
+    notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 60
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-033-4
+    type: sing-phrase
+    prompt:
+      en: "The same run in triplets (three notes per beat), lean lightly on the first of each three: 1-2-3, 4-5-4, 3-2 and the 1 held on the last triplet."
+      sr: "Isti pasaž u triolama (tri tona na dobu), lak naglasak na prvom od svaka tri: 1-2-3, 4-5-4, 3-2 i 1 zadržano na poslednjoj trioli."
+    notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4]
+    beats: [0.3333, 0.3333, 0.3334, 0.3333, 0.3333, 0.3334, 0.3333, 0.3333, 2]
+    tempo: 56
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-033-5
+    type: sing-phrase
+    prompt:
+      en: "A little faster: the eighth-note run at a moderate tempo, twice in a row on one breath (1-2-3-4-5-4-3-2, 1-2-3-4-5-4-3-2, 1)."
+      sr: "Malo brže: pasaž u osminama u umerenom tempu, dva puta zaredom u jednom dahu (1-2-3-4-5-4-3-2, 1-2-3-4-5-4-3-2, 1)."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 76
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-033-6
+    type: sing-phrase
+    prompt:
+      en: "The run in minor: 1-2-3-4-5-4-3-2-1 in A minor in eighth notes. The 3 is a half step above the 2: hear it before you sing it."
+      sr: "Pasaž u molu: 1-2-3-4-5-4-3-2-1 u a-molu u osminama. 3 je polustepen iznad 2: čuj ga pre nego što ga otpevaš."
+    notes: [A3, B3, C4, D4, E4, D4, C4, B3, A3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - interval: {from: B3, to: C4, is: m2}
+  - id: V-033-7
+    type: practice
+    minutes: 2
+    prompt:
+      en: "On your own with a metronome: the eighth-note run at a tempo where it is clean, 3 times. Then 4 clicks faster, 3 times, only if all three were clean. Rate the fastest clean tempo, and stop well before it gets heavy."
+      sr: "Samostalno uz metronom: pasaž u osminama u tempu u kome je čist, 3 puta. Pa 4 udarca brže, 3 puta, samo ako su sva tri bila čista. Oceni najbrži čist tempo i stani mnogo pre nego što postane težak."

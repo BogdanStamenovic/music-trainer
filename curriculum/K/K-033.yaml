@@ -1,0 +1,138 @@
+id: K-033
+track: K
+order: 33
+title: {en: "Improvising in A minor over i–iv–v (minor pentatonic, natural minor)", sr: "Improvizacija u a-molu preko i–iv–v (molska pentatonika, prirodni mol)"}
+prereqs: [K-020, K-028]
+minutes: 15
+tags: [keys, improvisation, minor]
+explain:
+  en: |
+    The blues in K-020 used the minor pentatonic over **dominant** chords. Here the same five
+    notes go over a plain minor progression, **i – iv – v** in A minor: Am – Dm – Em. The v is
+    minor (natural minor, no G♯), which gives a modal, folk or rock sound rather than a
+    classical cadence.
+
+    **Step 1: the A minor pentatonic** (A C D E G). No half steps, so nothing clashes hard,
+    and it fits all three chords:
+
+    | chord | chord tones | which of them are in the pentatonic |
+    |---|---|---|
+    | Am (i) | A C E | all three |
+    | Dm (iv) | D F A | D, A (no F) |
+    | Em (v) | E G B | E, G (no B) |
+
+    Over Dm and Em the pentatonic has only two chord tones each and misses the 3rd of Dm (F)
+    and the 5th of Em (B).
+
+    **Step 2: natural minor** (A B C D E F G) adds exactly those two notes. **F** is the 3rd of
+    Dm and **B** the 5th of Em, so they are strong targets over iv and v. Over Am they are
+    colour: B is a 9th (fine, even pretty), but F over Am rubs against E (a half step above
+    the 5th): use it as a passing note, not one to hold.
+
+    A pentatonic lick to start from:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    "Am"e g e d c2 A2 | "Dm"G2 A6 |]
+    ```
+
+    How to practise: one take with the pentatonic only, playing short phrases with rests (call
+    and response from K-028). Then a take with natural minor where you **aim for F at the
+    change to Dm and B at the change to Em**. Listen to how the line suddenly follows the
+    chords.
+  sr: |
+    Bluz u K-020 je koristio molsku pentatoniku preko **dominantnih** akorda. Ovde istih pet
+    tonova ide preko obične molske progresije, **i – iv – v** u a-molu: Am – Dm – Em. v je
+    molski (prirodni mol, bez Gis), što daje modalni, narodni ili rok zvuk, a ne klasičnu
+    kadencu.
+
+    **Korak 1: a-mol pentatonika** (A C D E G). Nema polustepena, pa se ništa oštro ne sudara,
+    i odgovara sva tri akorda:
+
+    | akord | tonovi akorda | koji su u pentatonici |
+    |---|---|---|
+    | Am (i) | A C E | sva tri |
+    | Dm (iv) | D F A | D, A (bez F) |
+    | Em (v) | E G H | E, G (bez H) |
+
+    Preko Dm i Em pentatonika ima samo po dva tona akorda i propušta tercu od Dm (F) i kvintu
+    od Em (H).
+
+    **Korak 2: prirodni mol** (A H C D E F G) dodaje baš ta dva tona. **F** je terca od Dm, a
+    **H** kvinta od Em, pa su to jaki ciljevi preko iv i v. Preko Am oni su boja: H je nona
+    (u redu, čak lepo), ali F preko Am trlja o E (polustepen iznad kvinte): koristi ga kao
+    prolaznicu, ne kao ton koji se drži.
+
+    Pentatonski motiv za početak:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    "Am"e g e d c2 A2 | "Dm"G2 A6 |]
+    ```
+
+    Kako vežbati: jedan pokušaj samo sa pentatonikom, kratke fraze sa pauzama (pitanje i
+    odgovor iz K-028). Zatim pokušaj sa prirodnim molom u kome **ciljaš F na promeni u Dm i H na
+    promeni u Em**. Slušaj kako linija odjednom prati akorde.
+exercises:
+  - id: K-033-1
+    type: mcq
+    prompt: {en: "Which notes of the A minor pentatonic (A C D E G) are chord tones of Em (E G B)?", sr: "Koji tonovi a-mol pentatonike (A C D E G) su tonovi akorda Em (E G H)?"}
+    options: ["E and G", "E, G and B", "A and E", "C and G"]
+    answer: 0
+    checks:
+      - scale: {tonic: A, type: minor-pentatonic, is: [A, C, D, E, G]}
+      - chord: {notes: [E4, G4, B4], root: E, quality: min}
+      - roman: {key: A, type: natural-minor, degree: 5, is: "v"}
+  - id: K-033-2
+    type: mcq
+    prompt: {en: "Natural minor adds B and F to the pentatonic. Over Dm (iv), F is…", sr: "Prirodni mol dodaje H i F pentatonici. Preko Dm (iv), F je…"}
+    options:
+      - {en: "the 3rd, a strong target", sr: "terca, jak cilj"}
+      - {en: "the 7th, to be avoided", sr: "septima, treba je izbegavati"}
+      - {en: "a note outside the chord", sr: "ton van akorda"}
+      - {en: "the root", sr: "osnovni ton"}
+    answer: 0
+    checks:
+      - interval: {from: D4, to: F4, is: m3}
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - roman: {key: A, type: natural-minor, degree: 4, is: "iv"}
+  - id: K-033-3
+    type: midi-play
+    prompt: {en: "The pentatonic lick from the example, ♩=84: E G E D C A | G A.", sr: "Pentatonski motiv iz primera, ♩=84: E G E D C A | G A."}
+    mode: sequence
+    expect: [E5, G5, E5, D5, C5, A4, G4, A4]
+    beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 3]
+    tempo: 84
+    checks:
+      - scale: {tonic: A, type: minor-pentatonic, is: [A, C, D, E, G]}
+      - interval: {from: G4, to: A4, is: M2}
+  - id: K-033-4
+    type: generated
+    prompt: {en: "Take 1: A minor pentatonic only, short phrases with rests", sr: "Pokušaj 1: samo a-mol pentatonika, kratke fraze sa pauzama"}
+    count: 1
+    gen: {kind: improv, keys: [A], type: natural-minor, scale: minor-pentatonic, numerals: [i, iv, v, i], beatsPerChord: 4, loops: 2, tempo: 80}
+  - id: K-033-5
+    type: generated
+    prompt: {en: "Take 2: natural minor, aiming for F as Dm arrives and B as Em arrives", sr: "Pokušaj 2: prirodni mol, ciljaj F kad stigne Dm i H kad stigne Em"}
+    count: 1
+    gen: {kind: improv, keys: [A], type: natural-minor, scale: natural-minor, numerals: [i, iv, v, i], beatsPerChord: 4, loops: 2, tempo: 84}
+  - id: K-033-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "An 8-bar minor form: i – iv – i – i – iv – iv – v – i. Pentatonic or natural minor, your choice; a call and response every 4 bars.", sr: "Molska forma od 8 taktova: i – iv – i – i – iv – iv – v – i. Pentatonika ili prirodni mol, po izboru; pitanje i odgovor na svaka 4 takta."}
+    count: 1
+    gen: {kind: improv, keys: [A], type: natural-minor, scale: natural-minor, numerals: [i, iv, i, i, iv, iv, v, i], beatsPerChord: 4, loops: 1, tempo: 92}
+  - id: K-033-7
+    type: practice
+    prompt: {en: "Same backing, but replace v (Em) with V (E major, with G♯) for one round, and play G♯ over it. Compare: v sounds modal and open, V pulls hard back to Am (the classical cadence from K-030). Choose the one you like for your own minor songs.", sr: "Ista podloga, ali za jedan krug zameni v (Em) sa V (E-dur, sa Gis), i sviraj Gis preko njega. Uporedi: v zvuči modalno i otvoreno, V snažno vuče nazad u Am (klasična kadenca iz K-030). Izaberi šta ti se dopada za sopstvene molske pesme."}
+    minutes: 3
+    checks:
+      - chord: {notes: [E4, "G#4", B4], root: E, quality: maj}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+    play: {derive: {roman: {key: A2, type: harmonic-minor, numerals: [i, iv, V, i]}}, mode: chords, tempo: 30}

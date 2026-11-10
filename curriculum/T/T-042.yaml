@@ -1,0 +1,139 @@
+id: T-042
+track: T
+order: 42
+prereqs: [T-041]
+title: {en: "The deceptive progression (V–vi, V–VI in minor)", sr: "Prekinuta kadenca (V–vi, V–VI u molu)"}
+minutes: 12
+tags: [harmony, cadence, four-part]
+explain:
+  en: |
+    After V the ear expects I. In a **deceptive progression** (deceptive cadence, prekinuta kadenca) the bass steps **up** from 5 to 6 instead, and the tonic chord is replaced by **vi** (in minor: **VI**). The melody often still lands on the tonic note, which is what makes it a surprise rather than a wrong turn: C is there, but under it is A minor instead of C major. Composers use it to **extend** a phrase: the music has to try again and cadence for real.
+
+    | key | progression | chords |
+    |---|---|---|
+    | C major | V → vi | G B D → A C E |
+    | A minor | V → VI | E G♯ B → F A C |
+
+    **Voice leading.** The bass moves a step (5 → 6), so use the "roots a 2nd apart" rule: the upper voices move **against** the bass. The leading tone rises to the tonic (B → C, G♯ → A), and the other two voices fall to the nearest chord tones. The result is a **doubled 3rd** in vi (C in A minor's chord; in minor's VI the doubled 3rd is A). That is not a mistake: it is the correct doubling here. Doubling the root instead produces parallel 5ths and octaves.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Ac] [GB] [Ec] |]
+    V:2 clef=bass
+    [C,E] [F,F] [G,D] [A,C] |]
+    ```
+
+    I – IV – V – vi in C. In vi, two voices have C.
+  sr: |
+    Posle V uho očekuje I. U **prekinutoj kadenci** (varljivoj kadenci) bas umesto toga ide za stupanj **naviše**, sa 5. na 6. stupanj, a tonični akord zamenjuje **vi** (u molu: **VI**). Melodija često ipak stiže na toniku, i zato to zvuči kao iznenađenje, a ne kao greška: C je tu, ali ispod njega je a-mol umesto C-dura. Kompozitori je koriste da **produže** frazu: muzika mora da pokuša ponovo i da se zaista završi.
+
+    | tonalitet | progresija | akordi |
+    |---|---|---|
+    | C-dur | V → vi | G H D → A C E |
+    | a-mol | V → VI | E Gis H → F A C |
+
+    **Vođenje glasova.** Bas ide za stupanj (5 → 6), pa važi pravilo „osnovni tonovi udaljeni za sekundu": gornji glasovi idu **suprotno** od basa. Vođica ide naviše na toniku (H → C, Gis → A), a druga dva glasa silaze do najbližih akordskih tonova. Rezultat je **udvojena terca** u vi (C u a-mol akordu; u molskom VI udvojena terca je A). To nije greška: to je ovde ispravno udvajanje. Ako se udvoji osnovni ton, nastaju paralelne kvinte i oktave.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Ac] [GB] [Ec] |]
+    V:2 clef=bass
+    [C,E] [F,F] [G,D] [A,C] |]
+    ```
+
+    I – IV – V – vi u C-duru. U vi dva glasa imaju C.
+exercises:
+  - id: T-042-1
+    type: mcq
+    prompt: {en: "In C major, a deceptive progression goes from V to…", sr: "U C-duru, prekinuta kadenca ide od V ka…"}
+    options: ["vi", "I", "IV", "iii"]
+    answer: 0
+    checks:
+      - roman: {key: C, type: major, degree: 6, is: vi}
+  - id: T-042-2
+    type: mcq
+    prompt: {en: "In A minor (harmonic), the deceptive resolution of V (E G♯ B) is…", sr: "U a-molu (harmonskom), prekinuto razrešenje V (E Gis H) je…"}
+    options: ["VI (F A C)", "i (A C E)", "iv (D F A)", "III (C E G)"]
+    answer: 0
+    checks:
+      - roman: {key: A, type: harmonic-minor, degree: 6, is: VI}
+      - chord: {notes: [F3, A3, C4], root: F, quality: maj}
+  - id: T-042-3
+    type: generated
+    count: 4
+    prompt: {en: "Authentic or deceptive? Listen to the last chord.", sr: "Autentična ili prekinuta? Slušaj poslednji akord."}
+    gen: {kind: progression-ear, keys: [C, G, F, D], options: [[I, IV, V, I], [I, IV, V, vi]], tempo: 60}
+  - id: T-042-4
+    type: mcq
+    prompt: {en: "Spot the error: V → vi in C.", sr: "Pronađi grešku: V → vi u C-duru."}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:C
+      V:1
+      [GB] [Ac] |]
+      V:2 clef=bass
+      [G,D] [A,E] |]
+    options:
+      - {en: "The root of vi is doubled, giving parallel 5ths and octaves; double the 3rd (C) instead", sr: "Udvojen je osnovni ton vi, pa nastaju paralelne kvinte i oktave; treba udvojiti tercu (C)"}
+      - {en: "The leading tone falls", sr: "Vođica silazi"}
+      - {en: "The bass should move down", sr: "Bas treba da ide naniže"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [G3, D4, G4, B4], root: G, quality: maj}
+      - chord: {notes: [A3, E4, A4, C5], root: A, quality: min}
+  - id: T-042-5
+    type: midi-play
+    prompt: {en: "Play I – IV – V – vi in C exactly as in the explanation.", sr: "Odsviraj I – IV – V – vi u C-duru tačno kao u objašnjenju."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Gc] [Ac] [GB] [Ec] |]
+      V:2 clef=bass
+      [C,E] [F,F] [G,D] [A,C] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [F3, F4, A4, C5], [G3, D4, G4, B4], [A3, C4, E4, C5]]
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [F3, F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G3, D4, G4, B4], root: G, quality: maj}
+      - chord: {notes: [A3, C4, E4, C5], root: A, quality: min}
+  - id: T-042-6
+    type: midi-play
+    prompt: {en: "Now in A minor: i – iv – V – VI, exactly as written. G♯ rises to A; VI has a doubled A.", sr: "Sada u a-molu: i – iv – V – VI, tačno kako je napisano. Gis ide na A; VI ima udvojeno A."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Am
+      V:1
+      [EA] [FA] [E^G] [CA] |]
+      V:2 clef=bass
+      [A,,C] [D,D] [E,B,] [F,A,] |]
+    mode: chords
+    octave: exact
+    expectChords: [[A2, C4, E4, A4], [D3, D4, F4, A4], [E3, B3, E4, G#4], [F3, A3, C4, A4]]
+    checks:
+      - chord: {notes: [A2, C4, E4, A4], root: A, quality: min}
+      - chord: {notes: [D3, D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [E3, B3, E4, G#4], root: E, quality: maj}
+      - chord: {notes: [F3, A3, C4, A4], root: F, quality: maj}
+  - id: T-042-7
+    type: generated
+    count: 3
+    prompt: {en: "Play the deceptive progression in block chords.", sr: "Odsviraj prekinutu kadencu u akordima."}
+    gen: {kind: progression, keys: [G, F, D], numerals: [I, IV, V, vi]}

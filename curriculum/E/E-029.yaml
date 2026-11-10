@@ -1,0 +1,127 @@
+id: E-029
+track: E
+order: 29
+title: {en: "Hearing V/V before V", sr: "Čuti V/V pre V"}
+prereqs: [E-028, T-043]
+minutes: 13
+tags: [ear, harmony, secondary-dominants]
+explain:
+  en: |
+    In C major the chord on 2 is D minor (D F A). Raise the F to **F#** and it becomes D major:
+    **V/V**, "five of five", the dominant of G. F# is the leading tone of G, so for a moment G sounds
+    like a tonic that you are being pulled into. Then G (V) goes home to C as usual.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [D,^FAc] [G,,GBd] [C,Gce] |]
+    ```
+
+    I – V7/V – V – I. Follow the lowest note of the right hand: **E – F# – G**. That half step F# → G
+    is the fingerprint of V/V.
+
+    What to listen for:
+
+    1. **A major chord where ii should be minor.** The bass is the same (2 → 5), so the bass alone
+       will not tell you. The colour does: V/V is bright and pushes forward; ii is soft.
+    2. **A chromatic note rising by half step.** The F# is not in the C scale. Hum the inner voice and
+       you will hear it climb into G.
+    3. **Where it goes.** V/V almost always goes to V (often through a cadential pause there) and then
+       to I. The arrival on V feels stronger than usual, like a half cadence with an exclamation mark.
+
+    With the seventh (V7/V, D F# A C) the C falls to B while the F# rises to G: the same two-way pull
+    as V7 – I, now aimed at V.
+  sr: |
+    U C-duru akord na 2. stupnju je d-mol (D F A). Povisi F u **Fis** i dobijaš D-dur: **V/V**,
+    „dominanta dominante" (dvostruka dominanta), dominanta od G. Fis je vođica ka G, pa na trenutak G
+    zvuči kao tonika ka kojoj te vuče. Onda G (V) ide kući na C kao i obično.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [D,^FAc] [G,,GBd] [C,Gce] |]
+    ```
+
+    I – V7/V – V – I. Prati najdublji ton desne ruke: **E – Fis – G**. Taj polustepen Fis → G je
+    otisak prsta za V/V.
+
+    Šta da slušaš:
+
+    1. **Durski akord tamo gde bi ii bio molski.** Bas je isti (2 → 5), pa sam bas neće reći. Boja hoće:
+       V/V je svetao i gura napred; ii je mek.
+    2. **Hromatski ton koji se penje polustepenom.** Fis nije u C-dur lestvici. Otpevuši unutrašnji
+       glas i čućeš kako se penje u G.
+    3. **Kuda ide.** V/V skoro uvek ide na V (često sa zastankom na njemu), pa onda na I. Dolazak na V
+       zvuči jače nego inače, kao polukadenca sa uzvičnikom.
+
+    Sa septimom (V7/V, D Fis A C) C pada na H, dok se Fis penje na G: isto dvostruko privlačenje kao
+    V7 – I, sada usmereno ka V.
+exercises:
+  - id: E-029-1
+    type: generated
+    prompt: {en: "ii (minor) or V/V (major) before the V?", sr: "ii (molski) ili V/V (durski) pre V?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, ii, V, I], [I, V/V, V, I]], tempo: 60}
+    checks:
+      - chord: {notes: [D3, F#3, A3], root: D, quality: maj}
+      - chord: {notes: [D3, F3, A3], root: D, quality: min}
+      - chord: {notes: [D3, F#4, C5, D5], root: D, quality: "7"}
+      - interval: {from: F#4, to: G4, is: m2}
+      - interval: {from: C5, to: B4, is: m2}
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: G, degree: 5, is: "V"}
+  - id: E-029-2
+    type: generated
+    prompt: {en: "With sevenths: ii7 or V7/V?", sr: "Sa septimama: ii7 ili V7/V?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, ii7, V7, I], [I, V7/V, V7, I]], tempo: 60}
+  - id: E-029-3
+    type: generated
+    prompt: {en: "Half cadences: what leads into the V?", sr: "Polukadence: šta vodi u V?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V/V, V], [I, IV, ii, V], [I, vi, V/V, V], [I, vi, ii, V]], tempo: 60}
+  - id: E-029-4
+    type: midi-echo
+    prompt: {en: "C major, I – V7/V – V – I. Play back the lowest right-hand voice (4 notes, starts on E4): find the chromatic step.", sr: "C-dur, I – V7/V – V – I. Odsviraj najdublji glas desne ruke (4 tona, počinje na E4): nađi hromatski korak."}
+    mode: sequence
+    expect: [E4, F#4, G4, G4]
+    octave: exact
+    play:
+      chords: [[C3, E4, G4, C5], [D3, F#4, A4, C5], [G2, G4, B4, D5], [C3, G4, C5, E5]]
+      tempo: 56
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [D3, F#4, A4, C5], root: D, quality: "7"}
+      - chord: {notes: [G2, G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [C3, G4, C5, E5], root: C, quality: maj}
+      - interval: {from: E4, to: F#4, is: M2}
+  - id: E-029-5
+    type: midi-echo
+    prompt: {en: "G major, I – V7/V – V – I. Same job: the lowest right-hand voice, starting on B3.", sr: "G-dur, I – V7/V – V – I. Isti zadatak: najdublji glas desne ruke, počinje na H3."}
+    mode: sequence
+    expect: [B3, C#4, D4, D4]
+    octave: exact
+    pass: 0.7
+    play:
+      chords: [[G2, B3, D4, G4], [A2, C#4, E4, G4], [D2, D4, F#4, A4], [G2, D4, G4, B4]]
+      tempo: 56
+    checks:
+      - chord: {notes: [G2, B3, D4, G4], root: G, quality: maj}
+      - chord: {notes: [A2, C#4, E4, G4], root: A, quality: "7"}
+      - chord: {notes: [D2, D4, F#4, A4], root: D, quality: maj}
+      - chord: {notes: [G2, D4, G4, B4], root: G, quality: maj}
+      - interval: {from: C#4, to: D4, is: m2}
+      - interval: {from: G4, to: F#4, is: m2}
+  - id: E-029-6
+    type: generated
+    prompt: {en: "Hear it, then play it: I–IV–V7/V–V–I", sr: "Čuj, pa odsviraj: I–IV–V7/V–V–I"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, F, D], type: major, numerals: [I, IV, V7/V, V, I], echo: true, smooth: true}
+  - id: E-029-7
+    type: practice
+    prompt: {en: "At the piano: play I – ii – V – I, then I – V/V – V – I in C, G and F, singing the inner voice (3 – 4 – 5 and 3 – #4 – 5). Then improvise a melody over each and let it touch #4 only in the V/V bar.", sr: "Za klavirom: odsviraj I – ii – V – I, pa I – V/V – V – I u C, G i F-duru, pevajući unutrašnji glas (3 – 4 – 5 i 3 – #4 – 5). Onda improvizuj melodiju preko svake i dodirni #4 samo u taktu sa V/V."}
+    minutes: 3

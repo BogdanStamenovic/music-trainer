@@ -1,0 +1,153 @@
+id: K-027
+track: K
+order: 27
+title: {en: "Improvising with chord tones over ii–V–I", sr: "Improvizacija sa tonovima akorda preko ii–V–I"}
+prereqs: [K-019, T-025]
+minutes: 15
+tags: [keys, improvisation, ii-V-I, guide-tones]
+explain:
+  en: |
+    In K-019 you landed on a chord tone at each change over I–IV–V. Over **ii7–V7–Imaj7** the
+    same rule has a sharper edge, because every chord now has a 7th and the guide tones
+    (K-013) move by a half step or not at all:
+
+    | chord in C | chord tones | 3rd | 7th |
+    |---|---|---|---|
+    | Dm7 (ii7) | D F A C | F | C |
+    | G7 (V7) | G B D F | B | F |
+    | Cmaj7 (Imaj7) | C E G B | E | B |
+
+    Two chains run through the progression: **C → B** (7th of Dm7 to 3rd of G7) and
+    **F → E** (7th of G7 to 3rd of Cmaj7). A solo that lands on those notes at the changes
+    "spells" ii–V–I even with no piano under it.
+
+    **A model line** (play it in exercise 2):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "Dm7"D F A c | "G7"B d G F | "Cmaj7"E4 |]
+    ```
+
+    Bar 1 climbs the Dm7 arpeggio to its 7th (C). C falls a half step to B on the downbeat of
+    G7. Bar 2 ends on F, the 7th of G7, which falls a half step to E on the downbeat of Cmaj7.
+
+    **Approach from below.** A note a half step under a target, played just before the beat,
+    pulls into it hard: A♯ into B, D♯ into E. Those notes are outside the scale, and that is
+    fine: they last an eighth or a quarter and resolve at once. (The grader screens your notes
+    against the scale and the chord sounding; a few chromatic approach notes will cost a
+    little and are still worth it.)
+
+    How to practise: first only the targets, one note per chord. Then add one approach note
+    before each target. Then fill the rest of the bar with scale steps and arpeggio notes.
+  sr: |
+    U K-019 si na svakoj promeni sletao na ton akorda preko I–IV–V. Preko **ii7–V7–Imaj7** isto
+    pravilo je oštrije, jer sada svaki akord ima septimu, a ključni tonovi (K-013) se pomeraju
+    za polustepen ili nimalo:
+
+    | akord u C-duru | tonovi akorda | terca | septima |
+    |---|---|---|---|
+    | Dm7 (ii7) | D F A C | F | C |
+    | G7 (V7) | G H D F | H | F |
+    | Cmaj7 (Imaj7) | C E G H | E | H |
+
+    Kroz progresiju idu dva lanca: **C → H** (septima od Dm7 na tercu od G7) i **F → E**
+    (septima od G7 na tercu od Cmaj7). Solo koji na promenama sleti na te tonove "izgovara"
+    ii–V–I i bez klavira ispod.
+
+    **Uzorna linija** (odsviraj je u vežbi 2):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "Dm7"D F A c | "G7"B d G F | "Cmaj7"E4 |]
+    ```
+
+    Prvi takt se penje arpeđom Dm7 do septime (C). C pada za polustepen na H na prvu dobu G7.
+    Drugi takt se završava na F, septimi od G7, koja pada za polustepen na E na prvu dobu Cmaj7.
+
+    **Prilaz odozdo.** Ton za polustepen ispod cilja, odsviran tik pre dobe, snažno vuče u
+    njega: Ais u H, Dis u E. Ti tonovi su van lestvice, i to je u redu: traju osminu ili
+    četvrtinu i odmah se razrešavaju. (Ocenjivač proverava tvoje tonove prema lestvici i akordu
+    koji zvuči; nekoliko hromatskih prilaznih tonova košta malo i ipak se isplati.)
+
+    Kako vežbati: prvo samo ciljevi, jedan ton po akordu. Zatim dodaj jedan prilazni ton pre
+    svakog cilja. Zatim popuni ostatak takta koracima iz lestvice i tonovima arpeđa.
+exercises:
+  - id: K-027-1
+    type: mcq
+    prompt: {en: "Over Dm7, F is the 3rd. When the chord changes to G7 and you hold F, what has it become?", sr: "Preko Dm7, F je terca. Kad se akord promeni u G7, a ti zadržiš F, šta je F postao?"}
+    options:
+      - {en: "the 7th of G7", sr: "septima od G7"}
+      - {en: "the 3rd of G7", sr: "terca od G7"}
+      - {en: "the 5th of G7", sr: "kvinta od G7"}
+      - {en: "a note outside G7", sr: "ton van G7"}
+    answer: 0
+    checks:
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: G3, to: F4, is: m7}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+  - id: K-027-2
+    type: midi-play
+    prompt: {en: "The model line from the example, ♩=92: D F A C | B D G F | E.", sr: "Uzorna linija iz primera, ♩=92: D F A C | H D G F | E."}
+    mode: sequence
+    expect: [D4, F4, A4, C5, B4, D5, G4, F4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 4]
+    tempo: 92
+    checks:
+      - chord: {notes: [D4, F4, A4, C5], root: D, quality: min7, inversion: 0}
+      - chord: {notes: [G4, B4, D5, F4], root: G, quality: "7", inversion: 3}
+      - semitones: {from: B4, to: C5, is: 1}
+      - semitones: {from: E4, to: F4, is: 1}
+  - id: K-027-3
+    type: midi-play
+    prompt: {en: "Targets with half-step approaches from below: (E) F – (A♯) B – (D♯) E. Each approach note on the beat before the change, ♩=80.", sr: "Ciljevi sa prilazom za polustepen odozdo: (E) F – (Ais) H – (Dis) E. Svaki prilazni ton na dobi pre promene, ♩=80."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nE | \"Dm7\"F3 ^A | \"G7\"B3 ^d | \"Cmaj7\"e4 |]"
+    mode: sequence
+    expect: [E4, F4, "A#4", B4, "D#5", E5]
+    beats: [1, 3, 1, 3, 1, 4]
+    tempo: 80
+    checks:
+      - semitones: {from: E4, to: F4, is: 1}
+      - semitones: {from: "A#4", to: B4, is: 1}
+      - semitones: {from: "D#5", to: E5, is: 1}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: C5, to: E5, is: M3}
+  - id: K-027-4
+    type: generated
+    prompt: {en: "ii–V–I in C, one bar per chord and two bars of I. Land on a 3rd or 7th at every change.", sr: "ii–V–I u C-duru, jedan takt po akordu i dva takta I. Na svakoj promeni sleti na tercu ili septimu."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major, numerals: [ii7, V7, Imaj7, Imaj7], beatsPerChord: 4, loops: 2, tempo: 88}
+  - id: K-027-5
+    type: generated
+    prompt: {en: "ii–V–I in F or B♭. Before you start, name the two guide-tone chains (in F: F → E and B♭ → A).", sr: "ii–V–I u F ili B-duru. Pre početka imenuj dva lanca ključnih tonova (u F-duru: F → E i B → A)."}
+    checks:
+      - interval: {from: G4, to: F5, is: m7}
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: C4, to: Bb4, is: m7}
+      - interval: {from: F4, to: A4, is: M3}
+      - semitones: {from: A4, to: Bb4, is: 1}
+    count: 1
+    gen: {kind: improv, keys: [F, Bb], scale: major, numerals: [ii7, V7, Imaj7, Imaj7], beatsPerChord: 4, loops: 2, tempo: 84}
+  - id: K-027-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "Faster changes: two beats per chord in G or D. Fewer notes, every change hit.", sr: "Brže promene: dve dobe po akordu u G ili D-duru. Manje tonova, svaka promena pogođena."}
+    count: 1
+    gen: {kind: improv, keys: [G, D], scale: major, numerals: [ii7, V7, Imaj7, Imaj7], beatsPerChord: 2, loops: 4, tempo: 80}
+  - id: K-027-7
+    type: practice
+    prompt: {en: "Arpeggio from the 3rd: over each chord play 3–5–7–9 (Dm7: F A C E; G7: B D F A; Cmaj7: E G B D). It sounds more like jazz than root-up arpeggios, and every bar starts on a guide tone. Then improvise, starting every bar this way and leaving the rest free.", sr: "Arpeđo od terce: preko svakog akorda sviraj 3–5–7–9 (Dm7: F A C E; G7: H D F A; Cmaj7: E G H D). Zvuči više kao džez nego arpeđa od osnovnog tona, i svaki takt počinje ključnim tonom. Zatim improvizuj tako da svaki takt počne ovako, a ostatak je slobodan."}
+    minutes: 4
+    checks:
+      - interval: {from: D4, to: E5, is: M9}
+      - interval: {from: G4, to: A5, is: M9}
+      - interval: {from: C4, to: D5, is: M9}
+      - chord: {notes: [D4, F4, A4, C5, E5], root: D, quality: min9}
+      - chord: {notes: [C4, E4, G4, B4, D5], root: C, quality: maj9}
+    play: {derive: {roman: {key: C3, numerals: [ii7, V7, Imaj7, Imaj7]}}, mode: chords, tempo: 22}

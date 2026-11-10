@@ -1,0 +1,226 @@
+id: L-007
+track: L
+order: 7
+prereqs: [L-006]
+title: {en: "Prosody: stressed syllables on strong beats", sr: "Prozodija: naglašeni slogovi na jakim dobama"}
+minutes: 15
+tags: [lyrics, prosody]
+explain:
+  en: |
+    **Prosody** is the fit between words and music. L-001 and L-002 marked the stresses in a
+    line; now the line has to sit on a **given rhythm**. The rule is short: **stressed syllables
+    on strong beats, unstressed ones in between.** When it breaks, listeners hear a wrong word
+    even if they cannot say why.
+
+    ### Which beats are strong
+    | meter | strongest | strong | weak |
+    |---|---|---|---|
+    | 4/4 | 1 | 3 | 2, 4, and every "and" between beats |
+    | 3/4 | 1 | — | 2, 3 |
+    | 2/4 | 1 | — | 2 |
+
+    Long notes and high notes also stand out, so they want stressed syllables too. A weak
+    syllable on a long, high note on beat 1 is the loudest kind of mistake.
+
+    ### The same words, set twice
+    Wrong: the line starts on beat 1, so *re* gets beat 1 and *MEM* falls on weak beat 2.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    E2 D2 C2 D2 | E2 D2 C4 |]
+    w: re-mem-ber the night we met
+    ```
+
+    Right: *I re* become a **pickup** (predtakt, L-002), so *MEM* lands on 1, *NIGHT* on 3 and
+    *MET* on the next 1. The unstressed *ber the* share beat 2 as two eighths.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    CD | E2 DC E2 D2 | C8 |]
+    w: I re-mem-ber the night we met
+    ```
+
+    ### Serbian
+    Most Serbian words are stressed on the first syllable, so most Serbian lines start **on**
+    the beat. A word stressed on the second syllable (*gi-TA-ra*, *ka-FA-na*, *za-BO-ra-vi*)
+    at the start of a line needs a pickup, exactly like *re-MEM-ber*:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    C2 | E2 D2 E2 D2 | E2 D6 |]
+    w: gi-ta-ra svi-ra ti-ho
+    ```
+
+    And because the last syllable of a longer word is never stressed, a **long note on the final
+    downbeat** wants a one-syllable stressed word (*noć*, *grad*, *dan*). If the line ends on
+    *TI-ho*, put *TI* on the downbeat and let *ho* follow, as above.
+
+    One trap to avoid for now: after short prepositions and *ne*, standard Serbian can move the
+    stress forward (*u grad* said as *U grad*), and speakers differ. When a line depends on
+    such a pair, rephrase so that the stress does not matter.
+
+    ### Fixing a bad fit, in this order
+    1. **Change the words**: reorder, or swap in a word with the right stress.
+    2. **Change the rhythm** if the melody is yours: add a pickup, split a note, move a syllable.
+    3. **Never bend the word.** *re-mem-BER* or *gi-ta-RA* only works as a deliberate joke.
+
+    ### At the piano
+    Play the melody, then speak the words in its rhythm while tapping the beats with your left
+    hand. Then sing them. Every capital letter should coincide with a tap on 1 or 3.
+  sr: |
+    **Prozodija** je slaganje reči i muzike. U L-001 i L-002 obeležavao si naglaske u stihu; sada
+    stih mora da legne na **zadati ritam**. Pravilo je kratko: **naglašeni slogovi na jake dobe,
+    nenaglašeni između.** Kad se prekrši, slušalac čuje pogrešnu reč i kad ne zna da kaže zašto.
+
+    ### Koje su dobe jake
+    | takt | najjača | jaka | slaba |
+    |---|---|---|---|
+    | 4/4 | 1 | 3 | 2, 4 i svako „i” između doba |
+    | 3/4 | 1 | — | 2, 3 |
+    | 2/4 | 1 | — | 2 |
+
+    Duge i visoke note se takođe ističu, pa i one traže naglašene slogove. Nenaglašen slog na
+    dugoj, visokoj noti na prvoj dobi je najglasnija vrsta greške.
+
+    ### Iste reči, postavljene dvaput
+    Pogrešno: stih počinje na prvoj dobi, pa *re* dobija prvu dobu, a *MEM* pada na slabu drugu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    E2 D2 C2 D2 | E2 D2 C4 |]
+    w: re-mem-ber the night we met
+    ```
+
+    Tačno: *I re* postaju **predtakt** (L-002), pa *MEM* pada na 1, *NIGHT* na 3, a *MET* na
+    sledeću 1. Nenaglašeni *ber the* dele drugu dobu kao dve osmine.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    CD | E2 DC E2 D2 | C8 |]
+    w: I re-mem-ber the night we met
+    ```
+
+    ### Srpski
+    Većina srpskih reči ima naglasak na prvom slogu, pa većina srpskih stihova počinje **na**
+    dobi. Reč sa naglaskom na drugom slogu (*gi-TA-ra*, *ka-FA-na*, *za-BO-ra-vi*) na početku
+    stiha traži predtakt, isto kao *re-MEM-ber*:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    C2 | E2 D2 E2 D2 | E2 D6 |]
+    w: gi-ta-ra svi-ra ti-ho
+    ```
+
+    Pošto poslednji slog duže reči nikad nije naglašen, **duga nota na poslednjoj jakoj dobi**
+    traži jednosložnu naglašenu reč (*noć*, *grad*, *dan*). Ako se stih završava sa *TI-ho*,
+    stavi *TI* na jaku dobu, a *ho* neka dođe posle, kao gore.
+
+    Jednu zamku zasad izbegavaj: posle kratkih predloga i posle *ne* standardni jezik može da
+    prebaci naglasak napred (*u grad* izgovoreno kao *U grad*), a govornici se razlikuju. Kad
+    stih zavisi od takvog para, preformuliši ga tako da naglasak ne bude bitan.
+
+    ### Popravka, ovim redom
+    1. **Promeni reči**: drugi red reči, ili reč sa pravim naglaskom.
+    2. **Promeni ritam** ako je melodija tvoja: dodaj predtakt, podeli notu, pomeri slog.
+    3. **Nikad ne krivi reč.** *re-mem-BER* ili *gi-ta-RA* radi samo kao namerna šala.
+
+    ### Za klavirom
+    Odsviraj melodiju, pa izgovori reči u njenom ritmu dok levom rukom tapšeš dobe. Onda ih
+    otpevaj. Svako veliko slovo treba da se poklopi sa udarcem na 1 ili 3.
+exercises:
+  - id: L-007-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 D2 C2 D2 | E2 D2 C4 |]\nw: re-mem-ber the night we met"
+    prompt: {en: "In this setting, which word has its stressed syllable on a weak beat?", sr: "U ovoj postavci, kojoj reči je naglašeni slog na slaboj dobi?"}
+    options: ["remember", "night", "met", "the"]
+    answer: 0
+  - id: L-007-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 | E2 D2 E2 D2 | C8 |]"
+    prompt: {en: "This rhythm has a one-beat pickup and six notes. Which line fits it with every stress on a strong beat (1 or 3)?", sr: "Ovaj ritam ima predtakt od jedne dobe i šest nota. Koji stih mu odgovara tako da svaki naglasak padne na jaku dobu (1 ili 3)?"}
+    options:
+      - "Tonight the city sleeps"
+      - "Lonely streets at midnight"
+      - "Waiting for the morning"
+      - "Nobody knows my name"
+    answer: 0
+  - id: L-007-3
+    type: mcq
+    # zabòraviti: stress on the 2nd syllable is undisputed (unlike gitara, where norms differ)
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 D2 C2 D2 | E2 D2 C4 |]\nw: za-bo-ra-vi me ti-ho"
+    prompt: {en: "“Zaboravi me tiho” set from beat 1 puts the stresses on weak beats. Which fix is right?", sr: "„Zaboravi me tiho” postavljeno od prve dobe stavlja naglaske na slabe dobe. Koja popravka je dobra?"}
+    options:
+      - {en: "Make “za” a pickup, so “BO” falls on beat 1", sr: "Neka „za” bude predtakt, pa „BO” pada na prvu dobu"}
+      - {en: "Sing it za-bo-ra-VI so the stress lands on beat 3", sr: "Pevaj za-bo-ra-VI da naglasak padne na treću dobu"}
+      - {en: "Reorder it to “Tiho zaboravi me” and keep the rhythm", sr: "Preokreni u „Tiho zaboravi me” i zadrži ritam"}
+      - {en: "Sing it faster so nobody hears the stress", sr: "Pevaj brže da niko ne čuje naglasak"}
+    answer: 0
+    checks:
+      - syllables: {text: "Zaboravi me tiho", lang: sr, is: 7}
+      - syllables: {text: "Tiho zaboravi me", lang: sr, is: 7}
+  - id: L-007-4
+    type: mcq
+    prompt: {en: "Which Serbian line needs a pickup (upbeat) so its stresses land on strong beats?", sr: "Kojem srpskom stihu treba predtakt da bi mu naglasci pali na jake dobe?"}
+    options: ["Kafana radi kasno", "Sutra rano idem", "Prozor gleda reku", "Ulica je prazna"]
+    answer: 0
+    checks:
+      - syllables: {text: "Kafana radi kasno", lang: sr, is: 7}
+      - syllables: {text: "Sutra rano idem", lang: sr, is: 6}
+      - syllables: {text: "Prozor gleda reku", lang: sr, is: 6}
+      - syllables: {text: "Ulica je prazna", lang: sr, is: 6}
+  - id: L-007-5
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 D2 E2 D2 | C8 |]"
+    prompt: {en: "Five notes; the last is long, on beat 1 of bar 2. Which Serbian line puts a stressed syllable on that long note?", sr: "Pet nota; poslednja je duga, na prvoj dobi drugog takta. Koji srpski stih stavlja naglašen slog na tu dugu notu?"}
+    options: ["Pada tiha noć", "Čekam te dugo", "Sedim i čekam", "Ulica spava"]
+    answer: 0
+    checks:
+      - syllables: {text: "Pada tiha noć", lang: sr, is: 5}
+      - syllables: {text: "Čekam te dugo", lang: sr, is: 5}
+      - syllables: {text: "Sedim i čekam", lang: sr, is: 5}
+      - syllables: {text: "Ulica spava", lang: sr, is: 5}
+  - id: L-007-6
+    type: mcq
+    prompt: {en: "A co-writer's melody is fixed, and your line puts a stressed syllable on a weak beat. What do you try first?", sr: "Melodija koautora je zaključana, a tvoj stih stavlja naglašen slog na slabu dobu. Šta prvo probaš?"}
+    options:
+      - {en: "Reorder the line or swap in a word whose stress fits", sr: "Promeniš red reči ili zameniš reč onom čiji naglasak odgovara"}
+      - {en: "Keep the words and sing the word with a different stress", sr: "Zadržiš reči i pevaš reč sa drugim naglaskom"}
+      - {en: "Add “oh” or “yeah” until the count works out", sr: "Dodaješ „oh” ili „jeah” dok se broj ne poklopi"}
+      - {en: "Nothing: listeners do not notice stress", sr: "Ništa: slušaoci ne primećuju naglasak"}
+    answer: 0
+  - id: L-007-7
+    type: write
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nG2 | c2 B2 A2 G2 | E4 z4 | F2 E2 D2 E2 | C4 z4 |]"
+    prompt:
+      en: "Folk-pop, English or Serbian: write two lines for this melody, one syllable per note. Line 1 has a pickup and 6 notes; line 2 starts on beat 1 and has 5 notes, ending on a long downbeat (one-syllable stressed word there, especially in Serbian). Write the stresses in CAPITALS, play the melody, then sing your words over it."
+      sr: "Folk-pop, engleski ili srpski: napiši dva stiha za ovu melodiju, jedan slog po noti. Prvi stih ima predtakt i 6 nota; drugi počinje na prvoj dobi i ima 5 nota, a završava se dugom notom na jakoj dobi (tu jednosložna naglašena reč, naročito na srpskom). Naglaske napiši VELIKIM SLOVIMA, odsviraj melodiju, pa otpevaj svoje reči preko nje."
+    language: either
+    lines: [2, 4]
+    rubric:
+      - id: count
+        label: {en: "One syllable per note", sr: "Jedan slog po noti"}
+        top: {en: "Line 1 has exactly 6 syllables and line 2 exactly 5, counted aloud against the notes.", sr: "Prvi stih ima tačno 6 slogova, a drugi tačno 5, prebrojano naglas uz note."}
+      - id: stress
+        label: {en: "Stresses on strong beats", sr: "Naglasci na jakim dobama"}
+        top: {en: "Every syllable on beat 1 or 3 is stressed in normal speech; the pickup syllable and the weak beats carry unstressed syllables; the final long note carries a stressed syllable.", sr: "Svaki slog na prvoj ili trećoj dobi je naglašen u običnom govoru; predtakt i slabe dobe nose nenaglašene slogove; poslednja duga nota nosi naglašen slog."}
+      - id: natural
+        label: {en: "Natural phrasing", sr: "Prirodan izraz"}
+        top: {en: "Word order sounds like speech, no filler words added for the count, and the two lines say one connected thing.", sr: "Red reči zvuči kao govor, nema reči dodatih samo zbog broja, a dva stiha govore jednu povezanu misao."}

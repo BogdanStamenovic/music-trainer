@@ -1,0 +1,163 @@
+id: K-029
+track: K
+order: 29
+title: {en: "Secondary dominants at the keys: I–V7/V–V7–I in 4 keys", sr: "Sekundarne dominante za klavirom: I–V7/V–V7–I u 4 tonaliteta"}
+prereqs: [T-043, K-023]
+minutes: 14
+tags: [keys, harmony, secondary-dominant, voice-leading]
+explain:
+  en: |
+    **V7/V** ("five-seven of five") is the dominant seventh chord that belongs to the key of
+    the dominant. In C the dominant is G; the V7 of G is **D7** (D F♯ A C). Played before G7 it
+    makes G sound, for a moment, like a tonic, so the arrival on V is stronger (T-043).
+
+    At the keyboard, think of V7/V as **ii with a raised 3rd**: Dm7 is D F A C, D7 is
+    D **F♯** A C. One note changes. That F♯ is the leading tone of G, and it is the note that
+    gives the chord its pull.
+
+    Use the K-023 hand shape and slot the new chord in:
+
+    | | I | V7/V | V7 | I |
+    |---|---|---|---|---|
+    | left hand | C3 | D3 | G2 | C3 |
+    | right hand | C4 E4 G4 | C4 F♯4 A4 | B3 D4 F4 G4 | C4 E4 G4 |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,CEG] [D,C^FA] | [G,,B,DFG] [C,CEG] |]
+    ```
+
+    Follow the voices from V7/V to V7:
+
+    - C (the 7th of D7) falls to B, as every 7th does.
+    - **F♯ slides down to F♮.** Over a plain V, F♯ would rise to G. But the next chord is V7,
+      and F is its 7th, so the line moves chromatically, F♯ → F. That half-step slide in an
+      inner voice is the sound of a secondary dominant going to V7.
+    - A falls to G, and D is added to complete G7.
+
+    The same shape in G, F and D is in the exercises. In each key, find the chromatic note
+    first: it is always the **raised 4th degree** (F♯ in C, C♯ in G, B♮ in F, G♯ in D).
+  sr: |
+    **V7/V** ("dominanta dominante", "pet-sedam od pet") je dominantni septakord koji pripada
+    tonalitetu dominante. U C-duru dominanta je G; V7 od G je **D7** (D Fis A C). Odsviran pre
+    G7, na trenutak čini da G zvuči kao tonika, pa je dolazak na V jači (T-043).
+
+    Za klavirom misli o V7/V kao o **ii sa povišenom tercom**: Dm7 je D F A C, D7 je
+    D **Fis** A C. Menja se jedan ton. Taj Fis je vođica ka G, i on akordu daje privlačnu silu.
+
+    Koristi oblik šake iz K-023 i ubaci novi akord:
+
+    | | I | V7/V | V7 | I |
+    |---|---|---|---|---|
+    | leva ruka | C3 | D3 | G2 | C3 |
+    | desna ruka | C4 E4 G4 | C4 Fis4 A4 | H3 D4 F4 G4 | C4 E4 G4 |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,CEG] [D,C^FA] | [G,,B,DFG] [C,CEG] |]
+    ```
+
+    Prati glasove od V7/V do V7:
+
+    - C (septima od D7) pada na H, kao svaka septima.
+    - **Fis klizi naniže na F.** Preko običnog V, Fis bi rastao na G. Ali sledeći akord je V7,
+      a F je njegova septima, pa linija ide hromatski, Fis → F. To klizanje za polustepen u
+      unutrašnjem glasu je zvuk sekundarne dominante koja ide u V7.
+    - A pada na G, a D se dodaje da G7 bude potpun.
+
+    Isti oblik u G, F i D-duru je u vežbama. U svakom tonalitetu prvo nađi hromatski ton: to
+    je uvek **povišeni četvrti stupanj** (Fis u C, Cis u G, H u F, Gis u D-duru).
+exercises:
+  - id: K-029-1
+    type: mcq
+    prompt: {en: "In C, ii7 is Dm7 (D F A C) and V7/V is D7. Which note is different?", sr: "U C-duru ii7 je Dm7 (D F A C), a V7/V je D7. Koji ton je drugačiji?"}
+    options:
+      - {en: "F becomes F♯", sr: "F postaje Fis"}
+      - {en: "C becomes C♯", sr: "C postaje Cis"}
+      - {en: "A becomes A♭", sr: "A postaje As"}
+      - {en: "D becomes D♯", sr: "D postaje Dis"}
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F4, A4, C5], root: D, quality: min7}
+      - chord: {notes: [D4, "F#4", A4, C5], root: D, quality: "7"}
+      - roman: {key: C, degree: 2, is: "ii7", seventh: true}
+      - numeral: {key: C, is: "V7/V", notes: [D4, "F#4", A4, C5]}
+      - semitones: {from: "F#4", to: G4, is: 1}
+  - id: K-029-2
+    type: mcq
+    prompt: {en: "V7/V in D major is…", sr: "V7/V u D-duru je…"}
+    options:
+      - {en: "E7 (E G♯ B D)", sr: "E7 (E Gis H D)"}
+      - {en: "A7 (A C♯ E G)", sr: "A7 (A Cis E G)"}
+      - {en: "Em7 (E G B D)", sr: "Em7 (E G H D)"}
+      - {en: "B7 (B D♯ F♯ A)", sr: "H7 (H Dis Fis A)"}
+    answer: 0
+    checks:
+      - chord: {notes: [E4, "G#4", B4, D5], root: E, quality: "7"}
+      - chord: {notes: [A3, "C#4", E4, G4], root: A, quality: "7"}
+      - numeral: {key: D, is: "V7/V", notes: [E4, "G#4", B4, D5]}
+      - numeral: {key: D, is: "V7", notes: [A3, "C#4", E4, G4]}
+      - semitones: {from: "G#4", to: A4, is: 1}
+  - id: K-029-3
+    type: midi-play
+    prompt: {en: "C major, as in the table: I – V7/V – V7 – I, one chord per beat at ♩=60. Listen for F♯ sliding to F.", sr: "C-dur, kao u tabeli: I – V7/V – V7 – I, jedan akord po dobi, ♩=60. Osluškuj kako Fis klizi na F."}
+    mode: chords
+    expectChords: [[C3, C4, E4, G4], [D3, C4, "F#4", A4], [G2, B3, D4, F4, G4], [C3, C4, E4, G4]]
+    tempo: 60
+    checks:
+      - numeral: {key: C, is: "V7/V", notes: [D3, C4, "F#4", A4]}
+      - chord: {notes: [D3, C4, "F#4", A4], root: D, quality: "7", inversion: 0}
+      - chord: {notes: [G2, B3, D4, F4, G4], root: G, quality: "7", inversion: 0}
+      - semitones: {from: F4, to: "F#4", is: 1}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-029-4
+    type: midi-play
+    prompt: {en: "G major: G2 · G4 B4 D5 → A2 · G4 C♯5 E5 → D3 · F♯4 A4 C5 D5 → G2 · G4 B4 D5, ♩=60. Here C♯ slides to C.", sr: "G-dur: G2 · G4 H4 D5 → A2 · G4 Cis5 E5 → D3 · Fis4 A4 C5 D5 → G2 · G4 H4 D5, ♩=60. Ovde Cis klizi na C."}
+    mode: chords
+    expectChords: [[G2, G4, B4, D5], [A2, G4, "C#5", E5], [D3, "F#4", A4, C5, D5], [G2, G4, B4, D5]]
+    tempo: 60
+    checks:
+      - chord: {notes: [G2, G4, B4, D5], root: G, quality: maj, inversion: 0}
+      - numeral: {key: G, is: "V7/V", notes: [A2, G4, "C#5", E5]}
+      - numeral: {key: G, is: "V7", notes: [D3, "F#4", A4, C5, D5]}
+      - chord: {notes: [D3, "F#4", A4, C5, D5], root: D, quality: "7", inversion: 0}
+      - semitones: {from: C5, to: "C#5", is: 1}
+  - id: K-029-5
+    type: midi-play
+    prompt: {en: "F major, notes hidden: I – V7/V – V7 – I (F – G7 – C7 – F), root in the bass. The chromatic note is B♮, sliding to B♭. ♩=60.", sr: "F-dur, bez prikaza tonova: I – V7/V – V7 – I (F – G7 – C7 – F), osnovni ton u basu. Hromatski ton je H, koji klizi na B. ♩=60."}
+    mode: chords
+    expectChords: [[F2, F4, A4, C5], [G2, F4, B4, D5], [C3, E4, G4, Bb4, C5], [F2, F4, A4, C5]]
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+    checks:
+      - chord: {notes: [F2, F4, A4, C5], root: F, quality: maj, inversion: 0}
+      - numeral: {key: F, is: "V7/V", notes: [G2, F4, B4, D5]}
+      - numeral: {key: F, is: "V7", notes: [C3, E4, G4, Bb4, C5]}
+      - chord: {notes: [C3, E4, G4, Bb4, C5], root: C, quality: "7", inversion: 0}
+      - semitones: {from: Bb4, to: B4, is: 1}
+  - id: K-029-6
+    type: midi-play
+    prompt: {en: "D major, notes hidden: I – V7/V – V7 – I (D – E7 – A7 – D), root in the bass, ♩=60.", sr: "D-dur, bez prikaza tonova: I – V7/V – V7 – I (D – E7 – A7 – D), osnovni ton u basu, ♩=60."}
+    mode: chords
+    expectChords: [[D3, D4, "F#4", A4], [E3, D4, "G#4", B4], [A2, "C#4", E4, G4, A4], [D3, D4, "F#4", A4]]
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+    checks:
+      - chord: {notes: [D3, D4, "F#4", A4], root: D, quality: maj, inversion: 0}
+      - numeral: {key: D, is: "V7/V", notes: [E3, D4, "G#4", B4]}
+      - numeral: {key: D, is: "V7", notes: [A2, "C#4", E4, G4, A4]}
+      - chord: {notes: [A2, "C#4", E4, G4, A4], root: A, quality: "7", inversion: 0}
+      - semitones: {from: G4, to: "G#4", is: 1}
+  - id: K-029-7
+    type: generated
+    prompt: {en: "Mixed keys, voice-led: I – V7/V – V7 – I, all chord tones present", sr: "Mešani tonaliteti, glatko vođenje glasova: I – V7/V – V7 – I, svi tonovi akorda prisutni"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, V7/V, V7, I], tempo: 60, smooth: true}

@@ -1,0 +1,135 @@
+id: E-023
+track: E
+order: 23
+title: {en: "Bass lines with inversions (I6, IV6, V6, V43)", sr: "Bas linije sa obrtajima (I6, IV6, V6, V43)"}
+prereqs: [E-022, T-036]
+minutes: 14
+tags: [ear, harmony, bass, inversions]
+explain:
+  en: |
+    Until now the bass was always the root, so bass lines jumped: C up to F, down to G. Real bass
+    lines mostly **walk**. Inversions are how they do it: the chord stays the same, but a different
+    chord tone goes to the bottom, so the bass can move by step.
+
+    Here is C major with a bass that simply climbs the scale, C D E F G, and lands on C:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [D,FGB] [E,Gc] | [F,FAc] [G,GBd] | [C,EGc]2 |]
+    ```
+
+    I – **V43** – **I6** – IV – V – I. The V43 is G7 with D in the bass; the I6 is C with E in the
+    bass. Same harmony as I – V – I – IV – V – I, but the line underneath is a scale.
+
+    What each inversion sounds like in the bass:
+
+    | chord | bass degree | typical move | how it feels |
+    |---|---|---|---|
+    | **I6** | 3 | 3 → 4 (to IV) | home, but lighter, not finished |
+    | **V6** | 7 | 7 → 1 (up a half step) | the leading tone in the bass: wants up |
+    | **V43** | 2 | 1 → 2 → 3 (passing) | a passing chord between I and I6 |
+    | **IV6** | 6 | 6 → 5 (to V) | soft step down into V |
+
+    How to listen: **hum the lowest note of every chord**, nothing else. Ask "step or leap?". A step
+    up or down from I almost always means an inversion (V6 below, V43 above); a leap of a fourth
+    or fifth means a root-position chord. Then check the ending: a cadence is still V – I in root
+    position, because a root-position V – I is what makes an ending sound final.
+  sr: |
+    Do sada je bas uvek bio osnovni ton, pa su bas linije skakale: C naviše do F, naniže do G. Prave
+    bas linije uglavnom **hodaju**. Obrtaji su način na koji to rade: akord ostaje isti, ali drugi ton
+    akorda ide na dno, pa bas može da ide korakom.
+
+    Evo C-dura sa basom koji se jednostavno penje lestvicom, C D E F G, i sleće na C:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [D,FGB] [E,Gc] | [F,FAc] [G,GBd] | [C,EGc]2 |]
+    ```
+
+    I – **V43** – **I6** – IV – V – I. V43 je G7 sa D u basu (terckvartakord); I6 je C sa E u basu
+    (sekstakord). Ista harmonija kao I – V – I – IV – V – I, ali je linija ispod lestvica.
+
+    Kako svaki obrtaj zvuči u basu:
+
+    | akord | stupanj u basu | tipičan pokret | kakav je osećaj |
+    |---|---|---|---|
+    | **I6** | 3 | 3 → 4 (ka IV) | kod kuće, ali lakše, nije završeno |
+    | **V6** | 7 | 7 → 1 (pola stepena naviše) | vođica u basu: hoće naviše |
+    | **V43** | 2 | 1 → 2 → 3 (prolazno) | prolazni akord između I i I6 |
+    | **IV6** | 6 | 6 → 5 (ka V) | mek korak naniže u V |
+
+    Kako da slušaš: **pevuši najdublji ton svakog akorda**, ništa drugo. Pitaj se „korak ili skok?".
+    Korak naviše ili naniže od I skoro uvek znači obrtaj (V6 ispod, V43 iznad); skok za kvartu ili
+    kvintu znači akord u osnovnom položaju. Onda proveri kraj: kadenca je i dalje V – I u osnovnom
+    položaju, jer upravo V – I u osnovnom položaju čini da završetak zvuči konačno.
+exercises:
+  - id: E-023-1
+    type: generated
+    prompt: {en: "Root-position V or V6 between the I chords? Hum the bass: leap down or half step down?", sr: "V u osnovnom položaju ili V6 između akorada I? Pevuši bas: skok naniže ili polustepen naniže?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V, I], [I, V6, I]], tempo: 60}
+    checks:
+      - chord: {notes: [B3, D4, G4], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [E3, G3, C4], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [D3, F3, G3, B3], root: G, quality: "7", inversion: 2}
+      - chord: {notes: [A3, C4, F4], root: F, quality: maj, inversion: 1}
+      - interval: {from: B3, to: C4, is: m2}
+      - roman: {key: C, degree: 5, is: "V"}
+  - id: E-023-2
+    type: generated
+    prompt: {en: "Which bass line: 1–2–3, 3–2–1 or 1–7–1?", sr: "Koja bas linija: 1–2–3, 3–2–1 ili 1–7–1?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, V43, I6], [I6, V43, I], [I, V6, I]], tempo: 60}
+  - id: E-023-3
+    type: generated
+    prompt: {en: "Four chords: which inversions? Follow the bass only.", sr: "Četiri akorda: koji obrtaji? Prati samo bas."}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V6, vi, IV], [I, V, vi, IV], [I, I6, IV, V], [I, IV6, V, I]], tempo: 60}
+  - id: E-023-4
+    type: midi-echo
+    prompt: {en: "C major, six chords. Play back only the bass line (any octave). It starts on C.", sr: "C-dur, šest akorada. Odsviraj samo bas liniju (bilo koja oktava). Počinje na C."}
+    mode: sequence
+    expect: [C3, D3, E3, F3, G3, C3]
+    octave: any
+    play:
+      chords: [[C3, E4, G4, C5], [D3, F4, G4, B4], [E3, G4, C5], [F3, F4, A4, C5], [G3, G4, B4, D5], [C3, E4, G4, C5]]
+      tempo: 56
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [D3, F4, G4, B4], root: G, quality: "7", inversion: 2}
+      - chord: {notes: [E3, G4, C5], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [F3, F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G3, G4, B4, D5], root: G, quality: maj}
+  - id: E-023-5
+    type: midi-echo
+    prompt: {en: "F major, six chords. Play back the bass line (any octave): it starts on F and walks down before the cadence.", sr: "F-dur, šest akorada. Odsviraj bas liniju (bilo koja oktava): počinje na F i silazi korakom pre kadence."}
+    mode: sequence
+    expect: [F3, E3, D3, Bb2, C3, F2]
+    octave: any
+    pass: 0.7
+    play:
+      chords: [[F3, A3, C4, F4], [E3, G3, C4, G4], [D3, A3, D4, F4], [Bb2, Bb3, D4, F4], [C3, C4, E4, G4], [F2, C4, F4, A4]]
+      tempo: 56
+    checks:
+      - chord: {notes: [F3, A3, C4, F4], root: F, quality: maj}
+      - chord: {notes: [E3, G3, C4, G4], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [D3, A3, D4, F4], root: D, quality: min}
+      - chord: {notes: [Bb2, Bb3, D4, F4], root: Bb, quality: maj}
+      - chord: {notes: [C3, C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F2, C4, F4, A4], root: F, quality: maj}
+      - roman: {key: F, degree: 6, is: "vi"}
+  - id: E-023-6
+    type: generated
+    prompt: {en: "Hear it, then play it with the right chord tone in the bass: I–V43–I6–IV–V–I", sr: "Čuj, pa odsviraj sa pravim tonom u basu: I–V43–I6–IV–V–I"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, F], type: major, numerals: [I, V43, I6, IV, V, I], echo: true}
+  - id: E-023-7
+    type: practice
+    prompt: {en: "Left hand alone: walk C D E F G C and C B A F G C, and above each bass note play the chord that fits (I, V43, I6, IV, V, I and I, V6, vi, IV, V, I). Sing or hum the bass while you play, in any comfortable octave.", sr: "Samo leva ruka: hodaj C D E F G C i C H A F G C, a iznad svakog bas tona odsviraj akord koji odgovara (I, V43, I6, IV, V, I i I, V6, vi, IV, V, I). Pevaj ili pevuši bas dok sviraš, u bilo kojoj udobnoj oktavi."}
+    minutes: 3

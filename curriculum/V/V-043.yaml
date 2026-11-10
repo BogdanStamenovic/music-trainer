@@ -1,0 +1,151 @@
+id: V-043
+track: V
+order: 43
+title: {en: "Harmony singing I: a 3rd above a melody", sr: "Pevanje druge deonice I: terca iznad melodije"}
+prereqs: [V-042]
+minutes: 12
+tags: [voice, harmony]
+explain:
+  en: |
+    The most common harmony part in pop, folk and church singing is a line **a 3rd above the melody**, moving with it note for note (*parallel 3rds*).
+    It sounds sweet and full because the two voices together outline the chord.
+
+    On the piano you would just play the melody with the note two white keys higher. That is exactly the rule: a **diatonic 3rd** is **two scale steps up**,
+    and it stays in the key. So in C major the 3rds above C D E F G are E F G A B. Notice they are not all the same size:
+
+    | melody | C | D | E | F | G |
+    |---|---|---|---|---|---|
+    | 3rd above | E | F | G | A | B |
+    | size | major | minor | minor | major | major |
+
+    You do not need to think about major or minor while singing: if you stay **in the key**, the size takes care of itself. The danger is copying the size of the first 3rd
+    (a major 3rd above D would be F#, which is outside C major and sounds wrong).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    [CE] [DF] [EG] [DF] | [CE]4 |]
+    ```
+
+    How the exercises work: the app **plays the melody** as the reference, then you sing the **harmony line alone**. The app cannot grade you while the piano plays,
+    because the microphone would hear both. Singing **together** with the melody, which is the real skill, is the self-rated practice at the end:
+    there the hard part is not being pulled onto the melody.
+
+    Method: first sing the melody, then sing its 3rd above note by note **slowly**, then the harmony line in time. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Najčešća druga deonica u popu, narodnoj i crkvenoj muzici je linija **terca iznad melodije**, koja se kreće sa njom ton za ton (*paralelne terce*).
+    Zvuči slatko i puno jer dva glasa zajedno ocrtavaju akord.
+
+    Na klaviru bi samo odsvirao melodiju sa tonom dve bele dirke više. To je baš pravilo: **dijatonska terca** je **dva stupnja lestvice naviše**
+    i ostaje u tonalitetu. Zato su u C-duru terce iznad C D E F G tonovi E F G A H. Primeti da nisu sve iste veličine:
+
+    | melodija | C | D | E | F | G |
+    |---|---|---|---|---|---|
+    | terca iznad | E | F | G | A | H |
+    | veličina | velika | mala | mala | velika | velika |
+
+    Dok pevaš ne moraš da misliš o velikoj ili maloj: ako ostaneš **u tonalitetu**, veličina se sama sredi. Opasnost je da prepišeš veličinu prve terce
+    (velika terca iznad D bila bi Fis, a to je van C-dura i zvuči pogrešno).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    [CE] [DF] [EG] [DF] | [CE]4 |]
+    ```
+
+    Kako rade vežbe: aplikacija **odsvira melodiju** kao referencu, a ti zatim pevaš **samo drugu deonicu**. Aplikacija ne može da te oceni dok klavir svira,
+    jer bi mikrofon čuo oboje. Pevanje **zajedno** sa melodijom, što je prava veština, je vežba sa samoprocenom na kraju:
+    tamo je teško ne dati se povući na melodiju.
+
+    Metoda: prvo otpevaj melodiju, pa njenu tercu iznad ton po ton **polako**, pa drugu deonicu u ritmu. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-043-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-043-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then hum the scale with the piano, and once more singing only every other note (C E G... in your head the skipped ones)."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa pevuši lestvicu uz klavir, i još jednom pevajući samo svaki drugi ton (C E G..., preskočene u glavi)."
+    play: {notes: [C4, D4, E4, F4, G4, A4, B4, C5], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-043-3
+    type: notation-input
+    prompt:
+      en: "The melody is C D E F G in C major. Write the harmony line a diatonic 3rd above it (stay in the key)."
+      sr: "Melodija je C D E F G u C-duru. Napiši drugu deonicu tercu iznad nje (ostani u tonalitetu)."
+    expect: [E, F, G, A, B]
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: F4, to: A4, is: M3}
+      - interval: {from: G4, to: B4, is: M3}
+  - id: V-043-4
+    type: sing-phrase
+    prompt:
+      en: "The app plays the melody C-D-E-D-C. Then sing the line a 3rd above, alone, on 'la': E-F-G-F-E."
+      sr: "Aplikacija svira melodiju C-D-E-D-C. Zatim sam otpevaj liniju tercu iznad, na „la”: E-F-G-F-E."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n[CE] [DF] [EG] [DF] | [CE]4 |]"
+    notes: [E4, F4, G4, F4, E4]
+    beats: [1, 1, 1, 1, 4]
+    tempo: 72
+    accompany: {notes: [C4, D4, E4, D4, C4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 4]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-043-5
+    type: sing-phrase
+    prompt:
+      en: "Melody: the C major 5-note scale up and down. Harmony alone, a 3rd above: E-F-G-A-B-A-G-F-E. The B is the leading tone; keep it high."
+      sr: "Melodija: pet tonova C-dura gore i dole. Druga deonica sama, terca iznad: E-F-G-A-H-A-G-F-E. H je vođica; drži je visoko."
+    notes: [E4, F4, G4, A4, B4, A4, G4, F4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 72
+    accompany: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 1, 1, 1, 1, 2]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: F4, to: A4, is: M3}
+      - interval: {from: G4, to: B4, is: M3}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-043-6
+    type: sing-phrase
+    prompt:
+      en: "'Ode to Joy', bars 1-4: the app plays the tune; then sing the harmony a 3rd above, alone: G G A B | B A G F | E E F G | G. F F."
+      sr: "„Oda radosti”, taktovi 1-4: aplikacija svira melodiju; zatim sam otpevaj drugu deonicu tercu iznad: G G A H | H A G F | E E F G | G. F F."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n[EG] [EG] [FA] [GB] | [GB] [FA] [EG] [DF] | [CE] [CE] [DF] [EG] | [EG]3/2 [DF]/ [DF]2 |]"
+    notes: [G4, G4, A4, B4, B4, A4, G4, F4, E4, E4, F4, G4, G4, F4, F4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 80
+    accompany: {notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4], mode: melodic, tempo: 80, durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: F4, to: A4, is: M3}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-043-7
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Together (self-rated, not graded): the piano plays the Ode to Joy melody while you sing the harmony at the same time. Then play the melody yourself with the right hand and sing the 3rd above. Rate: did you stay on your line, or get pulled onto the melody? Then 3 quiet hums sliding down."
+      sr: "Zajedno (samoprocena, bez ocene): klavir svira melodiju „Ode radosti”, a ti istovremeno pevaš drugu deonicu. Pa sam odsviraj melodiju desnom rukom i pevaj tercu iznad. Oceni: da li si ostao na svojoj liniji ili te je povuklo na melodiju? Pa 3 tiha pevušenja uz klizanje naniže."
+    play: {notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]}

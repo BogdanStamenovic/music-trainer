@@ -1,0 +1,156 @@
+id: K-025
+track: K
+order: 25
+title: {en: "Pop comping I: pulse and broken-chord patterns for I–V–vi–IV", sr: "Pop pratnja I: puls i razloženi obrasci za I–V–vi–IV"}
+prereqs: [K-016]
+minutes: 15
+tags: [keys, accompaniment, comping, pop]
+explain:
+  en: |
+    **Comping** (from "accompanying") means playing the chords under a melody in a rhythm that
+    gives the song its feel. Pop songs often use one progression for a whole section, so the
+    progression is easy; the pattern is what makes it sound like a record and not like a
+    harmony exercise.
+
+    The progression is **I–V–vi–IV**, in C: C – G – Am – F. First the voicing. Keep the left
+    hand on the roots and let the right hand take the **nearest** inversion of each chord:
+
+    | chord | left hand | right hand | common tones with the chord before |
+    |---|---|---|---|
+    | C (I) | C3 | C4 E4 G4 | |
+    | G (V) | G2 | B3 D4 G4 | G |
+    | Am (vi) | A2 | C4 E4 A4 | (moves by step) |
+    | F (IV) | F2 | C4 F4 A4 | C, A |
+
+    The right hand moves a step or not at all, so it stays quiet and the ear follows the
+    melody, not the chord changes.
+
+    Three patterns, from simplest:
+
+    1. **Pulse:** the RH plays the chord on every beat, the LH holds the root for the bar.
+       Driving, works for up-tempo songs. Keep the repeated chords light and even.
+    2. **Bass–chord:** LH root on 1, RH chord on 2, LH the 5th below on 3, RH chord on 4.
+       The bass and the chords alternate, which leaves space and swings forward.
+    3. **Ballad sweep:** the LH alone spreads the chord over 1–5–8–10 (root, 5th, octave,
+       10th) in eighths, then falls back. The RH holds the chord or plays the melody.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=bass
+    C,,G,,C,E, C,2 G,,2 | G,,,D,,G,,B,, G,,2 D,,2 | A,,,E,,A,,C, A,,2 E,,2 | F,,,C,,F,,A,, F,,2 C,,2 |]
+    ```
+
+    Why the 10th: it is the chord's 3rd placed an octave higher than in a close chord. A 3rd
+    played right above a low bass sounds muddy; spread to a 10th it sounds open and warm.
+  sr: |
+    **Pratnja** (engl. comping, od "accompanying") je sviranje akorda ispod melodije u ritmu
+    koji pesmi daje karakter. Pop pesme često koriste jednu progresiju za ceo deo pesme, pa je
+    progresija laka; obrazac je ono zbog čega zvuči kao snimak, a ne kao vežba iz harmonije.
+
+    Progresija je **I–V–vi–IV**, u C-duru: C – G – Am – F. Prvo raspored. Leva ruka ostaje na
+    osnovnim tonovima, a desna uzima **najbliži** obrtaj svakog akorda:
+
+    | akord | leva ruka | desna ruka | zajednički tonovi sa prethodnim |
+    |---|---|---|---|
+    | C (I) | C3 | C4 E4 G4 | |
+    | G (V) | G2 | H3 D4 G4 | G |
+    | Am (vi) | A2 | C4 E4 A4 | (pomera se za korak) |
+    | F (IV) | F2 | C4 F4 A4 | C, A |
+
+    Desna ruka se pomera za korak ili nimalo, pa ostaje tiha i uho prati melodiju, a ne
+    promene akorda.
+
+    Tri obrasca, od najjednostavnijeg:
+
+    1. **Puls:** desna ruka svira akord na svaku dobu, leva drži osnovni ton ceo takt. Tera
+       napred, dobro za brže pesme. Ponovljeni akordi neka budu lagani i ujednačeni.
+    2. **Bas–akord:** leva ruka osnovni ton na 1, desna akord na 2, leva kvintu ispod na 3,
+       desna akord na 4. Bas i akordi se smenjuju, što ostavlja prostor i gura napred.
+    3. **Baladno razlaganje:** leva ruka sama razlaže akord preko 1–5–8–10 (osnovni ton, kvinta,
+       oktava, decima) u osminama, pa se vraća. Desna drži akord ili svira melodiju.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=bass
+    C,,G,,C,E, C,2 G,,2 | G,,,D,,G,,B,, G,,2 D,,2 | A,,,E,,A,,C, A,,2 E,,2 | F,,,C,,F,,A,, F,,2 C,,2 |]
+    ```
+
+    Zašto decima: to je terca akorda postavljena oktavu više nego u uskom akordu. Terca odmah
+    iznad dubokog basa zvuči mutno; raširena u decimu zvuči otvoreno i toplo.
+exercises:
+  - id: K-025-1
+    type: mcq
+    prompt: {en: "The RH holds C4 E4 G4 (C). The next chord is Am. Which RH voicing keeps two common tones and moves one note by a step?", sr: "Desna ruka drži C4 E4 G4 (C). Sledeći akord je Am. Koji raspored desne ruke zadržava dva zajednička tona i pomera jedan ton za korak?"}
+    options: ["C4 E4 A4", "A3 C4 E4", "A4 C5 E5", "E4 A4 C5"]
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, A4], root: A, quality: min, inversion: 1}
+      - chord: {notes: [A3, C4, E4], root: A, quality: min, inversion: 0}
+      - semitones: {from: G4, to: A4, is: 2}
+      - roman: {key: C, degree: 6, is: "vi"}
+  - id: K-025-2
+    type: midi-play
+    prompt: {en: "Pattern 1, pulse: one bar per chord, LH root held on beat 1, RH chord on all four beats. C – G – Am – F at ♩=76.", sr: "Obrazac 1, puls: jedan takt po akordu, leva ruka drži osnovni ton od prve dobe, desna akord na sve četiri dobe. C – G – Am – F, ♩=76."}
+    mode: chords
+    expectChords: [[C3, C4, E4, G4], [C4, E4, G4], [C4, E4, G4], [C4, E4, G4], [G2, B3, D4, G4], [B3, D4, G4], [B3, D4, G4], [B3, D4, G4], [A2, C4, E4, A4], [C4, E4, A4], [C4, E4, A4], [C4, E4, A4], [F2, C4, F4, A4], [C4, F4, A4], [C4, F4, A4], [C4, F4, A4]]
+    tempo: 76
+    checks:
+      - chord: {notes: [C3, C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [G2, B3, D4, G4], root: G, quality: maj, inversion: 0}
+      - chord: {notes: [A2, C4, E4, A4], root: A, quality: min, inversion: 0}
+      - chord: {notes: [F2, C4, F4, A4], root: F, quality: maj, inversion: 0}
+  - id: K-025-3
+    type: midi-play
+    prompt: {en: "Pattern 2, bass–chord: root (LH) – chord (RH) – 5th below (LH) – chord (RH). C – G – Am – F at ♩=92.", sr: "Obrazac 2, bas–akord: osnovni ton (leva) – akord (desna) – kvinta ispod (leva) – akord (desna). C – G – Am – F, ♩=92."}
+    mode: chords
+    expectChords: [[C3], [C4, E4, G4], [G2], [C4, E4, G4], [G2], [B3, D4, G4], [D2], [B3, D4, G4], [A2], [C4, E4, A4], [E2], [C4, E4, A4], [F2], [C4, F4, A4], [C2], [C4, F4, A4]]
+    tempo: 92
+    checks:
+      - interval: {from: G2, to: C3, is: P4}
+      - interval: {from: D2, to: G2, is: P4}
+      - interval: {from: E2, to: A2, is: P4}
+      - interval: {from: C2, to: F2, is: P4}
+      - chord: {notes: [B3, D4, G4], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [C4, F4, A4], root: F, quality: maj, inversion: 2}
+  - id: K-025-4
+    type: midi-play
+    prompt: {en: "Pattern 3, ballad sweep, left hand alone as in the example: 1–5–8–10 in eighths, then 8 and 5 in quarters. ♩=72.", sr: "Obrazac 3, baladno razlaganje, samo leva ruka kao u primeru: 1–5–8–10 u osminama, pa 8 i 5 u četvrtinama. ♩=72."}
+    mode: sequence
+    expect: [C2, G2, C3, E3, C3, G2, G1, D2, G2, B2, G2, D2, A1, E2, A2, C3, A2, E2, F1, C2, F2, A2, F2, C2]
+    beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1]
+    tempo: 72
+    checks:
+      - interval: {from: C2, to: G2, is: P5}
+      - semitones: {from: C2, to: E3, is: 16}
+      - semitones: {from: G1, to: B2, is: 16}
+      - semitones: {from: A1, to: C3, is: 15}
+      - semitones: {from: F1, to: A2, is: 16}
+      - chord: {notes: [A1, E2, A2, C3], root: A, quality: min, inversion: 0}
+  - id: K-025-5
+    type: midi-play
+    prompt: {en: "G major, notes hidden: bass–chord pattern over G – D – Em – C (I–V–vi–IV). Keep the RH on the nearest inversions; any octave. ♩=92.", sr: "G-dur, bez prikaza tonova: obrazac bas–akord preko G – D – Em – C (I–V–vi–IV). Desna ruka na najbližim obrtajima; bilo koja oktava. ♩=92."}
+    mode: chords
+    expectChords: [[G2], [B3, D4, G4], [D2], [B3, D4, G4], [D3], [A3, D4, "F#4"], [A2], [A3, D4, "F#4"], [E3], [B3, E4, G4], [B2], [B3, E4, G4], [C3], [C4, E4, G4], [G2], [C4, E4, G4]]
+    octave: any
+    tempo: 92
+    showNotes: false
+    checks:
+      - chord: {notes: [A3, D4, "F#4"], root: D, quality: maj, inversion: 2}
+      - chord: {notes: [B3, E4, G4], root: E, quality: min, inversion: 2}
+      - roman: {key: G, degree: 5, is: "V"}
+      - roman: {key: G, degree: 6, is: "vi"}
+      - interval: {from: A2, to: D3, is: P4}
+  - id: K-025-6
+    type: generated
+    prompt: {en: "I–V–vi–IV in other keys, voice-led block chords (one per beat)", sr: "I–V–vi–IV u drugim tonalitetima, akordi sa glatkim vođenjem glasova (jedan po dobi)"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, D, F, A, Bb], numerals: [I, V, vi, IV], tempo: 72, smooth: true}
+  - id: K-025-7
+    type: practice
+    prompt: {en: "Ballad sweep in the LH, RH holding the nearest-inversion chords, four times round. Then 4 bars of each pattern in a row (pulse, bass–chord, sweep) without stopping: switching patterns on the bar line is the real skill.", sr: "Baladno razlaganje u levoj ruci, desna drži akorde u najbližim obrtajima, četiri puta ukrug. Zatim po 4 takta svakog obrasca zaredom (puls, bas–akord, razlaganje) bez zaustavljanja: prelazak sa obrasca na obrazac na taktnoj crti je prava veština."}
+    minutes: 4
+    play: {derive: {roman: {key: C4, numerals: [I, V6, vi6, IV64]}}, mode: chords, tempo: 30}

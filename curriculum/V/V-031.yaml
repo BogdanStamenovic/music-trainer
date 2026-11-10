@@ -1,0 +1,140 @@
+id: V-031
+track: V
+order: 31
+title: {en: "Vowel modification near the top of the range", sr: "Modifikacija samoglasnika pri vrhu opsega"}
+prereqs: [V-030, V-022]
+minutes: 10
+tags: [voice]
+explain:
+  en: |
+    Sing "ee" and "ah" in the middle of your range and they are easy. Take the same vowels to the top and they change character:
+    "ee" turns **thin and shrill**, "ah" turns **wide and yelly**, and both feel tight. Every trained singer deals with this the same way: **vowel modification**
+    (Serbian: *modifikacija samoglasnika*), shading the vowel a little toward a neighbouring vowel as the pitch rises (closed vowels open slightly, open vowels round).
+
+    Why it works: each vowel is a particular shape of the mouth and throat, and that shape **boosts certain frequencies** (the vowel's *formants*).
+    As the pitch climbs, the strong low harmonics of the sung note move past the frequencies the vowel shape boosts. Then the tone loses support from the
+    resonance and the singer instinctively compensates by **pushing**. A slightly rounder vowel moves the resonances back where the note needs them, so the same
+    note takes **less effort**.
+
+    | written vowel | near the top, shade toward | feel |
+    |---|---|---|
+    | ee (i) | **ih**, or "ee" with rounded lips (as in German *ü*) | a little more space between the teeth |
+    | eh (e) | **ih** | slightly narrower |
+    | ah (a) | **uh** or **aw** (between Serbian *a* and *o*) | a bit of a yawn inside, lips slightly rounder |
+    | oh (o) | **oo** | rounder |
+    | oo (u) | stays, just not pushed forward | |
+
+    Three rules:
+
+    1. **Gradual.** The shading grows over the top few notes; in the middle you sing the pure vowel from lesson 11.
+    2. **Small.** A listener should still hear the word. "Free" stays "free", it just sounds rounder.
+    3. **Not louder.** If the modified vowel needs more push, the note is too high today: sing it an octave lower.
+
+    The phrases below are placed toward the **top** of your range on purpose (but not above the safe margin the app keeps). The app grades pitch only;
+    the vowel is for your ear.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Otpevaj „i” i „a” u sredini opsega i lako je. Odnesi iste samoglasnike na vrh i promene karakter:
+    „i” postane **tanko i resko**, „a” postane **široko i kao vika**, i oba se stegnu. Svaki školovani pevač ovo rešava isto: **modifikacijom samoglasnika**
+    (engl. *vowel modification*), blago senčeći samoglasnik prema susednom samoglasniku kako visina raste (zatvoreni se malo otvaraju, otvoreni se zaobljavaju).
+
+    Zašto radi: svaki samoglasnik je određen oblik usta i grla, a taj oblik **pojačava određene frekvencije** (*formante* samoglasnika).
+    Kako visina raste, jaki niski alikvoti otpevanog tona prolaze mimo frekvencija koje oblik samoglasnika pojačava. Tada ton gubi podršku rezonancije
+    i pevač instinktivno nadoknađuje **guranjem**. Malo okrugliji samoglasnik vraća rezonancije tamo gde ih ton treba, pa isti ton traži **manje napora**.
+
+    | zapisani samoglasnik | pri vrhu, senči prema | osećaj |
+    |---|---|---|
+    | i | **između i i e**, ili „i” sa zaobljenim usnama (kao nemačko *ü*) | malo više prostora između zuba |
+    | e | **između e i i** | malo uže |
+    | a | **ə** ili **između a i o** | malo zevanja iznutra, usne malo okruglije |
+    | o | **u** | okruglije |
+    | u | ostaje, samo se ne gura napred | |
+
+    Tri pravila:
+
+    1. **Postepeno.** Senčenje raste na poslednjih nekoliko tonova; u sredini pevaš čist samoglasnik iz 11. lekcije.
+    2. **Malo.** Slušalac i dalje treba da čuje reč. „Sve” ostaje „sve”, samo zvuči okruglije.
+    3. **Ne glasnije.** Ako modifikovan samoglasnik traži više guranja, ton je danas previsok: otpevaj ga oktavu niže.
+
+    Fraze ispod su namerno smeštene prema **vrhu** tvog opsega (ali ne iznad sigurnosne margine koju aplikacija čuva). Aplikacija ocenjuje samo visinu;
+    samoglasnik je za tvoje uho.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-031-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-031-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then 1-3-5-3-1 on 'nay' (light mix) along with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, pa 1-3-5-3-1 na „nej” (lagani miks) uz klavir."
+    play: {notes: [D4, F#4, A4, F#4, D4], mode: melodic, tempo: 80}
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-031-3
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Feel it on one easy high note, speaking-quiet: 'ee' pure, then 'ee' with rounder lips, then 'ih'. Then 'ah', then 'ah' toward 'aw'. Notice which takes less effort."
+      sr: "Oseti na jednom lakom visokom tonu, tiho kao govor: čisto „i”, pa „i” sa okruglijim usnama, pa između i i e. Pa „a”, pa „a” prema „o”. Primeti šta traži manje napora."
+  - id: V-031-4
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'ee', shading toward 'ih' on the 5. Small change; still recognisably 'ee'."
+      sr: "1-3-5-3-1 na „i”, sa senčenjem prema e na 5. Mala promena; i dalje se prepoznaje „i”."
+    notes: [E4, G#4, B4, G#4, E4]
+    beats: [1, 1, 2, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj, inversion: 0}
+  - id: V-031-5
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'ah', shading toward 'aw' on the 5, with a little inner yawn. Not wider, not louder."
+      sr: "1-3-5-3-1 na „a”, sa senčenjem prema „o” na 5, uz malo unutrašnjeg zevanja. Ne šire, ne glasnije."
+    notes: [D4, F#4, A4, F#4, D4]
+    beats: [1, 1, 2, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-031-6
+    type: sing-phrase
+    prompt:
+      en: "5-6-7-8-8 on the word 'free' (Serbian: 'sve'), holding the top. Pure vowel on 5, gradually rounder by 8. The top note is the softest."
+      sr: "5-6-7-8-8 na reč „sve” (engl. „free”), sa zadržanim vrhom. Čist samoglasnik na 5, postepeno okrugliji do 8. Gornji ton je najtiši."
+    notes: [G4, A4, B4, C5, C5]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: V-031-7
+    type: mcq
+    prompt:
+      en: "Near the top of your range, a pure 'ah' feels wide and yelly. The usual fix is to shade it toward..."
+      sr: "Pri vrhu opsega, čisto „a” je široko i kao vika. Uobičajeno rešenje je senčiti ga prema..."
+    options:
+      - {en: "'uh' / 'aw': rounder, a little inner yawn", sr: "ə / „o”: okruglije, malo unutrašnjeg zevanja"}
+      - {en: "a brighter, wider 'a' as in 'cat'", sr: "svetlije, šire „e” kao u engl. „cat”"}
+      - {en: "the same 'ah', just with more breath pressure", sr: "isto „a”, samo sa jačim pritiskom daha"}
+    answer: 0
+  - id: V-031-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: sing 5-6-7-8 on 'free' once pure all the way, once modified. Rate which one took less effort and whether the word was still clear. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: otpevaj 5-6-7-8 na „sve” jednom sasvim čisto, jednom modifikovano. Oceni šta je tražilo manje napora i da li je reč i dalje jasna. Pa 3 tiha pevušenja uz klizanje naniže."

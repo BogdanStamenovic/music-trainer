@@ -1,0 +1,195 @@
+id: C-008
+track: C
+order: 8
+prereqs: [C-007, T-034]
+title: {en: "A bass line under a melody (contrary motion)", sr: "Basova linija ispod melodije (suprotno kretanje)"}
+minutes: 15
+tags: [composition, harmony, bass, voice-leading]
+explain:
+  en: |
+    In C-007 the bass played only roots, one per bar. A real bass line is a **second melody**:
+    with the top line it forms the **outer voices**, the two lines the ear follows most closely.
+    How the two move against each other matters as much as which chords they spell.
+
+    | motion | melody | bass | effect |
+    |---|---|---|---|
+    | **contrary** | up | down (or the reverse) | the two lines stay independent: the best default |
+    | **oblique** | moves | holds (or the reverse) | calm, always safe |
+    | **similar** | up | up, by a different interval | fine, used sparingly |
+    | **parallel** | up | up, by the same interval | fine in 3rds, 6ths and 10ths; **never** in perfect 5ths or octaves |
+
+    **Why no parallel 5ths and octaves?** A perfect 5th or octave blends so well that two voices
+    moving in parallel 5ths or octaves fuse into one thickened line: you lose a voice. In 3rds and
+    6ths the voices still sound like two.
+
+    **Three habits that make a good bass:**
+
+    1. **Contrary motion first.** When the melody rises, let the bass fall, and the reverse.
+    2. **3rds, 6ths and 10ths on the strong beats**, octaves and 5ths mainly at the start and the
+       end. (A 4th against the bass sounds unstable: keep it to weak beats.)
+    3. **Use inversions to get steps.** The bass does not have to play roots: a first-inversion
+       chord (I6, V6) puts the 3rd in the bass and turns leaps into steps. End with **5 → 1** in the
+       bass under **2 → 1** or **7 → 1** in the melody.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    G2 F2 E2 G2 | A2 G2 F2 A2 | G2 F2 D2 B,2 | C8 |]
+    V:2 clef=bass
+    "I"C,8 | "IV"F,,4 "ii"D,4 | "V6"B,,4 "V"G,,4 | "I"C,8 |]
+    ```
+
+    Bar 1 → 2: melody up (G → A), bass down (C → F): contrary. In bar 2 the melody falls to F
+    while the bass climbs to D: contrary again, a 10th. Bar 3 starts on **V6** (B in the bass, a
+    6th under G) and then moves to the root G, so the phrase ends 5 → 1 in the bass under 7 → 1 in
+    the melody. Count the intervals on beats 1 and 3: 5th, 3rd, 3rd, 3rd, 6th, 5th, octave. Never
+    the same perfect interval twice in a row.
+
+    **At the keyboard:** play the melody in the right hand and only the bass in the left. Then try
+    the bad version: copy the melody an octave or two lower in the left hand. That is parallel
+    octaves for the whole phrase: one line, not two.
+  sr: |
+    U C-007 bas je svirao samo osnovne tonove, jedan po taktu. Prava basova linija je **druga
+    melodija**: sa gornjom linijom čini **spoljne glasove**, dve linije koje uho najpažljivije
+    prati. Kako se kreću jedna prema drugoj važno je koliko i koje akorde ispisuju.
+
+    | kretanje | melodija | bas | efekat |
+    |---|---|---|---|
+    | **suprotno** | gore | dole (ili obrnuto) | linije ostaju samostalne: najbolji izbor |
+    | **pobočno** | kreće se | stoji (ili obrnuto) | mirno, uvek bezbedno |
+    | **istosmerno** | gore | gore, za drugi interval | u redu, umereno |
+    | **paralelno** | gore | gore, za isti interval | u redu u tercama, sekstama i decimama; **nikad** u čistim kvintama ili oktavama |
+
+    **Zašto nema paralelnih kvinti i oktava?** Čista kvinta ili oktava se toliko dobro stapa da se
+    dva glasa koja idu u paralelnim kvintama ili oktavama spajaju u jednu zadebljanu liniju:
+    gubiš glas. U tercama i sekstama glasovi i dalje zvuče kao dva.
+
+    **Tri navike za dobar bas:**
+
+    1. **Prvo suprotno kretanje.** Kad melodija ide gore, neka bas ide dole, i obrnuto.
+    2. **Terce, sekste i decime na jakim dobama**, oktave i kvinte uglavnom na početku i na kraju.
+       (Kvarta prema basu zvuči nestabilno: drži je na slabim dobama.)
+    3. **Obrtaji daju korake.** Bas ne mora da svira osnovne tonove: sekstakord (I6, V6) stavlja
+       tercu u bas i pretvara skokove u korake. Završi sa **5 → 1** u basu ispod **2 → 1** ili
+       **7 → 1** u melodiji.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    G2 F2 E2 G2 | A2 G2 F2 A2 | G2 F2 D2 B,2 | C8 |]
+    V:2 clef=bass
+    "I"C,8 | "IV"F,,4 "ii"D,4 | "V6"B,,4 "V"G,,4 | "I"C,8 |]
+    ```
+
+    Takt 1 → 2: melodija gore (G → A), bas dole (C → F): suprotno. U taktu 2 melodija pada na F
+    dok se bas penje na D: opet suprotno, decima. Takt 3 počinje sa **V6** (H u basu, sekstu
+    ispod G), pa prelazi na osnovni ton G, tako da se fraza završava sa 5 → 1 u basu ispod 7 → 1 u
+    melodiji. Prebroj intervale na prvoj i trećoj dobi: kvinta, terca, terca, terca, seksta, kvinta,
+    oktava. Nikad isti čist interval dvaput zaredom.
+
+    **Za klavirom:** sviraj melodiju desnom rukom, a levom samo bas. Onda probaj lošu verziju:
+    prepiši melodiju oktavu ili dve niže u levoj ruci. To su paralelne oktave kroz celu frazu:
+    jedna linija, ne dve.
+exercises:
+  - id: C-008-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nV:1\nE4 F4 |]\nV:2 clef=bass\nC,4 A,,4 |]"
+    prompt: {en: "Melody E → F, bass C → A. What kind of motion is this?", sr: "Melodija E → F, bas C → A. Kakvo je ovo kretanje?"}
+    options:
+      - {en: "contrary", sr: "suprotno"}
+      - {en: "similar", sr: "istosmerno"}
+      - {en: "parallel", sr: "paralelno"}
+      - {en: "oblique", sr: "pobočno"}
+    answer: 0
+    checks:
+      - semitones: {from: C3, to: E4, is: 16}
+      - semitones: {from: A2, to: F4, is: 20}
+  - id: C-008-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nV:1\nE8 | D8 | E8 | F8 |]\nV:2 clef=bass\nC,8 | G,,8 | A,,8 | D,8 |]"
+    prompt: {en: "Where are the parallel 5ths?", sr: "Gde su paralelne kvinte?"}
+    options:
+      - {en: "bar 1 → 2", sr: "takt 1 → 2"}
+      - {en: "bar 2 → 3", sr: "takt 2 → 3"}
+      - {en: "bar 3 → 4", sr: "takt 3 → 4"}
+      - {en: "there are none", sr: "nema ih"}
+    answer: 1
+    checks:
+      - semitones: {from: G2, to: D4, is: 19}
+      - semitones: {from: A2, to: E4, is: 19}
+      - semitones: {from: C3, to: E4, is: 16}
+      - semitones: {from: D3, to: F4, is: 15}
+  - id: C-008-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE4 D4 | C8 |]"
+    prompt: {en: "The melody falls E → D → C (I – V43 – I6). Which bass moves in contrary motion and keeps 3rds, 6ths or octaves?", sr: "Melodija pada E → D → C (I – V43 – I6). Koji bas ide suprotnim kretanjem i drži terce, sekste ili oktave?"}
+    options: ["C3 – D3 – E3", {en: "C3 – B2 – A2", sr: "C3 – H2 – A2"}, "C3 – G2 – C3", "E3 – D3 – C3"]
+    answer: 0
+    checks:
+      - semitones: {from: C3, to: E4, is: 16}
+      - semitones: {from: D3, to: D4, is: 12}
+      - semitones: {from: E3, to: C4, is: 8}
+  - id: C-008-4
+    type: midi-play
+    prompt: {en: "The outer voices of the lesson's example, as two-note chords (left hand bass, right hand melody), one per click at ♩=60: the notes on beats 1 and 3.", sr: "Spoljni glasovi primera iz lekcije, kao dvozvuci (leva ruka bas, desna melodija), jedan po udarcu na ♩=60: tonovi na prvoj i trećoj dobi."}
+    mode: chords
+    expectChords: [[C3, G4], [C3, E4], [F2, A4], [D3, F4], [B2, G4], [G2, D4], [C3, C4]]
+    octave: exact
+    tempo: 60
+    checks:
+      - semitones: {from: C3, to: G4, is: 19}
+      - semitones: {from: F2, to: A4, is: 28}
+      - semitones: {from: D3, to: F4, is: 15}
+      - semitones: {from: B2, to: G4, is: 20}
+      - semitones: {from: G2, to: D4, is: 19}
+  - id: C-008-5
+    type: compose
+    prompt:
+      en: "F major (B♭). Write the bass (V:2) under this melody, two half notes per bar, mostly in contrary motion. Start on F, end F under G → F, avoid parallel 5ths and octaves. Inversions are welcome (B♭ chord with D in the bass, for example)."
+      sr: "F-dur (B). Napiši bas (V:2) ispod ove melodije, dve polovine po taktu, uglavnom suprotnim kretanjem. Počni na F, završi na F ispod G → F, izbegni paralelne kvinte i oktave. Obrtaji su dobrodošli (na primer B-dur akord sa D u basu)."
+    given: "X:1\nM:4/4\nL:1/8\nK:F\nV:1\nA4 B4 | c4 A4 | B4 G4 | F8 |]\nV:2 clef=bass\n"
+    key: F major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    rules: [bars, rhythm, key, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:F
+      V:1
+      A4 B4 | c4 A4 | B4 G4 | F8 |]
+      V:2 clef=bass
+      F,4 D,4 | C,4 F,4 | G,4 C,4 | F,8 |]
+    checks:
+      - chord: {notes: [D3, F3, Bb3], root: Bb, quality: maj, inversion: 1}
+      - semitones: {from: D3, to: Bb4, is: 20}
+      - semitones: {from: G3, to: Bb4, is: 15}
+  - id: C-008-6
+    type: compose
+    prompt:
+      en: "Both voices now, D major (F♯, C♯), 4 bars. Bar 1 is given (melody F♯ – G over bass D – B: contrary). Continue melody and bass in half notes, contrary motion where you can, and end with the melody E → D over the bass A → D."
+      sr: "Sada oba glasa, D-dur (Fis, Cis), 4 takta. Takt 1 je zadat (melodija Fis – G iznad basa D – H: suprotno). Nastavi melodiju i bas u polovinama, suprotnim kretanjem gde možeš, i završi melodijom E → D iznad basa A → D."
+    given: "X:1\nM:4/4\nL:1/8\nK:D\nV:1\nF4 G4 |\nV:2 clef=bass\nD,4 B,,4 |\n"
+    key: D major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    range: [D4, E5]
+    rules: [bars, rhythm, key, range, leaps, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:D
+      V:1
+      F4 G4 | A4 F4 | G4 E4 | D8 |]
+      V:2 clef=bass
+      D,4 B,,4 | A,,4 D,4 | E,4 A,,4 | D,8 |]

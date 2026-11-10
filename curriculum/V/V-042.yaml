@@ -1,0 +1,144 @@
+id: V-042
+track: V
+order: 42
+title: {en: "Tuning to chords: sing the 3rd, the 5th, the root", sr: "Intoniranje uz akorde: otpevaj tercu, kvintu, osnovni ton"}
+prereqs: [V-041, V-037]
+minutes: 11
+tags: [voice, harmony]
+explain:
+  en: |
+    Until now the piano gave you **the note** and you copied it. Here the piano plays a **chord** and you find one of its notes yourself:
+    the root, the 3rd or the 5th. This is what singing with a band or a choir is: nobody plays your note for you; you find it in the harmony.
+
+    The three members do not sound equally easy to pick out:
+
+    | member | in C major | how it sounds in the chord |
+    |---|---|---|
+    | **root** (*osnovni ton*) | C | "home", the name of the chord; easiest when it is in the bass |
+    | **5th** (*kvinta*) | G | blends in almost completely: G is already present inside a low C as one of its overtones, so it **fuses** with the root |
+    | **3rd** (*terca*) | E | the **colour**: major or minor; the one that sticks out once you listen for it |
+
+    Methods:
+
+    - **Root**: hum the lowest note you hear, then sing it.
+    - **3rd**: sing up from the root, 1-2-3, in your head first, then sing only the 3. In a minor chord the 3rd is a half step lower (A minor: C, not C#).
+    - **5th**: 1-2-3-4-5 in your head, or think "the open, hollow note".
+
+    The app plays the chord, then you sing **alone** (the mic would otherwise hear the piano too). Hold the note steady for the length shown.
+
+    A tuning detail for the curious: the piano is tuned in **equal temperament**, whose major 3rds are about 14 cents wider than the acoustically pure 3rd that choirs drift toward.
+    Here you are graded against the piano, and the tolerance easily covers that difference.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Do sada ti je klavir davao **ton**, a ti si ga ponavljao. Ovde klavir svira **akord**, a ti sam nalaziš jedan od njegovih tonova:
+    osnovni ton, tercu ili kvintu. To je pevanje sa bendom ili horom: niko ti ne svira tvoj ton; nalaziš ga u harmoniji.
+
+    Tri člana akorda nije jednako lako izdvojiti:
+
+    | član | u C-duru | kako zvuči u akordu |
+    |---|---|---|
+    | **osnovni ton** (engl. *root*) | C | „kuća”, ime akorda; najlakši kad je u basu |
+    | **kvinta** (engl. *5th*) | G | stapa se skoro potpuno: G je već prisutno u niskom C kao jedan od njegovih alikvota, pa se **stapa** sa osnovnim tonom |
+    | **terca** (engl. *3rd*) | E | **boja**: dur ili mol; ona koja se izdvaja kad je oslušneš |
+
+    Metode:
+
+    - **Osnovni ton**: pevuši najniži ton koji čuješ, pa ga otpevaj.
+    - **Terca**: otpevaj od osnovnog tona naviše, 1-2-3, prvo u glavi, pa otpevaj samo 3. U molskom akordu terca je polustepen niža (a-mol: C, ne Cis).
+    - **Kvinta**: 1-2-3-4-5 u glavi, ili misli „otvoren, šupalj ton”.
+
+    Aplikacija odsvira akord, a ti pevaš **sam** (inače bi mikrofon čuo i klavir). Drži ton mirno koliko je prikazano.
+
+    Detalj o štimovanju za radoznale: klavir je naštimovan u **jednakotemperovanom sistemu**, čije su velike terce oko 14 centi šire od akustički čiste terce prema kojoj horovi klize.
+    Ovde te ocenjuju prema klaviru, a tolerancija lako pokriva tu razliku.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-042-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-042-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then hum 1-3-5-3-1 along with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa pevuši 1-3-5-3-1 uz klavir."
+    play: {notes: [C4, E4, G4, E4, C4], mode: melodic, tempo: 80}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-042-3
+    type: sing-phrase
+    prompt:
+      en: "The piano plays a C major chord. Then sing its root on 'ah' and hold it."
+      sr: "Klavir svira C-dur akord. Zatim otpevaj njegov osnovni ton na „a” i drži ga."
+    notes: [C4]
+    beats: [3]
+    tempo: 60
+    accompany: {chords: [[C3, G3, C4, E4]], mode: chords, tempo: 60, durations: [3]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [C3, G3, C4, E4], root: C, quality: maj, inversion: 0}
+  - id: V-042-4
+    type: sing-phrase
+    prompt:
+      en: "The same C major chord. Now sing its 5th on 'ah' and hold it: the note that blends in."
+      sr: "Isti C-dur akord. Sada otpevaj njegovu kvintu na „a” i drži je: ton koji se stapa."
+    notes: [G3]
+    beats: [3]
+    tempo: 60
+    accompany: {chords: [[C3, G3, C4, E4]], mode: chords, tempo: 60, durations: [3]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+  - id: V-042-5
+    type: sing-phrase
+    prompt:
+      en: "A C major chord again. Sing its 3rd on 'ah' and hold it: the colour note."
+      sr: "Opet C-dur akord. Otpevaj njegovu tercu na „a” i drži je: ton boje."
+    notes: [E4]
+    beats: [3]
+    tempo: 60
+    accompany: {chords: [[C3, G3, C4, E4]], mode: chords, tempo: 60, durations: [3]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-042-6
+    type: sing-phrase
+    prompt:
+      en: "Now an A minor chord. Sing its 3rd and hold it. Minor: the 3rd is a half step lower than in A major."
+      sr: "Sada a-mol akord. Otpevaj njegovu tercu i drži je. Mol: terca je polustepen niža nego u A-duru."
+    notes: [C4]
+    beats: [3]
+    tempo: 60
+    accompany: {chords: [[A2, E3, A3, C4]], mode: chords, tempo: 60, durations: [3]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [A2, E3, A3, C4], root: A, quality: min, inversion: 0}
+      - interval: {from: A3, to: C4, is: m3}
+  - id: V-042-7
+    type: sing-phrase
+    prompt:
+      en: "An F major chord. Sing root, 3rd, 5th, one after another, each for two beats."
+      sr: "F-dur akord. Otpevaj osnovni ton, tercu, kvintu, jedan za drugim, svaki po dve dobe."
+    notes: [F3, A3, C4]
+    beats: [2, 2, 2]
+    tempo: 60
+    accompany: {chords: [[F2, C3, F3, A3]], mode: chords, tempo: 60, durations: [3]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [F2, C3, F3, A3], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [F3, A3, C4], root: F, quality: maj, inversion: 0}
+  - id: V-042-8
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Singing with the chord (self-rated): hold a C major chord with the pedal and sing its 3rd on 'oo' into it; then its 5th, then its root. Listen for 'beats' (a slow wobble) when you are slightly off, and adjust until the sound goes smooth. Then do the same over F and G major. Rate how quickly you could find each member."
+      sr: "Pevanje uz akord (samoprocena): drži C-dur akord pedalom i otpevaj njegovu tercu na „u” u njega; pa kvintu, pa osnovni ton. Slušaj „podrhtavanje” (spor talas) kad si malo pored, i podešavaj dok zvuk ne postane gladak. Pa isto preko F-dura i G-dura. Oceni koliko brzo si nalazio svaki član."

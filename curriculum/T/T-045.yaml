@@ -1,0 +1,134 @@
+id: T-045
+track: T
+order: 45
+prereqs: [T-044]
+title: {en: "Secondary leading-tone chords (vii°/V, vii°7/V)", sr: "Sporedni akordi VII stupnja (vii°/V, vii°7/V)"}
+minutes: 13
+tags: [harmony, chromatic, four-part]
+explain:
+  en: |
+    In T-040 you saw that vii°7 does the job of V7 in its own key. The same swap works for tonicization: instead of the secondary dominant, use the **leading-tone chord of the target**. Build it a half step below the target's root.
+
+    | in C major | notes | resolves to |
+    |---|---|---|
+    | V7/V | D F♯ A C | V (G B D) |
+    | **vii°/V** | F♯ A C | V |
+    | **vii°7/V** | F♯ A C E♭ | V |
+    | vii°7/vi | G♯ B D F | vi (A C E) |
+    | vii°7/ii | C♯ E G B♭ | ii (D F A) |
+
+    Compare V7/V and vii°7/V: they share **F♯, A, C**. The diminished version drops the root D and adds **E♭**, a half step above D (the 5th of V). So now *two* notes lean into the target by a half step: F♯ up to G, E♭ down to D. That double pull is why vii°7/V sounds so urgent, and why it is a favourite before a cadence.
+
+    The 7th is always a **diminished** 7th, built from the target's *harmonic minor*, even when the target is major (E♭ here, not E). That is how harmony books write vii°7/V; the ø7 version (F♯ A C E) also exists but is rarer.
+
+    **Resolution**, as for any vii°7: root up a half step (F♯ → G), 7th down a step (E♭ → D), 5th down (C → B), 3rd free (A → G or B).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [_Ec] [DB] [=Ec] |]
+    V:2 clef=bass
+    [C,G,] [^F,,A,] [G,,G,] [C,G,] |]
+    ```
+
+    I – vii°7/V – V – I: F♯ rises to G in the bass, E♭ falls to D in the alto, C falls to B in the soprano.
+  sr: |
+    U T-040 si video da vii°7 obavlja posao V7 u sopstvenom tonalitetu. Ista zamena radi i kod tonikalizacije: umesto sporedne dominante upotrebi **akord VII stupnja ciljnog akorda**. Gradi se polustepen ispod osnovnog tona cilja.
+
+    | u C-duru | tonovi | razrešava se u |
+    |---|---|---|
+    | V7/V | D Fis A C | V (G H D) |
+    | **vii°/V** | Fis A C | V |
+    | **vii°7/V** | Fis A C Es | V |
+    | vii°7/vi | Gis H D F | vi (A C E) |
+    | vii°7/ii | Cis E G B | ii (D F A) |
+
+    Uporedi V7/V i vii°7/V: imaju zajedničke tonove **Fis, A, C**. Smanjena verzija izbacuje osnovni ton D i dodaje **Es**, polustepen iznad D (kvinte od V). Sada *dva* tona teže cilju za polustepen: Fis naviše na G, Es naniže na D. Zbog tog dvostrukog privlačenja vii°7/V zvuči tako napeto, i zato se rado koristi pred kadencom.
+
+    Septima je uvek **smanjena**, iz *harmonskog mola* cilja, čak i kad je cilj durski (ovde Es, ne E). Tako harmonske knjige pišu vii°7/V; postoji i poluumanjena verzija (Fis A C E), ali je ređa.
+
+    **Razrešenje**, kao za svaki vii°7: osnovni ton polustepen naviše (Fis → G), septima za stupanj naniže (Es → D), kvinta naniže (C → H), terca slobodno (A → G ili H).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [_Ec] [DB] [=Ec] |]
+    V:2 clef=bass
+    [C,G,] [^F,,A,] [G,,G,] [C,G,] |]
+    ```
+
+    I – vii°7/V – V – I: Fis ide naviše na G u basu, Es silazi na D u altu, C silazi na H u sopranu.
+exercises:
+  - id: T-045-1
+    type: notation-input
+    prompt: {en: "Spell vii°7/V in C major (root, 3rd, 5th, 7th).", sr: "Napiši vii°7/V u C-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: C4, numerals: ["vii°7/V"]}}
+    expect: [F#, A, C, Eb]
+    checks:
+      - numeral: {key: C, is: "vii°7/V", notes: [F#4, A4, C5, Eb5]}
+      - numeral: {key: C, is: "vii°/V", notes: [F#4, A4, C5]}
+      - numeral: {key: C, is: "vii°7/vi", notes: [G#4, B4, D5, F5]}
+      - numeral: {key: C, is: "vii°7/ii", notes: [C#4, E4, G4, Bb4]}
+  - id: T-045-2
+    type: notation-input
+    prompt: {en: "Spell vii°/V in G major (root, 3rd, 5th).", sr: "Napiši vii°/V u G-duru (osnovni ton, terca, kvinta)."}
+    derive: {roman: {key: G4, numerals: ["vii°/V"]}}
+    expect: [C#, E, G]
+    checks:
+      - numeral: {key: G, is: "vii°/V", notes: [C#4, E4, G4]}
+  - id: T-045-3
+    type: mcq
+    prompt: {en: "V7/V and vii°7/V in C share three notes. Which?", sr: "V7/V i vii°7/V u C-duru imaju tri zajednička tona. Koja?"}
+    options: ["F♯, A, C", "D, F♯, A", "A, C, E♭", "D, A, C"]
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F#4, A4, C5], root: D, quality: "7"}
+      - chord: {notes: [F#4, A4, C5, Eb5], root: F#, quality: dim7}
+      - chord: {notes: [G#4, B4, D5, F5], root: G#, quality: dim7}
+      - chord: {notes: [C#4, E4, G4, Bb4], root: C#, quality: dim7}
+      - chord: {notes: [F#4, A4, C5, E5], root: F#, quality: m7b5}
+  - id: T-045-4
+    type: mcq
+    prompt: {en: "vii°7/V → V in C: where does E♭ go?", sr: "vii°7/V → V u C-duru: kuda ide Es?"}
+    options:
+      - {en: "Down a half step to D, the 5th of V", sr: "Polustepen naniže na D, kvintu od V"}
+      - {en: "Up to E", sr: "Naviše na E"}
+      - {en: "Up to G", sr: "Naviše na G"}
+    answer: 0
+    checks:
+      - interval: {from: D4, to: Eb4, is: m2}
+  - id: T-045-5
+    type: midi-play
+    prompt: {en: "Play I – vii°7/V – V – I in C exactly as in the explanation.", sr: "Odsviraj I – vii°7/V – V – I u C-duru tačno kao u objašnjenju."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] [_Ec] [DB] [=Ec] |]
+      V:2 clef=bass
+      [C,G,] [^F,,A,] [G,,G,] [C,G,] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, G3, E4, C5], [F#2, A3, Eb4, C5], [G2, G3, D4, B4], [C3, G3, E4, C5]]
+    checks:
+      - chord: {notes: [F#2, A3, Eb4, C5], root: F#, quality: dim7}
+      - numeral: {key: C, is: "vii°7/V", notes: [F#2, A3, Eb4, C5]}
+      - chord: {notes: [G2, G3, D4, B4], root: G, quality: maj}
+  - id: T-045-6
+    type: generated
+    count: 4
+    prompt: {en: "Which chord leads into V? Dominant 7th (with its root a 5th above V) or diminished 7th (four notes a minor 3rd apart)?", sr: "Koji akord vodi u V? Dominantni septakord (sa osnovnim tonom kvintu iznad V) ili smanjeni septakord (četiri tona na razmaku male terce)?"}
+    gen: {kind: progression-ear, keys: [C, G, F], options: [[I, V7/V, V, I], ["I", "vii°7/V", V, I], [I, ii7, V, I]], tempo: 60}
+  - id: T-045-7
+    type: generated
+    count: 4
+    prompt: {en: "Play I – IV – vii°7/V – V – I with smooth voice leading.", sr: "Odsviraj I – IV – vii°7/V – V – I sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [C, G, D, F], numerals: [I, IV, "vii°7/V", V, I], smooth: true}

@@ -1,0 +1,132 @@
+id: E-034
+track: E
+order: 34
+title: {en: "Review: progressions with secondary dominants", sr: "Ponavljanje: progresije sa sekundarnim dominantama"}
+prereqs: [E-033, E-029, T-044]
+minutes: 15
+tags: [ear, harmony, secondary-dominants, review]
+explain:
+  en: |
+    V/V was the first **secondary dominant**. Any major or minor chord in the key can get its own:
+    take the chord you want to land on, build a major triad (or dominant 7th) a fifth above it, and
+    play it just before. In C:
+
+    | secondary | chord | chromatic note | resolves to |
+    |---|---|---|---|
+    | V7/ii | A7 (A C# E G) | C# rises to D | Dm |
+    | V7/iii | B7 (B D# F# A) | D# rises to E | Em |
+    | V7/IV | C7 (C E G B♭) | B♭ falls to A | F |
+    | V7/V | D7 (D F# A C) | F# rises to G | G |
+    | V7/vi | E7 (E G# B D) | G# rises to A | Am |
+
+    Three things give them away by ear:
+
+    1. **A major (or dominant 7th) chord where the key has a minor one.** In C, A, E and D should be
+       minor; hearing them major is the alarm bell. (V7/IV is the odd one: C is already major, the
+       clue is the B♭ that makes it a dominant seventh.)
+    2. **A chromatic note that resolves by half step**, exactly like ♯4 and ♭7 in E-030: sharps go up,
+       flats go down.
+    3. **The bass then falls a fifth** (or rises a fourth) into the target chord, just as V goes to I.
+
+    Chained together they make the sound of ragtime, gospel and old jazz: **I – VI7 – II7 – V7 – I**
+    (C A7 D7 G7 C), where each chord is the dominant of the next. In roman numerals as functions:
+    I – V7/ii – V7/V – V7 – I.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [A,,EG^c] | [D,^FAc] [G,,FBd] | [C,EGc]2 |]
+    ```
+
+    For each exercise: bass first, then "which chord is major that should be minor?", then name the
+    target.
+  sr: |
+    V/V je bila prva **sekundarna dominanta**. Svaki durski ili molski akord u tonalitetu može da
+    dobije svoju: uzmi akord na koji hoćeš da stigneš, sagradi durski kvintakord (ili dominantni
+    septakord) kvintu iznad njega i odsviraj ga neposredno pre. U C-duru:
+
+    | sekundarna | akord | hromatski ton | razrešava se na |
+    |---|---|---|---|
+    | V7/ii | A7 (A Cis E G) | Cis se penje na D | d |
+    | V7/iii | H7 (H Dis Fis A) | Dis se penje na E | e |
+    | V7/IV | C7 (C E G B) | B pada na A | F |
+    | V7/V | D7 (D Fis A C) | Fis se penje na G | G |
+    | V7/vi | E7 (E Gis H D) | Gis se penje na A | a |
+
+    Tri stvari ih otkrivaju po sluhu:
+
+    1. **Durski (ili dominantni septakord) tamo gde tonalitet ima molski.** U C-duru A, E i D treba da
+       budu molski; kad ih čuješ kao durske, to je zvono za uzbunu. (V7/IV je izuzetak: C je već
+       durski, a trag je B koje ga pravi dominantnim septakordom.)
+    2. **Hromatski ton koji se razrešava polustepenom**, tačno kao ♯4 i ♭7 u E-030: povisilice idu
+       naviše, snizilice naniže.
+    3. **Bas onda pada za kvintu** (ili se penje za kvartu) u ciljni akord, kao što V ide na I.
+
+    Povezane u lanac daju zvuk regtajma, gospela i starog džeza: **I – VI7 – II7 – V7 – I**
+    (C A7 D7 G7 C), gde je svaki akord dominanta sledećeg. U rimskim brojevima kao funkcije:
+    I – V7/ii – V7/V – V7 – I.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [A,,EG^c] | [D,^FAc] [G,,FBd] | [C,EGc]2 |]
+    ```
+
+    Za svaku vežbu: prvo bas, pa „koji akord je durski, a trebalo bi da je molski?", pa imenuj cilj.
+exercises:
+  - id: E-034-1
+    type: generated
+    prompt: {en: "iii, V7, or V7/vi (E7) before the vi?", sr: "iii, V7 ili V7/vi (E7) pre vi?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V7/vi, vi, IV], [I, iii, vi, IV], [I, V7, vi, IV]], tempo: 60}
+    checks:
+      - chord: {notes: [A2, E4, G4, C#5], root: A, quality: "7"}
+      - chord: {notes: [D3, F#4, A4, C5], root: D, quality: "7"}
+      - chord: {notes: [G2, F4, B4, D5], root: G, quality: "7"}
+      - chord: {notes: [E3, G#3, B3, D4], root: E, quality: "7"}
+      - chord: {notes: [B2, D#3, F#3, A3], root: B, quality: "7"}
+      - chord: {notes: [C3, E3, G3, Bb3], root: C, quality: "7"}
+      - interval: {from: C#4, to: D4, is: m2}
+      - interval: {from: G#3, to: A3, is: m2}
+      - interval: {from: D#4, to: E4, is: m2}
+      - interval: {from: Bb3, to: A3, is: m2}
+      - interval: {from: A2, to: D3, is: P4}
+      - roman: {key: C, degree: 3, is: "iii"}
+  - id: E-034-2
+    type: generated
+    prompt: {en: "Which secondary dominant leads into the predominant?", sr: "Koja sekundarna dominanta vodi u predominantu?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, V7/IV, IV, V7], [I, V7/ii, ii, V7], [I, vi, ii, V7], [I, vi, IV, V7]], tempo: 60}
+  - id: E-034-3
+    type: generated
+    prompt: {en: "Ragtime chain or diatonic? Which progression?", sr: "Regtajm lanac ili dijatonski? Koja progresija?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[I, V7/ii, V7/V, V7, I], [I, vi, ii, V7, I], [I, V7/ii, ii, V7, I], [I, vi, V7/V, V7, I]], tempo: 60}
+  - id: E-034-4
+    type: generated
+    prompt: {en: "Which chord gets tonicized: ii, iii, IV or vi?", sr: "Koji akord se tonikalizuje: ii, iii, IV ili vi?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V7/ii, ii, V7, I], [I, V7/iii, iii, IV, V7], [I, V7/IV, IV, V7, I], [I, V7/vi, vi, V7, I]], tempo: 60}
+  - id: E-034-5
+    type: generated
+    prompt: {en: "Bass of the ragtime chain I–VI7–II7–V7–I: echo it (falling fifths from 6).", sr: "Bas regtajm lanca I–VI7–II7–V7–I: ponovi ga (kvinte naniže od 6)."}
+    count: 4
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, F, G, Bb, Eb], type: major, numerals: [I, V7/ii, V7/V, V7], line: [I, V7/ii, V7/V, V7, I], octave: 3, tempo: 72}
+  - id: E-034-6
+    type: generated
+    prompt: {en: "Hear it, then play it: I–V7/vi–vi–V7/V–V7–I", sr: "Čuj, pa odsviraj: I–V7/vi–vi–V7/V–V7–I"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, G], type: major, numerals: [I, V7/vi, vi, V7/V, V7, I], echo: true, smooth: true}
+  - id: E-034-7
+    type: generated
+    prompt: {en: "Hear it, then play it: the ragtime chain I–V7/ii–V7/V–V7–I", sr: "Čuj, pa odsviraj: regtajm lanac I–V7/ii–V7/V–V7–I"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, Bb], type: major, numerals: [I, V7/ii, V7/V, V7, I], echo: true, smooth: true}

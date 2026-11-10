@@ -1,0 +1,174 @@
+id: L-008
+track: L
+order: 8
+prereqs: [L-007]
+title: {en: "Point of view and story", sr: "Tačka gledišta i priča"}
+minutes: 14
+tags: [lyrics, story]
+explain:
+  en: |
+    Before writing a line, decide **who is singing, to whom, and when**. Most weak lyrics
+    never decided: "I" turns into "we", "you" is sometimes the lover and sometimes the
+    listener, and the time slides between yesterday and now.
+
+    ### The three points of view
+    | POV | sounds like | gives you | costs you |
+    |---|---|---|---|
+    | **1st person** (I) | *I keep your letters in a tin* | intimacy, confession | everything is filtered through one mind |
+    | **2nd person** (you) | *You keep his letters in a tin* | address, accusation, tenderness; the listener feels spoken to | must be clear who "you" is |
+    | **3rd person** (she, he) | *She keeps his letters in a tin* | distance, a story, characters who are not you | less direct emotion; details must do the work |
+
+    The most common pop setup is **I singing to you**. Folk ballads, story songs and many
+    starogradske use 3rd person. Make "you" clear in the first two lines (*your coat*, *your
+    sister's car*), or the listener spends the verse guessing.
+
+    ### Keep it, or switch on purpose
+    Stay in one POV within a section. A switch is a tool, so put it at a **section boundary**
+    and make it mean something: verses in 3rd person (*she waits by the window*), the bridge
+    in 1st (*and I was the one who never came*), and the song changes meaning.
+
+    ### Tense
+    Past tense tells a story (*she waited*); present puts the listener in the room (*she
+    waits*). A useful pattern: verses in past, chorus in present (what it means now). Change
+    tense only where time really moves.
+
+    ### Serbian: the verb tells you a lot
+    Serbian often drops the pronoun, and the past tense shows the **gender** of the speaker:
+    *čekala sam* is a woman speaking, *čekao sam* a man. Decide who the narrator is before the
+    first line; a male singer singing a female narrator (or the reverse) is common in folk
+    songs, but it should be a choice, not an accident halfway through.
+
+    ### A song is a small story
+    1. **Situation**: who, where, what is normal (verse 1).
+    2. **Complication**: something changes or is revealed (verse 2, or the pre-chorus).
+    3. **Turn**: a decision, a realisation, a consequence (last verse or bridge).
+
+    The chorus stays the same, but after each verse it should mean a little more.
+
+    > Same moment, three ways (original):
+    > 1st: *I sold Dad's Zastava on a Tuesday, cash, no receipt*
+    > 2nd: *You sold Dad's Zastava on a Tuesday and never told me*
+    > 3rd: *He sold his father's Zastava on a Tuesday, cash, no receipt*
+  sr: |
+    Pre prvog stiha odluči **ko peva, kome i kada**. Većina slabih tekstova to nikad nije
+    odlučila: „ja” pređe u „mi”, „ti” je čas voljena osoba čas slušalac, a vreme klizi između
+    juče i sad.
+
+    ### Tri tačke gledišta
+    | lice | zvuči kao | daje ti | košta te |
+    |---|---|---|---|
+    | **prvo lice** (ja) | *Čuvam tvoja pisma u kutiji* | bliskost, ispovest | sve prolazi kroz jednu glavu |
+    | **drugo lice** (ti) | *Čuvaš njegova pisma u kutiji* | obraćanje, prekor, nežnost; slušalac oseća da mu se govori | mora biti jasno ko je „ti” |
+    | **treće lice** (ona, on) | *Ona čuva njegova pisma u kutiji* | distanca, priča, likovi koji nisu ti | manje direktne emocije; detalji moraju da rade posao |
+
+    Najčešća pop postavka je **ja pevam tebi**. Narodne balade, pesme-priče i mnoge
+    starogradske koriste treće lice. Neka „ti” bude jasno u prva dva stiha (*tvoj kaput*, *auto
+    tvoje sestre*), inače slušalac celu strofu pogađa.
+
+    ### Drži je, ili menjaj namerno
+    U jednom delu pesme ostani u jednoj tački gledišta. Promena je alat, zato je stavi na
+    **granicu delova** i neka nešto znači: strofe u trećem licu (*ona čeka kraj prozora*), most u
+    prvom (*a ja sam bio taj koji nije došao*), i pesma promeni značenje.
+
+    ### Glagolsko vreme
+    Prošlo vreme priča priču (*čekala je*); sadašnje stavlja slušaoca u sobu (*čeka*). Koristan
+    obrazac: strofe u prošlom, refren u sadašnjem (šta to znači sada). Vreme menjaj samo gde se
+    vreme zaista pomera.
+
+    ### Srpski: glagol mnogo kaže
+    Srpski često izostavlja zamenicu, a prošlo vreme pokazuje **rod** onoga ko govori: *čekala
+    sam* govori žena, *čekao sam* muškarac. Odluči ko je pripovedač pre prvog stiha; muški pevač
+    koji peva u ženskom licu (ili obrnuto) čest je u narodnim pesmama, ali neka to bude izbor, a
+    ne slučajnost na pola pesme.
+
+    ### Pesma je mala priča
+    1. **Situacija**: ko, gde, šta je uobičajeno (prva strofa).
+    2. **Zaplet**: nešto se menja ili otkriva (druga strofa ili pred-refren).
+    3. **Obrt**: odluka, spoznaja, posledica (poslednja strofa ili most).
+
+    Refren ostaje isti, ali posle svake strofe treba da znači malo više.
+
+    > Isti trenutak, tri načina (originalni primer):
+    > 1. lice: *Prodao sam tatinu Zastavu u utorak, keš, bez priznanice*
+    > 2. lice: *Prodao si tatinu Zastavu u utorak i nisi mi rekao*
+    > 3. lice: *Prodao je očevu Zastavu u utorak, keš, bez priznanice*
+exercises:
+  - id: L-008-1
+    type: mcq
+    prompt: {en: "“She keeps his letters in a coffee tin / behind the flour, where he will never look.” Which point of view?", sr: "„Ona čuva njegova pisma u limenci od kafe / iza brašna, gde on nikad ne gleda.” Koja tačka gledišta?"}
+    options:
+      - {en: "1st person", sr: "Prvo lice"}
+      - {en: "2nd person", sr: "Drugo lice"}
+      - {en: "3rd person", sr: "Treće lice"}
+    answer: 2
+    keepOrder: true
+  - id: L-008-2
+    type: mcq
+    prompt: {en: "A verse in 1st person, singing to “you”. Which line breaks the point of view without a reason?", sr: "Strofa u prvom licu, peva se „tebi”. Koji stih bez razloga ruši tačku gledišta?"}
+    options:
+      - {en: "I left your jacket on the chair", sr: "Ostavio sam tvoju jaknu na stolici"}
+      - {en: "You never called to ask for it", sr: "Nikad nisi zvala da je tražiš"}
+      - {en: "She probably forgot it's there", sr: "Ona je verovatno zaboravila da je tu"}
+      - {en: "I wear it when the heating's off", sr: "Nosim je kad ne radi grejanje"}
+    answer: 2
+  - id: L-008-3
+    type: mcq
+    prompt: {en: "A Serbian verse begins “Čekala sam do ponoći”. What does the verb tell you about the narrator?", sr: "Srpska strofa počinje sa „Čekala sam do ponoći”. Šta glagol govori o pripovedaču?"}
+    options:
+      - {en: "1st person, a woman, telling it in the past", sr: "Prvo lice, žena, priča u prošlom vremenu"}
+      - {en: "1st person, a man, telling it in the present", sr: "Prvo lice, muškarac, priča u sadašnjem vremenu"}
+      - {en: "3rd person, a woman, in the past", sr: "Treće lice, žena, u prošlom vremenu"}
+      - {en: "Nothing: Serbian verbs do not show person or gender", sr: "Ništa: srpski glagoli ne pokazuju lice ni rod"}
+    answer: 0
+  - id: L-008-4
+    type: mcq
+    prompt: {en: "You want to write about your grandfather's life with room for detail and without it sounding like a diary. Which POV suits it best?", sr: "Hoćeš da pišeš o životu svog deke, sa mestom za detalje i tako da ne zvuči kao dnevnik. Koja tačka gledišta najbolje odgovara?"}
+    options:
+      - {en: "3rd person (he)", sr: "Treće lice (on)"}
+      - {en: "1st person (I), as if you were him", sr: "Prvo lice (ja), kao da si ti on"}
+      - {en: "Switching between I, you and he in every verse", sr: "Menjanje između ja, ti i on u svakoj strofi"}
+      - {en: "No people, only the landscape", sr: "Bez ljudi, samo predeo"}
+    answer: 0
+  - id: L-008-5
+    type: mcq
+    prompt: {en: "Which three-verse outline moves as a story (situation → complication → turn)?", sr: "Koji plan od tri strofe ide kao priča (situacija → zaplet → obrt)?"}
+    options:
+      - {en: "1: He runs a kiosk, same customers every day. 2: The city sends a letter: the kiosk must go. 3: On the last day he gives everything away for free.", sr: "1: On drži trafiku, iste mušterije svaki dan. 2: Stiže dopis iz opštine: trafika mora da se ukloni. 3: Poslednjeg dana sve deli besplatno."}
+      - {en: "1: He runs a kiosk. 2: The kiosk is small and green. 3: He likes the kiosk very much.", sr: "1: On drži trafiku. 2: Trafika je mala i zelena. 3: Mnogo voli trafiku."}
+      - {en: "1: He runs a kiosk. 2: I like rain. 3: You never write back.", sr: "1: On drži trafiku. 2: Volim kišu. 3: Nikad mi ne odgovaraš."}
+      - {en: "1: He is sad. 2: He is very sad. 3: He is still sad.", sr: "1: Tužan je. 2: Veoma je tužan. 3: I dalje je tužan."}
+    answer: 0
+  - id: L-008-6
+    type: write
+    prompt:
+      en: "Country or folk, English or Serbian: one moment (someone selling something that belonged to a parent) told twice. Write 4 lines in 1st person, then the same moment in 4 lines of 3rd person. The two versions should show different things, not the same lines with pronouns swapped."
+      sr: "Kantri ili narodni stil, engleski ili srpski: jedan trenutak (neko prodaje nešto što je pripadalo roditelju) ispričan dvaput. Napiši 4 stiha u prvom licu, pa isti trenutak u 4 stiha u trećem licu. Dve verzije treba da pokažu različite stvari, a ne iste stihove sa zamenjenim zamenicama."
+    language: either
+    lines: [8, 10]
+    rubric:
+      - id: pov
+        label: {en: "POV held", sr: "Tačka gledišta održana"}
+        top: {en: "Each version stays in its point of view from first to last line; tense is consistent or changes only where time moves.", sr: "Svaka verzija ostaje u svojoj tački gledišta od prvog do poslednjeg stiha; vreme je dosledno ili se menja samo gde se vreme pomera."}
+      - id: difference
+        label: {en: "The POV changes what we see", sr: "Tačka gledišta menja šta vidimo"}
+        top: {en: "The 1st-person version shows something only the speaker knows (a thought, a memory); the 3rd-person version shows something only an observer sees (a gesture, the room).", sr: "Verzija u prvom licu pokazuje nešto što zna samo onaj ko govori (misao, sećanje); verzija u trećem licu pokazuje nešto što vidi samo posmatrač (pokret, prostor)."}
+      - id: concrete
+        label: {en: "Concrete", sr: "Konkretno"}
+        top: {en: "Both versions name a specific object, place or time (L-004); no line just states the emotion.", sr: "Obe verzije imenuju konkretan predmet, mesto ili vreme (L-004); nijedan stih samo ne imenuje osećanje."}
+  - id: L-008-7
+    type: write
+    prompt:
+      en: "Any genre: plan a three-verse story song. Write one sentence per verse (situation, complication, turn), the POV and tense you chose, and one chorus line that is true after all three verses."
+      sr: "Bilo koji žanr: isplaniraj pesmu-priču od tri strofe. Napiši po jednu rečenicu za svaku strofu (situacija, zaplet, obrt), tačku gledišta i vreme koje si izabrao, i jedan stih refrena koji je tačan posle sve tri strofe."
+    language: either
+    lines: [4, 8]
+    rubric:
+      - id: arc
+        label: {en: "Story moves", sr: "Priča ide napred"}
+        top: {en: "Verse 2 changes or reveals something, verse 3 is a decision or consequence; no verse could be swapped with another.", sr: "Druga strofa nešto menja ili otkriva, treća je odluka ili posledica; nijedna strofa ne može da zameni mesto sa drugom."}
+      - id: frame
+        label: {en: "Clear frame", sr: "Jasan okvir"}
+        top: {en: "POV and tense are named and fit the story (distance for 3rd person, confession for 1st, address for 2nd).", sr: "Tačka gledišta i vreme su navedeni i odgovaraju priči (distanca za treće lice, ispovest za prvo, obraćanje za drugo)."}
+      - id: chorus
+        label: {en: "Chorus grows", sr: "Refren raste"}
+        top: {en: "The chorus line is true after each verse and means something different after verse 3 than after verse 1.", sr: "Stih refrena je tačan posle svake strofe i posle treće znači nešto drugo nego posle prve."}

@@ -1,0 +1,144 @@
+id: T-039
+track: T
+order: 39
+prereqs: [T-038]
+title: {en: "Minor-key harmony in practice: raised 6 and 7", sr: "Harmonija u molu u praksi: povišeni 6. i 7. stupanj"}
+minutes: 14
+tags: [harmony, minor, four-part]
+explain:
+  en: |
+    In natural A minor the chord on 5 is **E G B**, a minor v. It has no leading tone (G is a whole step below A), so v → i sounds soft and modal, not like a cadence. Composers fix that by **raising the 7th**: G♯. Now the dominant is **E G♯ B** (major V, V7 = E G♯ B D) and vii° is **G♯ B D**. This is the harmonic minor scale, and it is why "minor key" pieces are full of accidentals that are not in the key signature.
+
+    | chord in A minor | natural minor | with raised 7 (G♯) |
+    |---|---|---|
+    | on 5 | v: E G B | **V: E G♯ B**, V7: E G♯ B D |
+    | on 7 | VII: G B D | **vii°: G♯ B D** |
+    | on 4 | iv: D F A | (unchanged, keep F) |
+    | on 6 | VI: F A C | (unchanged) |
+
+    The catch: F to G♯ is an **augmented 2nd** (three semitones spelled as a step). In a single voice it sounds exotic and is hard to sing, so in four-part writing **no voice moves F → G♯**. Two fixes:
+    - in harmony (iv → V): F goes **down** to E, and G♯ comes from somewhere else (A → G♯, or from the bass chord);
+    - in a melody rising 6–7–8: raise the 6th too, **F♯–G♯–A** (melodic minor). Falling, use the natural forms: A–G–F.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    [Ac] [Ad] [^GB] [Ac] |]
+    V:2 clef=bass
+    [A,,E] [D,F] [E,E] [A,,E] |]
+    ```
+
+    i – iv – V – i in A minor: in iv the tenor F falls to E, the alto A falls to G♯ and rises back to A.
+  sr: |
+    U prirodnom a-molu akord na 5. stupnju je **E G H**, molska v. Nema vođicu (G je ceo stepen ispod A), pa v → i zvuči meko i modalno, ne kao kadenca. Kompozitori to rešavaju **povišenjem 7. stupnja**: Gis. Sada je dominanta **E Gis H** (durska V, V7 = E Gis H D), a vii° je **Gis H D**. To je harmonski mol, i zato su komadi „u molu" puni predznaka kojih nema u predznaku tonaliteta.
+
+    | akord u a-molu | prirodni mol | sa povišenim 7. stupnjem (Gis) |
+    |---|---|---|
+    | na 5. | v: E G H | **V: E Gis H**, V7: E Gis H D |
+    | na 7. | VII: G H D | **vii°: Gis H D** |
+    | na 4. | iv: D F A | (bez promene, ostaje F) |
+    | na 6. | VI: F A C | (bez promene) |
+
+    Zamka: F ka Gis je **prekomerna sekunda** (tri polustepena napisana kao korak). U jednom glasu zvuči egzotično i teško se peva, pa u četvoroglasnom stavu **nijedan glas ne ide F → Gis**. Dva rešenja:
+    - u harmoniji (iv → V): F ide **naniže** na E, a Gis dolazi iz drugog tona (A → Gis, ili iz basa);
+    - u melodiji koja ide naviše 6–7–8: povisi i 6. stupanj, **Fis–Gis–A** (melodijski mol). Naniže se koriste prirodni oblici: A–G–F.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    [Ac] [Ad] [^GB] [Ac] |]
+    V:2 clef=bass
+    [A,,E] [D,F] [E,E] [A,,E] |]
+    ```
+
+    i – iv – V – i u a-molu: u iv tenor F silazi na E, alt A silazi na Gis i vraća se na A.
+exercises:
+  - id: T-039-1
+    type: generated
+    count: 5
+    prompt: {en: "Name the chord with its roman numeral (harmonic minor).", sr: "Imenuj akord rimskim brojem (harmonski mol)."}
+    gen: {kind: roman, keys: [A, D, E], type: harmonic-minor, degrees: [1, 4, 5, 6, 7], ask: numeral}
+  - id: T-039-2
+    type: mcq
+    prompt: {en: "Why does the V chord in A minor need a G♯ that is not in the key signature?", sr: "Zašto akordu V u a-molu treba Gis koga nema u predznaku?"}
+    options:
+      - {en: "G♯ is the leading tone, a half step below A; without it v → i does not sound like a cadence", sr: "Gis je vođica, polustepen ispod A; bez nje v → i ne zvuči kao kadenca"}
+      - {en: "E G B is a diminished chord", sr: "E G H je smanjeni akord"}
+      - {en: "The key signature of A minor is wrong", sr: "Predznak a-mola je pogrešan"}
+      - {en: "To avoid parallel fifths", sr: "Da bi se izbegle paralelne kvinte"}
+    answer: 0
+    checks:
+      - chord: {notes: [E3, G#3, B3], root: E, quality: maj}
+      - interval: {from: G#3, to: A3, is: m2}
+  - id: T-039-3
+    type: mcq
+    prompt: {en: "Spot the error: iv → V in A minor.", sr: "Pronađi grešku: iv → V u a-molu."}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:Am
+      V:1
+      [Fd] [^GB] |]
+      V:2 clef=bass
+      [D,A,] [E,E] |]
+    options:
+      - {en: "The alto moves F → G♯, an augmented 2nd", sr: "Alt ide F → Gis, prekomerna sekunda"}
+      - {en: "Parallel 5ths between bass and tenor", sr: "Paralelne kvinte između basa i tenora"}
+      - {en: "The leading tone is doubled", sr: "Udvojena je vođica"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [D3, A3, F4, D5], root: D, quality: min}
+      - chord: {notes: [E3, E4, G#4, B4], root: E, quality: maj}
+      - interval: {from: F4, to: G#4, is: A2}
+  - id: T-039-4
+    type: midi-play
+    prompt: {en: "Play i – iv – V – i in A minor exactly as in the explanation. Feel the alto A → G♯ → A.", sr: "Odsviraj i – iv – V – i u a-molu tačno kao u objašnjenju. Oseti alt A → Gis → A."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Am
+      V:1
+      [Ac] [Ad] [^GB] [Ac] |]
+      V:2 clef=bass
+      [A,,E] [D,F] [E,E] [A,,E] |]
+    mode: chords
+    octave: exact
+    expectChords: [[A2, E4, A4, C5], [D3, F4, A4, D5], [E3, E4, G#4, B4], [A2, E4, A4, C5]]
+    checks:
+      - chord: {notes: [A2, E4, A4, C5], root: A, quality: min}
+      - chord: {notes: [D3, F4, A4, D5], root: D, quality: min}
+      - chord: {notes: [E3, E4, G#4, B4], root: E, quality: maj}
+  - id: T-039-5
+    type: generated
+    count: 4
+    prompt: {en: "Play i – iv – V – i in minor with smooth voice leading (remember the raised 7th in V).", sr: "Odsviraj i – iv – V – i u molu sa glatkim vođenjem glasova (ne zaboravi povišen 7. stupanj u V)."}
+    gen: {kind: progression, keys: [A, D, E, G], type: harmonic-minor, numerals: [i, iv, V, i], smooth: true}
+  - id: T-039-6
+    type: mcq
+    prompt: {en: "A melody in A minor rises from E to the top A, step by step. Which spelling is standard?", sr: "Melodija u a-molu ide postupno naviše od E do gornjeg A. Koji zapis je uobičajen?"}
+    options: ["E – F♯ – G♯ – A", "E – F – G♯ – A", "E – F – G – A", "E – F♯ – G – A"]
+    answer: 0
+    checks:
+      - scale: {tonic: A, type: melodic-minor, is: [A, B, C, D, E, F#, G#]}
+  - id: T-039-7
+    type: compose
+    prompt: {en: "Write a 4-bar melody in A minor (4/4). Rise through F♯ – G♯ – A somewhere, and end on A approached from G♯ or B.", sr: "Napiši melodiju od 4 takta u a-molu (4/4). Negde prođi naviše kroz Fis – Gis – A i završi na A, do kog dolaziš sa Gis ili H."}
+    key: A minor
+    meter: "4/4"
+    bars: 4
+    rules: [bars, key, cadence, augmented]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Am
+      A c B A | c e d c | B e ^f ^g | a4 |]

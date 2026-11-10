@@ -1,0 +1,158 @@
+id: K-026
+track: K
+order: 26
+title: {en: "Pop comping II: syncopated right-hand rhythms over a bass", sr: "Pop pratnja II: sinkopirani ritmovi desne ruke iznad basa"}
+prereqs: [K-025, T-018]
+minutes: 15
+tags: [keys, accompaniment, comping, pop, rhythm, syncopation]
+explain:
+  en: |
+    The patterns in K-025 put every chord on a beat. Most pop piano does not: the right hand
+    hits **between** the beats while the bass marks beat 1. That contrast is syncopation
+    (T-018), and it is most of what makes a part groove.
+
+    **Rhythm 1: 3 + 3 + 2.** Count the bar in eighths, 1 & 2 & 3 & 4 &, and group the eight
+    eighths as 3 + 3 + 2. The chord is struck on **1, the & of 2, and 4**:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    [CEG]3 [CEG]3 [CEG]2 |]
+    ```
+
+    The middle hit lands off the beat and is held across beat 3, so beat 3, normally strong,
+    is silent. You hear it in a huge share of pop, reggaeton and Latin music.
+
+    **Rhythm 2: the push (anticipation).** The next chord arrives an eighth **early**, on the
+    & of 4, and is tied over the bar line:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    [C,CEG]3 [CEG]4 [B,,DG]- | [B,,DG]3 [DG]4 [A,,CEA] |]
+    ```
+
+    The change of harmony is felt as a forward lean. Do not re-strike the chord on beat 1
+    after a push; the tie is the point.
+
+    **The bass under it** is a descending line, C – B – A – F, so the progression is
+    C – G/B – Am – F (I – V6 – vi – IV). "G/B" is a slash chord: G major with B in the bass.
+    In the right hand play only **D–G** over that B: the B is already in the bass, and it is
+    the leading tone, so doubling it in the right hand makes the chord heavy.
+
+    | bass | C3 | B2 | A2 | F2 |
+    |---|---|---|---|---|
+    | RH | C4 E4 G4 | D4 G4 | C4 E4 A4 | C4 F4 A4 |
+
+    How to practise: tap the rhythm alone first (the app grades the timing), then play it with
+    the chords (graded on notes and timing). Count the eighths out loud at first; the off-beat hit wants to drift onto
+    beat 3.
+  sr: |
+    Obrasci iz K-025 stavljaju svaki akord na dobu. Većina pop klavira to ne radi: desna ruka
+    udara **između** doba, dok bas označava prvu dobu. Taj kontrast je sinkopa (T-018), i on je
+    najveći deo onoga zbog čega deonica "ide".
+
+    **Ritam 1: 3 + 3 + 2.** Broji takt u osminama, 1 i 2 i 3 i 4 i, i grupiši osam osmina kao
+    3 + 3 + 2. Akord se udara na **1, "i" posle 2, i 4**:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    [CEG]3 [CEG]3 [CEG]2 |]
+    ```
+
+    Srednji udarac pada van dobe i drži se preko treće dobe, pa je treća doba, inače jaka,
+    nema. Čuješ ga u ogromnom delu popa, regetona i latino muzike.
+
+    **Ritam 2: anticipacija ("guranje").** Sledeći akord stiže osminu **ranije**, na "i"
+    posle 4, i vezan je lukom preko taktne crte:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    [C,CEG]3 [CEG]4 [B,,DG]- | [B,,DG]3 [DG]4 [A,,CEA] |]
+    ```
+
+    Promena harmonije se oseća kao naginjanje napred. Ne udaraj akord ponovo na prvu dobu
+    posle anticipacije; luk je poenta.
+
+    **Bas ispod** je silazna linija C – H – A – F, pa je progresija C – G/H – Am – F
+    (I – V6 – vi – IV). "G/H" je akord sa kosom crtom: G-dur sa H u basu. U desnoj ruci sviraj
+    samo **D–G** iznad tog H: H je već u basu, a uz to je vođica, pa udvajanje u desnoj ruci
+    čini akord teškim.
+
+    | bas | C3 | H2 | A2 | F2 |
+    |---|---|---|---|---|
+    | desna | C4 E4 G4 | D4 G4 | C4 E4 A4 | C4 F4 A4 |
+
+    Kako vežbati: prvo samo otkucaj ritam (aplikacija ocenjuje tajming), pa ga odsviraj sa
+    akordima (ocenjuju se tonovi i tajming). U početku broji osmine naglas; udarac van dobe stalno hoće da sklizne na treću
+    dobu.
+exercises:
+  - id: K-026-1
+    type: mcq
+    prompt: {en: "In the 3 + 3 + 2 rhythm (eighths grouped 3, 3, 2 in a 4/4 bar), on which counts is the chord struck?", sr: "U ritmu 3 + 3 + 2 (osmine grupisane 3, 3, 2 u taktu 4/4), na koje brojeve se udara akord?"}
+    options: ["1, 2&, 4", "1, 2, 4", "1, 3, 4", "1&, 2&, 4&"]
+    answer: 0
+  - id: K-026-2
+    type: generated
+    prompt: {en: "Tap 3 + 3 + 2 on one key, two bars", sr: "Otkucaj 3 + 3 + 2 na jednoj dirki, dva takta"}
+    count: 2
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1.5, 1.5, 1]], tempo: 88}
+  - id: K-026-3
+    type: midi-play
+    prompt: {en: "Both hands, 3 + 3 + 2, one bar per chord: C – G/B – Am – F as in the table (LH bass on beat 1 only, held). ♩=88. Notes and rhythm are both graded.", sr: "Obe ruke, 3 + 3 + 2, jedan takt po akordu: C – G/H – Am – F kao u tabeli (bas u levoj ruci samo na prvu dobu, držan). ♩=88. Ocenjuju se i tonovi i ritam."}
+    mode: chords
+    expectChords: [[C3, C4, E4, G4], [C4, E4, G4], [C4, E4, G4], [B2, D4, G4], [D4, G4], [D4, G4], [A2, C4, E4, A4], [C4, E4, A4], [C4, E4, A4], [F2, C4, F4, A4], [C4, F4, A4], [C4, F4, A4]]
+    beats: [1.5, 1.5, 1, 1.5, 1.5, 1, 1.5, 1.5, 1, 1.5, 1.5, 1]
+    tempo: 88
+    checks:
+      - chord: {notes: [B2, D4, G4], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [C3, C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [A2, C4, E4, A4], root: A, quality: min, inversion: 0}
+      - chord: {notes: [F2, C4, F4, A4], root: F, quality: maj, inversion: 0}
+      - roman: {key: C, degree: 5, is: "V"}
+  - id: K-026-4
+    type: generated
+    prompt: {en: "Tap the push over two bars (after eight clicks): 1, 2&, 4& tied over the bar line (no attack on the next 1), then 2& and 4& again into bar 3. Five taps.", sr: "Otkucaj anticipaciju kroz dva takta (posle osam klikova): 1, \"i\" posle 2, \"i\" posle 4 vezano preko taktne crte (bez udarca na sledeću prvu dobu), pa opet \"i\" posle 2 i \"i\" posle 4 u treći takt. Pet udaraca."}
+    count: 2
+    # two 4/4 bars as one 8/4 "bar": rhythm-echo cells cannot cross a bar line, and the
+    # point of the push is the tie across it (no attack on beat 1 of bar 2)
+    gen: {kind: rhythm-echo, meter: "8/4", bars: 1, cells: [[1.5, 2, 2, 2, 0.5]], tempo: 80, showAbc: false}
+  - id: K-026-5
+    type: midi-play
+    prompt: {en: "The push with both hands, as in the second example: each new chord and its bass arrive on the & of 4. C – G/B – Am – F, then land on C (held a whole bar). ♩=80, rhythm graded: no re-strike on beat 1 after a push.", sr: "Anticipacija sa obe ruke, kao u drugom primeru: svaki novi akord i njegov bas stižu na \"i\" posle 4. C – G/H – Am – F, pa doskoči na C (drži ceo takt). ♩=80, ocenjuje se i ritam: posle anticipacije nema ponovnog udarca na prvu dobu."}
+    mode: chords
+    expectChords: [[C3, C4, E4, G4], [C4, E4, G4], [B2, D4, G4], [D4, G4], [A2, C4, E4, A4], [C4, E4, A4], [F2, C4, F4, A4], [C4, F4, A4], [C3, C4, E4, G4]]
+    beats: [1.5, 2, 2, 2, 2, 2, 2, 2, 4]
+    tempo: 80
+    checks:
+      - chord: {notes: [B2, D4, G4], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [C4, F4, A4], root: F, quality: maj, inversion: 2}
+  - id: K-026-6
+    type: midi-play
+    prompt: {en: "G major, notes hidden: 3 + 3 + 2 over the descending bass G – F♯ – E – C (G – D/F♯ – Em – C). Same idea: over F♯ the RH plays only A–D. Any octave, ♩=88.", sr: "G-dur, bez prikaza tonova: 3 + 3 + 2 iznad silaznog basa G – Fis – E – C (G – D/Fis – Em – C). Ista ideja: iznad Fis desna ruka svira samo A–D. Bilo koja oktava, ♩=88."}
+    mode: chords
+    expectChords: [[G2, B3, D4, G4], [B3, D4, G4], [B3, D4, G4], ["F#2", A3, D4], [A3, D4], [A3, D4], [E2, B3, E4, G4], [B3, E4, G4], [B3, E4, G4], [C2, C4, E4, G4], [C4, E4, G4], [C4, E4, G4]]
+    beats: [1.5, 1.5, 1, 1.5, 1.5, 1, 1.5, 1.5, 1, 1.5, 1.5, 1]
+    tempo: 88
+    octave: any
+    showNotes: false
+    checks:
+      - chord: {notes: ["F#2", A3, D4], root: D, quality: maj, inversion: 1}
+      - chord: {notes: [E2, B3, E4, G4], root: E, quality: min, inversion: 0}
+      - chord: {notes: [C2, C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - roman: {key: G, degree: 6, is: "vi"}
+  - id: K-026-7
+    type: practice
+    prompt: {en: "Add a moving bass: LH on beat 1 and on the & of 3 (root both times), RH 3 + 3 + 2. The hands now interlock: no two hits together except beat 1. Then mix: three bars of 3 + 3 + 2 and one bar with a push into the next chord.", sr: "Dodaj pokretan bas: leva ruka na 1 i na \"i\" posle 3 (oba puta osnovni ton), desna 3 + 3 + 2. Ruke se sada prepliću: nijedna dva udarca zajedno osim prve dobe. Zatim kombinuj: tri takta 3 + 3 + 2 i jedan takt sa anticipacijom u sledeći akord."}
+    minutes: 4
+    play: {chords: [[C3, C4, E4, G4], [B2, D4, G4], [A2, C4, E4, A4], [F2, C4, F4, A4]], mode: chords, tempo: 22}

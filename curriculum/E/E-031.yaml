@@ -1,0 +1,122 @@
+id: E-031
+track: E
+order: 31
+title: {en: "Rhythm dictation: syncopation and ties (notation hidden)", sr: "Ritmički diktat: sinkopa i ligature (bez nota)"}
+prereqs: [E-030, E-018]
+minutes: 13
+tags: [ear, rhythm, dictation, syncopation]
+explain:
+  en: |
+    A syncopation is an attack **off the beat** that is **held through the next beat**, so the strong
+    beat you expected to hear struck is silent. In notation that "held through" is often a **tie**.
+    You cannot hear a tie; you hear a **missing attack**.
+
+    That gives the method for writing down a syncopated rhythm:
+
+    1. **Count the grid out loud**: "1 & 2 & 3 & 4 &" in 4/4 (sixteenths: "1 e & a").
+    2. **Mark which counts get an attack.** Tap along and say only those counts. For the pop
+       rhythm below that is: **1**, the **&** of 2, **4**.
+    3. **Each note lasts until the next attack.** 1 → &2 is a dotted quarter, &2 → 4 is a dotted
+       quarter, 4 → end is a quarter.
+    4. **Write it so the beats stay visible.** In 4/4 the middle of the bar (beat 3) should be easy to
+       see. A note that starts off a beat and runs across beat 3 is usually written as two notes
+       joined by a tie.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^3+3+2" B3 B3 B2 | "^Charleston" B3 B- B4 | "^tie across beat 3" B2 B2- B B3 |]
+    ```
+
+    The first bar is the **3+3+2** pattern behind countless pop, Latin and rock grooves. The second
+    is the **Charleston**: one attack on 1, one on the & of 2, then nothing. The third shows the tie:
+    the attacks are on 1, 2 and the & of 3, and the note from beat 2 is held into beat 3.
+
+    In this lesson the notation is hidden while you tap. The last exercises go one step further:
+    hear a rhythm and pick its written form, the real skill behind writing what you hear.
+  sr: |
+    Sinkopa je udar **van dobe** koji se **drži preko sledeće dobe**, pa jaka doba koju si očekivao da
+    čuješ ostaje bez udara. U notama se to „držanje preko" često piše **ligaturom** (lukom). Ligaturu
+    ne možeš da čuješ; čuješ **udar koji nedostaje**.
+
+    Odatle metod za zapisivanje sinkopiranog ritma:
+
+    1. **Broji mrežu naglas**: „1 i 2 i 3 i 4 i" u 4/4 (šesnaestine: „1 e i a").
+    2. **Obeleži koja brojanja dobijaju udar.** Kucaj i izgovaraj samo njih. Za pop ritam ispod to je:
+       **1**, **i** posle 2, **4**.
+    3. **Svaki ton traje do sledećeg udara.** 1 → i2 je četvrtina s tačkom, i2 → 4 je četvrtina s
+       tačkom, 4 → kraj je četvrtina.
+    4. **Piši tako da dobe ostanu vidljive.** U 4/4 sredina takta (treća doba) treba lako da se vidi.
+       Ton koji počinje van dobe i prelazi preko treće dobe obično se piše kao dva tona spojena
+       ligaturom.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^3+3+2" B3 B3 B2 | "^Charleston" B3 B- B4 | "^ligatura preko 3. dobe" B2 B2- B B3 |]
+    ```
+
+    Prvi takt je obrazac **3+3+2** iza bezbrojnih pop, latino i rok ritmova. Drugi je **čarlston**:
+    jedan udar na 1, jedan na i posle 2, pa ništa. Treći pokazuje ligaturu: udari su na 1, 2 i na i
+    posle 3, a ton sa druge dobe se drži u treću.
+
+    U ovoj lekciji note su skrivene dok kucaš. Poslednje vežbe idu korak dalje: čuješ ritam i biraš
+    kako je zapisan, a to je prava veština iza zapisivanja onoga što čuješ.
+exercises:
+  - id: E-031-1
+    type: generated
+    prompt: {en: "One bar of 4/4: 3+3+2 and short syncopations", sr: "Jedan takt 4/4: 3+3+2 i kratke sinkope"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 1, cells: [[1.5, 1.5, 1], [0.5, 1, 0.5], [1], [0.5, 0.5], [1.5, 0.5]], tempo: 80, showAbc: false}
+  - id: E-031-2
+    type: generated
+    prompt: {en: "Two bars of 4/4: Charleston, pushes and long ties", sr: "Dva takta 4/4: čarlston, pomeranja i duge ligature"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1.5, 2.5], [0.5, 1, 1, 1.5], [1.5, 1.5, 1], [0.5, 1, 0.5], [2], [1, 1]], tempo: 80, showAbc: false}
+  - id: E-031-3
+    type: generated
+    prompt: {en: "Sixteenth syncopation in 2/4 (count 1 e & a)", sr: "Sinkopa u šesnaestinama u 2/4 (broji 1 e i a)"}
+    count: 5
+    pass: 0.8  # one misplaced sixteenth scores ~0.71: it must not pass
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[0.25, 0.5, 0.25], [0.5, 0.5], [0.75, 0.25], [1], [0.25, 0.25, 0.5]], tempo: 60, showAbc: false}
+  - id: E-031-4
+    type: generated
+    prompt: {en: "3/4 with syncopation and two dotted quarters (a 3/4 bar felt in two)", sr: "3/4 sa sinkopom i dve četvrtine s tačkom (takt 3/4 osećan na dva)"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "3/4", bars: 2, cells: [[0.5, 1, 1, 0.5], [1.5, 1.5], [1], [0.5, 0.5], [0.5, 1, 0.5]], tempo: 76, showAbc: false}
+  - id: E-031-5
+    type: mcq
+    prompt: {en: "After four clicks you hear one bar of 4/4. Which notation is it?", sr: "Posle četiri klika čuješ jedan takt 4/4. Koji je zapis?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      "^A" B3 B3 B2 | "^B" B3 B- B4 | "^C" B2 B3 B3 |]
+    options: ["A", "B", "C"]
+    answer: 0
+    keepOrder: true
+    play: {notes: [C6, G5, G5, G5, C5, C5, C5], durations: [1, 1, 1, 1, 1.5, 1.5, 1], tempo: 80}
+  - id: E-031-6
+    type: mcq
+    prompt: {en: "After four clicks you hear one bar of 4/4. Count the attacks: which notation is it?", sr: "Posle četiri klika čuješ jedan takt 4/4. Prebroj udare: koji je zapis?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      "^A" B B2 B- B2 B2 | "^B" B B2 B B2 B2 | "^C" B3 B B2 B2 |]
+    options: ["A", "B", "C"]
+    answer: 0
+    keepOrder: true
+    play: {notes: [C6, G5, G5, G5, C5, C5, C5, C5], durations: [1, 1, 1, 1, 0.5, 1, 1.5, 1], tempo: 72}
+  - id: E-031-7
+    type: practice
+    prompt: {en: "Paper dictation: replay three items from exercise 2 and write each on paper (any one note, 4/4) before tapping it back. Mark the attack counts first (1 & 2 & …), then durations, then ties.", sr: "Diktat na papiru: pusti tri primera iz vežbe 2 i zapiši svaki na papir (jedan ton, 4/4) pre nego što ga otkucaš. Prvo obeleži brojanja sa udarom (1 i 2 i …), pa trajanja, pa ligature."}
+    minutes: 3

@@ -1,0 +1,119 @@
+id: E-027
+track: E
+order: 27
+title: {en: "Minor progressions by ear (i–iv–V–i, i–VI–III–VII)", sr: "Molske progresije po sluhu (i–iv–V–i, i–VI–III–VII)"}
+prereqs: [E-026, E-020, T-039]
+minutes: 14
+tags: [ear, harmony, progressions, minor]
+explain:
+  en: |
+    Minor keys have two harmonic worlds, and you can hear which one a piece lives in.
+
+    **Classical minor** uses the raised 7th (harmonic minor): the dominant is **major V** with a
+    leading tone. In a minor: Am – Dm – **E** – Am. That G# is the sound of a minor-key cadence in
+    Bach, Mozart and most film scores.
+
+    **Natural minor** (the scale of most rock and pop in minor) keeps G natural. Its chords are
+    **i, iv, v, VI, III, VII**: three major chords (VI, III, VII) next to the minor tonic. The best-known
+    loop is **i – VI – III – VII**: in a minor, Am – F – C – G. The VII (G) goes back to Am without a
+    leading tone; it sounds like the tonic is reached by a step, not pulled in.
+
+    How to tell them apart:
+
+    1. **Listen to the chord before i.** Major V with G#: a sharp, urgent pull (half step up into A).
+       Minor v or major VII with G: a softer, modal arrival.
+    2. **Count the major chords.** i – iv – V – i has one bright chord (V). i – VI – III – VII has
+       three, so it sounds brighter overall, almost like the relative major (C) with a sad start.
+    3. **Bass of i – VI – III – VII:** A down to F (a third), up to C (a fourth), down to G (a fourth),
+       and A again. Hum it: A F C G.
+
+    ```abc
+    X:1
+    L:1/2
+    K:Am
+    [A,,EAc] [F,,FAc] [C,EGc] [G,,DGB] | [A,,EAc] [D,DFA] [E,EB^G] [A,,EAc] |]
+    ```
+
+    First bar: i – VI – III – VII (natural minor). Second: i – iv – V – i (with G#).
+  sr: |
+    Molski tonaliteti imaju dva harmonska sveta, i možeš da čuješ u kome živi neko delo.
+
+    **Klasični mol** koristi povišeni 7. stupanj (harmonski mol): dominanta je **durski V** sa
+    vođicom. U a-molu: a – d – **E** – a. To Gis je zvuk molske kadence kod Baha, Mocarta i u većini
+    filmske muzike.
+
+    **Prirodni mol** (lestvica većine roka i popa u molu) zadržava G. Njegovi akordi su
+    **i, iv, v, VI, III, VII**: tri durska akorda (VI, III, VII) pored molske tonike. Najpoznatija petlja
+    je **i – VI – III – VII**: u a-molu, a – F – C – G. VII (G) se vraća na a bez vođice; zvuči kao da
+    se do tonike stiže korakom, a ne da je privučena.
+
+    Kako da ih razlikuješ:
+
+    1. **Slušaj akord pre i.** Durski V sa Gis: oštro, hitno privlačenje (polustepen naviše u A).
+       Molski v ili durski VII sa G: mekši, modalni dolazak.
+    2. **Prebroj durske akorde.** i – iv – V – i ima jedan svetao akord (V). i – VI – III – VII ima
+       tri, pa zvuči svetlije, skoro kao paralelni dur (C) sa tužnim početkom.
+    3. **Bas od i – VI – III – VII:** A naniže do F (terca), naviše do C (kvarta), naniže do G
+       (kvarta), pa opet A. Otpevuši: A F C G.
+
+    ```abc
+    X:1
+    L:1/2
+    K:Am
+    [A,,EAc] [F,,FAc] [C,EGc] [G,,DGB] | [A,,EAc] [D,DFA] [E,EB^G] [A,,EAc] |]
+    ```
+
+    Prvi takt: i – VI – III – VII (prirodni mol). Drugi: i – iv – V – i (sa Gis).
+exercises:
+  - id: E-027-1
+    type: generated
+    prompt: {en: "Major V (with the leading tone) or minor v before the i?", sr: "Durski V (sa vođicom) ili molski v pre i?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [A, D, E, G], type: natural-minor, options: [[i, iv, V, i], [i, iv, v, i]], tempo: 60}
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - roman: {key: A, type: natural-minor, degree: 3, is: "III"}
+      - roman: {key: A, type: natural-minor, degree: 5, is: "v"}
+      - roman: {key: A, type: natural-minor, degree: 6, is: "VI"}
+      - roman: {key: A, type: natural-minor, degree: 7, is: "VII"}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+      - chord: {notes: [E3, B3, E4, G#4], root: E, quality: maj}
+      - chord: {notes: [G2, D4, G4, B4], root: G, quality: maj}
+      - chord: {notes: [F2, F4, A4, C5], root: F, quality: maj}
+      - interval: {from: G#4, to: A4, is: m2}
+      - interval: {from: A2, to: F2, is: M3}
+  - id: E-027-2
+    type: generated
+    prompt: {en: "VII–i (modal) or V–i (classical)?", sr: "VII–i (modalno) ili V–i (klasično)?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [A, E, D, C], type: natural-minor, options: [[i, VI, VII, i], [i, VI, V, i]], tempo: 60}
+  - id: E-027-3
+    type: generated
+    prompt: {en: "Which minor loop?", sr: "Koja molska petlja?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [A, E, D, B], type: natural-minor, options: [[i, VI, III, VII], [i, VII, VI, V], [i, iv, VII, III], [i, VI, iv, V]], tempo: 66}
+  - id: E-027-4
+    type: generated
+    prompt: {en: "Bass of i–VI–III–VII–i: echo the roots", sr: "Bas od i–VI–III–VII–i: ponovi osnovne tonove"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [A, E, D, G], type: natural-minor, numerals: [i, VI, III, VII], line: [i, VI, III, VII, i], octave: 2, tempo: 72}
+  - id: E-027-5
+    type: generated
+    prompt: {en: "Bass of i–iv–V–i with a VI in the middle: echo it", sr: "Bas od i–iv–V–i sa VI u sredini: ponovi ga"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [A, D, E, C], type: harmonic-minor, numerals: [i, iv, V, VI], line: [i, VI, iv, V, i], octave: 2, tempo: 72}
+  - id: E-027-6
+    type: generated
+    prompt: {en: "Hear it, then play it: i–VI–III–VII", sr: "Čuj, pa odsviraj: i–VI–III–VII"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [A, E, D], type: natural-minor, numerals: [i, VI, III, VII, i], echo: true, smooth: true}
+  - id: E-027-7
+    type: generated
+    prompt: {en: "Hear it, then play it: i–iv–V–i (with the raised 7th)", sr: "Čuj, pa odsviraj: i–iv–V–i (sa povišenim 7. stupnjem)"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [A, D, G, C], type: harmonic-minor, numerals: [i, iv, V, i], echo: true, smooth: true}

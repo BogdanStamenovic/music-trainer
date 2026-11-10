@@ -1,0 +1,128 @@
+id: V-034
+track: V
+order: 34
+title: {en: "Agility II: 1-3-5-8-5-3-1, light", sr: "Okretnost II: 1-3-5-8-5-3-1, lagano"}
+prereqs: [V-033, V-017]
+minutes: 10
+tags: [voice, agility]
+explain:
+  en: |
+    Last lesson's runs moved by step. Now the notes **skip**: the arpeggio 1-3-5-8-5-3-1, the broken chord you have played on the piano a thousand times.
+    It is harder to sing quickly because every move is a 3rd or a 4th (C-E is a major 3rd, E-G a minor 3rd, G-C a perfect 4th) and the top note is an octave above the bottom.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    C E G c G E C2 |]
+    ```
+
+    What makes it work:
+
+    - **Hear the chord, not the steps.** Before you sing, play the C major triad and keep its sound in your head; the arpeggio is just walking through it.
+    - **The top is the lightest note.** The 8 sits at the turn: touch it and leave, like the top of a thrown ball. Reaching up with weight makes it late and flat.
+    - **No "h" and no scooping.** Each note starts on pitch. A small slide is a free voice; a big scoop from below is a guess.
+    - **Same vowel all the way**: "ah" or "ee", no change at the top except the slight rounding from lesson 31 if you need it.
+
+    Order: first in quarter notes (every note placed), then eighths, then two arpeggios in a row and one in minor. The app grades pitch loosely; you judge the evenness.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Pasaži iz prošle lekcije su se kretali postupno. Sada tonovi **skaču**: razloženi akord 1-3-5-8-5-3-1, onaj koji si na klaviru odsvirao hiljadu puta.
+    Teže ga je otpevati brzo jer je svaki korak terca ili kvarta (C-E je velika terca, E-G mala terca, G-C čista kvarta), a gornji ton je oktavu iznad donjeg.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    C E G c G E C2 |]
+    ```
+
+    Šta pomaže:
+
+    - **Čuj akord, ne korake.** Pre pevanja odsviraj C-dur kvintakord i zadrži njegov zvuk u glavi; razloženi akord je samo šetnja kroz njega.
+    - **Vrh je najlakši ton.** 8 je na okretu: dodirni ga i kreni nazad, kao vrh bačene lopte. Posezanje naviše sa težinom ga čini zakasnelim i niskim.
+    - **Bez „h” i bez podvlačenja odozdo.** Svaki ton počinje na visini. Malo klizanje je slobodan glas; veliko podvlačenje odozdo je pogađanje.
+    - **Isti samoglasnik do kraja**: „a” ili „i”, bez promene na vrhu, osim blagog zaobljavanja iz 31. lekcije ako ti treba.
+
+    Redosled: prvo u četvrtinama (svaki ton postavljen), pa u osminama, pa dva razložena akorda zaredom i jedan u molu. Aplikacija ocenjuje visinu blago; ujednačenost procenjuješ ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-034-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-034-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 quiet lip-trill sirens, then lip trills on 1-3-5-8-5-3-1 along with the piano, twice; then the slow 5-note run from the last lesson once on 'ah'."
+      sr: "Zagrevanje: 3 tihe sirene treperenjem usana, pa treperenje usnama na 1-3-5-8-5-3-1 uz klavir, dva puta; pa jednom spori pasaž od pet tonova iz prošle lekcije na „a”."
+    play: {notes: [C4, E4, G4, C5, G4, E4, C4], mode: melodic, tempo: 72}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-034-3
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-8-5-3-1 on 'ah' in quarter notes: every note placed, the 8 the lightest."
+      sr: "1-3-5-8-5-3-1 na „a” u četvrtinama: svaki ton postavljen, 8 najlakše."
+    notes: [C4, E4, G4, C5, G4, E4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: G4, to: C5, is: P4}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-034-4
+    type: sing-phrase
+    prompt:
+      en: "The arpeggio in eighth notes on 'ah', last note held. Touch the top and leave."
+      sr: "Razloženi akord u osminama na „a”, poslednji ton zadržan. Dodirni vrh i kreni nazad."
+    notes: [D4, F#4, A4, D5, A4, F#4, D4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-034-5
+    type: sing-phrase
+    prompt:
+      en: "Two in a row on one breath, on 'ee': 1-3-5-8-5-3-1-3-5-8-5-3-1. Light at both tops."
+      sr: "Dva zaredom u jednom dahu, na „i”: 1-3-5-8-5-3-1-3-5-8-5-3-1. Lagano na oba vrha."
+    notes: [C4, E4, G4, C5, G4, E4, C4, E4, G4, C5, G4, E4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 72
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-034-6
+    type: sing-phrase
+    prompt:
+      en: "In minor: 1-3-5-8-5-3-1 in A minor, eighth notes on 'ah'. The 3 is a minor 3rd above the 1, the 5 a major 3rd above the 3."
+      sr: "U molu: 1-3-5-8-5-3-1 u a-molu, osmine na „a”. 3 je mala terca iznad 1, 5 je velika terca iznad 3."
+    notes: [A3, C4, E4, A4, E4, C4, A3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min, inversion: 0}
+      - interval: {from: A3, to: C4, is: m3}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-034-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: play a triad, then sing its arpeggio 1-3-5-8-5-3-1 in eighths, in three keys a half step apart, staying in the comfortable middle. Rate: was the top note on time and light in all three? Then 3 quiet hums sliding down."
+      sr: "Samostalno: odsviraj kvintakord, pa otpevaj njegov razloženi akord 1-3-5-8-5-3-1 u osminama, u tri tonaliteta na polustepen razmaka, u udobnoj sredini. Oceni: da li je gornji ton bio na vreme i lagan u sva tri? Pa 3 tiha pevušenja uz klizanje naniže."

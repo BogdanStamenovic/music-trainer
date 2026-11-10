@@ -1,0 +1,185 @@
+id: T-033
+track: T
+order: 33
+prereqs: [T-032]
+title: {en: "Four-part writing: SATB ranges and spacing", sr: "Četvoroglasni stav: opsezi i razmak glasova (SATB)"}
+minutes: 12
+tags: [harmony, four-part]
+explain:
+  en: |
+    So far you have played chords as shapes in the hand. **Four-part writing** (SATB: soprano, alto, tenor, bass) treats each note of a chord as a separate *singer* with their own line. It is the standard lab for learning how chords connect, and it is exactly how hymns, chorales and most string-quartet textures work.
+
+    **Ranges** (comfortable choir ranges; stay inside them):
+
+    | voice | range | staff |
+    |---|---|---|
+    | soprano | C4 – G5 | treble, stems up |
+    | alto | G3 – D5 | treble, stems down |
+    | tenor | C3 – G4 | bass, stems up |
+    | bass | E2 – D4 | bass, stems down |
+
+    **Spacing**: neighbouring upper voices stay within an **octave** (soprano–alto, alto–tenor). The bass may be further from the tenor (up to a 12th), because wide gaps sound good low and muddy high, the same reason your left hand plays open fifths and octaves while the right hand plays close.
+
+    **No crossing**: from top to bottom the order is always S ≥ A ≥ T ≥ B.
+
+    **Doubling**: a triad has three notes and we have four voices, so one note is doubled. In a root-position chord, double the **root**.
+
+    **Close vs open position**: if soprano, alto and tenor fit inside one octave, the chord is in close position; if there is room for another chord tone between them, it is open.
+
+    On the piano: **left hand = bass + tenor, right hand = alto + soprano.** A C major chord, root doubled, close position (left) and open position (right):
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/2
+    K:C
+    V:1
+    [Gc] | [Ec] |]
+    V:2 clef=bass
+    [C,E] | [C,G,] |]
+    ```
+  sr: |
+    Do sada si akorde svirao kao oblike u ruci. **Četvoroglasni stav** (SATB: sopran, alt, tenor, bas) svaki ton akorda posmatra kao zasebnog *pevača* sa sopstvenom linijom. To je standardna laboratorija za učenje povezivanja akorada, i upravo tako rade korali, crkvene pesme i većina gudačkih kvarteta.
+
+    **Opsezi** (udobni horski opsezi; drži se njih):
+
+    | glas | opseg | linijski sistem |
+    |---|---|---|
+    | sopran | C4 – G5 | violinski ključ, vratovi gore |
+    | alt | G3 – D5 | violinski ključ, vratovi dole |
+    | tenor | C3 – G4 | bas ključ, vratovi gore |
+    | bas | E2 – D4 | bas ključ, vratovi dole |
+
+    **Razmak**: susedni gornji glasovi su na rastojanju najviše **oktave** (sopran–alt, alt–tenor). Bas može biti dalje od tenora (do duodecime), jer široki razmaci zvuče dobro u dubini, a mutno u visini, iz istog razloga iz kog tvoja leva ruka svira prazne kvinte i oktave, a desna zbijene akorde.
+
+    **Bez ukrštanja**: odozgo nadole redosled je uvek S ≥ A ≥ T ≥ B.
+
+    **Udvajanje**: trozvuk ima tri tona, a glasova je četiri, pa se jedan ton udvaja. U akordu u osnovnom položaju udvaja se **osnovni ton**.
+
+    **Uski i široki raspored**: ako sopran, alt i tenor staju u jednu oktavu, raspored je uski (zbijeni); ako između njih ima mesta za još jedan akordski ton, raspored je široki.
+
+    Na klaviru: **leva ruka = bas + tenor, desna ruka = alt + sopran.** C-dur, udvojen osnovni ton, uski raspored (levo) i široki raspored (desno):
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/2
+    K:C
+    V:1
+    [Gc] | [Ec] |]
+    V:2 clef=bass
+    [C,E] | [C,G,] |]
+    ```
+exercises:
+  - id: T-033-1
+    type: mcq
+    prompt: {en: "Which range belongs to the tenor?", sr: "Koji opseg pripada tenoru?"}
+    options: ["C3 – G4", "C4 – G5", "G3 – D5", "E2 – D4"]
+    answer: 0
+  - id: T-033-2
+    type: mcq
+    prompt: {en: "Spot the error in this C major chord (bass C3, tenor G3, alto C4, soprano E5).", sr: "Pronađi grešku u ovom C-dur akordu (bas C3, tenor G3, alt C4, sopran E5)."}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [Ce] |]
+      V:2 clef=bass
+      [C,G,] |]
+    options:
+      - {en: "Soprano and alto are more than an octave apart", sr: "Sopran i alt su udaljeni više od oktave"}
+      - {en: "The tenor is above the alto", sr: "Tenor je iznad alta"}
+      - {en: "The bass is out of range", sr: "Bas je van opsega"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [C3, G3, C4, E5], root: C, quality: maj}
+      - interval: {from: C4, to: E5, is: M10}
+  - id: T-033-3
+    type: mcq
+    prompt: {en: "Spot the error (bass C3, tenor G4, alto E4, soprano C5).", sr: "Pronađi grešku (bas C3, tenor G4, alt E4, sopran C5)."}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] |]
+      V:2 clef=bass
+      [C,G] |]
+    options:
+      - {en: "The tenor is above the alto (voice crossing)", sr: "Tenor je iznad alta (ukrštanje glasova)"}
+      - {en: "Soprano and alto are more than an octave apart", sr: "Sopran i alt su udaljeni više od oktave"}
+      - {en: "The third is doubled", sr: "Udvojena je terca"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [C3, G4, E4, C5], root: C, quality: maj}
+  - id: T-033-4
+    type: mcq
+    prompt: {en: "Bass G2, tenor D4, alto G4, soprano B4: which note is doubled, and is that the right choice?", sr: "Bas G2, tenor D4, alt G4, sopran H4: koji ton je udvojen i da li je to dobar izbor?"}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [GB] |]
+      V:2 clef=bass
+      [G,,D] |]
+    options:
+      - {en: "G, the root: correct for a root-position triad", sr: "G, osnovni ton: ispravno za trozvuk u osnovnom položaju"}
+      - {en: "B, the third: correct", sr: "H, terca: ispravno"}
+      - {en: "D, the fifth: wrong, the root should be doubled", sr: "D, kvinta: pogrešno, treba udvojiti osnovni ton"}
+      - {en: "Nothing is doubled", sr: "Ništa nije udvojeno"}
+    answer: 0
+    checks:
+      - chord: {notes: [G2, D4, G4, B4], root: G, quality: maj}
+  - id: T-033-5
+    type: mcq
+    prompt: {en: "Is this G major chord (G2, D3, B3, G4) in close or open position?", sr: "Da li je ovaj G-dur akord (G2, D3, H3, G4) u uskom ili širokom rasporedu?"}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [B,G] |]
+      V:2 clef=bass
+      [G,,D,] |]
+    options:
+      - {en: "Open: tenor to soprano spans more than an octave", sr: "Široki: od tenora do soprana je više od oktave"}
+      - {en: "Close: the upper three voices fit in an octave", sr: "Uski: gornja tri glasa staju u oktavu"}
+      - {en: "Neither: the bass is too far from the tenor", sr: "Ni jedno: bas je predaleko od tenora"}
+    answer: 0
+    checks:
+      - chord: {notes: [G2, D3, B3, G4], root: G, quality: maj}
+      - interval: {from: D3, to: G4, is: P11}
+  - id: T-033-6
+    type: midi-play
+    prompt: {en: "Play this C major chord exactly as written, SATB: C3 (bass), G3 (tenor) in the left hand, E4 (alto), C5 (soprano) in the right.", sr: "Odsviraj ovaj C-dur akord tačno kako je napisan, SATB: C3 (bas), G3 (tenor) levom rukom, E4 (alt), C5 (sopran) desnom."}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] |]
+      V:2 clef=bass
+      [C,G,] |]
+    mode: chord
+    octave: exact
+    expect: [C3, G3, E4, C5]
+    checks:
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+  - id: T-033-7
+    type: midi-play
+    prompt: {en: "Play G major twice: close position (G2, B3, D4, G4), then open position (G2, D3, B3, G4).", sr: "Odsviraj G-dur dva puta: uski raspored (G2, H3, D4, G4), pa široki raspored (G2, D3, H3, G4)."}
+    mode: chords
+    octave: exact
+    expectChords: [[G2, B3, D4, G4], [G2, D3, B3, G4]]
+    checks:
+      - chord: {notes: [G2, B3, D4, G4], root: G, quality: maj}
+      - chord: {notes: [G2, D3, B3, G4], root: G, quality: maj}

@@ -1,0 +1,186 @@
+id: C-011
+track: C
+order: 11
+prereqs: [C-010, C-005]
+title: {en: "Developing a motif: inversion and fragmentation", sr: "Razvijanje motiva: inverzija i fragmentacija"}
+minutes: 15
+tags: [composition, melody, motif]
+explain:
+  en: |
+    You can already repeat a motif, sequence it (C-002) and change its rhythm (C-005). Two more
+    tools change its **shape** while keeping it recognisable.
+
+    **Inversion** turns every interval upside down: up a 3rd becomes down a 3rd, down a step
+    becomes up a step. Stay in the key (**diatonic inversion**): count scale steps, not semitones,
+    so a major 3rd may come back as a minor 3rd. The contour is mirrored and the ear still knows it.
+
+    | | motif | inversion from c |
+    |---|---|---|
+    | notes | C – E – D | c – A – B |
+    | moves | up a 3rd, down a step | down a 3rd, up a step |
+
+    **Fragmentation** keeps only a **piece** of the motif, usually its head (the first two notes)
+    or its tail, and repeats or sequences that piece. Shorter units come faster, so fragmentation
+    builds momentum and pushes toward a cadence.
+
+    Put the tools in order and you get the **sentence**, a common 8-bar shape:
+
+    | bars | role |
+    |---|---|
+    | 1–2 | basic idea: the motif and a sequence of it |
+    | 3–4 | the idea again, here inverted |
+    | 5–6 | fragmentation: the head, in 1-bar or half-bar units |
+    | 7–8 | cadence |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^idea"C2 E2 D4 | E2 G2 F4 | "^inversion"c2 A2 B4 | A2 F2 G4 |
+    "^fragments"E2 G2 F2 A2 | G2 B2 A2 c2 | "^cadence"B2 A2 G2 F2 | E2 D2 C4 |]
+    ```
+
+    Bars 5–6 take only "up a 3rd" from the motif and climb with it in half-bar steps: the
+    tension rises to c, the high point, and bars 7–8 come down by step to C.
+
+    **At the keyboard:** pick any 3-note motif. Play it, its inversion from its last note, and then
+    its first two notes four times, each a step higher. That is the raw material of a sentence.
+  sr: |
+    Već znaš da ponoviš motiv, da ga sekvenciraš (C-002) i da mu promeniš ritam (C-005). Još dva
+    alata menjaju njegov **oblik**, a da ostane prepoznatljiv.
+
+    **Inverzija** (obrat) okreće svaki interval naopako: terca naviše postaje terca naniže, korak
+    naniže postaje korak naviše. Ostani u tonalitetu (**dijatonska inverzija**): broji stupnjeve
+    lestvice, ne polustepene, pa se velika terca može vratiti kao mala. Kontura je u ogledalu, a uho
+    je i dalje prepoznaje.
+
+    | | motiv | inverzija od c |
+    |---|---|---|
+    | tonovi | C – E – D | c – A – H |
+    | kretanje | terca naviše, korak naniže | terca naniže, korak naviše |
+
+    **Fragmentacija** zadržava samo **deo** motiva, najčešće početak (prva dva tona) ili kraj, i
+    ponavlja ili sekvencira taj deo. Kraće jedinice dolaze brže, pa fragmentacija gradi zamah i
+    gura ka kadenci.
+
+    Poređaj alate i dobićeš **rečenicu**, čest oblik od 8 taktova:
+
+    | taktovi | uloga |
+    |---|---|
+    | 1–2 | osnovna misao: motiv i njegova sekvenca |
+    | 3–4 | misao ponovo, ovde u inverziji |
+    | 5–6 | fragmentacija: početak motiva, u jedinicama od takta ili polutakta |
+    | 7–8 | kadenca |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^misao"C2 E2 D4 | E2 G2 F4 | "^inverzija"c2 A2 B4 | A2 F2 G4 |
+    "^fragmenti"E2 G2 F2 A2 | G2 B2 A2 c2 | "^kadenca"B2 A2 G2 F2 | E2 D2 C4 |]
+    ```
+
+    Taktovi 5–6 uzimaju iz motiva samo „tercu naviše“ i penju se sa njom po polutaktovima:
+    napetost raste do c, kulminacije, a taktovi 7–8 silaze postupno do C.
+
+    **Za klavirom:** izaberi bilo koji motiv od 3 tona. Odsviraj ga, pa njegovu inverziju od
+    poslednjeg tona, pa prva dva tona četiri puta, svaki put stupanj više. To je sirovi materijal
+    rečenice.
+exercises:
+  - id: C-011-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 D4 | c2 A2 B4 |]"
+    prompt: {en: "Bar 2 compared with bar 1 is...", sr: "Takt 2 u odnosu na takt 1 je..."}
+    options:
+      - {en: "the motif inverted (mirrored contour)", sr: "motiv u inverziji (kontura u ogledalu)"}
+      - {en: "a sequence of the motif", sr: "sekvenca motiva"}
+      - {en: "the motif in augmentation", sr: "motiv u augmentaciji"}
+      - {en: "a fragment of the motif", sr: "fragment motiva"}
+    answer: 0
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: A4, to: C5, is: m3}
+  - id: C-011-2
+    type: notation-input
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nG2 A2 B2 G2 |]"
+    prompt: {en: "The motif G – A – B – G (C major) goes up a step, up a step, down a 3rd. Type its diatonic inversion starting on G (4 notes, no octave numbers).", sr: "Motiv G – A – H – G (C-dur) ide korak naviše, korak naviše, tercu naniže. Upiši njegovu dijatonsku inverziju od G (4 tona, bez brojeva oktava)."}
+    expect: [G, F, E, G]
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: F4, to: G4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: G4, to: B4, is: M3}
+  - id: C-011-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 D4 | E2 G2 F4 | E2 G2 F2 A2 | G2 B2 A2 c2 |]"
+    prompt: {en: "Bars 1–2 state the idea. What happens in bars 3–4?", sr: "Taktovi 1–2 izlažu misao. Šta se dešava u taktovima 3–4?"}
+    options:
+      - {en: "fragmentation: only the motif's head, sequenced in half-bar units", sr: "fragmentacija: samo početak motiva, sekvenciran po polutaktovima"}
+      - {en: "inversion of the whole motif", sr: "inverzija celog motiva"}
+      - {en: "augmentation: the same notes, twice as long", sr: "augmentacija: isti tonovi, duplo duži"}
+      - {en: "a cadence", sr: "kadenca"}
+    answer: 0
+  - id: C-011-4
+    type: mcq
+    prompt: {en: "Why does fragmentation usually come just before a cadence?", sr: "Zašto fragmentacija obično dolazi neposredno pre kadence?"}
+    options:
+      - {en: "shorter units come faster and build momentum toward the ending", sr: "kraće jedinice dolaze brže i grade zamah ka završetku"}
+      - {en: "it is required by the rules of harmony", sr: "to zahtevaju pravila harmonije"}
+      - {en: "it slows the melody down so the cadence can rest", sr: "usporava melodiju da bi kadenca mogla da odmori"}
+      - {en: "it introduces new material for contrast", sr: "uvodi novi materijal radi kontrasta"}
+    answer: 0
+  - id: C-011-5
+    type: midi-play
+    prompt: {en: "Play the lesson's sentence (all 8 bars), ♩=88. The rhythm is graded: quarters, with a half note at the end of bars 1–4 and 8.", sr: "Odsviraj rečenicu iz lekcije (svih 8 taktova), ♩=88. Ritam se ocenjuje: četvrtine, sa polovinom na kraju taktova 1–4 i 8."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 D4 | E2 G2 F4 | c2 A2 B4 | A2 F2 G4 |\nE2 G2 F2 A2 | G2 B2 A2 c2 | B2 A2 G2 F2 | E2 D2 C4 |]"
+    mode: sequence
+    expect: [C4, E4, D4, E4, G4, F4, C5, A4, B4, A4, F4, G4, E4, G4, F4, A4, G4, B4, A4, C5, B4, A4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 88
+    showNotes: false
+  - id: C-011-6
+    type: compose
+    prompt:
+      en: "D major (F♯, C♯), 4 bars. Bar 1 is the motif D – F♯ – E. Bar 2: its inversion, starting on A. Bar 3: fragmentation (a 2-note piece of the motif or of the inversion, sequenced). Bar 4: end on D, reached by step."
+      sr: "D-dur (Fis, Cis), 4 takta. Takt 1 je motiv D – Fis – E. Takt 2: njegova inverzija, od A. Takt 3: fragmentacija (deo motiva ili inverzije od 2 tona, sekvenciran). Takt 4: kraj na D, do kog stižeš za korak."
+    given: "X:1\nM:4/4\nL:1/8\nK:D\nD2 F2 E4 |\n"
+    key: D major
+    meter: 4/4
+    bars: 4
+    range: [C#4, D5]
+    rules: [bars, rhythm, key, range, leaps, augmented, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:D
+      D2 F2 E4 | A2 F2 G4 | B2 G2 A2 F2 | E2 C2 D4 |]
+    checks:
+      - interval: {from: D4, to: F#4, is: M3}
+      - interval: {from: F#4, to: A4, is: m3}
+      - interval: {from: F#4, to: G4, is: m2}
+  - id: C-011-7
+    type: compose
+    prompt:
+      en: "An 8-bar sentence in A minor. Bar 1 (the motif) is given. Bars 1–2 idea, bars 3–4 the idea inverted, bars 5–6 fragmentation climbing to the high point, bars 7–8 cadence on A from G♯ or B."
+      sr: "Rečenica od 8 taktova u a-molu. Takt 1 (motiv) je zadat. Taktovi 1–2 misao, 3–4 misao u inverziji, 5–6 fragmentacija koja se penje do kulminacije, 7–8 kadenca na A sa Gis ili H."
+    given: "X:1\nM:4/4\nL:1/8\nK:Am\nA2 c2 B4 |\n"
+    key: A minor
+    meter: 4/4
+    bars: 8
+    range: [E4, G5]
+    rules: [bars, rhythm, key, range, leaps, augmented, stepwise, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:Am
+      A2 c2 B4 | c2 e2 d4 | e2 c2 d4 | d2 B2 c4 |
+      A2 c2 B2 d2 | c2 e2 d2 f2 | e2 d2 c2 d2 | B2 ^G2 A4 |]
+    checks:
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: C5, to: E5, is: M3}
+      - interval: {from: G#4, to: B4, is: m3}

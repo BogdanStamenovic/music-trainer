@@ -1,0 +1,181 @@
+id: L-009
+track: L
+order: 9
+prereqs: [L-008, K-020]
+title: {en: "The blues lyric: AAB and the turnaround line", sr: "Bluz tekst: AAB i stih obrta"}
+minutes: 15
+tags: [lyrics, blues, form]
+explain:
+  en: |
+    A blues stanza fits the **12-bar blues** you played in K-020: three lines of four bars
+    each, in the shape **A A B**.
+
+    | bars | chord (in C) | lyric | what it does |
+    |---|---|---|---|
+    | 1–4 | C7 (I7) | **A** | states the trouble |
+    | 5–8 | F7 (IV7) for 2 bars, then C7 | **A** again | the same words over a new chord: heavier, and the listener gets time to feel it |
+    | 9–12 | G7 (V7), F7, C7, turnaround | **B** | answers A: rhymes with it and turns it, with a consequence, a twist or a joke |
+
+    ### Line A
+    One complete statement, concrete and everyday: money, work, a car, a landlord, a person
+    who left. First person is the default. The line is sung in roughly the **first two bars**;
+    the other two belong to the piano or guitar answering (call and response). If a line needs
+    all four bars, it is too long.
+
+    ### The repeat
+    The second A is the same words, often with a small change at the front: *Yes*, *Lord*,
+    *I said*, or a different word stressed. Do not write a new line there; the repetition is
+    the form.
+
+    ### Line B: the turnaround line
+    B arrives over V7, the most tense chord of the form, and the band's turnaround follows it.
+    The words do the same job: they **turn the stanza around**. B rhymes with the end of A
+    (usually a full rhyme on one strong syllable) and adds what A held back: why, so what,
+    or the punchline. A good test: read A, cover B, and ask whether a listener could guess it.
+    If they could, B is too obvious.
+
+    > A: *I sold my watch on Monday, now I never know the time*
+    > A: *Yes, I sold my watch on Monday, now I never know the time*
+    > B: *Only clock I've got's the landlord, knocking every day at nine*
+    > (original)
+
+    > A: *Prodao sam sat u ponedeljak, sad ne znam ni koliko je sati*
+    > A: *Da, prodao sam sat u ponedeljak, sad ne znam ni koliko je sati*
+    > B: *Samo gazda u devet zakuca i kaže da treba da se plati*
+    > (original)
+
+    In Serbian the rhyme is usually feminine (*sa-ti / pla-ti*), because a longer word never
+    ends on a stressed syllable (L-003).
+
+    ### Tone
+    Blues lyrics mix trouble with humour and understatement. Complaining in general terms
+    (*I feel so bad*) is weak; a precise, slightly absurd detail (*the landlord is my clock*)
+    is strong. Stanzas can stand alone, but in a song they should follow one thread.
+
+    ### At the piano
+    Play the left-hand shuffle in C from K-020. Speak line A over bars 1–2, let your right hand
+    answer in bars 3–4 with a short blues-scale lick, then repeat for the second A and for B.
+  sr: |
+    Bluz strofa leži na **bluzu od 12 taktova** koji si svirao u K-020: tri stiha po četiri
+    takta, u obliku **A A B**.
+
+    | taktovi | akord (u C) | tekst | šta radi |
+    |---|---|---|---|
+    | 1–4 | C7 (I7) | **A** | iznosi nevolju |
+    | 5–8 | F7 (IV7) dva takta, pa C7 | ponovo **A** | iste reči preko novog akorda: teže, a slušalac ima vremena da ih oseti |
+    | 9–12 | G7 (V7), F7, C7, turnaround | **B** | odgovara na A: rimuje se s njim i okreće ga, posledicom, obrtom ili šalom |
+
+    ### Stih A
+    Jedna celovita izjava, konkretna i svakodnevna: novac, posao, auto, gazda, neko ko je otišao.
+    Prvo lice je podrazumevano. Stih se peva otprilike u **prva dva takta**; druga dva pripadaju
+    klaviru ili gitari koja odgovara (pitanje i odgovor). Ako stihu trebaju sva četiri takta,
+    predugačak je.
+
+    ### Ponavljanje
+    Drugo A su iste reči, često sa malom promenom na početku: *Da*, *Bože*, *rekoh*, ili je
+    naglašena druga reč. Ne piši tu nov stih; ponavljanje je sam oblik.
+
+    ### Stih B: stih obrta
+    B dolazi preko V7, najnapetijeg akorda u obliku, a posle njega bend svira turnaround (povratak
+    na početak). Reči rade isto: **okreću strofu**. B se rimuje sa krajem stiha A i dodaje ono što
+    je A prećutao: zašto, pa šta, ili poentu. Dobar test: pročitaj A, pokrij B i pitaj se da li bi
+    slušalac mogao da ga pogodi. Ako bi mogao, B je previše očekivan.
+
+    > A: *I sold my watch on Monday, now I never know the time*
+    > A: *Yes, I sold my watch on Monday, now I never know the time*
+    > B: *Only clock I've got's the landlord, knocking every day at nine*
+    > (originalni primer)
+
+    > A: *Prodao sam sat u ponedeljak, sad ne znam ni koliko je sati*
+    > A: *Da, prodao sam sat u ponedeljak, sad ne znam ni koliko je sati*
+    > B: *Samo gazda u devet zakuca i kaže da treba da se plati*
+    > (originalni primer)
+
+    U srpskom je rima obično ženska (*sa-ti / pla-ti*), jer se duža reč ne završava naglašenim
+    slogom (L-003).
+
+    ### Ton
+    Bluz tekst meša nevolju sa humorom i potcenjivanjem. Kukanje uopšte (*baš mi je loše*) je
+    slabo; precizan, pomalo apsurdan detalj (*gazda mi je sat*) je jak. Strofe mogu da stoje same,
+    ali u pesmi treba da prate jednu nit.
+
+    ### Za klavirom
+    Odsviraj levu ruku u šafl ritmu u C iz K-020. Izgovori stih A preko taktova 1–2, neka desna
+    ruka odgovori u taktovima 3–4 kratkim likom iz bluz lestvice, pa ponovi za drugo A i za B.
+exercises:
+  - id: L-009-1
+    type: mcq
+    prompt: {en: "In an AAB blues stanza, which line carries the twist or punchline?", sr: "U AAB bluz strofi, koji stih nosi obrt ili poentu?"}
+    options:
+      - {en: "The first A", sr: "Prvo A"}
+      - {en: "The second A", sr: "Drugo A"}
+      - {en: "B", sr: "B"}
+      - {en: "None: blues stanzas have no twist", sr: "Nijedan: bluz strofe nemaju obrt"}
+    answer: 2
+    keepOrder: true
+  - id: L-009-2
+    type: mcq
+    prompt: {en: "What usually happens to the words of the second A line?", sr: "Šta se obično dešava sa rečima drugog stiha A?"}
+    options:
+      - {en: "The same words, sometimes with “Yes”, “Lord” or “I said” in front", sr: "Iste reči, ponekad sa „Da”, „Bože” ili „rekoh” na početku"}
+      - {en: "A completely new line that rhymes with A", sr: "Potpuno nov stih koji se rimuje sa A"}
+      - {en: "The B line comes early", sr: "Stih B dolazi ranije"}
+      - {en: "It is left out; the band plays alone", sr: "Izostavlja se; bend svira sam"}
+    answer: 0
+  - id: L-009-3
+    type: mcq
+    prompt: {en: "Line A: “My baby took the car keys and left me the dog.” Which B line works best?", sr: "Stih A: „My baby took the car keys and left me the dog.” Koji stih B najbolje radi?"}
+    options:
+      - "Now the dog and I walk to work through the rain and the fog"
+      - "I feel so sad and lonely, I don't know what to do"
+      - "My baby took the car keys and left me the dog"
+      - "The weather in the city gets colder every day"
+    answer: 0
+  - id: L-009-4
+    type: mcq
+    prompt: {en: "Each lyric line gets four bars. Roughly how much of that is sung?", sr: "Svaki stih teksta ima četiri takta. Otprilike koliko od toga se peva?"}
+    options:
+      - {en: "About two bars; the instrument answers in the rest", sr: "Oko dva takta; instrument odgovara u ostatku"}
+      - {en: "All four bars without a break", sr: "Sva četiri takta bez pauze"}
+      - {en: "Only the fourth bar", sr: "Samo četvrti takt"}
+      - {en: "Eight bars: the line runs into the next one", sr: "Osam taktova: stih se preliva u sledeći"}
+    answer: 0
+  - id: L-009-5
+    type: mcq
+    prompt: {en: "Blues in C. Which chord is under the start of line B (bar 9)?", sr: "Bluz u C. Koji akord je ispod početka stiha B (9. takt)?"}
+    options: ["G7", "F7", "C7", "Am"]
+    answer: 0
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - chord: {notes: [F3, A3, C4, Eb4], root: F, quality: "7"}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - roman: {key: C, degree: 5, is: "V7", seventh: true}
+  - id: L-009-6
+    type: mcq
+    prompt: {en: "Which A line is the strongest start for a blues stanza?", sr: "Koji stih A je najjači početak bluz strofe?"}
+    options:
+      - {en: "Boss cut my hours to Tuesdays, and Tuesday's when it rains", sr: "Gazda mi je skratio smene na utorke, a utorkom pada kiša"}
+      - {en: "Life is hard and full of troubles that I cannot explain", sr: "Život je težak i pun nevolja koje ne mogu da objasnim"}
+      - {en: "Everything is bad, everything is wrong, everything is pain", sr: "Sve je loše, sve je pogrešno, sve je bol"}
+      - {en: "Let me tell you all a story that will make you understand", sr: "Da vam ispričam priču posle koje ćete shvatiti"}
+    answer: 0
+  - id: L-009-7
+    type: write
+    prompt:
+      en: "Blues, English or Serbian: write two AAB stanzas about one ordinary trouble (money, work, a machine that broke, someone who left). Then play the C shuffle from K-020 and speak or sing them, leaving bars 3–4 of each line for a right-hand answer."
+      sr: "Bluz, engleski ili srpski: napiši dve AAB strofe o jednoj običnoj nevolji (novac, posao, mašina koja se pokvarila, neko ko je otišao). Onda odsviraj šafl u C iz K-020 i izgovori ili otpevaj strofe, ostavljajući taktove 3–4 svakog stiha za odgovor desne ruke."
+    language: either
+    lines: [6, 8]
+    rubric:
+      - id: form
+        label: {en: "AAB form", sr: "AAB oblik"}
+        top: {en: "Both stanzas are A, A (same words, at most a small change in front), B; each line fits in about two bars spoken over the shuffle.", sr: "Obe strofe su A, A (iste reči, najviše mala promena na početku), B; svaki stih staje u oko dva takta izgovoren preko šafla."}
+      - id: turn
+        label: {en: "B turns it", sr: "B okreće"}
+        top: {en: "Each B rhymes with its A and adds a consequence, twist or joke a listener would not have guessed from A.", sr: "Svako B se rimuje sa svojim A i dodaje posledicu, obrt ili šalu koju slušalac ne bi pogodio iz A."}
+      - id: concrete
+        label: {en: "Concrete trouble", sr: "Konkretna nevolja"}
+        top: {en: "The trouble is a specific, everyday situation with at least one precise detail (a day, an object, a sum); no general complaining.", sr: "Nevolja je konkretna, svakodnevna situacija sa bar jednim preciznim detaljem (dan, predmet, iznos); bez kukanja uopšte."}
+      - id: thread
+        label: {en: "One thread", sr: "Jedna nit"}
+        top: {en: "The second stanza continues the same trouble one step further instead of starting a new topic.", sr: "Druga strofa vodi istu nevolju korak dalje umesto da otvara novu temu."}

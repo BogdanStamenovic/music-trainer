@@ -1,0 +1,134 @@
+id: T-050
+track: T
+order: 50
+prereqs: [T-049]
+title: {en: "Review: analysing a chorale-style phrase", sr: "Ponavljanje: analiza fraze u koralnom stilu"}
+minutes: 15
+tags: [harmony, four-part, analysis, review]
+explain:
+  en: |
+    Analysis is the reverse of harmonizing: given four voices, name every chord and explain why each voice goes where it goes. A method:
+
+    1. **Key**: key signature plus the final chord (here G major).
+    2. **Chord by chord, from the bass up**: stack the four notes in 3rds to find the root, then read the bass to find the position (5/3, 6, 6/4, 7, 6/5, 4/3, 4/2).
+    3. **Accidentals**: a note outside the key points to a tonicization (T-046). Find its target.
+    4. **Function and cadence**: group the chords into T – S – D – T and name the cadence.
+    5. **Voice leading**: follow the tendency tones (leading tones up, 7ths down) and the common tones.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    V:1
+    "^1"[DB] "^2"[DA] "^3"[GB] "^4"[Ec] | "^5"[EA] "^6"[DA] "^7"[DB]2 |]
+    V:2 clef=bass
+    [G,,G,] [F,,A,] [E,,G,] [C,G,] | [^C,G,] [D,F,] [G,,G,]2 |]
+    ```
+
+    Work through it yourself before the questions. Hints: chord 2 has F♯ in the bass; chord 5 contains a note outside G major; the tenor holds G from chord 3 to chord 5.
+  sr: |
+    Analiza je obrnuta harmonizacija: data su četiri glasa, treba imenovati svaki akord i objasniti zašto svaki glas ide tamo kuda ide. Postupak:
+
+    1. **Tonalitet**: predznak plus završni akord (ovde G-dur).
+    2. **Akord po akord, od basa naviše**: složi četiri tona po tercama da nađeš osnovni ton, zatim pročitaj bas da nađeš položaj (5/3, 6, 6/4, 7, 6/5, 4/3, 4/2).
+    3. **Predznaci**: ton van tonaliteta ukazuje na tonikalizaciju (T-046). Nađi njen cilj.
+    4. **Funkcija i kadenca**: grupiši akorde u T – S – D – T i imenuj kadencu.
+    5. **Vođenje glasova**: prati tendenčne tonove (vođice naviše, septime naniže) i zajedničke tonove.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    V:1
+    "^1"[DB] "^2"[DA] "^3"[GB] "^4"[Ec] | "^5"[EA] "^6"[DA] "^7"[DB]2 |]
+    V:2 clef=bass
+    [G,,G,] [F,,A,] [E,,G,] [C,G,] | [^C,G,] [D,F,] [G,,G,]2 |]
+    ```
+
+    Prođi kroz nju sam pre pitanja. Pomoć: akord 2 ima Fis u basu; akord 5 sadrži ton van G-dura; tenor drži G od akorda 3 do akorda 5.
+exercises:
+  - id: T-050-1
+    type: mcq
+    prompt: {en: "Chord 2 (F♯ A D A, bass up) is…", sr: "Akord 2 (Fis A D A, od basa naviše) je…"}
+    options: ["V6", "vii°", "V", "iii6"]
+    answer: 0
+    checks:
+      - chord: {notes: [F#2, A3, D4, A4], root: D, quality: maj, inversion: 1}
+      - roman: {key: G, type: major, degree: 5, is: V}
+  - id: T-050-2
+    type: mcq
+    prompt: {en: "Chord 3 (E G G B) is vi. Which note is doubled, and why is that acceptable here?", sr: "Akord 3 (E G G H) je vi. Koji ton je udvojen i zašto je to ovde prihvatljivo?"}
+    options:
+      - {en: "G, the 3rd: in a minor chord the 3rd is not a tendency tone, and it gives smooth voice leading", sr: "G, terca: u molskom akordu terca nije tendenčni ton, a daje glatko vođenje glasova"}
+      - {en: "E, the root: always the rule", sr: "E, osnovni ton: to je uvek pravilo"}
+      - {en: "B, the 5th", sr: "H, kvinta"}
+      - {en: "Nothing is doubled", sr: "Ništa nije udvojeno"}
+    answer: 0
+    checks:
+      - chord: {notes: [E2, G3, G4, B4], root: E, quality: min}
+      - roman: {key: G, type: major, degree: 6, is: vi}
+  - id: T-050-3
+    type: mcq
+    prompt: {en: "Chord 5 (C♯ G E A) contains C♯, which is not in G major. What is the chord?", sr: "Akord 5 (Cis G E A) sadrži Cis, koga nema u G-duru. Koji je to akord?"}
+    options: ["V65/V", "vii°7/V", "V7/ii", "IV"]
+    answer: 0
+    checks:
+      - chord: {notes: [C#3, G3, E4, A4], root: A, quality: "7", inversion: 1}
+      - numeral: {key: G, is: V65/V, notes: [C#3, G3, E4, A4]}
+      - interval: {from: C#3, to: D3, is: m2}
+  - id: T-050-4
+    type: mcq
+    prompt: {en: "From chord 5 to chord 6, where does the tenor G (the 7th of V65/V) go?", sr: "Od akorda 5 do akorda 6, kuda ide tenor G (septima od V65/V)?"}
+    options:
+      - {en: "Down a half step to F♯, the 3rd of V", sr: "Polustepen naniže na Fis, tercu od V"}
+      - {en: "Up to A", sr: "Naviše na A"}
+      - {en: "It stays on G", sr: "Ostaje na G"}
+    answer: 0
+    checks:
+      - interval: {from: F#3, to: G3, is: m2}
+  - id: T-050-5
+    type: mcq
+    prompt: {en: "What does the bass do from chord 4 to chord 6?", sr: "Šta radi bas od akorda 4 do akorda 6?"}
+    options:
+      - {en: "Rises chromatically C – C♯ – D into the dominant", sr: "Penje se hromatski C – Cis – D do dominante"}
+      - {en: "Falls by 5ths", sr: "Silazi po kvintama"}
+      - {en: "Stays on one note", sr: "Stoji na jednom tonu"}
+      - {en: "Leaps an octave", sr: "Skače za oktavu"}
+    answer: 0
+  - id: T-050-6
+    type: mcq
+    prompt: {en: "The phrase ends V – I with the soprano on B. Which cadence is it?", sr: "Fraza se završava sa V – I, sa sopranom na H. Koja je to kadenca?"}
+    options:
+      - {en: "Authentic (V – I), with the 3rd in the soprano", sr: "Autentična (V – I), sa tercom u sopranu"}
+      - {en: "Half cadence", sr: "Polukadenca"}
+      - {en: "Plagal", sr: "Plagalna"}
+      - {en: "Deceptive", sr: "Prekinuta"}
+    answer: 0
+    checks:
+      - chord: {notes: [D3, F#3, D4, A4], root: D, quality: maj}
+      - chord: {notes: [G2, G3, D4, B4], root: G, quality: maj}
+  - id: T-050-7
+    type: midi-play
+    prompt: {en: "Play the phrase exactly as written.", sr: "Odsviraj frazu tačno kako je napisana."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:G
+      V:1
+      [DB] [DA] [GB] [Ec] | [EA] [DA] [DB]2 |]
+      V:2 clef=bass
+      [G,,G,] [F,,A,] [E,,G,] [C,G,] | [^C,G,] [D,F,] [G,,G,]2 |]
+    mode: chords
+    octave: exact
+    expectChords: [[G2, G3, D4, B4], [F#2, A3, D4, A4], [E2, G3, G4, B4], [C3, G3, E4, C5], [C#3, G3, E4, A4], [D3, F#3, D4, A4], [G2, G3, D4, B4]]
+    checks:
+      - chord: {notes: [G2, G3, D4, B4], root: G, quality: maj}
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+  - id: T-050-8
+    type: generated
+    count: 3
+    prompt: {en: "Which version of the phrase do you hear? Listen to the chord before V.", sr: "Koju verziju fraze čuješ? Slušaj akord pre V."}
+    gen: {kind: progression-ear, keys: [G, D, F], options: [[I, V6, vi, IV, V65/V, V, I], [I, V6, vi, IV, ii6, V, I], [I, V6, vi, IV, I64, V, I]], tempo: 60}

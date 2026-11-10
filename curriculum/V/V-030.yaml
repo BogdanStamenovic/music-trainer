@@ -1,0 +1,122 @@
+id: V-030
+track: V
+order: 30
+title: {en: "Mix intro II: a light mix up a 5-note scale", sr: "Uvod u miks II: lagani miks naviše kroz pet tonova"}
+prereqs: [V-029]
+minutes: 11
+tags: [voice, register]
+explain:
+  en: |
+    Last lesson the bratty "nay" mostly went **down** from the top. Today it goes **up** a five-note scale, 1-2-3-4-5-4-3-2-1, and then onto more open vowels.
+    Going up is where the old habit returns: at the break the voice either **flips** into head or falsetto, or it **grabs** more weight and gets louder.
+    The light mix is the third path: the same small, speech-like sound all the way through.
+
+    How to keep it:
+
+    - **Think "same", not "higher".** The scale is five notes; your effort should be one size for all of them. Picture the notes as horizontal steps, not a hill.
+    - **Keep the "nay" shape** (bright, a little pinched) on 4 and 5. Opening the mouth wider at the top usually adds weight.
+    - **Vowel ladder:** "nay", then "nee", then "nah". "Ah" is the hardest open vowel to keep light. Move to the next rung only if the last one stayed small.
+
+    Choosing the key: the notes are fitted to the middle of your range, so 4 and 5 should may land near the place where your voice wants to change.
+    In the on-your-own part you move the scale up by **half steps** on the piano and stop at the **first** sign of pushing. The point is not how high you get,
+    it is how many steps stay the same size.
+
+    What not to do today: no belting, no "louder", no grit. A mix that is pushed for volume is no longer a light mix, and that comes much later, if ever.
+
+    The app grades **pitch only**; the register is your call.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Prošle lekcije zadirkujuće „nej” je uglavnom išlo **naniže** odozgo. Danas ide **naviše** kroz pet tonova, 1-2-3-4-5-4-3-2-1, a zatim na otvorenije samoglasnike.
+    Naviše se vraća stara navika: na lomu glas ili **preskoči** u glavni glas ili falset, ili **zgrabi** više težine i postane glasniji.
+    Lagani miks je treći put: isti mali, govorni zvuk sve vreme.
+
+    Kako da ga zadržiš:
+
+    - **Misli „isto”, ne „više”.** Lestvica ima pet tonova; napor treba da bude iste veličine za sve. Zamisli tonove kao vodoravne stepenike, ne kao brdo.
+    - **Zadrži oblik „nej”** (svetlo, malo stisnuto) na 4 i 5. Šire otvaranje usta na vrhu obično dodaje težinu.
+    - **Lestvica samoglasnika:** „nej”, pa „ni”, pa „na”. „A” je najteži otvoreni samoglasnik za lagan zvuk. Pređi na sledeću prečku samo ako je prethodna ostala mala.
+
+    Izbor tonaliteta: tonovi su prilagođeni sredini tvog opsega, pa 4 i 5 treba da padnu blizu mesta gde glas hoće da se promeni.
+    U samostalnom delu pomeraš lestvicu naviše za **polustepen** na klaviru i staješ na **prvi** znak guranja. Poenta nije koliko visoko stigneš,
+    nego koliko stepenika ostane iste veličine.
+
+    Šta danas ne radimo: bez beltinga, bez „glasnije”, bez hrapavosti. Miks koji se gura zbog jačine više nije lagani miks, a to dolazi mnogo kasnije, ako uopšte.
+
+    Aplikacija ocenjuje **samo visinu**; registar procenjuješ ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-030-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-030-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then bratty spoken 'nay-nay-nay' at three rising pitches, same effort each time."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, pa zadirkujuće izgovoreno „nej-nej-nej” na tri sve više visine, isti napor svaki put."
+  - id: V-030-3
+    type: sing-phrase
+    prompt:
+      en: "Downward first: 5-4-3-2-1 on bratty 'nay', speaking volume (as in the last lesson)."
+      sr: "Prvo naniže: 5-4-3-2-1 na zadirkujuće „nej”, jačina govora (kao prošle lekcije)."
+    notes: [A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-030-4
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-4-5-4-3-2-1 on 'nay', up and back. The same small sound on every step; 4 and 5 no louder than 1."
+      sr: "1-2-3-4-5-4-3-2-1 na „nej”, gore i nazad. Isti mali zvuk na svakom stepeniku; 4 i 5 nisu glasniji od 1."
+    notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: A4, is: P5}
+  - id: V-030-5
+    type: sing-phrase
+    prompt:
+      en: "The same scale on 'nee': narrow, bright, speech-like. Do not widen the mouth on the top note."
+      sr: "Ista lestvica na „ni”: usko, svetlo, kao govor. Ne širi usta na gornjem tonu."
+    notes: [E4, F#4, G#4, A4, B4, A4, G#4, F#4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: E, type: major, is: [E, F#, G#, A, B, C#, D#]}
+      - interval: {from: E4, to: B4, is: P5}
+  - id: V-030-6
+    type: sing-phrase
+    prompt:
+      en: "Vowel ladder: the scale starting on 'nay' and opening to 'nah' only on the way down (5-4-3-2-1). If 'nah' gets heavy, stay on 'nay'."
+      sr: "Lestvica samoglasnika: lestvica počinje na „nej”, a otvara se u „na” tek na putu naniže (5-4-3-2-1). Ako „na” postane teško, ostani na „nej”."
+    notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-030-7
+    type: practice
+    minutes: 2
+    prompt:
+      en: "On your own: play 1-2-3-4-5-4-3-2-1 on the piano and sing it on 'nay'; then move up a half step each round. Stop at the first round that gets louder, flips, or tightens, and go back down one key for a last clean round. Rate how many keys stayed the same size."
+      sr: "Samostalno: odsviraj 1-2-3-4-5-4-3-2-1 na klaviru i otpevaj na „nej”; svaku rundu pomeri za polustepen naviše. Stani na prvoj rundi koja postane glasnija, preskoči ili se stegne, i vrati se jedan tonalitet niže za poslednju čistu rundu. Oceni koliko je tonaliteta ostalo iste veličine."
+  - id: V-030-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet 'oo' sirens from high to low, then hum 5-4-3-2-1 softly."
+      sr: "Smirivanje: 3 tihe sirene na „u” odozgo naniže, pa tiho pevuši 5-4-3-2-1."

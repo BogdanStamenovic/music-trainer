@@ -1,0 +1,134 @@
+id: T-041
+track: T
+order: 41
+prereqs: [T-040]
+title: {en: "Predominant chords: IV, ii6, ii65 before V", sr: "Subdominantni akordi: IV, ii6, ii65 pre V"}
+minutes: 14
+tags: [harmony, function, four-part]
+explain:
+  en: |
+    Most phrases follow one grammar: **tonic → predominant → dominant → tonic** (T – S – D – T). The predominant (subdominant function) is the chord that *prepares* V. In major the usual ones are **IV**, **ii**, **ii6** and **ii65** (ii7 in first inversion). What they share is the 4th degree (F in C), which sits a step from the dominant.
+
+    Why **ii6** and **ii65** are so common before V:
+    - they put **4 in the bass** (F in C), exactly like IV, so the bass steps up 4 → 5 into V: the strongest bass approach to the dominant;
+    - they add D, which becomes a common tone with V (G B D);
+    - **ii65** adds C as its 7th. C is usually held over from I (a common tone, so it is *prepared*) and then falls a step to B, the leading tone of V. Prepared, then resolved down: that is how 7ths behave.
+
+    Order matters: **IV → ii6 → V** is fine (the predominant area gets darker), but **V → IV** or **ii → IV → ii** wander backwards and weaken the cadence.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] "_ii65"[Ad] [Gd] [Gc] |]
+    V:2 clef=bass
+    [C,C] [F,C] [G,B,] [C,E] |]
+    ```
+
+    I – ii65 – V – I: the tenor holds C from I into ii65, then falls to B.
+  sr: |
+    Većina fraza prati istu gramatiku: **tonika → subdominanta → dominanta → tonika** (T – S – D – T). Subdominantni akord je onaj koji *priprema* V. U duru su to najčešće **IV**, **ii**, **ii6** i **ii65** (ii7 u prvom obrtaju). Zajednički im je 4. stupanj (F u C-duru), koji je za stupanj udaljen od dominante.
+
+    Zašto su **ii6** i **ii65** tako česti pre V:
+    - stavljaju **4. stupanj u bas** (F u C-duru), kao i IV, pa bas ide za stupanj naviše 4 → 5 u V: najjači dolazak basa na dominantu;
+    - dodaju D, koje postaje zajednički ton sa V (G H D);
+    - **ii65** dodaje C kao septimu. C je obično zadržano iz I (zajednički ton, dakle *pripremljeno*), a zatim silazi za stupanj na H, vođicu u V. Pripremljena, pa razrešena naniže: tako se ponašaju septime.
+
+    Redosled je bitan: **IV → ii6 → V** je u redu (subdominantna oblast postaje tamnija), ali **V → IV** ili **ii → IV → ii** lutaju unazad i slabe kadencu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] "_ii65"[Ad] [Gd] [Gc] |]
+    V:2 clef=bass
+    [C,C] [F,C] [G,B,] [C,E] |]
+    ```
+
+    I – ii65 – V – I: tenor zadržava C iz I u ii65, pa silazi na H.
+exercises:
+  - id: T-041-1
+    type: mcq
+    prompt: {en: "In C major, which of these is NOT a predominant (subdominant-function) chord?", sr: "Koji od ovih akorada u C-duru NIJE subdominantne funkcije?"}
+    options: ["V", "IV", "ii6", "ii65"]
+    answer: 0
+  - id: T-041-2
+    type: mcq
+    prompt: {en: "In G major, which note is in the bass of ii6 (and of ii65)?", sr: "Koji ton je u basu ii6 (i ii65) u G-duru?"}
+    options: ["C", "A", "E", "D"]
+    answer: 0
+    checks:
+      - roman: {key: G, type: major, degree: 2, is: ii}
+      - chord: {notes: [C3, E3, A3], root: A, quality: min, inversion: 1}
+      - chord: {notes: [C3, E3, G3, A3], root: A, quality: min7, inversion: 1}
+  - id: T-041-3
+    type: mcq
+    prompt: {en: "In ii65 → V (C major), where does C, the 7th of ii, go?", sr: "U ii65 → V (C-dur), kuda ide C, septima akorda ii?"}
+    options:
+      - {en: "Down a step to B", sr: "Za stupanj naniže na H"}
+      - {en: "Up a step to D", sr: "Za stupanj naviše na D"}
+      - {en: "It leaps to G", sr: "Skače na G"}
+    answer: 0
+    checks:
+      - chord: {notes: [F3, A3, C4, D4], root: D, quality: min7, inversion: 1}
+      - interval: {from: B3, to: C4, is: m2}
+  - id: T-041-4
+    type: midi-play
+    prompt: {en: "Play I – ii65 – V – I in C exactly as in the explanation.", sr: "Odsviraj I – ii65 – V – I u C-duru tačno kao u objašnjenju."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ge] [Ad] [Gd] [Gc] |]
+      V:2 clef=bass
+      [C,C] [F,C] [G,B,] [C,E] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, C4, G4, E5], [F3, C4, A4, D5], [G3, B3, G4, D5], [C3, E4, G4, C5]]
+    checks:
+      - chord: {notes: [C3, C4, G4, E5], root: C, quality: maj}
+      - chord: {notes: [F3, C4, A4, D5], root: D, quality: min7, inversion: 1}
+      - chord: {notes: [G3, B3, G4, D5], root: G, quality: maj}
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+  - id: T-041-5
+    type: generated
+    count: 4
+    prompt: {en: "Play I – ii65 – V7 – I with smooth voice leading.", sr: "Odsviraj I – ii65 – V7 – I sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [C, G, D, F], numerals: [I, ii65, V7, I], smooth: true}
+  - id: T-041-6
+    type: generated
+    count: 3
+    prompt: {en: "Which progression do you hear? Listen for the bass under the second chord.", sr: "Koju progresiju čuješ? Slušaj bas ispod drugog akorda."}
+    gen: {kind: progression-ear, keys: [C, G, F], options: [[I, IV, V, I], [I, ii, V, I], [I, vi, V, I]], tempo: 60}
+  - id: T-041-7
+    type: compose
+    prompt: {en: "Write a soprano (voice 1) over this bass: I – vi – IV – V | I – IV – V – I in C, one half note per chord. Use chord tones, mostly steps, no parallel 5ths or octaves with the bass, and end 7 → 1 (B → C).", sr: "Napiši sopran (1. glas) iznad ovog basa: I – vi – IV – V | I – IV – V – I u C-duru, jedna polovina po akordu. Koristi akordske tonove, uglavnom korake, bez paralelnih kvinti i oktava sa basom, i završi 7 → 1 (H → C)."}
+    key: C major
+    meter: "4/4"
+    bars: 4
+    voices: 2
+    rules: [bars, key, cadence, parallels]
+    given: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      z4 | z4 | z4 | z4 |]
+      V:2 clef=bass
+      C,2 A,,2 | F,2 G,2 | C,2 F,2 | G,2 C,2 |]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      e2 c2 | c2 B2 | c2 A2 | B2 c2 |]
+      V:2 clef=bass
+      C,2 A,,2 | F,2 G,2 | C,2 F,2 | G,2 C,2 |]

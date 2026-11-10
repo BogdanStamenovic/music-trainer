@@ -1,0 +1,152 @@
+id: T-040
+track: T
+order: 40
+prereqs: [T-039]
+title: {en: "Leading-tone seventh chords (viiø7, vii°7) and their resolution", sr: "Septakordi VII stupnja (viiø7, vii°7) i njihovo razrešenje"}
+minutes: 14
+tags: [harmony, sevenths, four-part]
+explain:
+  en: |
+    Stack a 7th on the leading tone and you get a chord that is almost all tendency tones. It works as a **dominant** (it shares three notes with V7) but without the root of V.
+
+    | key | chord | notes | quality |
+    |---|---|---|---|
+    | C major | **viiø7** | B D F A | half-diminished (diminished triad + minor 7th) |
+    | A minor (raised 7) | **vii°7** | G♯ B D F | fully diminished (minor 3rds all the way up) |
+
+    The fully diminished 7th is symmetrical: every interval is a minor 3rd (three semitones), so it divides the octave into four equal parts. That is why it sounds unstable in every inversion, and why there are only **three** different diminished 7th chords on the keyboard.
+
+    **Resolution to the tonic** (think "everything moves by step"):
+    - the root (leading tone) **rises** to the tonic: G♯ → A, B → C;
+    - the 7th **falls** a step: F → E in A minor, A → G in C major;
+    - the 5th **falls** a step: D → C in A minor, F → E in C major;
+    - the 3rd may go either way: B → C or B → A in minor, D → C or D → E in major.
+
+    One trap in **viiø7 → I**: if the 7th (A) sits a 5th above the 3rd (D), D → C and A → G make parallel 5ths. Either put the A *below* the D (a 4th, which is allowed), or resolve D up to E (I then has a doubled 3rd).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] [Fd] [Ec]2 || [Ae] [Fd] [Ec]2 |]
+    V:2 clef=bass
+    [C,C] [B,,A,] [C,G,]2 || [A,,C] [^G,,B,] [A,,C]2 |]
+    ```
+
+    Left: I – viiø7 – I in C (A placed below D). Right: i – vii°7 – i in A minor; every voice resolves by step.
+  sr: |
+    Kad se na vođicu složi septima, dobija se akord sastavljen gotovo samo od tendenčnih tonova. Ima funkciju **dominante** (deli tri tona sa V7), ali bez osnovnog tona V.
+
+    | tonalitet | akord | tonovi | vrsta |
+    |---|---|---|---|
+    | C-dur | **viiø7** | H D F A | poluumanjeni (smanjeni trozvuk + mala septima) |
+    | a-mol (povišen 7.) | **vii°7** | Gis H D F | smanjeni (same male terce naviše) |
+
+    Smanjeni septakord je simetričan: svaki interval je mala terca (tri polustepena), pa deli oktavu na četiri jednaka dela. Zato zvuči nestabilno u svakom obrtaju, i zato na klavijaturi postoje samo **tri** različita smanjena septakorda.
+
+    **Razrešenje u toniku** (misli „sve ide za stupanj"):
+    - osnovni ton (vođica) ide **naviše** na toniku: Gis → A, H → C;
+    - septima **silazi** za stupanj: F → E u a-molu, A → G u C-duru;
+    - kvinta **silazi** za stupanj: D → C u a-molu, F → E u C-duru;
+    - terca može na obe strane: H → C ili H → A u molu, D → C ili D → E u duru.
+
+    Jedna zamka u **viiø7 → I**: ako je septima (A) kvintu iznad terce (D), D → C i A → G daju paralelne kvinte. Ili stavi A *ispod* D (kvarta, to je dozvoljeno), ili razreši D naviše na E (tada je u I udvojena terca).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] [Fd] [Ec]2 || [Ae] [Fd] [Ec]2 |]
+    V:2 clef=bass
+    [C,C] [B,,A,] [C,G,]2 || [A,,C] [^G,,B,] [A,,C]2 |]
+    ```
+
+    Levo: I – viiø7 – I u C-duru (A ispod D). Desno: i – vii°7 – i u a-molu; svaki glas se razrešava za stupanj.
+exercises:
+  - id: T-040-1
+    type: mcq
+    prompt: {en: "In C major, the seventh chord on the leading tone (B D F A) is…", sr: "U C-duru, septakord na vođici (H D F A) je…"}
+    options: ["viiø7", "vii°7", "vii7", "V7"]
+    answer: 0
+    checks:
+      - roman: {key: C, type: major, degree: 7, is: "viiø7", seventh: true}
+      - chord: {notes: [B3, D4, F4, A4], root: B, quality: m7b5}
+  - id: T-040-2
+    type: mcq
+    prompt: {en: "In A minor with the raised 7th, the seventh chord on G♯ (G♯ B D F) is…", sr: "U a-molu sa povišenim 7. stupnjem, septakord na Gis (Gis H D F) je…"}
+    options: ["vii°7", "viiø7", "V7", "VII7"]
+    answer: 0
+    checks:
+      - roman: {key: A, type: harmonic-minor, degree: 7, is: "vii°7", seventh: true}
+      - chord: {notes: [G#3, B3, D4, F4], root: G#, quality: dim7}
+  - id: T-040-3
+    type: generated
+    count: 4
+    prompt: {en: "Spell the seventh chord (harmonic minor).", sr: "Napiši septakord (harmonski mol)."}
+    gen: {kind: roman, keys: [A, D, E, C], type: harmonic-minor, degrees: [5, 7], ask: name, seventh: true}
+  - id: T-040-4
+    type: mcq
+    prompt: {en: "vii°7 → i in A minor: where do G♯ and F go?", sr: "vii°7 → i u a-molu: kuda idu Gis i F?"}
+    options:
+      - {en: "G♯ up to A, F down to E", sr: "Gis naviše na A, F naniže na E"}
+      - {en: "G♯ down to G, F up to G", sr: "Gis naniže na G, F naviše na G"}
+      - {en: "Both stay", sr: "Oba ostaju"}
+      - {en: "G♯ up to A, F up to G♯", sr: "Gis naviše na A, F naviše na Gis"}
+    answer: 0
+    checks:
+      - interval: {from: G#3, to: A3, is: m2}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: T-040-5
+    type: mcq
+    prompt: {en: "Spot the error: viiø7 → I in C.", sr: "Pronađi grešku: viiø7 → I u C-duru."}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:C
+      V:1
+      [DA] [CG] |]
+      V:2 clef=bass
+      [B,,F,] [C,E,] |]
+    options:
+      - {en: "Parallel 5ths: D–A moves to C–G (alto and soprano)", sr: "Paralelne kvinte: D–A ide u C–G (alt i sopran)"}
+      - {en: "The leading tone falls", sr: "Vođica silazi"}
+      - {en: "The 7th rises", sr: "Septima ide naviše"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [B2, F3, D4, A4], root: B, quality: m7b5}
+      - chord: {notes: [C3, E3, C4, G4], root: C, quality: maj}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: T-040-6
+    type: midi-play
+    prompt: {en: "Play both examples from the explanation exactly: I – viiø7 – I in C, then i – vii°7 – i in A minor.", sr: "Odsviraj oba primera iz objašnjenja tačno: I – viiø7 – I u C-duru, pa i – vii°7 – i u a-molu."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ge] [Fd] [Ec]2 || [Ae] [Fd] [Ec]2 |]
+      V:2 clef=bass
+      [C,C] [B,,A,] [C,G,]2 || [A,,C] [^G,,B,] [A,,C]2 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, C4, G4, E5], [B2, A3, F4, D5], [C3, G3, E4, C5], [A2, C4, A4, E5], [G#2, B3, F4, D5], [A2, C4, E4, C5]]
+    checks:
+      - chord: {notes: [C3, C4, G4, E5], root: C, quality: maj}
+      - chord: {notes: [B2, A3, F4, D5], root: B, quality: m7b5}
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+      - chord: {notes: [A2, C4, A4, E5], root: A, quality: min}
+      - chord: {notes: [G#2, B3, F4, D5], root: G#, quality: dim7}
+      - chord: {notes: [A2, C4, E4, C5], root: A, quality: min}
+  - id: T-040-7
+    type: generated
+    count: 3
+    prompt: {en: "Play i – iv – vii°7 – i with smooth voice leading.", sr: "Odsviraj i – iv – vii°7 – i sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [A, D, E], type: harmonic-minor, numerals: [i, iv, "vii°7", i], smooth: true}

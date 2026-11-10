@@ -1,0 +1,172 @@
+id: L-012
+track: L
+order: 12
+prereqs: [L-011]
+title: {en: "Editing: cut, sharpen, replace clichés", sr: "Uređivanje teksta: skrati, izoštri, zameni klišee"}
+minutes: 15
+tags: [lyrics, editing]
+explain:
+  en: |
+    A first draft finds out what the song is about. **Editing** makes every word earn its
+    place. Do it in three separate passes; trying all three at once makes you fix nothing.
+
+    ### Pass 1: cut
+    | cut | example | why |
+    |---|---|---|
+    | **filler** added for the count | *I **just really** need you **so*** | the melody hears the gaps; fill them with meaning or remove the notes |
+    | the **same thing twice** | *I'm alone tonight, / nobody's here with me* | the second line adds nothing |
+    | **explaining the image** | *Your coat still hangs behind the door, **and that's how I know I miss you*** | the image already said it (L-004) |
+
+    Serbian filler to watch: *sad*, *pa*, *baš*, *eto*, *joj*, *ej*, when they are only there to
+    make 8 syllables.
+
+    ### Pass 2: sharpen
+    - **Generic noun → specific**: *car* → *the rusted Golf*; *drink* → *rakija from the
+      freezer*.
+    - **Weak verb + adverb → one strong verb**: *walked slowly* → *dragged*; *said quietly* →
+      *whispered*. Serbian: *išao je polako* → *vukao se*.
+    - **Abstract → concrete**: *our love* → what you actually did together.
+
+    ### Pass 3: replace clichés
+    A **cliché** is a phrase so used that the listener stops seeing it: *broken heart*, *tears
+    like rain*, *cold as ice*, *srce mi je slomljeno*, *suze kao kiša*, *noć bez kraja*. Two
+    ways out:
+    1. Ask what **this** person, in **this** room, would notice instead (the coat, the toothbrush).
+    2. **Twist** it (L-005): take the stock phrase and turn it so it says something new.
+
+    ### Then check prosody again
+    Every edit changes the syllable count and the stresses. Re-count the line, speak it over the
+    beat (L-007), and only then call the edit finished. A sharper line that no longer fits the
+    melody is not finished.
+
+    > before: *Kiša pada, tužan sam* (7: telling, and one short)
+    > after: *Kiša pada, gasim svetlo* (8: an action shows it)
+
+    ### Method
+    Read the lyric aloud, sing it over the piano, and mark every word you would not say to a
+    friend. Then aim to cut about one line in five. Most drafts survive it and get better.
+  sr: |
+    Prva verzija otkriva o čemu je pesma. **Uređivanje** tera svaku reč da zasluži svoje mesto.
+    Radi ga u tri odvojena prolaza; ako pokušaš sva tri odjednom, ne popraviš ništa.
+
+    ### Prvi prolaz: skrati
+    | izbaci | primer | zašto |
+    |---|---|---|
+    | **punjenje** zbog broja slogova | *Baš mi **sad** nedostaješ, **joj*** | melodija čuje rupe; popuni ih smislom ili ukloni note |
+    | **isto dvaput** | *Sam sam večeras, / nikoga nema sa mnom* | drugi stih ništa ne dodaje |
+    | **objašnjavanje slike** | *Tvoj kaput još visi iza vrata, **i zato znam da mi nedostaješ*** | slika je to već rekla (L-004) |
+
+    Srpsko punjenje na koje treba paziti: *sad*, *pa*, *baš*, *eto*, *joj*, *ej*, kad su tu samo
+    da bi bilo 8 slogova.
+
+    ### Drugi prolaz: izoštri
+    - **Opšta imenica → konkretna**: *auto* → *zarđali golf*; *piće* → *rakija iz zamrzivača*.
+    - **Slab glagol + prilog → jedan jak glagol**: *išao je polako* → *vukao se*; *rekla je tiho*
+      → *šapnula je*. Engleski: *walked slowly* → *dragged*.
+    - **Apstraktno → konkretno**: *naša ljubav* → šta ste zaista radili zajedno.
+
+    ### Treći prolaz: zameni klišee
+    **Kliše** je fraza toliko korišćena da je slušalac više ne vidi: *srce mi je slomljeno*, *suze
+    kao kiša*, *noć bez kraja*, *broken heart*, *cold as ice*. Dva izlaza:
+    1. Pitaj šta bi **ova** osoba, u **ovoj** sobi, zaista primetila (kaput, četkica).
+    2. **Izvrni** ga (L-005): uzmi otrcanu frazu i okreni je tako da kaže nešto novo.
+
+    ### Onda ponovo proveri prozodiju
+    Svaka izmena menja broj slogova i naglaske. Ponovo prebroj stih, izgovori ga preko dobe
+    (L-007), i tek tada je izmena gotova. Oštriji stih koji više ne leži na melodiji nije gotov.
+
+    > pre: *Kiša pada, tužan sam* (7: imenuje osećanje, i fali jedan slog)
+    > posle: *Kiša pada, gasim svetlo* (8: radnja ga pokazuje)
+
+    ### Metod
+    Pročitaj tekst naglas, otpevaj ga uz klavir i obeleži svaku reč koju ne bi rekao prijatelju.
+    Onda pokušaj da izbaciš otprilike jedan stih od pet. Većina verzija to preživi i postane bolja.
+exercises:
+  - id: L-012-1
+    type: mcq
+    prompt: {en: "“I just really, really need you so.” Which words are filler?", sr: "„I just really, really need you so.” Koje reči su punjenje?"}
+    options:
+      - {en: "just, really, really, so", sr: "just, really, really, so"}
+      - {en: "need, you", sr: "need, you"}
+      - {en: "I, need", sr: "I, need"}
+      - {en: "None: every word carries meaning", sr: "Nijedna: svaka reč nosi smisao"}
+    answer: 0
+    checks:
+      - syllables: {text: "Kiša pada, tužan sam", lang: sr, is: 7}
+      - syllables: {text: "Kiša pada, gasim svetlo", lang: sr, is: 8}
+  - id: L-012-2
+    type: mcq
+    prompt: {en: "Which revision of “He walked slowly to his car” is sharpest?", sr: "Koja izmena stiha „Polako je otišao do auta” je najoštrija?"}
+    options:
+      - {en: "He dragged his feet to the rusted Golf", sr: "Vukao se do zarđalog golfa"}
+      - {en: "He walked very, very slowly to his car", sr: "Išao je veoma, veoma polako do auta"}
+      - {en: "He went to the vehicle in a slow way", sr: "Otišao je do vozila na spor način"}
+      - {en: "Slowly, slowly, to the car he walked", sr: "Polako, polako, do auta je išao"}
+    answer: 0
+  - id: L-012-3
+    type: mcq
+    prompt: {en: "Which line is a cliché?", sr: "Koji stih je kliše?"}
+    options:
+      - {en: "My tears fall down like rain", sr: "Suze mi teku kao kiša"}
+      - {en: "I wash one cup now, not two", sr: "Sad perem jednu šolju, ne dve"}
+      - {en: "Your keys still hang beside the fuse box", sr: "Tvoji ključevi još vise pored osigurača"}
+      - {en: "The heating clicks on at six, for nobody", sr: "Grejanje se upali u šest, ni za koga"}
+    answer: 0
+  - id: L-012-4
+    type: mcq
+    prompt: {en: "Osmerac line: “Stari tramvaj škripi tiho”. You want to say where it squeaks. Which revision keeps 8 syllables with the cesura after the 4th?", sr: "Stih u osmercu: „Stari tramvaj škripi tiho”. Hoćeš da kažeš gde škripi. Koja izmena čuva 8 slogova sa cezurom posle 4. sloga?"}
+    options: ["Stari tramvaj kroz noć škripi", "Stari tramvaj škripi kroz maglu", "Tramvaj škripi kroz maglu", "Kroz maglu stari tramvaj škripi"]
+    answer: 0
+    checks:
+      - syllables: {text: "Stari tramvaj škripi tiho", lang: sr, is: 8}
+      - syllables: {text: "Stari tramvaj kroz noć škripi", lang: sr, is: 8}
+      - syllables: {text: "Stari tramvaj", lang: sr, is: 4}
+      - syllables: {text: "Stari tramvaj škripi kroz maglu", lang: sr, is: 9}
+      - syllables: {text: "Tramvaj škripi kroz maglu", lang: sr, is: 7}
+      - syllables: {text: "Kroz maglu stari tramvaj škripi", lang: sr, is: 9}
+  - id: L-012-5
+    type: mcq
+    prompt: {en: "“Your coat still hangs behind the door, and that's how I know I miss you.” What should the edit do?", sr: "„Tvoj kaput još visi iza vrata, i zato znam da mi nedostaješ.” Šta izmena treba da uradi?"}
+    options:
+      - {en: "Cut the second half: the coat already shows it", sr: "Izbaciti drugu polovinu: kaput to već pokazuje"}
+      - {en: "Cut the coat and keep the explanation", sr: "Izbaciti kaput i zadržati objašnjenje"}
+      - {en: "Add a third clause explaining why missing hurts", sr: "Dodati treći deo koji objašnjava zašto boli"}
+      - {en: "Nothing: the explanation helps the listener", sr: "Ništa: objašnjenje pomaže slušaocu"}
+    answer: 0
+  - id: L-012-6
+    type: write
+    prompt:
+      en: "Edit this stanza, keeping 4 lines and roughly the same length per line. EN: “My heart is broken into pieces, / I'm so lonely every night, / tears are falling like the rain, / I just really miss you, baby, it's not right.” SR: “Srce mi je slomljeno, / tužan sam baš svake noći, / suze teku kao kiša, / joj, kako mi nedostaješ.” Pick one language. Write the new stanza, then one line per edit saying what you cut, sharpened or replaced."
+      sr: "Uredi ovu strofu, zadrži 4 stiha i otprilike istu dužinu stiha. EN: „My heart is broken into pieces, / I'm so lonely every night, / tears are falling like the rain, / I just really miss you, baby, it's not right.” SR: „Srce mi je slomljeno, / tužan sam baš svake noći, / suze teku kao kiša, / joj, kako mi nedostaješ.” Izaberi jedan jezik. Napiši novu strofu, pa po jedan red za svaku izmenu: šta si izbacio, izoštrio ili zamenio."
+    language: either
+    lines: [6, 12]
+    rubric:
+      - id: cliche
+        label: {en: "Clichés replaced", sr: "Klišei zamenjeni"}
+        top: {en: "None of broken heart, tears like rain, lonely every night survives; each is replaced by a specific image or a fresh twist.", sr: "Nijedan od klišea (slomljeno srce, suze kao kiša, tužan svake noći) nije ostao; svaki je zamenjen konkretnom slikom ili svežim obrtom."}
+      - id: cut
+        label: {en: "Filler cut", sr: "Punjenje izbačeno"}
+        top: {en: "No filler words remain (just, really, so, baby as padding; baš, joj, sad as padding); no line repeats another's meaning.", sr: "Nema više reči punjenja (just, really, so, baby kao dopuna; baš, joj, sad kao dopuna); nijedan stih ne ponavlja smisao drugog."}
+      - id: sharp
+        label: {en: "Sharpened", sr: "Izoštreno"}
+        top: {en: "At least two specific nouns or strong verbs where the draft had general ones; the feeling is shown, never named.", sr: "Bar dve konkretne imenice ili jaka glagola tamo gde je nacrt imao opšte; osećanje je pokazano, nikad imenovano."}
+      - id: sings
+        label: {en: "Still sings", sr: "I dalje se peva"}
+        top: {en: "Spoken over a 4/4 beat, every line keeps its stresses on strong beats and the line lengths stay close to each other.", sr: "Izgovoren preko 4/4, svaki stih drži naglaske na jakim dobama, a dužine stihova ostaju bliske."}
+  - id: L-012-7
+    type: write
+    prompt:
+      en: "Your own work: take a lyric you wrote in L-004 to L-011 and edit it in three passes (cut, sharpen, replace clichés), then re-check prosody. Paste the edited version, then the before/after of your two biggest changes."
+      sr: "Tvoj rad: uzmi tekst koji si napisao u lekcijama L-004 do L-011 i uredi ga u tri prolaza (skrati, izoštri, zameni klišee), pa ponovo proveri prozodiju. Nalepi uređenu verziju, pa „pre/posle” za svoje dve najveće izmene."
+    language: either
+    lines: [6, 20]
+    rubric:
+      - id: passes
+        label: {en: "Three passes", sr: "Tri prolaza"}
+        top: {en: "The edit shows at least one cut, one sharpened word and one replaced or twisted cliché (or states honestly that the draft had none).", sr: "Izmena pokazuje bar jedno skraćenje, jednu izoštrenu reč i jedan zamenjen ili izvrnut kliše (ili iskreno navodi da ih nacrt nije imao)."}
+      - id: better
+        label: {en: "Each change improves", sr: "Svaka izmena popravlja"}
+        top: {en: "In both before/after pairs the new line is more specific or shorter without losing meaning.", sr: "U oba para „pre/posle” novi stih je konkretniji ili kraći bez gubitka smisla."}
+      - id: prosody
+        label: {en: "Prosody re-checked", sr: "Prozodija ponovo proverena"}
+        top: {en: "Changed lines keep the syllable count or meter of the original (osmerac stays 4 + 4, iambic stays iambic) and their stresses still land on strong beats.", sr: "Izmenjeni stihovi čuvaju broj slogova ili metar originala (osmerac ostaje 4 + 4, jamb ostaje jamb), a naglasci i dalje padaju na jake dobe."}

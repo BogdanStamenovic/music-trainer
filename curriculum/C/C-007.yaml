@@ -1,0 +1,187 @@
+id: C-007
+track: C
+order: 7
+prereqs: [C-006, K-017]
+title: {en: "Harmonizing a melody: one chord per bar", sr: "Harmonizacija melodije: jedan akord po taktu"}
+minutes: 15
+tags: [composition, harmony, harmonizing]
+explain:
+  en: |
+    In C-004 the chords came first and you wrote a melody over them. Now the melody is fixed and
+    you choose the chords. At the keys (K-017) you did this one chord per half bar with I, IV and V.
+    Here the frame is **one chord per bar**, and you may also use **ii** and **vi**.
+
+    **1. Look at the strong beats.** In 4/4, beats 1 and 3. Find a triad that contains *both*
+    strong-beat notes; the notes on beats 2 and 4 are then usually passing or neighbour tones.
+
+    **2. Every note belongs to three triads.** In C major, A is in **ii** (D F A), **IV** (F A C)
+    and **vi** (A C E). So a bar has a *choice*, and two strong-beat notes narrow it down:
+    A and C fit IV or vi; A and F fit ii or IV.
+
+    | melody note | triads that contain it (C major) |
+    |---|---|
+    | C | I, IV, vi |
+    | D | ii, V, vii° |
+    | E | I, iii, vi |
+    | F | ii, IV, vii° |
+    | G | I, iii, V |
+    | A | ii, IV, vi |
+    | B | iii, V, vii° |
+
+    **3. Choose by function, then by the bass.** Start on I, end V → I (authentic cadence).
+    In between, tonic (I, vi) → predominant (ii, IV) → dominant (V) is the direction the ear
+    expects; **V → IV** sounds like going backwards, so avoid it inside a phrase. When two chords
+    fit, pick the one whose root is a 4th or 5th away from the last one, or the one that gives
+    the bass a step.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    "I"E2 F2 G2 E2 | "IV or vi"A2 B2 c2 A2 | "V"B2 c2 d2 B2 | "I"c8 |]
+    V:2 clef=bass
+    C,8 | F,,8 | G,,8 | C,8 |]
+    ```
+
+    Bar 1: E and G (beats 1, 3) → I; F is a passing tone. Bar 2: A and c → IV or vi; B is passing.
+    Bar 3: B and d → V. Bar 4: c → I. The bass here plays only the roots, one whole note per bar.
+
+    **At the keyboard:** play the melody in the right hand and try *both* bar-2 chords in the left:
+    IV is brighter, vi is darker. Neither is wrong; the ear picks.
+  sr: |
+    U C-004 akordi su bili prvi, a ti si nad njima pisao melodiju. Sada je melodija zadata, a ti
+    biraš akorde. Za klavirom (K-017) radio si to jedan akord po polutaktu, sa I, IV i V. Ovde je
+    okvir **jedan akord po taktu**, a smeš da koristiš i **ii** i **vi**.
+
+    **1. Gledaj jake dobe.** U 4/4 to su prva i treća doba. Nađi kvintakord koji sadrži *oba*
+    tona sa jakih doba; tonovi na drugoj i četvrtoj dobi su onda najčešće prolaznice ili skretnice.
+
+    **2. Svaki ton pripada trima kvintakordima.** U C-duru A je u **ii** (D F A), **IV** (F A C)
+    i **vi** (A C E). Takt, dakle, ima *izbor*, a dva tona sa jakih doba ga sužavaju:
+    A i C pristaju uz IV ili vi; A i F uz ii ili IV.
+
+    | ton melodije | kvintakordi koji ga sadrže (C-dur) |
+    |---|---|
+    | C | I, IV, vi |
+    | D | ii, V, vii° |
+    | E | I, iii, vi |
+    | F | ii, IV, vii° |
+    | G | I, iii, V |
+    | A | ii, IV, vi |
+    | H | iii, V, vii° |
+
+    **3. Biraj po funkciji, pa po basu.** Počni na I, završi V → I (autentična kadenca).
+    Između, tonika (I, vi) → subdominantna funkcija (ii, IV) → dominanta (V) je smer koji uho
+    očekuje; **V → IV** zvuči kao korak unazad, pa ga izbegavaj unutar fraze. Kad pristaju dva
+    akorda, uzmi onaj čiji je osnovni ton kvartu ili kvintu od prethodnog, ili onaj koji basu daje
+    korak.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    "I"E2 F2 G2 E2 | "IV ili vi"A2 B2 c2 A2 | "V"B2 c2 d2 B2 | "I"c8 |]
+    V:2 clef=bass
+    C,8 | F,,8 | G,,8 | C,8 |]
+    ```
+
+    Takt 1: E i G (prva i treća doba) → I; F je prolaznica. Takt 2: A i c → IV ili vi; H je
+    prolaznica. Takt 3: H i d → V. Takt 4: c → I. Bas ovde svira samo osnovne tonove, jednu celu
+    notu po taktu.
+
+    **Za klavirom:** sviraj melodiju desnom rukom i probaj *oba* akorda za takt 2 levom:
+    IV je svetliji, vi tamniji. Nijedan nije pogrešan; bira uho.
+exercises:
+  - id: C-007-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nA2 G2 F2 A2 |]"
+    prompt: {en: "C major, one chord for this bar. Beats 1 and 3 are A and F. Which chord?", sr: "C-dur, jedan akord za ovaj takt. Na prvoj i trećoj dobi su A i F. Koji akord?"}
+    options: ["IV", "V", "I", "iii"]
+    answer: 0
+    checks:
+      - roman: {key: C, degree: 4, is: "IV"}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [E4, G4, B4], root: E, quality: min}
+  - id: C-007-2
+    type: mcq
+    prompt: {en: "In C major, which three triads contain the note A?", sr: "U C-duru, koja tri kvintakorda sadrže ton A?"}
+    options: ["ii, IV, vi", "I, IV, V", "iii, V, vii°", "I, iii, vi"]
+    answer: 0
+    checks:
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+  - id: C-007-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 F2 G2 E2 | A2 B2 c2 A2 | B2 c2 d2 B2 | c8 |]"
+    prompt: {en: "One chord per bar. Which harmonization fits the strong beats of every bar?", sr: "Jedan akord po taktu. Koja harmonizacija odgovara jakim dobama u svakom taktu?"}
+    options: ["I – vi – V – I", "I – V – IV – I", "V – IV – I – V", "IV – I – ii – V"]
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: C-007-4
+    type: midi-play
+    prompt: {en: "Hear your harmonization: the melody's first note of each bar on top, the chord under it, the root in the left hand. I – vi – V – I, ♩=60, one chord per click.", sr: "Čuj svoju harmonizaciju: prvi ton melodije u svakom taktu gore, akord ispod njega, osnovni ton u levoj ruci. I – vi – V – I, ♩=60, jedan akord po udarcu."}
+    mode: chords
+    expectChords: [[C3, G3, C4, E4], [A2, C4, E4, A4], [G2, D4, G4, B4], [C3, E4, G4, C5]]
+    octave: exact
+    tempo: 60
+    checks:
+      - chord: {notes: [C3, G3, C4, E4], root: C, quality: maj}
+      - chord: {notes: [A2, C4, E4, A4], root: A, quality: min}
+      - chord: {notes: [G2, D4, G4, B4], root: G, quality: maj}
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+  - id: C-007-5
+    type: compose
+    prompt:
+      en: "Harmonize this melody: in the bass (V:2) write the root of your chord for each bar, one whole note per bar. Bar 1 (C, the root of I) is given; bar 2 is your choice (IV or vi); end V → I. Type the bass, or record both hands (split at G3)."
+      sr: "Harmonizuj ovu melodiju: u basu (V:2) napiši osnovni ton svog akorda za svaki takt, jednu celu notu po taktu. Takt 1 (C, osnovni ton I) je zadat; takt 2 biraš sam (IV ili vi); kraj V → I. Otkucaj bas ili snimi obe ruke (podela na G3)."
+    given: "X:1\nM:4/4\nL:1/8\nK:C\nV:1\nE2 F2 G2 E2 | A2 B2 c2 A2 | B2 c2 d2 B2 | c8 |]\nV:2 clef=bass\nC,8 |\n"
+    key: C major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    rules: [bars, rhythm, key, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      V:1
+      E2 F2 G2 E2 | A2 B2 c2 A2 | B2 c2 d2 B2 | c8 |]
+      V:2 clef=bass
+      C,8 | A,,8 | G,,8 | C,8 |]
+  - id: C-007-6
+    type: compose
+    prompt:
+      en: "G major (F♯), 4 bars, one chord per bar from I, ii, IV, V, vi. Write the bass roots under the given melody. Bar 2 (C and A on the strong beats) has only one fitting triad: find it. End V → I."
+      sr: "G-dur (Fis), 4 takta, jedan akord po taktu od I, ii, IV, V, vi. Napiši osnovne tonove u basu ispod zadate melodije. Takt 2 (C i A na jakim dobama) ima samo jedan kvintakord koji pristaje: nađi ga. Kraj V → I."
+    given: "X:1\nM:4/4\nL:1/8\nK:G\nV:1\nB2 A2 G2 B2 | c2 B2 A2 c2 | d2 c2 A2 F2 | G8 |]\nV:2 clef=bass\n"
+    key: G major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    rules: [bars, rhythm, key, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:G
+      V:1
+      B2 A2 G2 B2 | c2 B2 A2 c2 | d2 c2 A2 F2 | G8 |]
+      V:2 clef=bass
+      G,,8 | A,,8 | D,8 | G,,8 |]
+    checks:
+      - roman: {key: G, degree: 2, is: "ii"}
+      - chord: {notes: [A3, C4, E4], root: A, quality: min}
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj}
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj}

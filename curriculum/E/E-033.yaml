@@ -1,0 +1,149 @@
+id: E-033
+track: E
+order: 33
+title: {en: "Second song by ear, phrase by phrase", sr: "Druga pesma po sluhu, fraza po frazu"}
+prereqs: [E-032, E-021]
+minutes: 15
+tags: [ear, melody, song]
+# Tune: "Amazing Grace" (tune "New Britain", American, first printed 1831; words John Newton,
+# 1779). Public domain. Common hymnal form in G major, 3/4, one-beat pickup.
+explain:
+  en: |
+    *Versions differ:* hymnals ornament a few syllables differently (a three-note turn on "-zing", two notes on "like"). The app grades the common plain version below; if you learned another, play it here as written.
+
+    Second song: **Amazing Grace**, the American tune "New Britain" (first printed 1831) with John
+    Newton's words (1779). Same method as Ode to Joy in E-021: sing the phrase, find the tonic, find
+    the first note as a degree, mark the leaps, play, compare, fix one note at a time. Three new things
+    show up:
+
+    1. **3/4 and a pickup.** The tune starts on an upbeat (in Serbian *predtakt*): "A-" comes before the
+       first bar line, and "-MA-" lands on beat 1. Feel the strong beat on "-ma-", not on "A-".
+    2. **Pentatonic.** The tune uses only five notes of G major: G A B D E (degrees 1 2 3 5 6). No C,
+       no F#, so there are **no half steps**. If you find yourself playing C or F#, it is wrong.
+    3. **Two notes on one syllable.** "-zing" is sung on two eighth notes, B then G. Ear training
+       hears pitches, not syllables, so count both.
+
+    The landmarks:
+
+    - **Tonic**: the tune ends on **G**. **First note**: D4, degree 5 *below* the tonic. The opening
+      "A-ma-" is the leap **5 up to 1** (a fourth), the most common way a tune starts on a pickup.
+    - **Form**: phrases 1, 2 and 4 start the same way (5 | 1 3 1 | 3 2). Phrase 1 ends low on 5,
+      phrase 2 climbs to the **high 5** (D5, a question), phrase 4 ends on **1** (the answer). Phrase 3
+      ("I once was lost") is the one that starts high.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 D | G2 B/G/ | B2 A | d3- | d2 |]
+    ```
+
+    Phrases 1 and 2, with the real rhythm. The exercises play at ♩=80 and grade pitches first, then
+    timing. Play in the octave you hear: the tune lies between D4 and D5.
+  sr: |
+    *Verzije se razlikuju:* pesmarice ponegde ukrašavaju slogove drugačije (tri tona na „-zing”, dva na „like”). Aplikacija ocenjuje uobičajenu jednostavnu verziju ispod; ako znaš drugu, ovde je odsviraj kako je napisano.
+
+    Druga pesma: **Amazing Grace**, američka melodija „New Britain" (prvi put štampana 1831) sa
+    rečima Džona Njutna (1779). Isti metod kao za Odu radosti u E-021: otpevaj frazu, nađi toniku,
+    nađi prvi ton kao stupanj, obeleži skokove, odsviraj, uporedi, ispravljaj jedan ton po jedan.
+    Pojavljuju se tri nove stvari:
+
+    1. **3/4 i predtakt.** Pesma počinje na predtakt: „A-" dolazi pre prve taktne crte, a „-MA-"
+       pada na prvu dobu. Oseti jaku dobu na „-ma-", ne na „A-".
+    2. **Pentatonika.** Pesma koristi samo pet tonova G-dura: G A H D E (stupnjevi 1 2 3 5 6). Nema C
+       ni Fis, pa **nema polustepena**. Ako sviraš C ili Fis, pogrešio si.
+    3. **Dva tona na jedan slog.** „-zing" se peva na dve osmine, H pa G. Sluh čuje visine, ne
+       slogove, pa broji oba.
+
+    Orijentiri:
+
+    - **Tonika**: pesma se završava na **G**. **Prvi ton**: D4, 5. stupanj *ispod* tonike. Početak
+      „A-ma-" je skok **5 naviše na 1** (kvarta), najčešći način da melodija počne predtaktom.
+    - **Forma**: fraze 1, 2 i 4 počinju isto (5 | 1 3 1 | 3 2). Fraza 1 se završava nisko na 5, fraza 2
+      se penje do **gornje 5** (D5, pitanje), fraza 4 se završava na **1** (odgovor). Fraza 3
+      („I once was lost") je ona koja počinje visoko.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 D | G2 B/G/ | B2 A | d3- | d2 |]
+    ```
+
+    Fraze 1 i 2, sa pravim ritmom. Vežbe sviraju pri ♩=80 i ocenjuju prvo visine, pa ritam. Sviraj u
+    oktavi koju čuješ: pesma leži između D4 i D5.
+exercises:
+  - id: E-033-1
+    type: midi-echo
+    prompt: {en: "Phrase 1, \"Amazing grace, how sweet the sound\" (G major, starts on the pickup D4). Sing it, then play it back.", sr: "Fraza 1, „Amazing grace, how sweet the sound\" (G-dur, počinje predtaktom D4). Otpevaj je, pa odsviraj."}
+    mode: sequence
+    expect: [D4, G4, B4, G4, B4, A4, G4, E4, D4]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 2]
+    tempo: 80
+    octave: exact
+    checks:
+      - scale: {tonic: G, type: major-pentatonic, is: [G, A, B, D, E]}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+      - keysig: {key: G, mode: major, is: 1}
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: E-033-2
+    type: midi-echo
+    prompt: {en: "Phrase 2, \"that saved a wretch like me\": same start, now it climbs to the high 5.", sr: "Fraza 2, „that saved a wretch like me\": isti početak, sada se penje do gornje 5."}
+    mode: sequence
+    expect: [D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 3]
+    tempo: 80
+    octave: exact
+    checks:
+      - interval: {from: A4, to: D5, is: P4}
+  - id: E-033-3
+    type: midi-echo
+    prompt: {en: "Phrase 3, \"I once was lost, but now am found\": it starts high, on two quick notes (B4, D5).", sr: "Fraza 3, „I once was lost, but now am found\": počinje visoko, sa dva brza tona (H4, D5)."}
+    mode: sequence
+    expect: [B4, D5, D5, B4, G4, B4, A4, G4, E4, D4]
+    beats: [0.5, 0.5, 2, 0.5, 0.5, 2, 1, 2, 1, 2]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    checks:
+      - interval: {from: B4, to: D5, is: m3}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: D4, to: E4, is: M2}
+  - id: E-033-4
+    type: midi-echo
+    prompt: {en: "Phrase 4, \"was blind, but now I see\": the opening again, ending on the tonic.", sr: "Fraza 4, „was blind, but now I see\": opet početak, sa završetkom na tonici."}
+    mode: sequence
+    expect: [D4, G4, B4, G4, B4, A4, G4]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 3]
+    tempo: 80
+    octave: exact
+  - id: E-033-5
+    type: midi-echo
+    prompt: {en: "Phrases 3 and 4 in one go, from memory if you can.", sr: "Fraze 3 i 4 u komadu, napamet ako možeš."}
+    mode: sequence
+    expect: [B4, D5, D5, B4, G4, B4, A4, G4, E4, D4, D4, G4, B4, G4, B4, A4, G4]
+    beats: [0.5, 0.5, 2, 0.5, 0.5, 2, 1, 2, 1, 2, 1, 2, 0.5, 0.5, 2, 1, 3]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+  - id: E-033-6
+    type: midi-echo
+    prompt: {en: "Transfer: phrases 1 and 2, now in F major. The pickup is C4 (degree 5 again). Being pentatonic, the tune never needs the B♭.", sr: "Prenos: fraze 1 i 2, sada u F-duru. Predtakt je C4 (opet 5. stupanj). Pošto je pentatonska, melodiji B nikad ne treba."}
+    mode: sequence
+    expect: [C4, F4, A4, F4, A4, G4, F4, D4, C4, C4, F4, A4, F4, A4, G4, C5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 2, 1, 2, 0.5, 0.5, 2, 1, 3]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: F, type: major-pentatonic, is: [F, G, A, C, D]}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: E-033-7
+    type: practice
+    prompt: {en: "Play the whole tune in G from memory, then add one left-hand chord per bar, choosing G, C or D by ear. Where does it need D, and is there a bar where C sounds better than G?", sr: "Odsviraj celu pesmu u G-duru napamet, pa dodaj levom rukom po jedan akord u taktu, birajući G, C ili D po sluhu. Gde traži D, i postoji li takt gde C zvuči bolje od G?"}
+    minutes: 4

@@ -1,0 +1,149 @@
+id: T-043
+track: T
+order: 43
+prereqs: [T-042]
+title: {en: "Secondary dominants I: V/V and V7/V", sr: "Sporedne dominante I: V/V i V7/V"}
+minutes: 14
+tags: [harmony, chromatic, four-part]
+explain:
+  en: |
+    Any major or minor chord of the key can be made to sound, for a moment, like a tonic, by putting **its own dominant** in front of it. This is **tonicization** (tonikalizacija), and the borrowed dominant is a **secondary dominant**. It is written as "V of X": **V/V** (five of five), **V7/V**.
+
+    The most common one is **V/V**, the dominant of the dominant (dominanta dominante). In C major, V is G; the dominant *of G* is **D major: D F♯ A** (V7/V: D F♯ A C).
+
+    | | in C major | in G major | in F major |
+    |---|---|---|---|
+    | V | G B D | D F♯ A | C E G |
+    | V/V | D F♯ A | A C♯ E | G B D |
+    | V7/V | D F♯ A C | A C♯ E G | G B D F |
+
+    Read it at the keyboard: V/V has the **same root as ii** (D F A), with the 3rd raised. That raised note, F♯, is the leading tone *of G*. It wants to rise to G, so V/V pulls into V much harder than ii does. Think of it as a predominant with a magnet in it.
+
+    **Voice leading** (the same rules as for any V7, transposed to the target):
+    - the raised note (F♯) **rises** a step to the root of V; never double it;
+    - the 7th (C) **falls** a step to B; ideally it is held over from the chord before;
+    - in a seventh chord the 5th (A) may be left out and the root doubled.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] [^Fd] [Gd] [Ge] |]
+    V:2 clef=bass
+    [C,C] [D,C] [G,,B,] [C,C] |]
+    ```
+
+    I – V7/V – V – I: the tenor C is held from I, then falls to B; the alto F♯ rises to G.
+  sr: |
+    Svaki durski ili molski akord tonaliteta može na trenutak da zazvuči kao tonika, ako se ispred njega stavi **njegova sopstvena dominanta**. To je **tonikalizacija**, a pozajmljena dominanta je **sporedna dominanta**. Piše se kao „V od X": **V/V** (dominanta dominante), **V7/V**.
+
+    Najčešća je **V/V**, dominanta dominante. U C-duru, V je G; dominanta *od G* je **D-dur: D Fis A** (V7/V: D Fis A C).
+
+    | | u C-duru | u G-duru | u F-duru |
+    |---|---|---|---|
+    | V | G H D | D Fis A | C E G |
+    | V/V | D Fis A | A Cis E | G H D |
+    | V7/V | D Fis A C | A Cis E G | G H D F |
+
+    Pročitaj na klaviru: V/V ima **isti osnovni ton kao ii** (D F A), sa povišenom tercom. Taj povišeni ton, Fis, je vođica *ka G*. Teži naviše na G, pa V/V vuče u V mnogo jače nego ii. Zamisli je kao subdominantu sa magnetom u sebi.
+
+    **Vođenje glasova** (ista pravila kao za svaki V7, prenesena na cilj):
+    - povišeni ton (Fis) ide **naviše** za stupanj na osnovni ton V; nikad se ne udvaja;
+    - septima (C) **silazi** za stupanj na H; najbolje je da je zadržana iz prethodnog akorda;
+    - u septakordu kvinta (A) može da se izostavi, a osnovni ton da se udvoji.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ge] [^Fd] [Gd] [Ge] |]
+    V:2 clef=bass
+    [C,C] [D,C] [G,,B,] [C,C] |]
+    ```
+
+    I – V7/V – V – I: tenor zadržava C iz I, pa silazi na H; alt Fis ide naviše na G.
+exercises:
+  - id: T-043-1
+    type: notation-input
+    prompt: {en: "Spell V/V in C major (root, 3rd, 5th).", sr: "Napiši V/V u C-duru (osnovni ton, terca, kvinta)."}
+    derive: {roman: {key: C4, numerals: [V/V]}}
+    expect: [D, F#, A]
+    checks:
+      - numeral: {key: C, is: V/V, notes: [D4, F#4, A4]}
+      - numeral: {key: G, is: V/V, notes: [A4, C#5, E5]}
+      - numeral: {key: F, is: V/V, notes: [G4, B4, D5]}
+  - id: T-043-2
+    type: notation-input
+    prompt: {en: "Spell V7/V in G major (root, 3rd, 5th, 7th).", sr: "Napiši V7/V u G-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: G4, numerals: [V7/V]}}
+    expect: [A, C#, E, G]
+    checks:
+      - numeral: {key: G, is: V7/V, notes: [A4, C#5, E5, G5]}
+      - numeral: {key: C, is: V7/V, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: F, is: V7/V, notes: [G4, B4, D5, F5]}
+  - id: T-043-3
+    type: mcq
+    prompt: {en: "In C major, V/V (D F♯ A) differs from ii (D F A) by one note. Where does that note, F♯, want to go?", sr: "U C-duru, V/V (D Fis A) se od ii (D F A) razlikuje u jednom tonu. Kuda teži taj ton, Fis?"}
+    options:
+      - {en: "Up a half step to G, the root of V", sr: "Polustepen naviše na G, osnovni ton V"}
+      - {en: "Down to F", sr: "Naniže na F"}
+      - {en: "Up to A", sr: "Naviše na A"}
+      - {en: "Nowhere, it is stable", sr: "Nigde, stabilan je"}
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - interval: {from: F#4, to: G4, is: m2}
+  - id: T-043-4
+    type: midi-play
+    prompt: {en: "Play I – V7/V – V – I in C exactly as in the explanation.", sr: "Odsviraj I – V7/V – V – I u C-duru tačno kao u objašnjenju."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ge] [^Fd] [Gd] [Ge] |]
+      V:2 clef=bass
+      [C,C] [D,C] [G,,B,] [C,C] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, C4, G4, E5], [D3, C4, F#4, D5], [G2, B3, G4, D5], [C3, C4, G4, E5]]
+    checks:
+      - chord: {notes: [C3, C4, G4, E5], root: C, quality: maj}
+      - chord: {notes: [D3, C4, F#4, D5], root: D, quality: "7"}
+      - chord: {notes: [G2, B3, G4, D5], root: G, quality: maj}
+  - id: T-043-5
+    type: midi-play
+    prompt: {en: "A chromatic bass: I – IV – V6/V – V – I. The bass climbs F – F♯ – G; F♯ is the 3rd of V/V, in the bass, and rises to G.", sr: "Hromatski bas: I – IV – V6/V – V – I. Bas se penje F – Fis – G; Fis je terca V/V, u basu, i ide naviše na G."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Gc] [Ac] [DA] [GB] | [Gc]4 |]
+      V:2 clef=bass
+      [C,E] [F,F] [^F,A,] [G,D] | [C,E]4 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [F3, F4, A4, C5], [F#3, A3, D4, A4], [G3, D4, G4, B4], [C3, E4, G4, C5]]
+    checks:
+      - chord: {notes: [F3, F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [F#3, A3, D4, A4], root: D, quality: maj, inversion: 1}
+      - numeral: {key: C, is: V6/V, notes: [F#3, A3, D4, A4]}
+      - chord: {notes: [G3, D4, G4, B4], root: G, quality: maj}
+  - id: T-043-6
+    type: generated
+    count: 4
+    prompt: {en: "ii or V/V? Listen to the second chord: a raised 3rd pulls up into V.", sr: "ii ili V/V? Slušaj drugi akord: povišena terca vuče naviše u V."}
+    gen: {kind: progression-ear, keys: [C, G, F, D], options: [[I, ii, V, I], [I, V/V, V, I], [I, IV, V, I]], tempo: 60}
+  - id: T-043-7
+    type: generated
+    count: 4
+    prompt: {en: "Play I – IV – V7/V – V – I with smooth voice leading.", sr: "Odsviraj I – IV – V7/V – V – I sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, V7/V, V, I], smooth: true}

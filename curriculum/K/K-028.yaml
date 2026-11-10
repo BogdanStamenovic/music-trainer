@@ -1,0 +1,126 @@
+id: K-028
+track: K
+order: 28
+title: {en: "Call and response: 2-bar improvised answers", sr: "Pitanje i odgovor: improvizovani odgovori od 2 takta"}
+prereqs: [K-027]
+minutes: 14
+tags: [keys, improvisation, phrasing]
+explain:
+  en: |
+    A solo that is all notes and no shape sounds like scales. The oldest fix, from work songs,
+    blues and gospel to jazz, is **call and response**: a short phrase (the call), a gap, and a
+    second phrase that clearly **answers** it. You met the same idea as antecedent and
+    consequent (prednja/zadnja rečenica) in the period form; here you make it up in real time.
+
+    Over a 4-bar loop I – IV – V7 – I: the call takes bars 1–2, the answer bars 3–4.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^call""C"c2 GA G4 | "F"A2 GF A4 | "^answer""G7"B2 AG F4 | "C"E2 FD C4 |]
+    ```
+
+    What makes the second phrase an answer:
+
+    1. **Same rhythm, new notes.** The ear recognises the rhythm and hears the second phrase
+       as related. This is the strongest single link.
+    2. **Open vs closed ending.** The call ends on an unstable note (here A, over IV); the
+       answer ends on 1 or 3 over I. Ending the answer on 2 or 7 turns it into a second
+       question, which is also a valid move, just not an answer.
+    3. **Space.** End the call early enough to breathe; a call with no gap after it is just a
+       longer phrase.
+    4. **Chord tones at the changes** (K-019, K-027) still apply: B over G7, E over C.
+
+    Other answers to try: repeat the call a step lower (a sequence), or answer with the call's
+    rhythm turned backwards.
+
+    The app's grader for improvisation is a coarse screen: notes in the scale or in the chord
+    sounding, chord tones near each change, and enough activity. It cannot hear whether your
+    answer answers. That part is your ear's job, so listen back to each take.
+  sr: |
+    Solo koji je samo tonovi bez oblika zvuči kao lestvice. Najstarije rešenje, od radnih
+    pesama, bluza i gospela do džeza, jeste **pitanje i odgovor**: kratka fraza (pitanje),
+    pauza, i druga fraza koja jasno **odgovara** na nju. Istu ideju si upoznao kao prednju i
+    zadnju rečenicu u periodu; ovde je izmišljaš u realnom vremenu.
+
+    Preko petlje od 4 takta I – IV – V7 – I: pitanje zauzima taktove 1–2, odgovor taktove 3–4.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^pitanje""C"c2 GA G4 | "F"A2 GF A4 | "^odgovor""G7"B2 AG F4 | "C"E2 FD C4 |]
+    ```
+
+    Šta drugu frazu čini odgovorom:
+
+    1. **Isti ritam, novi tonovi.** Uho prepoznaje ritam i čuje drugu frazu kao srodnu. To je
+       najjača pojedinačna veza.
+    2. **Otvoren i zatvoren završetak.** Pitanje se završava na nestabilnom tonu (ovde A,
+       preko IV); odgovor se završava na 1 ili 3 preko I. Ako se odgovor završi na 2 ili 7,
+       postaje novo pitanje, što je takođe ispravan potez, samo nije odgovor.
+    3. **Prostor.** Završi pitanje dovoljno rano da se udahne; pitanje bez pauze posle njega je
+       samo duža fraza.
+    4. **Tonovi akorda na promenama** (K-019, K-027) i dalje važe: H preko G7, E preko C.
+
+    Drugi odgovori za probu: ponovi pitanje za stepen niže (sekvenca), ili odgovori ritmom
+    pitanja okrenutim unazad.
+
+    Ocenjivač improvizacije u aplikaciji je gruba provera: tonovi u lestvici ili u akordu koji
+    zvuči, tonovi akorda blizu svake promene, i dovoljno aktivnosti. Ne može da čuje da li tvoj
+    odgovor zaista odgovara. Taj deo je posao tvog uha, zato preslušaj svaki pokušaj.
+exercises:
+  - id: K-028-1
+    type: mcq
+    prompt: {en: "Here is the call (it plays) and three possible second phrases. Which one is an answer, rather than a second question or an unrelated idea?", sr: "Evo pitanja (pušta se) i tri moguće druge fraze. Koja je odgovor, a ne novo pitanje ili nepovezana ideja?"}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\n\"^call\"c2 GA G4 | A2 GF A4 ||\n\"^A\"B2 AG F4 | E2 FD C4 ||\n\"^B\"d2 cB A4 | G2 AB d4 ||\n\"^C\"G A B c d2 e2 | f4 F4 |]"
+    options: ["A", "B", "C"]
+    keepOrder: true
+    answer: 0
+    play: {notes: [C5, G4, A4, G4, A4, G4, F4, A4], durations: [1, 0.5, 0.5, 2, 1, 0.5, 0.5, 2], tempo: 88}
+    checks:
+      - chord: {notes: [G4, B4, D5, F4], root: G, quality: "7", inversion: 3}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - interval: {from: G4, to: D5, is: P5}
+  - id: K-028-2
+    type: midi-echo
+    prompt: {en: "Before you can answer a call you have to hold it in your ear. Listen to the call and play it back (♩=88).", sr: "Pre nego što odgovoriš na pitanje, moraš da ga zadržiš u uhu. Slušaj pitanje i odsviraj ga (♩=88)."}
+    mode: sequence
+    expect: [C5, G4, A4, G4, A4, G4, F4, A4]
+    beats: [1, 0.5, 0.5, 2, 1, 0.5, 0.5, 2]
+    tempo: 88
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+  - id: K-028-3
+    type: midi-play
+    prompt: {en: "The model answer, in the call's rhythm: B A G F | E F D C (♩=88).", sr: "Uzorni odgovor, u ritmu pitanja: H A G F | E F D C (♩=88)."}
+    mode: sequence
+    expect: [B4, A4, G4, F4, E4, F4, D4, C4]
+    beats: [1, 0.5, 0.5, 2, 1, 0.5, 0.5, 2]
+    tempo: 88
+    checks:
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+      - semitones: {from: E4, to: F4, is: 1}
+  - id: K-028-4
+    type: generated
+    prompt: {en: "Your own: call in bars 1–2 (end on anything but C), answer in bars 3–4 in the same rhythm, ending on C or E. Two pairs.", sr: "Tvoje: pitanje u taktovima 1–2 (završi na bilo čemu osim C), odgovor u taktovima 3–4 u istom ritmu, sa završetkom na C ili E. Dva para."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major, numerals: [I, IV, V7, I], beatsPerChord: 4, loops: 2, tempo: 84}
+  - id: K-028-5
+    type: generated
+    prompt: {en: "Call over I – V7, answer over V7 – I, in F or G. Make the second answer a sequence: the first answer moved down a step.", sr: "Pitanje preko I – V7, odgovor preko V7 – I, u F ili G-duru. Neka drugi odgovor bude sekvenca: prvi odgovor pomeren za stepen naniže."}
+    count: 1
+    gen: {kind: improv, keys: [F, G], scale: major, numerals: [I, V7, V7, I], beatsPerChord: 4, loops: 2, tempo: 84}
+  - id: K-028-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "Over ii–V–I from K-027: call over ii7–V7, answer over Imaj7, landing on a guide tone. Leave a real gap after the call.", sr: "Preko ii–V–I iz K-027: pitanje preko ii7–V7, odgovor preko Imaj7, sa doskokom na ključni ton. Ostavi pravu pauzu posle pitanja."}
+    count: 1
+    gen: {kind: improv, keys: [C, F], scale: major, numerals: [ii7, V7, Imaj7, Imaj7], beatsPerChord: 4, loops: 2, tempo: 88}
+  - id: K-028-7
+    type: practice
+    prompt: {en: "Trade with yourself: the left hand plays a 2-bar call low (around C3), the right hand answers high (around C5), over a held pedal C in the bass or no bass at all. Then answer the call from exercise 2 five different ways: same rhythm, sequence a step down, reversed rhythm, an octave up, and one 'second question' ending on D.", sr: "Razmenjuj sam sa sobom: leva ruka svira pitanje od 2 takta nisko (oko C3), desna odgovara visoko (oko C5), preko držanog C u basu ili bez basa. Zatim odgovori na pitanje iz vežbe 2 na pet načina: isti ritam, sekvenca za stepen niže, obrnut ritam, oktavu više, i jedno 'novo pitanje' sa završetkom na D."}
+    minutes: 4

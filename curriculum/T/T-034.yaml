@@ -1,0 +1,170 @@
+id: T-034
+track: T
+order: 34
+prereqs: [T-033]
+title: {en: "Voice-leading rules: parallels, contrary motion, common tones", sr: "Pravila vođenja glasova: paralele, suprotno kretanje, zajednički ton"}
+minutes: 14
+tags: [harmony, four-part]
+explain:
+  en: |
+    **Voice leading** is how each voice moves from one chord to the next. Two voices can move in four ways:
+
+    | motion | what happens | example (lower / upper) |
+    |---|---|---|
+    | **parallel** | same direction, same interval | C–E → D–F (3rd → 3rd) |
+    | **similar** | same direction, different interval | C–G → D–B (5th → 6th) |
+    | **contrary** | opposite directions | C–G → D–F (bass up, top down) |
+    | **oblique** | one voice holds, the other moves | C–G → C–A |
+
+    **The core rules**, and why:
+    1. **No parallel 5ths or octaves** between any two voices. A perfect octave or fifth is so consonant that two voices moving in it fuse into one; four voices suddenly sound like three. (Parallel 3rds and 6ths are fine and sweet.) Consecutive 5ths or octaves in **contrary** motion (5th → 12th) count too.
+    2. **Outer voices in contrary motion** whenever you can. Soprano and bass are what the ear follows; contrary motion keeps them independent.
+    3. **Keep common tones.** If two chords share a note, hold it in the same voice.
+    4. **Move the other voices by the shortest way**, usually a step. Leave the leaps to the bass.
+
+    Try it at the keyboard: play C–G in the left hand and move both up a step to D–A. Hear how hollow that is? Now play C–E → D–F: the same motion in thirds sounds full. Below, I → ii with every voice moving up (parallel 5ths and octaves) versus I → IV with a common tone held:
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/2
+    K:C
+    V:1
+    [Ec] [Fd] || [Gc] [Ac] |]
+    V:2 clef=bass
+    [C,G,] [D,A,] || [C,E] [F,F] |]
+    ```
+  sr: |
+    **Vođenje glasova** je način na koji se svaki glas kreće od jednog akorda do sledećeg. Dva glasa se mogu kretati na četiri načina:
+
+    | kretanje | šta se dešava | primer (donji / gornji) |
+    |---|---|---|
+    | **paralelno** | isti smer, isti interval | C–E → D–F (terca → terca) |
+    | **istosmerno** | isti smer, različit interval | C–G → D–H (kvinta → seksta) |
+    | **suprotno** | suprotni smerovi | C–G → D–F (bas gore, gornji dole) |
+    | **pobočno** | jedan glas stoji, drugi se kreće | C–G → C–A |
+
+    **Osnovna pravila**, i zašto:
+    1. **Bez paralelnih kvinti i oktava** između bilo koja dva glasa. Čista oktava ili kvinta je toliko konsonantna da se dva glasa koja se tako kreću stapaju u jedan; četiri glasa odjednom zvuče kao tri. (Paralelne terce i seksta su u redu i zvuče lepo.) Uzastopne kvinte ili oktave u **suprotnom** kretanju (kvinta → duodecima) se takođe računaju.
+    2. **Spoljni glasovi u suprotnom kretanju** kad god možeš. Sopran i bas su ono što uho prati; suprotno kretanje ih drži nezavisnim.
+    3. **Zadrži zajednički ton.** Ako dva akorda imaju zajednički ton, zadrži ga u istom glasu.
+    4. **Ostale glasove vodi najkraćim putem**, obično za stupanj. Skokove prepusti basu.
+
+    Probaj na klaviru: odsviraj C–G levom rukom i pomeri oba tona za stupanj naviše na D–A. Čuješ koliko je prazno? Sada odsviraj C–E → D–F: isto kretanje u tercama zvuči punije. Ispod: I → ii sa svim glasovima naviše (paralelne kvinte i oktave) naspram I → IV sa zadržanim zajedničkim tonom:
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/2
+    K:C
+    V:1
+    [Ec] [Fd] || [Gc] [Ac] |]
+    V:2 clef=bass
+    [C,G,] [D,A,] || [C,E] [F,F] |]
+    ```
+exercises:
+  - id: T-034-1
+    type: mcq
+    prompt: {en: "The bass moves C3 → D3 while the soprano moves G4 → F4. What kind of motion is this?", sr: "Bas ide C3 → D3, a sopran G4 → F4. Koja je to vrsta kretanja?"}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:C
+      V:1
+      G F |]
+      V:2 clef=bass
+      C, D, |]
+    options:
+      - {en: "contrary", sr: "suprotno"}
+      - {en: "parallel", sr: "paralelno"}
+      - {en: "similar", sr: "istosmerno"}
+      - {en: "oblique", sr: "pobočno"}
+    answer: 0
+  - id: T-034-2
+    type: mcq
+    prompt: {en: "Spot the error: I → ii in C, every voice moves up a step.", sr: "Pronađi grešku: I → ii u C-duru, svi glasovi idu za stupanj naviše."}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:C
+      V:1
+      [Ec] [Fd] |]
+      V:2 clef=bass
+      [C,G,] [D,A,] |]
+    options:
+      - {en: "Parallel 5ths (bass–tenor) and parallel octaves (bass–soprano)", sr: "Paralelne kvinte (bas–tenor) i paralelne oktave (bas–sopran)"}
+      - {en: "Voice crossing between alto and tenor", sr: "Ukrštanje alta i tenora"}
+      - {en: "Soprano and alto more than an octave apart", sr: "Sopran i alt udaljeni više od oktave"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+      - chord: {notes: [D3, A3, F4, D5], root: D, quality: min}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: D3, to: A3, is: P5}
+  - id: T-034-3
+    type: mcq
+    prompt: {en: "Which pair of intervals in a row, in similar motion, is forbidden?", sr: "Koji par uzastopnih intervala u istosmernom kretanju je zabranjen?"}
+    options:
+      - {en: "perfect 5th → perfect 5th", sr: "čista kvinta → čista kvinta"}
+      - {en: "3rd → 3rd", sr: "terca → terca"}
+      - {en: "6th → 6th", sr: "seksta → seksta"}
+      - {en: "3rd → perfect 5th", sr: "terca → čista kvinta"}
+    answer: 0
+  - id: T-034-4
+    type: mcq
+    prompt: {en: "Why are parallel octaves avoided in four-part writing?", sr: "Zašto se u četvoroglasnom stavu izbegavaju paralelne oktave?"}
+    options:
+      - {en: "The two voices fuse into one line, so the texture loses a voice", sr: "Dva glasa se stapaju u jednu liniju, pa stav gubi jedan glas"}
+      - {en: "Octaves are dissonant", sr: "Oktave su disonantne"}
+      - {en: "They are too hard to sing", sr: "Preteško se pevaju"}
+      - {en: "They change the key", sr: "Menjaju tonalitet"}
+    answer: 0
+  - id: T-034-5
+    type: midi-play
+    prompt: {en: "Play I – IV – V – I in C exactly as written. Notice the held common tones (C in the soprano, I → IV; G in the alto, V → I) and the bass moving against the upper voices from IV to V.", sr: "Odsviraj I – IV – V – I u C-duru tačno kako je napisano. Obrati pažnju na zadržane zajedničke tonove (C u sopranu, I → IV; G u altu, V → I) i na bas koji se od IV ka V kreće suprotno od gornjih glasova."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Gc] [Ac] [GB] [Gc] |]
+      V:2 clef=bass
+      [C,E] [F,F] [G,D] [C,E] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [F3, F4, A4, C5], [G3, D4, G4, B4], [C3, E4, G4, C5]]
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [F3, F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G3, D4, G4, B4], root: G, quality: maj}
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+  - id: T-034-6
+    type: compose
+    prompt: {en: "Write a bass (voice 2) under this soprano, one half note per soprano note. Aim for contrary motion: when the soprano rises, let the bass fall. No parallel 5ths or octaves; end with the bass G → C.", sr: "Napiši bas (2. glas) ispod ovog soprana, jedna polovina po tonu soprana. Teži suprotnom kretanju: kad sopran ide gore, neka bas ide dole. Bez paralelnih kvinti i oktava; završi basom G → C."}
+    key: C major
+    meter: "4/4"
+    bars: 4
+    voices: 2
+    rules: [bars, cadence, parallels]
+    given: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      c2 d2 | e2 f2 | e2 d2 | c4 |]
+      V:2 clef=bass
+      z4 | z4 | z4 | z4 |]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      c2 d2 | e2 f2 | e2 d2 | c4 |]
+      V:2 clef=bass
+      C,2 B,,2 | A,,2 F,,2 | G,,2 G,,2 | C,4 |]

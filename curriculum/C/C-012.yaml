@@ -1,0 +1,177 @@
+id: C-012
+track: C
+order: 12
+prereqs: [C-011, C-006]
+title: {en: "A 16-bar melody: two periods", sr: "Melodija od 16 taktova: dva perioda"}
+minutes: 15
+tags: [composition, melody, form]
+explain:
+  en: |
+    An 8-bar period (C-006) is a complete thought. Many songs and themes are **16 bars**: two
+    8-bar halves that answer each other on a larger scale. The most common plan is the
+    **double period**: the first 8 bars end *open*, the last 8 bars end *closed*.
+
+    | bars | phrase | ends with | melody ends on (major) |
+    |---|---|---|---|
+    | 1–4 | a | a light stop | 2, 5 or 7, not 1 (a small half cadence) |
+    | 5–8 | b | **half cadence**: the big comma | 2, 5 or 7, held |
+    | 9–12 | a (again) | a light stop | as bar 4 |
+    | 13–16 | c | **authentic cadence**: the full stop | 1, by step from 2 or 7 |
+
+    The cadence in bar 8 must sound **less final** than bar 16, or the melody ends halfway. That is
+    why it stops on V, not I.
+
+    **Parallel double period:** bars 9–12 repeat bars 1–4 (the listener hears "here we go again"),
+    and bars 13–16 do something new to reach the real ending. It is the 16-bar version of the
+    parallel period you already know.
+
+    **Shape over 16 bars.** Save the **highest note** for the second half, usually around
+    bars 11–14, and reach it only once. The first half can circle in a narrower range. Then come
+    down by step to the final tonic. Your development tools (sequence, inversion, fragmentation)
+    belong in bars 13–15: they build the drive toward the last cadence.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    G2 B2 d2 B2 | c2 A2 B4 | A2 G2 F2 A2 | B2 G2 A4 |
+    G2 B2 d2 B2 | c2 A2 B4 | c2 B2 A2 G2 | "^half cadence"A2 G2 F4 |
+    G2 B2 d2 B2 | c2 A2 B4 | c2 e2 d2 c2 | B2 G2 A4 |
+    B2 d2 "^high point"g4 | f2 e2 d2 c2 | B2 c2 A2 F2 | "^authentic cadence"G8 |]
+    ```
+
+    Bar 8 stops on F♯, the leading tone, over V; bar 16 lands on G. The high point g comes in
+    bar 13, after the third return of the opening has made the listener expect it again.
+
+    **Working method:** write the four phrase endings first (bars 4, 8, 12, 16), then the opening
+    two bars, then fill in. At the keyboard, play I – IV – V – V under the three phrases that
+    pause (bars 1–4, 5–8, 9–12) and I – IV – V – I under the last one.
+  sr: |
+    Period od 8 taktova (C-006) je zaokružena misao. Mnoge pesme i teme imaju **16 taktova**: dve
+    polovine od po 8 koje jedna drugoj odgovaraju u većem planu. Najčešći oblik je **dvostruki
+    period**: prvih 8 taktova završava se *otvoreno*, poslednjih 8 *zatvoreno*.
+
+    | taktovi | fraza | završava se | melodija staje na (dur) |
+    |---|---|---|---|
+    | 1–4 | a | lakim zastojem | 2, 5 ili 7, ne 1 (mala polukadenca) |
+    | 5–8 | b | **polukadencom**: veliki zarez | 2, 5 ili 7, zadržano |
+    | 9–12 | a (ponovo) | lakim zastojem | kao takt 4 |
+    | 13–16 | c | **autentičnom kadencom**: tačka | 1, za korak od 2 ili 7 |
+
+    Kadenca u taktu 8 mora zvučati **manje završno** od takta 16, inače se melodija završi na pola
+    puta. Zato staje na V, ne na I.
+
+    **Paralelni dvostruki period:** taktovi 9–12 ponavljaju taktove 1–4 (slušalac čuje „evo opet“),
+    a taktovi 13–16 donose nešto novo da bi stigli do pravog završetka. To je verzija od 16 taktova
+    paralelnog perioda koji već znaš.
+
+    **Oblik kroz 16 taktova.** Sačuvaj **najviši ton** za drugu polovinu, obično oko taktova
+    11–14, i dostigni ga samo jednom. Prva polovina može da kruži u užem opsegu. Onda siđi postupno
+    do završne tonike. Alati razvoja (sekvenca, inverzija, fragmentacija) pripadaju taktovima 13–15:
+    grade zamah ka poslednjoj kadenci.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    G2 B2 d2 B2 | c2 A2 B4 | A2 G2 F2 A2 | B2 G2 A4 |
+    G2 B2 d2 B2 | c2 A2 B4 | c2 B2 A2 G2 | "^polukadenca"A2 G2 F4 |
+    G2 B2 d2 B2 | c2 A2 B4 | c2 e2 d2 c2 | B2 G2 A4 |
+    B2 d2 "^kulminacija"g4 | f2 e2 d2 c2 | B2 c2 A2 F2 | "^autentična kadenca"G8 |]
+    ```
+
+    Takt 8 staje na Fis, vođici, nad V; takt 16 sleće na G. Kulminacija g dolazi u taktu 13, pošto
+    je treći povratak početka naterao slušaoca da ga ponovo očekuje.
+
+    **Način rada:** prvo napiši četiri završetka fraza (taktovi 4, 8, 12, 16), pa prva dva takta,
+    pa popuni ostalo. Za klavirom sviraj I – IV – V – V ispod tri fraze koje staju (taktovi 1–4, 5–8,
+    9–12), a I – IV – V – I ispod poslednje.
+exercises:
+  - id: C-012-1
+    type: mcq
+    prompt: {en: "In a 16-bar double period, how does bar 8 end?", sr: "U dvostrukom periodu od 16 taktova, kako se završava takt 8?"}
+    options:
+      - {en: "half cadence (open, on V)", sr: "polukadencom (otvoreno, na V)"}
+      - {en: "authentic cadence (closed, on I)", sr: "autentičnom kadencom (zatvoreno, na I)"}
+      - {en: "it does not matter, only bar 16 counts", sr: "nije važno, računa se samo takt 16"}
+    answer: 0
+  - id: C-012-2
+    type: mcq
+    keepOrder: true
+    prompt: {en: "Where does the single highest note of a 16-bar melody usually sit?", sr: "Gde obično stoji jedini najviši ton melodije od 16 taktova?"}
+    options:
+      - {en: "bars 1–2, to grab attention", sr: "taktovi 1–2, da privuče pažnju"}
+      - {en: "bar 8, on the half cadence", sr: "takt 8, na polukadenci"}
+      - {en: "around bars 11–14, in the second half", sr: "oko taktova 11–14, u drugoj polovini"}
+      - {en: "bar 16, on the final note", sr: "takt 16, na poslednjem tonu"}
+    answer: 2
+  - id: C-012-3
+    type: mcq
+    prompt: {en: "Bars 9–12 repeat bars 1–4 exactly; bars 13–16 are new and end on the tonic. What is this form?", sr: "Taktovi 9–12 tačno ponavljaju taktove 1–4; taktovi 13–16 su novi i završavaju se na tonici. Koji je ovo oblik?"}
+    options:
+      - {en: "parallel double period", sr: "paralelni dvostruki period"}
+      - {en: "contrasting double period", sr: "kontrastni dvostruki period"}
+      - {en: "a sentence", sr: "rečenica"}
+      - {en: "two unrelated 8-bar periods", sr: "dva nepovezana perioda od 8 taktova"}
+    answer: 0
+  - id: C-012-4
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nG2 B2 d2 B2 | c2 A2 B4 | A2 G2 F2 A2 | B2 G2 A4 |\nG2 B2 d2 B2 | c2 A2 B4 | c2 B2 A2 G2 | A2 G2 G4 |]"
+    prompt: {en: "These are meant to be bars 1–8 of a 16-bar double period. What is wrong with bar 8?", sr: "Ovo bi trebalo da budu taktovi 1–8 dvostrukog perioda od 16 taktova. Šta nije u redu sa taktom 8?"}
+    options:
+      - {en: "it ends on the tonic G: it sounds final, so the melody seems to end halfway", sr: "završava se na tonici G: zvuči završno, pa melodija kao da se završava na pola puta"}
+      - {en: "it ends on the leading tone", sr: "završava se na vođici"}
+      - {en: "it has a leap that is too large", sr: "ima prevelik skok"}
+      - {en: "nothing: bar 8 should end on the tonic", sr: "ništa: takt 8 treba da se završi na tonici"}
+    answer: 0
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+  - id: C-012-5
+    type: compose
+    prompt:
+      en: "A minor, 3/4. The first period (bars 1–8, half cadence on G♯ in bar 8) is given. Write the second, bars 9–16: begin like bar 1, pause on B, E or G♯ at the end of bar 12 (like bar 4), reach your high point around bars 12–14, and end on A in bar 16, reached from G♯ or B."
+      sr: "a-mol, 3/4. Prvi period (taktovi 1–8, polukadenca na Gis u taktu 8) je zadat. Napiši drugi, taktove 9–16: počni kao takt 1, zastani na H, E ili Gis na kraju takta 12 (kao u taktu 4), dostigni kulminaciju oko taktova 12–14 i završi na A u taktu 16, sa Gis ili H."
+    given: "X:1\nM:3/4\nL:1/8\nK:Am\nA2 c2 e2 | d4 c2 | B2 c2 d2 | c4 B2 |\nA2 c2 e2 | f4 e2 | d2 c2 B2 | ^G6 |\n"
+    key: A minor
+    meter: 3/4
+    bars: 16
+    range: [E4, A5]
+    rules: [bars, rhythm, key, range, half-cadence, cadence, leaps, augmented, stepwise]
+    example: |
+      X:1
+      M:3/4
+      L:1/8
+      K:Am
+      A2 c2 e2 | d4 c2 | B2 c2 d2 | c4 B2 |
+      A2 c2 e2 | f4 e2 | d2 c2 B2 | ^G6 |
+      A2 c2 e2 | d4 c2 | B2 c2 d2 | c4 B2 |
+      c2 e2 a2 | g2 f2 e2 | d2 B2 ^G2 | A6 |]
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: G#4, to: B4, is: m3}
+  - id: C-012-6
+    type: compose
+    prompt:
+      en: "A whole 16-bar double period of your own in F major (B♭), 4/4. Bars 1–2 are given. Plan the endings first: bars 4, 8 and 12 on G, C or E (bar 8 is the half cadence), bar 16 on F from G or E. One high point, in the second half."
+      sr: "Ceo dvostruki period od 16 taktova po tvome u F-duru (B), 4/4. Taktovi 1–2 su zadati. Prvo isplaniraj završetke: taktovi 4, 8 i 12 na G, C ili E (takt 8 je polukadenca), takt 16 na F sa G ili E. Jedna kulminacija, u drugoj polovini."
+    given: "X:1\nM:4/4\nL:1/8\nK:F\nF2 A2 c2 A2 | B2 G2 A4 |\n"
+    key: F major
+    meter: 4/4
+    bars: 16
+    range: [C4, F5]
+    rules: [bars, rhythm, key, range, half-cadence, cadence, leaps, augmented, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:F
+      F2 A2 c2 A2 | B2 G2 A4 | G2 F2 E2 G2 | A2 F2 G4 |
+      F2 A2 c2 A2 | B2 G2 A4 | B2 A2 G2 F2 | G2 F2 E4 |
+      F2 A2 c2 A2 | B2 G2 A4 | B2 d2 c2 B2 | A2 F2 G4 |
+      A2 c2 f4 | e2 d2 c2 B2 | A2 B2 G2 E2 | F8 |]
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - roman: {key: F, degree: 5, is: "V"}
+      - keysig: {key: F, mode: major, is: -1}

@@ -1,0 +1,138 @@
+id: T-038
+track: T
+order: 38
+prereqs: [T-037]
+title: {en: "Figured bass II: seventh chords (7, 6/5, 4/3, 4/2) and accidentals", sr: "Šifrovani bas II: septakordi (7, 6/5, 4/3, 4/2) i predznaci"}
+minutes: 14
+tags: [harmony, figured-bass]
+explain:
+  en: |
+    A seventh chord has four notes, so it has a root position and **three** inversions. The figures again name the intervals above the bass; in practice only the characteristic ones are written:
+
+    | figure | full | bass is the… | V7 in C, bass note → chord |
+    |---|---|---|---|
+    | **7** | 7/5/3 | root | G → G B D F (V7) |
+    | **6/5** | 6/5/3 | 3rd | B → B D F G (V65) |
+    | **4/3** | 6/4/3 | 5th | D → D F G B (V43) |
+    | **4/2** (or 2) | 6/4/2 | 7th | F → F G B D (V42) |
+
+    A memory hook: the two numbers that are written always include the **2nd** inside the chord, the clash between the 7th and the root. In 6/5 it is between the 5th and 6th above the bass; in 4/3 between the 3rd and 4th; in 4/2 it is the 2nd itself.
+
+    **Resolutions** follow the tendency tones: the 7th falls by step, the leading tone rises. So V65 → I (B rises to C), V43 → I or I6, and **V42 → I6**: the 7th is in the bass and must fall a step, F → E, which puts the 3rd of I in the bass.
+
+    **Accidentals.** A ♯, ♭ or ♮ next to a number alters that interval; an accidental alone alters the 3rd. In A minor the dominant needs G♯, so you will see a lone ♯ under E (E G♯ B) or 7 with ♯ (E G♯ B D). When the bass itself is the raised note (G♯), it carries the accidental on the staff.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Fd] [Ec] [DB] | [Cc]4 |]
+    V:2 clef=bass
+    [C,G,] "_6/5"[B,,G,] [C,G,] "_4/2"[F,G,] | "_6"[E,G,]4 |]
+    ```
+
+    I – V65 – I – V42 – I6 in C. The tenor holds G, the common tone, the whole time; the 7th (F) falls to E both times.
+  sr: |
+    Septakord ima četiri tona, pa ima osnovni položaj i **tri** obrtaja. Šifre opet imenuju intervale iznad basa; u praksi se pišu samo karakteristični:
+
+    | šifra | puna | bas je… | V7 u C-duru, ton basa → akord |
+    |---|---|---|---|
+    | **7** | 7/5/3 | osnovni ton | G → G H D F (V7) |
+    | **6/5** | 6/5/3 | terca | H → H D F G (V65, kvintsekstakord) |
+    | **4/3** | 6/4/3 | kvinta | D → D F G H (V43, terckvartakord) |
+    | **4/2** (ili 2) | 6/4/2 | septima | F → F G H D (V42, sekundakord) |
+
+    Za pamćenje: dva broja koja se pišu uvek obuhvataju **sekundu** unutar akorda, sudar septime i osnovnog tona. U 6/5 to je između kvinte i sekste iznad basa; u 4/3 između terce i kvarte; u 4/2 to je sama sekunda.
+
+    **Razrešenja** prate tendenčne tonove: septima silazi za stupanj, vođica ide naviše. Zato V65 → I (H ide na C), V43 → I ili I6, a **V42 → I6**: septima je u basu i mora da siđe za stupanj, F → E, pa je u basu terca od I.
+
+    **Predznaci.** ♯, ♭ ili ♮ pored broja menja taj interval; predznak sam za sebe menja tercu. U a-molu dominanti treba Gis, pa ćeš videti sam ♯ ispod E (E Gis H) ili 7 sa ♯ (E Gis H D). Kad je sam bas povišeni ton (Gis), predznak stoji na notnom sistemu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Fd] [Ec] [DB] | [Cc]4 |]
+    V:2 clef=bass
+    [C,G,] "_6/5"[B,,G,] [C,G,] "_4/2"[F,G,] | "_6"[E,G,]4 |]
+    ```
+
+    I – V65 – I – V42 – I6 u C-duru. Tenor sve vreme drži G, zajednički ton; septima (F) oba puta silazi na E.
+exercises:
+  - id: T-038-1
+    type: generated
+    count: 5
+    prompt: {en: "Name the seventh chord. It may be in any inversion: stack it in 3rds to find the root, then say the figure to yourself.", sr: "Imenuj septakord. Može biti u bilo kom obrtaju: složi ga po tercama da nađeš osnovni ton, pa sebi reci šifru."}
+    gen: {kind: chord-name, qualities: ["7", min7], roots: [G, D, A, E, C], inversions: [0, 1, 2, 3]}
+  - id: T-038-2
+    type: mcq
+    prompt: {en: "Key of C. Bass B, figure 6/5. Which chord?", sr: "C-dur. Bas H, šifra 6/5. Koji akord?"}
+    options: ["V65", "V7", "vii°", "iii"]
+    answer: 0
+    checks:
+      - chord: {notes: [B3, D4, F4, G4], root: G, quality: "7", inversion: 1}
+  - id: T-038-3
+    type: mcq
+    prompt: {en: "Key of C. Bass F, figure 4/2. Which chord, and where does the bass go next?", sr: "C-dur. Bas F, šifra 4/2. Koji akord i kuda bas ide dalje?"}
+    options:
+      - {en: "V42; the bass (the 7th) falls to E, giving I6", sr: "V42; bas (septima) silazi na E, i dobija se I6"}
+      - {en: "IV; the bass rises to G", sr: "IV; bas ide naviše na G"}
+      - {en: "V42; the bass rises to G, giving V", sr: "V42; bas ide naviše na G, i dobija se V"}
+      - {en: "ii65; the bass stays", sr: "ii65; bas ostaje"}
+    answer: 0
+    checks:
+      - chord: {notes: [F3, G3, B3, D4], root: G, quality: "7", inversion: 3}
+      - chord: {notes: [E3, G3, C4], root: C, quality: maj, inversion: 1}
+  - id: T-038-4
+    type: notation-input
+    prompt: {en: "A minor. Bass E, figure 7 with ♯. Write the chord from the bass up.", sr: "a-mol. Bas E, šifra 7 sa ♯. Napiši akord od basa naviše."}
+    expect: [E, G#, B, D]
+    checks:
+      - chord: {notes: [E3, G#3, B3, D4], root: E, quality: "7"}
+  - id: T-038-5
+    type: notation-input
+    prompt: {en: "A minor. Bass G♯, figure 6/5. Write the chord from the bass up (bass, 3rd, 5th, 6th above).", sr: "a-mol. Bas Gis, šifra 6/5. Napiši akord od basa naviše (bas, terca, kvinta, seksta iznad)."}
+    expect: [G#, B, D, E]
+    checks:
+      - chord: {notes: [G#3, B3, D4, E4], root: E, quality: "7", inversion: 1}
+  - id: T-038-6
+    type: midi-play
+    prompt: {en: "Realize the bass from the explanation: C – B(6/5) – C – F(4/2) – E(6). Left hand on the bass; any octave and spacing above it.", sr: "Realizuj bas iz objašnjenja: C – H(6/5) – C – F(4/2) – E(6). Leva ruka na basu; iznad bilo koja oktava i raspored."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, V65, I, V42, I6]}}
+  - id: T-038-7
+    type: mcq
+    prompt: {en: "Why does V42 resolve to I6 rather than to root-position I?", sr: "Zašto se V42 razrešava u I6, a ne u I u osnovnom položaju?"}
+    options:
+      - {en: "The 7th is in the bass and must fall a step, which lands on the 3rd of I", sr: "Septima je u basu i mora da siđe za stupanj, a to pada na tercu od I"}
+      - {en: "Because I in root position is not allowed after a seventh chord", sr: "Zato što I u osnovnom položaju nije dozvoljen posle septakorda"}
+      - {en: "The leading tone is in the bass and must rise", sr: "Vođica je u basu i mora naviše"}
+    answer: 0
+    checks:
+      - interval: {from: F3, to: E3, is: m2}
+  - id: T-038-8
+    type: midi-play
+    prompt: {en: "Now play the four-part realization from the explanation exactly as written.", sr: "Sada odsviraj četvoroglasnu realizaciju iz objašnjenja tačno kako je napisana."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] [Fd] [Ec] [DB] | [Cc]4 |]
+      V:2 clef=bass
+      [C,G,] "_6/5"[B,,G,] [C,G,] "_4/2"[F,G,] | "_6"[E,G,]4 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, G3, E4, C5], [B2, G3, F4, D5], [C3, G3, E4, C5], [F3, G3, D4, B4], [E3, G3, C4, C5]]
+    checks:
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+      - chord: {notes: [B2, G3, F4, D5], root: G, quality: "7", inversion: 1}
+      - chord: {notes: [F3, G3, D4, B4], root: G, quality: "7", inversion: 3}
+      - chord: {notes: [E3, G3, C4, C5], root: C, quality: maj, inversion: 1}

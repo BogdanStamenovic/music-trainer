@@ -235,3 +235,16 @@ describe("review fixes (wave 2)", () => {
     expect(it0.options.map((o) => o.sr)).toEqual(["H", "B", "A, C, Es", "Fis4", "V7"]);
   });
 });
+
+describe("smooth voicing: leading tone, vii°, soprano range", () => {
+  it("I–ii65–V7–I: the leading tone rises to the tonic; vii° doubles its 3rd; soprano <= G5", () => {
+    const c4 = romanChord("C4", "major", "I")[0];
+    const v = smoothVoicing(["I", "ii65", "V7", "I"].map((r) => romanChord("C4", "major", r)), c4);
+    const g7 = v[2].map(toM), i = v[3].map(toM);
+    const lt = g7.findIndex((m, k) => k > 0 && m % 12 === 11);
+    expect(i[lt] - g7[lt]).toBe(1);
+    const vii = smoothVoicing(["I", "vii°", "I"].map((r) => romanChord("C4", "major", r)), c4)[1].map(toM);
+    expect(vii.filter((m) => m % 12 === 11).length).toBe(1); // B (leading tone) once
+    for (const ch of smoothVoicing(["I", "IV", "V", "vi", "ii", "V", "I", "IV", "V", "I"].map((r) => romanChord("G4", "major", r)), c4)) expect(Math.max(...ch.map(toM))).toBeLessThanOrEqual(79);
+  });
+});

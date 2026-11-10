@@ -1,0 +1,130 @@
+id: T-036
+track: T
+order: 36
+prereqs: [T-035]
+title: {en: "First-inversion triads in four parts: doubling", sr: "Sekstakordi u četvoroglasnom stavu: udvajanje"}
+minutes: 13
+tags: [harmony, four-part]
+explain:
+  en: |
+    A **first-inversion triad** (sekstakord, figure **6**) has its 3rd in the bass. You already know the sound: lighter and less final than root position. In four-part writing it does two jobs: it makes the **bass melodic** (I – V6 – I gives the bass C – B – C instead of a leap), and it gives the bass a step into the next chord (ii6 puts F under the chord, which then steps up to G for V).
+
+    **What to double** in a 6 chord, in order of preference:
+    1. the **soprano note**, or the **root** or **5th**, whichever makes the voices move most smoothly;
+    2. the bass (the 3rd), most freely in **minor** chords like ii6, where the 3rd is not a tendency tone (in I6 and IV6 it is common too; never when the 3rd is the leading tone).
+
+    **Never double the leading tone.** In V6 the bass *is* the leading tone (B in C major). It wants to rise to C; if two voices carry B, both want to rise to C and you get parallel octaves, or one of them is forced the wrong way. So in V6, double G or D, never B.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Dd] [Ec] |]
+    V:2 clef=bass
+    [C,G,] [B,,G,] [C,G,] |]
+    ```
+
+    I – V6 – I: the bass C – B – C is a neighbour figure, the soprano C – D – C moves against it, and the 5th (D) is doubled in V6.
+  sr: |
+    **Sekstakord** (prvi obrtaj trozvuka, šifra **6**) ima tercu u basu. Zvuk već poznaješ: lakši i manje završan od osnovnog položaja. U četvoroglasnom stavu ima dve uloge: **bas postaje melodičan** (I – V6 – I daje bas C – H – C umesto skoka) i bas dobija korak ka sledećem akordu (ii6 stavlja F u bas, koje zatim ide za stupanj na G za V).
+
+    **Šta udvajati** u sekstakordu, po redu prednosti:
+    1. **ton soprana**, ili **osnovni ton** ili **kvintu**, šta god daje najglađe kretanje glasova;
+    2. bas (tercu), najslobodnije u **molskim** akordima kao što je ii6, gde terca nije tendenčni ton (u I6 i IV6 je takođe uobičajeno; nikad kad je terca vođica).
+
+    **Vođica se nikad ne udvaja.** U V6 bas *jeste* vođica (H u C-duru). Ona teži naviše ka C; ako dva glasa nose H, oba teže ka C i dobijaš paralelne oktave, ili jedan mora pogrešnim putem. Zato se u V6 udvaja G ili D, nikad H.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Dd] [Ec] |]
+    V:2 clef=bass
+    [C,G,] [B,,G,] [C,G,] |]
+    ```
+
+    I – V6 – I: bas C – H – C je skretnička figura, sopran C – D – C se kreće suprotno, a u V6 je udvojena kvinta (D).
+exercises:
+  - id: T-036-1
+    type: mcq
+    prompt: {en: "In C major, which note is in the bass of V6?", sr: "Koji ton je u basu V6 u C-duru?"}
+    options: [{en: "B", sr: "H"}, "G", "D", "F"]
+    answer: 0
+    checks:
+      - chord: {notes: [B3, D4, G4], root: G, quality: maj, inversion: 1}
+  - id: T-036-2
+    type: mcq
+    prompt: {en: "Spot the error in this V6 chord in C (bass B2, tenor G3, alto D4, soprano B4).", sr: "Pronađi grešku u ovom V6 akordu u C-duru (bas H2, tenor G3, alt D4, sopran H4)."}
+    abc: |
+      X:1
+      M:1/4
+      L:1/4
+      K:C
+      V:1
+      [DB] |]
+      V:2 clef=bass
+      [B,,G,] |]
+    options:
+      - {en: "The leading tone B is doubled", sr: "Udvojena je vođica H"}
+      - {en: "The root G is missing", sr: "Nedostaje osnovni ton G"}
+      - {en: "Soprano and alto are more than an octave apart", sr: "Sopran i alt su udaljeni više od oktave"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [B2, G3, D4, B4], root: G, quality: maj, inversion: 1}
+  - id: T-036-3
+    type: generated
+    count: 5
+    prompt: {en: "Name the chord. Some are in first inversion: find the root before you answer.", sr: "Imenuj akord. Neki su sekstakordi: pre odgovora nađi osnovni ton."}
+    gen: {kind: chord-name, qualities: [maj, min], roots: [C, D, E, F, G, A], inversions: [0, 1]}
+  - id: T-036-4
+    type: midi-play
+    prompt: {en: "Play I – V6 – I in C exactly as written above. The bass is C – B – C.", sr: "Odsviraj I – V6 – I u C-duru tačno kako je napisano gore. Bas je C – H – C."}
+    abc: |
+      X:1
+      M:3/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] [Dd] [Ec] |]
+      V:2 clef=bass
+      [C,G,] [B,,G,] [C,G,] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, G3, E4, C5], [B2, G3, D4, D5], [C3, G3, E4, C5]]
+    checks:
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+      - chord: {notes: [B2, G3, D4, D5], root: G, quality: maj, inversion: 1}
+  - id: T-036-5
+    type: mcq
+    prompt: {en: "ii6 in C has F in the bass (F–A–D). Which doubling is fine?", sr: "ii6 u C-duru ima F u basu (F–A–D). Koje udvajanje je u redu?"}
+    options:
+      - {en: "D (the root) or F (the bass): ii is minor, so its 3rd is not a tendency tone", sr: "D (osnovni ton) ili F (bas): ii je molski, pa njegova terca nije tendenčni ton"}
+      - {en: "Only A, the fifth", sr: "Samo A, kvinta"}
+      - {en: "None: a 6 chord has only three voices", sr: "Nijedno: sekstakord ima samo tri glasa"}
+    answer: 0
+    checks:
+      - chord: {notes: [F3, A3, D4], root: D, quality: min, inversion: 1}
+  - id: T-036-6
+    type: midi-play
+    prompt: {en: "Play I – ii6 – V – I in C exactly as written. The bass steps F → G; the soprano goes C – D – B – C.", sr: "Odsviraj I – ii6 – V – I u C-duru tačno kako je napisano. Bas ide za stupanj F → G; sopran ide C – D – H – C."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Gc] [Ad] [GB] [Gc] |]
+      V:2 clef=bass
+      [C,E] [F,D] [G,D] [C,E] |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [F3, D4, A4, D5], [G3, D4, G4, B4], [C3, E4, G4, C5]]
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [F3, D4, A4, D5], root: D, quality: min, inversion: 1}
+      - chord: {notes: [G3, D4, G4, B4], root: G, quality: maj}

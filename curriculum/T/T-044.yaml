@@ -1,0 +1,131 @@
+id: T-044
+track: T
+order: 44
+prereqs: [T-043]
+title: {en: "Secondary dominants II: V/ii, V/iii, V/IV, V/vi", sr: "Sporedne dominante II: V/ii, V/iii, V/IV, V/vi"}
+minutes: 14
+tags: [harmony, chromatic]
+explain:
+  en: |
+    The recipe from V/V works for every major or minor chord of the key: find the target, go a 5th above it, build a **major** triad (or a dominant 7th) there. In C major:
+
+    | secondary | notes | target | the clue |
+    |---|---|---|---|
+    | **V/ii**, V7/ii | A C♯ E (G) | ii = D F A | C♯ → D |
+    | **V/iii**, V7/iii | B D♯ F♯ (A) | iii = E G B | D♯ → E |
+    | **V/IV**, V7/IV | C E G (B♭) | IV = F A C | B♭ → A |
+    | **V/V**, V7/V | D F♯ A (C) | V = G B D | F♯ → G |
+    | **V/vi**, V7/vi | E G♯ B (D) | vi = A C E | G♯ → A |
+
+    Patterns worth noticing:
+    - Most secondary dominants **raise** a note: that note is the temporary leading tone, a half step below the target's root.
+    - **V/IV is the tonic chord itself** (C E G). Only the 7th makes it sound like a dominant: **V7/IV = C E G B♭**, and the B♭ falls to A. So the clue for a tonicized IV is a **lowered** note.
+    - There is **no V/vii°**: a diminished chord cannot act as a tonic, so nothing is tonicized there.
+    - Each secondary dominant usually sits on the root a 5th above its target, so it often has the same root as a diatonic chord: V/vi is E major (iii is E minor), V/ii is A major (vi is A minor). Same root, different 3rd.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"[CEG] "V7/vi"[B,DE^G] "vi"[CEA] "V7/ii"[^CE=GA] | "ii"[DFA] "V7"[B,DFG] "I"[CEG]2 |]
+    ```
+
+    Each secondary dominant resolves like a real V7: the raised note (G♯, C♯) rises a half step, the 7th (D, G) falls a step.
+  sr: |
+    Recept od V/V radi za svaki durski ili molski akord tonaliteta: nađi cilj, idi kvintu iznad njega, sagradi tu **durski** trozvuk (ili dominantni septakord). U C-duru:
+
+    | sporedna | tonovi | cilj | trag |
+    |---|---|---|---|
+    | **V/ii**, V7/ii | A Cis E (G) | ii = D F A | Cis → D |
+    | **V/iii**, V7/iii | H Dis Fis (A) | iii = E G H | Dis → E |
+    | **V/IV**, V7/IV | C E G (B) | IV = F A C | B → A |
+    | **V/V**, V7/V | D Fis A (C) | V = G H D | Fis → G |
+    | **V/vi**, V7/vi | E Gis H (D) | vi = A C E | Gis → A |
+
+    Obrasci koje vredi uočiti:
+    - Većina sporednih dominanti **povisuje** jedan ton: to je privremena vođica, polustepen ispod osnovnog tona cilja.
+    - **V/IV je sam tonični akord** (C E G). Tek ga septima čini dominantom: **V7/IV = C E G B**, a B silazi na A. Zato je trag tonikalizovane IV **sniženi** ton.
+    - **Ne postoji V/vii°**: smanjeni akord ne može biti tonika, pa se on ne tonikalizuje.
+    - Svaka sporedna dominanta obično stoji na tonu kvintu iznad cilja, pa često ima isti osnovni ton kao neki dijatonski akord: V/vi je E-dur (iii je e-mol), V/ii je A-dur (vi je a-mol). Isti osnovni ton, druga terca.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"[CEG] "V7/vi"[B,DE^G] "vi"[CEA] "V7/ii"[^CE=GA] | "ii"[DFA] "V7"[B,DFG] "I"[CEG]2 |]
+    ```
+
+    Svaka sporedna dominanta se razrešava kao pravi V7: povišeni ton (Gis, Cis) ide polustepen naviše, septima (D, G) silazi za stupanj.
+exercises:
+  - id: T-044-1
+    type: notation-input
+    prompt: {en: "Spell V7/vi in C major (root, 3rd, 5th, 7th).", sr: "Napiši V7/vi u C-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: C4, numerals: [V7/vi]}}
+    expect: [E, G#, B, D]
+    checks:
+      - numeral: {key: C, is: V7/vi, notes: [E4, G#4, B4, D5]}
+      - numeral: {key: C, is: V7/iii, notes: [B3, D#4, F#4, A4]}
+  - id: T-044-2
+    type: notation-input
+    prompt: {en: "Spell V/ii in C major (root, 3rd, 5th).", sr: "Napiši V/ii u C-duru (osnovni ton, terca, kvinta)."}
+    derive: {roman: {key: C4, numerals: [V/ii]}}
+    expect: [A, C#, E]
+    checks:
+      - numeral: {key: C, is: V7/ii, notes: [A3, C#4, E4, G4]}
+  - id: T-044-3
+    type: notation-input
+    prompt: {en: "Spell V7/IV in G major (root, 3rd, 5th, 7th).", sr: "Napiši V7/IV u G-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: G4, numerals: [V7/IV]}}
+    expect: [G, B, D, F]
+    checks:
+      - numeral: {key: G, is: V7/IV, notes: [G4, B4, D5, F5]}
+  - id: T-044-4
+    type: mcq
+    prompt: {en: "In C major, why is V/IV hard to spot without its 7th?", sr: "Zašto se u C-duru V/IV teško prepoznaje bez septime?"}
+    options:
+      - {en: "V/IV is C E G, the tonic chord itself; only the B♭ of V7/IV gives it away", sr: "V/IV je C E G, sam tonični akord; tek ga B iz V7/IV odaje"}
+      - {en: "V/IV does not exist", sr: "V/IV ne postoji"}
+      - {en: "It is a minor chord", sr: "To je molski akord"}
+      - {en: "It has the same notes as V/V", sr: "Ima iste tonove kao V/V"}
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - numeral: {key: C, is: V7/IV, notes: [C4, E4, G4, Bb4]}
+      - interval: {from: A4, to: Bb4, is: m2}
+  - id: T-044-5
+    type: mcq
+    prompt: {en: "Which secondary dominant does NOT exist in a major key?", sr: "Koja sporedna dominanta NE postoji u duru?"}
+    options: ["V/vii°", "V/ii", "V/iii", "V/vi"]
+    answer: 0
+    checks:
+      - roman: {key: C, type: major, degree: 7, is: "vii°"}
+  - id: T-044-6
+    type: midi-play
+    prompt: {en: "Play I – V7/vi – vi – ii – V – I in C (block chords, bass on the root, any octave).", sr: "Odsviraj I – V7/vi – vi – ii – V – I u C-duru (akordi, bas na osnovnom tonu, bilo koja oktava)."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, V7/vi, vi, ii, V, I]}}
+    checks:
+      - chord: {notes: [B3, D4, E4, G#4], root: E, quality: "7", inversion: 2}
+      - chord: {notes: [C#4, E4, G4, A4], root: A, quality: "7", inversion: 1}
+      - numeral: {key: C, is: V43/vi, notes: [B3, D4, E4, G#4]}
+      - numeral: {key: C, is: V65/ii, notes: [C#4, E4, G4, A4]}
+      - chord: {notes: [B3, D4, F4, G4], root: G, quality: "7", inversion: 1}
+  - id: T-044-7
+    type: midi-play
+    prompt: {en: "Play I – V7/IV – IV – V7 – I in F (bass on the root, any octave). The 7th of V7/IV is E♭.", sr: "Odsviraj I – V7/IV – IV – V7 – I u F-duru (bas na osnovnom tonu, bilo koja oktava). Septima V7/IV je Es."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: F4, numerals: [I, V7/IV, IV, V7, I]}}
+    checks:
+      - chord: {notes: [F4, A4, C5, Eb5], root: F, quality: "7"}
+      - numeral: {key: F, is: V7/IV, notes: [F4, A4, C5, Eb5]}
+  - id: T-044-8
+    type: generated
+    count: 4
+    prompt: {en: "Which progression? Listen to the chord on E (or on A): major or minor?", sr: "Koja progresija? Slušaj akord na E (ili na A): durski ili molski?"}
+    gen: {kind: progression-ear, keys: [C], options: [[I, iii, vi, IV, V, I], [I, V/vi, vi, IV, V, I], [I, V/ii, ii, V, I], [I, vi, ii, V, I]], tempo: 60}

@@ -1,0 +1,169 @@
+id: C-009
+track: C
+order: 9
+prereqs: [C-008, K-016]
+title: {en: "Accompaniment patterns: block, broken, Alberti", sr: "Obrasci pratnje: akordi, razloženi akordi, Alberti"}
+minutes: 15
+tags: [composition, accompaniment, harmony]
+explain:
+  en: |
+    You have played these patterns at the keys (K-016). Here the question is a composer's one:
+    **given a melody and its chords, which pattern, and how do you write it so it serves the
+    tune?** The harmony stays the same; the pattern is how that harmony moves in time.
+
+    | pattern | what it is | character |
+    |---|---|---|
+    | **block** | all chord notes together, on the beat or held | hymn, march, chorale: solid, plain |
+    | **waltz** (bass–chord–chord) | root on beat 1, chord on 2 and 3, in 3/4 | dance, lilt |
+    | **broken** (1–5–8, 1–5–10–5) | the chord spread out from the bass upward | ballad, song: flowing, open |
+    | **Alberti** (low–high–middle–high) | a close chord in running eighths | classical, light, busy |
+
+    **Four rules of thumb:**
+
+    1. **Stay under the melody.** The accompaniment lives below the tune. If its top note climbs
+       into the melody's register, it covers the melody and the ear loses it.
+    2. **Fill the gaps.** Where the melody holds a long note, let the pattern move; where the melody
+       is busy, keep the pattern simple. Melody and accompaniment take turns being interesting.
+    3. **The bass is still a voice.** The lowest note of each pattern makes a bass line, so the
+       C-008 rules still hold: no parallel 5ths or octaves with the melody, especially at bar lines.
+    4. **Stop the pattern at the end.** A final block chord or a single held bass note tells the
+       listener the piece is over.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    V:1
+    B4 d4 | c4 A4 | F4 A4 | G8 |]
+    V:2 clef=bass
+    "I"G,,2 D,2 B,2 D,2 | "ii"A,,2 E,2 C2 E,2 | "V"D,2 A,2 F,2 D,2 | "I"G,,8 |]
+    ```
+
+    The melody moves in half notes; the bass pattern (1–5–10–5, in quarters) keeps the pulse
+    under the held notes. Look at the end of bar 3: the pattern turns back down to D. If it ended
+    on A, the A in the bass under the melody's A (an octave) would move to G under G (another
+    octave): parallel octaves into the cadence.
+
+    **At the keyboard:** play this melody with each pattern in turn, block, broken, Alberti
+    (in 4/4, two Alberti groups per bar). Notice how the same chords feel like a chorale, a
+    ballad and a sonatina.
+  sr: |
+    Ove obrasce si svirao za klavirom (K-016). Ovde je pitanje kompozitorsko: **za datu melodiju i
+    njene akorde, koji obrazac, i kako ga napisati da služi melodiji?** Harmonija ostaje ista;
+    obrazac je način na koji se ta harmonija kreće kroz vreme.
+
+    | obrazac | šta je | karakter |
+    |---|---|---|
+    | **akordi (blok)** | svi tonovi akorda zajedno, na dobu ili zadržani | koral, himna, marš: čvrsto, jednostavno |
+    | **valcer** (bas–akord–akord) | osnovni ton na prvoj dobi, akord na drugoj i trećoj, u 3/4 | ples, njihanje |
+    | **razloženi akord** (1–5–8, 1–5–10–5) | akord raširen od basa naviše | balada, pesma: teče, otvoreno |
+    | **Alberti** (dole–gore–sredina–gore) | zbijen akord u osminama | klasično, lako, živo |
+
+    **Četiri pravila:**
+
+    1. **Ostani ispod melodije.** Pratnja živi ispod melodije. Ako joj se gornji ton popne u
+       registar melodije, prekriva je i uho je gubi.
+    2. **Popuni praznine.** Gde melodija drži dugu notu, neka se obrazac kreće; gde je melodija
+       gusta, obrazac neka bude jednostavan. Melodija i pratnja se smenjuju u tome koja je zanimljivija.
+    3. **Bas je i dalje glas.** Najniži ton svakog obrasca čini basovu liniju, pa pravila iz C-008
+       važe: bez paralelnih kvinti i oktava sa melodijom, naročito na taktnim crtama.
+    4. **Zaustavi obrazac na kraju.** Završni akord ili jedan zadržan bas ton kaže slušaocu da je
+       komad gotov.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    V:1
+    B4 d4 | c4 A4 | F4 A4 | G8 |]
+    V:2 clef=bass
+    "I"G,,2 D,2 B,2 D,2 | "ii"A,,2 E,2 C2 E,2 | "V"D,2 A,2 F,2 D,2 | "I"G,,8 |]
+    ```
+
+    Melodija ide u polovinama; obrazac u basu (1–5–10–5, u četvrtinama) drži puls ispod
+    zadržanih nota. Pogledaj kraj takta 3: obrazac se vraća dole na D. Da se završio na A, A u basu
+    ispod A u melodiji (oktava) prešlo bi na G ispod G (opet oktava): paralelne oktave pred kadencu.
+
+    **Za klavirom:** sviraj ovu melodiju redom sa svakim obrascem: akordi, razloženi, Alberti
+    (u 4/4, dve Alberti grupe po taktu). Primeti kako isti akordi zvuče kao koral, balada i sonatina.
+exercises:
+  - id: C-009-1
+    type: mcq
+    prompt: {en: "A melody in 3/4 with a dance feel. Which accompaniment fits it first?", sr: "Melodija u 3/4 sa plesnim karakterom. Koja pratnja joj prva pristaje?"}
+    options:
+      - {en: "root on beat 1, chord on beats 2 and 3 (waltz)", sr: "osnovni ton na prvoj dobi, akord na drugoj i trećoj (valcer)"}
+      - {en: "one held block chord per bar", sr: "jedan zadržan akord po taktu"}
+      - {en: "Alberti bass in sixteenths", sr: "Alberti bas u šesnaestinama"}
+      - {en: "the melody doubled an octave lower", sr: "melodija udvojena oktavu niže"}
+    answer: 0
+  - id: C-009-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nV:1\nE2 D2 C2 D2 | E8 |]\nV:2\nCGEG CGEG | CGEG CGEG |]"
+    prompt: {en: "Melody (top staff) with an Alberti accompaniment (bottom staff). What is the problem?", sr: "Melodija (gornji sistem) sa Alberti pratnjom (donji sistem). U čemu je problem?"}
+    options:
+      - {en: "the accompaniment's G is above the melody: it covers the tune", sr: "G iz pratnje je iznad melodije: prekriva je"}
+      - {en: "the chord is wrong for the melody", sr: "akord ne odgovara melodiji"}
+      - {en: "Alberti bass is not allowed in 4/4", sr: "Alberti bas nije dozvoljen u 4/4"}
+      - {en: "nothing: this is the usual layout", sr: "ništa: ovo je uobičajen raspored"}
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+  - id: C-009-3
+    type: midi-play
+    prompt: {en: "Waltz in F major: F | C7 | C7 | F. Left hand alone: bass on beat 1, the chord on beats 2 and 3 (C7 as E–G–B♭), bass G2 in bar 3, then one final block chord. ♩=108, one click per beat.", sr: "Valcer u F-duru: F | C7 | C7 | F. Samo leva ruka: bas na prvoj dobi, akord na drugoj i trećoj (C7 kao E–G–B), u taktu 3 bas G2, pa jedan završni akord. ♩=108, jedan udarac po dobi."}
+    mode: chords
+    expectChords: [[F2], [F3, A3, C4], [F3, A3, C4], [C3], [E3, G3, Bb3], [E3, G3, Bb3], [G2], [E3, G3, Bb3], [E3, G3, Bb3], [F2, F3, A3, C4]]
+    octave: exact
+    tempo: 108
+    checks:
+      - chord: {notes: [F3, A3, C4], root: F, quality: maj}
+      - chord: {notes: [C3, E3, G3, Bb3], root: C, quality: "7"}
+  - id: C-009-4
+    type: midi-play
+    prompt: {en: "Ballad pattern in C: I – vi – IV – V – I, left hand 1–5–8 in the rhythm dotted quarter, eighth, half. ♩=72. The rhythm is graded: keep the long half note.", sr: "Obrazac za baladu u C-duru: I – vi – IV – V – I, leva ruka 1–5–8 u ritmu četvrtina s tačkom, osmina, polovina. ♩=72. Ritam se ocenjuje: zadrži dugu polovinu."}
+    mode: sequence
+    expect: [C3, G3, C4, A2, E3, A3, F2, C3, F3, G2, D3, G3, C3]
+    beats: [1.5, 0.5, 2, 1.5, 0.5, 2, 1.5, 0.5, 2, 1.5, 0.5, 2, 4]
+    tempo: 72
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: A2, to: E3, is: P5}
+      - interval: {from: F2, to: C3, is: P5}
+      - interval: {from: G2, to: D3, is: P5}
+  - id: C-009-5
+    type: midi-play
+    prompt: {en: "Alberti in F major: I – IV64 – V65 – I, two groups of four eighths per chord, then F3 held. The bass stays on F, F, E, F: the chord changes, the hand barely moves. ♩=84.", sr: "Alberti u F-duru: I – IV64 – V65 – I, dve grupe od četiri osmine po akordu, pa zadržano F3. Bas ostaje F, F, E, F: akord se menja, ruka se jedva pomera. ♩=84."}
+    mode: sequence
+    expect: [F3, C4, A3, C4, F3, C4, A3, C4, F3, D4, Bb3, D4, F3, D4, Bb3, D4, E3, C4, Bb3, C4, E3, C4, Bb3, C4, F3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 4]
+    tempo: 84
+    checks:
+      - chord: {notes: [F3, A3, C4], root: F, quality: maj}
+      - chord: {notes: [F3, Bb3, D4], root: Bb, quality: maj, inversion: 2}
+      - chord: {notes: [E3, Bb3, C4], root: C, quality: "7", inversion: 1}
+  - id: C-009-6
+    type: compose
+    prompt:
+      en: "Write an accompaniment (V:2) under this G major melody: a broken-chord pattern in quarters or eighths, I | ii | V | I, one chord per bar, the pattern's lowest note on the root at each bar line, ending on a held G. Watch the last beat of bar 3: do not double the melody's A there (A–A to G–G is parallel octaves)."
+      sr: "Napiši pratnju (V:2) ispod ove melodije u G-duru: razloženi akord u četvrtinama ili osminama, I | ii | V | I, jedan akord po taktu, najniži ton obrasca na osnovnom tonu na svakoj taktnoj crti, kraj na zadržanom G. Pazi na poslednju dobu takta 3: ne udvajaj tu A iz melodije (A–A na G–G su paralelne oktave)."
+    given: "X:1\nM:4/4\nL:1/8\nK:G\nV:1\nB4 d4 | c4 A4 | F4 A4 | G8 |]\nV:2 clef=bass\n"
+    key: G major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    rules: [bars, rhythm, key, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:G
+      V:1
+      B4 d4 | c4 A4 | F4 A4 | G8 |]
+      V:2 clef=bass
+      G,,2 D,2 B,2 D,2 | A,,2 E,2 C2 E,2 | D,2 A,2 F,2 D,2 | G,,8 |]
+    checks:
+      - chord: {notes: [G2, D3, B3], root: G, quality: maj}
+      - chord: {notes: [A2, E3, C4], root: A, quality: min}
+      - chord: {notes: [D3, F#3, A3], root: D, quality: maj}

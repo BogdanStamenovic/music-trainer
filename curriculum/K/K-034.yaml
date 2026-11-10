@@ -1,0 +1,160 @@
+id: K-034
+track: K
+order: 34
+title: {en: "Lead sheet: melody in the right hand, chords in the left", sr: "Lead sheet: melodija u desnoj ruci, akordi u levoj"}
+prereqs: [K-032, T-031]
+minutes: 15
+tags: [keys, lead-sheet, accompaniment, chord-symbols]
+explain:
+  en: |
+    A **lead sheet** is how most songs are written down outside classical music: one staff
+    with the melody, and chord symbols above it (T-031). There is no piano part; you make one.
+    The most basic way to play it is **melody in the right hand, chords in the left**.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"G c e d | "Am"c2 A2 | "F"A c f e | "G7"d2 B2 |
+    "C"G c e g | "Am"a2 e2 | "Dm7"f d "G7"B G | "C"c4 |]
+    ```
+
+    **Left hand: compact voicings around C3.** Low enough to stay out of the melody's way,
+    high enough not to sound muddy.
+
+    | symbol | left hand | why |
+    |---|---|---|
+    | C | C3 E3 G3 | root-position triad |
+    | Am | A2 C3 E3 | |
+    | F | F2 A2 C3 | |
+    | G7 | G2 F3 B3 | **shell**: root, 3rd, 7th; the 5th adds nothing |
+    | Dm7 | D3 F3 C4 | shell |
+
+    Shells (root–3rd–7th) are the standard left hand for seventh chords: three notes, the ones
+    that define the chord, and they connect smoothly (Dm7 → G7: F stays, C moves to B).
+
+    **Right hand: the melody, sung out.** It should be clearly louder than the left hand.
+    Play the chord **on the beat where the symbol stands** and hold it until the next symbol;
+    the melody moves on top. When two symbols share a bar (bar 7), each gets half the bar.
+
+    **Reading order:** look at the chord symbol first, place the left hand, then read the
+    melody. Your hand is on the next chord before the bar line, and the melody is just a line
+    to read, which you already do fluently.
+  sr: |
+    **Lead sheet** (engl.; ponekad "lid šit" ili prosto "akordska partitura") je način na koji
+    se većina pesama zapisuje van klasične muzike: jedan sistem sa melodijom, a iznad njega
+    oznake akorda (T-031). Klavirske deonice nema; ti je praviš. Najosnovniji način sviranja
+    je **melodija u desnoj ruci, akordi u levoj**.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"G c e d | "Am"c2 A2 | "F"A c f e | "G7"d2 B2 |
+    "C"G c e g | "Am"a2 e2 | "Dm7"f d "G7"B G | "C"c4 |]
+    ```
+
+    **Leva ruka: zbijeni rasporedi oko C3.** Dovoljno nisko da ne smeta melodiji, dovoljno
+    visoko da ne zvuči mutno.
+
+    | oznaka | leva ruka | zašto |
+    |---|---|---|
+    | C | C3 E3 G3 | kvintakord u osnovnom položaju |
+    | Am | A2 C3 E3 | |
+    | F | F2 A2 C3 | |
+    | G7 | G2 F3 H3 | **"školjka"** (shell): osnovni ton, terca, septima; kvinta ne dodaje ništa |
+    | Dm7 | D3 F3 C4 | školjka |
+
+    Školjke (osnovni ton–terca–septima) su standardna leva ruka za septakorde: tri tona, baš ona
+    koja određuju akord, i glatko se povezuju (Dm7 → G7: F ostaje, C ide na H).
+
+    **Desna ruka: melodija, izražajno.** Treba da bude jasno glasnija od leve. Akord sviraj
+    **na dobi iznad koje stoji oznaka** i drži ga do sledeće oznake; melodija se kreće iznad.
+    Kad dve oznake dele takt (takt 7), svaka dobija pola takta.
+
+    **Redosled čitanja:** prvo pogledaj oznaku akorda, postavi levu ruku, pa čitaj melodiju.
+    Ruka ti je na sledećem akordu pre taktne crte, a melodija je samo linija za čitanje, što
+    već tečno radiš.
+exercises:
+  - id: K-034-1
+    type: mcq
+    prompt: {en: "In a lead sheet, what does G7/B mean?", sr: "Šta u lead sheet-u znači G7/H (G7/B u engleskom zapisu)?"}
+    options:
+      - {en: "G7 with B in the bass", sr: "G7 sa H u basu"}
+      - {en: "G7 followed by B", sr: "G7, a zatim H"}
+      - {en: "G7 or B, the player chooses", sr: "G7 ili H, po izboru svirača"}
+      - {en: "G7 with an added B♭", sr: "G7 sa dodatim B"}
+    answer: 0
+    checks:
+      - chord: {notes: [B2, D3, F3, G3], root: G, quality: "7", inversion: 1}
+  - id: K-034-2
+    type: mcq
+    prompt: {en: "Which left-hand voicing of Dm7 is a shell (root, 3rd, 7th)?", sr: "Koji raspored Dm7 u levoj ruci je školjka (osnovni ton, terca, septima)?"}
+    options: ["D3 F3 C4", "D3 A3 C4", "D3 F3 A3", "F3 A3 C4"]
+    answer: 0
+    checks:
+      - chord: {notes: [D3, F3, C4], root: D, quality: min7, inversion: 0}
+      - interval: {from: D3, to: F3, is: m3}
+      - interval: {from: D3, to: C4, is: m7}
+  - id: K-034-3
+    type: midi-play
+    prompt: {en: "Left hand alone, the chords of the lead sheet: C – Am – F – G7 – C – Am – Dm7 G7 – C, voicings from the table, one bar each (bar 7 split), ♩=88.", sr: "Samo leva ruka, akordi iz lead sheet-a: C – Am – F – G7 – C – Am – Dm7 G7 – C, rasporedi iz tabele, po jedan takt (sedmi takt podeljen), ♩=88."}
+    mode: chords
+    expectChords: [[C3, E3, G3], [A2, C3, E3], [F2, A2, C3], [G2, F3, B3], [C3, E3, G3], [A2, C3, E3], [D3, F3, C4], [G2, F3, B3], [C3, E3, G3]]
+    beats: [4, 4, 4, 4, 4, 4, 2, 2, 4]
+    tempo: 88
+    checks:
+      - chord: {notes: [C3, E3, G3], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [A2, C3, E3], root: A, quality: min, inversion: 0}
+      - chord: {notes: [F2, A2, C3], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [G2, F3, B3], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [D3, F3, C4], root: D, quality: min7, inversion: 0}
+  - id: K-034-4
+    type: midi-play
+    prompt: {en: "Right hand alone, the melody, ♩=88.", sr: "Samo desna ruka, melodija, ♩=88."}
+    mode: sequence
+    expect: [G4, C5, E5, D5, C5, A4, A4, C5, F5, E5, D5, B4, G4, C5, E5, G5, A5, E5, F5, D5, B4, G4, C5]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 88
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [D5, F5, A5, C6], root: D, quality: min7}
+  - id: K-034-5
+    type: midi-play
+    prompt: {en: "Hands together: each chord on the beat where its symbol stands, held under the melody. Graded on what sounds together and when, ♩=80.", sr: "Obe ruke zajedno: svaki akord na dobi iznad koje stoji oznaka, držan ispod melodije. Ocenjuje se šta zajedno zvuči i kada, ♩=80."}
+    mode: chords
+    expectChords: [[C3, E3, G3, G4], [C5], [E5], [D5], [A2, C3, E3, C5], [A4], [F2, A2, C3, A4], [C5], [F5], [E5], [G2, F3, B3, D5], [B4], [C3, E3, G3, G4], [C5], [E5], [G5], [A2, C3, E3, A5], [E5], [D3, F3, C4, F5], [D5], [G2, F3, B3, B4], [G4], [C3, E3, G3, C5]]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 80
+    checks:
+      - chord: {notes: [C3, E3, G3, G4], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [A2, C3, E3, C5], root: A, quality: min, inversion: 0}
+      - chord: {notes: [F2, A2, C3, A4], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [G2, F3, B3, D5], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [A2, C3, E3, A5], root: A, quality: min, inversion: 0}
+      - chord: {notes: [D3, F3, C4, F5], root: D, quality: min7, inversion: 0}
+      - chord: {notes: [G2, F3, B3, B4], root: G, quality: "7", inversion: 0}
+  - id: K-034-6
+    type: midi-play
+    prompt: {en: "Sight-read a new lead sheet in F (notation above, note names hidden). Left hand: root-position triads, and root–3rd–7th for C7. Any octave, root in the bass, ♩=72.", sr: "Pročitaj s lista novi lead sheet u F-duru (notni zapis iznad, imena tonova skrivena). Leva ruka: kvintakordi u osnovnom položaju, a za C7 osnovni ton–terca–septima. Bilo koja oktava, osnovni ton u basu, ♩=72."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:F\n\"F\"c2 A2 | \"Bb\"d2 B2 | \"C7\"B2 G2 | \"F\"A4 |]"
+    mode: chords
+    expectChords: [[F2, A2, C3, C5], [A4], [Bb2, D3, F3, D5], [Bb4], [C3, E3, Bb3, Bb4], [G4], [F2, A2, C3, A4]]
+    beats: [2, 2, 2, 2, 2, 2, 4]
+    tempo: 72
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - chord: {notes: [F2, A2, C3, C5], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [Bb2, D3, F3, D5], root: Bb, quality: maj, inversion: 0}
+      - chord: {notes: [C3, E3, Bb3, Bb4], root: C, quality: "7", inversion: 0}
+      - chord: {notes: [C3, E3, G3, Bb3], root: C, quality: "7", inversion: 0}
+      - roman: {key: F, degree: 4, is: "IV"}
+  - id: K-034-7
+    type: practice
+    prompt: {en: "Make your own lead sheet: write the melody of \"Oda radosti\" (K-032) or \"Sjaj, sjaj, zvezdice\" with chord symbols above it, then play it melody-plus-left-hand. Then play it again with the left-hand pattern of your choice from K-025 or K-032 instead of held chords.", sr: "Napravi sopstveni lead sheet: zapiši melodiju \"Ode radosti\" (K-032) ili \"Sjaj, sjaj, zvezdice\" sa oznakama akorda iznad, pa je odsviraj kao melodiju sa levom rukom. Zatim je odsviraj ponovo sa obrascem leve ruke po izboru iz K-025 ili K-032 umesto držanih akorada."}
+    minutes: 4

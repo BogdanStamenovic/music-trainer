@@ -1,0 +1,125 @@
+id: V-029
+track: V
+order: 29
+title: {en: "Mix intro I: light \"nay\" and \"gee\"", sr: "Uvod u miks I: lagano „nej” i „gi”"}
+prereqs: [V-028, V-016]
+minutes: 10
+tags: [voice, register]
+explain:
+  en: |
+    **Mix** (Serbian: *miks*, sometimes *mešani glas*) is a way of singing through the middle of your range where the voice does not flip from chest to head:
+    it keeps some of the speaking-voice clarity of chest and the lightness of head voice. In pop and musical theatre it is the everyday sound of the middle and upper-middle range.
+
+    Today it is introduced **light and speech-like**. Not loud, not "big", not belted. A first mix usually sounds **small, a bit nasal, even silly**. That is correct.
+
+    Why "nay" and "gee" are the classic way in:
+
+    - **"Nay"** said like a **bratty child teasing** ("nay-nay-nay-nay"). The "n" and the bright, slightly pinched "ay" bring the folds together lightly
+      and narrow the throat a little; that keeps the sound clear without any extra weight. Without the brattiness it falls back into chest or into falsetto.
+    - **"Gee"** with a hard "g" (as in "geese"). The "g" gives a clean start (a balanced onset, lesson 5), and the narrow "ee" keeps the larynx quiet.
+    - Both are **speech**: you are talking on pitch. If you can say it, you can sing it at the same effort.
+
+    The rules:
+
+    1. **Speaking volume.** If a note needs more than a lively conversation, it is too high for today: sing it an octave lower, or skip it.
+    2. **Start from the top and come down** (5-4-3-2-1): the light coordination carries down more easily than weight carries up.
+    3. Signs you are pushing: getting **louder** as you go up, the **larynx jumping up**, the neck or jaw tightening. Go back to "oo" for one round and lighten.
+
+    The app grades **pitch only**. Whether it felt like mix, chest or head is your call; register is never graded here.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Miks** (engl. *mix*, ponekad *mešani glas*) je način pevanja kroz sredinu opsega u kome glas ne preskače iz grudnog u glavni:
+    zadržava deo jasnoće govornog, grudnog glasa i lakoću glavnog. U popu i mjuziklu to je svakodnevni zvuk srednjeg i višeg srednjeg opsega.
+
+    Danas ga uvodimo **lagano i kao govor**. Ne glasno, ne „veliko”, ne belting. Prvi miks obično zvuči **malo, pomalo nazalno, čak smešno**. To je ispravno.
+
+    Zašto su „nej” i „gi” klasičan ulaz:
+
+    - **„Nej”** izgovoreno kao **razmaženo dete koje zadirkuje** („nej-nej-nej-nej”). „N” i svetlo, malo stisnuto „ej” lagano spajaju glasnice
+      i malo sužavaju grlo; tako zvuk ostaje jasan bez dodatne težine. Bez tog zadirkivanja zvuk padne nazad u grudni ili u falset.
+    - **„Gi”** sa tvrdim „g”. „G” daje čist početak (uravnotežena ataka, 5. lekcija), a usko „i” drži grkljan mirnim.
+    - Oba su **govor**: pričaš na visini. Ako možeš da ga kažeš, možeš i da ga otpevaš istim naporom.
+
+    Pravila:
+
+    1. **Jačina govora.** Ako ton traži više od živog razgovora, danas je previsok: otpevaj ga oktavu niže ili ga preskoči.
+    2. **Počni odozgo i idi naniže** (5-4-3-2-1): laka koordinacija se lakše prenosi naniže nego težina naviše.
+    3. Znaci guranja: **sve glasnije** kako ideš naviše, **grkljan skače naviše**, vrat ili vilica se stežu. Vrati se na „u” jednu rundu i olakšaj.
+
+    Aplikacija ocenjuje **samo visinu**. Da li je osećaj bio miks, grudni ili glavni, procenjuješ ti; registar se ovde nikad ne ocenjuje.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-029-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-029-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens through the break, then lip trills along with the five notes up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana kroz lom, pa treperenje usnama uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-029-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Speak first: say 'nay-nay-nay-nay' like a teasing child, at your speaking pitch, then a little higher, then a little higher again. Same effort each time. Then the same with 'gee-gee-gee'."
+      sr: "Prvo govor: reci „nej-nej-nej-nej” kao dete koje zadirkuje, na visini svog govora, pa malo više, pa još malo više. Isti napor svaki put. Pa isto sa „gi-gi-gi”."
+  - id: V-029-4
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 on bratty 'nay', starting from the top. Speaking volume; the top note is not louder than the bottom one."
+      sr: "5-4-3-2-1 na zadirkujuće „nej”, odozgo naniže. Jačina govora; gornji ton nije glasniji od donjeg."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-029-5
+    type: sing-phrase
+    prompt:
+      en: "5-3-1 on 'gee', each note started cleanly by the 'g'. Narrow 'ee', quiet larynx."
+      sr: "5-3-1 na „gi”, svaki ton čisto pokrenut sa „g”. Usko „i”, miran grkljan."
+    notes: [A4, F#4, D4]
+    beats: [1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-029-6
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'nay', now going up first. Keep the bratty colour at the top; if the 5 wants to get louder, make it smaller instead."
+      sr: "1-3-5-3-1 na „nej”, sada prvo naviše. Zadrži zadirkujuću boju na vrhu; ako 5 hoće da postane glasnije, napravi ga manjim."
+    notes: [D4, F#4, A4, F#4, D4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-029-7
+    type: mcq
+    prompt:
+      en: "Going up on 'nay', the top notes keep getting louder and your neck tightens. What do you change?"
+      sr: "Dok ideš naviše na „nej”, gornji tonovi su sve glasniji i vrat ti se steže. Šta menjaš?"
+    options:
+      - {en: "Make it lighter and smaller (one round on 'oo' first), or sing that part an octave lower", sr: "Olakšaj i smanji zvuk (prvo jedna runda na „u”) ili otpevaj taj deo oktavu niže"}
+      - {en: "Take a bigger breath and push through", sr: "Udahni više i proguraj"}
+      - {en: "Open to a wide 'ah' so there is more room", sr: "Otvori se na široko „a” da bude više prostora"}
+    answer: 0
+  - id: V-029-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: sing 5-4-3-2-1 on 'nay' once more. Rate: did the sound stay the same size from top to bottom, and did it feel like talking? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: otpevaj 5-4-3-2-1 na „nej” još jednom. Oceni: da li je zvuk ostao iste veličine od vrha do dna i da li je osećaj bio kao govor? Pa 3 tiha pevušenja uz klizanje naniže."

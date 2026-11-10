@@ -1,0 +1,159 @@
+id: C-010
+track: C
+order: 10
+prereqs: [C-009, T-019]
+title: {en: "A melody in minor: the leading tone", sr: "Melodija u molu: vođica"}
+minutes: 15
+tags: [composition, melody, minor]
+explain:
+  en: |
+    In natural A minor (A B C D E F G) the 7th degree, G, is a **whole step** below the tonic.
+    Play G → A: it does not pull. In major, B → C is a half step and the ear hears "home". So minor
+    borrows that pull: it **raises the 7th** to G♯, the **leading tone**, a half step under A.
+    That is also why V in minor is a major chord (E G♯ B): it carries the leading tone.
+
+    **When to raise 7:** whenever the melody goes **up to the tonic** (G♯ → A) and wherever the
+    harmony is V. Going **down** from the tonic, the natural G is fine and usually better: there is
+    no tonic to lead into.
+
+    **The trap: the augmented 2nd.** With G♯ in the scale, F → G♯ is 3 semitones written as a
+    2nd: an **augmented 2nd**. It sounds exotic and is awkward to sing. Three ways out:
+
+    | situation | solution | notes (A minor) |
+    |---|---|---|
+    | climbing 5 – 6 – 7 – 8 | raise 6 too (melodic minor, ascending) | E F♯ G♯ A |
+    | coming down 8 – 7 – 6 – 5 | use the natural forms | A G F E |
+    | you want F and G♯ | do not join them by step: put another note between, or leap to G♯ from E or B | F E G♯ A |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    A2 B2 c2 A2 | e2 d2 c2 B2 | A2 G2 F2 E2 | ^F2 ^G2 A4 |]
+    ```
+
+    Bar 3 comes **down** with natural G and F; bar 4 goes **up** with F♯ and G♯ and lands on A
+    from the leading tone. Same scale degrees, different forms, chosen by direction.
+
+    **Cadences in minor:** the half cadence still ends on 2, 5 or 7 (B, E or G♯ in A minor) over
+    V; the authentic cadence ends on 1, best from G♯ or B.
+
+    **At the keyboard:** play A minor up and down as melodic minor (F♯ G♯ up, G F down), then
+    improvise 4 bars ending G♯ → A while the left hand plays E major → A minor.
+  sr: |
+    U prirodnom a-molu (A H C D E F G) sedmi stupanj, G, je **cel stepen** ispod tonike.
+    Odsviraj G → A: ne vuče. U duru je H → C polustepen i uho čuje „kuću“. Zato mol pozajmljuje to
+    privlačenje: **povisuje sedmi stupanj** na Gis, **vođicu**, polustepen ispod A. Zato je i V u
+    molu durski akord (E Gis H): nosi vođicu.
+
+    **Kada povisiti 7:** kad god melodija ide **naviše ka tonici** (Gis → A) i gde god je harmonija
+    V. Kad ide **naniže** od tonike, prirodno G je u redu i obično bolje: nema tonike u koju bi vodilo.
+
+    **Zamka: prekomerna sekunda.** Sa Gis u lestvici, F → Gis je 3 polustepena zapisana kao sekunda:
+    **prekomerna sekunda**. Zvuči egzotično i teško se peva. Tri izlaza:
+
+    | situacija | rešenje | tonovi (a-mol) |
+    |---|---|---|
+    | penjanje 5 – 6 – 7 – 8 | povisi i 6 (melodijski mol, uzlazno) | E Fis Gis A |
+    | silazak 8 – 7 – 6 – 5 | prirodni oblici | A G F E |
+    | hoćeš i F i Gis | ne spajaj ih korakom: ubaci ton između ili skoči na Gis sa E ili H | F E Gis A |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    A2 B2 c2 A2 | e2 d2 c2 B2 | A2 G2 F2 E2 | ^F2 ^G2 A4 |]
+    ```
+
+    Takt 3 **silazi** sa prirodnim G i F; takt 4 se **penje** sa Fis i Gis i sleće na A sa vođice.
+    Isti stupnjevi, različiti oblici, izabrani po smeru.
+
+    **Kadence u molu:** polukadenca se i dalje završava na 2, 5 ili 7 (H, E ili Gis u a-molu) nad V;
+    autentična kadenca se završava na 1, najbolje sa Gis ili H.
+
+    **Za klavirom:** sviraj a-mol gore i dole kao melodijski (Fis Gis naviše, G F naniže), pa
+    improvizuj 4 takta sa završetkom Gis → A dok leva ruka svira E-dur → a-mol.
+exercises:
+  - id: C-010-1
+    type: mcq
+    prompt: {en: "Which note is the leading tone in A minor?", sr: "Koji ton je vođica u a-molu?"}
+    options: ["G#", "G", "F#", {en: "B", sr: "H"}]
+    answer: 0
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - semitones: {from: G#4, to: A4, is: 1}
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj}
+  - id: C-010-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:Am\nc2 B2 A2 F2 | ^G2 A2 A4 |]"
+    prompt: {en: "What is the problem between bar 1 and bar 2?", sr: "U čemu je problem između takta 1 i takta 2?"}
+    options:
+      - {en: "F → G♯ is an augmented 2nd", sr: "F → Gis je prekomerna sekunda"}
+      - {en: "G♯ does not belong in A minor", sr: "Gis ne pripada a-molu"}
+      - {en: "the melody ends on the wrong note", sr: "melodija se završava na pogrešnom tonu"}
+      - {en: "nothing: this is the usual way", sr: "ništa: ovako se uobičajeno piše"}
+    answer: 0
+    checks:
+      - interval: {from: F4, to: G#4, is: A2}
+      - semitones: {from: F4, to: G#4, is: 3}
+  - id: C-010-3
+    type: mcq
+    prompt: {en: "D minor, the melody climbs A → ? → ? → D, by step. Which two notes avoid the augmented 2nd and lead into D?", sr: "d-mol, melodija se penje A → ? → ? → D, postupno. Koja dva tona izbegavaju prekomernu sekundu i vode u D?"}
+    options:
+      - {en: "B – C♯", sr: "H – Cis"}
+      - {en: "B♭ – C", sr: "B – C"}
+      - {en: "B♭ – C♯", sr: "B – Cis"}
+      - {en: "B – C", sr: "H – C"}
+    answer: 0
+    checks:
+      - scale: {tonic: D, type: melodic-minor, is: [D, E, F, G, A, B, C#]}
+      - interval: {from: Bb4, to: C#5, is: A2}
+  - id: C-010-4
+    type: generated
+    prompt: {en: "Minor melodies with the leading tone (harmonic minor, no 6th degree): listen, then play them back.", sr: "Molske melodije sa vođicom (harmonski mol, bez šestog stupnja): slušaj, pa odsviraj."}
+    count: 3
+    gen: {kind: melody-echo, tonics: [A, E, D], type: harmonic-minor, length: [5, 6], degrees: [1, 2, 3, 4, 5, 7, 8], maxLeap: 2, startOnTonic: true, tempo: 72}
+  - id: C-010-5
+    type: compose
+    prompt:
+      en: "E minor (F♯), 4 bars. Bar 1 is given. Come down with the natural 7th and 6th (D, C) if you descend, and end on E reached from the leading tone D♯."
+      sr: "e-mol (Fis), 4 takta. Takt 1 je zadat. Ako silaziš, koristi prirodni sedmi i šesti stupanj (D, C), a završi na E do kog stižeš sa vođice Dis."
+    given: "X:1\nM:4/4\nL:1/8\nK:Em\nE2 F2 G2 B2 |\n"
+    key: E minor
+    meter: 4/4
+    bars: 4
+    range: [D4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:Em
+      E2 F2 G2 B2 | c2 B2 A2 G2 | A2 G2 F2 ^D2 | E8 |]
+    checks:
+      - scale: {tonic: E, type: harmonic-minor, is: [E, F#, G, A, B, C, D#]}
+      - interval: {from: F#4, to: D#4, is: m3}
+  - id: C-010-6
+    type: compose
+    prompt:
+      en: "An 8-bar period in D minor (B♭). Bar 1 is given. Bar 4 ends on E, A or C♯ (half cadence); bar 8 ends on D, reached from C♯ or E. No augmented 2nds (B♭ → C♯)."
+      sr: "Period od 8 taktova u d-molu (B). Takt 1 je zadat. Takt 4 se završava na E, A ili Cis (polukadenca); takt 8 na D, do kog stižeš sa Cis ili E. Bez prekomernih sekundi (B → Cis)."
+    given: "X:1\nM:4/4\nL:1/8\nK:Dm\nD2 F2 A2 F2 |\n"
+    key: D minor
+    meter: 4/4
+    bars: 8
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, half-cadence, cadence, leaps, augmented, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:Dm
+      D2 F2 A2 F2 | G2 B2 A2 G2 | F2 E2 D2 F2 | G2 F2 E4 |
+      D2 F2 A2 F2 | G2 B2 d4 | c2 B2 A2 F2 | E2 ^C2 D4 |]
+    checks:
+      - scale: {tonic: D, type: harmonic-minor, is: [D, E, F, G, A, Bb, C#]}
+      - chord: {notes: [A3, C#4, E4], root: A, quality: maj}
+      - interval: {from: E4, to: C#4, is: m3}

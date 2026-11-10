@@ -1,0 +1,109 @@
+id: T-047
+track: T
+order: 47
+prereqs: [T-046]
+title: {en: "Sequences: descending fifths with secondary dominants", sr: "Sekvence: kvintni krug naniže sa sporednim dominantama"}
+minutes: 14
+tags: [harmony, chromatic, sequence]
+explain:
+  en: |
+    A **sequence** (sekvenca) is a short pattern repeated at a different pitch level, usually several times in a row. Once the ear catches the pattern, it predicts the next step; that momentum is why sequences carry music from one place to another so easily.
+
+    The strongest harmonic sequence is the **descending-fifths** sequence (circle of fifths): each root falls a 5th (or rises a 4th) to the next. In C major, through every chord of the key:
+
+    **I – IV – vii° – iii – vi – ii – V – I**  (roots C F B E A D G C)
+
+    Note the one diminished 5th (F → B): staying in the key forces it. At the keyboard, the right hand barely moves: it slips down a step every two chords (C E G, C F A, B D F, B E G, A C E, A D F, G B D, G C E).
+
+    **With secondary dominants.** Turn each chord into the dominant 7th of the next one, and the sequence becomes a chain of V7 → V7 resolutions:
+
+    **V7/vi – V7/ii – V7/V – V7 – I**  = E7 – A7 – D7 – G7 – C
+
+    In each link the **7th falls a step** to become the 3rd of the next chord (D → C♯), and the **3rd falls a half step** to become the next 7th (G♯ → G). Two voices sliding down by half steps while the roots fall in 5ths: that is the sound of ragtime, of many standards, and of countless Baroque episodes.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "E7"[E^GBd] "A7"[E=GA^c] | "D7"[D^FAc] "G7"[D=FGB] | "C"[CEGc]2 |]
+    ```
+  sr: |
+    **Sekvenca** je kratak obrazac koji se ponavlja na drugoj visini, obično nekoliko puta zaredom. Kad uho uhvati obrazac, predviđa sledeći korak; zbog tog zamaha sekvence tako lako vode muziku s jednog mesta na drugo.
+
+    Najjača harmonska sekvenca je **kvintni krug naniže**: svaki osnovni ton silazi za kvintu (ili ide naviše za kvartu) do sledećeg. U C-duru, kroz sve akorde tonaliteta:
+
+    **I – IV – vii° – iii – vi – ii – V – I**  (osnovni tonovi C F H E A D G C)
+
+    Obrati pažnju na jednu smanjenu kvintu (F → H): ostanak u tonalitetu je nameće. Na klaviru se desna ruka jedva pomera: na svaka dva akorda spusti se za stupanj (C E G, C F A, H D F, H E G, A C E, A D F, G H D, G C E).
+
+    **Sa sporednim dominantama.** Pretvori svaki akord u dominantni septakord sledećeg, i sekvenca postaje lanac razrešenja V7 → V7:
+
+    **V7/vi – V7/ii – V7/V – V7 – I**  = E7 – A7 – D7 – G7 – C
+
+    U svakoj karici **septima silazi za stupanj** i postaje terca sledećeg akorda (D → Cis), a **terca silazi za polustepen** i postaje sledeća septima (Gis → G). Dva glasa klize naniže po polustepenima dok osnovni tonovi padaju po kvintama: to je zvuk ragtajma, mnogih standarda i bezbrojnih baroknih epizoda.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "E7"[E^GBd] "A7"[E=GA^c] | "D7"[D^FAc] "G7"[D=FGB] | "C"[CEGc]2 |]
+    ```
+exercises:
+  - id: T-047-1
+    type: mcq
+    prompt: {en: "What is a sequence?", sr: "Šta je sekvenca?"}
+    options:
+      - {en: "A pattern repeated at a different pitch level", sr: "Obrazac ponovljen na drugoj visini"}
+      - {en: "A chord held for a long time", sr: "Akord koji dugo traje"}
+      - {en: "A cadence that avoids the tonic", sr: "Kadenca koja izbegava toniku"}
+      - {en: "A melody that uses only steps", sr: "Melodija samo od koraka"}
+    answer: 0
+  - id: T-047-2
+    type: mcq
+    prompt: {en: "Diatonic descending fifths in C: … iii – vi – ? – V – I", sr: "Dijatonski kvintni krug u C-duru: … iii – vi – ? – V – I"}
+    options: ["ii", "IV", "vii°", "I"]
+    answer: 0
+    checks:
+      - interval: {from: A3, to: D3, is: P5}
+      - roman: {key: C, type: major, degree: 2, is: ii}
+  - id: T-047-3
+    type: mcq
+    prompt: {en: "In E7 → A7, the 3rd of E7 (G♯) falls a half step. What does it become in A7?", sr: "U E7 → A7, terca od E7 (Gis) silazi za polustepen. Šta postaje u A7?"}
+    options:
+      - {en: "G, the 7th of A7", sr: "G, septima od A7"}
+      - {en: "A, the root of A7", sr: "A, osnovni ton od A7"}
+      - {en: "C♯, the 3rd of A7", sr: "Cis, terca od A7"}
+      - {en: "E, the 5th of A7", sr: "E, kvinta od A7"}
+    answer: 0
+    checks:
+      - chord: {notes: [E4, G#4, B4, D5], root: E, quality: "7"}
+      - chord: {notes: [A3, C#4, E4, G4], root: A, quality: "7"}
+      - chord: {notes: [D4, F#4, A4, C5], root: D, quality: "7"}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - interval: {from: G4, to: G#4, is: A1}
+  - id: T-047-4
+    type: notation-input
+    prompt: {en: "C major, the chain E7 – A7 – ? – G7 – C. Spell the missing chord (root, 3rd, 5th, 7th).", sr: "C-dur, lanac E7 – A7 – ? – G7 – C. Napiši akord koji nedostaje (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: C4, numerals: [V7/V]}}
+    expect: [D, F#, A, C]
+    checks:
+      - numeral: {key: C, is: V7/V, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: C, is: V7/vi, notes: [E4, G#4, B4, D5]}
+      - numeral: {key: C, is: V7/ii, notes: [A3, C#4, E4, G4]}
+  - id: T-047-5
+    type: generated
+    count: 3
+    prompt: {en: "Play the diatonic descending-fifths sequence with smooth voice leading.", sr: "Odsviraj dijatonski kvintni krug sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, IV, "vii°", iii, vi, ii, V, I], smooth: true}
+  - id: T-047-6
+    type: generated
+    count: 3
+    prompt: {en: "Play the chain of secondary dominants with smooth voice leading.", sr: "Odsviraj lanac sporednih dominanti sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [C, F, G], numerals: [I, V7/vi, V7/ii, V7/V, V7, I], smooth: true}
+  - id: T-047-7
+    type: generated
+    count: 4
+    prompt: {en: "Diatonic or with secondary dominants? Listen to the chords on 6 and 2: minor or dominant 7th?", sr: "Dijatonski ili sa sporednim dominantama? Slušaj akorde na 6. i 2. stupnju: molski ili dominantni septakord?"}
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[I, vi, ii, V, I], [I, V7/ii, V7/V, V7, I], [I, vi7, ii7, V7, I]], tempo: 60}

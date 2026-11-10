@@ -1,0 +1,159 @@
+id: E-026
+track: E
+order: 26
+title: {en: "Two-voice dictation II: contrary motion and leaps", sr: "Dvoglasni diktat II: suprotno kretanje i skokovi"}
+prereqs: [E-025, T-034]
+minutes: 15
+tags: [ear, dictation, counterpoint, two-voice]
+explain:
+  en: |
+    In E-025 both voices moved by step. Real basses do not: they **leap between chord roots** while
+    the melody above moves by step. This is the texture of almost every song you will play by ear,
+    and it follows the voice-leading rules from T-034 for a reason you can hear.
+
+    The pattern: **when the bass leaps, the top moves by step, usually the other way.**
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    V:1
+    c d e A | B c2 |]
+    V:2 clef=bass
+    C, B,, A,, F,, | G,, C,2 |]
+    ```
+
+    The bass outlines I – V6 – vi – IV – V – I (C B A F G C); the top answers in contrary motion:
+    C D E, then a leap down to A (while the bass falls only a third, F), then B C. The last move is
+    the standard cadence: bass **5 → 1** (a leap of a fourth or fifth), top **7 → 8** or **2 → 1** by step.
+
+    How to take this down:
+
+    1. **Bass first this time.** Leaps are landmarks. For each bass note ask: which chord root is
+       this? 1, 4, 5 and 6 are the usual answers, and the last two notes are almost always 5 → 1.
+    2. **Then the top, as degrees.** Most notes are a step from the last one.
+    3. **Check each pair against the bass.** If the top note is not a 3rd, 5th, 6th or octave above
+       the bass (in any octave), one of your two lines is wrong.
+    4. **Expect no parallel octaves or fifths.** Two voices that go from one octave (or fifth) to
+       the next while moving the same way sound like one thin line, which is why composers avoid
+       them. If your answer has them, one line is probably wrong. (Moving the same way *into* an
+       octave is fine at a cadence when the top moves by step, as in 7 → 8 over 5 → 1.)
+  sr: |
+    U E-025 oba glasa su se kretala korakom. Pravi basovi to ne rade: **skaču između osnovnih tonova
+    akorada**, dok melodija iznad ide korakom. To je faktura skoro svake pesme koju ćeš svirati po
+    sluhu, i ona poštuje pravila vođenja glasova iz T-034 iz razloga koji možeš da čuješ.
+
+    Obrazac: **kad bas skače, gornji glas ide korakom, obično u suprotnom pravcu.**
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    V:1
+    c d e A | B c2 |]
+    V:2 clef=bass
+    C, B,, A,, F,, | G,, C,2 |]
+    ```
+
+    Bas ocrtava I – V6 – vi – IV – V – I (C H A F G C); gornji glas odgovara suprotnim kretanjem:
+    C D E, pa skok naniže na A (dok bas pada samo za tercu, na F), pa H C. Poslednji pokret je
+    standardna kadenca: bas **5 → 1** (skok za kvartu ili kvintu), gornji glas **7 → 8** ili **2 → 1**
+    korakom.
+
+    Kako da ovo zapišeš:
+
+    1. **Ovog puta prvo bas.** Skokovi su orijentiri. Za svaki bas ton pitaj: koji je ovo osnovni
+       ton akorda? 1, 4, 5 i 6 su uobičajeni odgovori, a poslednja dva tona su skoro uvek 5 → 1.
+    2. **Onda gornji glas, kao stupnjevi.** Većina tonova je korak od prethodnog.
+    3. **Proveri svaki par u odnosu na bas.** Ako gornji ton nije terca, kvinta, seksta ili oktava
+       iznad basa (u bilo kojoj oktavi), jedna od tvoje dve linije je pogrešna.
+    4. **Ne očekuj paralelne oktave ni kvinte.** Dva glasa koja idu iz jedne oktave (ili kvinte) u
+       sledeću krećući se u istom pravcu zvuče kao jedna tanka linija, i zato ih kompozitori
+       izbegavaju. Ako ih tvoj odgovor ima, verovatno je jedna linija pogrešna. (Ulazak u oktavu
+       kretanjem u istom pravcu je u redu u kadenci kad gornji glas ide korakom, kao 7 → 8 iznad 5 → 1.)
+exercises:
+  - id: E-026-1
+    type: midi-echo
+    prompt: {en: "G major, two voices. Play back only the BASS (it leaps between chord roots). It starts on G2.", sr: "G-dur, dva glasa. Odsviraj samo BAS (skače između osnovnih tonova akorada). Počinje na G2."}
+    mode: sequence
+    expect: [G2, C3, A2, D3, G2]
+    octave: exact
+    play:
+      chords: [[G2, D5], [C3, C5], [A2, C5], [D3, A4], [G2, G4]]
+      tempo: 56
+    checks:
+      - interval: {from: G2, to: D3, is: P5}
+      - interval: {from: C3, to: C5, is: P15}
+      - interval: {from: A2, to: C3, is: m3}
+      - interval: {from: D3, to: A3, is: P5}
+      - interval: {from: A4, to: C5, is: m3}
+  - id: E-026-2
+    type: midi-echo
+    prompt: {en: "Same G major passage: now play back only the TOP line. It starts on D5.", sr: "Isti odlomak u G-duru: sada odsviraj samo GORNJU liniju. Počinje na D5."}
+    mode: sequence
+    expect: [D5, C5, C5, A4, G4]
+    octave: exact
+    play:
+      chords: [[G2, D5], [C3, C5], [A2, C5], [D3, A4], [G2, G4]]
+      tempo: 56
+  - id: E-026-3
+    type: midi-echo
+    prompt: {en: "F major, two voices. Play back the BASS. It starts on F2; the last two notes are 5 → 1.", sr: "F-dur, dva glasa. Odsviraj BAS. Počinje na F2; poslednja dva tona su 5 → 1."}
+    mode: sequence
+    expect: [F2, D3, Bb2, C3, F2]
+    octave: exact
+    pass: 0.7
+    play:
+      chords: [[F2, A4], [D3, A4], [Bb2, Bb4], [C3, G4], [F2, F4]]
+      tempo: 56
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: F2, to: A2, is: M3}
+      - interval: {from: D3, to: A3, is: P5}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: F2, to: D3, is: M6}
+  - id: E-026-4
+    type: midi-echo
+    prompt: {en: "C major, both voices together (the passage from the explanation, without looking). Starts on C3 + C5.", sr: "C-dur, oba glasa zajedno (odlomak iz objašnjenja, bez gledanja). Počinje na C3 + C5."}
+    mode: chords
+    expectChords: [[C3, C5], [B2, D5], [A2, E5], [F2, A4], [G2, B4], [C3, C5]]
+    octave: exact
+    pass: 0.7
+    checks:
+      - interval: {from: B2, to: D3, is: m3}
+      - interval: {from: A2, to: E3, is: P5}
+      - interval: {from: F2, to: A2, is: M3}
+      - interval: {from: G2, to: B2, is: M3}
+      - interval: {from: A4, to: E5, is: P5}
+  - id: E-026-5
+    type: midi-echo
+    prompt: {en: "D major, both voices. Starts on D3 + D5. The bass leaps down a third in the middle.", sr: "D-dur, oba glasa. Počinje na D3 + D5. Bas skače tercu naniže u sredini."}
+    mode: chords
+    expectChords: [[D3, D5], [C#3, E5], [B2, F#5], [G2, B4], [A2, C#5], [D3, D5]]
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: C#3, to: E3, is: m3}
+      - interval: {from: B2, to: F#3, is: P5}
+      - interval: {from: G2, to: B2, is: M3}
+      - interval: {from: A2, to: C#3, is: M3}
+  - id: E-026-6
+    type: midi-echo
+    prompt: {en: "A minor, both voices: i – VI – iv – V – i in the bass. Starts on A2 + C5.", sr: "a-mol, oba glasa: i – VI – iv – V – i u basu. Počinje na A2 + C5."}
+    mode: chords
+    expectChords: [[A2, C5], [F2, A4], [D3, A4], [E3, G#4], [A2, A4]]
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - roman: {key: A, type: harmonic-minor, degree: 6, is: "VI"}
+      - roman: {key: A, type: harmonic-minor, degree: 4, is: "iv"}
+      - interval: {from: A2, to: C3, is: m3}
+      - interval: {from: F2, to: A2, is: M3}
+      - interval: {from: D3, to: A3, is: P5}
+      - interval: {from: E3, to: G#3, is: M3}
+  - id: E-026-7
+    type: practice
+    prompt: {en: "Away from the app: take a simple song you know (Ode to Joy works) and play the tune with the right hand while the left hand finds one bass note per bar by ear, choosing among 1, 4, 5 and 6. Check every bar: does the pair sound like a 3rd, 5th, 6th or octave?", sr: "Bez aplikacije: uzmi jednostavnu pesmu koju znaš (Oda radosti je dobra) i sviraj melodiju desnom rukom, dok leva po sluhu nalazi po jedan bas ton u taktu, birajući između 1, 4, 5 i 6. Proveri svaki takt: da li par zvuči kao terca, kvinta, seksta ili oktava?"}
+    minutes: 4

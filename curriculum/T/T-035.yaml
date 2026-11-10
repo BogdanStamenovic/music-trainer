@@ -1,0 +1,137 @@
+id: T-035
+track: T
+order: 35
+prereqs: [T-034]
+title: {en: "Connecting root-position triads (common tone, stepwise)", sr: "Povezivanje trozvuka u osnovnom položaju (zajednički ton, postupno kretanje)"}
+minutes: 14
+tags: [harmony, four-part]
+explain:
+  en: |
+    With the bass on the root of every chord, how the upper three voices move depends only on **how far apart the roots are**. Three cases cover everything:
+
+    | roots apart by | examples in C | common tones | what the upper voices do |
+    |---|---|---|---|
+    | a **4th / 5th** | I–IV, I–V, ii–V | 1 | hold the common tone, the other two move by step |
+    | a **3rd** | I–vi, vi–IV, IV–ii | 2 | hold both, the third voice moves by step |
+    | a **2nd** | IV–V, V–vi | 0 | all three move **opposite to the bass**, to the nearest chord tones |
+
+    The 2nd case is the one that goes wrong: if the bass rises F → G and the upper voices rise with it, you get parallel 5ths and octaves (you saw them in the last lesson). Moving them down, against the bass, avoids that automatically.
+
+    A worked progression, I – vi – IV – V – I. Watch the soprano C held over three chords, and the bass going up F → G while everything else moves down:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Ec] [Fc] [DB] | [Ec]4 |]
+    V:2 clef=bass
+    [C,G,] [A,,A,] [F,,A,] [G,,G,] | [C,G,]4 |]
+    ```
+
+    On the keyboard this is the "hands barely move" feeling: good voice leading is also the easiest fingering.
+  sr: |
+    Kad je bas na osnovnom tonu svakog akorda, kretanje tri gornja glasa zavisi samo od toga **koliko su osnovni tonovi udaljeni**. Tri slučaja pokrivaju sve:
+
+    | osnovni tonovi udaljeni za | primeri u C-duru | zajednički tonovi | šta rade gornji glasovi |
+    |---|---|---|---|
+    | **kvartu / kvintu** | I–IV, I–V, ii–V | 1 | zajednički ton se zadržava, druga dva idu za stupanj |
+    | **tercu** | I–vi, vi–IV, IV–ii | 2 | oba se zadržavaju, treći glas ide za stupanj |
+    | **sekundu** | IV–V, V–vi | 0 | sva tri idu **suprotno od basa**, do najbližih akordskih tonova |
+
+    Slučaj sekunde je onaj u kom se greši: ako bas ide gore F → G i gornji glasovi idu gore s njim, dobijaš paralelne kvinte i oktave (videli smo ih u prošloj lekciji). Ako ih vodiš naniže, suprotno basu, to se izbegava samo od sebe.
+
+    Urađena progresija, I – vi – IV – V – I. Prati C u sopranu, zadržano kroz tri akorda, i bas koji ide gore F → G dok svi ostali glasovi idu naniže:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Ec] [Ec] [Fc] [DB] | [Ec]4 |]
+    V:2 clef=bass
+    [C,G,] [A,,A,] [F,,A,] [G,,G,] | [C,G,]4 |]
+    ```
+
+    Na klaviru je to osećaj „ruke se jedva pomeraju": dobro vođenje glasova je ujedno i najlakši prstored.
+exercises:
+  - id: T-035-1
+    type: mcq
+    prompt: {en: "I → V in C (C–E–G → G–B–D): which note is the common tone to hold?", sr: "I → V u C-duru (C–E–G → G–H–D): koji je zajednički ton koji se zadržava?"}
+    options: ["G", "C", "E", "D"]
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: T-035-2
+    type: mcq
+    prompt: {en: "I → vi in C: how many common tones do the chords share?", sr: "I → vi u C-duru: koliko zajedničkih tonova imaju akordi?"}
+    options: [{en: "2 (C and E)", sr: "2 (C i E)"}, "1 (C)", "0", "3"]
+    answer: 0
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min}
+  - id: T-035-3
+    type: mcq
+    prompt: {en: "IV → V (bass F → G): the chords share no note. Where should the upper three voices go?", sr: "IV → V (bas F → G): akordi nemaju zajednički ton. Kuda treba da idu tri gornja glasa?"}
+    options:
+      - {en: "Down, against the bass, to the nearest tones of V", sr: "Naniže, suprotno basu, do najbližih tonova V"}
+      - {en: "Up with the bass, each by a step", sr: "Naviše sa basom, svaki za stupanj"}
+      - {en: "Hold their notes", sr: "Zadržavaju svoje tonove"}
+      - {en: "Leap to the root of V", sr: "Skaču na osnovni ton V"}
+    answer: 0
+  - id: T-035-4
+    type: mcq
+    prompt: {en: "Spot the error: IV → V in C.", sr: "Pronađi grešku: IV → V u C-duru."}
+    abc: |
+      X:1
+      M:2/4
+      L:1/2
+      K:C
+      V:1
+      [Af] [Bg] |]
+      V:2 clef=bass
+      [F,C] [G,D] |]
+    options:
+      - {en: "Parallel 5ths and octaves: all voices move up with the bass", sr: "Paralelne kvinte i oktave: svi glasovi idu naviše sa basom"}
+      - {en: "The common tone is not held", sr: "Zajednički ton nije zadržan"}
+      - {en: "The tenor is out of range", sr: "Tenor je van opsega"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - chord: {notes: [F3, C4, A4, F5], root: F, quality: maj}
+      - chord: {notes: [G3, D4, B4, G5], root: G, quality: maj}
+  - id: T-035-5
+    type: midi-play
+    prompt: {en: "Play I – vi – IV – V – I in C exactly as written above (left hand bass + tenor, right hand alto + soprano).", sr: "Odsviraj I – vi – IV – V – I u C-duru tačno kako je napisano gore (leva ruka bas + tenor, desna alt + sopran)."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Ec] [Ec] [Fc] [DB] | [Ec]4 |]
+      V:2 clef=bass
+      [C,G,] [A,,A,] [F,,A,] [G,,G,] | [C,G,]4 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, G3, E4, C5], [A2, A3, E4, C5], [F2, A3, F4, C5], [G2, G3, D4, B4], [C3, G3, E4, C5]]
+    checks:
+      - chord: {notes: [C3, G3, E4, C5], root: C, quality: maj}
+      - chord: {notes: [A2, A3, E4, C5], root: A, quality: min}
+      - chord: {notes: [F2, A3, F4, C5], root: F, quality: maj}
+      - chord: {notes: [G2, G3, D4, B4], root: G, quality: maj}
+  - id: T-035-6
+    type: generated
+    count: 4
+    prompt: {en: "Play the progression with smooth voice leading: bass on the root, upper voices to the nearest chord tones.", sr: "Odsviraj progresiju sa glatkim vođenjem glasova: bas na osnovnom tonu, gornji glasovi do najbližih akordskih tonova."}
+    gen: {kind: progression, keys: [G, F, D, Bb], numerals: [I, vi, IV, V, I], smooth: true}
+  - id: T-035-7
+    type: mcq
+    prompt: {en: "ii → V in C (D–F–A → G–B–D): which note can stay in the same voice?", sr: "ii → V u C-duru (D–F–A → G–H–D): koji ton može ostati u istom glasu?"}
+    options: ["D", "F", "A", "G"]
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj}

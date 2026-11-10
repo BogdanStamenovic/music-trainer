@@ -1,0 +1,128 @@
+id: V-036
+track: V
+order: 36
+title: {en: "Support under long phrases", sr: "Oslonac ispod dugih fraza"}
+prereqs: [V-035, V-032]
+minutes: 11
+tags: [voice, support]
+explain:
+  en: |
+    **Support** (Serbian: *oslonac*, *podrška daha*) is often explained as "push from the belly". That is the wrong picture.
+    Support is **balance**: while you sing and the air goes out, the muscles that breathe **in** (the ribs, the diaphragm) keep gently resisting,
+    so the air leaves **slowly and evenly**. Think of letting a heavy door close slowly, not of slamming it.
+
+    Why it matters most at the **end** of a long phrase: the lungs are emptying, the natural recoil gets weaker, and without that balance three things happen:
+
+    | sign | what you hear |
+    |---|---|
+    | the pitch **sags** | the last notes go flat, especially on descending lines |
+    | the tone **thins** | breathy or creaky (a rattle, *vocal fry*) at the end |
+    | the throat **takes over** | squeezing to finish the line: the opposite of what we want |
+
+    Too much "support" is also a problem: a **pressed**, tight sound, a hard belly, held breath. The right amount feels **active but quiet**:
+    ribs staying wide, the belly moving in slowly by itself, the throat doing nothing extra.
+
+    Practical checks:
+
+    - Hand on the lower ribs: they should still be fairly wide halfway through the phrase.
+    - Listen to the **last note**. It should be as on pitch and as clear as the first one. That is what the app checks below.
+    - When the air is truly finished, **stop**. Squeezing out the last bit trains the throat to help, which is exactly the habit to avoid.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Oslonac** (podrška daha, engl. *support*) se često objašnjava kao „guraj iz stomaka”. To je pogrešna slika.
+    Oslonac je **ravnoteža**: dok pevaš i vazduh izlazi, mišići za **udah** (rebra, dijafragma) i dalje blago pružaju otpor,
+    pa vazduh izlazi **sporo i ravnomerno**. Zamisli da teška vrata puštaš da se polako zatvore, a ne da ih zalupiš.
+
+    Zašto je najvažniji na **kraju** duge fraze: pluća se prazne, prirodno vraćanje slabi, i bez te ravnoteže dešavaju se tri stvari:
+
+    | znak | šta čuješ |
+    |---|---|
+    | visina **pada** | poslednji tonovi su niski, naročito u silaznim linijama |
+    | ton se **tanji** | dahtavo ili škripavo (krčanje, engl. *vocal fry*) na kraju |
+    | grlo **preuzima** | stezanje da se red završi: suprotno od onoga što želimo |
+
+    Previše „oslonca” je takođe problem: **pritisnut**, stegnut zvuk, tvrd stomak, zadržan dah. Prava mera je **aktivna, ali tiha**:
+    rebra ostaju široka, stomak se sam polako uvlači, grlo ne radi ništa dodatno.
+
+    Praktične provere:
+
+    - Ruka na donjim rebrima: na pola fraze treba da su još prilično široka.
+    - Slušaj **poslednji ton**. Treba da bude na visini i jasan kao prvi. To aplikacija proverava ispod.
+    - Kad vazduh stvarno nestane, **stani**. Istiskivanje poslednjeg daška uči grlo da pomaže, a baš tu naviku izbegavamo.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-036-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-036-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: hands on the lower ribs; 3 slow hisses on 'sss', as long as is easy, ribs staying wide; then 3 quiet lip-trill sirens and lip trills on the scale with the piano."
+      sr: "Zagrevanje: ruke na donjim rebrima; 3 spora šištanja na „sss”, koliko je lako, rebra ostaju široka; pa 3 tihe sirene treperenjem usana i treperenje usnama na lestvici uz klavir."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-036-3
+    type: sing-pitch
+    prompt:
+      en: "One long note on 'oo', 8 seconds, quiet. The last two seconds as steady as the first: no sag, no squeeze."
+      sr: "Jedan dug ton na „u”, 8 sekundi, tiho. Poslednje dve sekunde mirne kao prve: bez padanja, bez stezanja."
+    notes: [A3]
+    sustain: 8
+    tolerance: 50
+    pass: 0.65
+  - id: V-036-4
+    type: sing-pitch
+    prompt:
+      en: "The same on 'ah', 10 seconds, on the note you hear. Stop early rather than squeezing at the end."
+      sr: "Isto na „a”, 10 sekundi, na tonu koji čuješ. Radije stani ranije nego da stežeš na kraju."
+    notes: [C4]
+    sustain: 10
+    tolerance: 50
+    pass: 0.65
+  - id: V-036-5
+    type: sing-phrase
+    prompt:
+      en: "A long descending line on 'la' (8 down to 1, then a held 1): the descent is where pitch sags, so keep the ribs wide all the way to the last note."
+      sr: "Duga silazna linija na „la” (od 8 do 1, pa zadržano 1): silazak je mesto gde visina pada, zato drži rebra široka do poslednjeg tona."
+    notes: [D5, C#5, B4, A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 4]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-036-6
+    type: sing-phrase
+    prompt:
+      en: "A 5-bar phrase on 'ah', one breath (about 12 seconds), ending low and long. Even air from the first note to the last."
+      sr: "Fraza od 5 taktova na „a”, jedan dah (oko 12 sekundi), sa niskim i dugim krajem. Ravnomeran dah od prvog do poslednjeg tona."
+    notes: [G4, E4, F4, G4, A4, G4, F4, E4, F4, D4, E4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 4]
+    tempo: 100
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-036-7
+    type: mcq
+    prompt:
+      en: "Near the end of long phrases your last notes go flat and creaky. Which is the best description of support to work on?"
+      sr: "Pri kraju dugih fraza poslednji tonovi su ti niski i škripavi. Koji opis oslonca je najbolji za rad?"
+    options:
+      - {en: "Keep the ribs wide so the air leaves slowly and evenly; stop before squeezing", sr: "Drži rebra široka da vazduh izlazi sporo i ravnomerno; stani pre stezanja"}
+      - {en: "Push harder from the belly on the last notes", sr: "Jače guraj iz stomaka na poslednjim tonovima"}
+      - {en: "Take the biggest breath you can before every phrase", sr: "Pre svake fraze udahni najviše što možeš"}
+    answer: 0
+  - id: V-036-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record the 5-bar phrase and listen to the last two notes only. Rate pitch and clarity against the first two. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi frazu od 5 taktova i slušaj samo poslednja dva tona. Oceni visinu i jasnoću u odnosu na prva dva. Pa 3 tiha pevušenja uz klizanje naniže."

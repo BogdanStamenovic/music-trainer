@@ -1,0 +1,120 @@
+id: E-028
+track: E
+order: 28
+title: {en: "Seventh chords in progressions (ii7–V7–Imaj7, vi7)", sr: "Septakordi u progresijama (ii7–V7–Imaj7, vi7)"}
+prereqs: [E-027, E-022]
+minutes: 14
+tags: [ear, harmony, progressions, sevenths, jazz]
+explain:
+  en: |
+    Add a seventh to every diatonic triad in a major key and you get a fixed pattern of qualities.
+    In C:
+
+    | I | ii | iii | IV | V | vi | vii |
+    |---|---|---|---|---|---|---|
+    | Cmaj7 | Dm7 | Em7 | Fmaj7 | G7 | Am7 | Bø7 |
+    | maj7 | m7 | m7 | maj7 | **7** | m7 | ø7 |
+
+    Two consequences you can use by ear:
+
+    1. **Only V7 is a dominant seventh.** If you hear that tense, bluesy "7" sound inside a major
+       key, it is V7 (or a borrowed chord, later). Imaj7 and IVmaj7 sound soft and dreamy; the m7
+       chords sound mellow.
+    2. **Chords whose roots are a third apart share three notes.** Am7 is A C E G and Cmaj7 is C E G B. So vi7 can
+       sound almost like I. **The bass decides**: A in the bass is vi7, C in the bass is I. When two
+       seventh chords sound alike, hum the bass.
+
+    The common jazz loop is the **turnaround I – vi – ii – V** with sevenths:
+    Cmaj7 – Am7 – Dm7 – G7. Its bass falls by fifths from A: A → D → G → C. Push it one step further
+    back and you get **iii – vi – ii – V – I** (E A D G C): every root a fifth below the previous one.
+    That chain of fifths is the backbone of countless standards.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGB] [A,,EGc] | [D,FAc] [G,,FBd] | [C,EGB]2 |]
+    ```
+
+    When you hear a progression of seventh chords, work as before: **bass first** (falling fifths or
+    steps?), then **quality** of each chord (maj7, m7 or 7), then name it.
+  sr: |
+    Dodaj septimu svakom kvintakordu u durskom tonalitetu i dobićeš stalan raspored vrsta. U C-duru:
+
+    | I | ii | iii | IV | V | vi | vii |
+    |---|---|---|---|---|---|---|
+    | Cmaj7 | Dm7 | Em7 | Fmaj7 | G7 | Am7 | Hø7 |
+    | maj7 | m7 | m7 | maj7 | **7** | m7 | ø7 |
+
+    Dve posledice koje možeš da koristiš po sluhu:
+
+    1. **Samo V7 je dominantni septakord.** Ako u durskom tonalitetu čuješ taj napeti, bluzerski
+       zvuk „7", to je V7 (ili pozajmljeni akord, kasnije). Imaj7 i IVmaj7 zvuče meko i sanjivo; m7
+       akordi zvuče blago.
+    2. **Akordi čiji su osnovni tonovi na razmaku terce dele tri tona.** Am7 je A C E G, a Cmaj7 je C E G H. Zato vi7 može da zvuči
+       skoro kao I. **Bas odlučuje**: A u basu je vi7, C u basu je I. Kad dva septakorda zvuče slično,
+       otpevuši bas.
+
+    Uobičajena džez petlja je **turnaround I – vi – ii – V** sa septimama:
+    Cmaj7 – Am7 – Dm7 – G7. Bas pada po kvintama od A: A → D → G → C. Pomeri je još jedan korak
+    unazad i dobijaš **iii – vi – ii – V – I** (E A D G C): svaki osnovni ton je kvintu ispod
+    prethodnog. Taj lanac kvinti je kičma bezbrojnih standarda.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGB] [A,,EGc] | [D,FAc] [G,,FBd] | [C,EGB]2 |]
+    ```
+
+    Kad čuješ progresiju septakorada, radi kao i do sada: **prvo bas** (kvinte naniže ili koraci?),
+    onda **vrsta** svakog akorda (maj7, m7 ili 7), onda ime.
+exercises:
+  - id: E-028-1
+    type: generated
+    prompt: {en: "Which turnaround? Follow the bass, then the colours.", sr: "Koji turnaround? Prati bas, pa boje."}
+    count: 8
+    gen: {kind: progression-ear, keys: [C, F, Bb, G], type: major, options: [[Imaj7, vi7, ii7, V7], [Imaj7, IVmaj7, ii7, V7], [Imaj7, vi7, IVmaj7, V7]], tempo: 56}
+    checks:
+      - roman: {key: C, degree: 1, is: "Imaj7", seventh: true}
+      - roman: {key: C, degree: 2, is: "ii7", seventh: true}
+      - roman: {key: C, degree: 3, is: "iii7", seventh: true}
+      - roman: {key: C, degree: 4, is: "IVmaj7", seventh: true}
+      - roman: {key: C, degree: 5, is: "V7", seventh: true}
+      - roman: {key: C, degree: 6, is: "vi7", seventh: true}
+      - roman: {key: C, degree: 7, is: "viiø7", seventh: true}
+      - chord: {notes: [A2, E4, G4, C5], root: A, quality: min7}
+      - chord: {notes: [C3, E4, G4, B4], root: C, quality: maj7}
+      - chord: {notes: [D3, F4, A4, C5], root: D, quality: min7}
+      - chord: {notes: [G2, F4, B4, D5], root: G, quality: "7"}
+      - interval: {from: A2, to: D3, is: P4}
+      - interval: {from: E3, to: A2, is: P5}
+  - id: E-028-2
+    type: generated
+    prompt: {en: "Falling fifths all the way, or not? Which progression?", sr: "Kvinte naniže sve vreme, ili ne? Koja progresija?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, F, G, D], type: major, options: [[iii7, vi7, ii7, V7, Imaj7], [Imaj7, vi7, ii7, V7, Imaj7], [IVmaj7, iii7, ii7, V7, Imaj7]], tempo: 56}
+  - id: E-028-3
+    type: generated
+    prompt: {en: "Soft or bluesy? Major sevenths, or dominant sevenths on I and IV?", sr: "Meko ili bluzerski? Velike septime, ili dominantne septime na I i IV?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[Imaj7, IVmaj7, Imaj7, V7], [I7, IV7, I7, V7]], tempo: 60}
+  - id: E-028-4
+    type: generated
+    prompt: {en: "vi7 or Imaj7? They share three notes; the bass decides.", sr: "vi7 ili Imaj7? Dele tri tona; bas odlučuje."}
+    count: 6
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, F, G, D], type: major, options: [[ii7, V7, vi7], [ii7, V7, Imaj7]], tempo: 56}
+  - id: E-028-5
+    type: generated
+    prompt: {en: "Bass of iii–vi–ii–V–I: a chain of falling fifths. Echo it.", sr: "Bas od iii–vi–ii–V–I: lanac kvinti naniže. Ponovi ga."}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, F, G, Bb], type: major, numerals: [iii, vi, ii, V, I], line: [iii, vi, ii, V, I], octave: 3, tempo: 72}
+  - id: E-028-6
+    type: generated
+    prompt: {en: "Hear it, then play it: the turnaround with sevenths", sr: "Čuj, pa odsviraj: turnaround sa septimama"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, Bb, Eb], type: major, numerals: [Imaj7, vi7, ii7, V7, Imaj7], echo: true, smooth: true}

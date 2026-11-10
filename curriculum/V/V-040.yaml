@@ -1,0 +1,145 @@
+id: V-040
+track: V
+order: 40
+title: {en: "Dynamics II: crescendo and decrescendo on a phrase (light)", sr: "Dinamika II: krešendo i dekrešendo na frazi (lagano)"}
+prereqs: [V-039, V-019]
+minutes: 11
+tags: [voice, support, dynamics]
+explain:
+  en: |
+    Lesson 19 changed volume on **one note**. Now the volume follows the **phrase**: a **crescendo** (*krešendo*, growing) toward the high point of a line
+    and a **decrescendo** (*dekrešendo*, fading) away from it. On the piano you shape a phrase like this without thinking; a melody sung at one flat volume sounds mechanical.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    !<(!D | G2 B/G/ | B2!<)! A | !>(!G2 E | D3!>)! |]
+    ```
+
+    Still **light**: the whole range today is **p to mf**. Nothing louder than lively conversation.
+
+    How a crescendo is made without pushing:
+
+    - **More breath energy, the throat unchanged.** The ribs stay wide, the air flow grows a little; the throat does not squeeze to make it louder.
+    - **More ring, not more size.** Brighten the vowel slightly (the "nay" feeling) instead of opening wider.
+    - A decrescendo is the reverse, and the harder half: as the air flow drops, the support must **stay on**, otherwise the tone goes breathy and flat.
+
+    The pitch traps, worth knowing before you start:
+
+    | while you... | the pitch tends to... | so... |
+    |---|---|---|
+    | crescendo | go **sharp** | think "wider", not "higher" |
+    | decrescendo | go **flat** | keep the ribs out, think the note slightly "up" |
+
+    The app grades the **pitch** through the changes; the shape of the dynamics is for your ear (and the recording).
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    19. lekcija je menjala jačinu na **jednom tonu**. Sada jačina prati **frazu**: **krešendo** (pojačavanje) ka vrhuncu linije
+    i **dekrešendo** (stišavanje) od njega. Na klaviru frazu oblikuješ ovako i ne razmišljajući; melodija otpevana jednom ravnom jačinom zvuči mehanički.
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    !<(!D | G2 B/G/ | B2!<)! A | !>(!G2 E | D3!>)! |]
+    ```
+
+    I dalje **lagano**: ceo raspon danas je **od p do mf**. Ništa glasnije od živog razgovora.
+
+    Kako se pravi krešendo bez guranja:
+
+    - **Više energije daha, grlo nepromenjeno.** Rebra ostaju široka, protok vazduha malo raste; grlo se ne steže da bi bilo glasnije.
+    - **Više zvonjenja, ne veći zvuk.** Malo posvetli samoglasnik (osećaj „nej”) umesto da otvaraš šire.
+    - Dekrešendo je obrnuto, i teža polovina: dok protok vazduha opada, oslonac mora da **ostane uključen**, inače ton postane dahtav i nizak.
+
+    Zamke za visinu, korisno je znati pre početka:
+
+    | dok... | visina obično... | zato... |
+    |---|---|---|
+    | pojačavaš | **raste** | misli „šire”, ne „više” |
+    | stišavaš | **pada** | drži rebra raširena, misli ton malo „naviše” |
+
+    Aplikacija ocenjuje **visinu** kroz promene; oblik dinamike procenjuje tvoje uho (i snimak).
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-040-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-040-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 2 slow hisses on 'sss' that grow and fade (p-mf-p), 3 quiet lip-trill sirens, then lip trills on the scale with the piano."
+      sr: "Zagrevanje: 2 spora šištanja na „sss” koja rastu i opadaju (p-mf-p), 3 tihe sirene treperenjem usana, pa treperenje usnama na lestvici uz klavir."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-040-3
+    type: sing-pitch
+    prompt:
+      en: "Decrescendo only: 'ah' at mf, fading to p over 6 seconds. The pitch must not sag as it gets softer."
+      sr: "Samo dekrešendo: „a” u mf, stišavanje do p tokom 6 sekundi. Visina ne sme da padne dok postaje tiše."
+    notes: [B3]
+    sustain: 6
+    tolerance: 50
+    pass: 0.65
+  - id: V-040-4
+    type: sing-phrase
+    prompt:
+      en: "Hairpin on a line: 1-2-3-4-5-6 on 'la' growing p to mf, then 5-4-3-2-1 fading back to p. The 6 is the peak; mf, not louder."
+      sr: "Krešendo i dekrešendo na liniji: 1-2-3-4-5-6 na „la” sa rastom od p do mf, pa 5-4-3-2-1 sa stišavanjem do p. 6 je vrhunac; mf, ne jače."
+    notes: [D4, E4, F#4, G4, A4, B4, A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 3]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: B4, is: M6}
+  - id: V-040-5
+    type: sing-phrase
+    prompt:
+      en: "'Amazing grace, how sweet the sound' (on 'la' or with words), shaped as written: grow toward 'grace', fade to 'sound'."
+      sr: "„Amazing grace, how sweet the sound” (na „la” ili sa rečima), oblikovano kako je zapisano: rast prema „grace”, stišavanje do „sound”."
+    notes: [D4, G4, B4, G4, B4, A4, G4, E4, D4]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 3]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: G, type: major-pentatonic, is: [G, A, B, D, E]}
+  - id: V-040-6
+    type: sing-phrase
+    prompt:
+      en: "'That saved a wretch like me': grow gently to the high D, then decrescendo on the held D. The fade happens on the top note, so keep the ribs wide and the D up."
+      sr: "„That saved a wretch like me”: blag rast do gornjeg D, pa dekrešendo na zadržanom D. Stišavanje je na gornjem tonu, zato drži rebra široka i D gore."
+    notes: [D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 5]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A4, to: D5, is: P4}
+  - id: V-040-7
+    type: mcq
+    prompt:
+      en: "During a decrescendo your pitch keeps drifting. In which direction does it usually go, and why?"
+      sr: "Tokom dekrešenda visina ti stalno klizi. Na koju stranu obično ide i zašto?"
+    options:
+      - {en: "Flat: the air flow drops and the support lets go with it", sr: "Naniže: protok vazduha opada, a oslonac popušta zajedno s njim"}
+      - {en: "Sharp: softer notes are naturally higher", sr: "Naviše: tiši tonovi su prirodno viši"}
+      - {en: "It does not move; only the volume changes", sr: "Ne pomera se; menja se samo jačina"}
+    answer: 0
+  - id: V-040-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record the 8 bars of 'Amazing Grace' with both hairpins and listen back. Rate: could you hear the shape, did it stay between p and mf, and did the held D stay on pitch while fading? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi 8 taktova „Amazing Grace” sa krešendom i dekrešendom i preslušaj. Oceni: da li se čuje oblik, da li je ostalo između p i mf, i da li je zadržano D ostalo na visini dok se stišavalo? Pa 3 tiha pevušenja uz klizanje naniže."

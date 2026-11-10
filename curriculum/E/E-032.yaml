@@ -1,0 +1,113 @@
+id: E-032
+track: E
+order: 32
+title: {en: "Pop progressions by ear (I–V–vi–IV family)", sr: "Pop progresije po sluhu (porodica I–V–vi–IV)"}
+prereqs: [E-031, E-016]
+minutes: 14
+tags: [ear, harmony, progressions, pop]
+explain:
+  en: |
+    I – V – vi – IV (in C: C G Am F) is the loop under a long list of hits: "Let It Be" (verse),
+    "With or Without You", "Don't Stop Believin'", "Someone Like You". You met it in E-016. This
+    lesson is about its **family**: the same four chords in another order, small substitutions, and
+    one borrowed chord.
+
+    **1. Rotations.** A loop has no fixed start. Start the same cycle on a different chord and the
+    mood changes:
+
+    | start | in C | feel | example |
+    |---|---|---|---|
+    | I – V – vi – IV | C G Am F | bright, anthem | "Let It Be" verse |
+    | vi – IV – I – V | Am F C G | sadder, minor-sounding | "Zombie" (Em C G D in G) |
+    | IV – I – V – vi | F C G Am | floating, never quite home | |
+
+    To tell the rotations apart, ask **which chord sounds like home** and where it falls. In
+    vi – IV – I – V the home chord is third, so the loop sounds like it starts away from home.
+
+    **2. Inversions in pop.** I – **V6** – vi – IV puts B in the bass: the bass walks C B A, then
+    jumps to F. Pianists and bass players do this all the time.
+
+    **3. The borrowed ♭VII.** In C, B♭ major is not in the key, but rock uses it constantly:
+    I – ♭VII – IV – I (C B♭ F C), as in the coda of "Hey Jude" or the opening of "Sweet Child o'
+    Mine" (D C G D in D). It sounds like a major-key song with a bluesy, Mixolydian tilt. The bass
+    falls a whole step from 1, where V would leap down a fourth.
+
+    How to listen: **bass first** (hum it), **then find the minor chord** (vi is the only one in the
+    loop), **then home**: which chord could end the song?
+  sr: |
+    I – V – vi – IV (u C-duru: C G a F) je petlja ispod dugog spiska hitova: „Let It Be" (strofa),
+    „With or Without You", „Don't Stop Believin'", „Someone Like You". Upoznao si je u E-016. Ova
+    lekcija je o njenoj **porodici**: ista četiri akorda drugim redom, male zamene i jedan pozajmljeni
+    akord.
+
+    **1. Rotacije.** Petlja nema stalan početak. Počni isti krug na drugom akordu i raspoloženje se
+    menja:
+
+    | početak | u C-duru | osećaj | primer |
+    |---|---|---|---|
+    | I – V – vi – IV | C G a F | svetlo, himna | „Let It Be", strofa |
+    | vi – IV – I – V | a F C G | tužnije, zvuči molski | „Zombie" (e C G D u G-duru) |
+    | IV – I – V – vi | F C G a | lebdi, nikad sasvim kod kuće | |
+
+    Da razlikuješ rotacije, pitaj **koji akord zvuči kao kuća** i gde pada. U vi – IV – I – V kućni
+    akord je treći, pa petlja zvuči kao da počinje daleko od kuće.
+
+    **2. Obrtaji u popu.** I – **V6** – vi – IV stavlja H u bas: bas hoda C H A, pa skače na F.
+    Pijanisti i basisti to rade stalno.
+
+    **3. Pozajmljeni ♭VII.** U C-duru B-dur nije u tonalitetu, ali ga rok stalno koristi:
+    I – ♭VII – IV – I (C B F C), kao u kodi „Hey Jude" ili na početku „Sweet Child o' Mine" (D C G D
+    u D-duru). Zvuči kao durska pesma sa bluzerskim, miksolidijskim nagibom. Bas pada za ceo stepen
+    od 1, tamo gde bi V skočio kvartu naniže.
+
+    Kako da slušaš: **prvo bas** (otpevuši ga), **onda nađi molski akord** (vi je jedini u petlji),
+    **onda kuću**: kojim akordom bi pesma mogla da se završi?
+exercises:
+  - id: E-032-1
+    type: generated
+    prompt: {en: "Same four chords, different start: which rotation?", sr: "Ista četiri akorda, drugi početak: koja rotacija?"}
+    count: 8
+    gen: {kind: progression-ear, keys: [C, G, D, A, F], type: major, options: [[I, V, vi, IV], [vi, IV, I, V], [IV, I, V, vi], [V, vi, IV, I]], tempo: 72}
+    checks:
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: G, degree: 6, is: "vi"}
+      - chord: {notes: [B2, D4, G4], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [Bb2, D4, F4], root: Bb, quality: maj}
+      - chord: {notes: [D3, F#3, A3], root: D, quality: maj}
+      - chord: {notes: [C3, E3, G3], root: C, quality: maj}
+      - interval: {from: C3, to: Bb3, is: m7}
+      - interval: {from: Bb2, to: C3, is: M2}
+  - id: E-032-2
+    type: generated
+    prompt: {en: "Root-position V, V6 (walking bass) or iii?", sr: "V u osnovnom položaju, V6 (bas hoda) ili iii?"}
+    count: 6
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, D, F], type: major, options: [[I, V, vi, IV], [I, V6, vi, IV], [I, iii, vi, IV]], tempo: 66}
+  - id: E-032-3
+    type: generated
+    prompt: {en: "V or the borrowed ♭VII?", sr: "V ili pozajmljeni ♭VII?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, D, A, E], type: major, options: [[I, bVII, IV, I], [I, V, IV, I]], tempo: 66}
+  - id: E-032-4
+    type: generated
+    prompt: {en: "Where is the minor chord, and where is home?", sr: "Gde je molski akord, a gde kuća?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, D, F, Bb], type: major, options: [[I, IV, vi, V], [I, vi, IV, V], [I, IV, V, vi], [IV, vi, V, I]], tempo: 72}
+  - id: E-032-5
+    type: generated
+    prompt: {en: "Bass of the sad rotation vi–IV–I–V: echo it", sr: "Bas tužne rotacije vi–IV–I–V: ponovi ga"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [G, D, A, E, C], type: major, numerals: [vi, IV, I, V], line: [vi, IV, I, V, vi], octave: 3, tempo: 80}
+  - id: E-032-6
+    type: generated
+    prompt: {en: "Hear it, then play it (voice-led, as a pianist would): vi–IV–I–V", sr: "Čuj, pa odsviraj (sa vođenjem glasova, kako bi pijanista): vi–IV–I–V"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [E, A, D, Eb], type: major, numerals: [vi, IV, I, V], echo: true, smooth: true}
+  - id: E-032-7
+    type: practice
+    prompt: {en: "Pick two songs you know that use these loops. Play each loop under the melody you sing or hum, by ear, in the song's key if you can find it. Which rotation is each song?", sr: "Izaberi dve pesme koje znaš, a koriste ove petlje. Sviraj petlju ispod melodije koju pevaš ili pevušiš, po sluhu, u tonalitetu pesme ako ga nađeš. Koja rotacija je koja pesma?"}
+    minutes: 4

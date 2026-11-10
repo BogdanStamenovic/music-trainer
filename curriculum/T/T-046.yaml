@@ -1,0 +1,172 @@
+id: T-046
+track: T
+order: 46
+prereqs: [T-045]
+title: {en: "Spotting tonicization: accidentals as clues", sr: "Prepoznavanje tonikalizacije: predznaci kao tragovi"}
+minutes: 12
+tags: [harmony, chromatic, analysis]
+explain:
+  en: |
+    When you read a piece, an accidental that is not in the key signature is the fastest way to find a tonicization. Two questions:
+
+    1. **Raised note?** (♯, or ♮ on a flat) It is probably a **temporary leading tone**. The target's root is a **half step above** it.
+    2. **Lowered note?** (♭, or ♮ on a sharp) It is probably a **7th falling** to its target, most often the 7th of **V7/IV**.
+
+    Then confirm with the chord around it: a major triad or dominant 7th a **5th above** the target (V/X), or a diminished chord a **half step below** it (vii°/X), followed by the target.
+
+    | accidental in C major | temporary leading tone of | likely chord | target |
+    |---|---|---|---|
+    | F♯ | G | V/V, vii°/V | V |
+    | C♯ | D | V/ii | ii |
+    | G♯ | A | V/vi | vi |
+    | D♯ | E | V/iii | iii |
+    | B♭ | (7th of C7) | V7/IV | IV |
+
+    Two cautions:
+    - **In minor, the raised 7th is not a tonicization.** G♯ in A minor is just the normal leading tone of V and vii°7; an ascending F♯ can be melodic minor. Look for accidentals *beyond* those.
+    - A chromatic **passing or neighbour tone** (a quick note on a weak beat) is decoration, not a new chord. Tonicization needs a chord.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    V:1
+    B2 c2 | ^c2 d2 | B c A2 | G4 |]
+    V:2 clef=bass
+    G,2 E,2 | A,2 D,2 | G,, A,, D,2 | G,,4 |]
+    ```
+
+    G major: in bar 2 the C♯ over A is the leading tone of D, so A C♯ (E) is V/V, resolving to V.
+  sr: |
+    Kad čitaš kompoziciju, predznak koga nema u predznaku tonaliteta je najbrži put do tonikalizacije. Dva pitanja:
+
+    1. **Povišen ton?** (♯, ili ♮ na sniženom tonu) Verovatno je **privremena vođica**. Osnovni ton cilja je **polustepen iznad** njega.
+    2. **Snižen ton?** (♭, ili ♮ na povišenom tonu) Verovatno je **septima koja silazi** ka cilju, najčešće septima od **V7/IV**.
+
+    Zatim potvrdi akordom oko njega: durski trozvuk ili dominantni septakord **kvintu iznad** cilja (V/X), ili smanjeni akord **polustepen ispod** cilja (vii°/X), a posle toga cilj.
+
+    | predznak u C-duru | privremena vođica ka | verovatan akord | cilj |
+    |---|---|---|---|
+    | Fis | G | V/V, vii°/V | V |
+    | Cis | D | V/ii | ii |
+    | Gis | A | V/vi | vi |
+    | Dis | E | V/iii | iii |
+    | B | (septima C7) | V7/IV | IV |
+
+    Dva upozorenja:
+    - **U molu povišeni 7. stupanj nije tonikalizacija.** Gis u a-molu je obična vođica u V i vii°7; Fis naviše može biti melodijski mol. Traži predznake *pored* tih.
+    - Hromatska **prolaznica ili skretnica** (brz ton na slaboj dobi) je ukras, ne novi akord. Za tonikalizaciju je potreban akord.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    V:1
+    B2 c2 | ^c2 d2 | B c A2 | G4 |]
+    V:2 clef=bass
+    G,2 E,2 | A,2 D,2 | G,, A,, D,2 | G,,4 |]
+    ```
+
+    G-dur: u 2. taktu Cis nad A je vođica ka D, pa je A Cis (E) V/V koja se razrešava u V.
+exercises:
+  - id: T-046-1
+    type: mcq
+    prompt: {en: "In C major a C♯ appears in a chord. Which chord is most likely being tonicized?", sr: "U C-duru se u akordu pojavi Cis. Koji akord se najverovatnije tonikalizuje?"}
+    options:
+      - {en: "ii (D minor)", sr: "ii (d-mol)"}
+      - {en: "vi (A minor)", sr: "vi (a-mol)"}
+      - {en: "V (G major)", sr: "V (G-dur)"}
+      - {en: "IV (F major)", sr: "IV (F-dur)"}
+    answer: 0
+    checks:
+      - interval: {from: C#4, to: D4, is: m2}
+      - chord: {notes: [A3, C#4, E4], root: A, quality: maj}
+      - numeral: {key: C, is: V/ii, notes: [A3, C#4, E4]}
+  - id: T-046-2
+    type: mcq
+    prompt: {en: "In C major a G♯ appears in a chord. Which chord is most likely being tonicized?", sr: "U C-duru se u akordu pojavi Gis. Koji akord se najverovatnije tonikalizuje?"}
+    options:
+      - {en: "vi (A minor)", sr: "vi (a-mol)"}
+      - {en: "V (G major)", sr: "V (G-dur)"}
+      - {en: "iii (E minor)", sr: "iii (e-mol)"}
+      - {en: "ii (D minor)", sr: "ii (d-mol)"}
+    answer: 0
+    checks:
+      - interval: {from: G#4, to: A4, is: m2}
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj}
+      - numeral: {key: C, is: V/vi, notes: [E4, G#4, B4]}
+  - id: T-046-3
+    type: mcq
+    prompt: {en: "In C major a B♭ appears in a C E G B♭ chord. What is happening?", sr: "U C-duru se pojavi B u akordu C E G B. Šta se dešava?"}
+    options:
+      - {en: "V7/IV: IV (F major) is being tonicized; B♭ falls to A", sr: "V7/IV: tonikalizuje se IV (F-dur); B silazi na A"}
+      - {en: "V/V: B♭ rises to B", sr: "V/V: B ide naviše na H"}
+      - {en: "The key changed to C minor", sr: "Tonalitet je promenjen u c-mol"}
+      - {en: "vii°7/vi", sr: "vii°7/vi"}
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - numeral: {key: C, is: V7/IV, notes: [C4, E4, G4, Bb4]}
+  - id: T-046-4
+    type: mcq
+    prompt: {en: "In A minor, an E G♯ B chord goes to A minor. Is this a tonicization?", sr: "U a-molu, akord E Gis H ide u a-mol. Da li je to tonikalizacija?"}
+    options:
+      - {en: "No: G♯ is the normal raised 7th of the minor key, this is plain V – i", sr: "Ne: Gis je običan povišen 7. stupanj mola, ovo je obično V – i"}
+      - {en: "Yes, V/vi", sr: "Da, V/vi"}
+      - {en: "Yes, V/V", sr: "Da, V/V"}
+    answer: 0
+    checks:
+      - chord: {notes: [E3, G#3, B3], root: E, quality: maj}
+  - id: T-046-5
+    type: mcq
+    prompt: {en: "G major, bar 2: the bass has A and the soprano C♯. What chord is tonicized?", sr: "G-dur, 2. takt: bas ima A, a sopran Cis. Koji akord se tonikalizuje?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:G
+      V:1
+      B2 c2 | ^c2 d2 | B c A2 | G4 |]
+      V:2 clef=bass
+      G,2 E,2 | A,2 D,2 | G,, A,, D,2 | G,,4 |]
+    options:
+      - {en: "V (D major), with V/V", sr: "V (D-dur), sa V/V"}
+      - {en: "ii (A minor), with V/ii", sr: "ii (a-mol), sa V/ii"}
+      - {en: "vi (E minor), with V/vi", sr: "vi (e-mol), sa V/vi"}
+      - {en: "IV (C major), with V7/IV", sr: "IV (C-dur), sa V7/IV"}
+    answer: 0
+    checks:
+      - chord: {notes: [A3, C#4, E4], root: A, quality: maj}
+      - interval: {from: C#5, to: D5, is: m2}
+      - numeral: {key: G, is: V/V, notes: [A3, C#4, E4]}
+  - id: T-046-6
+    type: mcq
+    prompt: {en: "In F major the chord D F♯ A C appears. What is it?", sr: "U F-duru se pojavi akord D Fis A C. Šta je to?"}
+    options: ["V7/ii", "V7/V", "V7/vi", "vii°7/V"]
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F#4, A4, C5], root: D, quality: "7"}
+      - roman: {key: F, type: major, degree: 2, is: ii}
+      - interval: {from: F#4, to: G4, is: m2}
+      - numeral: {key: F, is: V7/ii, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: F, is: V7/V, notes: [G4, B4, D5, F5]}
+      - numeral: {key: F, is: V7/vi, notes: [A4, C#5, E5, G5]}
+      - numeral: {key: F, is: "vii°7/V", notes: [B3, D4, F4, Ab4]}
+  - id: T-046-7
+    type: mcq
+    prompt: {en: "In F major a B♮ appears in a G B D chord that goes to C major. What is it?", sr: "U F-duru se pojavi H u akordu G H D koji ide u C-dur. Šta je to?"}
+    options: ["V/V", "V/ii", "vii°/vi", "IV"]
+    answer: 0
+    checks:
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj}
+      - roman: {key: F, type: major, degree: 5, is: V}
+      - numeral: {key: F, is: V/V, notes: [G3, B3, D4]}
+      - numeral: {key: F, is: V/ii, notes: [D4, F#4, A4]}
+      - numeral: {key: F, is: "vii°/vi", notes: [C#4, E4, G4]}
+  - id: T-046-8
+    type: generated
+    count: 4
+    prompt: {en: "Which chord is tonicized? Listen for the chord after the chromatic one.", sr: "Koji akord se tonikalizuje? Slušaj akord posle hromatskog."}
+    gen: {kind: progression-ear, keys: [C, G], options: [[I, V/ii, ii, V, I], [I, V/vi, vi, V, I], [I, V/V, V, I], [I, V7/IV, IV, V, I]], tempo: 60}

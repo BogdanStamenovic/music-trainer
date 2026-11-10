@@ -1,0 +1,136 @@
+id: E-024
+track: E
+order: 24
+title: {en: "Cadence types by ear (authentic, half, plagal, deceptive)", sr: "Vrste kadenci po sluhu (autentična, polukadenca, plagalna, varljiva)"}
+prereqs: [E-023, E-020, T-042]
+minutes: 14
+tags: [ear, harmony, cadences]
+explain:
+  en: |
+    A cadence is the punctuation at the end of a phrase. There are four, and you can tell them
+    apart by asking two questions about the **last two chords**:
+
+    1. **Is the last chord I (or i)?** If not, the phrase is open.
+    2. **What came right before it?** Hum the bass of the last two chords.
+
+    | cadence | last two chords | bass | sounds like |
+    |---|---|---|---|
+    | **authentic** | V – I | 5 → 1 (leap) | full stop |
+    | **plagal** | IV – I | 4 → 1 | "amen": a soft, settled ending, often after an authentic one |
+    | **half** | anything – V | ends on 5 | comma, a question; the music must go on |
+    | **deceptive** | V – vi | 5 → 6 (step up) | you expect home, you get a minor chord |
+
+    The deceptive cadence is easiest to catch with the bass: after V the bass should leap to 1, and
+    instead it **steps up**. In minor the same move is V – VI, and the surprise chord is major.
+
+    The authentic cadence has two strengths. If both chords are in root position and the **top
+    note ends on the tonic**, it is a **perfect authentic cadence**: the most final sound in tonal
+    music. If the melody ends on 3 or 5, it is **imperfect**: still V – I, but it sounds like it could
+    continue.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [F,FAc] [G,,DGB] [C,EGc] || [C,Gce] [F,Acf] [G,,GBd] [C,Gce] |]
+    ```
+
+    Same chords twice: first the melody ends on C (perfect), then on E (imperfect). Listen to the
+    top line only, and to how "closed" the last chord feels.
+
+    A common move in real music: the phrase ends **deceptively**, then repeats its last bars and
+    ends **authentically**. The deceptive cadence buys a few more bars before the real ending.
+  sr: |
+    Kadenca je interpunkcija na kraju fraze. Ima ih četiri, a razlikuješ ih pomoću dva pitanja o
+    **poslednja dva akorda**:
+
+    1. **Da li je poslednji akord I (ili i)?** Ako nije, fraza je otvorena.
+    2. **Šta je bilo neposredno pre njega?** Otpevuši bas poslednja dva akorda.
+
+    | kadenca | poslednja dva akorda | bas | zvuči kao |
+    |---|---|---|---|
+    | **autentična** | V – I | 5 → 1 (skok) | tačka |
+    | **plagalna** | IV – I | 4 → 1 | „amin": mek, smiren završetak, često posle autentične |
+    | **polukadenca** | bilo šta – V | završava na 5 | zarez, pitanje; muzika mora dalje |
+    | **varljiva** | V – vi | 5 → 6 (korak naviše) | očekuješ kuću, a dobiješ molski akord |
+
+    Varljivu kadencu je najlakše uhvatiti po basu: posle V bas bi trebalo da skoči na 1, a umesto
+    toga **ide korakom naviše**. U molu je isti pokret V – VI, a iznenađujući akord je durski.
+
+    Autentična kadenca ima dve jačine. Ako su oba akorda u osnovnom položaju i **gornji ton se
+    završava na tonici**, to je **savršena autentična kadenca**: najkonačniji zvuk u tonalnoj muzici.
+    Ako se melodija završava na 3 ili 5, kadenca je **nesavršena**: i dalje V – I, ali zvuči kao da
+    bi mogla da se nastavi.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C,EGc] [F,FAc] [G,,DGB] [C,EGc] || [C,Gce] [F,Acf] [G,,GBd] [C,Gce] |]
+    ```
+
+    Isti akordi dvaput: prvo se melodija završava na C (savršena), pa na E (nesavršena). Slušaj
+    samo gornju liniju i koliko je poslednji akord „zatvoren".
+
+    Čest pokret u pravoj muzici: fraza se završi **varljivo**, pa ponovi poslednje taktove i završi
+    se **autentično**. Varljiva kadenca kupuje još nekoliko taktova pre pravog kraja.
+exercises:
+  - id: E-024-1
+    type: generated
+    prompt: {en: "Which ending? Authentic (V–I), half (…–V), plagal (IV–I) or deceptive (V–vi).", sr: "Koji završetak? Autentična (V–I), polukadenca (…–V), plagalna (IV–I) ili varljiva (V–vi)."}
+    count: 8
+    gen: {kind: progression-ear, keys: [C, G, F, D, Bb], type: major, options: [[I, ii, V, I], [I, vi, ii, V], [I, vi, IV, I], [I, ii, V, vi]], tempo: 60}
+    checks:
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+      - roman: {key: A, type: harmonic-minor, degree: 6, is: "VI"}
+      - interval: {from: G2, to: C3, is: P4}
+      - interval: {from: G3, to: A3, is: M2}
+      - interval: {from: E3, to: F3, is: m2}
+  - id: E-024-2
+    type: generated
+    prompt: {en: "In minor: authentic, deceptive (V–VI), half or plagal (iv–i)?", sr: "U molu: autentična, varljiva (V–VI), polukadenca ili plagalna (iv–i)?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [A, D, E, C], type: harmonic-minor, options: [[i, iv, V, i], [i, iv, V, VI], [i, VI, iv, V], [i, VI, iv, i]], tempo: 60}
+  - id: E-024-3
+    type: mcq
+    prompt: {en: "C major, I–IV–V–I. Listen to the top note of the last chord: which authentic cadence is it?", sr: "C-dur, I–IV–V–I. Slušaj gornji ton poslednjeg akorda: koja je ovo autentična kadenca?"}
+    options:
+      - {en: "Perfect authentic: the melody ends on the tonic", sr: "Savršena autentična: melodija se završava na tonici"}
+      - {en: "Imperfect authentic: the melody ends on 3 or 5", sr: "Nesavršena autentična: melodija se završava na 3 ili 5"}
+    answer: 0
+    play:
+      chords: [[C3, E4, G4, C5], [F3, F4, A4, C5], [G2, D4, G4, B4], [C3, E4, G4, C5]]
+      tempo: 60
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [F3, F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G2, D4, G4, B4], root: G, quality: maj}
+  - id: E-024-4
+    type: mcq
+    prompt: {en: "Same chords, new voicing. Which authentic cadence is it now?", sr: "Isti akordi, drugi raspored. Koja je autentična kadenca sada?"}
+    options:
+      - {en: "Perfect authentic: the melody ends on the tonic", sr: "Savršena autentična: melodija se završava na tonici"}
+      - {en: "Imperfect authentic: the melody ends on 3 or 5", sr: "Nesavršena autentična: melodija se završava na 3 ili 5"}
+    answer: 1
+    play:
+      chords: [[C3, G4, C5, E5], [F3, A4, C5, F5], [G2, G4, B4, D5], [C3, G4, C5, E5]]
+      tempo: 60
+    checks:
+      - chord: {notes: [C3, G4, C5, E5], root: C, quality: maj}
+      - chord: {notes: [F3, A4, C5, F5], root: F, quality: maj}
+      - chord: {notes: [G2, G4, B4, D5], root: G, quality: maj}
+  - id: E-024-5
+    type: generated
+    prompt: {en: "With V7: which ending?", sr: "Sa V7: koji završetak?"}
+    count: 6
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, Eb], type: major, options: [[IV, V7, I], [IV, V7, vi], [ii, IV, V], [V7, IV, I]], tempo: 60}
+  - id: E-024-6
+    type: generated
+    prompt: {en: "Hear it, then play it: a deceptive cadence, then the phrase tries again and ends authentically", sr: "Čuj, pa odsviraj: varljiva kadenca, pa fraza pokuša ponovo i završi se autentično"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, F, D], type: major, numerals: [I, IV, V, vi, IV, V, I], echo: true, smooth: true}

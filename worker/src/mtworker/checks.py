@@ -282,8 +282,9 @@ def check_cadence(piece: Piece, req: dict) -> dict:
 
 
 def _half_cadence_bars(n_bars: int) -> list[int]:
-    """Where antecedent phrases end: bar 4 of an 8-bar period; bars 4 and 12 of a 16-bar
-    double period (bar 8 there is the first period's full close, not a half cadence)."""
+    """Where antecedent phrases end: bar 4 of an 8-bar period; bars 4 and 12 of 16 bars.
+    Bar 8 of 16 is not graded: it is a half cadence in a classical double period but the
+    full close of the first period when two periods are simply put side by side."""
     if n_bars >= 16 and n_bars % 8 == 0:
         return [b for b in range(4, n_bars, 8)]
     return [n_bars // 2]

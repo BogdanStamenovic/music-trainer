@@ -1,0 +1,150 @@
+id: T-049
+track: T
+order: 49
+prereqs: [T-048]
+title: {en: "Harmonizing a soprano melody in four parts", sr: "Harmonizacija soprana u četvoroglasnom stavu"}
+minutes: 15
+tags: [harmony, four-part]
+explain:
+  en: |
+    In T-032 you chose chords for a melody. Now the melody is the **soprano** of a four-part texture, and the chords have to be voice-led. Work in this order; each step narrows the next:
+
+    1. **Harmonic rhythm.** One chord per melody note (chorale style) or fewer.
+    2. **The cadence first.** Decide the last two or three chords: melody 2 → 1 or 7 → 1 wants V → I; melody 3 – 2 – 1 fits I64 – V – I.
+    3. **Options per note.** For each soprano note list the chords that contain it (you did this in T-032).
+    4. **The bass.** Pick from those options so that the bass is a good line of its own and moves **against the soprano**. Use inversions (V6, I6, ii6) to make the bass step instead of leap. Check soprano against bass for parallel 5ths and octaves **now**: they are the pair everyone hears.
+    5. **Fill alto and tenor.** Hold common tones, move by the nearest step, double the root (in 6 chords: not the leading tone; in 6/4: the bass), keep the spacing.
+    6. **Check** every pair of voices for parallels and every chord for range and spacing.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Gd] [Ge] [Af] | "_I64"[Ge] "_V"[Gd] "_I"[Gc]2 |]
+    V:2 clef=bass
+    [C,E] "_V6"[B,,D] [C,C] [F,C] | [G,C] [G,B,] [C,E]2 |]
+    ```
+
+    Soprano C D E F | E D C. Bass C – B – C – F | G – G – C, contrary to the soprano at the start; the ending is a cadential 6/4. The alto holds G throughout, except for A in IV: G is the common tone of I, V6, V and I64.
+  sr: |
+    U T-032 si birao akorde za melodiju. Sada je melodija **sopran** četvoroglasnog stava, a akordi moraju biti povezani dobrim vođenjem glasova. Radi ovim redom; svaki korak sužava sledeći:
+
+    1. **Harmonski ritam.** Jedan akord po tonu melodije (koralni stil) ili ređe.
+    2. **Prvo kadenca.** Odluči poslednja dva ili tri akorda: melodija 2 → 1 ili 7 → 1 traži V → I; melodija 3 – 2 – 1 odgovara I64 – V – I.
+    3. **Mogućnosti za svaki ton.** Za svaki ton soprana nabroj akorde koji ga sadrže (to si radio u T-032).
+    4. **Bas.** Biraj među tim mogućnostima tako da bas bude dobra linija za sebe i da se kreće **suprotno od soprana**. Koristi obrtaje (V6, I6, ii6) da bi bas išao za stupanj umesto skokom. Proveri sopran i bas na paralelne kvinte i oktave **odmah**: to je par koji svi čuju.
+    5. **Popuni alt i tenor.** Zadrži zajedničke tonove, kreći se najbližim korakom, udvoji osnovni ton (u sekstakordu: ne vođicu; u kvartsekstakordu: bas), pazi na razmak.
+    6. **Proveri** svaki par glasova na paralele i svaki akord na opseg i razmak.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Gd] [Ge] [Af] | "_I64"[Ge] "_V"[Gd] "_I"[Gc]2 |]
+    V:2 clef=bass
+    [C,E] "_V6"[B,,D] [C,C] [F,C] | [G,C] [G,B,] [C,E]2 |]
+    ```
+
+    Sopran C D E F | E D C. Bas C – H – C – F | G – G – C, na početku suprotno od soprana; kraj je kadencirajući kvartsekstakord. Alt drži G kroz celu frazu, osim A u IV: G je zajednički ton za I, V6, V i I64.
+exercises:
+  - id: T-049-1
+    type: mcq
+    prompt: {en: "You are given a soprano to harmonize. After choosing the harmonic rhythm, what do you decide first?", sr: "Dobio si sopran za harmonizaciju. Posle izbora harmonskog ritma, šta odlučuješ prvo?"}
+    options:
+      - {en: "The cadence: the last two or three chords", sr: "Kadencu: poslednja dva ili tri akorda"}
+      - {en: "The alto line", sr: "Liniju alta"}
+      - {en: "The first chord's tenor note", sr: "Ton tenora u prvom akordu"}
+      - {en: "Which notes to double in every chord", sr: "Koje tonove udvojiti u svakom akordu"}
+    answer: 0
+  - id: T-049-2
+    type: mcq
+    prompt: {en: "The soprano ends E – D – C (3 – 2 – 1) in C major, with the bass on G for the first two notes. Which chords?", sr: "Sopran se završava sa E – D – C (3 – 2 – 1) u C-duru, sa basom na G za prva dva tona. Koji akordi?"}
+    options: ["I64 – V – I", "I – V – I", "IV – V – I", "vi – V – I"]
+    answer: 0
+    checks:
+      - chord: {notes: [G3, C4, G4, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: [G3, B3, G4, D5], root: G, quality: maj}
+  - id: T-049-3
+    type: mcq
+    prompt: {en: "Spot the error in this outer-voice frame (soprano over bass).", sr: "Pronađi grešku u ovom okviru spoljnih glasova (sopran nad basom)."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      c d e d | c4 |]
+      V:2 clef=bass
+      C, D, C, G,, | C,4 |]
+    options:
+      - {en: "Parallel octaves: the bass doubles the soprano C – D", sr: "Paralelne oktave: bas udvaja sopran C – D"}
+      - {en: "The cadence is plagal", sr: "Kadenca je plagalna"}
+      - {en: "The bass leaps too much", sr: "Bas previše skače"}
+      - {en: "Nothing, it is correct", sr: "Ništa, ispravno je"}
+    answer: 0
+    checks:
+      - interval: {from: C3, to: C5, is: P15}
+      - interval: {from: D3, to: D5, is: P15}
+  - id: T-049-4
+    type: midi-play
+    prompt: {en: "Play the four-part harmonization from the explanation exactly as written.", sr: "Odsviraj četvoroglasnu harmonizaciju iz objašnjenja tačno kako je napisana."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [Gc] [Gd] [Ge] [Af] | [Ge] [Gd] [Gc]2 |]
+      V:2 clef=bass
+      [C,E] [B,,D] [C,C] [F,C] | [G,C] [G,B,] [C,E]2 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [B2, D4, G4, D5], [C3, C4, G4, E5], [F3, C4, A4, F5], [G3, C4, G4, E5], [G3, B3, G4, D5], [C3, E4, G4, C5]]
+    checks:
+      - chord: {notes: [C3, E4, G4, C5], root: C, quality: maj}
+      - chord: {notes: [B2, D4, G4, D5], root: G, quality: maj, inversion: 1}
+      - chord: {notes: [C3, C4, G4, E5], root: C, quality: maj}
+      - chord: {notes: [F3, C4, A4, F5], root: F, quality: maj}
+      - chord: {notes: [G3, C4, G4, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: [G3, B3, G4, D5], root: G, quality: maj}
+  - id: T-049-5
+    type: compose
+    prompt: {en: "G major. Write the bass (voice 2) under this soprano, one half note per soprano note. Use root position and first inversion (V6 is good under A). Contrary motion where you can, no parallel 5ths or octaves, end with the bass D → G.", sr: "G-dur. Napiši bas (2. glas) ispod ovog soprana, jedna polovina po tonu soprana. Koristi osnovni položaj i sekstakord (V6 dobro ide ispod A). Suprotno kretanje gde god možeš, bez paralelnih kvinti i oktava, završi basom D → G."}
+    key: G major
+    meter: "4/4"
+    bars: 4
+    voices: 2
+    rules: [bars, key, cadence, parallels]
+    given: |
+      X:1
+      M:4/4
+      L:1/4
+      K:G
+      V:1
+      B2 A2 | G2 c2 | B2 A2 | G4 |]
+      V:2 clef=bass
+      z4 | z4 | z4 | z4 |]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:G
+      V:1
+      B2 A2 | G2 c2 | B2 A2 | G4 |]
+      V:2 clef=bass
+      G,2 F,2 | G,2 E,2 | G,2 D,2 | G,,4 |]
+    checks:
+      - chord: {notes: [F#3, A3, D4], root: D, quality: maj, inversion: 1}
+      - chord: {notes: [E3, G3, C4], root: C, quality: maj, inversion: 1}
+  - id: T-049-6
+    type: mcq
+    prompt: {en: "G major: the soprano has C and the bass has A under it. Which chord is that?", sr: "G-dur: sopran ima C, a bas ispod njega A. Koji je to akord?"}
+    options: ["ii (A C E)", "IV (C E G)", {en: "vi (E G B)", sr: "vi (E G H)"}, {en: "V (D F♯ A)", sr: "V (D Fis A)"}]
+    answer: 0
+    checks:
+      - roman: {key: G, type: major, degree: 2, is: ii}
+      - chord: {notes: [A3, C4, E4], root: A, quality: min}

@@ -1,0 +1,143 @@
+id: V-039
+track: V
+order: 39
+title: {en: "Song phrase III (8 bars)", sr: "Fraza iz pesme III (8 taktova)"}
+prereqs: [V-038, V-027]
+minutes: 12
+tags: [voice, song]
+explain:
+  en: |
+    The first half of **"Amazing Grace"**: words by John Newton (1779), sung to the American tune *New Britain* (1829). Both are public domain.
+
+    ```abc
+    X:1
+    T:Amazing Grace (first half)
+    M:3/4
+    L:1/4
+    Q:1/4=88
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 D | G2 B/G/ | B2 A | d3- | d2 |]
+    w:A-ma-zing_ grace how sweet the sound that saved a_ wretch like me! _
+    ```
+
+    What is new compared with "Frère Jacques" and "Twinkle":
+
+    - **3/4 time.** One strong beat and two light ones per bar. The long notes (half notes) fall on the strong beat; let the bar swing, do not punch beat 2 and 3.
+    - A **pickup** (*predtakt*): the phrase starts on beat 3 with "A-", leaning into the downbeat "-ma-". Same again with "that" before "saved".
+    - A **melisma**: one syllable over two notes. "-zing" is sung on B then G, and so is "a" before "wretch". Keep the vowel going through both notes; do not re-start it.
+      Your agility lessons pay off here: this is a tiny run.
+    - A **wide range**: an octave, from D up to the D above on "me", the climax of the line. Reach it from the A below (a perfect 4th): light top, no push.
+    - The tune uses only five notes of G major (G A B D E): it is **pentatonic**, which is why it sounds so simple and open.
+
+    **Breathing**: one breath for each 4-bar half. The catch breath comes after "sound", stolen from the end of the half note so that "that" is still on beat 3.
+
+    Order: each half on "la", the whole 8 bars on "la", then with words. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Prva polovina pesme **„Amazing Grace”**: reči Džon Njutn (1779), na američku melodiju *New Britain* (1829). Obe su javno dobro.
+
+    ```abc
+    X:1
+    T:Amazing Grace (prva polovina)
+    M:3/4
+    L:1/4
+    Q:1/4=88
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 D | G2 B/G/ | B2 A | d3- | d2 |]
+    w:A-ma-zing_ grace how sweet the sound that saved a_ wretch like me! _
+    ```
+
+    Šta je novo u odnosu na „Frère Jacques” i „Sjaj, sjaj, zvezdice”:
+
+    - **Takt 3/4.** Jedna jaka i dve slabe dobe u taktu. Dugi tonovi (polovine) padaju na jaku dobu; pusti takt da se njiše, ne udaraj 2. i 3. dobu.
+    - **Predtakt**: fraza počinje na 3. dobi sa „A-”, koja se naslanja na prvu dobu „-ma-”. Isto još jednom sa „that” pre „saved”.
+    - **Melizma**: jedan slog na dva tona. „-zing” se peva na H pa G, i isto „a” pre „wretch”. Samoglasnik teče kroz oba tona; ne počinji ga ponovo.
+      Ovde se isplate lekcije okretnosti: ovo je sićušan pasaž.
+    - **Širok opseg**: oktava, od D do gornjeg D na „me”, vrhuncu reda. Stigni do njega sa A ispod (čista kvarta): lagan vrh, bez guranja.
+    - Melodija koristi samo pet tonova G-dura (G A H D E): **pentatonska** je, zato zvuči tako jednostavno i otvoreno.
+
+    **Disanje**: jedan dah za svaku polovinu od 4 takta. Brz udah dolazi posle „sound”, ukraden sa kraja polovine, tako da „that” i dalje bude na 3. dobi.
+
+    Redosled: svaka polovina na „la”, celih 8 taktova na „la”, pa sa rečima. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-039-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-039-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then lip trills on 1-3-5-8-5-3-1 in G with the piano, and the G pentatonic notes on 'la'."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa treperenje usnama na 1-3-5-8-5-3-1 u G uz klavir, i tonovi G-pentatonike na „la”."
+    play: {notes: [G3, B3, D4, G4, D4, B3, G3, A3, B3, D4, E4, G4], mode: melodic, tempo: 90}
+    checks:
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj, inversion: 0}
+      - scale: {tonic: G, type: major-pentatonic, is: [G, A, B, D, E]}
+  - id: V-039-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Play the 8 bars on the piano from the notation, feeling 3/4 (strong-light-light). Play again and hum along; mark the breath after 'sound'."
+      sr: "Odsviraj 8 taktova na klaviru iz zapisa, osećajući 3/4 (jaka-slaba-slaba). Odsviraj ponovo i pevuši uz to; označi udah posle „sound”."
+  - id: V-039-4
+    type: sing-phrase
+    prompt:
+      en: "First half on 'la': pickup D, then 'A-ma-zing grace how sweet the sound'. The two eighth notes on one vowel."
+      sr: "Prva polovina na „la”: predtakt D, pa „A-ma-zing grace how sweet the sound”. Dve osmine na jednom samoglasniku."
+    notes: [D4, G4, B4, G4, B4, A4, G4, E4, D4]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 3]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: G4, to: B4, is: M3}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+  - id: V-039-5
+    type: sing-phrase
+    prompt:
+      en: "Second half on 'la': 'that saved a wretch like me', up to the high D, held. Light on the top."
+      sr: "Druga polovina na „la”: „that saved a wretch like me”, do gornjeg D, zadržano. Lagano na vrhu."
+    notes: [D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 5]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A4, to: D5, is: P4}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-039-6
+    type: sing-phrase
+    prompt:
+      en: "All 8 bars on 'la', with the catch breath after 'sound' (the short rest)."
+      sr: "Svih 8 taktova na „la”, sa brzim udahom posle „sound” (kratka pauza)."
+    notes: [D4, G4, B4, G4, B4, A4, G4, E4, D4, r, D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 1.5, 0.5, 1, 2, 0.5, 0.5, 2, 1, 5]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: G, type: major-pentatonic, is: [G, A, B, D, E]}
+  - id: V-039-7
+    type: sing-phrase
+    prompt:
+      en: "With words: 'Amazing grace, how sweet the sound, that saved a wretch like me!' Pure vowels on the long notes ('grace' on a clean 'eh', 'me' on 'ee' rounded a little at the top)."
+      sr: "Sa rečima: „Amazing grace, how sweet the sound, that saved a wretch like me!” Čisti samoglasnici na dugim tonovima („grace” na čisto „e”, „me” na „i”, malo zaobljeno na vrhu)."
+    notes: [D4, G4, B4, G4, B4, A4, G4, E4, D4, r, D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 1.5, 0.5, 1, 2, 0.5, 0.5, 2, 1, 5]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-039-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Review: record the 8 bars with words and listen back. Rate the 3/4 swing, the melismas (one vowel, two notes), the breath (on time) and the top D (light). Then 3 quiet hums sliding down."
+      sr: "Ponavljanje: snimi 8 taktova sa rečima i preslušaj. Oceni njihanje u 3/4, melizme (jedan samoglasnik, dva tona), dah (na vreme) i gornje D (lagano). Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,190 @@
+id: L-010
+track: L
+order: 10
+prereqs: [L-009, L-002]
+title: {en: "Starogradska and sevdah: images and the osmerac line", sr: "Starogradska i sevdah: slike i osmerac"}
+minutes: 15
+tags: [lyrics, starogradska, sevdalinka, meter]
+explain:
+  en: |
+    **Starogradska pesma** is the urban song of 19th- and early 20th-century towns (Belgrade,
+    Vranje, Novi Sad...); the **sevdalinka** is its Bosnian relative. Both are about
+    **sevdah**: love mixed with longing and a sweet melancholy. Neither genre names that
+    feeling much. It lives in the **things around the lovers**.
+
+    ### The world of images
+    | place | objects | time | people |
+    |---|---|---|---|
+    | avlija (courtyard), bašta, kapija (gate), sokak (lane), česma, bunar | pendžer (window), fenjer (lantern), đul or ruža (rose), jorgovan (lilac), sveća, šimširi (box hedge) | veče, mesečina, zora, sabah (dawn) | the beloved (draga, dilber, mila, dragi), mother, neighbours |
+
+    The words of Turkish origin (*pendžer*, *đul*, *avlija*, *sokak*, *sevdah*) give the genre
+    its colour. Use them where they fit; a line made only of them sounds like a costume.
+
+    **The image carries the feeling.** A closed window is a refusal. A rose that wilts is time
+    passing. Candles behind the glass mean she is awake, and still does not open. Saying
+    *tužan sam* (I am sad) throws all that away.
+
+    ### The osmerac line
+    Many of these songs use **osmerac** from L-002: 8 syllables, cesura after the 4th, in
+    stanzas of four lines, often rhymed **aabb** with feminine rhymes. An original stanza:
+
+    > *Mesec zađe | iza grada,*
+    > *ruža vene, | rosa pada;*
+    > *iza stakla | sveća gori,*
+    > *pendžer ćuti, | pesma zbori.*
+
+    Each half is 4 syllables, every word is stressed on its first syllable, so the stresses
+    fall on syllables 1, 3, 5, 7: the trochaic swing that fits a slow 2/4 or 4/4.
+
+    ### Why the cesura matters when singing
+    These melodies are slow and ornamented: one syllable often gets a melisma, and singers
+    **repeat half-lines** (*Mesec zađe, mesec zađe, iza grada*). So each half-line must make
+    sense on its own, and the long ornamented notes need open vowels (*a*, *o*). A word that
+    runs across the cesura (*Ti si zabo|ravila me*) cannot be split for a repeat.
+
+    ### Not every sevdalinka is osmerac
+    Aleksa Šantić's poem *Emina* (1902, public domain), sung as a sevdalinka, has 12-syllable
+    lines split 6 + 6:
+
+    > *Sinoć, kad se vratih | iz topla hamama,*
+    > *prođoh pokraj bašte | staroga imama*
+
+    Look at the images: a bath-house, a garden, the old imam. Three images in two lines, and not one names a feeling.
+
+    ### At the piano
+    Play a slow i–iv–V–i in d-mol (Dm–Gm–A–Dm), one chord per line, and sing or speak the
+    stanza with a long note on the 3rd and 7th syllable of each line.
+  sr: |
+    **Starogradska pesma** je gradska pesma varoši 19. i ranog 20. veka (Beograd, Vranje, Novi
+    Sad...); **sevdalinka** je njena bosanska rodbina. Obe su o **sevdahu**: ljubavi pomešanoj sa
+    čežnjom i slatkom setom. Nijedan žanr to osećanje ne imenuje često. Ono živi u **stvarima oko
+    zaljubljenih**.
+
+    ### Svet slika
+    | mesto | predmeti | vreme | ljudi |
+    |---|---|---|---|
+    | avlija, bašta, kapija, sokak, česma, bunar | pendžer, fenjer, đul ili ruža, jorgovan, sveća, šimširi | veče, mesečina, zora, sabah | draga, dilber, mila, dragi, majka, komšiluk |
+
+    Turcizmi (*pendžer*, *đul*, *avlija*, *sokak*, *sevdah*) daju žanru boju. Koristi ih gde
+    pristaju; stih sastavljen samo od njih zvuči kao kostim.
+
+    **Slika nosi osećanje.** Zatvoren pendžer je odbijanje. Ruža koja vene je vreme koje prolazi.
+    Sveće iza stakla znače da je budna, a ipak ne otvara. Reći *tužan sam* baca sve to.
+
+    ### Osmerac
+    Mnoge od ovih pesama koriste **osmerac** iz L-002: 8 slogova, cezura posle 4. sloga, u strofama
+    od četiri stiha, često sa rimom **aabb** i ženskim rimama. Originalna strofa:
+
+    > *Mesec zađe | iza grada,*
+    > *ruža vene, | rosa pada;*
+    > *iza stakla | sveća gori,*
+    > *pendžer ćuti, | pesma zbori.*
+
+    Svaka polovina ima 4 sloga, svaka reč je naglašena na prvom slogu, pa naglasci padaju na 1,
+    3, 5. i 7. slog: trohejsko njihanje koje leži na sporih 2/4 ili 4/4.
+
+    ### Zašto je cezura važna u pevanju
+    Ove melodije su spore i ukrašene: jedan slog često dobija melizmu, a pevači **ponavljaju
+    polustihove** (*Mesec zađe, mesec zađe, iza grada*). Zato svaki polustih mora da ima smisla
+    sam za sebe, a duge ukrašene note traže otvorene samoglasnike (*a*, *o*). Reč koja prelazi
+    preko cezure (*Ti si zabo|ravila me*) ne može da se podeli za ponavljanje.
+
+    ### Nije svaka sevdalinka osmerac
+    Pesma Alekse Šantića *Emina* (1902, javno dobro), koja se peva kao sevdalinka, ima stihove od
+    12 slogova podeljene 6 + 6:
+
+    > *Sinoć, kad se vratih | iz topla hamama,*
+    > *prođoh pokraj bašte | staroga imama*
+
+    Pogledaj slike: hamam, bašta, stari imam. Tri slike u dva stiha, a nijedna ne imenuje osećanje.
+
+    ### Za klavirom
+    Sviraj sporo i–iv–V–i u d-molu (d–g–A–d), jedan akord po stihu, i otpevaj ili izgovori strofu
+    sa dugom notom na 3. i 7. slogu svakog stiha.
+exercises:
+  - id: L-010-1
+    type: mcq
+    prompt: {en: "Which line is a clean osmerac: 8 syllables with a word ending after the 4th?", sr: "Koji stih je čist osmerac: 8 slogova, a reč se završava posle 4. sloga?"}
+    options: ["Česma teče, mesec sija", "Ti si zaboravila me", "Česma teče celu noć", "Pod pendžerom zapevao sam"]
+    answer: 0
+    checks:
+      - syllables: {text: "Česma teče, mesec sija", lang: sr, is: 8}
+      - syllables: {text: "Česma teče", lang: sr, is: 4}
+      - syllables: {text: "Ti si zaboravila me", lang: sr, is: 8}
+      - syllables: {text: "Ti si zabo", lang: sr, is: 4}
+      - syllables: {text: "Česma teče celu noć", lang: sr, is: 7}
+      - syllables: {text: "Pod pendžerom zapevao sam", lang: sr, is: 9}
+      - syllables: {text: "Mesec zađe iza grada", lang: sr, is: 8}
+      - syllables: {text: "ruža vene, rosa pada", lang: sr, is: 8}
+      - syllables: {text: "iza stakla sveća gori", lang: sr, is: 8}
+      - syllables: {text: "pendžer ćuti, pesma zbori", lang: sr, is: 8}
+      - syllables: {text: "Mesec zađe", lang: sr, is: 4}
+      - syllables: {text: "ruža vene", lang: sr, is: 4}
+      - syllables: {text: "iza stakla", lang: sr, is: 4}
+      - syllables: {text: "pendžer ćuti", lang: sr, is: 4}
+  - id: L-010-2
+    type: mcq
+    prompt: {en: "Which line shows sevdah through an image instead of naming it?", sr: "Koji stih pokazuje sevdah kroz sliku umesto da ga imenuje?"}
+    options:
+      - "Ostavih ti đul na pendžeru"
+      - "Tužan sam bez tebe, mila"
+      - "Ljubav boli, srce pati"
+      - "Ne mogu da živim više"
+    answer: 0
+  - id: L-010-3
+    type: mcq
+    prompt: {en: "Why should each half of an osmerac line make sense on its own?", sr: "Zašto svaka polovina osmerca treba da ima smisla sama za sebe?"}
+    options:
+      - {en: "Singers repeat half-lines and breathe at the cesura", sr: "Pevači ponavljaju polustihove i dišu na cezuri"}
+      - {en: "Each half must rhyme with the other half", sr: "Svaka polovina mora da se rimuje sa drugom"}
+      - {en: "The second half is always spoken, not sung", sr: "Druga polovina se uvek govori, ne peva"}
+      - {en: "It does not matter: the cesura is only for poets", sr: "Nije bitno: cezura je samo za pesnike"}
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [G3, Bb3, D4], root: G, quality: min}
+      - chord: {notes: [A3, C#4, E4], root: A, quality: maj}
+      - roman: {key: D, type: harmonic-minor, degree: 1, is: "i"}
+      - roman: {key: D, type: harmonic-minor, degree: 4, is: "iv"}
+      - roman: {key: D, type: harmonic-minor, degree: 5, is: "V"}
+  - id: L-010-4
+    type: mcq
+    prompt: {en: "Which set of images belongs to the traditional world of starogradska and sevdalinka?", sr: "Koji skup slika pripada tradicionalnom svetu starogradske i sevdalinke?"}
+    options:
+      - {en: "avlija, pendžer, đul, fenjer", sr: "avlija, pendžer, đul, fenjer"}
+      - {en: "metro, screen, message, neon", sr: "metro, ekran, poruka, neon"}
+      - {en: "battle, sword, horse, tsar", sr: "boj, sablja, konj, car"}
+      - {en: "highway, motel, pickup truck, whiskey", sr: "autoput, motel, pikap, viski"}
+    answer: 0
+  - id: L-010-5
+    type: mcq
+    prompt: {en: "Šantić's “Sinoć, kad se vratih iz topla hamama” (Emina, 1902): how many syllables, and so which line type?", sr: "Šantićev stih „Sinoć, kad se vratih iz topla hamama” (Emina, 1902): koliko slogova, pa koja je to vrsta stiha?"}
+    options:
+      - {en: "8: osmerac", sr: "8: osmerac"}
+      - {en: "10: deseterac", sr: "10: deseterac"}
+      - {en: "12: dvanaesterac (6 + 6)", sr: "12: dvanaesterac (6 + 6)"}
+      - {en: "14: four-beat long line", sr: "14: dugi stih sa četiri naglaska"}
+    answer: 2
+    keepOrder: true
+    checks:
+      - syllables: {text: "Sinoć, kad se vratih iz topla hamama", lang: sr, is: 12}
+      - syllables: {text: "Sinoć, kad se vratih", lang: sr, is: 6}
+      - syllables: {text: "prođoh pokraj bašte staroga imama", lang: sr, is: 12}
+      - syllables: {text: "prođoh pokraj bašte", lang: sr, is: 6}
+  - id: L-010-6
+    type: write
+    prompt:
+      en: "Starogradska or sevdalinka, in Serbian: write one 4-line stanza in osmerac (cesura after the 4th syllable), rhymed aabb or abab, built around one central object (a window, a gate, a rose, a lantern...). The words tuga, bol and srce are not allowed. Mark the cesura with | and count each line."
+      sr: "Starogradska ili sevdalinka, na srpskom: napiši jednu strofu od 4 stiha u osmercu (cezura posle 4. sloga), sa rimom aabb ili abab, izgrađenu oko jednog središnjeg predmeta (pendžer, kapija, ruža, fenjer...). Reči tuga, bol i srce nisu dozvoljene. Cezuru obeleži sa | i prebroj svaki stih."
+    language: sr
+    lines: [4, 4]
+    rubric:
+      - id: meter
+        label: {en: "Osmerac 4 + 4", sr: "Osmerac 4 + 4"}
+        top: {en: "Every line has exactly 8 syllables, a word ends after syllable 4, and each half-line makes sense if repeated alone.", sr: "Svaki stih ima tačno 8 slogova, reč se završava posle 4. sloga, i svaki polustih ima smisla ako se ponovi sam."}
+      - id: image
+        label: {en: "The image carries the feeling", sr: "Slika nosi osećanje"}
+        top: {en: "One object stands at the centre and its state (closed, wilting, burning out) shows the emotion; no line names the emotion.", sr: "Jedan predmet je u središtu, a njegovo stanje (zatvoren, vene, dogoreva) pokazuje osećanje; nijedan stih ne imenuje osećanje."}
+      - id: rhyme
+        label: {en: "Rhyme and sound", sr: "Rima i zvuk"}
+        top: {en: "The rhyme scheme holds with feminine rhymes (two syllables match); open vowels sit on the stressed syllables 3 and 7 where possible.", sr: "Shema rime je održana ženskim rimama (poklapaju se dva sloga); otvoreni samoglasnici su na naglašenim slogovima 3 i 7 gde god je moguće."}

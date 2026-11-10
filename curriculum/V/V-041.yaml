@@ -1,0 +1,127 @@
+id: V-041
+track: V
+order: 41
+title: {en: "Resonance II: brighter and darker colours (no pushing)", sr: "Rezonancija II: svetlije i tamnije boje (bez guranja)"}
+prereqs: [V-040, V-012]
+minutes: 10
+tags: [voice, resonance]
+explain:
+  en: |
+    The vocal folds make the raw sound; the **throat and mouth shape it** (lesson 12: resonance). Change the shape and the same note on the same vowel
+    changes **colour**, like moving between the bright and the warm voicing of the same chord on the piano, without touching the volume.
+
+    | | brighter | darker |
+    |---|---|---|
+    | sounds | ringing, forward, "speech-like", cuts through | warm, round, deep, "classical" |
+    | how | a slight smile, tongue a little higher and forward, the "nay" feeling | rounder lips, a little inner yawn (soft palate up, more space at the back), larynx relaxed and low |
+    | try on | "nyah" | "aw", "oh" |
+    | overdone it becomes | shrill, nasal, pinched | swallowed, hooty, muffled; pitch tends to go flat |
+
+    Why learn both: a song needs different colours in different places (a bright, speech-like verse, a warmer ending), and genres differ:
+    pop and musical theatre sit brighter, choral and classical singing darker. Being able to move between them, at the **same volume**, is control.
+
+    The rules:
+
+    - **Colour is not volume.** Brighter is not louder, darker is not bigger. If you notice the volume changing with the colour, start again quieter.
+    - **Never press the larynx down** with the tongue to make it dark (the fake "opera" voice): that is tension, not resonance. The yawn feeling does it by itself.
+    - **The middle is home.** Most singing lives in a balanced colour between the two extremes; the extremes are for learning the range of the control.
+
+    The app grades pitch only; the colour is yours to hear. Record and listen: from the inside the difference feels bigger than it sounds.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Glasnice prave sirov zvuk; **grlo i usta ga oblikuju** (12. lekcija: rezonancija). Promeni oblik i isti ton na istom samoglasniku
+    menja **boju**, kao kad na klaviru prelaziš između svetlog i toplog rasporeda istog akorda, bez promene jačine.
+
+    | | svetlije | tamnije |
+    |---|---|---|
+    | zvuči | zvonko, napred, „kao govor”, probija | toplo, okruglo, duboko, „klasično” |
+    | kako | blag osmeh, jezik malo više i napred, osećaj „nej” | okruglije usne, malo unutrašnjeg zevanja (meko nepce gore, više prostora pozadi), grkljan opušten i nizak |
+    | probaj na | „nja” | „o”, „ou” |
+    | preterano postaje | resko, nazalno, stisnuto | progutano, šuplje, prigušeno; visina obično pada |
+
+    Zašto oba: pesmi trebaju različite boje na različitim mestima (svetla, govorna strofa, topliji kraj), a i žanrovi se razlikuju:
+    pop i mjuzikl su svetliji, horsko i klasično pevanje tamnije. Kretanje između njih **iste jačine** je kontrola.
+
+    Pravila:
+
+    - **Boja nije jačina.** Svetlije nije glasnije, tamnije nije veće. Ako primetiš da se jačina menja sa bojom, počni ponovo tiše.
+    - **Nikad ne potiskuj grkljan naniže** jezikom da bi bilo tamno (lažni „operski” glas): to je napetost, ne rezonancija. Osećaj zevanja to radi sam.
+    - **Sredina je kuća.** Najveći deo pevanja živi u uravnoteženoj boji između dve krajnosti; krajnosti služe da naučiš raspon kontrole.
+
+    Aplikacija ocenjuje samo visinu; boju slušaš ti. Snimi i preslušaj: iznutra razlika deluje veća nego što se čuje.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-041-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-041-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then hum along with the five notes, feeling the buzz in the lips and nose."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa pevuši uz pet tonova, osećajući zujanje u usnama i nosu."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-041-3
+    type: sing-pitch
+    prompt:
+      en: "Bright: 'nyah' on the note, 3 seconds, with a slight smile and the 'nay' ring. Speaking volume."
+      sr: "Svetlo: „nja” na tonu, 3 sekunde, uz blag osmeh i zvonjenje kao kod „nej”. Jačina govora."
+    notes: [B3]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-041-4
+    type: sing-pitch
+    prompt:
+      en: "Dark: the same note on 'aw', 3 seconds, rounder lips and a little inner yawn. Same volume; keep the pitch up (dark tends to go flat)."
+      sr: "Tamno: isti ton na „o”, 3 sekunde, okruglije usne i malo unutrašnjeg zevanja. Ista jačina; drži visinu gore (tamno obično pada)."
+    notes: [B3]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-041-5
+    type: sing-phrase
+    prompt:
+      en: "Colour change on one breath: 5-4-3-2-1 on 'ah', starting bright and darkening gradually to the 1. Volume stays the same."
+      sr: "Promena boje u jednom dahu: 5-4-3-2-1 na „a”, počni svetlo i postepeno potamni do 1. Jačina ostaje ista."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 3]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-041-6
+    type: sing-phrase
+    prompt:
+      en: "The reverse: 1-2-3-4-5 on 'ah', starting dark and brightening to the 5. Brighter is not louder."
+      sr: "Obrnuto: 1-2-3-4-5 na „a”, počni tamno i posvetli do 5. Svetlije nije glasnije."
+    notes: [D4, E4, F#4, G4, A4]
+    beats: [1, 1, 1, 1, 3]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-041-7
+    type: mcq
+    prompt:
+      en: "You want a darker colour on a note. Which way is healthy?"
+      sr: "Želiš tamniju boju na tonu. Koji način je zdrav?"
+    options:
+      - {en: "Rounder lips and a little inner yawn, same volume", sr: "Okruglije usne i malo unutrašnjeg zevanja, ista jačina"}
+      - {en: "Press the tongue down to lower the larynx", sr: "Pritisni jezik naniže da spustiš grkljan"}
+      - {en: "Sing louder and lower in the chest", sr: "Pevaj glasnije i niže u grudima"}
+    answer: 0
+  - id: V-041-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: sing the first line of 'Amazing Grace' three times (bright, balanced, dark), record and listen back. Rate whether the colours were audibly different and whether the volume stayed the same. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: otpevaj prvi red „Amazing Grace” tri puta (svetlo, uravnoteženo, tamno), snimi i preslušaj. Oceni da li su se boje čule kao različite i da li je jačina ostala ista. Pa 3 tiha pevušenja uz klizanje naniže."

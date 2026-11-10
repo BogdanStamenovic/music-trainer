@@ -1,0 +1,146 @@
+id: E-025
+track: E
+order: 25
+title: {en: "Two-voice dictation I: outer voices, stepwise", sr: "Dvoglasni diktat I: spoljni glasovi, korakom"}
+prereqs: [E-024, E-019]
+minutes: 15
+tags: [ear, dictation, counterpoint, two-voice]
+explain:
+  en: |
+    In any piece with harmony, the two lines you hear best are the **outer voices**: the melody on
+    top and the bass at the bottom. Hearing them separately is the core skill behind playing by ear
+    with both hands. Here they move note against note, mostly by step.
+
+    You cannot hold two melodies in your head at once, so don't try. Work in layers:
+
+    1. **Top line first.** It is the easiest to hear. Sing it, then play it.
+    2. **Then the bass.** Replay and sing *only the lowest notes*. This feels odd at first; humming
+       an octave up is fine.
+    3. **Check the distance.** For each pair, is it close to an **octave**, a **tenth** (an octave plus
+       a third), or a **sixth**? Outer voices live on these three sounds: 3rds/10ths and 6ths are
+       sweet and full, octaves and fifths are hollow and come at the start and end.
+    4. **Check the motion.** Do the two lines go the same way (**parallel**) or opposite ways
+       (**contrary**)? Parallel 10ths or 6ths sound like one line doubled; contrary motion sounds like
+       a wedge opening or closing.
+
+    The ending is almost always the same: the top goes **2 → 1** or **7 → 8** while the bass goes the
+    other way, and they land on an octave.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    V:1
+    c d e d | c B c2 |]
+    V:2 clef=bass
+    C, B,, A,, B,, | C, D, C,2 |]
+    ```
+
+    Above: contrary motion all the way. When the top climbs C D E, the bass falls C B A; they end
+    7 → 8 over 2 → 1. In the exercises, the first ones ask for one line out of the two; the later
+    ones ask for both at once (left hand bass, right hand top, together, in the octaves you hear).
+  sr: |
+    U svakom delu sa harmonijom, dve linije koje najbolje čuješ su **spoljni glasovi**: melodija
+    gore i bas dole. Da ih čuješ odvojeno je osnovna veština za sviranje po sluhu sa obe ruke.
+    Ovde se kreću ton protiv tona, uglavnom korakom.
+
+    Ne možeš da držiš dve melodije u glavi odjednom, pa i ne pokušavaj. Radi u slojevima:
+
+    1. **Prvo gornja linija.** Nju najlakše čuješ. Otpevaj je, pa odsviraj.
+    2. **Onda bas.** Pusti ponovo i pevaj *samo najdublje tonove*. U početku je čudno; pevušenje
+       oktavu više je u redu.
+    3. **Proveri razmak.** Za svaki par: da li je blizu **oktave**, **decime** (oktava plus terca) ili
+       **sekste**? Spoljni glasovi žive na ova tri zvuka: terce/decime i sekste su slatke i pune,
+       oktave i kvinte su šuplje i dolaze na početku i na kraju.
+    4. **Proveri kretanje.** Da li dve linije idu u istom pravcu (**paralelno**) ili suprotno
+       (**suprotno kretanje**)? Paralelne decime ili sekste zvuče kao jedna udvojena linija;
+       suprotno kretanje zvuči kao klin koji se otvara ili zatvara.
+
+    Završetak je skoro uvek isti: gornji glas ide **2 → 1** ili **7 → 8**, a bas u suprotnom
+    pravcu, i spoje se u oktavi.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    V:1
+    c d e d | c B c2 |]
+    V:2 clef=bass
+    C, B,, A,, B,, | C, D, C,2 |]
+    ```
+
+    Gore: suprotno kretanje sve vreme. Dok se gornji glas penje C D E, bas pada C H A; završavaju se
+    sa 7 → 8 iznad 2 → 1. U vežbama prve traže jednu liniju od dve; kasnije traže obe odjednom
+    (leva ruka bas, desna gornji glas, zajedno, u oktavama koje čuješ).
+exercises:
+  - id: E-025-1
+    type: midi-echo
+    prompt: {en: "C major, two voices. Play back only the TOP line, in the octave you hear. It starts on C5.", sr: "C-dur, dva glasa. Odsviraj samo GORNJU liniju, u oktavi koju čuješ. Počinje na C5."}
+    mode: sequence
+    expect: [C5, D5, E5, D5, C5, B4, C5]
+    octave: exact
+    play:
+      chords: [[C3, C5], [B2, D5], [A2, E5], [B2, D5], [C3, C5], [D3, B4], [C3, C5]]
+      tempo: 56
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: B2, to: D3, is: m3}
+      - interval: {from: A2, to: E3, is: P5}
+      - interval: {from: D3, to: B3, is: M6}
+      - interval: {from: C3, to: C5, is: P15}
+  - id: E-025-2
+    type: midi-echo
+    prompt: {en: "G major, two voices. Now play back only the BASS line, in the octave you hear. It starts on G3.", sr: "G-dur, dva glasa. Sada odsviraj samo BAS liniju, u oktavi koju čuješ. Počinje na G3."}
+    mode: sequence
+    expect: [G3, F#3, G3, A3, B3, A3, G3]
+    octave: exact
+    play:
+      chords: [[G3, B4], [F#3, A4], [G3, G4], [A3, F#4], [B3, G4], [A3, F#4], [G3, G4]]
+      tempo: 56
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+      - interval: {from: G3, to: B4, is: M10}
+      - interval: {from: F#3, to: A4, is: m10}
+      - interval: {from: A3, to: F#4, is: M6}
+      - interval: {from: B3, to: G4, is: m6}
+  - id: E-025-3
+    type: midi-echo
+    prompt: {en: "F major, both voices together (left hand bass, right hand top). Starts on F3 + F4: an octave that opens into a wedge.", sr: "F-dur, oba glasa zajedno (leva ruka bas, desna gornji glas). Počinje na F3 + F4: oktava koja se otvara u klin."}
+    mode: chords
+    expectChords: [[F3, F4], [E3, G4], [D3, A4], [E3, G4], [F3, F4]]
+    octave: exact
+    checks:
+      - interval: {from: E3, to: G3, is: m3}
+      - interval: {from: D3, to: A3, is: P5}
+      - interval: {from: F3, to: F4, is: P8}
+  - id: E-025-4
+    type: midi-echo
+    prompt: {en: "D major, both voices. Starts on F#3 + A4. Listen for parallel tenths and where the motion changes at the end.", sr: "D-dur, oba glasa. Počinje na Fis3 + A4. Slušaj paralelne decime i gde se kretanje menja na kraju."}
+    mode: chords
+    expectChords: [[F#3, A4], [G3, B4], [F#3, A4], [E3, G4], [D3, F#4], [C#3, E4], [D3, D4]]
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: F#3, to: A4, is: m10}
+      - interval: {from: G3, to: B4, is: M10}
+      - interval: {from: C#3, to: E4, is: m10}
+      - interval: {from: D3, to: D4, is: P8}
+  - id: E-025-5
+    type: midi-echo
+    prompt: {en: "A minor, both voices. Starts on C3 + A4 (a sixth). Parallel sixths, then the leading tone G# resolves.", sr: "a-mol, oba glasa. Počinje na C3 + A4 (seksta). Paralelne sekste, pa se vođica Gis razrešava."}
+    mode: chords
+    expectChords: [[C3, A4], [D3, B4], [E3, C5], [D3, B4], [C3, A4], [B2, G#4], [A2, A4]]
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: C3, to: A3, is: M6}
+      - interval: {from: D3, to: B3, is: M6}
+      - interval: {from: E3, to: C4, is: m6}
+      - interval: {from: B2, to: G#3, is: M6}
+      - interval: {from: A2, to: A4, is: P15}
+  - id: E-025-6
+    type: practice
+    prompt: {en: "Paper dictation: replay exercise 4 or 5 and write both voices on a grand staff before playing. Write the top line first, then the bass, then check every vertical pair: 3rd/10th, 6th or octave?", sr: "Diktat na papiru: pusti vežbu 4 ili 5 i zapiši oba glasa na dva linijska sistema pre sviranja. Prvo gornja linija, pa bas, pa proveri svaki vertikalni par: terca/decima, seksta ili oktava?"}
+    minutes: 4

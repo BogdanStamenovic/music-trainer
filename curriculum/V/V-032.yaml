@@ -1,0 +1,108 @@
+id: V-032
+track: V
+order: 32
+title: {en: "Legato II: longer phrases on one breath", sr: "Legato II: duže fraze u jednom dahu"}
+prereqs: [V-031, V-024]
+minutes: 11
+tags: [voice, support, legato]
+explain:
+  en: |
+    In lesson 24 legato phrases were 5-9 notes, about 4-6 seconds. Real song lines are often **8-12 seconds**. The legato itself does not change
+    (the air keeps flowing, the pitch changes on top of it); what changes is **how you spend the air**.
+
+    The usual mistake is to **dump** air on the first two notes: a big start, then the phrase starves and the last notes go flat, breathy or creaky.
+    The fix is pacing, like a pianist planning the pedal and the hand position for a long line before the first note:
+
+    1. **Breathe for the phrase**, not for safety: a calm, low, silent breath (lesson 10). Overfilling makes you tense and the extra air rushes out first.
+    2. **Start quieter than you think.** The first note sets the air rate for the whole phrase.
+    3. **Keep the ribs out** as long as you comfortably can while singing. That slows the exhale without any squeezing in the throat.
+    4. **Plan the shape**: rising lines get a little more energy, falling lines need the most care, because that is where the air is running out.
+    5. **Consonants are short**, vowels long. Every long consonant leaks air.
+
+    If a phrase does not fit yet, it is fine to take a quick catch breath in the middle; mark it in advance rather than gasping where you run out.
+    The phrases below grow from about 9 to about 13 seconds. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    U 24. lekciji legato fraze su imale 5-9 tonova, oko 4-6 sekundi. Pravi redovi pesama često traju **8-12 sekundi**. Sam legato se ne menja
+    (vazduh teče, visina se menja na tom toku); menja se **kako trošiš vazduh**.
+
+    Uobičajena greška je da se vazduh **istrese** na prva dva tona: veliki početak, a onda fraza gladuje i poslednji tonovi padnu nisko, postanu dahtavi ili škripavi.
+    Rešenje je raspoređivanje, kao kad pijanista unapred planira pedal i položaj ruke za dugu liniju:
+
+    1. **Udahni za frazu**, ne „za svaki slučaj”: miran, nizak, tih udah (10. lekcija). Preteran udah te zategne, a višak vazduha prvi izleti.
+    2. **Počni tiše nego što misliš.** Prvi ton određuje potrošnju vazduha za celu frazu.
+    3. **Drži rebra raširena** koliko god ti je udobno dok pevaš. To usporava izdisaj bez ikakvog stezanja u grlu.
+    4. **Planiraj oblik**: uzlazne linije dobijaju malo više energije, silaznim treba najviše pažnje, jer tada vazduh ističe.
+    5. **Suglasnici su kratki**, samoglasnici dugi. Svaki dugi suglasnik troši vazduh.
+
+    Ako fraza još ne staje u jedan dah, u redu je uzeti brz udah u sredini; označi ga unapred, umesto da hvataš vazduh tamo gde ti ponestane.
+    Fraze ispod rastu od oko 9 do oko 13 sekundi. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-032-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-032-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 slow hisses on 'sss' (aim for 15 seconds each, ribs staying out), 3 quiet lip-trill sirens, then lip trills along with the scale up and down, no break in the trill."
+      sr: "Zagrevanje: 3 spora šištanja na „sss” (cilj 15 sekundi svako, rebra ostaju raširena), 3 tihe sirene treperenjem usana, pa treperenje usnama uz lestvicu gore i dole, bez prekida treperenja."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-032-3
+    type: sing-phrase
+    prompt:
+      en: "About 9 seconds: 1-2-3-4-5-6-5-4-3-2-1 on 'ah', legato, one breath. Start quiet; the last three notes as full as the first three."
+      sr: "Oko 9 sekundi: 1-2-3-4-5-6-5-4-3-2-1 na „a”, legato, jedan dah. Počni tiho; poslednja tri tona puna kao prva tri."
+    notes: [C4, D4, E4, F4, G4, A4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: A4, is: M6}
+  - id: V-032-4
+    type: sing-phrase
+    prompt:
+      en: "About 10 seconds: the full octave up and down on 'ah', one breath. Ribs out; the descent is where you need the care."
+      sr: "Oko 10 sekundi: cela oktava gore i dole na „a”, jedan dah. Rebra raširena; silazak je deo kome treba pažnja."
+    notes: [D4, E4, F#4, G4, A4, B4, C#5, D5, C#5, B4, A4, G4, F#4, E4, D4]
+    beats: [0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 1, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 1.5]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-032-5
+    type: sing-phrase
+    prompt:
+      en: "About 13 seconds, on 'la' with quick, light l's: a melody that rises to the 6, then to the high 8, and settles back. Mark one optional catch breath at the rest after bar 2 if you need it."
+      sr: "Oko 13 sekundi, na „la” sa brzim, lakim „l”: melodija koja se penje do 6, pa do gornjeg 8, i vraća se. Ako ti treba, označi jedan brz udah u pauzi posle 2. takta."
+    notes: [C4, E4, G4, A4, G4, E4, F4, D4, r, E4, G4, C5, A4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: V-032-6
+    type: generated
+    prompt: {en: "Sing back the long phrase, legato, one breath", sr: "Otpevaj dugu frazu, legato, jedan dah"}
+    count: 3
+    pass: 0.6
+    gen: {kind: phrase-sing, tonics: [C, D, F], type: major, length: [8, 10], degrees: [1, 2, 3, 4, 5, 6], maxLeap: 2, tempo: 72, tolerance: 50}
+  - id: V-032-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record the 13-second phrase and listen back. Rate the ending: did the last notes stay on pitch and as clear as the start? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi frazu od 13 sekundi i preslušaj. Oceni kraj: da li su poslednji tonovi ostali na visini i jasni kao početak? Pa 3 tiha pevušenja uz klizanje naniže."

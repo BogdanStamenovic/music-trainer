@@ -1,0 +1,122 @@
+id: T-037
+track: T
+order: 37
+prereqs: [T-036]
+title: {en: "Figured bass I: triads (5/3, 6, 6/4)", sr: "Šifrovani bas I: trozvuci (5/3, 6, 6/4)"}
+minutes: 13
+tags: [harmony, figured-bass]
+explain:
+  en: |
+    **Figured bass** (thoroughbass, basso continuo) is Baroque shorthand: the composer wrote only the bass line and small numbers under it; the keyboard player filled in the chords. The numbers are **intervals above the bass**, counted in the key (octaves ignored).
+
+    | figure | full figure | intervals above the bass | position | example in C, bass note → chord |
+    |---|---|---|---|---|
+    | (none) | 5/3 | 3rd + 5th | root position | C → C E G (I) |
+    | **6** | 6/3 | 3rd + 6th | first inversion | E → E G C (I6) |
+    | **6/4** | 6/4 | 4th + 6th | second inversion | G → G C E (I64) |
+
+    So to realize a figure: start from the bass, count up the intervals inside the key signature, and you have the chord. The bass is the note you play; the figures tell you the rest.
+
+    An accidental alone (♯, ♭, ♮) means *alter the 3rd above the bass*. You will need this in minor: under E in A minor, a ♯ turns G into G♯ and makes the chord a major V. (More in the next lesson.)
+
+    **The cadential 6/4.** Second inversion is unstable, and its most common use is I64 → V over the same bass note: C/G → G. The 6th and 4th above the bass (E and C) fall by step to 5th and 3rd (D and B). It sounds like a suspension on V, and that is how to hear it: as a decoration of the dominant, not as a tonic. Double the bass in a 6/4.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Gc] [Ac] [Gc] | [GB] [Gc]3 |]
+    V:2 clef=bass
+    [C,E] "_6"[E,C] [F,F] "_6/4"[G,E] | [G,D] [C,E]3 |]
+    ```
+
+    I – I6 – IV – I64 – V – I.
+  sr: |
+    **Šifrovani bas** (generalbas, basso continuo) je barokni skraćeni zapis: kompozitor je pisao samo basovu liniju i male brojeve ispod nje, a čembalista je dopunjavao akorde. Brojevi su **intervali iznad basa**, računati u tonalitetu (oktave se zanemaruju).
+
+    | šifra | puna šifra | intervali iznad basa | položaj | primer u C-duru, ton basa → akord |
+    |---|---|---|---|---|
+    | (bez) | 5/3 | terca + kvinta | osnovni položaj | C → C E G (I) |
+    | **6** | 6/3 | terca + seksta | sekstakord | E → E G C (I6) |
+    | **6/4** | 6/4 | kvarta + seksta | kvartsekstakord | G → G C E (I64) |
+
+    Da bi realizovao šifru: kreni od basa, broj intervale naviše unutar predznaka, i imaš akord. Bas je ton koji sviraš; šifre ti kažu ostatak.
+
+    Predznak sam za sebe (♯, ♭, ♮) znači *izmeni tercu iznad basa*. To će ti trebati u molu: ispod E u a-molu, ♯ pretvara G u Gis i akord postaje durska V. (Više u sledećoj lekciji.)
+
+    **Kadencirajući kvartsekstakord.** Drugi obrtaj je nestabilan, a najčešće se koristi kao I64 → V nad istim tonom basa: C/G → G. Seksta i kvarta iznad basa (E i C) silaze za stupanj na kvintu i tercu (D i H). Zvuči kao zadržica na V, i tako ga treba slušati: kao ukras dominante, ne kao toniku. U kvartsekstakordu se udvaja bas.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    [Gc] [Gc] [Ac] [Gc] | [GB] [Gc]3 |]
+    V:2 clef=bass
+    [C,E] "_6"[E,C] [F,F] "_6/4"[G,E] | [G,D] [C,E]3 |]
+    ```
+
+    I – I6 – IV – I64 – V – I.
+exercises:
+  - id: T-037-1
+    type: mcq
+    prompt: {en: "A bass note with the figure 6 (and nothing else) is…", sr: "Ton basa sa šifrom 6 (i ničim drugim) je…"}
+    options:
+      - {en: "a triad in first inversion (3rd and 6th above the bass)", sr: "trozvuk u prvom obrtaju (terca i seksta iznad basa)"}
+      - {en: "a sixth chord with an added 6th (C6)", sr: "akord sa dodatom sekstom (C6)"}
+      - {en: "a triad in second inversion", sr: "trozvuk u drugom obrtaju"}
+      - {en: "a root-position triad", sr: "trozvuk u osnovnom položaju"}
+    answer: 0
+  - id: T-037-2
+    type: mcq
+    prompt: {en: "Key of C. Bass E, figure 6. Which chord?", sr: "C-dur. Bas E, šifra 6. Koji akord?"}
+    options:
+      - {en: "I6 (C major, E in the bass)", sr: "I6 (C-dur, E u basu)"}
+      - {en: "iii (E minor)", sr: "iii (e-mol)"}
+      - {en: "vi6 (A minor, C in the bass)", sr: "vi6 (a-mol, C u basu)"}
+      - {en: "V6 (G major, B in the bass)", sr: "V6 (G-dur, H u basu)"}
+    answer: 0
+    checks:
+      - chord: {notes: [E3, G3, C4], root: C, quality: maj, inversion: 1}
+      - interval: {from: E3, to: C4, is: m6}
+  - id: T-037-3
+    type: mcq
+    prompt: {en: "Key of C. Bass G, figure 6/4, followed by G with no figure. What is this?", sr: "C-dur. Bas G, šifra 6/4, zatim G bez šifre. Šta je ovo?"}
+    options:
+      - {en: "The cadential 6/4: I64 → V, a decoration of the dominant", sr: "Kadencirajući kvartsekstakord: I64 → V, ukras dominante"}
+      - {en: "V in second inversion → V", sr: "V u drugom obrtaju → V"}
+      - {en: "A plagal cadence", sr: "Plagalna kadenca"}
+      - {en: "I in root position → V", sr: "I u osnovnom položaju → V"}
+    answer: 0
+    checks:
+      - chord: {notes: [G3, C4, E4], root: C, quality: maj, inversion: 2}
+      - interval: {from: G3, to: C4, is: P4}
+      - interval: {from: G3, to: E4, is: M6}
+  - id: T-037-4
+    type: notation-input
+    prompt: {en: "Key of C. Realize: bass A, figure 6. Write the chord from the bass up (bass, 3rd above, 6th above).", sr: "C-dur. Realizuj: bas A, šifra 6. Napiši akord od basa naviše (bas, terca iznad, seksta iznad)."}
+    expect: [A, C, F]
+    checks:
+      - chord: {notes: [A3, C4, F4], root: F, quality: maj, inversion: 1}
+      - interval: {from: A3, to: F4, is: m6}
+  - id: T-037-5
+    type: notation-input
+    prompt: {en: "Key of C. Realize: bass D, figure 6/4. Write the chord from the bass up (bass, 4th above, 6th above).", sr: "C-dur. Realizuj: bas D, šifra 6/4. Napiši akord od basa naviše (bas, kvarta iznad, seksta iznad)."}
+    expect: [D, G, B]
+    checks:
+      - chord: {notes: [D3, G3, B3], root: G, quality: maj, inversion: 2}
+  - id: T-037-6
+    type: midi-play
+    prompt: {en: "Realize the figured bass from the explanation: C – E(6) – F – G(6/4) – G – C. Bass in the left hand, the other notes in the right; any octave, any spacing.", sr: "Realizuj šifrovani bas iz objašnjenja: C – E(6) – F – G(6/4) – G – C. Bas levom rukom, ostale tonove desnom; bilo koja oktava, bilo koji raspored."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, I6, IV, I64, V, I]}}
+  - id: T-037-7
+    type: generated
+    count: 3
+    prompt: {en: "Listen for the cadential 6/4 (the bass sits on 5 for two chords).", sr: "Slušaj kadencirajući kvartsekstakord (bas stoji na 5. stupnju tokom dva akorda)."}
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[I, IV, I64, V, I], [I, IV, ii, V, I], [I, vi, IV, V, I]], tempo: 60}

@@ -1,0 +1,155 @@
+id: L-011
+track: L
+order: 11
+prereqs: [L-010, L-006]
+title: {en: "The pop lyric: details in the verse, the summary in the chorus", sr: "Pop tekst: detalji u strofi, sažetak u refrenu"}
+minutes: 14
+tags: [lyrics, pop, form]
+explain:
+  en: |
+    L-006 gave each section a job. In pop the split is sharp enough to state as a rule:
+    **the verse is a close-up, the chorus is the wide shot.**
+
+    | | verse | chorus |
+    |---|---|---|
+    | camera | close: one room, one moment | wide: what it all means |
+    | words | specific nouns, actions, things said, times | the hook (L-005) and a plain statement anyone could sing about their own life |
+    | test | could only be about **these** people | stays true every time it comes back |
+
+    ### Why the split works
+    A listener believes a song through its details: *the chipped blue mug*, *your station still
+    on the radio*. Then the chorus says the general thing, *I'm not over you*, and it lands,
+    because the verse earned it. A chorus full of details cannot be sung three times
+    (*On Tuesday at the bus stop by the bakery you said...*). A verse full of summary
+    (*I miss you so, I feel so blue*) gives the chorus nothing to stand on.
+
+    One concrete object may sit in the chorus if it has become a **symbol** and is the title
+    (*Spare Key* from L-005). The rest of the chorus is summary.
+
+    ### Same chorus, new meaning
+    The chorus words do not change, but each verse should change what they mean. Verse 1: she
+    left, he keeps her toothbrush, *I'm not ready yet*. Verse 2: a year later he is moving
+    house and packs the toothbrush too. The same line now sounds like denial.
+
+    > Verse (original):
+    > *Your mug still has the chip from when you dropped it in July,*
+    > *the radio's on your station and I haven't asked it why*
+    > Chorus:
+    > *I keep a second toothbrush,*
+    > *like you're coming home tonight*
+
+    ### Choosing details
+    A good detail is **specific** (a brand, a colour, a time), **believable**, and **points at
+    the chorus**. Three details pointing the same way beat six pointing everywhere. Ask: if I
+    removed this detail, would the chorus land less hard? If not, cut it.
+
+    ### At the piano
+    Play the verse loop low with short chords and speak the verse fast; play the chorus with
+    long open chords an octave higher and sing it slowly. If the chorus words feel cramped on
+    long notes, they are probably verse words.
+  sr: |
+    L-006 je svakom delu dao posao. U popu je podela dovoljno oštra da se kaže kao pravilo:
+    **strofa je krupni plan, refren je širok kadar.**
+
+    | | strofa | refren |
+    |---|---|---|
+    | kamera | blizu: jedna soba, jedan trenutak | široko: šta sve to znači |
+    | reči | konkretne imenice, radnje, izgovorene rečenice, vreme | udica (L-005) i jednostavna izjava koju svako može da otpeva o svom životu |
+    | test | može biti samo o **ovim** ljudima | ostaje tačan svaki put kad se vrati |
+
+    ### Zašto podela radi
+    Slušalac poveruje pesmi kroz detalje: *okrnjena plava šolja*, *radio još na tvojoj stanici*.
+    Onda refren kaže opštu stvar, *nisam te preboleo*, i ona pogađa, jer ju je strofa zaslužila.
+    Refren pun detalja ne može da se otpeva tri puta (*U utorak na stanici kod pekare rekla si...*).
+    Strofa puna sažetaka (*Mnogo mi nedostaješ, tužan sam*) ne daje refrenu na čemu da stoji.
+
+    Jedan konkretan predmet može da stoji u refrenu ako je postao **simbol** i naslov
+    (*Rezervni ključ* iz L-005). Ostatak refrena je sažetak.
+
+    ### Isti refren, novo značenje
+    Reči refrena se ne menjaju, ali svaka strofa treba da promeni šta znače. Prva strofa: ona je
+    otišla, on čuva njenu četkicu, *nisam još spreman*. Druga strofa: godinu dana kasnije seli se i
+    pakuje i četkicu. Isti stih sada zvuči kao poricanje.
+
+    > Strofa (originalni primer):
+    > *Tvoja šolja, okrnjena od jula, stoji na polici,*
+    > *a radio je još uvek na tvojoj stanici*
+    > Refren:
+    > *Čuvam drugu četkicu,*
+    > *kao da večeras dolaziš*
+
+    ### Kako birati detalje
+    Dobar detalj je **konkretan** (marka, boja, sat), **uverljiv** i **pokazuje ka refrenu**. Tri
+    detalja koja pokazuju u istom pravcu bolja su od šest koji pokazuju svuda. Pitaj se: ako
+    izbacim ovaj detalj, da li bi refren pogodio slabije? Ako ne bi, izbaci ga.
+
+    ### Za klavirom
+    Sviraj krug za strofu nisko, kratkim akordima, i izgovori strofu brzo; refren sviraj dugim,
+    otvorenim akordima oktavu više i otpevaj ga polako. Ako su reči refrena tesne na dugim notama,
+    verovatno su to reči za strofu.
+exercises:
+  - id: L-011-1
+    type: mcq
+    prompt: {en: "Which line belongs in a verse?", sr: "Koji stih pripada strofi?"}
+    options:
+      - {en: "Your bike's still chained outside the bakery on Ninth", sr: "Tvoj bicikl je još vezan ispred pekare u Devetoj"}
+      - {en: "I can't let you go", sr: "Ne mogu da te pustim"}
+      - {en: "Love is all we need", sr: "Ljubav je sve što nam treba"}
+      - {en: "Hold on, hold on", sr: "Drži se, drži se"}
+    answer: 0
+  - id: L-011-2
+    type: mcq
+    prompt: {en: "Which line works best as a chorus line, repeated three times in the song?", sr: "Koji stih najbolje radi kao stih refrena, ponovljen tri puta u pesmi?"}
+    options:
+      - {en: "I'm still waiting where you left me", sr: "Još čekam tamo gde si me ostavila"}
+      - {en: "On the 14th at 6:40 the number 26 bus was late", sr: "Četrnaestog u 6:40 kasnio je autobus 26"}
+      - {en: "My neighbour's dog barked twice and then my kettle boiled", sr: "Komšijin pas je lajao dvaput, a onda je provrio čajnik"}
+      - {en: "You wore the grey coat with the missing button", sr: "Nosila si sivi kaput bez jednog dugmeta"}
+    answer: 0
+  - id: L-011-3
+    type: mcq
+    prompt: {en: "Chorus: “I'm not ready to move on, so the second toothbrush stays.” Which verse detail sets it up best?", sr: "Refren: „Nisam spreman da idem dalje, pa druga četkica ostaje.” Koji detalj u strofi ga najbolje priprema?"}
+    options:
+      - {en: "I still buy the oat milk only you would drink", sr: "Još kupujem ovseno mleko koje si samo ti pila"}
+      - {en: "The weather has been strange this spring", sr: "Vreme je ovog proleća čudno"}
+      - {en: "I feel so lost and lonely every day", sr: "Osećam se izgubljeno i usamljeno svaki dan"}
+      - {en: "My job is going well and I got a raise", sr: "Posao mi ide dobro i dobio sam povišicu"}
+    answer: 0
+  - id: L-011-4
+    type: mcq
+    prompt: {en: "A verse reads: “I miss you so, I feel so blue, I don't know what to do without you.” What is wrong with it?", sr: "Strofa glasi: „Mnogo mi nedostaješ, tužan sam, ne znam šta ću bez tebe.” Šta nije u redu?"}
+    options:
+      - {en: "It is all summary and no detail: chorus words in a verse", sr: "Sve je sažetak, nema detalja: reči za refren u strofi"}
+      - {en: "It has too many concrete details", sr: "Ima previše konkretnih detalja"}
+      - {en: "It is in the wrong point of view", sr: "U pogrešnoj je tački gledišta"}
+      - {en: "Nothing: verses should state the emotion directly", sr: "Ništa: strofe treba direktno da kažu osećanje"}
+    answer: 0
+  - id: L-011-5
+    type: mcq
+    prompt: {en: "Verse 1: she left and he keeps her toothbrush. The chorus is “I'm not ready yet”. Which verse 2 makes the same chorus mean something new?", sr: "Prva strofa: ona je otišla, a on čuva njenu četkicu. Refren je „Nisam još spreman”. Koja druga strofa daje istom refrenu novo značenje?"}
+    options:
+      - {en: "A year later he moves flats and packs her toothbrush with his things", sr: "Godinu dana kasnije seli se i pakuje njenu četkicu sa svojim stvarima"}
+      - {en: "He describes the toothbrush again: blue, soft, in the glass", sr: "Ponovo opisuje četkicu: plava, meka, u čaši"}
+      - {en: "He says again that he is not ready", sr: "Ponovo kaže da nije spreman"}
+      - {en: "A verse about a holiday they once took, with no link to now", sr: "Strofa o letovanju na koje su jednom išli, bez veze sa sadašnjošću"}
+    answer: 0
+  - id: L-011-6
+    type: write
+    prompt:
+      en: "Pop, English or Serbian: write verse 1 (4 lines, close-up details), a chorus (4 lines, summary plus hook) and verse 2 (4 lines, later in time) so that the chorus means something different after verse 2. Underline or mark with * the three details that point at the chorus."
+      sr: "Pop, engleski ili srpski: napiši prvu strofu (4 stiha, detalji iz blizine), refren (4 stiha, sažetak i udica) i drugu strofu (4 stiha, kasnije u vremenu) tako da refren posle druge strofe znači nešto drugo. Podvuci ili obeleži sa * tri detalja koja pokazuju ka refrenu."
+    language: either
+    lines: [12, 14]
+    rubric:
+      - id: verse
+        label: {en: "Verses are close-ups", sr: "Strofe su krupni plan"}
+        top: {en: "Each verse has at least three specific details (object, place, time, words said) that could only belong to this story; no line in the verses just names a feeling.", sr: "Svaka strofa ima bar tri konkretna detalja (predmet, mesto, vreme, izgovorene reči) koji pripadaju samo ovoj priči; nijedan stih u strofama samo ne imenuje osećanje."}
+      - id: chorus
+        label: {en: "Chorus is the wide shot", sr: "Refren je širok kadar"}
+        top: {en: "The chorus contains the hook and a plain general statement; it holds at most one concrete object, and that object is the title or a symbol.", sr: "Refren sadrži udicu i jednostavnu opštu izjavu; ima najviše jedan konkretan predmet, i taj predmet je naslov ili simbol."}
+      - id: point
+        label: {en: "Details point at the chorus", sr: "Detalji pokazuju ka refrenu"}
+        top: {en: "Removing any marked detail would weaken the chorus; no detail is there only for colour.", sr: "Izbacivanje bilo kog obeleženog detalja oslabilo bi refren; nijedan detalj nije tu samo radi boje."}
+      - id: shift
+        label: {en: "Same words, new meaning", sr: "Iste reči, novo značenje"}
+        top: {en: "Verse 2 happens later and changes how the unchanged chorus reads (hope becomes denial, a joke becomes sad...).", sr: "Druga strofa se dešava kasnije i menja kako se čita nepromenjeni refren (nada postaje poricanje, šala postaje tužna...)."}

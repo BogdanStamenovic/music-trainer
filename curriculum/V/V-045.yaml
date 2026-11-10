@@ -1,0 +1,165 @@
+id: V-045
+track: V
+order: 45
+title: {en: "Review: a whole song in light mix", sr: "Ponavljanje: cela pesma u laganom miksu"}
+prereqs: [V-044, V-030, V-021]
+minutes: 13
+tags: [voice, song, review, register]
+explain:
+  en: |
+    The whole **"Ode to Joy"** theme (Beethoven, Ninth Symphony, 1824; public domain). You sang its first phrase in lesson 21; here are all 16, in D major,
+    in the common simplified form (Beethoven anticipates the first note of bar 13 by a beat; we do not).
+
+    ```abc
+    X:1
+    T:Ode to Joy (Beethoven)
+    M:4/4
+    L:1/4
+    Q:1/4=100
+    K:D
+    F F G A | A G F E | D D E F | F3/2 E/ E2 |
+    F F G A | A G F E | D D E F | E3/2 D/ D2 |
+    E E F D | E F/G/ F D | E F/G/ F E | D E A,2 |
+    F F G A | A G F E | D D E F | E3/2 D/ D2 |]
+    ```
+
+    The form is **A A' B A'**: bars 1-4 and 5-8 differ only in their last bar (the first ends on E, open; the second on D, closed: a *prednja* and *zadnja rečenica*),
+    the B section (9-12) brings eighth notes and a drop to the low A, then A' returns.
+
+    The review is to sing the whole song in the **light mix** from lessons 29-30: speech-like, bright, small, the same size of sound from the lowest note to the highest.
+    Everything else from this block comes along:
+
+    | skill | where |
+    |---|---|
+    | light mix | the whole song: the top A no bigger than the D |
+    | legato and breath | one line per 2 bars; catch breaths at the ends of bars 4, 8 and 12 |
+    | agility | the eighth-note pairs in bars 10 and 11, light |
+    | dynamics | B section a little softer, a small crescendo back into the last A' |
+    | vowels | pure in the middle; round slightly if the top A gets tight |
+
+    Order: A A' on "la", the B section on "nay", then the whole song on "nay" in light mix, then with words: on "la" or in the original German
+    (Schiller): *Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um, wir be-tre-ten feu-er-trun-ken, Himm-li-sche, dein Hei-lig-tum!
+    Dei-ne Zau-ber bin-den wie-der, was die Mo-de streng ge-teilt; al-le Men-schen wer-den Brü-der, wo dein sanf-ter Flü-gel weilt.*
+    One syllable per note, except each eighth-note pair, which shares one syllable.
+
+    Sing in whatever octave is comfortable; the notes are fitted to the middle of your range. Nothing here is pushed: if the light mix will not hold today,
+    sing it lighter, in head voice or an octave lower, and still count it.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Cela tema **„Oda radosti”** (Betoven, Deveta simfonija, 1824; javno dobro). Njenu prvu frazu pevao si u 21. lekciji; ovde je svih 16, u D-duru,
+    u uobičajenom pojednostavljenom obliku (Betoven prvi ton 13. takta donosi dobu ranije; mi ne).
+
+    ```abc
+    X:1
+    T:Oda radosti (Betoven)
+    M:4/4
+    L:1/4
+    Q:1/4=100
+    K:D
+    F F G A | A G F E | D D E F | F3/2 E/ E2 |
+    F F G A | A G F E | D D E F | E3/2 D/ D2 |
+    E E F D | E F/G/ F D | E F/G/ F E | D E A,2 |
+    F F G A | A G F E | D D E F | E3/2 D/ D2 |]
+    ```
+
+    Oblik je **A A' B A'**: taktovi 1-4 i 5-8 razlikuju se samo u poslednjem taktu (prvi se završava na E, otvoreno; drugi na D, zatvoreno: **prednja** i **zadnja rečenica**),
+    deo B (9-12) donosi osmine i pad do niskog A, pa se vraća A'.
+
+    Ponavljanje je da otpevaš celu pesmu u **laganom miksu** iz 29-30. lekcije: kao govor, svetlo, malo, ista veličina zvuka od najnižeg do najvišeg tona.
+    Sve ostalo iz ovog bloka ide uz to:
+
+    | veština | gde |
+    |---|---|
+    | lagani miks | cela pesma: gornje A ne veće od D |
+    | legato i dah | jedan red na 2 takta; brzi udasi na kraju 4, 8. i 12. takta |
+    | okretnost | parovi osmina u 10. i 11. taktu, lagano |
+    | dinamika | deo B malo tiše, mali krešendo nazad u poslednji A' |
+    | samoglasnici | čisti u sredini; malo zaobljeni ako se gornje A stegne |
+
+    Redosled: A A' na „la”, deo B na „nej”, pa cela pesma na „nej” u laganom miksu, pa sa rečima: na „la” ili na originalnom nemačkom
+    (Šiler): *Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um, wir be-tre-ten feu-er-trun-ken, Himm-li-sche, dein Hei-lig-tum!
+    Dei-ne Zau-ber bin-den wie-der, was die Mo-de streng ge-teilt; al-le Men-schen wer-den Brü-der, wo dein sanf-ter Flü-gel weilt.*
+    Jedan slog po tonu, osim svakog para osmina, koji deli jedan slog.
+
+    Pevaj u oktavi koja ti prija; tonovi su prilagođeni sredini tvog opsega. Ništa se ovde ne gura: ako lagani miks danas ne drži,
+    otpevaj lakše, u glavnom glasu ili oktavu niže, i opet se računa.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-045-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-045-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, spoken bratty 'nay-nay-nay' at three rising pitches, then 1-2-3-4-5-4-3-2-1 on 'nay' with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, izgovoreno zadirkujuće „nej-nej-nej” na tri sve više visine, pa 1-2-3-4-5-4-3-2-1 na „nej” uz klavir."
+    play: {notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-045-3
+    type: sing-phrase
+    prompt:
+      en: "A and A' (bars 1-8) on 'la', a catch breath after bar 4. Hear the difference between the open ending (E) and the closed one (D)."
+      sr: "A i A' (taktovi 1-8) na „la”, brz udah posle 4. takta. Čuj razliku između otvorenog završetka (E) i zatvorenog (D)."
+    notes: [F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, F#4, E4, E4, r, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 100
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: A4, is: P5}
+  - id: V-045-4
+    type: sing-phrase
+    prompt:
+      en: "The B section (bars 9-12) on bratty 'nay', light: the eighth-note pairs quick and even, then the drop of a perfect 5th to the low A, easy, not pushed."
+      sr: "Deo B (taktovi 9-12) na zadirkujuće „nej”, lagano: parovi osmina brzi i ravnomerni, pa pad za čistu kvintu do niskog A, lako, bez guranja."
+    notes: [E4, E4, F#4, D4, E4, F#4, G4, F#4, D4, E4, F#4, G4, F#4, E4, D4, E4, A3]
+    beats: [1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 2]
+    tempo: 100
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A3, to: E4, is: P5}
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-045-5
+    type: sing-phrase
+    prompt:
+      en: "The whole song on 'nay' in light mix, A A' B A', catch breaths in the rests. Speech-sized from start to end; B a little softer."
+      sr: "Cela pesma na „nej” u laganom miksu, A A' B A', brzi udasi u pauzama. Veličina govora od početka do kraja; B malo tiše."
+    notes: [F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, F#4, E4, E4, r, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4, r, E4, E4, F#4, D4, E4, F#4, G4, F#4, D4, E4, F#4, G4, F#4, E4, D4, E4, A3, r, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 100
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-045-6
+    type: sing-phrase
+    prompt:
+      en: "The whole song with words (German, or 'la' if you prefer), still in light mix: 'Freude, schöner Götterfunken...'. Pure vowels, legato lines."
+      sr: "Cela pesma sa rečima (na nemačkom, ili na „la” ako ti je draže), i dalje u laganom miksu: „Freude, schöner Götterfunken...”. Čisti samoglasnici, povezane linije."
+    notes: [F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, F#4, E4, E4, r, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4, r, E4, E4, F#4, D4, E4, F#4, G4, F#4, D4, E4, F#4, G4, F#4, E4, D4, E4, A3, r, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 1.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 100
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A3, to: A4, is: P8}
+  - id: V-045-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Optional, only if the whole song was easy: play the first line a whole step higher (in E major) and sing the A section on 'nay' there. If anything grows or tightens, go back to D. Rate where the light mix still held."
+      sr: "Po želji, samo ako je cela pesma bila laka: odsviraj prvi red celi stepen više (u E-duru) i otpevaj deo A na „nej” tamo. Ako išta poraste ili se stegne, vrati se u D. Oceni gde je lagani miks još držao."
+  - id: V-045-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Review: record the whole song once more and listen back. Rate light mix (same size top to bottom), breath (silent, on time), the eighth notes (even), vowels (pure) and ease (no pushing). Then 3 quiet hums sliding down."
+      sr: "Ponavljanje: snimi celu pesmu još jednom i preslušaj. Oceni lagani miks (ista veličina od vrha do dna), dah (tih, na vreme), osmine (ravnomerne), samoglasnike (čiste) i lakoću (bez guranja). Pa 3 tiha pevušenja uz klizanje naniže."

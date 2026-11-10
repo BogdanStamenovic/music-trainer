@@ -1,0 +1,152 @@
+id: E-030
+track: E
+order: 30
+title: {en: "Melodic dictation with chromatic notes (♯4, ♭7)", sr: "Melodijski diktat sa hromatskim tonovima (♯4, ♭7)"}
+prereqs: [E-029, E-019, T-046]
+minutes: 15
+tags: [ear, melody, dictation, chromatic]
+explain:
+  en: |
+    So far every melody stayed inside the scale. The two chromatic notes you will meet most often in
+    major-key tunes are **♯4** and **♭7**, and each one has a direction it wants to go.
+
+    | note | in C | wants to go | why | sounds like |
+    |---|---|---|---|---|
+    | **♯4** | F# | **up** a half step to 5 | it is the leading tone of V (V/V from E-029) | leaning toward G, brightening |
+    | **♭7** | B♭ | **down** a half step to 6 | it is the 7th of C7 (V7/IV): it pulls toward F | bluesy, folk, rock; leaning toward IV |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    E ^F G A | G ^F G2 || c _B A G | F E D C |]
+    ```
+
+    First: 3 ♯4 5 6 5 ♯4 5, circling G. Second: 8 ♭7 6 5 4 3 2 1, a scale with B♭ instead of B.
+
+    How to catch them in dictation:
+
+    1. **Do the usual first** (sing it back, chunk it, anchor the first note, draw the contour).
+    2. **Notice the note that does not fit.** If a note sounds "outside" or makes you feel the key
+       shifted for a moment, it is probably chromatic.
+    3. **Name it by its neighbour.** A note a half step **below 5** that rises to 5 is ♯4. A note a
+       half step **above 6** that falls to 6 is ♭7. Ask which note it resolves to.
+    4. **Spell it by direction.** Rising chromatic notes are written with sharps (F#), falling ones
+       with flats (B♭). That is why in C the note between F and G is F# going up, and between A and
+       B it is B♭ going down.
+
+    The last two exercises use scales where the altered note is permanent: **Lydian** (major with ♯4)
+    and **Mixolydian** (major with ♭7). There the note can turn up anywhere, not only next to its
+    resolution, so listen for the colour rather than the direction.
+  sr: |
+    Do sada je svaka melodija ostajala u lestvici. Dva hromatska tona koja ćeš najčešće sresti u
+    durskim melodijama su **♯4** i **♭7**, i svaki ima pravac u kome hoće da ide.
+
+    | ton | u C-duru | hoće da ide | zašto | zvuči kao |
+    |---|---|---|---|---|
+    | **♯4** | Fis | **naviše** polustepen na 5 | vođica je ka V (V/V iz E-029) | naginje ka G, posvetljava |
+    | **♭7** | B | **naniže** polustepen na 6 | septima je od C7 (V7/IV): vuče ka F | bluz, folk, rok; naginje ka IV |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    E ^F G A | G ^F G2 || c _B A G | F E D C |]
+    ```
+
+    Prvo: 3 ♯4 5 6 5 ♯4 5, kruži oko G. Drugo: 8 ♭7 6 5 4 3 2 1, lestvica sa B umesto H.
+
+    Kako da ih uhvatiš u diktatu:
+
+    1. **Prvo uradi uobičajeno** (otpevaj, podeli na delove, učvrsti prvi ton, nacrtaj konturu).
+    2. **Primeti ton koji ne pripada.** Ako ton zvuči „spolja" ili ti se učini da se tonalitet na
+       trenutak pomerio, verovatno je hromatski.
+    3. **Imenuj ga po susedu.** Ton pola stepena **ispod 5** koji se penje na 5 je ♯4. Ton pola
+       stepena **iznad 6** koji pada na 6 je ♭7. Pitaj se na koji ton se razrešava.
+    4. **Piši ga po pravcu.** Hromatski tonovi koji se penju pišu se sa povisilicom (Fis), oni koji
+       padaju sa snizilicom (B). Zato je u C-duru ton između F i G Fis kad ide naviše, a između A i H
+       je B kad ide naniže.
+
+    Poslednje dve vežbe koriste lestvice u kojima je izmenjeni ton stalan: **lidijsku** (dur sa ♯4)
+    i **miksolidijsku** (dur sa ♭7). Tamo ton može da se pojavi bilo gde, ne samo pored svog
+    razrešenja, pa slušaj boju, a ne pravac.
+exercises:
+  - id: E-030-1
+    type: midi-echo
+    prompt: {en: "C major: first you hear the tonic C4, then the melody (starts on E4). Play the melody back; one note is ♯4.", sr: "C-dur: prvo čuješ toniku C4, pa melodiju (počinje na E4). Odsviraj melodiju; jedan ton je ♯4."}
+    mode: sequence
+    expect: [E4, F#4, G4, A4, G4, F#4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 72
+    octave: exact
+    play: {notes: [C4, E4, F#4, G4, A4, G4, F#4, G4], durations: [2, 1, 1, 1, 1, 1, 1, 2], tempo: 72}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: E4, to: F#4, is: M2}
+      - interval: {from: F#4, to: G4, is: m2}
+      - interval: {from: C4, to: F#4, is: A4}
+      - interval: {from: A4, to: Bb4, is: m2}
+      - interval: {from: C4, to: Bb4, is: m7}
+  - id: E-030-2
+    type: midi-echo
+    prompt: {en: "C major: tonic C4, then the melody (starts on C4). It climbs and passes through a chromatic note on the way to 5.", sr: "C-dur: tonika C4, pa melodija (počinje na C4). Penje se i prolazi kroz hromatski ton na putu do 5."}
+    mode: sequence
+    expect: [C4, D4, E4, F4, F#4, G4, A4, G4]
+    beats: [1, 1, 1, 0.5, 0.5, 1, 1, 2]
+    tempo: 72
+    octave: exact
+    play: {notes: [C4, C4, D4, E4, F4, F#4, G4, A4, G4], durations: [2, 1, 1, 1, 0.5, 0.5, 1, 1, 2], tempo: 72}
+  - id: E-030-3
+    type: midi-echo
+    prompt: {en: "F major: tonic F4, then the melody (starts on F4). It outlines a chord with a ♭7 on top, then walks down.", sr: "F-dur: tonika F4, pa melodija (počinje na F4). Ocrtava akord sa ♭7 na vrhu, pa silazi korakom."}
+    mode: sequence
+    expect: [F4, A4, C5, Eb5, D5, C5, Bb4, A4]
+    beats: [1, 1, 1, 1, 1.5, 0.5, 1, 2]
+    tempo: 72
+    octave: exact
+    pass: 0.7
+    play: {notes: [F4, F4, A4, C5, Eb5, D5, C5, Bb4, A4], durations: [2, 1, 1, 1, 1, 1.5, 0.5, 1, 2], tempo: 72}
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - chord: {notes: [F4, A4, C5, Eb5], root: F, quality: "7"}
+      - interval: {from: D5, to: Eb5, is: m2}
+  - id: E-030-4
+    type: midi-echo
+    prompt: {en: "G major: tonic G4, then the melody (starts on D5). It walks down to the tonic and dips below it.", sr: "G-dur: tonika G4, pa melodija (počinje na D5). Silazi do tonike i spušta se ispod nje."}
+    mode: sequence
+    expect: [D5, C5, B4, A4, G4, F4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    octave: exact
+    pass: 0.7
+    play: {notes: [G4, D5, C5, B4, A4, G4, F4, G4], durations: [2, 1, 1, 1, 1, 1, 1, 2], tempo: 76}
+    checks:
+      - scale: {tonic: G, type: mixolydian, is: [G, A, B, C, D, E, F]}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: E-030-5
+    type: midi-echo
+    prompt: {en: "D major: tonic D4, then the melody (starts on D4). Both chromatic notes appear, one going up, one going down.", sr: "D-dur: tonika D4, pa melodija (počinje na D4). Pojavljuju se oba hromatska tona, jedan naviše, jedan naniže."}
+    mode: sequence
+    expect: [D4, E4, F#4, G#4, A4, C5, B4, A4]
+    beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 2]
+    tempo: 72
+    octave: exact
+    pass: 0.7
+    play: {notes: [D4, D4, E4, F#4, G#4, A4, C5, B4, A4], durations: [2, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 2], tempo: 72}
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: G#4, to: A4, is: m2}
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: D4, to: G#4, is: A4}
+  - id: E-030-6
+    type: generated
+    prompt: {en: "Lydian (every 4 raised): 6–7 notes around the ♯4 (degrees 2–6)", sr: "Lidijski (svaki 4. stupanj povišen): 6–7 tonova oko ♯4 (stupnjevi 2–6)"}
+    count: 4
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [F, C, G], type: lydian, length: [6, 7], degrees: [2, 3, 4, 5, 6], maxLeap: 2, startOnTonic: false, tempo: 76}
+  - id: E-030-7
+    type: generated
+    prompt: {en: "Mixolydian (every 7 lowered): 6–7 notes around the ♭7 (degrees 4 to 8)", sr: "Miksolidijski (svaki 7. stupanj snižen): 6–7 tonova oko ♭7 (stupnjevi 4 do 8)"}
+    count: 4
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [G, D, C], type: mixolydian, length: [6, 7], degrees: [4, 5, 6, 7, 8], maxLeap: 2, startOnTonic: false, tempo: 76}

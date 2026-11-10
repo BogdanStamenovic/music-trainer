@@ -693,7 +693,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
     }
     case "progression": {
       const key = parseNote(rng.pick(g.keys), toMidi(parseNote(g.keys[0], 4)) > 67 ? 3 : 4);
-      const chords = g.smooth ? smoothVoicing(g.numerals.map((r) => romanChord(key, g.type, r))) : g.numerals.map((r) => romanChord(key, g.type, r));
+      const chords = g.smooth ? smoothVoicing(g.numerals.map((r) => romanChord(key, g.type, r)), key) : g.numerals.map((r) => romanChord(key, g.type, r));
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       const prog = g.numerals.join(" – ");
       const ec = chords.map((c) => c.map(toMidi));
@@ -823,7 +823,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const k = rng.int(0, g.options.length - 1);
       const opts = g.options.map((o) => o.join(" – "));
       const raw = g.options[k].map((r) => romanChord(key, g.type, r));
-      const chords = (g.smooth ? smoothVoicing(raw) : raw).map((c) => c.map(toMidi));
+      const chords = (g.smooth ? smoothVoicing(raw, key) : raw).map((c) => c.map(toMidi));
       const { options, answer } = mcq(rng, opts[k], opts, Math.min(4, opts.length));
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       return {
@@ -988,7 +988,9 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
  * its pitch class to where it was, and keeps the cheapest total movement. The first
  * chord starts near E4-G4-C5.
  */
-export function smoothVoicing(chords: Note[][]): Note[][] {
+export function smoothVoicing(chords: Note[][], tonic?: Note): Note[][] {
+  const leadingPc = tonic ? (pitchClassOf(tonic) + 11) % 12 : null;
+  const tonicPc = tonic ? pitchClassOf(tonic) : null;
   let prev = [64, 67, 72];
   let prevBass: number | null = null;
   let prevSeventhPc: number | null = null; // the 7th of the previous chord, if it had one
@@ -1015,7 +1017,7 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
     // inversion doubles the bass (5th), as in the cadential 6/4.
     // Seventh chords: the three tones above the bass.
     const root = c.find((r) => c.every((n) => n === r || [2, 4, 6].includes((n.letter - r.letter + 7) % 7))) ?? c[0];
-    const tones =
+    let tones =
       c.length >= 4
         ? c.slice(1, 4)
         : c[0].letter === root.letter && c[0].acc === root.acc
@@ -1023,18 +1025,34 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
           : (c[0].letter - root.letter + 7) % 7 === 2
             ? [root, root, c.find((n) => (n.letter - root.letter + 7) % 7 === 4)!]
             : [c[0], c[1], c[2]];
+    // diminished triads (vii°): double the 3rd, never the root (the leading tone)
+    const third = c.find((n) => (n.letter - root.letter + 7) % 7 === 2);
+    const fifth = c.find((n) => (n.letter - root.letter + 7) % 7 === 4);
+    if (c.length === 3 && third && fifth && (toMidi(fifth) - toMidi(root) + 120) % 12 === 6) {
+      // bass on the root: above it 3rd, 3rd, 5th (no second leading tone);
+      // vii°6 (3rd in the bass): above it root, 3rd, 5th, so the 3rd is the doubled note
+      const bassIsRoot = c[0].letter === root.letter && c[0].acc === root.acc;
+      tones = bassIsRoot ? [third, third, fifth] : [root, third, fifth];
+    }
     let best: { midis: number[]; notes: Note[] } | null = null;
     let bestCost = Infinity;
     const bass = toMidi({ ...c[0], octave: 3 });  // c[0] is the bass (romanChord puts the inversion's bass first)
     for (const order of perms(tones)) {
-      // upper voices stay strictly above the bass (no unison with it)
+      // upper voices stay strictly above the bass (no unison with it) and at or below G5
+      // (the soprano range taught in T-033)
       const midis = order.map((n, v) => {
         let m = near(pitchClassOf(n), prev[v]);
         while (m <= bass) m += 12;
+        while (m > 79 && m - 12 > bass) m -= 12;
         return m;
       });
       let cost = midis.reduce((a, m, v) => a + Math.abs(m - prev[v]), 0);
       if (prevBass !== null) cost += 5 * parallels([prevBass, ...prev], [bass, ...midis]);
+      // the leading tone resolves up to the tonic when the next chord has the tonic
+      if (leadingPc !== null && tonicPc !== null && c.some((n) => pitchClassOf(n) === tonicPc))
+        prev.forEach((p, v) => {
+          if ((((p % 12) + 12) % 12) === leadingPc && midis[v] - p !== 1) cost += 4;
+        });
       // a chord 7th resolves down by step (C of D7 -> B of G): anything else costs extra
       if (prevSeventhPc !== null)
         prev.forEach((p, v) => {

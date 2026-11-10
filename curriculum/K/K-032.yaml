@@ -1,0 +1,145 @@
+id: K-032
+track: K
+order: 32
+title: {en: "Accompanying a singer: simple patterns, slow", sr: "Pratnja pevaču: jednostavni obrasci, polako"}
+prereqs: [K-025]
+minutes: 14
+tags: [keys, accompaniment, singing, comping]
+explain:
+  en: |
+    Accompanying a singer is a different job from playing a piano piece. The voice is the
+    melody, and your part exists to give it **pitch, pulse and harmony**, then get out of the
+    way. Four habits do most of it:
+
+    1. **Stay under the voice.** Keep the right hand below the melody, so the voice is the
+       top line. Two or three notes in the right hand are enough.
+    2. **Play less than you can.** Slow, steady chords leave space for breath and words. A
+       busy part competes with the singer for the listener's ear.
+    3. **Give the start.** Before the singer comes in, play a short intro that ends on V or I,
+       then the **first note** of the melody on its own. A singer who hears the key and the
+       first pitch starts in tune.
+    4. **Follow.** The singer breathes, stretches a long note, comes in a hair late. You hold
+       the chord and move with them; strict metronome time is not the goal here.
+
+    The tune is "Oda radosti" (Beethoven, Ode to Joy), first phrase, in D major, a comfortable
+    key for most voices. The phrase ends on E over A, a half cadence (prednja rečenica):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:D
+    "D"F F G A | "A7"A G F E | "D"D D E F | "D"F3/2 E/ "A7"E2 |]
+    ```
+
+    **Pattern 1, the pad:** left hand the root on beat 1 (and wherever the chord changes), right hand a chord on beats 1 and 3,
+    low and soft. In D: D3 · F♯3 A3 D4; in A7: A2 · G3 A3 C♯4 (root, 3rd and 7th: the 5th E
+    is left out, the 3rd and 7th are what make it A7).
+
+    **Pattern 2, walking quarters:** the left hand alone, root–5th–octave–5th in quarter notes
+    (D2 A2 D3 A2). Steady motion under a slow melody, with the right hand free to hold chords
+    or to double the melody when the singer needs support. Double the melody the first time
+    through for an unsure singer, then drop it.
+  sr: |
+    Pratnja pevaču je drugačiji posao od sviranja klavirskog komada. Glas je melodija, a tvoja
+    deonica postoji da mu da **visinu, puls i harmoniju**, i da se zatim skloni. Četiri navike
+    pokrivaju najveći deo:
+
+    1. **Ostani ispod glasa.** Desna ruka neka bude ispod melodije, tako da je glas gornja
+       linija. Dva ili tri tona u desnoj ruci su dovoljna.
+    2. **Sviraj manje nego što možeš.** Spori, mirni akordi ostavljaju prostor za dah i reči.
+       Prenatrpana deonica se sa pevačem bori za pažnju slušaoca.
+    3. **Daj početak.** Pre nego što pevač uđe, odsviraj kratak uvod koji se završava na V ili
+       I, pa sam **prvi ton** melodije. Pevač koji čuje tonalitet i prvu visinu počinje čisto.
+    4. **Prati.** Pevač udiše, produži dug ton, uđe malo kasnije. Ti držiš akord i ideš sa njim;
+       ovde cilj nije strogi metronom.
+
+    Pesma je "Oda radosti" (Betoven), prva fraza, u D-duru, prijatnom tonalitetu za većinu
+    glasova. Fraza se završava na E iznad A, polukadencom (prednja rečenica):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:D
+    "D"F F G A | "A7"A G F E | "D"D D E F | "D"F3/2 E/ "A7"E2 |]
+    ```
+
+    **Obrazac 1, podloga:** leva ruka osnovni ton na prvu dobu (i gde god se akord menja), desna akord na prvu i treću
+    dobu, nisko i tiho. Za D: D3 · Fis3 A3 D4; za A7: A2 · G3 A3 Cis4 (osnovni ton, terca i
+    septima: kvinta E je izostavljena, terca i septima su ono što čini A7).
+
+    **Obrazac 2, četvrtine koje koračaju:** samo leva ruka, osnovni ton–kvinta–oktava–kvinta u
+    četvrtinama (D2 A2 D3 A2). Mirno kretanje ispod spore melodije, a desna ruka je slobodna da
+    drži akorde ili da udvaja melodiju kad pevaču treba podrška. Nesigurnom pevaču udvoji
+    melodiju prvi put, pa je zatim izostavi.
+exercises:
+  - id: K-032-1
+    type: mcq
+    prompt: {en: "A singer sings Oda radosti in D, between D4 and A4. Where should your right-hand chords sit?", sr: "Pevač peva Odu radosti u D-duru, između D4 i A4. Gde treba da budu akordi tvoje desne ruke?"}
+    options:
+      - {en: "Below the melody, around F♯3–D4, so the voice is the top line", sr: "Ispod melodije, oko Fis3–D4, tako da je glas gornja linija"}
+      - {en: "Above the melody, around F♯5–A5, to add brightness", sr: "Iznad melodije, oko Fis5–A5, da doda sjaj"}
+      - {en: "In the same register, doubling every melody note in octaves", sr: "U istom registru, udvajajući svaki ton melodije u oktavama"}
+      - {en: "As full ten-note chords across the keyboard", sr: "Kao puni akordi od deset tonova preko cele klavijature"}
+    answer: 0
+    checks:
+      - chord: {notes: [D3, "F#3", A3, D4], root: D, quality: maj}
+  - id: K-032-2
+    type: mcq
+    prompt: {en: "On a long note the singer takes an extra moment and comes in to the next bar a little late. What do you do?", sr: "Na dugom tonu pevač uzme trenutak više i u sledeći takt uđe malo kasnije. Šta radiš?"}
+    options:
+      - {en: "Hold the chord and move on together with the singer", sr: "Držiš akord i nastavljaš zajedno sa pevačem"}
+      - {en: "Keep strict time; the singer has to catch up", sr: "Držiš strogi tempo; pevač mora da stigne"}
+      - {en: "Stop and start the phrase again", sr: "Zaustaviš se i kreneš frazu ispočetka"}
+      - {en: "Fill the gap with a fast run", sr: "Popuniš prazninu brzim pasažom"}
+    answer: 0
+  - id: K-032-3
+    type: midi-play
+    prompt: {en: "Intro and starting note: I – V7 – I in D (pad voicings), then the singer's first note, F♯4, alone. ♩=60.", sr: "Uvod i početni ton: I – V7 – I u D-duru (rasporedi podloge), pa sam prvi ton pevača, Fis4. ♩=60."}
+    mode: chords
+    expectChords: [[D3, "F#3", A3, D4], [A2, G3, A3, "C#4"], [D3, "F#3", A3, D4], ["F#4"]]
+    tempo: 60
+    checks:
+      - chord: {notes: [D3, "F#3", A3, D4], root: D, quality: maj, inversion: 0}
+      - chord: {notes: [A2, G3, A3, "C#4"], root: A, quality: "7", inversion: 0}
+      - roman: {key: D, degree: 5, is: "V"}
+  - id: K-032-4
+    type: midi-play
+    prompt: {en: "Pattern 1 under the first phrase: a chord every 2 beats (beats 1 and 3), D D | A7 A7 | D D | D A7, LH root on beat 1 of every bar and wherever the chord changes. ♩=72.", sr: "Obrazac 1 ispod prve fraze: akord na svake 2 dobe (prva i treća doba), D D | A7 A7 | D D | D A7, osnovni ton u levoj ruci na prvu dobu svakog takta i gde god se akord menja. ♩=72."}
+    mode: chords
+    expectChords: [[D3, "F#3", A3, D4], ["F#3", A3, D4], [A2, G3, A3, "C#4"], [G3, A3, "C#4"], [D3, "F#3", A3, D4], ["F#3", A3, D4], [D3, "F#3", A3, D4], [A2, G3, A3, "C#4"]]
+    beats: [2, 2, 2, 2, 2, 2, 2, 2]
+    tempo: 72
+    checks:
+      - chord: {notes: [G3, A3, "C#4"], root: A, quality: "7", inversion: 3}
+      - semitones: {from: G3, to: "F#3", is: 1}
+      - semitones: {from: "C#4", to: D4, is: 1}
+  - id: K-032-5
+    type: midi-play
+    prompt: {en: "Pattern 2, left hand alone in quarter notes, root–5th–octave–5th: D | A | D | D (2 beats) A (2 beats). ♩=72.", sr: "Obrazac 2, samo leva ruka u četvrtinama, osnovni ton–kvinta–oktava–kvinta: D | A | D | D (2 dobe) A (2 dobe). ♩=72."}
+    mode: sequence
+    expect: [D2, A2, D3, A2, A1, E2, A2, E2, D2, A2, D3, A2, D2, A2, A1, E2]
+    tempo: 72
+    checks:
+      - interval: {from: D2, to: A2, is: P5}
+      - interval: {from: A1, to: E2, is: P5}
+      - interval: {from: D2, to: D3, is: P8}
+  - id: K-032-6
+    type: midi-play
+    prompt: {en: "For a lower voice, the same phrase in C major, notes hidden: pattern 1 with I and V7 (C and G7, the V7 as root, 3rd and 7th). One chord every 2 beats at ♩=72; any octave.", sr: "Za niži glas, ista fraza u C-duru, bez prikaza tonova: obrazac 1 sa I i V7 (C i G7, V7 kao osnovni ton, terca i septima). Jedan akord na 2 dobe, ♩=72; bilo koja oktava."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n\"C\"E E F G | \"G7\"G F E D | \"C\"C C D E | \"C\"E3/2 D/ \"G7\"D2 |]"
+    mode: chords
+    expectChords: [[C3, E3, G3, C4], [E3, G3, C4], [G2, F3, G3, B3], [F3, G3, B3], [C3, E3, G3, C4], [E3, G3, C4], [C3, E3, G3, C4], [G2, F3, G3, B3]]
+    octave: any
+    beats: [2, 2, 2, 2, 2, 2, 2, 2]
+    tempo: 72
+    showNotes: false
+    checks:
+      - chord: {notes: [G2, F3, G3, B3], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [C3, E3, G3, C4], root: C, quality: maj, inversion: 0}
+  - id: K-032-7
+    type: practice
+    prompt: {en: "Play pattern 1 in D and either play the melody an octave higher with the right hand on top, or hum it softly (only if your voice is warmed up and comfortable). Then the whole tune (four phrases: the third phrase changes, find its chords by ear). Keep the piano clearly quieter than the melody.", sr: "Sviraj obrazac 1 u D-duru i ili sviraj melodiju oktavu više desnom rukom na vrhu, ili je tiho pevuši (samo ako ti je glas zagrejan i prijatno ti je). Zatim celu pesmu (četiri fraze: treća fraza se menja, nađi njene akorde po sluhu). Klavir neka bude jasno tiši od melodije."}
+    minutes: 4
+    play: {notes: ["F#4", "F#4", G4, A4, A4, G4, "F#4", E4, D4, D4, E4, "F#4", "F#4", E4, E4], durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2], tempo: 72}

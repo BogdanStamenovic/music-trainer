@@ -1,0 +1,157 @@
+id: K-031
+track: K
+order: 31
+title: {en: "Harmonizing a melody with secondary dominants", sr: "Harmonizacija melodije sekundarnim dominantama"}
+prereqs: [K-017, T-044]
+minutes: 15
+tags: [keys, harmony, harmonization, secondary-dominant, reharmonization]
+explain:
+  en: |
+    In K-017 you harmonized melodies with I, IV and V. Secondary dominants (T-043, T-044) give
+    you more colours for the same melody note, and they **point** at the next chord. Two ways
+    to find one:
+
+    **1. The melody has a chromatic note.** A note outside the key is usually the 3rd of a
+    secondary dominant, the leading tone of the chord that follows (B♭ is the exception: it
+    is the 7th of C7 and falls):
+
+    | melody note in C | secondary dominant | goes to |
+    |---|---|---|
+    | F♯ | D7 = V7/V | G (V) |
+    | C♯ | A7 = V7/ii | Dm (ii) |
+    | G♯ | E7 = V7/vi | Am (vi) |
+    | B♭ | C7 = V7/IV | F (IV) |
+
+    **2. The melody is diatonic, but the next chord is a target.** Before any chord X, you may
+    replace the chord with V7 of X, as long as the melody note belongs to it **and does not
+    clash** with its chromatic note. Under a melody G you cannot use E7 (it has G♯ against
+    your G), but you can use C7 (G is its 5th) or A7 (G is its 7th).
+
+    "Sjaj, sjaj, zvezdice" (Twinkle, Twinkle), melody an octave up, with two secondary
+    dominants:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"c c "C7"g g | "F"a a "C"g2 | "F"f f "A7"e e | "Dm"d "G7"d "C"c2 |]
+    ```
+
+    - G G over **C7**: the B♭ makes C sound like a dominant, and the next bar lands on F (IV).
+    - E E over **A7**: C♯ leads into D; the next chord is Dm (ii), then G7 and home. That gives
+      a little chain, A7 → Dm → G7 → C: each chord is the dominant of the next.
+
+    At the keyboard: the melody note is the **top** of the right hand, the root in the left,
+    and the remaining chord tones in between, moved as little as possible. The chromatic
+    note (B♭, C♯) should **resolve by a half step** in the next chord: B♭ down to A, C♯ up to D.
+  sr: |
+    U K-017 si harmonizovao melodije sa I, IV i V. Sekundarne dominante (T-043, T-044) daju više
+    boja za isti ton melodije, i **pokazuju** na sledeći akord. Dva načina da je nađeš:
+
+    **1. Melodija ima hromatski ton.** Ton van tonaliteta je obično terca sekundarne
+    dominante, vođica ka akordu koji sledi (B je izuzetak: to je septima od C7 i pada):
+
+    | ton melodije u C-duru | sekundarna dominanta | ide u |
+    |---|---|---|
+    | Fis | D7 = V7/V | G (V) |
+    | Cis | A7 = V7/ii | Dm (ii) |
+    | Gis | E7 = V7/vi | Am (vi) |
+    | B | C7 = V7/IV | F (IV) |
+
+    **2. Melodija je dijatonska, ali je sledeći akord cilj.** Pre bilo kog akorda X možeš da
+    staviš V7 od X, pod uslovom da ton melodije pripada tom akordu **i da se ne sudara** sa
+    njegovim hromatskim tonom. Ispod melodijskog G ne možeš da staviš E7 (ima Gis naspram
+    tvog G), ali možeš C7 (G je kvinta) ili A7 (G je septima).
+
+    "Sjaj, sjaj, zvezdice", melodija oktavu više, sa dve sekundarne dominante:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"c c "C7"g g | "F"a a "C"g2 | "F"f f "A7"e e | "Dm"d "G7"d "C"c2 |]
+    ```
+
+    - G G preko **C7**: B čini da C zvuči kao dominanta, a sledeći takt doskače na F (IV).
+    - E E preko **A7**: Cis vodi u D; sledeći akord je Dm (ii), pa G7 i kući. To daje mali lanac
+      A7 → Dm → G7 → C: svaki akord je dominanta sledećeg.
+
+    Za klavirom: ton melodije je **gornji** ton desne ruke, osnovni ton u levoj, a ostali
+    tonovi akorda između, pomereni što manje. Hromatski ton (B, Cis) treba da se **razreši za
+    polustepen** u sledećem akordu: B naniže na A, Cis naviše na D.
+exercises:
+  - id: K-031-1
+    type: mcq
+    prompt: {en: "C major. A melody has F♯ on a strong beat, followed by G. Which chord goes under the F♯?", sr: "C-dur. Melodija ima Fis na jakoj dobi, a zatim G. Koji akord ide ispod Fis?"}
+    options: ["V7/V", "V7/ii", "V7/vi", "V7/IV"]
+    answer: 0
+    checks:
+      - chord: {notes: [D4, "F#4", A4, C5], root: D, quality: "7"}
+      - numeral: {key: C, is: "V7/V", notes: [D4, "F#4", A4, C5]}
+      - semitones: {from: "F#4", to: G4, is: 1}
+  - id: K-031-2
+    type: mcq
+    prompt: {en: "C major. The melody note is G (natural). Which of these chords clashes with it?", sr: "C-dur. Ton melodije je G. Koji od ovih akorada se sudara sa njim?"}
+    options: ["V7/vi (E7)", "V7/IV (C7)", "V7/ii (A7)", "I (C)"]
+    answer: 0
+    checks:
+      - chord: {notes: [E4, "G#4", B4, D5], root: E, quality: "7"}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - chord: {notes: [A3, "C#4", E4, G4], root: A, quality: "7"}
+      - numeral: {key: C, is: "V7/vi", notes: [E4, "G#4", B4, D5]}
+      - numeral: {key: C, is: "V7/IV", notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: C, is: "V7/ii", notes: [A3, "C#4", E4, G4]}
+      - semitones: {from: G4, to: "G#4", is: 1}
+  - id: K-031-3
+    type: notation-input
+    prompt: {en: "Spell V7/vi in F major (root, 3rd, 5th, 7th).", sr: "Napiši V7/vi u F-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: F4, numerals: [V7/vi]}}
+  - id: K-031-4
+    type: notation-input
+    prompt: {en: "Spell V7/ii in G major (root, 3rd, 5th, 7th).", sr: "Napiši V7/ii u G-duru (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: G4, numerals: [V7/ii]}}
+  - id: K-031-5
+    type: midi-play
+    prompt: {en: "The harmonized phrase from the example, melody on top: C · E4 G4 C5 | C7 · B♭4 E5 G5 | F · A4 C5 F5 A5 | C · C5 E5 G5 | F · A4 C5 F5 | A7 · G4 C♯5 E5 | Dm · F4 A4 D5 | G7 · F4 B4 D5 | C · E4 G4 C5 (roots C3 C3 F2 C3 F2 A2 D3 G2 C3). A chord per half bar, Dm and G7 a beat each, ♩=66.", sr: "Harmonizovana fraza iz primera, melodija na vrhu: C · E4 G4 C5 | C7 · B4 E5 G5 | F · A4 C5 F5 A5 | C · C5 E5 G5 | F · A4 C5 F5 | A7 · G4 Cis5 E5 | Dm · F4 A4 D5 | G7 · F4 H4 D5 | C · E4 G4 C5 (osnovni tonovi C3 C3 F2 C3 F2 A2 D3 G2 C3). Akord na pola takta, Dm i G7 po jednu dobu, ♩=66."}
+    mode: chords
+    expectChords: [[C3, E4, G4, C5], [C3, Bb4, E5, G5], [F2, A4, C5, F5, A5], [C3, C5, E5, G5], [F2, A4, C5, F5], [A2, G4, "C#5", E5], [D3, F4, A4, D5], [G2, F4, B4, D5], [C3, E4, G4, C5]]
+    beats: [2, 2, 2, 2, 2, 2, 1, 1, 4]
+    tempo: 66
+    checks:
+      - chord: {notes: [C3, Bb4, E5, G5], root: C, quality: "7", inversion: 0}
+      - numeral: {key: C, is: "V7/IV", notes: [C3, Bb4, E5, G5]}
+      - numeral: {key: C, is: "V7/ii", notes: [A2, G4, "C#5", E5]}
+      - numeral: {key: C, is: "ii", notes: [D3, F4, A4, D5]}
+      - chord: {notes: [F2, A4, C5, F5, A5], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [C3, C5, E5, G5], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [A2, G4, "C#5", E5], root: A, quality: "7", inversion: 0}
+      - chord: {notes: [D3, F4, A4, D5], root: D, quality: min, inversion: 0}
+      - chord: {notes: [G2, F4, B4, D5], root: G, quality: "7", inversion: 0}
+      - semitones: {from: A4, to: Bb4, is: 1}
+      - semitones: {from: "C#5", to: D5, is: 1}
+  - id: K-031-6
+    type: midi-play
+    prompt: {en: "A new melody, E D C C B C, harmonized I – V7/vi – vi – V7/V – V7 – I. Melody on top: C3 · G4 C5 E5 → E3 · G♯4 B4 D5 → A2 · E4 A4 C5 → D3 · F♯4 A4 C5 → G2 · F4 G4 B4 → C3 · E4 G4 C5. The repeated C gets two different chords: that is reharmonization. Half notes, ♩=66.", sr: "Nova melodija, E D C C H C, harmonizovana I – V7/vi – vi – V7/V – V7 – I. Melodija na vrhu: C3 · G4 C5 E5 → E3 · Gis4 H4 D5 → A2 · E4 A4 C5 → D3 · Fis4 A4 C5 → G2 · F4 G4 H4 → C3 · E4 G4 C5. Ponovljeno C dobija dva različita akorda: to je reharmonizacija. Polovine, ♩=66."}
+    abc: "X:1\nM:4/4\nL:1/2\nK:C\n\"C\"e \"E7\"d | \"Am\"c \"D7\"c | \"G7\"B \"C\"c |]"
+    mode: chords
+    expectChords: [[C3, G4, C5, E5], [E3, "G#4", B4, D5], [A2, E4, A4, C5], [D3, "F#4", A4, C5], [G2, F4, G4, B4], [C3, E4, G4, C5]]
+    beats: [2, 2, 2, 2, 2, 2]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: "V7/vi", notes: [E3, "G#4", B4, D5]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, "F#4", A4, C5]}
+      - numeral: {key: C, is: "vi", notes: [A2, E4, A4, C5]}
+      - chord: {notes: [C3, G4, C5, E5], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [E3, "G#4", B4, D5], root: E, quality: "7", inversion: 0}
+      - chord: {notes: [A2, E4, A4, C5], root: A, quality: min, inversion: 0}
+      - chord: {notes: [D3, "F#4", A4, C5], root: D, quality: "7", inversion: 0}
+      - chord: {notes: [G2, F4, G4, B4], root: G, quality: "7", inversion: 0}
+      - semitones: {from: "G#4", to: A4, is: 1}
+      - semitones: {from: F4, to: "F#4", is: 1}
+  - id: K-031-7
+    type: generated
+    prompt: {en: "The same progression in other keys: I – V7/vi – vi – V7/V – V7 – I, voice-led, all chord tones", sr: "Ista progresija u drugim tonalitetima: I – V7/vi – vi – V7/V – V7 – I, glatko vođenje glasova, svi tonovi akorda"}
+    count: 2
+    gen: {kind: progression, keys: [G, F, D], numerals: [I, V7/vi, vi, V7/V, V7, I], tempo: 60, smooth: true}

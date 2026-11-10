@@ -1,0 +1,131 @@
+id: V-035
+track: V
+order: 35
+title: {en: "Onset review: gentle staccato arpeggios", sr: "Ponavljanje atake: nežni stakato razloženi akordi"}
+prereqs: [V-034, V-005]
+minutes: 10
+tags: [voice, onset]
+explain:
+  en: |
+    Back to the **onset** (lesson 5), now under pressure: in **staccato** every note is a new onset, so an arpeggio of seven short notes is seven onsets in a few seconds.
+    Bad habits show up immediately, which is exactly why singers use staccato to check them.
+
+    | onset | in staccato it sounds like | fix |
+    |---|---|---|
+    | soft (breathy) | "ha-ha-ha", air puffs, the notes start late | less air, think "ah" not "hah" |
+    | hard (glottal) | tiny clicks or coughs before each note, throat working | start with a light "h" for a round, then fade the "h" out |
+    | **balanced** | clean, short, bright dots of sound | the goal |
+
+    How a gentle staccato is made:
+
+    - The note is **started and stopped by the breath**, not by closing the throat. Put a hand on your belly: it gives a small inward **bounce** on each note
+      (the pulsed "ts-ts-ts" hiss from lesson 23).
+    - **Between notes the throat stays open**; you are pausing the air, not shutting a door. No catch, no click.
+    - **Small and quiet.** Staccato that is loud turns into barking. Think of plucking a string, not hitting a drum.
+    - In between, the next pitch is **already in your ear**, so each dot lands on pitch without a scoop.
+
+    Path: start with "ha" (the "h" guarantees no click), then the same with the "h" smaller, then plain "ah". If clicks appear on "ah", go back to "ha".
+
+    The app grades pitch only (and loosely: short notes are hard to measure). How each note starts is for you to hear.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Nazad na **ataku** (5. lekcija), sada pod pritiskom: u **stakatu** je svaki ton nova ataka, pa je razloženi akord od sedam kratkih tonova sedam ataka za nekoliko sekundi.
+    Loše navike se odmah vide, i baš zato pevači koriste stakato da ih provere.
+
+    | ataka | u stakatu zvuči kao | rešenje |
+    |---|---|---|
+    | meka (dahtava) | „ha-ha-ha”, dašci vazduha, tonovi kasne | manje vazduha, misli „a”, ne „ha” |
+    | tvrda (glotalna) | sitni klikovi ili kašljuci pre svakog tona, grlo radi | jednu rundu počinji lakim „h”, pa ga postepeno izbaci |
+    | **uravnotežena** | čiste, kratke, svetle tačke zvuka | cilj |
+
+    Kako se pravi nežan stakato:
+
+    - Ton se **pokreće i zaustavlja dahom**, ne zatvaranjem grla. Stavi ruku na stomak: na svakom tonu daje mali **odskok** ka unutra
+      (isprekidano šištanje „c-c-c” iz 23. lekcije).
+    - **Između tonova grlo ostaje otvoreno**; zaustavljaš vazduh, ne zatvaraš vrata. Bez zastoja, bez klika.
+    - **Malo i tiho.** Glasan stakato postane lajanje. Misli na trzanje žice, ne na udarac u bubanj.
+    - Između tonova sledeća visina je **već u uhu**, pa svaka tačka sleće na visinu bez podvlačenja.
+
+    Put: počni sa „ha” („h” garantuje da nema klika), pa isto sa manjim „h”, pa čisto „a”. Ako se na „a” pojave klikovi, vrati se na „ha”.
+
+    Aplikacija ocenjuje samo visinu (i to blago: kratke tonove je teško meriti). Kako ton počinje, slušaš ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-035-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-035-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: pulsed hiss 'ts-ts-ts-ts', 8 per breath, 3 rounds (feel the belly bounce); then 3 quiet lip-trill sirens and 3 balanced 'ah' onsets on one easy note."
+      sr: "Zagrevanje: isprekidano šištanje „c-c-c-c”, 8 na jedan dah, 3 runde (oseti odskok stomaka); pa 3 tihe sirene treperenjem usana i 3 uravnotežene atake na „a” na jednom lakom tonu."
+  - id: V-035-3
+    type: sing-phrase
+    prompt:
+      en: "Staccato 1-3-5-8-5-3-1 on 'ha', slow: short dots with silence between, each bounced from the belly."
+      sr: "Stakato 1-3-5-8-5-3-1 na „ha”, sporo: kratke tačke sa tišinom između, svaka odskočena iz stomaka."
+    notes: [C4, r, E4, r, G4, r, C5, r, G4, r, E4, r, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-035-4
+    type: sing-phrase
+    prompt:
+      en: "The same staccato arpeggio on plain 'ah', no 'h'. Clean dots: no air puff, no click."
+      sr: "Isti stakato razloženi akord na čisto „a”, bez „h”. Čiste tačke: bez daška, bez klika."
+    notes: [D4, r, F#4, r, A4, r, D5, r, A4, r, F#4, r, D4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-035-5
+    type: sing-phrase
+    prompt:
+      en: "Staccato up, legato down: 1-3-5-8 short on 'ah', then 8-5-3-1 connected on the same 'ah'. The onset stays balanced when the style changes."
+      sr: "Stakato naviše, legato naniže: 1-3-5-8 kratko na „a”, pa 8-5-3-1 povezano na istom „a”. Ataka ostaje uravnotežena kad se stil promeni."
+    notes: [C4, r, E4, r, G4, r, C5, G4, E4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-035-6
+    type: sing-phrase
+    prompt:
+      en: "Minor staccato: 1-3-5-3-1 in A minor on 'ah', a little quicker."
+      sr: "Stakato u molu: 1-3-5-3-1 u a-molu na „a”, malo brže."
+    notes: [A3, r, C4, r, E4, r, C4, r, A3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1]
+    tempo: 80
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min, inversion: 0}
+  - id: V-035-7
+    type: mcq
+    prompt:
+      en: "In a staccato arpeggio on 'ah' you hear a tiny click before every note. What do you do?"
+      sr: "U stakato razloženom akordu na „a” čuješ mali klik pre svakog tona. Šta radiš?"
+    options:
+      - {en: "Sing a round on 'ha', then let the 'h' fade out while keeping the throat open", sr: "Otpevaj jednu rundu na „ha”, pa pusti da „h” nestane dok grlo ostaje otvoreno"}
+      - {en: "Sing louder so the clicks are covered", sr: "Pevaj glasnije da se klikovi ne čuju"}
+      - {en: "Close the throat harder between notes so they are shorter", sr: "Jače zatvaraj grlo između tonova da budu kraći"}
+    answer: 0
+  - id: V-035-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record one staccato arpeggio on 'ah' and listen back. Rate: clicks, air puffs, or clean dots? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi jedan stakato razloženi akord na „a” i preslušaj. Oceni: klikovi, dašci ili čiste tačke? Pa 3 tiha pevušenja uz klizanje naniže."

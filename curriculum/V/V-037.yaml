@@ -1,0 +1,142 @@
+id: V-037
+track: V
+order: 37
+title: {en: "Singing minor 6ths and minor 7ths", sr: "Pevanje malih seksti i malih septima"}
+prereqs: [V-036, V-017]
+minutes: 12
+tags: [voice, intervals]
+explain:
+  en: |
+    Two wide intervals that melodies love and untrained singers miss: the **minor 6th** (8 semitones) and the **minor 7th** (10 semitones).
+    Both are too wide to "feel" as a step, so the trick is to **build them from things you already sing well**, then drop the scaffolding.
+
+    **Minor 6th up** (E to C, *mala seksta*):
+
+    - In a major key it is **3 up to 8**: in C major, E up to the C above. You know both notes as chord tones of C major.
+    - Built from smaller steps: a **minor 3rd + a perfect 4th** (E-G, then G-C). Sing E-G-C, then E-C directly.
+    - A tune: the leap at the start of Scott Joplin's **"The Entertainer"** (1902) is E up to C, a minor 6th.
+
+    **Minor 7th up** (G to F, *mala septima*):
+
+    - It is the **root to the 7th of a dominant seventh chord**: G-B-D-F is G7, the chord you play before C. Sing the arpeggio, then root to 7th directly.
+    - Or think **an octave minus a whole step**: hear the octave G, then lean one whole step down to F.
+    - In minor it is **1 up to 7**: A up to G in A minor (the top of A-C-E-G, Am7).
+    - A tune often quoted for it: the opening "There's a..." of **"Somewhere"** (*West Side Story*).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c2 | E c2 z | G, B, D F | G, F2 z |]
+    ```
+
+    Same rule as all leaps: **hear the top note before you leave the bottom one**, and keep the top light. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Dva široka intervala koje melodije vole, a neškolovani pevači promašuju: **mala seksta** (8 polustepena) i **mala septima** (10 polustepena).
+    Oba su preširoka da bi se „osetila” kao korak, pa je trik da ih **sagradiš od onoga što već dobro pevaš**, a onda skloniš skelu.
+
+    **Mala seksta naviše** (od E do C, engl. *minor 6th*):
+
+    - U duru je to **3 naviše do 8**: u C-duru, od E do gornjeg C. Oba tona znaš kao tonove C-dur akorda.
+    - Sagrađena od manjih koraka: **mala terca + čista kvarta** (E-G, pa G-C). Otpevaj E-G-C, pa E-C direktno.
+    - Melodija: skok na početku **„The Entertainer”** Skota Džoplina (1902) je od E naviše do C, mala seksta.
+
+    **Mala septima naviše** (od G do F, engl. *minor 7th*):
+
+    - To je **od osnovnog tona do septime dominantnog septakorda**: G-H-D-F je G7, akord koji sviraš pre C. Otpevaj razloženi akord, pa od osnovnog tona direktno do septime.
+    - Ili misli **oktava minus ceo stepen**: čuj oktavu G, pa se spusti ceo stepen do F.
+    - U molu je to **1 naviše do 7**: od A do G u a-molu (vrh A-C-E-G, Am7).
+    - Melodija koja se često navodi: početak „There's a...” pesme **„Somewhere”** (*Priča sa zapadne strane*).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c2 | E c2 z | G, B, D F | G, F2 z |]
+    ```
+
+    Isto pravilo kao za sve skokove: **čuj gornji ton pre nego što napustiš donji**, i neka gornji bude lagan. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-037-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-037-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then lip trills on 1-3-5-8-5-3-1 along with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa treperenje usnama na 1-3-5-8-5-3-1 uz klavir."
+    play: {notes: [C4, E4, G4, C5, G4, E4, C4], mode: melodic, tempo: 80}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-037-3
+    type: generated
+    prompt: {en: "Which interval? (6ths and 7ths)", sr: "Koji interval? (sekste i septime)"}
+    count: 4
+    gen: {kind: interval-ear, intervals: [m6, M6, m7, M7], direction: up, range: [C3, C5]}
+  - id: V-037-4
+    type: sing-phrase
+    prompt:
+      en: "Minor 6th with scaffolding, then without: E-G-C on 'la', a rest, then E-C directly."
+      sr: "Mala seksta sa skelom, pa bez nje: E-G-C na „la”, pauza, pa E-C direktno."
+    notes: [E4, G4, C5, r, E4, C5]
+    beats: [1, 1, 2, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: G4, to: C5, is: P4}
+      - interval: {from: E4, to: C5, is: m6}
+      - semitones: {from: E4, to: C5, is: 8}
+  - id: V-037-5
+    type: sing-phrase
+    prompt:
+      en: "Minor 7th from G7: G-B-D-F on 'la', a rest, then G-F directly. Hear the F before you leap."
+      sr: "Mala septima iz G7: G-H-D-F na „la”, pauza, pa G-F direktno. Čuj F pre skoka."
+    notes: [G3, B3, D4, F4, r, G3, F4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7", inversion: 0}
+      - interval: {from: G3, to: F4, is: m7}
+      - semitones: {from: G3, to: F4, is: 10}
+  - id: V-037-6
+    type: sing-phrase
+    prompt:
+      en: "Minor 7th in minor: A-C-E-G (Am7) on 'la', a rest, then A-G directly, then down the scale G-F-E to rest on E."
+      sr: "Mala septima u molu: A-C-E-G (Am7) na „la”, pauza, pa A-G direktno, pa niz lestvicu G-F-E do E."
+    notes: [A3, C4, E4, G4, r, A3, G4, F4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [A3, C4, E4, G4], root: A, quality: min7, inversion: 0}
+      - interval: {from: A3, to: G4, is: m7}
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+  - id: V-037-7
+    type: generated
+    prompt: {en: "Sing the note you hear, then the minor 6th or minor 7th above (the prompt says which)", sr: "Otpevaj ton koji čuješ, pa malu sekstu ili malu septimu iznad (zadatak kaže koju)"}
+    count: 4
+    pass: 0.6
+    gen: {kind: pitch-match, range: [C3, A4], tolerance: 75, intervals: [m6, m7]}
+    checks:
+      - semitones: {from: E4, to: C5, is: 8}
+      - semitones: {from: G3, to: F4, is: 10}
+  - id: V-037-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet 'oo' sirens from high to low. Rate: which of the two leaps can you now sing without the scaffolding?"
+      sr: "Smirivanje: 3 tihe sirene na „u” odozgo naniže. Oceni: koji od dva skoka sada možeš da otpevaš bez skele?"

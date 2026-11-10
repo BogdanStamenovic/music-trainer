@@ -1,0 +1,125 @@
+id: V-044
+track: V
+order: 44
+title: {en: "Range check and easy extension", sr: "Provera opsega i lako proširivanje"}
+prereqs: [V-043, V-025]
+minutes: 11
+tags: [voice, range]
+explain:
+  en: |
+    Time to measure again. Since lesson 25 you have added head voice vs falsetto, a light mix, vowel modification and better support,
+    and those are what extend a range, not effort. Range grows when the **coordination** at the ends gets easier, so the top and bottom notes stop needing force.
+
+    What to expect, honestly: in an untrained adult voice a few weeks of practice often add **a semitone or two** at the top and sometimes one at the bottom.
+    Some days the measurement is **lower** than last time (tiredness, a cold, a late night). Both are normal; the trend over months is what counts.
+
+    The tools for each end:
+
+    | end | tool | why |
+    |---|---|---|
+    | **top** | "oo" or "nee" in head voice, light, from above (sliding down into the note) | coming from above keeps the light setting; climbing up drags weight along |
+    | **top** | vowel modification (lesson 31) | rounder vowels need less effort at the top |
+    | **bottom** | quieter, more breath-free, a relaxed "uh" or a hum | low notes need **less** pressure, not more; pushing them makes them disappear |
+
+    Rules for the measurement:
+
+    - A note **counts** only if it is clear, quiet and easy. If you have to reach, strain, or lift the chin, that note is outside the range for now.
+    - The app keeps a **2-semitone safety margin** inside both ends of what you sing, so you never need to push for a result.
+    - Falsetto notes above the head voice are fine to explore but count them only if they are on pitch and easy.
+
+    The extension phrases below are placed at the top and the bottom of your **stored** range on purpose (the top ones may reach 2 semitones above
+    your comfortable top: that is the margin). If any one is not easy today, sing it an octave toward the middle instead; the app accepts any octave.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Vreme je za novo merenje. Od 25. lekcije dodao si glavni glas i falset, lagani miks, modifikaciju samoglasnika i bolji oslonac,
+    a to je ono što širi opseg, ne napor. Opseg raste kad **koordinacija** na krajevima postane lakša, pa gornji i donji tonovi prestanu da traže silu.
+
+    Šta da očekuješ, iskreno: kod neškolovanog odraslog glasa nekoliko nedelja vežbanja često doda **polustepen ili dva** na vrhu, a ponekad jedan na dnu.
+    Nekih dana je merenje **niže** nego prošli put (umor, prehlada, kasno leganje). Oboje je normalno; računa se trend kroz mesece.
+
+    Alati za svaki kraj:
+
+    | kraj | alat | zašto |
+    |---|---|---|
+    | **vrh** | „u” ili „ni” u glavnom glasu, lagano, odozgo (klizanjem naniže u ton) | dolazak odozgo čuva lako podešavanje; penjanje naviše vuče težinu sa sobom |
+    | **vrh** | modifikacija samoglasnika (31. lekcija) | okrugliji samoglasnici traže manje napora na vrhu |
+    | **dno** | tiše, bez pritiska, opušteno „ə” ili pevušenje | niski tonovi traže **manje** pritiska, ne više; guranje ih gasi |
+
+    Pravila za merenje:
+
+    - Ton se **računa** samo ako je jasan, tih i lak. Ako moraš da posežeš, napinješ se ili podižeš bradu, taj ton je zasad van opsega.
+    - Aplikacija čuva **sigurnosnu marginu od 2 polustepena** unutar oba kraja onoga što otpevaš, pa nikad ne moraš da guraš zbog rezultata.
+    - Falset iznad glavnog glasa slobodno istražuj, ali računaj ga samo ako je na visini i lak.
+
+    Fraze za proširivanje ispod su namerno smeštene na vrh i dno tvog **sačuvanog** opsega (gornje mogu da dosegnu 2 polustepena iznad
+    udobnog vrha: to je margina). Ako neka danas nije laka, otpevaj je oktavu bliže sredini; aplikacija priznaje bilo koju oktavu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-044-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-044-2
+    type: practice
+    minutes: 2.5
+    prompt:
+      en: "Warm-up (a thorough one before measuring): 4 low breaths, 4 quiet lip-trill sirens through the whole comfortable range, 3 light owl hoots from high, then 1-3-5-3-1 on 'nay' along with the piano."
+      sr: "Zagrevanje (temeljno pre merenja): 4 niska udaha, 4 tihe sirene treperenjem usana kroz ceo udoban opseg, 3 lagana huktanja odozgo, pa 1-3-5-3-1 na „nej” uz klavir."
+    play: {notes: [D4, F#4, A4, F#4, D4], mode: melodic, tempo: 80}
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-044-3
+    type: sing-phrase
+    prompt:
+      en: "Top, from above: 8-5-3-1 on 'oo' in head voice, sliding gently between the notes, light and quiet."
+      sr: "Vrh, odozgo: 8-5-3-1 na „u” u glavnom glasu, uz blago klizanje između tonova, lagano i tiho."
+    notes: [C5, G4, E4, C4]
+    beats: [2, 1.5, 1.5, 2]
+    tempo: 60
+    fitRange: high
+    tolerance: 75
+    pass: 0.75
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-044-4
+    type: sing-phrase
+    prompt:
+      en: "Top: 5-4-3-2-1 on 'nee', light head voice or light mix, shading the 'ee' rounder on the first notes."
+      sr: "Vrh: 5-4-3-2-1 na „ni”, lagan glavni glas ili lagan miks, sa zaobljavanjem „i” na prvim tonovima."
+    notes: [A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-044-5
+    type: sing-phrase
+    prompt:
+      en: "Bottom: 5-4-3-2-1 on a relaxed 'uh', getting quieter as you go down. No pushing on the last note."
+      sr: "Dno: 5-4-3-2-1 na opušteno „ə”, sve tiše kako ideš naniže. Bez guranja na poslednjem tonu."
+    notes: [D4, C4, Bb3, A3, G3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    fitRange: low
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: G, type: natural-minor, is: [G, A, Bb, C, D, Eb, F]}
+  - id: V-044-6
+    type: voice-range
+    pass: 0.6
+    prompt:
+      en: "Measure: a slow, quiet glide down to the lowest note you can sing without strain, then up (in head voice, light) to the highest without strain. Not forced: the app keeps the safety margin by itself."
+      sr: "Izmeri: sporo, tiho klizanje naniže do najdubljeg tona koji pevaš bez napora, pa naviše (u glavnom glasu, lagano) do najvišeg bez napora. Bez forsiranja: aplikacija sama čuva sigurnosnu marginu."
+  - id: V-044-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet hums sliding gently downward. Compare today's range with the measurement from lesson 25 and rate how easy the ends felt, not how far they went."
+      sr: "Smirivanje: 3 tiha pevušenja uz blago klizanje naniže. Uporedi današnji opseg sa merenjem iz 25. lekcije i oceni koliko su krajevi bili laki, ne koliko su daleko otišli."
