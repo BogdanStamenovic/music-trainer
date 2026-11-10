@@ -1,0 +1,102 @@
+id: E-020
+track: E
+order: 20
+title: {en: "Bass line + chords: hear V7 resolving", sr: "Bas linija + akordi: čuj razrešenje V7"}
+prereqs: [E-019, E-016, T-020]
+minutes: 14
+tags: [ear, harmony, bass]
+explain:
+  en: |
+    V7 is V with one more note: in C, G–B–D plus **F**. That F is scale degree 4, and together with
+    the leading tone B it forms a **tritone** (B–F). The tritone is what makes V7 sound like it
+    *must* move, and both notes have an obvious way out:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [G,FB] [C,Ec] |]
+    ```
+
+    - **B rises a half step to C** (7 → 8).
+    - **F falls a half step to E** (4 → 3).
+    - **The bass falls a fifth (or rises a fourth), G to C** (5 → 1).
+
+    So V7 – I is two half steps closing in plus the strongest bass move there is. To hear it:
+
+    1. **Bass first.** Hum the lowest notes. 5 → 1 is the "full stop"; 5 → 6 (V7 – vi) is the deceptive
+       step up you met in E-016; 4 → 1 is the softer plagal "amen" (IV – I).
+    2. **Plain V or V7?** Listen to the top of the V chord. V7 has an extra edge, a rub in the
+       middle of the chord, and the resolution feels more urgent. Plain V sounds cleaner and more open.
+    3. **Follow one inner voice.** Hum the F of V7 and feel it sink to E. Once you can hear that
+       single half step, V7 is unmistakable.
+
+    In minor the same V7 appears (E–G#–B–D in A minor): the major V with its leading tone is what
+    makes minor cadences work.
+  sr: |
+    V7 je V sa još jednim tonom: u C-duru, G–H–D plus **F**. To F je 4. stupanj, i zajedno sa
+    vođicom H gradi **tritonus** (H–F). Tritonus čini da V7 zvuči kao da *mora* da se pomeri, a oba
+    tona imaju očigledan izlaz:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [G,FB] [C,Ec] |]
+    ```
+
+    - **H se penje pola stepena na C** (7 → 8).
+    - **F pada pola stepena na E** (4 → 3).
+    - **Bas pada za kvintu (ili se penje za kvartu), G u C** (5 → 1).
+
+    Dakle V7 – I su dva polustepena koja se zatvaraju, plus najjači pokret basa koji postoji. Kako da
+    ga čuješ:
+
+    1. **Prvo bas.** Otpevuši najdublje tonove. 5 → 1 je „tačka"; 5 → 6 (V7 – vi) je varljiv korak
+       naviše iz E-016; 4 → 1 je mekši plagalni „amin" (IV – I).
+    2. **Obično V ili V7?** Slušaj vrh akorda V. V7 ima dodatnu oštrinu, trenje u sredini akorda, a
+       razrešenje deluje hitnije. Obično V zvuči čistije i otvorenije.
+    3. **Prati jedan unutrašnji glas.** Otpevuši F iz V7 i oseti kako tone na E. Kad čuješ taj jedan
+       polustepen, V7 više ne možeš da pomešaš.
+
+    U molu se pojavljuje isti V7 (E–Gis–H–D u a-molu): durski V sa vođicom je ono što čini da molske
+    kadence funkcionišu.
+exercises:
+  - id: E-020-1
+    type: generated
+    prompt: {en: "Plain V or V7 before the I?", sr: "Obično V ili V7 pre I?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F], type: major, options: [[I, IV, V, I], [I, IV, V7, I]], tempo: 60}
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - chord: {notes: [E3, G#3, B3, D4], root: E, quality: "7"}
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: B3, to: C4, is: m2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: G3, to: C4, is: P4}
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+  - id: E-020-2
+    type: generated
+    prompt: {en: "Where does the V7 go: to I, to vi, or back to IV?", sr: "Kuda ide V7: na I, na vi, ili nazad na IV?"}
+    count: 8
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V7, I], [I, IV, V7, vi], [I, V7, IV, I]], tempo: 60}
+  - id: E-020-3
+    type: generated
+    prompt: {en: "Bass line with V7: echo the roots", sr: "Bas linija sa V7: ponovi osnovne tonove"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, G, F, D], type: major, numerals: [I, IV, V7, vi], length: 5, octave: 2, tempo: 72}
+  - id: E-020-4
+    type: generated
+    prompt: {en: "In minor: where is the V7?", sr: "U molu: gde je V7?"}
+    count: 6
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [A, D, E], type: harmonic-minor, options: [[i, iv, V7, i], [i, V7, iv, i], [i, iv, i, V7]], tempo: 60}
+  - id: E-020-5
+    type: generated
+    prompt: {en: "Hear it, then play it: I–IV–V7–I", sr: "Čuj, pa odsviraj: I–IV–V7–I"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, F], type: major, numerals: [I, IV, V7, I], echo: true}

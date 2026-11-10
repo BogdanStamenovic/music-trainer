@@ -1,0 +1,129 @@
+id: PC-005
+kind: composition
+order: 17
+title: {en: "ii–V–I and secondary dominants", sr: "ii–V–I i sporedne dominante"}
+minutes: 90
+prereqs: [T-020, T-025, K-013, E-022]
+composition:
+  key: F major
+  meter: 4/4
+  bars: 8
+  range: [C4, F5]
+  chords: [I, V7/ii, ii, V7, I, V7/V, V7, I]
+  rules: [bars, range, half-cadence, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody in F major, 4/4, over this progression**, one chord per bar:
+
+    | bar | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | chord | I | V7/ii | ii | V7 | I | V7/V | V7 | I |
+    | symbol | F | D7 | Gm | C7 | F | G7 | C7 | F |
+    | notes | F A C | D **F#** A C | G Bb D | C E G Bb | F A C | G **B** D F | C E G Bb | F A C |
+
+    Two **secondary dominants**: **D7 = V7 of ii** (it makes Gm sound like a little tonic for a
+    moment) and **G7 = V7 of V** (it does the same for C7). Bars 3–5 and 6–8 are both a
+    **ii–V–I** shape, the most common progression in jazz and pop.
+
+    ### The idea
+
+    - **Each secondary dominant brings a borrowed leading tone.** D7 contains **F#**, which
+      wants to rise to **G** (the root of Gm, bar 3). G7 contains **B natural**, which wants
+      to rise to **C** (the root of C7, bar 7). Put those notes in the melody and resolve them:
+      that half step up is the whole point of the chord.
+    - **Sevenths resolve down.** The 7th of each dominant (C in D7, F in G7, Bb in C7) likes to
+      fall by step: C → Bb, F → E, Bb → A.
+    - **Do not linger on the chromatic notes outside their bar.** F# belongs to bar 2, B
+      natural to bar 6; in the other bars F and Bb are back.
+    - **Watch the awkward leaps:** **F# → Bb** (a diminished 4th) and **B → F** (a tritone)
+      lie in wait. Approach F# and B from a step or a 3rd.
+    - Bar 4 (C7) ends on a V-chord note: half cadence. Bar 8 ends on F, from G or E.
+    - **Range: C4–F5.**
+
+    ### Practical tips
+
+    - Play the progression (the ▶ button plays it) and sing the guide tones: the 3rd and 7th of
+      each chord. A melody that touches F#–G in bars 2–3 and B–C in bars 6–7 already sounds
+      like this progression and no other.
+    - Motif again: bars 5–6 can repeat the rhythm of bars 1–2 with the notes bent to fit G7.
+    - In ABC (key F, so B means Bb): F# is `^F`, B natural is `=B`.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars; range C4–F5; bar 4 ends on 2, 5 or 7 (G, C or E);
+      last note F; no augmented or diminished leaps; leaps under control; sensible rhythm.
+      **The key check is switched off on purpose:** the chromatic notes are what this exercise
+      asks for, and an 8-bar melody that uses F# and B twice each would already fail the usual
+      "90% in key" rule. Whether they are used well is judged by the critique.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4.
+  sr: |
+    Napiši **melodiju od 8 taktova u F-duru, 4/4, nad ovom progresijom**, jedan akord po
+    taktu:
+
+    | takt | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | akord | I | V7/ii | ii | V7 | I | V7/V | V7 | I |
+    | oznaka | F | D7 | Gm | C7 | F | G7 | C7 | F |
+    | tonovi | F A C | D **Fis** A C | G B D | C E G B | F A C | G **H** D F | C E G B | F A C |
+
+    Dve **sporedne dominante**: **D7 = V7 od ii** (na trenutak čini da g-mol zvuči kao mala
+    tonika) i **G7 = V7 od V** (isto radi za C7). Taktovi 3–5 i 6–8 imaju oblik **ii–V–I**,
+    najčešće progresije u džezu i popu.
+
+    ### Ideja
+
+    - **Svaka sporedna dominanta donosi pozajmljenu vođicu.** D7 sadrži **Fis**, koje želi
+      naviše u **G** (osnovni ton g-mola, 3. takt). G7 sadrži **H**, koje želi naviše u **C**
+      (osnovni ton C7, 7. takt). Stavi te tonove u melodiju i razreši ih: taj polustepen naviše
+      je cela svrha akorda.
+    - **Septime se razrešavaju naniže.** Septima svake dominante (C u D7, F u G7, B u C7) rado
+      pada korakom: C → B, F → E, B → A.
+    - **Ne zadržavaj hromatske tonove van njihovog takta.** Fis pripada 2. taktu, H 6. taktu;
+      u ostalim taktovima se vraćaju F i B.
+    - **Pazi na nezgodne skokove:** **Fis → B** (smanjena kvarta) i **H → F** (tritonus) vrebaju.
+      Fis i H dostiži korakom ili tercom.
+    - 4. takt (C7) se završava tonom dominante: polukadenca. 8. takt se završava na F, sa G ili E.
+    - **Opseg: C4–F5.**
+
+    ### Praktični saveti
+
+    - Pusti progresiju (dugme ▶) i pevaj ključne tonove (*guide tones*): tercu i septimu svakog
+      akorda. Melodija koja dotakne Fis–G u taktovima 2–3 i H–C u taktovima 6–7 već zvuči kao
+      baš ova progresija.
+    - Opet motiv: taktovi 5–6 mogu da ponove ritam taktova 1–2, sa tonovima prilagođenim za G7.
+    - U ABC zapisu (tonalitet F, pa B znači B, tj. Bb): Fis je `^F`, H je `=B`.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova; opseg C4–F5; 4. takt se završava na 2, 5
+      ili 7 (G, C ili E); poslednji ton F; bez povećanih i smanjenih skokova; skokovi pod
+      kontrolom; smislen ritam. **Provera tonaliteta je namerno isključena:** hromatski tonovi
+      su upravo ono što zadatak traži, a melodija od 8 taktova sa po dva Fis i dva H već bi pala
+      na uobičajenom pravilu „90% tonova u tonalitetu”. Da li su dobro upotrebljeni, ocenjuje
+      kritika.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4.
+rubric:
+  - id: secondary-dominants
+    weight: 2
+    label: {en: "Secondary dominants heard", sr: "Sporedne dominante se čuju"}
+    top:
+      en: "F# appears in bar 2 and rises to G in bar 3; B natural appears in bar 6 and rises to C in bar 7; outside those bars the melody is plainly in F major again."
+      sr: "Fis se javlja u 2. taktu i penje u G u 3. taktu; H se javlja u 6. taktu i penje u C u 7. taktu; van tih taktova melodija je opet jasno u F-duru."
+  - id: harmony-fit
+    weight: 1
+    label: {en: "Fits the chords", sr: "Slaganje sa akordima"}
+    top:
+      en: "Chord tones on strong beats; sevenths resolve down by step; non-chord tones are clear passing or neighbour notes."
+      sr: "Akordski tonovi na jakim dobama; septime se razrešavaju korakom naniže; neakordski tonovi su jasni prolazni ili skretni tonovi."
+  - id: phrase-structure
+    weight: 1
+    label: {en: "Phrase and cadences", sr: "Fraza i kadence"}
+    top:
+      en: "A comma on C7 in bar 4, a full stop on F in bar 8; the two ii–V–I gestures sound related (same rhythm or contour)."
+      sr: "Zarez na C7 u 4. taktu, tačka na F u 8. taktu; dva ii–V–I pokreta zvuče srodno (isti ritam ili oblik)."
+  - id: line
+    weight: 1
+    label: {en: "Melodic line", sr: "Melodijska linija"}
+    top:
+      en: "Singable and smooth despite the chromatic notes (no awkward leaps into or out of them), with one clear high point."
+      sr: "Pevljiva i glatka uprkos hromatskim tonovima (bez nezgodnih skokova ka njima ili od njih), sa jednim jasnim vrhuncem."

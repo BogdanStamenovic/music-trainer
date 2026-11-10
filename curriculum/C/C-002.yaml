@@ -1,0 +1,148 @@
+id: C-002
+track: C
+order: 2
+prereqs: [C-001]
+title: {en: "Repetition and sequence", sr: "Ponavljanje i sekvenca"}
+minutes: 14
+tags: [composition, melody]
+explain:
+  en: |
+    Once you have a motif there are two cheap, strong ways to make more music out of it.
+
+    **Repetition**: play it again, same notes. The listener learns it. Twice is good; four times
+    in a row usually is not, because nothing new happens.
+
+    **Sequence**: play it again **starting on another scale degree**, same rhythm and same shape.
+    It keeps the unity of a repetition but the line *moves*, so it builds energy (going up) or
+    relaxes (going down).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^motif"C2 E2 D4 | "^up a step"D2 F2 E4 | "^third time: breaks off"E2 G2 F2 D2 | C8 |]
+    ```
+
+    **Move by scale steps, not by semitones.** In a key you shift every note up (or down) the same
+    number of *letter names*. Then some intervals change size: C–E is a major 3rd (4 semitones), D–F
+    a minor 3rd (3), E–G a minor 3rd. The ear does not mind: it hears "the same shape, one step up,
+    still in C major". This is a **diatonic** (tonal) sequence. Copying the exact semitones instead
+    (C–E → D–F♯) is a **real** sequence: it drags in a note from outside the key and sounds like
+    a modulation. Use diatonic sequences for now.
+
+    **The rule of three.** Motif, sequence, sequence... and then do something else: break the
+    pattern off, or end. The third time the listener predicts the fourth, so that is the moment
+    to surprise them (bar 3 above starts the motif and turns to the cadence instead).
+
+    **At the keyboard:** a falling sequence by step is the most common in all of music. Try
+    "G F E", "F E D", "E D C" with the same rhythm each time; your hand already knows it.
+  sr: |
+    Kad imaš motiv, postoje dva jeftina i jaka načina da od njega napraviš još muzike.
+
+    **Ponavljanje**: odsviraj ga ponovo, isti tonovi. Slušalac ga nauči. Dvaput je dobro; četiri puta
+    zaredom obično nije, jer se ništa novo ne dešava.
+
+    **Sekvenca**: odsviraj ga ponovo **od drugog stupnja lestvice**, istim ritmom i istim oblikom.
+    Zadržava jedinstvo ponavljanja, ali se linija *kreće*, pa gradi energiju (naviše) ili
+    opušta (naniže).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^motiv"C2 E2 D4 | "^stupanj više"D2 F2 E4 | "^još jednom pa prekid"E2 G2 F2 D2 | C8 |]
+    ```
+
+    **Pomeraj po stupnjevima lestvice, ne po polustepenima.** U tonalitetu svaki ton pomeriš naviše
+    (ili naniže) za isti broj *imena tonova*. Tada neki intervali promene veličinu: C–E je velika terca
+    (4 polustepena), D–F mala terca (3), E–G mala terca. Uho se ne buni: čuje „isti oblik, stupanj više,
+    i dalje C-dur". To je **dijatonska (tonalna) sekvenca**. Ako umesto toga kopiraš tačne polustepene
+    (C–E → D–Fis), dobijaš **realnu sekvencu**: ona uvodi ton van tonaliteta i zvuči kao modulacija.
+    Za sada koristi dijatonske sekvence.
+
+    **Pravilo trojke.** Motiv, sekvenca, sekvenca... pa onda nešto drugo: prekini obrazac ili završi.
+    Treći put slušalac već predviđa četvrti, pa je to trenutak za iznenađenje (takt 3 gore počinje
+    motiv, a onda skreće ka kadenci).
+
+    **Za klavirom:** silazna sekvenca po stupnjevima je najčešća u celoj muzici. Probaj
+    „G F E", „F E D", „E D C" istim ritmom svaki put; ruka to već zna.
+exercises:
+  - id: C-002-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nG2 E2 F4 | F2 D2 E4 | E2 C2 D4 | C8 |]"
+    prompt: {en: "Which bars are sequences of bar 1?", sr: "Koji taktovi su sekvence prvog takta?"}
+    options:
+      - {en: "bars 2 and 3 (each a step lower)", sr: "taktovi 2 i 3 (svaki stupanj niže)"}
+      - {en: "only bar 2", sr: "samo takt 2"}
+      - {en: "bars 2 and 3 (each a step higher)", sr: "taktovi 2 i 3 (svaki stupanj više)"}
+      - {en: "none: they are repetitions", sr: "nijedan: to su ponavljanja"}
+    answer: 0
+  - id: C-002-2
+    type: mcq
+    prompt: {en: "Move the motif C–D–E–C one scale step up, staying in C major.", sr: "Pomeri motiv C–D–E–C za jedan stupanj naviše, ostajući u C-duru."}
+    options: ["D E F D", "D E F# D", "C# D# F C#", "E F G E"]
+    answer: 0
+    checks:
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: E4, to: F#4, is: M2}
+  - id: C-002-3
+    type: mcq
+    prompt: {en: "The motif C–E–D shifted by exact semitones a whole step up gives D–F♯–E. Why does that sound like it leaves C major?", sr: "Motiv C–E–D pomeren za tačne polustepene, celim stepenom naviše, daje D–Fis–E. Zašto to zvuči kao da napušta C-dur?"}
+    options:
+      - {en: "F♯ is not in C major; the diatonic version D–F–E stays in the key", sr: "Fis nije u C-duru; dijatonska verzija D–F–E ostaje u tonalitetu"}
+      - {en: "a sequence may only go down", sr: "sekvenca sme da ide samo naniže"}
+      - {en: "the rhythm changed", sr: "promenio se ritam"}
+      - {en: "it does not: it is the same as D–F–E", sr: "ne zvuči tako: isto je kao D–F–E"}
+    answer: 0
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: F#4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: C-002-4
+    type: midi-play
+    prompt: {en: "Play the motif and two sequences up by step, as written.", sr: "Odsviraj motiv i dve sekvence naviše po stupnjevima, kako je zapisano."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 D4 | D2 F2 E4 | E2 G2 F4 |]"
+    mode: sequence
+    expect: [C4, E4, D4, D4, F4, E4, E4, G4, F4]
+  - id: C-002-5
+    type: midi-play
+    prompt: {en: "A falling sequence in G major. Play it as written (the key signature makes every F an F♯, but there is no F here).", sr: "Silazna sekvenca u G-duru. Odsviraj je kako je zapisana (predznak pretvara svako F u Fis, ali ovde F nema)."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nd c B2 c B A2 | B A G4 z2 |]"
+    mode: sequence
+    expect: [D5, C5, B4, C5, B4, A4, B4, A4, G4]
+  - id: C-002-6
+    type: compose
+    prompt:
+      en: "4 bars in C major, 4/4: your motif in bar 1, a sequence of it (a step up or down) in bar 2, a third statement in bar 3 that breaks off toward the end, and C held in bar 4, reached by step."
+      sr: "4 takta u C-duru, 4/4: tvoj motiv u taktu 1, njegova sekvenca (stupanj naviše ili naniže) u taktu 2, treće izlaganje u taktu 3 koje se prekida ka kraju, i zadržano C u taktu 4, do kog stižeš za korak."
+    key: C major
+    meter: 4/4
+    bars: 4
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      C2 E2 D4 | D2 F2 E4 | E2 G2 F2 D2 | C8 |]
+  - id: C-002-7
+    type: compose
+    prompt:
+      en: "Now a falling sequence in F major, 3/4 (B is B♭ in this key): a 3-beat motif in bar 1, the same a step lower in bars 2 and 3 (bar 3 may bend toward the ending), F held in bar 4."
+      sr: "Sada silazna sekvenca u F-duru, 3/4 (u ovom tonalitetu je B, ne H): motiv od tri dobe u taktu 1, isti stupanj niže u taktovima 2 i 3 (takt 3 sme da skrene ka kraju), zadržano F u taktu 4."
+    key: F major
+    meter: 3/4
+    bars: 4
+    range: [C4, F5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:3/4
+      L:1/8
+      K:F
+      c2 B2 A2 | B2 A2 G2 | A2 G2 E2 | F6 |]

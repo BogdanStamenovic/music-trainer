@@ -1,0 +1,128 @@
+id: PL-004
+kind: lyrics
+order: 14
+title: {en: "Lyrics: a folk ballad (a story song)", sr: "Tekst: balada (pesma koja priča priču)"}
+minutes: 75
+prereqs: [L-002, L-004]
+lyrics:
+  genre: {en: "folk ballad / story song", sr: "balada / pesma-priča"}
+  language: sr
+  lines: [20, 40]
+  structure:
+    en: "5–9 stanzas of 4 lines (ABCB or AABB), optional 1–2 line refrain"
+    sr: "5–9 strofa od po 4 stiha (ABCB ili AABB), opciono refren od 1–2 stiha"
+brief:
+  en: |
+    Write a **ballad**: a song that **tells a story**, in Serbian. Not a love lament (that was
+    the starogradska) but a plot: people, a place, an event, a turn, an ending. The ballad is
+    one of the oldest song forms in both the Balkan and the English-speaking traditions.
+
+    ### Conventions
+
+    - **Stanzas of four lines**, all the same shape, sung to the same melody: 5–9 of them. The
+      plot needs room; a ballad with two stanzas is an anecdote.
+    - **Meter (L-002):** pick the **osmerac** (8 syllables, 4 + 4) for a lyrical, quick ballad
+      or the **deseterac** (10 syllables, 4 + 6) for the weight of the epic tradition. Keep it in
+      every line.
+    - **Rhyme:** **ABCB** (only lines 2 and 4 rhyme: the English ballad stanza, and the easiest
+      in Serbian) or **AABB**. Assonance (*vrčem / momče*) is fine in the unrhymed lines.
+    - **Start in the middle.** No introduction; the first line already has a person doing
+      something (*Pošla Mara...*). Name people and places: a ballad is specific.
+    - **Show through action and dialogue (L-004).** Ballads rarely say what anyone feels; they
+      say what people did and what they said. One exchange of direct speech is typical.
+    - **Leap and linger.** Skip the boring parts (a whole year can pass between stanzas) and slow
+      down at the crucial moment (one stanza for one gesture).
+    - **Incremental repetition:** a line or half-line returns with one word changed as the story
+      moves (*preko mosta... / preko mosta, sama...*). It is the ballad's version of a refrain.
+    - **The turn and the ending.** Something unexpected happens two-thirds of the way through;
+      the last stanza closes the story, often by echoing the first.
+
+    A made-up opening stanza (osmerac, ABCB):
+
+    > Pošla Mara rano s vrčem
+    > preko mosta, niz dolinu,
+    > a za njom na vrancu momče
+    > i pita put za tuđinu.
+
+    ### Practical tips
+
+    - Before writing, list the plot in five short sentences: who, where, what they want, what
+      goes wrong, how it ends. One or two stanzas per sentence.
+    - Count the syllables of every line (syllabic *r* counts: *vr-čem*). Mark the caesura with
+      "|" while drafting.
+    - Read it aloud to a slow, steady pulse; the story should be followable on one hearing.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **baladu**: pesmu koja **priča priču**, na srpskom. Ne ljubavnu tužbalicu (to je
+    bila starogradska), nego zaplet: ljudi, mesto, događaj, obrt, kraj. Balada je jedan od
+    najstarijih pesničkih oblika i u balkanskoj i u engleskoj tradiciji.
+
+    ### Konvencije
+
+    - **Strofe od četiri stiha**, sve istog oblika, na istu melodiju: 5–9 strofa. Zapletu treba
+      prostora; balada od dve strofe je anegdota.
+    - **Metar (L-002):** izaberi **osmerac** (8 slogova, 4 + 4) za liričnu, brzu baladu ili
+      **deseterac** (10 slogova, 4 + 6) za težinu epske tradicije. Drži ga u svakom stihu.
+    - **Rima:** **ABCB** (rimuju se samo 2. i 4. stih: engleska baladna strofa, a u srpskom
+      najlakša) ili **AABB**. Asonanca (*vrčem / momče*) je u redu u nerimovanim stihovima.
+    - **Počni u sredini.** Bez uvoda; prvi stih već ima osobu koja nešto radi (*Pošla Mara...*).
+      Imenuj ljude i mesta: balada je konkretna.
+    - **Pokaži kroz radnju i dijalog (L-004).** Balade retko kažu šta ko oseća; kažu šta su ljudi
+      uradili i šta su rekli. Jedna razmena upravnog govora je tipična.
+    - **Skok i zastoj.** Preskoči dosadne delove (cela godina može da prođe između dve strofe) i
+      uspori u ključnom trenutku (jedna strofa za jedan pokret).
+    - **Postepeno ponavljanje:** stih ili polustih se vraća sa jednom promenjenom rečju dok priča
+      napreduje (*preko mosta... / preko mosta, sama...*). To je baladna verzija refrena.
+    - **Obrt i kraj.** Nešto neočekivano se desi na dve trećine pesme; poslednja strofa zatvara
+      priču, često odjekom prve.
+
+    Izmišljena prva strofa (osmerac, ABCB):
+
+    > Pošla Mara rano s vrčem
+    > preko mosta, niz dolinu,
+    > a za njom na vrancu momče
+    > i pita put za tuđinu.
+
+    ### Praktični saveti
+
+    - Pre pisanja ispiši zaplet u pet kratkih rečenica: ko, gde, šta želi, šta pođe naopako, kako
+      se završava. Jedna ili dve strofe po rečenici.
+    - Prebroj slogove svakog stiha (slogotvorno *r* se računa: *vr-čem*). Dok pišeš, obeleži
+      cezuru sa „|”.
+    - Pročitaj naglas uz spor, ravnomeran puls; priča treba da se prati iz jednog slušanja.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: story
+    weight: 2
+    label: {en: "Story arc", sr: "Luk priče"}
+    top:
+      en: "Clear characters, place and want; a complication; an unexpected turn about two-thirds through; an ending that closes the story. Followable on one hearing."
+      sr: "Jasni likovi, mesto i želja; zaplet; neočekivan obrt otprilike na dve trećine; kraj koji zatvara priču. Prati se iz jednog slušanja."
+  - id: meter
+    weight: 2
+    label: {en: "Meter and stanza", sr: "Metar i strofa"}
+    top:
+      en: "Every line has the chosen syllable count (8 or 10) with a natural caesura; every stanza has the same rhyme scheme."
+      sr: "Svaki stih ima izabrani broj slogova (8 ili 10) sa prirodnom cezurom; svaka strofa ima istu šemu rime."
+  - id: showing
+    weight: 1
+    label: {en: "Action and dialogue", sr: "Radnja i dijalog"}
+    top:
+      en: "Feelings are shown through what people do and say; at least one exchange of direct speech; no stanza that only explains."
+      sr: "Osećanja se pokazuju kroz ono što ljudi rade i govore; bar jedna razmena upravnog govora; nijedna strofa koja samo objašnjava."
+  - id: craft
+    weight: 1
+    label: {en: "Ballad devices", sr: "Baladna sredstva"}
+    top:
+      en: "Starts in the middle of the action; uses leap-and-linger pacing and at least one incremental repetition or an ending that echoes the opening."
+      sr: "Počinje usred radnje; koristi skok i zastoj u tempu priče i bar jedno postepeno ponavljanje ili kraj koji odjekuje početak."

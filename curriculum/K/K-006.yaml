@@ -1,7 +1,7 @@
 id: K-006
 track: K
 order: 6
-title: {en: "Diatonic triads in C, G and F", sr: "Diatonski kvintakordi u C, G i F-duru"}
+title: {en: "Diatonic triads in C, G and F", sr: "Dijatonski kvintakordi u C, G i F-duru"}
 prereqs: [K-005, T-012]
 minutes: 13
 tags: [keys, chords, harmony]

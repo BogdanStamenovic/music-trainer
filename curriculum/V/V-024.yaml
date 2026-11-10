@@ -1,0 +1,112 @@
+id: V-024
+track: V
+order: 24
+title: {en: "Legato: connecting notes on one breath", sr: "Legato: povezivanje tonova u jednom dahu"}
+prereqs: [V-023]
+minutes: 10
+tags: [voice, support, legato]
+explain:
+  en: |
+    **Legato** (Italian "tied"; Serbian: *legato*, *povezano*) is the opposite of last lesson's staccato: notes connected with **no gaps**, neither silence nor a puff of air between them.
+    It is the default way to sing a melody.
+
+    On the piano you make legato with the fingers, holding each key until the next one sounds. In the voice, legato comes from the **breath**:
+    the air keeps flowing at the same steady rate from the first note to the last, and the pitch changes on top of that flow.
+
+    Legato is not a glide. In a glide (lesson 6) you slide through all the pitches between; in legato the voice **moves cleanly from note to note**,
+    with only the tiny slide that a free voice makes by itself. Each note still lands on pitch.
+
+    What breaks legato:
+
+    - **Consonants that stop the air.** Make them quick and light; the vowel gets the time. "La-la-la" should sound like one long vowel with tiny "l" ripples.
+    - **Pushing each note.** Every note is a new bump in volume. Keep one even volume and let the melody shape itself.
+    - **Running out of air.** Plan the breath (lesson 10): a longer phrase needs a calm, low breath, not a bigger one.
+
+    Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Legato** (ital. „vezano”; srp. i *povezano*) je suprotnost stakatu iz prošle lekcije: tonovi povezani **bez praznina**, ni tišine ni dašaka između njih.
+    To je osnovni način pevanja melodije.
+
+    Na klaviru legato praviš prstima, držeći svaku dirku dok sledeća ne zazvuči. U glasu legato dolazi od **daha**:
+    vazduh teče istim, ravnomernim tempom od prvog do poslednjeg tona, a visina se menja na tom toku.
+
+    Legato nije klizanje. Kod klizanja (6. lekcija) prolaziš kroz sve visine između; u legatu glas **čisto prelazi sa tona na ton**,
+    samo uz sićušno klizanje koje slobodan glas sam napravi. Svaki ton i dalje sleće na visinu.
+
+    Šta kvari legato:
+
+    - **Suglasnici koji zaustavljaju vazduh.** Neka budu brzi i laki; vreme dobija samoglasnik. „La-la-la” treba da zvuči kao jedan dug samoglasnik sa sitnim „l” talasićima.
+    - **Guranje svakog tona.** Svaki ton postaje nova grba u jačini. Drži jednu ravnomernu jačinu i pusti melodiju da se sama oblikuje.
+    - **Nestanak vazduha.** Planiraj dah (10. lekcija): duža fraza traži miran, nizak udah, ne veći.
+
+    Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-024-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-024-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 2 slow hisses on 'sss', 3 quiet lip-trill sirens, then lip trills along with the five notes; the trill never stops between notes, which is legato."
+      sr: "Zagrevanje: 2 spora šištanja na „sss”, 3 tihe sirene treperenjem usana, pa treperenje usnama uz pet tonova; treperenje ne staje između tonova, i to je legato."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-024-3
+    type: sing-phrase
+    prompt:
+      en: "Legato on 'ah': 1-3-5-4-3-2-1, no gaps, one even volume, each note landing cleanly (no sliding through)."
+      sr: "Legato na „a”: 1-3-5-4-3-2-1, bez praznina, jedna ravnomerna jačina, svaki ton čisto sleće (bez provlačenja)."
+    notes: [C4, E4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-024-4
+    type: sing-phrase
+    prompt:
+      en: "Legato with consonants: 1-5-4-3-2-1 on 'la', the 'l' quick and light so it sounds like one long vowel."
+      sr: "Legato sa suglasnicima: 1-5-4-3-2-1 na „la”, „l” brzo i lako, da zvuči kao jedan dug samoglasnik."
+    notes: [C4, G4, F4, E4, D4, C4]
+    beats: [1, 2, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-024-5
+    type: sing-phrase
+    prompt:
+      en: "A descending octave scale on 'ah', legato, one breath: 8-7-6-5-4-3-2-1."
+      sr: "Silazna lestvica kroz oktavu na „a”, legato, jedan dah: 8-7-6-5-4-3-2-1."
+    derive: {scale: {tonic: C4, type: major, octave: true, descending: true}}
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-024-6
+    type: generated
+    prompt: {en: "Sing back the phrase, legato", sr: "Otpevaj frazu, legato"}
+    count: 3
+    pass: 0.6
+    gen: {kind: phrase-sing, tonics: [C, G, D], type: major, length: [5, 7], degrees: [1, 2, 3, 4, 5, 6], maxLeap: 2, tempo: 66, tolerance: 50}
+  - id: V-024-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record one legato phrase and listen back. Rate: were there gaps or air puffs between notes, or bumps in volume?"
+      sr: "Samoprocena: snimi jednu legato frazu i preslušaj. Oceni: da li je bilo praznina ili dašaka između tonova, ili grba u jačini?"

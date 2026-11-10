@@ -1,0 +1,107 @@
+id: V-015
+track: V
+order: 15
+title: {en: "Gentle falsetto: light, breathy, high (awareness only)", sr: "Nežni falset: lagan, dahtav, visok (samo upoznavanje)"}
+prereqs: [V-014]
+minutes: 8
+tags: [voice, register]
+explain:
+  en: |
+    **Falsetto** (Serbian: *falset*) is the lightest sound the voice makes. The vocal folds vibrate only along their thin edges and do not fully close,
+    so air escapes with the tone: it sounds **airy, hollow, flute-like**. Every voice has one. In some voices it sounds very different from the rest, in others it is close to head voice.
+
+    Today is **awareness only**: learn what it feels like so you can tell it apart from head voice.
+
+    | | head voice | falsetto |
+    |---|---|---|
+    | air in the sound | little | a lot, clearly breathy |
+    | tone | clear, focused, thin | hollow, soft, "flutey" |
+    | air use | moderate | fast; phrases run out quickly |
+
+    Ways to find it:
+
+    - A **yawn-sigh** from high up on an airy "hoo", like letting out a relieved sigh.
+    - Imitating **wind** or a quiet, airy owl.
+
+    Rules for today:
+
+    - **Short and quiet.** Falsetto spends air fast, so a few seconds at a time. Feeling light-headed means pause and breathe normally.
+    - **No pushing for height.** Stay where it is easy. A tickle that wants to become a cough means stop for today.
+    - When a note below is written low for you, sing it an **octave higher** in falsetto if that is easy; the app counts any octave.
+
+    The app checks pitch only. Falsetto is the one register the pitch service may later learn to detect reliably, but it is **not graded** here.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Falset** (engl. *falsetto*) je najlakši zvuk koji glas pravi. Glasnice trepere samo tankim ivicama i ne zatvaraju se potpuno,
+    pa vazduh izlazi zajedno sa tonom: zvuči **vazdušasto, šuplje, kao flauta**. Ima ga svaki glas. Kod nekih zvuči sasvim drugačije od ostatka glasa, kod drugih je blizak glavnom glasu.
+
+    Danas je **samo upoznavanje**: nauči kakav je osećaj, da bi mogao da ga razlikuješ od glavnog glasa.
+
+    | | glavni glas | falset |
+    |---|---|---|
+    | vazduh u zvuku | malo | mnogo, jasno dahtavo |
+    | ton | jasan, usmeren, tanak | šupalj, mek, „kao flauta” |
+    | trošenje vazduha | umereno | brzo; fraze se brzo završe |
+
+    Kako ga pronaći:
+
+    - **Zevanje-uzdah** odozgo na vazdušasto „hu”, kao uzdah olakšanja.
+    - Oponašanje **vetra** ili tihe, vazdušaste sove.
+
+    Pravila za danas:
+
+    - **Kratko i tiho.** Falset brzo troši vazduh, pa po nekoliko sekundi. Ako ti se zavrti u glavi, zastani i diši normalno.
+    - **Bez guranja u visinu.** Ostani gde je lako. Golicanje koje prelazi u kašalj znači: stani za danas.
+    - Ako je ton ispod zapisan nisko za tebe, pevaj ga **oktavu više** u falsetu ako je lako; aplikacija priznaje bilo koju oktavu.
+
+    Aplikacija proverava samo visinu. Falset je jedini registar koji servis za merenje visine možda kasnije pouzdano prepozna, ali se ovde **ne ocenjuje**.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-015-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-015-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then 4 light owl hoots ('hoo') sliding down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa 4 lagana huktanja („hu”) koja klize naniže."
+  - id: V-015-3
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Yawn-sighs: 4 times, start the beginning of a yawn, then let out an airy 'hoo' from high up, sliding down. Let the air be audible. Short and quiet."
+      sr: "Zevanje-uzdasi: 4 puta započni zevanje, pa pusti vazdušasto „hu” odozgo, uz klizanje naniže. Neka se vazduh čuje. Kratko i tiho."
+  - id: V-015-4
+    type: sing-pitch
+    prompt:
+      en: "Airy falsetto 'hoo' on the note for 2 seconds, an octave higher if that is easier. Quiet and breathy is right."
+      sr: "Vazdušasto „hu” u falsetu na tonu 2 sekunde, oktavu više ako je lakše. Tiho i dahtavo je ispravno."
+    notes: [E4]
+    sustain: 2
+    fitRange: high
+    tolerance: 75
+    pass: 0.6
+  - id: V-015-5
+    type: sing-phrase
+    prompt:
+      en: "5-3-1 down in falsetto on 'hoo', light as a sigh, an octave higher if easier."
+      sr: "5-3-1 naniže u falsetu na „hu”, lako kao uzdah, oktavu više ako je lakše."
+    notes: [G4, E4, C4]
+    beats: [1, 1, 2]
+    tempo: 60
+    fitRange: high
+    tolerance: 75
+    pass: 0.7
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-015-6
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Compare: on one easy high note, sing an airy falsetto 'hoo', then a clearer head-voice 'oo' with less air, then falsetto again. 3 rounds. Rate whether you can feel the difference."
+      sr: "Uporedi: na jednom lakom visokom tonu otpevaj vazdušasto „hu” u falsetu, pa jasnije „u” u glavnom glasu sa manje vazduha, pa opet falset. 3 runde. Oceni da li osećaš razliku."

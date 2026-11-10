@@ -1,0 +1,127 @@
+id: T-015
+track: T
+order: 15
+prereqs: [T-014]
+title: {en: "Note values, dots and ties", sr: "Trajanje nota, tačka i luk"}
+minutes: 12
+tags: [rhythm]
+explain:
+  en: |
+    You read rhythms fluently at the piano; this lesson gives the arithmetic behind them, because meter, syncopation and compound time all build on it.
+
+    Each value is half the one before: **whole = 2 halves = 4 quarters = 8 eighths = 16 sixteenths**.
+    Counting in quarter-note beats: whole 4, half 2, quarter 1, eighth ½, sixteenth ¼.
+
+    A **dot** adds **half of the note's own value**: dotted half = 2 + 1 = 3 beats, dotted quarter = 1 + ½ = 1½ beats (= 3 eighths).
+    A **tie** joins two notes of the *same pitch* into one sound: play once, hold for both values. Ties are how a note crosses a bar line or a beat, which a dot cannot do.
+    A **slur** looks similar but joins *different* pitches: play them legato. Same curve, different job; the pitches tell you which it is.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B8 | B4 B4 | B2 B2 B2 B2 | BBBB BBBB | B3 B B4 | B6 B2 | B4- B2 B2 |]
+    ```
+
+    Bar by bar: whole; two halves; four quarters; eight eighths; dotted quarter + eighth + half; dotted half + quarter; half tied to a quarter (3 beats of sound) + quarter.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    G2- G E | (E F G2) |]
+    ```
+
+    Bar 1: tie (G sounds once, 3 beats). Bar 2: slur (three notes, connected).
+  sr: |
+    Ritam čitaš tečno za klavirom; ova lekcija daje aritmetiku iza njega, jer se mera, sinkopa i složene mere grade na njoj.
+
+    Svaka vrednost je polovina prethodne: **cela nota = 2 polovine = 4 četvrtine = 8 osmina = 16 šesnaestina**.
+    Brojano u četvrtinama (dobama): cela 4, polovina 2, četvrtina 1, osmina ½, šesnaestina ¼.
+
+    **Tačka** iza note dodaje **polovinu njene vrednosti**: polovina s tačkom = 2 + 1 = 3 dobe, četvrtina s tačkom = 1 + ½ = 1½ doba (= 3 osmine).
+    **Luk (vezivni luk, ligatura)** spaja dve note *iste visine* u jedan zvuk: sviraš jednom, držiš zbir trajanja. Lukom nota prelazi taktnu crtu ili dobu, što tačka ne može.
+    **Legato luk** izgleda slično, ali spaja *različite* tonove: sviraj ih povezano. Ista krivulja, drugi posao; visina tonova kaže koji je.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B8 | B4 B4 | B2 B2 B2 B2 | BBBB BBBB | B3 B B4 | B6 B2 | B4- B2 B2 |]
+    ```
+
+    Takt po takt: cela; dve polovine; četiri četvrtine; osam osmina; četvrtina s tačkom + osmina + polovina; polovina s tačkom + četvrtina; polovina vezana lukom za četvrtinu (3 dobe zvuka) + četvrtina.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    G2- G E | (E F G2) |]
+    ```
+
+    Takt 1: vezivni luk (G zvuči jednom, 3 dobe). Takt 2: legato luk (tri tona, povezano).
+exercises:
+  - id: T-015-1
+    type: mcq
+    prompt: {en: "A dotted quarter note lasts as long as how many eighth notes?", sr: "Četvrtina s tačkom traje koliko osmina?"}
+    options: ["2", "3", "4", "6"]
+    answer: 1
+  - id: T-015-2
+    type: mcq
+    prompt: {en: "Counting quarter notes as beats, a dotted half note lasts…", sr: "Ako je četvrtina jedna doba, polovina s tačkom traje…"}
+    options:
+      - {en: "2 beats", sr: "2 dobe"}
+      - {en: "2½ beats", sr: "2½ dobe"}
+      - {en: "3 beats", sr: "3 dobe"}
+      - {en: "4 beats", sr: "4 dobe"}
+    answer: 2
+  - id: T-015-3
+    type: mcq
+    prompt: {en: "How many quarter-note beats does this bar last in total (the tie included)?", sr: "Koliko četvrtina (doba) ukupno traje ovaj takt (zajedno s lukom)?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      B3 B B2- B2 |]
+    options: ["3", "3½", "4", "5"]
+    answer: 2
+  - id: T-015-4
+    type: mcq
+    prompt: {en: "What do the two curves ask for?", sr: "Šta traže ove dve krivulje?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      c2- c2 | (d e f g) |]
+    options:
+      - {en: "Bar 1: one C held 4 beats (tie). Bar 2: four notes played legato (slur).", sr: "Takt 1: jedno C drži se 4 dobe (vezivni luk). Takt 2: četiri tona povezano (legato luk)."}
+      - {en: "Bar 1: two Cs played legato. Bar 2: one long note.", sr: "Takt 1: dva C povezano. Takt 2: jedna duga nota."}
+      - {en: "Both are ties.", sr: "Oba su vezivni lukovi."}
+      - {en: "Both are slurs.", sr: "Oba su legato lukovi."}
+    answer: 0
+  - id: T-015-5
+    type: mcq
+    prompt: {en: "In 3/4: how long does the tied note (end of bar 1 into bar 2) sound in total?", sr: "U 3/4: koliko ukupno zvuči nota vezana lukom (kraj 1. takta u 2. takt)?"}
+    abc: |
+      X:1
+      M:3/4
+      L:1/8
+      K:C clef=perc
+      B4 B2- | B2 B4 |]
+    options:
+      - {en: "1 beat", sr: "1 dobu"}
+      - {en: "2 beats", sr: "2 dobe"}
+      - {en: "3 beats", sr: "3 dobe"}
+      - {en: "4 beats", sr: "4 dobe"}
+    answer: 1
+  - id: T-015-6
+    type: generated
+    prompt: {en: "Rhythm echo: dotted quarters, quarters and eighths in 4/4", sr: "Ritamski eho: četvrtine s tačkom, četvrtine i osmine u 4/4"}
+    count: 3
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1.5, 0.5], [1, 1], [1, 0.5, 0.5], [0.5, 0.5, 1], [2]], tempo: 72}

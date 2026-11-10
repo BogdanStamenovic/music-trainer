@@ -1,0 +1,146 @@
+id: PC-003
+kind: composition
+order: 9
+title: {en: "A minor-key melody over i–iv–V", sr: "Molska melodija nad i–iv–V"}
+minutes: 75
+prereqs: [T-019, T-028, K-014, C-006]
+composition:
+  key: A minor
+  meter: 4/4
+  bars: 8
+  range: [D4, F5]
+  chords: [i, iv, i, V, VI, iv, V, i]
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody in A minor, 4/4, over this progression**, one chord per bar:
+
+    | bar | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | chord | i | iv | i | V | VI | iv | V | i |
+    | notes | A C E | D F A | A C E | E G# B | F A C | D F A | E G# B | A C E |
+
+    Same plan as your first two compositions (a **period**: question, then answer), now in a
+    **minor key**. Bar 4 is a **half cadence** on V, bars 7–8 an **authentic cadence** V → i.
+    Bar 5 brings a new colour: **VI** (F major), the brightest chord in minor.
+
+    ### The idea
+
+    - **The V chord in minor is major: E G# B.** A minor's own 7th degree is G, but over V you
+      want **G#, the raised leading tone** (harmonic minor), because it pulls up to A. Use G#
+      in bars 4 and 7; use G (natural) elsewhere if you like, for example coming down the
+      scale A–G–F–E.
+    - **Beware F → G#.** These two are an **augmented second** (three half steps, but spelled
+      as a second): it sounds exotic and is hard to sing in tune. Go F → E → G#, or G# → A,
+      instead. Also avoid the tritones **B–F** and **D–G#**.
+    - **Chord tones on beats 1 and 3**, passing and neighbour notes in between, as in the
+      G-major composition.
+    - **Bar 4 ends on B, E or G#** (a note of V), held: the question. **Bar 8 ends on A**,
+      best reached from B (2 → 1) or from G# (7 → 1).
+    - **Range: D4 to F5.** The climax could sit on the F in bar 5 or 6 (over VI or iv), where
+      minor melodies like to sigh down by step (F–E, a half step).
+
+    A fragment of what the leading tone does (not to copy, just to hear):
+
+    ```abc
+    X:1
+    L:1/8
+    K:Am
+    c2 B A ^G2 E2 | A8 |]
+    ```
+
+    ### Practical tips
+
+    - Play the progression in the left hand (A minor triads, K-010) and listen to how bar 5
+      (F major) lifts the mood and bar 7 (E major) leans toward home.
+    - Write the skeleton first: one chord tone per bar on beat 1, moving mostly by step
+      (e.g. E – D – C – B – C – D – B – A). Then decorate.
+    - In the ABC text box, a sharp is `^G`. The key signature of A minor has no sharps, so
+      every G# needs its own `^`.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars of 4/4; notes of A minor (natural, harmonic or
+      melodic forms, so G# and F# are allowed); range D4–F5; bar 4 ends on 2, 5 or 7
+      (B, E or G#); last note A; no augmented or diminished leaps (the F–G# trap); leaps under
+      control; sensible rhythm.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4 and suggests what to
+      try next.
+  sr: |
+    Napiši **melodiju od 8 taktova u a-molu, 4/4, nad ovom progresijom**, jedan akord po
+    taktu:
+
+    | takt | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | akord | i | iv | i | V | VI | iv | V | i |
+    | tonovi | A C E | D F A | A C E | E Gis H | F A C | D F A | E Gis H | A C E |
+
+    Isti plan kao u prve dve kompozicije (**period**: pitanje, pa odgovor), sada u **molu**.
+    4. takt je **polukadenca** na V, taktovi 7–8 **autentična kadenca** V → i. Takt 5 donosi
+    novu boju: **VI** (F-dur), najsvetliji akord u molu.
+
+    ### Ideja
+
+    - **Dominanta u molu je durska: E Gis H.** Sedmi stupanj a-mola je G, ali nad V želiš
+      **Gis, povišenu vođicu** (harmonski mol), jer vuče naviše ka A. Koristi Gis u taktovima
+      4 i 7; G (bez povisilice) slobodno koristi drugde, na primer kad silaziš A–G–F–E.
+    - **Pazi na F → Gis.** Ta dva tona čine **povećanu sekundu** (tri polustepena, ali
+      zapisano kao sekunda): zvuči egzotično i teško se peva čisto. Idi F → E → Gis, ili
+      Gis → A. Izbegavaj i tritonuse **H–F** i **D–Gis**.
+    - **Akordski tonovi na 1. i 3. dobi**, prolazni i skretni tonovi između, kao u
+      kompoziciji u G-duru.
+    - **4. takt se završava na H, E ili Gis** (ton dominante), zadržano: pitanje. **8. takt
+      se završava na A**, najbolje sa H (2 → 1) ili sa Gis (7 → 1).
+    - **Opseg: D4 do F5.** Vrhunac može da bude F u 5. ili 6. taktu (nad VI ili iv), odakle
+      molske melodije rado „uzdahnu” korakom naniže (F–E, polustepen).
+
+    Delić koji pokazuje šta vođica radi (ne za prepisivanje, samo za slušanje):
+
+    ```abc
+    X:1
+    L:1/8
+    K:Am
+    c2 B A ^G2 E2 | A8 |]
+    ```
+
+    ### Praktični saveti
+
+    - Sviraj progresiju levom rukom (trozvuci a-mola, K-010) i slušaj kako 5. takt (F-dur)
+      podiže raspoloženje, a 7. (E-dur) se naginje ka kući.
+    - Prvo napiši skelet: po jedan akordski ton na prvoj dobi svakog takta, uglavnom
+      postupno (npr. E – D – C – H – C – D – H – A). Onda ga ukrasi.
+    - U ABC polju povisilica se piše `^G`. a-mol nema predznake, pa svako Gis traži svoj `^`.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova 4/4; tonovi a-mola (prirodni, harmonski ili
+      melodijski oblik, pa su Gis i Fis dozvoljeni); opseg D4–F5; 4. takt se završava na 2, 5
+      ili 7 (H, E ili Gis); poslednji ton A; bez povećanih i smanjenih skokova (zamka F–Gis);
+      skokovi pod kontrolom; smislen ritam.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i predlaže šta
+      dalje da probaš.
+rubric:
+  - id: harmony-fit
+    weight: 2
+    label: {en: "Fits the minor progression", sr: "Slaganje sa molskom progresijom"}
+    top:
+      en: "Strong beats carry chord tones; G# appears over both V chords and resolves up to A; no F–G# leap; the VI in bar 5 is coloured by its own notes (F, A, C) rather than ignored."
+      sr: "Na jakim dobama su akordski tonovi; Gis se javlja nad obe dominante i razrešava se naviše u A; nema skoka F–Gis; VI u 5. taktu je obojen svojim tonovima (F, A, C), a ne preskočen."
+  - id: phrase-structure
+    weight: 1
+    label: {en: "Question and answer", sr: "Pitanje i odgovor"}
+    top:
+      en: "Bar 4 clearly hangs on V; bars 5–8 refer back to the opening and close on A with a 2–1 or 7–1 step."
+      sr: "4. takt jasno visi na dominanti; taktovi 5–8 se vraćaju na početak i zatvaraju na A korakom 2–1 ili 7–1."
+  - id: minor-character
+    weight: 1
+    label: {en: "Minor-key character", sr: "Molski karakter"}
+    top:
+      en: "The melody sounds unmistakably minor (the minor third C is prominent, half steps such as F–E and B–C are used expressively) and has one clear high point."
+      sr: "Melodija nepogrešivo zvuči molski (mala terca C je istaknuta, polustepeni poput F–E i H–C korišćeni su izražajno) i ima jedan jasan vrhunac."
+  - id: singability
+    weight: 1
+    label: {en: "Shape and singability", sr: "Linija i pevljivost"}
+    top:
+      en: "Mostly stepwise, leaps recovered, natural breathing points at the ends of bars 2, 4 and 6; you can sing it without the piano."
+      sr: "Uglavnom postupno, skokovi se vraćaju korakom, prirodna mesta za udah na krajevima 2, 4. i 6. takta; može da se otpeva bez klavira."

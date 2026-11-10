@@ -1,0 +1,136 @@
+id: V-021
+track: V
+order: 21
+title: {en: "Song phrase I (public-domain tune, 4 bars)", sr: "Fraza iz pesme I (melodija u javnom domenu, 4 takta)"}
+prereqs: [V-020]
+minutes: 11
+tags: [voice, song, phrases]
+explain:
+  en: |
+    Your first real song phrase: the opening of the **"Ode to Joy"** theme from the last movement of Beethoven's Ninth Symphony (1824, public domain).
+    Here are its first four bars in C major:
+
+    ```abc
+    X:1
+    T:Ode to Joy (Beethoven), bars 1-4
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:C
+    E E F G | G F E D | C C D E | E3/2 D/ D2 |]
+    ```
+
+    Why this tune first: it moves almost only **by step**, its range is a **perfect 5th** (C to G), and the rhythm is plain quarter notes until bar 4,
+    where a **dotted quarter and an eighth** give it a little lilt before the half note.
+
+    How to learn a song phrase (the same method works for any song):
+
+    1. **Play it on the piano** first. You read it; let your ear catch up with your eyes.
+    2. **Sing it in halves** (bars 1-2, then 3-4) on "la".
+    3. **Sing the whole phrase** on one breath on "la". Breathe before it, not in the middle.
+    4. Then **with words**, if you like. The original text is German (Schiller): "*Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um*", one syllable per note.
+
+    Keep the tone light and the vowels pure; the top G is not louder than the rest. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Tvoja prva prava fraza iz pesme: početak teme **„Oda radosti”** iz poslednjeg stava Betovenove Devete simfonije (1824, javno dobro).
+    Evo prva četiri takta u C-duru:
+
+    ```abc
+    X:1
+    T:Oda radosti (Betoven), taktovi 1-4
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:C
+    E E F G | G F E D | C C D E | E3/2 D/ D2 |]
+    ```
+
+    Zašto baš ova melodija: kreće se skoro samo **postupno**, opseg joj je **čista kvinta** (od C do G), a ritam su obične četvrtine sve do 4. takta,
+    gde **četvrtina s tačkom i osmina** daju malo zamaha pre polovine.
+
+    Kako se uči fraza iz pesme (isti metod važi za svaku pesmu):
+
+    1. **Odsviraj je na klaviru** prvo. Čitaš je; pusti da uvo stigne oči.
+    2. **Otpevaj je u polovinama** (taktovi 1-2, pa 3-4) na „la”.
+    3. **Otpevaj celu frazu** u jednom dahu na „la”. Udahni pre nje, ne u sredini.
+    4. Zatim **sa rečima**, ako želiš. Originalni tekst je nemački (Šiler): „*Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um*”, jedan slog po tonu.
+
+    Ton neka bude lagan, a samoglasnici čisti; gornje G nije glasnije od ostalog. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-021-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-021-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then 'la' along with the five notes up and down, smooth and connected."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa „la” uz pet tonova gore i dole, glatko i povezano."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-021-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Play the four bars on the piano from the notation above, with the dotted rhythm in bar 4. Then play them again and hum along quietly."
+      sr: "Odsviraj četiri takta na klaviru iz zapisa iznad, sa punktiranim ritmom u 4. taktu. Pa ih odsviraj ponovo i tiho pevuši uz njih."
+  - id: V-021-4
+    type: sing-phrase
+    prompt:
+      en: "Bars 1-2 on 'la': up by step to G and back down to D."
+      sr: "Taktovi 1-2 na „la”: postupno naviše do G i nazad do D."
+    notes: [E4, E4, F4, G4, G4, F4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-021-5
+    type: sing-phrase
+    prompt:
+      en: "Bars 3-4 on 'la', with the dotted rhythm at the end as written: E (dotted quarter), D (eighth), D (half)."
+      sr: "Taktovi 3-4 na „la”, sa punktiranim ritmom na kraju: E (četvrtina s tačkom), D (osmina), D (polovina)."
+    notes: [C4, C4, D4, E4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-021-6
+    type: sing-phrase
+    prompt:
+      en: "All four bars on 'la', one breath, light and even."
+      sr: "Sva četiri takta na „la”, jedan dah, lagano i ujednačeno."
+    notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-021-7
+    type: sing-phrase
+    prompt:
+      en: "Once more, with words if you like ('Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um'), or on 'la' again. Pure vowels, one syllable per note."
+      sr: "Još jednom, sa rečima ako želiš („Freu-de, schö-ner Göt-ter-fun-ken, Toch-ter aus E-ly-si-um”), ili opet na „la”. Čisti samoglasnici, jedan slog po tonu."
+    notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}

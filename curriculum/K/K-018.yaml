@@ -1,0 +1,117 @@
+id: K-018
+track: K
+order: 18
+title: {en: "First improvisation: C major pentatonic over I–IV–V", sr: "Prva improvizacija: C-dur pentatonika preko I–IV–V"}
+prereqs: [K-016]
+minutes: 15
+tags: [keys, improvisation]
+explain:
+  en: |
+    Improvising is composing in real time, and the hard part is not the notes, it is deciding
+    fast. So we take most of the decisions away and add them back one at a time.
+
+    **1. Limit the notes.** The **major pentatonic** is the major scale without degrees 4 and 7:
+    C D E G A. Those two missing notes, F and B, are the ones that clash: F sits a half step
+    above E (the 3rd of the C chord), B a half step below C (the root of C, the 5th of F). Without them, every
+    note sounds acceptable over I, IV and V in C. That gives you room to think about the other
+    things.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C D E G A c |]
+    ```
+
+    **2. Rhythm first.** A good rhythm on one note beats random notes in a straight line. Start
+    with only C and G and invent rhythms: long–short–short, a note and a rest, a repeated
+    figure. Then let the pitch move.
+
+    **3. Call and response.** Play a short idea (2 beats), then **answer** it in the next 2
+    beats: the same rhythm with different notes, or the same notes ending somewhere else. This
+    is how blues, folk and jazz phrases are built, and it gives your solo a shape.
+
+    **4. Leave space.** Rests are part of the line. A phrase, a breath, a phrase. Aim for
+    about half the time playing.
+
+    **5. Land.** End phrases on C, E or G, especially at the last I. A wrong-sounding note is
+    one step away from a right one: slide to its neighbour and it becomes a passing note.
+
+    The grading is a screen, not a judgement of taste: notes in the scale, a chord tone on the
+    first beat of each chord, and enough activity. Your ear decides the rest.
+  sr: |
+    Improvizacija je komponovanje u realnom vremenu, a teški deo nisu tonovi, nego brzo
+    odlučivanje. Zato ćemo većinu odluka skloniti i vraćati ih jednu po jednu.
+
+    **1. Ograniči tonove.** **Durska pentatonika** je durska lestvica bez 4. i 7. stupnja:
+    C D E G A. Ta dva tona koja nedostaju, F i H, su oni koji se sudaraju: F je polustepen iznad
+    E (terce C akorda), H je polustepen ispod C (osnovnog tona C akorda, kvinte F akorda). Bez njih svaki ton zvuči prihvatljivo
+    preko I, IV i V u C-duru. To ti daje prostor da misliš o drugim stvarima.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C D E G A c |]
+    ```
+
+    **2. Prvo ritam.** Dobar ritam na jednom tonu je bolji od nasumičnih tonova u ravnoj liniji.
+    Počni samo sa C i G i izmišljaj ritmove: dugo–kratko–kratko, ton pa pauza, ponovljena
+    figura. Tek onda pusti visinu da se kreće.
+
+    **3. Pitanje i odgovor.** Odsviraj kratku ideju (2 dobe), pa joj **odgovori** u sledeće 2
+    dobe: isti ritam sa drugim tonovima, ili isti tonovi koji se završavaju negde drugde. Tako
+    se grade fraze u bluzu, narodnoj muzici i džezu, i to solu daje oblik.
+
+    **4. Ostavi prostor.** Pauze su deo linije. Fraza, dah, fraza. Ciljaj da sviraš otprilike
+    pola vremena.
+
+    **5. Sleti.** Završavaj fraze na C, E ili G, naročito na poslednjem I. Ton koji zvuči
+    pogrešno je korak od pravog: pomeri se na susedni i postaje prolaznica.
+
+    Ocena je samo sito, ne sud o ukusu: tonovi iz lestvice, ton akorda na prvoj dobi svakog
+    akorda i dovoljno aktivnosti. Ostalo odlučuje tvoje uho.
+exercises:
+  - id: K-018-1
+    type: mcq
+    prompt: {en: "Why does C major pentatonic \"never sound wrong\" over I, IV and V in C?", sr: "Zašto C-dur pentatonika \"nikad ne zvuči pogrešno\" preko I, IV i V u C-duru?"}
+    options:
+      - {en: "It leaves out F and B, the two notes a half step from the notes of the I chord (E and C)", sr: "Izostavlja F i H, dva tona koja su polustepen od tonova akorda I (E i C)"}
+      - {en: "It contains only the notes of the C chord", sr: "Sadrži samo tonove C akorda"}
+      - {en: "It has no 5th", sr: "Nema kvintu"}
+    answer: 0
+    checks:
+      - scale: {tonic: C, type: major-pentatonic, is: [C, D, E, G, A]}
+      - semitones: {from: E4, to: F4, is: 1}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-018-2
+    type: midi-play
+    prompt: {en: "Learn the five notes: C major pentatonic up from C4, ♩=80.", sr: "Nauči pet tonova: C-dur pentatonika naviše od C4, ♩=80."}
+    mode: sequence
+    derive: {scale: {tonic: C4, type: major-pentatonic}}
+    tempo: 80
+  - id: K-018-3
+    type: practice
+    prompt: {en: "Rhythm only: over the backing (I–IV–V–I), improvise with just C and G for two minutes. Change the rhythm every bar; leave rests.", sr: "Samo ritam: preko pratnje (I–IV–V–I) improvizuj samo sa C i G dva minuta. Menjaj ritam u svakom taktu; ostavljaj pauze."}
+    minutes: 3
+    play: {derive: {roman: {key: C3, numerals: [I, IV, V, I, I, IV, V, I]}}, tempo: 30}
+  - id: K-018-4
+    type: generated
+    pass: 0.7
+    prompt: {en: "Call and response: 2 beats of idea, 2 beats of answer. C major pentatonic, slow.", sr: "Pitanje i odgovor: 2 dobe ideje, 2 dobe odgovora. C-dur pentatonika, polako."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major-pentatonic, numerals: [I, IV, V, I], beatsPerChord: 4, loops: 2, tempo: 72}
+  - id: K-018-5
+    type: generated
+    pass: 0.7
+    prompt: {en: "Same changes, a bit faster; end every phrase on C, E or G.", sr: "Isti akordi, malo brže; svaku frazu završi na C, E ili G."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major-pentatonic, numerals: [I, IV, V, I], beatsPerChord: 4, loops: 3, tempo: 88}
+  - id: K-018-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "New key: G major pentatonic (G A B D E) over I–IV–V–I in G.", sr: "Nov tonalitet: G-dur pentatonika (G A H D E) preko I–IV–V–I u G-duru."}
+    count: 1
+    gen: {kind: improv, keys: [G], scale: major-pentatonic, numerals: [I, IV, V, I], beatsPerChord: 4, loops: 2, tempo: 72}
+    checks:
+      - scale: {tonic: G, type: major-pentatonic, is: [G, A, B, D, E]}

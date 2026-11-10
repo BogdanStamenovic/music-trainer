@@ -1,0 +1,166 @@
+id: PV-010
+kind: vocal
+order: 39
+title: {en: "Sing: a piece with dynamics", sr: "Pevaj: komad sa dinamikom"}
+minutes: 40
+prereqs: [V-010, V-019]
+melody:
+  title: {en: "Tide", sr: "Plima"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: G major
+  meter: 4/4
+  tempo: 72
+  notes: [D4, G4, B4, A4, G4, D4, E4, G4, C5, B4, A4, D4, G4, B4, C5, D5, B4, C5, A4, F#4, A4, D5, D5, C5, B4, A4, G4, A4, B4, C5, B4, A4, G4, F#4, A4, D4, G4, B4, A4, G4, E4, D4, G4, A4, F#4, G4]
+  beats: [1, 1, 1.5, 0.5, 2, 2, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 2, 2, 1, 1, 1, 1, 4, 1.5, 0.5, 1, 1, 1.5, 0.5, 2, 1.5, 0.5, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 2, 2, 1, 1, 1, 1, 4]
+tolerance: 60
+weights: {pitch: 0.5, rubric: 0.5}
+brief:
+  en: |
+    Record yourself singing **"Tide"**, an original 16-bar melody in G major, slow 4/4, on
+    **"loo"** or **"ah"**, with **written dynamics**: it starts *piano* (soft), swells over
+    phrase 2 to *mezzo-forte* (medium-loud) on the top D, stays there for phrase 3 and falls back
+    to *piano* for the last phrase. Like the tide: in, and out. The craft is **changing volume
+    with breath, not with the throat**, and keeping the pitch steady while you do it.
+
+    ```abc
+    X:1
+    T:Tide
+    M:4/4
+    L:1/8
+    Q:1/4=72
+    K:G
+    !p!D2 G2 B3 A | G4 D4 | E2 G2 c2 B2 | A8 !breath! |
+    !crescendo(!D2 G2 B3 c | d4 B4 | c2 A2 F2 A2 | !crescendo)!!mf!d8 !breath! |
+    d3 c B2 A2 | G3 A B4 | !diminuendo(!c3 B A2 G2 | F4 A4 !breath! |
+    !diminuendo)!!p!D2 G2 B3 A | G4 E4 | D2 G2 A2 F2 | G8 |]
+    ```
+
+    ### The musical idea
+
+    - **p → crescendo → mf → diminuendo → p.** The loudest the piece ever gets is *mf*. There is
+      no *forte* on purpose: this is about control, not power.
+    - **The swell (bars 5–8)** climbs with the melody to D5 held for four beats. The rising line
+      helps; let the volume ride on it.
+    - **The ebb (bars 11–16)** comes down in volume *and* register, and returns to the opening
+      tune, now softer still.
+    - **Messa di voce on the long notes:** on the whole notes in bars 4 and 8, try a tiny swell and
+      release inside the note (soft, a bit fuller, soft) without the pitch moving.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D4–D5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Soft is supported, not breathy.** *Piano* means less air pressure with the same steady
+      breath management (V-002, V-019), not a loose, airy whisper. The tone should still carry.
+    - **Louder comes from the breath.** For the crescendo, let a little more air pressure in from
+      the body; the throat stays exactly as relaxed as in the soft bars. If you feel the throat
+      tighten, you have reached your *mf* for today. Stop growing there.
+    - **Pitch tends to go sharp when louder and flat when softer.** Listen for it on D5 (bar 8)
+      and on the final G.
+    - **Record a few seconds of silence first** so the meter has a clean start, and keep the same
+      distance from the microphone throughout: moving changes the measured loudness.
+
+    ### How it is graded
+
+    - **Pitch (50%)** is measured from the recording: every note against the melody, within 60
+      cents.
+    - **The rubric (50%)** covers the dynamics and control, which a pitch meter cannot judge. A
+      reviewer scores it, or you rate yourself from the recording. Listen back once before
+      rating: dynamics always sound smaller on a recording than they feel.
+  sr: |
+    Snimi sebe kako pevaš **„Plimu”**, originalnu melodiju od 16 taktova u G-duru, spori
+    4/4 takt, na **„lu”** ili **„a”**, sa **zapisanom dinamikom**: počinje *piano* (tiho), raste
+    kroz drugu frazu do *mecoforte* (srednje jako) na gornjem D, ostaje tako u trećoj frazi i
+    vraća se na *piano* u poslednjoj. Kao plima: naiđe, pa se povuče. Zanat je **menjati jačinu
+    dahom, ne grlom**, i držati visinu mirnom dok to radiš.
+
+    ```abc
+    X:1
+    T:Tide
+    M:4/4
+    L:1/8
+    Q:1/4=72
+    K:G
+    !p!D2 G2 B3 A | G4 D4 | E2 G2 c2 B2 | A8 !breath! |
+    !crescendo(!D2 G2 B3 c | d4 B4 | c2 A2 F2 A2 | !crescendo)!!mf!d8 !breath! |
+    d3 c B2 A2 | G3 A B4 | !diminuendo(!c3 B A2 G2 | F4 A4 !breath! |
+    !diminuendo)!!p!D2 G2 B3 A | G4 E4 | D2 G2 A2 F2 | G8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **p → crescendo → mf → diminuendo → p.** Najjače što komad ikad bude je *mf*. *Forte* nema
+      namerno: ovo je o kontroli, ne o snazi.
+    - **Rast (taktovi 5–8)** se penje sa melodijom do D5 zadržanog četiri dobe. Linija naviše
+      pomaže; pusti da jačina jaše na njoj.
+    - **Oseka (taktovi 11–16)** silazi i po jačini *i* po visini i vraća se na početnu melodiju,
+      sada još tiše.
+    - **Messa di voce na dugim tonovima:** na celim notama u taktovima 4 i 8 probaj sićušno
+      rastenje i povlačenje unutar tona (tiho, malo punije, tiho), a da se visina ne pomeri.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je D4–D5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Tiho znači oslonjeno, ne vazdušasto.** *Piano* je manji pritisak vazduha uz isto mirno
+      vođenje daha (V-002, V-019), ne labav, šuštav šapat. Ton i dalje treba da nosi.
+    - **Jače dolazi od daha.** Za crescendo pusti malo više pritiska vazduha iz tela; grlo ostaje
+      potpuno jednako opušteno kao u tihim taktovima. Ako osetiš da se grlo steže, stigao si do
+      svog današnjeg *mf*. Tu prestani da rasteš.
+    - **Visina ume da beži naviše kad je glasnije i naniže kad je tiše.** Slušaj to na D5 (8.
+      takt) i na završnom G.
+    - **Prvo snimi nekoliko sekundi tišine**, da merač ima čist početak, i drži istu udaljenost
+      od mikrofona sve vreme: pomeranje menja izmerenu jačinu.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (50%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju od 60
+      centi.
+    - **Rubrika (50%)** pokriva dinamiku i kontrolu, koje merač visine ne može da proceni.
+      Ocenjuje je recenzent, ili ti sam sa snimka. Preslušaj snimak jednom pre ocenjivanja:
+      dinamika na snimku uvek zvuči manja nego što se oseća.
+rubric:
+  - id: dynamics
+    weight: 3
+    label: {en: "Dynamic shape", sr: "Dinamički oblik"}
+    top:
+      en: "Three audibly different levels in the right places: a real piano in bars 1-4 and 13-16, a gradual crescendo through bars 5-8 (no sudden jump) to mf, a gradual diminuendo through bars 11-12."
+      sr: "Tri čujno različita nivoa na pravim mestima: pravi piano u taktovima 1-4 i 13-16, postepen crescendo kroz taktove 5-8 (bez naglog skoka) do mf, postepen diminuendo kroz taktove 11-12."
+  - id: control
+    weight: 2
+    label: {en: "Control without strain", sr: "Kontrola bez naprezanja"}
+    top:
+      en: "The mf on D5 is full but free (no squeeze, no push past comfort); the soft passages are supported, not breathy; pitch stays steady through the volume changes."
+      sr: "Mf na D5 je pun ali slobodan (bez stezanja, bez guranja preko udobnog); tihi delovi su oslonjeni, ne vazdušasti; visina ostaje mirna kroz promene jačine."
+  - id: messa
+    weight: 1
+    label: {en: "Swell inside a note", sr: "Rastenje unutar tona"}
+    top:
+      en: "On at least one whole note (bar 4 or 8) a small, smooth swell and release is audible with no change in pitch."
+      sr: "Na bar jednoj celoj noti (4. ili 8. takt) čuje se malo, glatko rastenje i povlačenje bez promene visine."
+  - id: breath
+    weight: 1
+    label: {en: "Breath", sr: "Dah"}
+    top:
+      en: "Four phrases on four quiet breaths; long notes held their full value, including the soft final G."
+      sr: "Četiri fraze na četiri tiha udaha; dugi tonovi traju punu vrednost, uključujući tiho završno G."

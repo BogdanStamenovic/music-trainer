@@ -1,0 +1,163 @@
+id: PV-006
+kind: vocal
+order: 23
+title: {en: "Sing: a folk-style song in comfortable mix", sr: "Pevaj: pesma u narodnom duhu, udobni miks"}
+minutes: 35
+prereqs: [V-016, V-020, V-022]
+melody:
+  title: {en: "Road Song", sr: "Pesma za put"}
+  source: "Original melody written for music-trainer (2026), in an Aeolian folk style; free to use."
+  key: A minor
+  meter: 4/4
+  tempo: 92
+  notes: [A4, A4, G4, E4, G4, A4, G4, E4, D4, E4, E4, A4, A4, G4, E4, G4, B4, A4, r, C5, B4, A4, G4, E4, G4, A4, G4, E4, D4, E4, G4, A4, B4, A4, G4, E4, r, A4, A4, C5, B4, A4, G4, E4, C5, B4, G4, B4, A4, r]
+  beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 3, 1, 1, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 3, 1, 1, 1, 1, 1, 1.5, 0.5, 2, 1, 1, 1, 1, 3, 1]
+brief:
+  en: |
+    Record yourself singing **"Road Song"**, an original 12-bar melody in A minor (natural
+    minor, the folk "Aeolian" sound: no G#), at a walking 4/4. Sing it on **"nay"** (or "neh").
+    This is the first piece written for the **middle of the voice where speech and singing
+    meet**: the place your mix lessons work on. The goal is a **comfortable mix**: clear,
+    speech-like, easy. Not loud, not pushed.
+
+    ```abc
+    X:1
+    T:Road Song
+    M:4/4
+    L:1/8
+    Q:1/4=92
+    K:Am
+    AA GE G2 A2 | GE DE E4 | AA GE G2 B2 | A6 z2 !breath! |
+    c2 BA G2 E2 | GA GE D4 | EG AB A2 G2 | E6 z2 !breath! |
+    A2 A2 c2 B2 | A3 G E4 | c2 B2 G2 B2 | A6 z2 |]
+    ```
+
+    ### The musical idea
+
+    - **Speech rhythm.** The repeated eighth notes (A A G E) sound like talking: folk tunes are
+      stories. Keep them light and crisp, as if you were saying them.
+    - **Three 4-bar phrases**, each ending on a long note followed by a rest: the rest is your
+      breath. Phrase 2 ends on E, the open dominant; phrase 3 (bars 9–12) is a short refrain that
+      reaches the top C and brings the song home to A.
+    - **No leading tone.** G is natural throughout; that is the old modal colour. Do not sharpen it
+      out of habit.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 3 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D4–C5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it: comfortable mix
+
+    - **"Nay" is a mix helper** (the bright *a*-*y* vowel and the *n* keep the sound forward and
+      light). Start each phrase as if calling a friend across a quiet room, not across a field.
+    - **Volume: medium-soft.** A comfortable mix is about *balance*, not power. If the top C or B
+      makes you want to push louder or lift your chin, sing those bars softer instead, or let the
+      voice lighten toward head voice. Both are fine; strain is not.
+    - **Check the throat in bars 5 and 9** (the highest notes). They should feel as easy as the low
+      notes. Any squeeze: sing the whole song an octave lower or softer and record that.
+    - **No belting this week, and no added grit or rasp.** Those are separate, later modules; this
+      piece is about ease.
+    - After a good take, try one run on simple words of your own (the lyrics track is a good
+      source); keep the vowels as open as "nay".
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within three quarters of a semitone (75 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **„Pesmu za put”**, originalnu melodiju od 12 taktova u a-molu
+    (prirodni mol, narodni „eolski” zvuk: bez Gis), u hodajućem 4/4 taktu. Pevaj je na
+    **„nej”** (ili „ne”). Ovo je prvi komad pisan za **sredinu glasa, gde se sreću govor i
+    pevanje**: mesto na kome rade tvoje lekcije o miksu. Cilj je **udobni miks**: jasan, blizak
+    govoru, lak. Ne glasan, ne guran.
+
+    ```abc
+    X:1
+    T:Road Song
+    M:4/4
+    L:1/8
+    Q:1/4=92
+    K:Am
+    AA GE G2 A2 | GE DE E4 | AA GE G2 B2 | A6 z2 !breath! |
+    c2 BA G2 E2 | GA GE D4 | EG AB A2 G2 | E6 z2 !breath! |
+    A2 A2 c2 B2 | A3 G E4 | c2 B2 G2 B2 | A6 z2 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Ritam govora.** Ponovljene osmine (A A G E) zvuče kao pričanje: narodne pesme su priče.
+      Neka budu lake i jasne, kao da ih izgovaraš.
+    - **Tri fraze od po 4 takta**, svaka se završava dugim tonom i pauzom: pauza je tvoj udah.
+      Fraza 2 se završava na E, otvorenoj dominanti; fraza 3 (taktovi 9–12) je kratak refren
+      koji dosegne gornje C i vraća pesmu kući na A.
+    - **Bez vođice.** G je prirodno svuda; to je stara modalna boja. Ne povišavaj ga iz navike.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 3 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je D4–C5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva: udobni miks
+
+    - **„Nej” pomaže miksu** (svetli vokal *e*-*j* i *n* drže zvuk napred i lakim). Počni svaku
+      frazu kao da dozivaš prijatelja preko tihe sobe, ne preko polja.
+    - **Jačina: srednje tiho.** Udobni miks je stvar *ravnoteže*, ne snage. Ako te gornje C ili H
+      teraju da guraš glasnije ili da podigneš bradu, otpevaj te taktove tiše, ili pusti glas da
+      se olakša ka glavenom registru. Oba su u redu; naprezanje nije.
+    - **Proveri grlo u taktovima 5 i 9** (najviši tonovi). Treba da budu laki kao i donji tonovi.
+      Ako bilo šta steže: otpevaj celu pesmu oktavu niže ili tiše i snimi to.
+    - **Ove nedelje nema beltinga, ni dodatne hrapavosti.** To su posebni, kasniji moduli; ova
+      pesma je o lakoći.
+    - Posle dobrog snimka probaj jednom sa jednostavnim rečima koje sam napišeš (dobar izvor je
+      staza tekstova); drži vokale otvorene kao „nej”.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od tri četvrtine polustepena (75 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: mix-ease
+    weight: 3
+    label: {en: "Comfortable mix", sr: "Udobni miks"}
+    top:
+      en: "A clear, speech-like tone at medium-soft volume across the whole range; the top B and C are reached with the same ease as the low notes: no pushing, no chin lift, no squeeze, no added grit."
+      sr: "Jasan ton, blizak govoru, srednje tih kroz ceo opseg; gornji H i C su dosegnuti jednako lako kao donji tonovi: bez guranja, bez podizanja brade, bez stezanja, bez dodate hrapavosti."
+  - id: diction-rhythm
+    weight: 1
+    label: {en: "Speech rhythm", sr: "Ritam govora"}
+    top:
+      en: "The repeated eighths are light, crisp and even; the walking pulse holds through the rests."
+      sr: "Ponovljene osmine su lake, jasne i ujednačene; hodajući puls se drži i kroz pauze."
+  - id: mode
+    weight: 1
+    label: {en: "Modal colour", sr: "Modalna boja"}
+    top:
+      en: "G stays natural everywhere (no G# creeping in); the ending on A sounds settled."
+      sr: "G ostaje prirodno svuda (bez Gis koje se uvlači); završetak na A zvuči smireno."
+  - id: breath
+    weight: 1
+    label: {en: "Breath in the rests", sr: "Dah u pauzama"}
+    top:
+      en: "Breaths only in the rests after bars 4 and 8; each long note is held its full three beats before the breath."
+      sr: "Udasi samo u pauzama posle 4. i 8. takta; svaki dugi ton traje pune tri dobe pre udaha."

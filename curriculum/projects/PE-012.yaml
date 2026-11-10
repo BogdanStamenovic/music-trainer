@@ -1,0 +1,105 @@
+id: PE-012
+kind: byear
+order: 48
+title: {en: "By ear: minor-key chromatic colour", sr: "Po sluhu: hromatska boja u molu"}
+minutes: 45
+prereqs: [T-019, T-023, E-014, E-021]
+melody:
+  title: {en: "Lament with a Neapolitan (original melody)", sr: "Tužbalica sa napuljskim akordom (originalna melodija)"}
+  source: "Original melody written for music-trainer (2026), A minor, implying i – iv – V – V | i – iv – N6 – vii°7 – i; no outside source."
+  key: A minor
+  meter: 4/4
+  tempo: 84
+  notes: [A4, B4, C5, A4, F5, E5, D5, C5, B4, G#4, A4, B4, E5, A4, B4, C5, A4, D5, F5, D5, Bb4, F4, G#4, B4, G#4, A4]
+  beats: [1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 4, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+brief:
+  en: |
+    An **8-bar melody in a minor key that uses two of the strongest chromatic colours** you
+    met this year in theory: the **Neapolitan** (bII) and the **augmented second** of harmonic
+    minor. Written for this course. **Play it back on the piano, right hand, any key.**
+
+    ### What to listen for
+
+    - **Bars 1–4: a plain minor phrase.** Tonic, up a step, the minor 3rd; then a leap up a
+      **minor sixth** to the 6th degree and a stepwise fall; bar 3 circles the tonic with the
+      **raised 7th** below it; bar 4 jumps up to **5** and holds it: a half cadence.
+    - **Bar 6: the Neapolitan.** The melody outlines the iv chord and then sinks to **b2**, a
+      half step above the tonic (Bb in A minor). That lowered 2nd is the sound of the
+      Neapolitan chord: dark and noble at once.
+    - **Bar 7: the augmented second.** From b6 up to the raised 7th (F → G# in A minor):
+      **three half steps that sound like a minor third** but belong to the scale's "exotic"
+      corner. The bar outlines the **diminished seventh chord** G# B D F (three of its notes:
+      F, G#, B) and resolves to the tonic.
+    - **Rhythm:** the opening dotted figure (long-short) returns in bars 2 and 5; the rest is
+      quarter notes, with whole notes at the two phrase ends.
+
+    ### Strategies
+
+    1. **Sing it**; let the chromatic notes surprise you, then name them.
+    2. **The first note is the tonic.** In A minor, the chromatic notes are **Bb** (bar 6) and
+       **G#** (bars 3 and 7).
+    3. **Learn bars 1–4** (a normal minor phrase), then **bar 5 is bar 1 again**, and only
+       bars 6–7 are new.
+    4. **Check the augmented second against a minor third:** play F–G# and F–Ab. Same keys,
+       same sound; in the melody, it is the context (the G# rising to A) that makes it a
+       second.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    **Melodija od 8 taktova u molu koja koristi dve najjače hromatske boje** koje si ove godine
+    upoznao u teoriji: **napuljski akord** (bII) i **povećanu sekundu** harmonskog mola.
+    Napisana za ovaj kurs. **Odsviraj je na klaviru, desnom rukom, u bilo kom tonalitetu.**
+
+    ### Šta da slušaš
+
+    - **Taktovi 1–4: obična molska fraza.** Tonika, korak naviše, mala terca; pa skok naviše
+      za **malu sekstu** na 6. stupanj i postupan pad; 3. takt kruži oko tonike sa **povišenim
+      7. stupnjem** ispod nje; 4. takt skače naviše na **5** i zadržava ga: polukadenca.
+    - **6. takt: napuljski akord.** Melodija ocrtava iv akord, pa tone na **b2**, polustepen
+      iznad tonike (B u a-molu). Taj sniženi 2. stupanj je zvuk napuljskog sekstakorda: taman i
+      plemenit u isto vreme.
+    - **7. takt: povećana sekunda.** Od b6 naviše do povišenog 7. stupnja (F → Gis u a-molu):
+      **tri polustepena koja zvuče kao mala terca**, ali pripadaju „egzotičnom” uglu lestvice.
+      Takt ocrtava **smanjeni septakord** Gis H D F (tri njegova tona: F, Gis, H) i
+      razrešava se u toniku.
+    - **Ritam:** početna punktirana figura (dugo-kratko) vraća se u taktovima 2 i 5; ostalo su
+      četvrtine, sa celim notama na krajevima dve fraze.
+
+    ### Strategije
+
+    1. **Otpevaj je**; pusti da te hromatski tonovi iznenade, pa ih imenuj.
+    2. **Prvi ton je tonika.** U a-molu hromatski tonovi su **B** (6. takt) i **Gis** (taktovi 3
+       i 7).
+    3. **Nauči taktove 1–4** (obična molska fraza), pa je **5. takt opet 1. takt**, a novi su
+       samo taktovi 6–7.
+    4. **Uporedi povećanu sekundu sa malom tercom:** odsviraj F–Gis i F–As. Iste dirke, isti
+       zvuk; u melodiji kontekst (Gis koje se penje u A) čini da je to sekunda.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: chromatic-accuracy
+    weight: 1
+    label: {en: "Chromatic notes exact", sr: "Hromatski tonovi tačni"}
+    top:
+      en: "The b2 in bar 6, the augmented second and the diminished-seventh notes in bar 7 are all exact, and the raised 7th always resolves to the tonic."
+      sr: "b2 u 6. taktu, povećana sekunda i tonovi smanjenog septakorda u 7. taktu su tačni, a povišeni 7. stupanj se uvek razrešava u toniku."
+  - id: expression
+    weight: 1
+    label: {en: "Expression", sr: "Izraz"}
+    top:
+      en: "The lament character comes through: unhurried tempo, the Neapolitan note given weight, the final tonic held its full bar."
+      sr: "Karakter tužbalice se čuje: neužurban tempo, napuljskom tonu data težina, završna tonika zadržana ceo takt."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes name the chromatic notes as scale degrees (b2, #7) and the chords they imply, and say which you heard wrong first."
+      sr: "U beleškama imenuješ hromatske tonove kao stupnjeve (b2, #7) i akorde koje nagoveštavaju, i navodiš koji si prvo pogrešno čuo."

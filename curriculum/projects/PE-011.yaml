@@ -1,0 +1,99 @@
+id: PE-011
+kind: byear
+order: 44
+title: {en: "By ear: a modulating melody, in two keys", sr: "Po sluhu: melodija koja modulira, u dva tonaliteta"}
+minutes: 45
+prereqs: [E-013, E-021, T-028]
+melody:
+  title: {en: "Crossing Over (original melody)", sr: "Prelazak (originalna melodija)"}
+  source: "Original melody written for music-trainer (2026): 8 bars, D major modulating to A major (its dominant); no outside source."
+  key: D major
+  meter: 4/4
+  tempo: 92
+  notes: [D4, F#4, A4, G4, F#4, E4, D4, B4, A4, G4, F#4, E4, F#4, A4, D5, C#5, B4, G#4, A4, E5, C#5, B4, G#4, A4]
+  beats: [1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 4]
+brief:
+  en: |
+    An **8-bar melody that changes key halfway**, written for this course. It starts in a
+    major key and ends in **the key of its dominant**, like the modulating melody you wrote in
+    PC-006. **Play it back on the piano, right hand, then play it again in a second key.**
+
+    ### What to listen for
+
+    - **Bars 1–4: home key.** The tonic triad going up (1 – 3 – 5), a stepwise descent home,
+      then bar 3 walks down the scale and bar 4 stops on **2**, a half cadence.
+    - **Bars 5–8: the turn.** Bar 5 restarts with the tonic triad again but reaches up to the
+      **octave**; then a new note appears in bar 6: **#4**, a half step below 5. That note is
+      the leading tone of the new key, and from there on **5 is the new tonic**: the melody
+      ends on it, approached from its own leading tone (#4 → 5).
+    - **Thinking in the new key** helps: in bars 6–8, sing *do* on the last note and hear the
+      #4 as *ti*, the leading tone.
+
+    ### Strategies
+
+    1. **Sing it**, then find the first note. Starting on C in C major, the only black key is
+       **F#** (the #4), in bars 6 and 7.
+    2. **Learn it in that key**, phrase by phrase.
+    3. **Then transpose:** play it again starting on a different note, e.g. on G (G major, with
+       C# as the #4), or on F (F major, with B natural as the #4). Do it by ear and by
+       intervals, not by writing it out. That is the skill: the tune is a pattern of
+       intervals, not a set of keys.
+    4. **Record your best take** (either key) and say in the notes which keys you played it in.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below; the transposition is self-assessed.
+  sr: |
+    **Melodija od 8 taktova koja na pola menja tonalitet**, napisana za ovaj kurs. Počinje u
+    duru, a završava se **u tonalitetu svoje dominante**, kao modulirajuća melodija koju si
+    napisao u PC-006. **Odsviraj je na klaviru, desnom rukom, pa je odsviraj još jednom u
+    drugom tonalitetu.**
+
+    ### Šta da slušaš
+
+    - **Taktovi 1–4: matični tonalitet.** Tonični trozvuk naviše (1 – 3 – 5), postupan silazak
+      kući, pa 3. takt silazi niz lestvicu, a 4. takt staje na **2**, polukadenca.
+    - **Taktovi 5–8: okret.** 5. takt opet počinje toničnim trozvukom, ali se penje do
+      **oktave**; zatim se u 6. taktu javlja nov ton: **#4**, polustepen ispod 5. Taj ton je
+      vođica novog tonaliteta, i od tada je **5 nova tonika**: melodija se završava na njoj, a
+      dolazi joj iz sopstvene vođice (#4 → 5).
+    - **Pomaže da misliš u novom tonalitetu:** u taktovima 6–8 pevaj *do* na poslednjem tonu i
+      čuj #4 kao *ti*, vođicu.
+
+    ### Strategije
+
+    1. **Otpevaj je**, pa nađi prvi ton. Ako počneš na C u C-duru, jedina crna dirka je **Fis**
+       (#4), u taktovima 6 i 7.
+    2. **Nauči je u tom tonalitetu**, frazu po frazu.
+    3. **Onda transponuj:** odsviraj je ponovo počev od drugog tona, npr. od G (G-dur, sa Cis
+       kao #4) ili od F (F-dur, sa H kao #4). Uradi to po sluhu i po intervalima, a ne
+       zapisivanjem. To je veština: melodija je obrazac intervala, a ne skup dirki.
+    4. **Snimi najbolji pokušaj** (u bilo kom tonalitetu) i u beleškama navedi u kojim si je
+       tonalitetima svirao.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod; transpoziciju ocenjuješ sam.
+rubric:
+  - id: modulation-heard
+    weight: 1
+    label: {en: "The key change", sr: "Promena tonaliteta"}
+    top:
+      en: "The #4 is played as a true half step below 5 in both places, and the ending sounds like an arrival in the new key, not like a half cadence."
+      sr: "#4 je odsvirano kao pravi polustepen ispod 5 na oba mesta, a kraj zvuči kao dolazak u novi tonalitet, a ne kao polukadenca."
+  - id: transposition
+    weight: 1
+    label: {en: "Transposition", sr: "Transpozicija"}
+    top:
+      en: "You played the whole melody correctly in a second key with different black keys, by ear, and your notes say which one and what was harder there."
+      sr: "Celu melodiju si tačno odsvirao u drugom tonalitetu, sa drugim crnim dirkama, po sluhu, a u beleškama navodiš kom i šta je tamo bilo teže."
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One steady take; the dotted figures in bars 1 and 5 are long-short; long notes held."
+      sr: "Jedan ravnomeran snimak; punktirane figure u taktovima 1 i 5 su dugo-kratko; dugi tonovi zadržani."

@@ -1,0 +1,103 @@
+id: V-020
+track: V
+order: 20
+title: {en: "Releasing jaw, tongue and neck tension", sr: "Opuštanje vilice, jezika i vrata"}
+prereqs: [V-019]
+minutes: 10
+tags: [voice, tension, posture]
+explain:
+  en: |
+    The larynx (voice box) hangs in a web of muscles attached to the jaw, the tongue and the neck. Tension in any of them pulls on it,
+    and the voice gets tighter, higher notes get harder, and pitch gets less steady. Most "my voice cannot do this" is really "something nearby is clenching".
+
+    The usual suspects, and how to check yourself:
+
+    | where | sign | check | release |
+    |---|---|---|---|
+    | **jaw** | jaw juts forward or clamps on high notes | mirror: the chin moves forward | let the jaw hang down and slightly back, "dopey", from the hinge in front of the ears |
+    | **tongue** | tongue pulls back and bunches; sound gets swallowed | thumb on the soft spot under the chin: it pushes down hard when you sing | tongue tip rests behind the lower front teeth on every vowel |
+    | **neck** | chin lifts toward high notes; neck muscles stand out | mirror, side view | chin level; think of high notes as "over", not "up" |
+
+    Tension is not cured by forcing yourself to relax. Notice it, release it a little, sing a short phrase, check again. Short loops, many times.
+
+    The thumb check is a **light touch**: some movement under the chin is normal; a hard push down is the sign.
+
+    The app checks pitch; the tension check is yours. Often the pitch improves by itself when the jaw lets go.
+
+    **Stop if anything hurts, scratches or you get hoarse.** Stretch the neck gently, never to the point of pain, and skip any movement that hurts.
+  sr: |
+    Grkljan visi u mreži mišića povezanih sa vilicom, jezikom i vratom. Napetost u bilo kom od njih vuče grkljan,
+    pa glas postaje stegnutiji, visoki tonovi teži, a visina manje stabilna. Većina „moj glas to ne može” je zapravo „nešto u blizini se steže”.
+
+    Uobičajeni krivci i kako da se proveriš:
+
+    | gde | znak | provera | opuštanje |
+    |---|---|---|---|
+    | **vilica** | vilica ide napred ili se steže na visokim tonovima | ogledalo: brada ide napred | pusti vilicu da visi naniže i malo unazad, „pospano”, iz zgloba ispred ušiju |
+    | **jezik** | jezik se povlači unazad i grči; zvuk se „guta” | palac na mekom mestu ispod brade: snažno potiskuje naniže dok pevaš | vrh jezika leži iza donjih prednjih zuba na svakom samoglasniku |
+    | **vrat** | brada se podiže prema visokim tonovima; mišići vrata se ističu | ogledalo, iz profila | brada ravno; visoke tonove zamisli kao „preko”, ne „gore” |
+
+    Napetost se ne leči time što se na silu opuštaš. Primeti je, malo je otpusti, otpevaj kratku frazu, proveri opet. Kratki krugovi, mnogo puta.
+
+    Provera palcem je **lagan dodir**: malo pomeranja ispod brade je normalno; znak je snažno potiskivanje naniže.
+
+    Aplikacija proverava visinu; proveru napetosti radiš ti. Često se i visina sama popravi kad vilica popusti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.** Vrat isteži nežno, nikad do bola, i preskoči svaki pokret koji boli.
+exercises:
+  - id: V-020-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-020-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Release warm-up: 4 slow shoulder rolls backward; let the head tip gently toward each shoulder and hold 3 breaths (no full circles); massage the jaw muscles in front of the ears with the fingertips while letting the jaw hang. Then 3 quiet lip-trill sirens."
+      sr: "Zagrevanje opuštanjem: 4 spora kruženja ramenima unazad; pusti glavu da se nežno nagne ka svakom ramenu i zadrži 3 udaha (bez punih krugova); masiraj mišiće vilice ispred ušiju vrhovima prstiju dok vilica visi. Pa 3 tihe sirene treperenjem usana."
+  - id: V-020-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Tongue: (1) say 'ya-ya-ya-ya' on one easy note with the jaw still (a finger on the chin); only the tongue moves. (2) Let the tongue tip rest out on the lower lip and hum, then sing 'ah' with it there. 1 minute each, quiet."
+      sr: "Jezik: (1) izgovaraj „ja-ja-ja-ja” na jednom lakom tonu sa mirnom vilicom (prst na bradi); pomera se samo jezik. (2) Pusti da vrh jezika leži napolju na donjoj usni i pevuši, pa otpevaj „a” tako. Po 1 minut, tiho."
+  - id: V-020-4
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-4-5-4-3-2-1 on 'ya' with the jaw hanging still and the thumb lightly under the chin; only the tongue makes the 'y'."
+      sr: "1-2-3-4-5-4-3-2-1 na „ja”, vilica mirno visi, palac lagano ispod brade; „j” pravi samo jezik."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-020-5
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'ah' with the tongue tip resting out on the lower lip. Sounds silly, frees the tongue root."
+      sr: "1-3-5-3-1 na „a” sa vrhom jezika napolju na donjoj usni. Zvuči smešno, a oslobađa koren jezika."
+    notes: [C4, E4, G4, E4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 75
+    pass: 0.65
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-020-6
+    type: sing-pitch
+    prompt:
+      en: "In a mirror, side view: 'ah' for 3 seconds with the chin level and the jaw hanging. Watch that nothing moves forward or up."
+      sr: "Ispred ogledala, iz profila: „a” 3 sekunde, brada ravno, vilica visi. Pazi da ništa ne krene napred ili gore."
+    notes: [B3]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-020-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: sing any short phrase from this week and do all three checks (mirror for jaw and chin, thumb under the chin). Rate how many stayed free."
+      sr: "Samoprocena: otpevaj bilo koju kratku frazu iz ove nedelje i uradi sve tri provere (ogledalo za vilicu i bradu, palac ispod brade). Oceni koliko ih je ostalo slobodno."

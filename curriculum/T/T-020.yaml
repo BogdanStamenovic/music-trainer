@@ -1,0 +1,112 @@
+id: T-020
+track: T
+order: 20
+prereqs: [T-019]
+title: {en: "The dominant seventh chord (V7) and its resolution", sr: "Dominantni septakord (V7) i njegovo razrešenje"}
+minutes: 13
+tags: [chords, harmony]
+explain:
+  en: |
+    Add one more third on top of V and you get the **dominant seventh**, **V7**: a major triad plus a **minor 7th** above the root.
+    In C major: G–B–D + **F** = G7. The new note is scale degree 4.
+
+    Why it pulls so hard: B (the 3rd, leading tone) and F (the 7th) form a **tritone** (diminished 5th), the most unstable interval in the key.
+    It resolves by both notes moving a **half step** inward or outward:
+
+    - the **3rd** (leading tone) goes **up** to the tonic: B → C
+    - the **7th** goes **down by step**: F → E
+
+    The tritone B–F becomes the third C–E: tension into rest. That is the sound of almost every final cadence from Bach to the Beatles.
+
+    In minor, V7 uses the raised 7th: in A minor, **E–G♯–B–D**.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "V7"[G,B,F] "I"[C,CE] |]
+    ```
+
+    (Root, 3rd and 7th only; the 5th is often left out. Bass G → C, B up to C, F down to E.)
+  sr: |
+    Dodaj još jednu tercu na V i dobijaš **dominantni septakord**, **V7** (D7): durski trozvuk plus **mala septima** od osnovnog tona.
+    U C-duru: G–H–D + **F** = G7. Novi ton je IV stupanj.
+
+    Zašto toliko vuče: H (terca, vođica) i F (septima) grade **tritonus** (smanjenu kvintu), najnestabilniji interval u tonalitetu.
+    Razrešava se tako što oba tona idu **polustepenom**:
+
+    - **terca** (vođica) ide **naviše** na toniku: H → C
+    - **septima** ide **naniže za stupanj**: F → E
+
+    Tritonus H–F postaje terca C–E: napetost prelazi u mir. To je zvuk skoro svake završne kadence od Baha do Bitlsa.
+
+    U molu V7 koristi povišeni VII stupanj: u a-molu **E–Gis–H–D**.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "V7"[G,B,F] "I"[C,CE] |]
+    ```
+
+    (Samo osnovni ton, terca i septima; kvinta se često izostavlja. Bas G → C, H naviše na C, F naniže na E.)
+exercises:
+  - id: T-020-1
+    type: generated
+    prompt: {en: "Spell V7", sr: "Napiši V7"}
+    count: 3
+    gen: {kind: roman, keys: [C, G, F, D, Bb], degrees: [5], seventh: true, ask: name}
+    checks:
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+  - id: T-020-2
+    type: generated
+    prompt: {en: "Play V7", sr: "Odsviraj V7"}
+    count: 3
+    gen: {kind: roman, keys: [C, G, F, D, A, Eb], degrees: [5], seventh: true, ask: play}
+  - id: T-020-3
+    type: mcq
+    prompt: {en: "In G7 (G–B–D–F), the tritone is between…", sr: "U G7 (G–H–D–F) tritonus je između…"}
+    options:
+      - {en: "B and F", sr: "H i F"}
+      - {en: "G and D", sr: "G i D"}
+      - {en: "D and F", sr: "D i F"}
+      - {en: "G and B", sr: "G i H"}
+    answer: 0
+    checks:
+      - interval: {from: B4, to: F5, is: d5}
+      - interval: {from: G4, to: D5, is: P5}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: G4, to: B4, is: M3}
+  - id: T-020-4
+    type: mcq
+    prompt: {en: "V7 → I in C major. Where do B and F normally go?", sr: "V7 → I u C-duru. Kuda obično idu H i F?"}
+    options:
+      - {en: "B up to C, F down to E", sr: "H naviše na C, F naniže na E"}
+      - {en: "B down to A, F up to G", sr: "H naniže na A, F naviše na G"}
+      - {en: "Both stay where they are", sr: "Oba ostaju na mestu"}
+      - {en: "B up to C, F up to G", sr: "H naviše na C, F naviše na G"}
+    answer: 0
+    checks:
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: T-020-5
+    type: generated
+    prompt: {en: "Listen: plain major triad or dominant seventh?", sr: "Slušaj: durski trozvuk ili dominantni septakord?"}
+    count: 4
+    gen: {kind: chord-ear, qualities: [maj, "7"]}
+  - id: T-020-6
+    type: generated
+    prompt: {en: "Play I–IV–V7–I", sr: "Odsviraj I–IV–V7–I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, V7, I]}
+  - id: T-020-7
+    type: mcq
+    prompt: {en: "In A minor, V7 is…", sr: "U a-molu V7 je…"}
+    options:
+      - {en: "E–G–B–D", sr: "E–G–H–D"}
+      - {en: "E–G♯–B–D", sr: "E–Gis–H–D"}
+      - {en: "E–G♯–B–D♯", sr: "E–Gis–H–Dis"}
+      - {en: "G–B–D–F", sr: "G–H–D–F"}
+    answer: 1
+    checks:
+      - chord: {notes: [E4, G#4, B4, D5], root: E, quality: "7"}

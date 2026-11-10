@@ -1,0 +1,108 @@
+id: T-017
+track: T
+order: 17
+prereqs: [T-016]
+title: {en: "Compound meters: 6/8, 9/8, 12/8", sr: "Složene mere: 6/8, 9/8, 12/8"}
+minutes: 12
+tags: [rhythm]
+explain:
+  en: |
+    In a **compound meter** each beat is a **dotted quarter**, so it divides into **three** eighths, not two.
+    The top number counts eighths, not beats: divide it by 3 to get the beats you actually feel.
+
+    | meter | eighths | felt beats | count |
+    |---|---|---|---|
+    | 6/8 | 6 | 2 | **1**-and-a **2**-and-a |
+    | 9/8 | 9 | 3 | **1**-and-a **2**-and-a **3**-and-a |
+    | 12/8 | 12 | 4 | four groups of three |
+
+    The trap: **3/4 and 6/8 both hold six eighths**, but they group them differently.
+    3/4 is three beats of two (**1**&**2**&**3**&); 6/8 is two beats of three (**1**23**4**56). Beaming shows the grouping, so read the beams, not just the note count.
+    Compound time is the lilt of a jig, a barcarolle, a slow 12/8 blues or a doo-wop ballad. At the keyboard, a 12/8 ballad is often four left-hand beats with right-hand eighth-note triplet chords on top.
+
+    ```abc
+    X:1
+    L:1/8
+    M:3/4
+    K:C clef=perc
+    !>!BB BB BB | !>!B2 B2 B2 || [M:6/8] !>!BBB !>!BBB | !>!B3 !>!B3 |]
+    ```
+  sr: |
+    U **složenoj meri** svaka doba je **četvrtina s tačkom**, pa se deli na **tri** osmine, a ne na dve.
+    Gornji broj broji osmine, ne dobe: podeli ga sa 3 i dobićeš dobe koje stvarno osećaš.
+
+    | mera | osmine | dobe | brojanje |
+    |---|---|---|---|
+    | 6/8 | 6 | 2 | **1**-i-a **2**-i-a |
+    | 9/8 | 9 | 3 | **1**-i-a **2**-i-a **3**-i-a |
+    | 12/8 | 12 | 4 | četiri grupe po tri |
+
+    Zamka: **3/4 i 6/8 imaju po šest osmina**, ali ih grupišu drugačije.
+    3/4 su tri dobe po dve osmine (**1** i **2** i **3** i); 6/8 su dve dobe po tri (**1**23**4**56). Grede (spojnice) pokazuju grupisanje, zato čitaj grede, ne samo broj nota.
+    Složena mera je ljuljanje žige, barkarole, spore bluz-balade u 12/8. Za klavirom, balada u 12/8 je često četiri dobe u levoj ruci i triolski akordi u osminama u desnoj.
+
+    ```abc
+    X:1
+    L:1/8
+    M:3/4
+    K:C clef=perc
+    !>!BB BB BB | !>!B2 B2 B2 || [M:6/8] !>!BBB !>!BBB | !>!B3 !>!B3 |]
+    ```
+exercises:
+  - id: T-017-1
+    type: mcq
+    prompt: {en: "At a normal tempo, how many beats do you feel in a bar of 6/8?", sr: "Koliko doba osećaš u taktu 6/8 pri uobičajenom tempu?"}
+    options: ["2", "3", "6", "8"]
+    answer: 0
+  - id: T-017-2
+    type: mcq
+    prompt: {en: "Time signature missing. Read the beaming: which one fits?", sr: "Oznaka mere nedostaje. Čitaj grede: koja odgovara?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      BBB BBB | B3 B2B | B6 |]
+    options: ["3/4", "6/8", "9/8", "12/8"]
+    answer: 1
+  - id: T-017-3
+    type: mcq
+    prompt: {en: "Same number of eighths, different beaming. Which one fits now?", sr: "Isti broj osmina, druge grede. Koja mera sad odgovara?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      BB BB BB | B2 B2 B2 | B6 |]
+    options: ["3/4", "6/8", "9/8", "12/8"]
+    answer: 0
+  - id: T-017-4
+    type: mcq
+    prompt: {en: "And this one?", sr: "A ova?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      BBB BBB BBB | B3 B3 B3 | B6 B3 |]
+    options: ["3/4", "6/8", "9/8", "12/8"]
+    answer: 2
+  - id: T-017-5
+    type: mcq
+    prompt: {en: "Counting 6/8 in eighths (1 2 3 4 5 6), the two beats fall on…", sr: "Ako 6/8 brojiš u osminama (1 2 3 4 5 6), dve dobe padaju na…"}
+    options: ["1 and 4", "1 and 3", "1 and 5", "2 and 5"]
+    answer: 0
+  - id: T-017-6
+    type: mcq
+    prompt: {en: "12/8 is felt as…", sr: "12/8 se oseća kao…"}
+    options:
+      - {en: "4 beats, each divided into 3 eighths", sr: "4 dobe, svaka podeljena na 3 osmine"}
+      - {en: "6 beats, each divided into 2 eighths", sr: "6 doba, svaka podeljena na 2 osmine"}
+      - {en: "3 beats, each divided into 4 eighths", sr: "3 dobe, svaka podeljena na 4 osmine"}
+      - {en: "12 equal beats", sr: "12 jednakih doba"}
+    answer: 0
+  - id: T-017-7
+    type: generated
+    prompt: {en: "Rhythm echo, compound feel: each short bar here is ONE dotted-quarter beat of 6/8 (three eighths). Tap it back.", sr: "Ritamski eho, složena mera: svaki kratak takt ovde je JEDNA doba iz 6/8 (četvrtina s tačkom, tri osmine). Otkucaj ga."}
+    count: 3
+    gen: {kind: rhythm-echo, meter: "3/8", bars: 4, values: [1.5, 1, 0.5], tempo: 100}

@@ -1,0 +1,163 @@
+id: PV-012
+kind: vocal
+order: 47
+title: {en: "Sing: a minor ballad with a chromatic turn (clean tone)", sr: "Pevaj: balada u molu sa hromatskim obrtom (čist ton)"}
+minutes: 40
+prereqs: [V-018, V-024]
+melody:
+  title: {en: "Ballad in E minor", sr: "Balada u e-molu"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: E minor
+  meter: 4/4
+  tempo: 66
+  notes: [E4, G4, B4, A4, G4, F#4, E4, C5, B4, A4, G4, F#4, E4, G4, B4, C5, D5, B4, C5, B4, A4, F#4, G4, A4, C5, F4, A4, G4, F#4, D#4, B4, A4, G4, F#4, E4]
+  beats: [1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 2, 2, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 1, 1, 2, 1.5, 0.5, 1, 1, 4]
+tolerance: 50
+brief:
+  en: |
+    Record yourself singing an **original 12-bar ballad in E minor**, slow 4/4, on **"loo"**,
+    **"oh"** or words of your own. It brings this term's chromatic theory into the voice: bar 9
+    uses an **F natural** (the colour of the Neapolitan chord, F major in E minor) right before
+    the **F#** and **D#** of the dominant. Two pitches a semitone apart, one bar from each other:
+    the tolerance this week is tighter (half a semitone).
+
+    ```abc
+    X:1
+    T:Ballad in E minor
+    M:4/4
+    L:1/8
+    Q:1/4=66
+    K:Em
+    E2 G2 B3 A | G2 F2 E4 | c2 B2 A2 G2 | F8 !breath! |
+    E2 G2 B3 c | d4 B4 | c2 B2 A2 F2 | G8 !breath! |
+    A2 c2 =F3 A | G2 F2 ^D4 !breath! | B3 A G2 F2 | E8 |]
+    ```
+
+    ### The musical idea
+
+    - **Phrase 1** (bars 1–4) rises through the tonic chord and settles on F#, open.
+    - **Phrase 2** (5–8) climbs to the top D and closes on G, the relative major: a brief
+      brightening.
+    - **Phrase 3** (9–12) darkens: A–C–**F♮** (the Neapolitan colour), then G–**F#**–**D#**, the
+      dominant with its leading tone, and home to E. Sing bar 9 and bar 10 slowly on their own
+      until F♮ and F# feel clearly different.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D#4–D5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it: clean, expressive tone
+
+    - **Expression from line and colour, not from noise.** A ballad invites a breathy, sobbing or
+      gritty sound. This week the tone stays **clean**: the emotion is in the phrasing, the long
+      notes and the chromatic turn. (Distortion effects are a separate, gated module with its
+      own safety rules; they are not part of this piece.)
+    - **Comfortable mix or head voice on D5** in bar 6, held two beats: soft enough that it
+      floats.
+    - **Aim the D# high**: a leading tone sung flat sounds like a mistake; sung bright, it pulls
+      into the final E.
+    - **Breathe** at the marks after bars 4, 8 and 10. Phrase 3 is split so you have air for the
+      final whole note.
+    - **Final E (bar 12)**: four full beats, steady to the end, then release cleanly.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within half a semitone (50 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **originalnu baladu od 12 taktova u e-molu**, spori 4/4 takt, na
+    **„lu”**, **„o”** ili na svoje reči. Unosi u glas hromatsku teoriju ovog perioda: takt 9
+    koristi **F** (bez povisilice: boja napuljskog akorda, F-dur u e-molu) odmah pre **Fis** i
+    **Dis** iz dominante. Dva tona na polustepen razmaka, takt jedan od drugog: tolerancija je
+    ove nedelje stroža (pola polustepena).
+
+    ```abc
+    X:1
+    T:Ballad in E minor
+    M:4/4
+    L:1/8
+    Q:1/4=66
+    K:Em
+    E2 G2 B3 A | G2 F2 E4 | c2 B2 A2 G2 | F8 !breath! |
+    E2 G2 B3 c | d4 B4 | c2 B2 A2 F2 | G8 !breath! |
+    A2 c2 =F3 A | G2 F2 ^D4 !breath! | B3 A G2 F2 | E8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Fraza 1** (taktovi 1–4) penje se kroz tonički akord i smiruje na Fis, otvoreno.
+    - **Fraza 2** (5–8) penje se do gornjeg D i zatvara na G, paralelnom duru: kratko
+      razvedravanje.
+    - **Fraza 3** (9–12) se zatamnjuje: A–C–**F** (napuljska boja), pa G–**Fis**–**Dis**,
+      dominanta sa vođicom, i kući na E. Otpevaj taktove 9 i 10 polako, odvojeno, dok F i Fis
+      ne budu jasno različiti.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je Dis4–D5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva: čist, izražajan ton
+
+    - **Izraz iz linije i boje, ne iz šuma.** Balada mami na vazdušast, jecav ili hrapav zvuk.
+      Ove nedelje ton ostaje **čist**: emocija je u fraziranju, dugim tonovima i hromatskom
+      obrtu. (Efekti distorzije su poseban, zaključan modul sa sopstvenim pravilima bezbednosti;
+      nisu deo ovog komada.)
+    - **Udobni miks ili glaveni registar na D5** u 6. taktu, zadržano dve dobe: dovoljno tiho da
+      lebdi.
+    - **Ciljaj Dis visoko**: vođica otpevana nisko zvuči kao greška; otpevana svetlo, vuče u
+      završno E.
+    - **Udahni** na znacima posle taktova 4, 8 i 10. Fraza 3 je podeljena da imaš vazduha za
+      završnu celu notu.
+    - **Završno E (12. takt)**: pune četiri dobe, mirno do kraja, pa čisto pusti ton.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od pola polustepena (50 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: chromatic
+    weight: 2
+    label: {en: "Chromatic accuracy", sr: "Hromatska tačnost"}
+    top:
+      en: "F natural in bar 9 and F# in bar 10 are clearly a semitone apart; the D# is bright and resolves cleanly to E."
+      sr: "F u 9. taktu i Fis u 10. su jasno na polustepen razmaka; Dis je svetao i čisto se razrešava u E."
+  - id: clean-tone
+    weight: 2
+    label: {en: "Clean, free tone", sr: "Čist, slobodan ton"}
+    top:
+      en: "Expressive but clean throughout: no added breathiness, sob or grit; D5 floats without pushing."
+      sr: "Izražajno ali čisto kroz ceo komad: bez dodatne vazdušastosti, jecanja ili hrapavosti; D5 lebdi bez guranja."
+  - id: phrasing
+    weight: 1
+    label: {en: "Phrasing", sr: "Fraziranje"}
+    top:
+      en: "Three distinct moods: open (phrase 1), brightening (phrase 2), darkening to a firm close (phrase 3); long notes shaped, not just held."
+      sr: "Tri različita raspoloženja: otvoreno (fraza 1), razvedravanje (fraza 2), zatamnjenje do čvrstog završetka (fraza 3); dugi tonovi oblikovani, ne samo zadržani."
+  - id: breath
+    weight: 1
+    label: {en: "Breath and endings", sr: "Dah i završeci"}
+    top:
+      en: "Breaths at the marks only; the final E held a full four beats with steady pitch and a clean release."
+      sr: "Udasi samo na znacima; završno E traje pune četiri dobe uz mirnu visinu i čist završetak."

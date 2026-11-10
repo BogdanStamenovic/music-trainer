@@ -1,0 +1,145 @@
+id: V-027
+track: V
+order: 27
+title: {en: "Review: a full short song on \"la\", then with words", sr: "Ponavljanje: cela kratka pesma na „la”, pa sa rečima"}
+prereqs: [V-026]
+minutes: 12
+tags: [voice, song, review]
+explain:
+  en: |
+    A whole song, start to finish: **"Twinkle, Twinkle, Little Star"**. The tune is the French "Ah! vous dirai-je, maman" (18th century, the one Mozart wrote variations on);
+    the English words are by Jane Taylor (1806). Both are public domain.
+
+    ```abc
+    X:1
+    T:Twinkle, Twinkle, Little Star
+    M:4/4
+    L:1/4
+    Q:1/4=112
+    K:C
+    C C G G | A A G2 | F F E E | D D C2 |
+    G G F F | E E D2 | G G F F | E E D2 |
+    C C G G | A A G2 | F F E E | D D C2 |]
+    ```
+
+    It is short (12 bars) but uses almost everything from this block:
+
+    | skill | where |
+    |---|---|
+    | form | **A B A**: bars 1-4, a new 4-bar section (5-8, the same 2 bars twice), then bars 1-4 again |
+    | a leap | the **perfect 5th** up at the very start (C to G): hear the G before you sing it |
+    | breath | a quick, silent catch breath at the end of every half note (every 2 bars) |
+    | pure vowels | hold "ah" in "st**ar**" and "**are**"; in "h**igh**" and "sk**y**" hold "ah" and add the "i" at the last moment |
+    | legato | each 2-bar line connected, even volume, the top note A not louder |
+
+    Order: each section on "la", then the whole song on "la", then the whole song **with words**:
+
+    *Twin-kle, twin-kle, lit-tle star, how I won-der what you are. Up a-bove the world so high, like a dia-mond in the sky. Twin-kle, twin-kle, lit-tle star, how I won-der what you are.*
+
+    One syllable per note. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Cela pesma, od početka do kraja: **„Twinkle, Twinkle, Little Star”**. Melodija je francuska „Ah! vous dirai-je, maman” (18. vek, ona na koju je Mocart napisao varijacije);
+    engleske reči je napisala Džejn Tejlor (1806). Obe su javno dobro.
+
+    ```abc
+    X:1
+    T:Twinkle, Twinkle, Little Star
+    M:4/4
+    L:1/4
+    Q:1/4=112
+    K:C
+    C C G G | A A G2 | F F E E | D D C2 |
+    G G F F | E E D2 | G G F F | E E D2 |
+    C C G G | A A G2 | F F E E | D D C2 |]
+    ```
+
+    Kratka je (12 taktova), ali koristi skoro sve iz ovog bloka:
+
+    | veština | gde |
+    |---|---|
+    | oblik | **A B A**: taktovi 1-4, novi deo od 4 takta (5-8, ista 2 takta dva puta), pa opet taktovi 1-4 |
+    | skok | **čista kvinta** naviše na samom početku (od C do G): čuj G pre nego što ga otpevaš |
+    | dah | brz, tih udah na kraju svake polovine (na svaka 2 takta) |
+    | čisti samoglasnici | drži „a” u „st**ar**” i „**are**”; u „h**igh**” i „sk**y**” drži „a”, a „i” dodaj u poslednjem trenutku |
+    | legato | svaki red od 2 takta povezan, ravnomerna jačina, gornje A ne glasnije |
+
+    Redosled: svaki deo na „la”, pa cela pesma na „la”, pa cela pesma **sa rečima**:
+
+    *Twin-kle, twin-kle, lit-tle star, how I won-der what you are. Up a-bove the world so high, like a dia-mond in the sky. Twin-kle, twin-kle, lit-tle star, how I won-der what you are.*
+
+    Jedan slog po tonu. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-027-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-027-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then lip trills on 1-5-6-5 along with the piano, and 'la' along with the five notes."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa treperenje usnama na 1-5-6-5 uz klavir, i „la” uz pet tonova."
+    play: {notes: [C4, G4, A4, G4, C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: C4, to: A4, is: M6}
+  - id: V-027-3
+    type: sing-phrase
+    prompt:
+      en: "Section A (bars 1-4) on 'la': hear the G before the leap; quick breath after the first half note."
+      sr: "Deo A (taktovi 1-4) na „la”: čuj G pre skoka; brz udah posle prve polovine."
+    notes: [C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 112
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-027-4
+    type: sing-phrase
+    prompt:
+      en: "Section B (bars 5-8) on 'la': the same two bars twice, stepping down from G to D."
+      sr: "Deo B (taktovi 5-8) na „la”: ista dva takta dva puta, postupno naniže od G do D."
+    notes: [G4, G4, F4, F4, E4, E4, D4, G4, G4, F4, F4, E4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 112
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: D4, to: G4, is: P4}
+  - id: V-027-5
+    type: sing-phrase
+    prompt:
+      en: "The whole song on 'la', A B A, with a quick silent breath every two bars."
+      sr: "Cela pesma na „la”, A B A, sa brzim tihim udahom na svaka dva takta."
+    notes: [C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4, G4, G4, F4, F4, E4, E4, D4, G4, G4, F4, F4, E4, E4, D4, C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 112
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: A4, is: M6}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-027-6
+    type: sing-phrase
+    prompt:
+      en: "The whole song with words: 'Twinkle, twinkle, little star...'. Pure vowels on the long notes, legato lines, even volume."
+      sr: "Cela pesma sa rečima: „Twinkle, twinkle, little star...”. Čisti samoglasnici na dugim tonovima, povezane linije, ravnomerna jačina."
+    notes: [C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4, G4, G4, F4, F4, E4, E4, D4, G4, G4, F4, F4, E4, E4, D4, C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 112
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-027-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Review: record the song with words once more and listen back. Rate breath (silent, on time), vowels (pure), legato (no gaps) and ease (no pushing). Then 3 quiet hums sliding down to cool down."
+      sr: "Ponavljanje: snimi pesmu sa rečima još jednom i preslušaj. Oceni dah (tih, na vreme), samoglasnike (čisti), legato (bez praznina) i lakoću (bez guranja). Pa 3 tiha pevušenja uz klizanje naniže za smirivanje."

@@ -312,25 +312,33 @@ export function gradeRhythm(expected: number[], events: MidiEvent[], tempo: numb
 export function gradeImprov(item: MidiItem, events: MidiEvent[]) {
   const im = item.improv!;
   const beatMs = 60000 / (item.tempo ?? 80);
+  const spanMs = im.beatsPerChord * beatMs;
   const on = onsets(events);
   const total = im.chords.length * im.loops;
   if (!on.length) return { score: 0, detail: { notes: 0 } };
   const pc = (m: number) => ((m % 12) + 12) % 12;
-  const inScale = on.filter((o) => im.scale.includes(pc(o.note))).length / on.length;
+  const chordAt = (t: number) => im.chords[Math.min(total - 1, Math.max(0, Math.floor(t / spanMs))) % im.chords.length];
+  // a note is "in" when it is in the scale OR a tone of the chord sounding then
+  // (the blues slide Eb->E over C7 is not a wrong note)
+  const inScale = on.filter((o) => im.scale.includes(pc(o.note)) || chordAt(o.t).includes(pc(o.note))).length / on.length;
   let hit = 0;
+  let played = 0;
   for (let k = 0; k < total; k++) {
-    const t = k * im.beatsPerChord * beatMs;
+    const t = k * spanMs;
     const chordPcs = im.chords[k % im.chords.length];
+    if (on.some((o) => o.t >= t - beatMs / 4 && o.t < t + spanMs)) played++;
     const near = on.filter((o) => Math.abs(o.t - t) <= beatMs / 4);
     if (near.some((o) => chordPcs.includes(pc(o.note)))) hit++;
   }
-  const downbeats = hit / total;
+  // resting through some changes is good phrasing: judge the changes you played,
+  // but at least half of them count (so playing one chord does not score full marks)
+  const downbeats = hit / Math.max(played, Math.ceil(total / 2));
   const beats = total * im.beatsPerChord;
-  const density = Math.min(1, on.length / (beats * 0.75));
+  const density = Math.min(1, on.length / (beats * 0.5));
   const variety = Math.min(1, new Set(on.map((o) => pc(o.note))).size / 4);
   const activity = density * variety;
-  const score = 0.5 * inScale + 0.3 * downbeats + 0.2 * activity;
-  return { score, detail: { notes: on.length, inScale: round3(inScale), chordTonesOnDownbeats: `${hit}/${total}`, activity: round3(activity) } };
+  const score = 0.5 * inScale + 0.3 * Math.min(1, downbeats) + 0.2 * activity;
+  return { score, detail: { notes: on.length, inScale: round3(inScale), chordTonesOnDownbeats: `${hit}/${played} played of ${total}`, activity: round3(activity) } };
 }
 const round3 = (x: number) => Math.round(x * 1000) / 1000;
 

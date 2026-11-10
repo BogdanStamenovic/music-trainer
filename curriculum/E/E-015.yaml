@@ -1,0 +1,106 @@
+id: E-015
+track: E
+order: 15
+title: {en: "Seventh-chord qualities by ear (maj7, 7, m7, m7b5, dim7)", sr: "Vrste septakorada po sluhu (maj7, 7, m7, m7b5, dim7)"}
+prereqs: [E-014, T-022]
+minutes: 14
+tags: [ear, chords, sevenths]
+explain:
+  en: |
+    A seventh chord is a triad plus one more third on top. So hear it in **two questions**:
+
+    1. **What is the triad underneath?** Major, minor or diminished (E-003, E-008).
+    2. **How far is the top note from the root's octave?** A **major 7th** is a half step below the
+       octave: it rubs against where the octave "should" be. A **minor 7th** is a whole step below:
+       softer, it just leans.
+
+    | chord | triad + 7th | on C | sound |
+    |---|---|---|---|
+    | maj7 | major + M7 | C E G B | soft, dreamy, unresolved but calm (ballads, bossa) |
+    | 7 (dominant) | major + m7 | C E G Bb | bright but tense, wants to resolve; blues sound |
+    | m7 | minor + m7 | C Eb G Bb | mellow, relaxed, round |
+    | m7b5 (half-diminished) | dim + m7 | C Eb Gb Bb | dark, sighing, unstable |
+    | dim7 | dim + dim7 | C Eb Gb Bbb (= A) | all minor 3rds, symmetric, maximum tension |
+
+    The pairs that get confused, and the difference to listen for:
+
+    - **maj7 vs 7**: both are major underneath. Listen to the top: maj7 has the half-step rub with
+      the root, 7 has a "blue", restless edge. Imagine the root an octave up: maj7 is one key away
+      from it, 7 is two.
+    - **7 vs m7**: same 7th, different 3rd. 7 is bright, m7 is darker and calmer.
+    - **m7b5 vs dim7**: both diminished underneath. dim7 is perfectly even (every gap is a minor 3rd)
+      and sounds like suspense in an old film; m7b5 has one wider gap on top (a whole step under the
+      octave) and sounds more like a sad minor chord.
+
+    Production tip: in the "play it back" exercise find the **bass** first, then the triad, then the 7th.
+  sr: |
+    Septakord je kvintakord sa još jednom tercom na vrhu. Zato ga čuj kroz **dva pitanja**:
+
+    1. **Koji je kvintakord ispod?** Durski, molski ili smanjeni (E-003, E-008).
+    2. **Koliko je gornji ton daleko od oktave osnovnog tona?** **Velika septima** je pola stepena
+       ispod oktave: trlja se o mesto gde bi oktava „trebalo" da bude. **Mala septima** je ceo
+       stepen ispod: mekša je, samo se naginje.
+
+    | akord | kvintakord + septima | na C | zvuk |
+    |---|---|---|---|
+    | maj7 (veliki durski septakord) | durski + v7 | C E G H | meko, sanjivo, nerazrešeno ali mirno (balade, bosa nova) |
+    | 7 (dominantni septakord) | durski + m7 | C E G B | svetlo ali napeto, hoće razrešenje; zvuk bluza |
+    | m7 (mali molski septakord) | molski + m7 | C Es G B | blago, opušteno, oblo |
+    | m7b5 (polusmanjeni septakord) | smanjeni + m7 | C Es Ges B | tamno, uzdah, nestabilno |
+    | dim7 (smanjeni septakord) | smanjeni + smanjena septima | C Es Ges Heses (= A) | sve male terce, simetrično, najveća napetost |
+
+    Parovi koji se mešaju, i razlika koju slušaš:
+
+    - **maj7 ili 7**: oba su durska ispod. Slušaj vrh: maj7 ima polustepeno trenje sa osnovnim
+      tonom, 7 ima „bluz", nemirnu ivicu. Zamisli osnovni ton oktavu više: maj7 je jednu dirku od
+      njega, 7 dve.
+    - **7 ili m7**: ista septima, različita terca. 7 je svetao, m7 tamniji i mirniji.
+    - **m7b5 ili dim7**: oba su smanjena ispod. dim7 je savršeno ravnomeran (svaki razmak je mala
+      terca) i zvuči kao napetost u starom filmu; m7b5 ima jedan širi razmak na vrhu (ceo stepen
+      ispod oktave) i zvuči više kao tužan molski akord.
+
+    Savet za sviranje: u vežbi „odsviraj" prvo nađi **bas**, pa kvintakord, pa septimu.
+exercises:
+  - id: E-015-1
+    type: generated
+    prompt: {en: "Major underneath: maj7 or dominant 7?", sr: "Dur ispod: maj7 ili dominantni 7?"}
+    count: 8
+    gen: {kind: chord-ear, qualities: [maj7, "7"]}
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - chord: {notes: [C4, Eb4, Gb4, Bbb4], root: C, quality: dim7}
+      - interval: {from: C4, to: B4, is: M7}
+      - interval: {from: C4, to: Bb4, is: m7}
+      - interval: {from: C4, to: Bbb4, is: d7}
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: Bb4, to: C5, is: M2}
+      - interval: {from: Gb4, to: Bb4, is: M3}
+  - id: E-015-2
+    type: generated
+    prompt: {en: "Same 7th, different 3rd: dominant 7 or minor 7?", sr: "Ista septima, druga terca: dominantni 7 ili mali molski 7?"}
+    count: 8
+    gen: {kind: chord-ear, qualities: ["7", min7]}
+  - id: E-015-3
+    type: generated
+    prompt: {en: "The darker three: m7, m7b5, dim7", sr: "Tri tamnija: m7, m7b5, dim7"}
+    count: 8
+    gen: {kind: chord-ear, qualities: [min7, m7b5, dim7]}
+  - id: E-015-4
+    type: generated
+    prompt: {en: "All five qualities", sr: "Svih pet vrsta"}
+    count: 10
+    pass: 0.7
+    gen: {kind: chord-ear, qualities: [maj7, "7", min7, m7b5, dim7]}
+  - id: E-015-5
+    type: generated
+    prompt: {en: "Play it back (any octave): maj7, 7, m7", sr: "Odsviraj (bilo koja oktava): maj7, 7, m7"}
+    count: 5
+    pass: 0.7
+    gen: {kind: chord-ear, qualities: [maj7, "7", min7], answer: play}
+  - id: E-015-6
+    type: generated
+    prompt: {en: "Inverted: the quality does not change. Which is it?", sr: "U obrtaju: vrsta se ne menja. Koja je?"}
+    count: 8
+    pass: 0.6
+    gen: {kind: chord-ear, qualities: [maj7, "7", min7, m7b5], inversions: [1, 2, 3]}

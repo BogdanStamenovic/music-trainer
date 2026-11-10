@@ -1,0 +1,116 @@
+id: V-017
+track: V
+order: 17
+title: {en: "Intervals sung: 6ths and octaves", sr: "Pevani intervali: sekste i oktave"}
+prereqs: [V-016]
+minutes: 10
+tags: [voice, intervals, intonation]
+explain:
+  en: |
+    Bigger leaps now. Sixths and octaves span a large part of an untrained voice, so they often **cross the break**: everything from the last lesson applies.
+
+    | interval | half steps | on the keyboard | to hear it |
+    |---|---|---|---|
+    | minor 6th (m6) | 8 | E up to C | a major 3rd turned upside down (C up to E is M3; E up to C is m6) |
+    | major 6th (M6) | 9 | C up to A | "My Bonnie Lies Over the Ocean": "*My Bon-*" |
+    | octave (P8) | 12 | C up to the next C | the same note name, higher: "Somewhere Over the Rainbow": "*Some-where*" |
+
+    The pianist's shortcut: a 6th is an **inverted 3rd**. A minor 3rd flips into a major 6th, a major 3rd into a minor 6th, because 3 + 6 = 9 (in interval names, inversions add to 9).
+
+    How to sing a big leap:
+
+    1. **Hear the top note before you leave the bottom one.** If you cannot imagine it, play it once more.
+    2. **Keep the bottom note light.** A heavy bottom note drags its weight up into the leap.
+    3. **Aim for the top note, do not reach for it.** No lifting the chin, no extra volume. Think of the top note as "over", not "up".
+
+    The octave is the easiest big leap to hear (same note name), so it comes first, as a glide. Sing in whatever octave is comfortable.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Sada veći skokovi. Sekste i oktave zauzimaju veliki deo neškolovanog glasa, pa često **prelaze preko loma**: važi sve iz prošle lekcije.
+
+    | interval | polustepeni | na klavijaturi | kako ga čuti |
+    |---|---|---|---|
+    | mala seksta (m6) | 8 | od E naviše do C | obrnuta velika terca (od C do E je M3; od E do C je m6) |
+    | velika seksta (M6) | 9 | od C naviše do A | „My Bonnie Lies Over the Ocean”: „*My Bon-*” |
+    | oktava (P8) | 12 | od C do sledećeg C | isto ime tona, više: „Somewhere Over the Rainbow”: „*Some-where*” |
+
+    Prečica za pijaniste: seksta je **obrnuta terca**. Mala terca se obrće u veliku sekstu, velika terca u malu sekstu, jer je 3 + 6 = 9 (u imenima intervala obrtaji daju zbir 9).
+
+    Kako otpevati veliki skok:
+
+    1. **Čuj gornji ton pre nego što napustiš donji.** Ako ne možeš da ga zamisliš, pusti ga još jednom.
+    2. **Drži donji ton lakim.** Težak donji ton vuče svoju težinu u skok.
+    3. **Ciljaj gornji ton, ne poseži za njim.** Bez podizanja brade, bez dodatne jačine. Zamisli gornji ton kao „preko”, a ne „gore”.
+
+    Oktavu je najlakše čuti (isto ime tona), pa ide prva, kao klizanje. Pevaj u oktavi koja ti prija.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-017-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-017-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then lip trills on 1-5-8-5-1 along with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, pa treperenje usnama na 1-5-8-5-1 uz klavir."
+    play: {notes: [C4, G4, C5, G4, C4], mode: melodic, tempo: 72}
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-017-3
+    type: sing-phrase
+    prompt:
+      en: "Octave glide 1-8-1 on 'oo': slide up to the octave and back, landing on each note for 2 beats. Top note light."
+      sr: "Klizanje 1-8-1 na „u”: klizi do oktave i nazad, sleti na svaki ton na 2 dobe. Gornji ton lagan."
+    notes: [G3, G4, G3]
+    beats: [2, 2, 2]
+    tempo: 60
+    tolerance: 75
+    pass: 0.75
+    checks:
+      - interval: {from: G3, to: G4, is: P8}
+      - semitones: {from: G3, to: G4, is: 12}
+  - id: V-017-4
+    type: sing-phrase
+    prompt:
+      en: "Octave leap without the slide: 'la' on the bottom note, then jump cleanly to the top on 'la'. Hear the top before you leave."
+      sr: "Skok za oktavu bez klizanja: „la” na donjem tonu, pa čist skok na gornji, opet „la”. Čuj gornji ton pre nego što kreneš."
+    notes: [C4, C5]
+    beats: [2, 2]
+    tempo: 60
+    tolerance: 75
+    pass: 0.7
+    checks:
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-017-5
+    type: generated
+    prompt: {en: "Sixths: sing the note you hear, then a minor or major 6th above", sr: "Sekste: otpevaj ton koji čuješ, pa malu ili veliku sekstu iznad"}
+    count: 3
+    pass: 0.6
+    gen: {kind: pitch-match, range: [C3, A4], tolerance: 75, intervals: [m6, M6]}
+    checks:
+      - semitones: {from: E4, to: C5, is: 8}
+      - semitones: {from: C4, to: A4, is: 9}
+      - interval: {from: E4, to: C5, is: m6}
+      - interval: {from: C4, to: A4, is: M6}
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: A3, to: C4, is: m3}
+  - id: V-017-6
+    type: generated
+    prompt: {en: "Octaves: sing the note you hear, then the octave above", sr: "Oktave: otpevaj ton koji čuješ, pa oktavu iznad"}
+    count: 2
+    pass: 0.6
+    gen: {kind: pitch-match, range: [C3, A4], tolerance: 75, intervals: [P8]}
+    checks:
+      - semitones: {from: C4, to: C5, is: 12}
+  - id: V-017-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet 'oo' sirens from high to low. Rate the leaps: did you hear the top note first, and did it stay light?"
+      sr: "Smirivanje: 3 tihe sirene na „u” odozgo naniže. Oceni skokove: da li si prvo čuo gornji ton i da li je ostao lagan?"

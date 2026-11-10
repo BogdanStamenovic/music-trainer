@@ -1,0 +1,138 @@
+id: PC-008
+kind: composition
+order: 29
+title: {en: "A lead sheet: verse and chorus with chord symbols", sr: "Lead sheet: strofa i refren sa oznakama akorda"}
+minutes: 120
+prereqs: [T-031, T-032, K-017, L-006]
+composition:
+  key: D major
+  meter: 4/4
+  bars: 16
+  range: [B3, D5]
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write a **song sketch as a lead sheet**: a **16-bar melody in D major, 4/4, with chord
+    symbols** above it. **Bars 1–8 are a verse, bars 9–16 a chorus.** A lead sheet is how
+    pop, jazz and worship bands share songs: one melody line plus chord names, and every
+    player builds their own part from that.
+
+    ### The idea
+
+    - **Verse (bars 1–8): tell, low and narrow.** Keep the verse in the lower part of the
+      range (around D4–A4), with repeated notes and speech-like rhythm. End **bar 8 open, on
+      A, E or C#** (a V-chord note) so the chorus feels like an arrival: that is a half
+      cadence at the mid-point.
+    - **Chorus (bars 9–16): lift.** Jump up (start the chorus a 4th to a 6th higher than the
+      verse sat), use longer notes, and give it a **hook**: a short figure that repeats, e.g.
+      bars 9–10 = bars 13–14. End **bar 16 on D**, from E or C#.
+    - **Chords: one or two per bar.** Pick from D, Em, F#m, G, A, Bm (I, ii, iii, IV, V, vi),
+      plus A7. Try starting the chorus on a different chord than the verse (IV or vi), so the
+      harmony lifts with the tune.
+    - **Melody notes on the beat should belong to the chord** (or be clear passing notes):
+      the same rule as in your earlier melodies, now with chords you chose yourself.
+    - **Range: B3–D5.**
+
+    How chord symbols look in ABC: a name in double quotes, right before the note it starts
+    on.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:D
+    "D"F2 F E D2 F2 | "G"G2 B A "A7"G2 E2 |]
+    ```
+
+    ### Practical tips
+
+    - Write the chorus first. If the hook is good, the verse only has to lead into it.
+    - Then the chords: hum the melody and try a chord on each beat 1. If the melody note is
+      in the chord, it probably fits. Sing over the chords played on the piano to check.
+    - Keep the chord rhythm simple: one per bar, two in bars 7, 8, 15 or 16 to push into the
+      cadence.
+    - Typing it is easiest: the recorder captures notes but not chord names. You can record
+      the melody first and add the `"Chord"` symbols by hand in the text box.
+
+    ### How it is graded
+
+    - **Rule checks (half):** these look at the **melody notes only**: 16 full bars; notes of
+      D major; range B3–D5; bar 8 ends on 2, 5 or 7 (E, A or C#); last note D; no augmented
+      leaps; leaps under control; sensible rhythm.
+    - **Critique (half):** the chord symbols go to the reviewer (AI), who scores the criteria
+      below 0–4: how well chords and melody fit, and how much the chorus lifts.
+  sr: |
+    Napiši **skicu pesme kao lead sheet**: **melodiju od 16 taktova u D-duru, 4/4, sa
+    oznakama akorda** iznad nje. **Taktovi 1–8 su strofa, taktovi 9–16 refren.** Lead sheet
+    je način na koji pop, džez i crkveni bendovi dele pesme: jedna melodijska linija i imena
+    akorda, a svaki svirač iz toga gradi svoju deonicu.
+
+    ### Ideja
+
+    - **Strofa (taktovi 1–8): pripoveda, nisko i usko.** Drži strofu u donjem delu opsega
+      (oko D4–A4), sa ponovljenim tonovima i ritmom bliskim govoru. Završi **8. takt otvoreno,
+      na A, E ili Cis** (ton dominante), da refren deluje kao dolazak: to je polukadenca na
+      sredini.
+    - **Refren (taktovi 9–16): podiže.** Skoči naviše (počni refren kvartu do sekstu više nego
+      što je strofa bila), koristi duže tonove i daj mu **hook** (udicu): kratku figuru koja se
+      ponavlja, npr. taktovi 9–10 = taktovi 13–14. Završi **16. takt na D**, sa E ili Cis.
+    - **Akordi: jedan ili dva po taktu.** Biraj među D, Em, F#m, G, A, Hm (I, ii, iii, IV, V,
+      vi), plus A7. Probaj da refren počne drugim akordom nego strofa (IV ili vi), pa se i
+      harmonija podigne zajedno sa melodijom.
+    - **Tonovi melodije na dobi treba da pripadaju akordu** (ili da budu jasni prolazni
+      tonovi): isto pravilo kao u ranijim melodijama, sada sa akordima koje si sam izabrao.
+    - **Opseg: H3–D5.**
+
+    Kako izgledaju oznake akorda u ABC zapisu: ime u navodnicima, tik ispred tona na kom akord
+    počinje. (Akord H-mol se u oznaci piše engleski, `"Bm"`.)
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:D
+    "D"F2 F E D2 F2 | "G"G2 B A "A7"G2 E2 |]
+    ```
+
+    ### Praktični saveti
+
+    - Prvo napiši refren. Ako je hook dobar, strofa samo treba da vodi ka njemu.
+    - Onda akordi: pevuši melodiju i probaj akord na svakoj prvoj dobi. Ako je ton melodije u
+      akordu, verovatno odgovara. Proveri tako što pevaš uz akorde odsvirane na klaviru.
+    - Ritam akorada neka bude jednostavan: jedan po taktu, dva u taktovima 7, 8, 15 ili 16, da
+      gurnu ka kadenci.
+    - Najlakše je ukucati: snimač hvata tonove, ali ne i imena akorada. Možeš prvo da snimiš
+      melodiju, pa ručno dodaš oznake `"Akord"` u tekstualnom polju.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** gleda **samo tonove melodije**: 16 punih taktova; tonovi
+      D-dura; opseg H3–D5; 8. takt se završava na 2, 5 ili 7 (E, A ili Cis); poslednji ton D;
+      bez povećanih skokova; skokovi pod kontrolom; smislen ritam.
+    - **Kritika (pola):** oznake akorda idu recenzentu (AI), koji ocenjuje kriterijume ispod od
+      0 do 4: koliko se akordi i melodija slažu i koliko refren podiže pesmu.
+rubric:
+  - id: chord-fit
+    weight: 2
+    label: {en: "Chords and melody fit", sr: "Akordi i melodija se slažu"}
+    top:
+      en: "Every chord symbol is placed where it starts, notes on the beat are chord tones or clear passing notes, the progression has direction (it ends V–I or V7–I) and nothing clashes when played."
+      sr: "Svaka oznaka akorda stoji tamo gde akord počinje, tonovi na dobi su akordski ili jasni prolazni, progresija ima pravac (završava se V–I ili V7–I) i ništa ne para uho kad se odsvira."
+  - id: verse-chorus-contrast
+    weight: 2
+    label: {en: "Verse–chorus contrast", sr: "Kontrast strofe i refrena"}
+    top:
+      en: "The verse sits low with speech-like rhythm and ends open on bar 8; the chorus starts clearly higher, with longer notes, and you would know you had reached the chorus even without words."
+      sr: "Strofa leži nisko, sa ritmom bliskim govoru, i otvoreno se završava u 8. taktu; refren počinje jasno više, sa dužim tonovima, i znao bi da si stigao do refrena i bez reči."
+  - id: hook
+    weight: 1
+    label: {en: "Hook", sr: "Hook (udica)"}
+    top:
+      en: "The chorus has a short, repeated figure that sticks after one listen and returns at least once."
+      sr: "Refren ima kratku figuru koja se ponavlja, pamti se posle jednog slušanja i vraća se bar jednom."
+  - id: lead-sheet-craft
+    weight: 1
+    label: {en: "Lead-sheet craft", sr: "Zanat lead sheet-a"}
+    top:
+      en: "Readable by a band: consistent chord names (D, Em, A7...), a sensible harmonic rhythm (one or two chords per bar), and a melody that a singer could read and sing."
+      sr: "Bend može da ga pročita: dosledna imena akorada (D, Em, A7...), smislen harmonski ritam (jedan ili dva akorda po taktu) i melodija koju pevač može da pročita i otpeva."

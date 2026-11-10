@@ -1,0 +1,115 @@
+id: K-019
+track: K
+order: 19
+title: {en: "Improvising with chord tones on the downbeat", sr: "Improvizacija sa tonovima akorda na jakoj dobi"}
+prereqs: [K-018]
+minutes: 15
+tags: [keys, improvisation]
+explain:
+  en: |
+    The pentatonic kept you safe by avoiding notes. The next step makes your line **follow the
+    chords**, and it opens up all seven notes of the scale.
+
+    **The rule:** on the first beat of each chord, play a **chord tone** (root, 3rd or 5th of
+    the chord sounding now). Between downbeats, anything from the scale is fine: those notes
+    are heard as passing and neighbour notes, connecting one target to the next.
+
+    | chord in C | chord tones (targets) |
+    |---|---|
+    | I | C E G |
+    | IV | F A C |
+    | V | G B D |
+    | vi | A C E |
+
+    F and B, the "dangerous" notes of the last lesson, are now **targets** over IV and V. The
+    same note can be tension over one chord and home over the next; that is what makes a line
+    sound like it knows the harmony.
+
+    **Target the 3rds.** The 3rd is the note that tells the ear major or minor and which chord
+    it is. Over I–IV–V–I the 3rds are E – A – B – C, a line that climbs by step to the tonic:
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "I"E | "IV"A | "V"B | "I"c |]
+    ```
+
+    **How to practise it:** play the target line first, one note per chord. Then fill each bar:
+    approach the next target from a step above or below, or with a short scale run. Keep the
+    call-and-response and the rests from K-018. Your solo should still sound like phrases, not
+    like an exercise.
+  sr: |
+    Pentatonika te je čuvala tako što je izbegavala tonove. Sledeći korak tera tvoju liniju da
+    **prati akorde**, i otvara svih sedam tonova lestvice.
+
+    **Pravilo:** na prvoj dobi svakog akorda sviraj **ton akorda** (osnovni ton, tercu ili
+    kvintu akorda koji upravo zvuči). Između jakih doba sve iz lestvice je u redu: ti tonovi se
+    čuju kao prolazni i pomoćni, i povezuju jedan cilj sa sledećim.
+
+    | akord u C-duru | tonovi akorda (ciljevi) |
+    |---|---|
+    | I | C E G |
+    | IV | F A C |
+    | V | G H D |
+    | vi | A C E |
+
+    F i H, "opasni" tonovi iz prošle lekcije, sada su **ciljevi** preko IV i V. Isti ton može
+    biti napetost preko jednog akorda i dom preko sledećeg; zbog toga linija zvuči kao da zna
+    harmoniju.
+
+    **Ciljaj terce.** Terca je ton koji uhu kaže dur ili mol i o kom akordu je reč. Preko
+    I–IV–V–I terce su E – A – H – C, linija koja se penje za korak do tonike:
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "I"E | "IV"A | "V"B | "I"c |]
+    ```
+
+    **Kako vežbati:** prvo odsviraj liniju ciljeva, jedan ton po akordu. Zatim popuni svaki
+    takt: priđi sledećem cilju korakom odozgo ili odozdo, ili kratkim pasažom iz lestvice.
+    Zadrži pitanje i odgovor i pauze iz K-018. Solo i dalje treba da zvuči kao fraze, a ne kao
+    vežba.
+exercises:
+  - id: K-019-1
+    type: mcq
+    prompt: {en: "Over the IV chord in C (F major), which note is a chord tone?", sr: "Preko akorda IV u C-duru (F-dur), koji ton je ton akorda?"}
+    options: ["B", "D", "A", "G"]
+    answer: 2
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - roman: {key: C, degree: 4, is: "IV"}
+  - id: K-019-2
+    type: midi-play
+    prompt: {en: "The guide line of 3rds over I–IV–V–I in C: E4 A4 B4 C5.", sr: "Linija terci preko I–IV–V–I u C-duru: E4 A4 H4 C5."}
+    mode: sequence
+    expect: [E4, A4, B4, C5]
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: F4, to: A4, is: M3}
+      - interval: {from: G4, to: B4, is: M3}
+  - id: K-019-3
+    type: generated
+    prompt: {en: "Full C major scale over I–IV–V–I; land on a chord tone at every change.", sr: "Cela C-dur lestvica preko I–IV–V–I; na svakoj promeni sleti na ton akorda."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major, numerals: [I, IV, V, I], beatsPerChord: 4, loops: 2, tempo: 72}
+  - id: K-019-4
+    type: generated
+    prompt: {en: "The pop progression I–vi–IV–V. Over vi (A minor) the targets are A, C, E.", sr: "Pop progresija I–vi–IV–V. Preko vi (a-mol) ciljevi su A, C, E."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: major, numerals: [I, vi, IV, V], beatsPerChord: 4, loops: 2, tempo: 80}
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min}
+      - roman: {key: C, degree: 6, is: "vi"}
+  - id: K-019-5
+    type: generated
+    prompt: {en: "Faster changes: two beats per chord, in F or G, with V7.", sr: "Brže promene: dve dobe po akordu, u F ili G-duru, sa V7."}
+    count: 1
+    gen: {kind: improv, keys: [F, G], scale: major, numerals: [I, IV, V7, I], beatsPerChord: 2, loops: 3, tempo: 72}
+  - id: K-019-6
+    type: practice
+    prompt: {en: "Approach notes: over I–IV–V–I in C, reach every target (E, A, B, C) from a step above on the beat before, then from a step below. Two minutes each.", sr: "Prilazni tonovi: preko I–IV–V–I u C-duru dođi do svakog cilja (E, A, H, C) korakom odozgo na dobi pre, zatim korakom odozdo. Po dva minuta."}
+    minutes: 4
+    play: {derive: {roman: {key: C3, numerals: [I, IV, V, I]}}, tempo: 30}

@@ -1,0 +1,106 @@
+id: E-019
+track: E
+order: 19
+title: {en: "Melodic dictation: 6–8 notes, scale-wise and triad leaps", sr: "Melodijski diktat: 6–8 tonova, koraci i skokovi po akordu"}
+prereqs: [E-018, E-010]
+minutes: 15
+tags: [ear, melody, dictation]
+explain:
+  en: |
+    Six to eight notes is past what short-term memory holds note by note (about four or five
+    items). The fix is to stop remembering notes and remember **structure**:
+
+    1. **Sing it back first**, whole, before touching the keys. If you cannot sing it, you have not
+       heard it yet: replay. Humming quietly is fine.
+    2. **Chunk it.** Split it into two halves (3+3, 4+4) and solve one at a time.
+    3. **Anchor the first note** against the tonic you hear before the melody: which degree is it?
+    4. **Draw the contour**: for each move, up, down or same? Then size: **step** (neighbouring
+       scale note) or **leap**?
+    5. **Name the leaps by the chord they outline.** A leap of a third almost always spells a triad:
+       1–3, 3–5, or in the middle of the scale 2–4, 4–6, 5–7 (pieces of ii, IV, V). Larger leaps in
+       real tunes usually go between notes of the tonic chord (1, 3, 5, 8), like the 1–5 below.
+    6. **Check landmarks**: the notes the melody lands on at the end and at the halfway point are
+       often 1, 3 or 5. If your answer lands on 4 or 7, double-check it.
+
+    ```abc
+    X:1
+    L:1/4
+    K:G
+    G A B G | d c B A | G2 |]
+    ```
+
+    Example (G major): 1 2 3 1 | 5 4 3 2 | 1. Steps, one leap down 3–1, one leap up 1–5 between
+    bars. Notice that it reads as two chunks of four.
+
+    Also do this away from the app sometimes: write the melody on staff paper **before** you play
+    it. That separates hearing from finding notes on the keys.
+  sr: |
+    Šest do osam tonova je više nego što kratkoročna memorija drži ton po ton (otprilike četiri ili
+    pet stavki). Rešenje je da ne pamtiš tonove nego **strukturu**:
+
+    1. **Prvo je otpevaj**, celu, pre nego što dodirneš dirke. Ako ne možeš da je otpevaš, još je
+       nisi čuo: pusti ponovo. Tiho pevušenje je sasvim u redu.
+    2. **Podeli je.** Na dve polovine (3+3, 4+4) i rešavaj jednu po jednu.
+    3. **Učvrsti prvi ton** u odnosu na toniku koju čuješ pre melodije: koji je stupanj?
+    4. **Nacrtaj konturu**: za svaki pokret, naviše, naniže ili isto? Onda veličina: **korak**
+       (susedni ton lestvice) ili **skok**?
+    5. **Imenuj skokove po akordu koji ocrtavaju.** Skok za tercu skoro uvek razlaže kvintakord:
+       1–3, 3–5, ili u sredini lestvice 2–4, 4–6, 5–7 (delovi ii, IV, V). Veći skokovi u pravim
+       pesmama obično idu između tonova toničnog akorda (1, 3, 5, 8), kao 1–5 u primeru ispod.
+    6. **Proveri orijentire**: tonovi na koje melodija sleće na kraju i na polovini često su 1, 3
+       ili 5. Ako tvoj odgovor sleće na 4 ili 7, proveri još jednom.
+
+    ```abc
+    X:1
+    L:1/4
+    K:G
+    G A B G | d c B A | G2 |]
+    ```
+
+    Primer (G-dur): 1 2 3 1 | 5 4 3 2 | 1. Koraci, jedan skok naniže 3–1, jedan skok naviše 1–5
+    između taktova. Primeti da se čita kao dva dela po četiri.
+
+    Radi ovo ponekad i bez aplikacije: zapiši melodiju na notni papir **pre** nego što je odsviraš.
+    Tako odvajaš slušanje od traženja tonova na dirkama.
+exercises:
+  - id: E-019-1
+    type: generated
+    prompt: {en: "Scale-wise, 6–7 notes, C and G major", sr: "Korakom, 6–7 tonova, C i G-dur"}
+    count: 5
+    gen: {kind: melody-echo, tonics: [C, G], type: major, length: [6, 7], maxLeap: 1, startOnTonic: true, tempo: 76}
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: G4, to: D5, is: P5}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+  - id: E-019-2
+    type: generated
+    prompt: {en: "Steps and thirds, 6–7 notes", sr: "Koraci i terce, 6–7 tonova"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F], type: major, length: [6, 7], maxLeap: 2, startOnTonic: true, tempo: 76}
+  - id: E-019-3
+    type: generated
+    prompt: {en: "Pentatonic (1 2 3 5 6 8): steps and small leaps, 7–8 notes", sr: "Pentatonika (1 2 3 5 6 8): koraci i mali skokovi, 7–8 tonova"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, D, F], type: major, length: [7, 8], degrees: [1, 2, 3, 5, 6, 8], maxLeap: 2, startOnTonic: true, tempo: 76}
+  - id: E-019-4
+    type: generated
+    prompt: {en: "Steps and thirds, starting anywhere, 6–8 notes", sr: "Koraci i terce, početak bilo gde, 6–8 tonova"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F, D, Bb], type: major, length: [6, 8], maxLeap: 2, startOnTonic: false, tempo: 80}
+  - id: E-019-5
+    type: generated
+    prompt: {en: "In minor: steps and thirds, 6–7 notes", sr: "U molu: koraci i terce, 6–7 tonova"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [A, D, E], type: natural-minor, length: [6, 7], maxLeap: 2, startOnTonic: true, tempo: 76}
+  - id: E-019-6
+    type: practice
+    prompt: {en: "Paper dictation: replay one melody from exercise 4 and write it on staff paper before playing. Check against the keys afterwards. Three melodies.", sr: "Diktat na papiru: pusti jednu melodiju iz vežbe 4 i zapiši je na notni papir pre sviranja. Proveri na dirkama posle. Tri melodije."}
+    minutes: 4

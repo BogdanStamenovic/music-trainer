@@ -1,0 +1,129 @@
+id: PL-011
+kind: lyrics
+order: 42
+title: {en: "Lyrics: a children's song", sr: "Tekst: pesma za decu"}
+minutes: 50
+prereqs: [L-001, L-002, L-003]
+lyrics:
+  genre: {en: "children's song", sr: "pesma za decu"}
+  language: sr
+  lines: [12, 24]
+  structure:
+    en: "3–4 short stanzas of 4 lines + a chorus of 2–4 lines (or a cumulative/counting form)"
+    sr: "3–4 kratke strofe od 4 stiha + refren od 2–4 stiha (ili lančani/brojalica oblik)"
+brief:
+  en: |
+    Write a **children's song** in Serbian for ages about **3 to 7**. It sounds simple, and
+    that is exactly why it is hard: every word must be one a small child knows, the rhythm must
+    be bouncy and regular, and the song must be learnable after one or two hearings.
+
+    ### Conventions
+
+    - **Short lines, strict rhythm.** The **trochaic osmerac** (8 syllables, *STRONG-weak* ×4,
+      L-002) is the natural meter of Serbian children's verse and counting rhymes (*brojalice*);
+      shorter lines of 4–6 syllables also work. Keep the count exact: children feel any bump.
+    - **Exact rhymes in couplets (AABB), L-003.** Perfect rhymes only; children hear slant
+      rhymes as mistakes.
+    - **Repetition is the point.** A chorus that returns unchanged, repeated lines inside
+      stanzas, or a **cumulative form** (each stanza adds one item and repeats the earlier ones)
+      or a **counting form** (one, two, three...).
+    - **Actions and sounds.** Build movements into the words (*skoči, pljesni, okreni se*) and
+      use onomatopoeia (*kap, tap, bum, mjau*). A song kids can do with their bodies is a song
+      they remember.
+    - **Vocabulary and world.** Concrete things from a child's day: animals, food, weather,
+      bath time, a toy. No abstract words, no irony aimed over their heads.
+    - **A small surprise or a joke** at the end (a funny reversal, a silly sound) makes children
+      ask for it again.
+    - **Singability:** the melody of such songs spans about five or six notes, so lines should be
+      speakable in one breath by a child.
+
+    A made-up stanza (trochaic osmerac, then shorter lines with sounds):
+
+    > Mali puž na putu spava,
+    > gore oblak, dole trava.
+    > Kap! i još jedna kap,
+    > puž se budi: tap, tap, tap!
+
+    ### Practical tips
+
+    - Clap the rhythm of every line: *TA-ta TA-ta TA-ta TA-ta*. Any line that does not clap
+      evenly gets rewritten.
+    - Read it to a child if you can (or imagine one aged four): every word they would ask
+      about must go.
+    - Mark the actions in brackets next to the lines, e.g. *(pljes!)*.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **pesmu za decu** na srpskom, za uzrast od oko **3 do 7 godina**. Zvuči jednostavno,
+    i baš zato je teško: svaka reč mora biti reč koju malo dete zna, ritam mora biti
+    poskočan i pravilan, a pesma se mora naučiti posle jednog-dva slušanja.
+
+    ### Konvencije
+
+    - **Kratki stihovi, strog ritam.** **Trohejski osmerac** (8 slogova, *JAKO-slabo* ×4, L-002)
+      je prirodan metar srpskih dečjih pesama i brojalica; kraći stihovi od 4–6 slogova takođe
+      rade. Drži broj slogova tačno: deca osete svaku neravninu.
+    - **Čiste rime u parovima (AABB), L-003.** Samo čiste rime; deca približne rime čuju kao
+      greške.
+    - **Ponavljanje je poenta.** Refren koji se vraća neizmenjen, ponovljeni stihovi u strofama,
+      **lančani oblik** (svaka strofa dodaje jednu stvar i ponavlja prethodne) ili **brojalica**
+      (jedan, dva, tri...).
+    - **Pokreti i zvuci.** Ugradi pokrete u reči (*skoči, pljesni, okreni se*) i koristi
+      onomatopeju (*kap, tap, bum, mjau*). Pesma koju deca mogu da rade telom je pesma koju
+      pamte.
+    - **Rečnik i svet.** Konkretne stvari iz dečjeg dana: životinje, hrana, vreme, kupanje,
+      igračka. Bez apstraktnih reči, bez ironije koja im leti iznad glave.
+    - **Malo iznenađenje ili šala** na kraju (smešan preokret, blesav zvuk) tera decu da traže
+      pesmu ponovo.
+    - **Pevljivost:** melodija ovakvih pesama obuhvata oko pet-šest tonova, pa stihovi treba da
+      se izgovore u jednom dahu deteta.
+
+    Izmišljena strofa (trohejski osmerac, pa kraći stihovi sa zvucima):
+
+    > Mali puž na putu spava,
+    > gore oblak, dole trava.
+    > Kap! i još jedna kap,
+    > puž se budi: tap, tap, tap!
+
+    ### Praktični saveti
+
+    - Otkucaj ritam svakog stiha: *TA-ta TA-ta TA-ta TA-ta*. Svaki stih koji se ne kuca
+      ravnomerno ide na prepravku.
+    - Pročitaj je detetu ako možeš (ili zamisli jedno od četiri godine): svaka reč za koju bi
+      pitalo šta znači mora da ode.
+    - Obeleži pokrete u zagradama pored stihova, npr. *(pljes!)*.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: rhythm
+    weight: 2
+    label: {en: "Bouncy, exact rhythm", sr: "Poskočan, tačan ritam"}
+    top:
+      en: "Every line claps evenly in the chosen meter (e.g. trochaic osmerac); matching lines have identical counts; rhymes are perfect couplets."
+      sr: "Svaki stih se ravnomerno otkucava u izabranom metru (npr. trohejski osmerac); odgovarajući stihovi imaju isti broj slogova; rime su čisti parovi."
+  - id: learnable
+    weight: 2
+    label: {en: "Learnable and repeatable", sr: "Lako se uči i ponavlja"}
+    top:
+      en: "A chorus, cumulative or counting structure that a child could join in on the second hearing; every word is in a small child's vocabulary."
+      sr: "Refren, lančana struktura ili brojalica kojoj bi se dete priključilo već pri drugom slušanju; svaka reč je u rečniku malog deteta."
+  - id: play
+    weight: 1
+    label: {en: "Actions and sounds", sr: "Pokreti i zvuci"}
+    top:
+      en: "At least two built-in actions and some onomatopoeia that make the song physical and fun."
+      sr: "Najmanje dva ugrađena pokreta i nešto onomatopeje koji pesmu čine telesnom i zabavnom."
+  - id: surprise
+    weight: 1
+    label: {en: "A small surprise", sr: "Malo iznenađenje"}
+    top:
+      en: "A playful twist or joke near the end that would make a child laugh or ask for it again."
+      sr: "Razigran obrt ili šala pri kraju zbog koje bi se dete nasmejalo ili tražilo pesmu ponovo."

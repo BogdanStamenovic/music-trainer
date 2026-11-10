@@ -232,7 +232,12 @@ def _voice_bar_sizes(abc: str) -> list[tuple[list[int], bool]]:
 
 
 def parse(req_abc: str, key_text: str, meter_text: str) -> Piece:
-    from music21 import converter, chord as m21chord
+    from music21 import converter, chord as m21chord, harmony
+
+    # Lead-sheet chord symbols ("C"E2) parse as harmony.ChordSymbol, a Chord subclass:
+    # they are annotations, not melody notes, and must not reach any check.
+    def real(e) -> bool:
+        return not e.duration.isGrace and not isinstance(e, harmony.ChordSymbol)
 
     k = parse_key(key_text)
     bar_len = parse_meter(meter_text)
@@ -249,7 +254,7 @@ def parse(req_abc: str, key_text: str, meter_text: str) -> Piece:
 
     parts = list(getattr(score, "parts", [])) or [score]
     # V: lines in the header create note-less parts; drop them.
-    parts = [p for p in parts if any(not e.duration.isGrace for e in p.flatten().notes)]
+    parts = [p for p in parts if any(real(e) for e in p.flatten().notes)]
     if len(parts) > 2:
         parts = [parts[0], parts[-1]]
     try:
@@ -261,7 +266,7 @@ def parse(req_abc: str, key_text: str, meter_text: str) -> Piece:
 
     voices: list[Voice] = []
     for vi, part in enumerate(parts):
-        raw = [e for e in part.flatten().notesAndRests if not e.duration.isGrace]
+        raw = [e for e in part.flatten().notesAndRests if real(e)]
         offs = [float(e.getOffsetInHierarchy(part)) for e in raw]
         end = max(o + float(e.quarterLength) for o, e in zip(offs, raw))
 
@@ -280,7 +285,7 @@ def parse(req_abc: str, key_text: str, meter_text: str) -> Piece:
         is_bass = vi > 0 and vi == len(parts) - 1
         notes = []
         for e in stripped.flatten().notes:
-            if e.duration.isGrace:
+            if not real(e):
                 continue
             if isinstance(e, m21chord.Chord):
                 ps = sorted(e.pitches, key=lambda p: p.ps)

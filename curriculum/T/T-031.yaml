@@ -1,0 +1,141 @@
+id: T-031
+track: T
+order: 31
+prereqs: [T-030]
+title: {en: "Reading chord symbols (lead-sheet notation)", sr: "Čitanje akordskih oznaka (lead sheet)"}
+minutes: 13
+tags: [chords]
+explain:
+  en: |
+    A **lead sheet** gives the melody plus **chord symbols**; you build the accompaniment yourself. A symbol is a root letter plus a suffix for the quality:
+
+    | symbol | also written | notes on C | built as |
+    |---|---|---|---|
+    | C | CM, Cmaj | C E G | major triad |
+    | Cm | Cmin, C– | C E♭ G | minor triad |
+    | Cdim | C° | C E♭ G♭ | diminished triad |
+    | Caug | C+ | C E G♯ | augmented triad |
+    | Cmaj7 | CΔ7, CM7 | C E G B | major + major 7th |
+    | C7 | | C E G B♭ | major + minor 7th (dominant) |
+    | Cm7 | C–7 | C E♭ G B♭ | minor + minor 7th |
+    | Cm7♭5 | Cø7 | C E♭ G♭ B♭ | half-diminished |
+    | Cdim7 | C°7 | C E♭ G♭ B𝄫 | fully diminished |
+    | Csus4 | Csus | C F G | 4th replaces the 3rd |
+    | Csus2 | | C D G | 2nd replaces the 3rd |
+    | C6 | | C E G A | major triad + major 6th |
+    | Cm6 | | C E♭ G A | minor triad + major 6th |
+    | C/E | | E G C | **slash chord**: chord / bass note |
+
+    The trap is **maj7 vs 7**: "7" alone always means the *minor* 7th (dominant seventh); the major 7th must be spelled out as "maj7" or "Δ".
+    A **slash chord** names the bass: C/E is a C chord over E (first inversion), C/G is the cadential 6/4 from T-027, and G/B is the V6 that lets a bass line walk C–B–A.
+
+    Lead sheets are international: the letter B means B natural, and B♭ is written with a flat. Voicing is up to you: root in the left hand and the rest in the right is the plain start.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Cmaj7"[CEGB] "C7"[CEG_B] "Cm7"[C_EG_B] "Cm7b5"[C_E_G_B] "Cdim7"[C_E_G__B] "Csus4"[CFG] "C6"[CEGA] "C/E"[EGc] |]
+    ```
+  sr: |
+    **Lead sheet** daje melodiju i **akordske oznake**; pratnju gradiš sam. Oznaka je slovo osnovnog tona plus nastavak za vrstu akorda:
+
+    | oznaka | piše se i | tonovi na C | građa |
+    |---|---|---|---|
+    | C | CM, Cmaj | C E G | durski trozvuk |
+    | Cm | Cmin, C– | C Es G | molski trozvuk |
+    | Cdim | C° | C Es Ges | smanjeni trozvuk |
+    | Caug | C+ | C E Gis | povećani trozvuk |
+    | Cmaj7 | CΔ7, CM7 | C E G H | durski + velika septima |
+    | C7 | | C E G B | durski + mala septima (dominantni) |
+    | Cm7 | C–7 | C Es G B | molski + mala septima |
+    | Cm7♭5 | Cø7 | C Es Ges B | polusmanjeni |
+    | Cdim7 | C°7 | C Es Ges Heses | smanjeni septakord |
+    | Csus4 | Csus | C F G | kvarta umesto terce |
+    | Csus2 | | C D G | sekunda umesto terce |
+    | C6 | | C E G A | durski trozvuk + velika seksta (dodata seksta) |
+    | Cm6 | | C Es G A | molski trozvuk + velika seksta |
+    | C/E | | E G C | **akord sa basom**: akord / ton u basu |
+
+    Zamka je **maj7 i 7**: samo „7" uvek znači *malu* septimu (dominantni septakord); velika septima mora da se napiše kao „maj7" ili „Δ".
+    **Akord sa kosom crtom** imenuje bas: C/E je C akord nad E (sekstakord), C/G je kadencirajući kvartsekstakord iz T-027, a G/B je V6 koji basu omogućava da ide C–H–A.
+
+    Pazi: akordske oznake su **međunarodne (engleske)**. Na lead sheetu slovo **B znači naše H**, a naše B se piše **B♭** (Bb). „B7" je dakle H–Dis–Fis–A, a „Bb7" je B–D–F–As. Takođe, „C6" ovde znači akord sa dodatom sekstom, a ne sekstakord (obrtaj).
+
+    Raspored tonova biraš sam: osnovni ton u levoj ruci, ostatak u desnoj je jednostavan početak.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Cmaj7"[CEGB] "C7"[CEG_B] "Cm7"[C_EG_B] "Cm7b5"[C_E_G_B] "Cdim7"[C_E_G__B] "Csus4"[CFG] "C6"[CEGA] "C/E"[EGc] |]
+    ```
+exercises:
+  - id: T-031-1
+    type: generated
+    prompt: {en: "Name the seventh chord with its symbol", sr: "Imenuj septakord oznakom"}
+    count: 5
+    gen: {kind: chord-name, qualities: [maj7, "7", min7, m7b5, dim7]}
+  - id: T-031-2
+    type: generated
+    prompt: {en: "Spell from the symbol, lowest note first", sr: "Napiši tonove prema oznaci, od najniže note"}
+    count: 4
+    gen: {kind: chord-build, qualities: [maj7, "7", min7, m7b5], roots: [C, D, E, F, G, A], answer: name}
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - chord: {notes: [C4, Eb4, Gb4, Bb4], root: C, quality: m7b5}
+      - chord: {notes: [C4, Eb4, Gb4, Bbb4], root: C, quality: dim7}
+      - chord: {notes: [C4, E4, G#4], root: C, quality: aug}
+  - id: T-031-3
+    type: generated
+    prompt: {en: "Play from the symbol: sus and added-sixth chords", sr: "Odsviraj prema oznaci: sus akordi i akordi sa dodatom sekstom"}
+    count: 4
+    gen: {kind: chord-build, qualities: [sus4, sus2, "6", min6], roots: [C, D, F, G, A], answer: play}
+    checks:
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: C4, to: A4, is: M6}
+  - id: T-031-4
+    type: mcq
+    prompt: {en: "Cmaj7 and C7 differ in…", sr: "Cmaj7 i C7 razlikuju se u…"}
+    options:
+      - {en: "the 7th: B in Cmaj7, B♭ in C7", sr: "septimi: H u Cmaj7, B u C7"}
+      - {en: "the 3rd: E in Cmaj7, E♭ in C7", sr: "terci: E u Cmaj7, Es u C7"}
+      - {en: "nothing, they are the same chord", sr: "ničemu, to je isti akord"}
+      - {en: "C7 has no 5th", sr: "C7 nema kvintu"}
+    answer: 0
+    checks:
+      - interval: {from: C4, to: B4, is: M7}
+      - interval: {from: C4, to: Bb4, is: m7}
+  - id: T-031-5
+    type: mcq
+    prompt: {en: "On an international lead sheet, \"B7\" means…", sr: "Na međunarodnom lead sheetu „B7\" znači…"}
+    options:
+      - {en: "B–D♯–F♯–A (B natural dominant seventh)", sr: "H–Dis–Fis–A (naš H7)"}
+      - {en: "B♭–D–F–A♭", sr: "B–D–F–As (naš B7)"}
+      - {en: "B–D–F–A", sr: "H–D–F–A"}
+    answer: 0
+    checks:
+      - chord: {notes: [B3, D#4, F#4, A4], root: B, quality: "7"}
+      - chord: {notes: [Bb3, D4, F4, Ab4], root: Bb, quality: "7"}
+  - id: T-031-6
+    type: mcq
+    prompt: {en: "C/E means…", sr: "C/E znači…"}
+    options:
+      - {en: "a C major chord with E in the bass", sr: "C-dur akord sa E u basu"}
+      - {en: "C major followed by E major", sr: "C-dur pa E-dur"}
+      - {en: "a C chord with an added E", sr: "C akord sa dodatim E"}
+      - {en: "C or E, player's choice", sr: "C ili E, po izboru"}
+    answer: 0
+    checks:
+      - chord: {notes: [E3, G3, C4], root: C, quality: maj, inversion: 1}
+  - id: T-031-7
+    type: midi-play
+    prompt: {en: "Play G/B: a G major chord with B in the bass (any octave).", sr: "Odsviraj G/B (naš G/H): G-dur akord sa H u basu (bilo koja oktava)."}
+    mode: chord
+    octave: any
+    bass: true
+    derive: {chord: {root: G3, quality: maj, inversion: 1}}
+    checks:
+      - chord: {notes: [B3, D4, G4], root: G, quality: maj, inversion: 1}

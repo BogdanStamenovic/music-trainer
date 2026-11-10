@@ -1,0 +1,98 @@
+id: E-017
+track: E
+order: 17
+title: {en: "Rhythm echo: quarters, eighths, dotted rhythms", sr: "Ritmički eho: četvrtine, osmine, ritmovi s tačkom"}
+prereqs: [E-016, T-016]
+minutes: 12
+tags: [ear, rhythm]
+explain:
+  en: |
+    You read rhythm fluently; hearing it and reproducing it without the page is a different
+    skill. Here the app plays a rhythm on one note and you **tap it back on any key**. Only the
+    timing is graded, and a steady tempo slightly different from the original is fine.
+
+    The method that makes this reliable is **counting the smallest value** while you listen:
+
+    - Keep a silent pulse (tap your foot or nod) on the beat.
+    - Count "**1 & 2 & 3 & 4 &**" in your head. A quarter takes one number plus its "&"; an
+      eighth takes just one syllable; a half note takes two numbers.
+    - Then tap back while still counting. Do not try to remember the rhythm as a "shape" only:
+      remember **on which syllables the notes fall**.
+
+    Dotted rhythms:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B3 B B2 B2 | B6 B2 |]
+    ```
+
+    A **dotted quarter** lasts three eighths, so "dotted quarter + eighth" is *long–short* and the
+    eighth falls on the "&" of beat 2: count **1 & 2 &**, notes on **1** and **2&**. A **dotted
+    half** fills three beats. Say "**1** (2 3) **4**" out loud and the pattern is obvious.
+
+    The last two exercises hide the notation: then it is real rhythm dictation, from the ear alone.
+  sr: |
+    Ritam čitaš tečno; čuti ga i ponoviti bez nota je druga veština. Ovde aplikacija svira ritam na
+    jednom tonu, a ti ga **otkucaš na bilo kojoj dirki**. Ocenjuje se samo vreme, a ravnomeran tempo
+    malo drugačiji od originala je u redu.
+
+    Metod koji ovo čini pouzdanim je **brojanje najmanje vrednosti** dok slušaš:
+
+    - Drži nečujni puls (lupkaj nogom ili klimaj glavom) na dobi.
+    - Broj „**1 i 2 i 3 i 4 i**" u sebi. Četvrtina traje jedan broj plus njegovo „i"; osmina samo
+      jedan slog; polovina dva broja.
+    - Onda otkucaj, i dalje brojeći. Ne pokušavaj da ritam zapamtiš samo kao „oblik": zapamti **na
+    koje slogove padaju tonovi**.
+
+    Ritmovi s tačkom:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B3 B B2 B2 | B6 B2 |]
+    ```
+
+    **Četvrtina s tačkom** traje tri osmine, pa je „četvrtina s tačkom + osmina" *dugo–kratko*, a
+    osmina pada na „i" druge dobe: broji **1 i 2 i**, tonovi na **1** i **2i**. **Polovina s
+    tačkom** ispunjava tri dobe. Izgovori naglas „**1** (2 3) **4**" i obrazac je očigledan.
+
+    Poslednje dve vežbe skrivaju note: tada je to pravi ritmički diktat, samo po sluhu.
+exercises:
+  - id: E-017-1
+    type: generated
+    prompt: {en: "Warm-up: quarters and halves in 4/4", sr: "Zagrevanje: četvrtine i polovine u 4/4"}
+    count: 4
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1], [2]], tempo: 72}
+  - id: E-017-2
+    type: generated
+    prompt: {en: "Quarters and eighth pairs in 2/4", sr: "Četvrtine i parovi osmina u 2/4"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[1], [0.5, 0.5]], tempo: 66}
+  - id: E-017-3
+    type: generated
+    prompt: {en: "Eighths, quarters and halves in 3/4", sr: "Osmine, četvrtine i polovine u 3/4"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "3/4", bars: 2, cells: [[1], [0.5, 0.5], [2]], tempo: 72}
+  - id: E-017-4
+    type: generated
+    prompt: {en: "Dotted quarter + eighth in 4/4", sr: "Četvrtina s tačkom + osmina u 4/4"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1.5, 0.5], [1], [0.5, 0.5]], tempo: 66}
+  - id: E-017-5
+    type: generated
+    prompt: {en: "Everything, by ear only (no notation): eighths to dotted halves in 4/4", sr: "Sve zajedno, samo po sluhu (bez nota): od osmine do polovine s tačkom u 4/4"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[1], [0.5, 0.5], [1.5, 0.5], [2], [3]], tempo: 80, showAbc: false}
+  - id: E-017-6
+    type: generated
+    prompt: {en: "By ear only, in 3/4: dotted rhythms", sr: "Samo po sluhu, u 3/4: ritmovi s tačkom"}
+    count: 4
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "3/4", bars: 2, cells: [[1], [0.5, 0.5], [1.5, 0.5], [3]], tempo: 72, showAbc: false}

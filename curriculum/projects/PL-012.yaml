@@ -1,0 +1,180 @@
+id: PL-012
+kind: lyrics
+order: 46
+title: {en: "Lyrics: words to an existing melody (prosody)", sr: "Tekst: reči na zadatu melodiju (prozodija)"}
+minutes: 60
+prereqs: [L-001, L-002]
+lyrics:
+  genre: {en: "setting words to a melody", sr: "pisanje reči na melodiju"}
+  language: either
+  lines: [8, 16]
+  structure:
+    en: "2–4 verses, each exactly fitting the 8-bar melody below (4 lines, 25 syllables per verse, one per note)"
+    sr: "2–4 strofe, svaka tačno na melodiju od 8 taktova ispod (4 stiha, 25 slogova po strofi, jedan po tonu)"
+brief:
+  en: |
+    Write **2 to 4 verses of words to a given melody**, in English or Serbian. Until now you
+    wrote words and imagined the music; this week the music is fixed and the words must fit it.
+    The skill is **prosody**: making the natural stresses of the language fall on the strong
+    beats of the music, and the long notes fall on syllables that can be held.
+
+    ### The melody (original, 8 bars, C major, 4/4, with a one-beat pickup)
+
+    ```abc
+    X:1
+    T:Melody for words
+    M:4/4
+    L:1/8
+    Q:1/4=84
+    K:C
+    G2 | c3 B A2 G2 | E6 !breath! G2 | A2 A2 G2 E2 |
+    D6 !breath! G2 | c3 B A2 G2 | E2 G2 c4 !breath! | A2 B2 d2 B2 |
+    c6 |]
+    ```
+
+    Play it in the app a few times and hum it until you know it.
+
+    | bar | notes | syllables | where the stress goes |
+    |---|---|---|---|
+    | pickup | G | 1 | **unstressed** (a pickup is a weak beat: *the, a, and, i, pa*) |
+    | 1 | C (long-ish) B A G | 4 | strong on C (beat 1), secondary on A (beat 3) |
+    | 2 | E (3 beats) G | 2 | **E is held three beats**: a stressed syllable with an open vowel; G is a pickup into bar 3 (unstressed) |
+    | 3 | A A G E | 4 | strong on the first A (beat 1) and on G (beat 3) |
+    | 4 | D (3 beats) G | 2 | like bar 2: held stressed syllable, then an unstressed pickup |
+    | 5 | C B A G | 4 | same rhythm as bar 1 |
+    | 6 | E G C (2 beats) | 3 | strong on E (beat 1) and C (beat 3, held): the C wants a strong, open word |
+    | 7 | A B D B | 4 | strong on A (beat 1) and D (beat 3, the highest note: the most important word) |
+    | 8 | C (3 beats) | 1 | a stressed, held syllable that ends the verse |
+
+    So each verse has **25 syllables** in four lines, split at the breath marks:
+    line 1 = pickup + bar 1 + the long E (**6**); line 2 = the G at the end of bar 2 + bar 3 +
+    the long D (**6**); line 3 = the G at the end of bar 4 + bars 5–6 (**8**); line 4 = bars
+    7–8 (**5**).
+
+    ### Prosody rules
+
+    - **Stressed syllables on strong beats** (beat 1, then beat 3). A word stressed on the wrong
+      syllable is the most audible mistake in songwriting: English *de-SIRE* sung as *DE-sire*,
+      Serbian *PLA-ni-na* sung as *pla-NI-na*.
+    - **Long notes on long-able syllables:** open vowels (*a, o, e*; *day, go, free*) and
+      voiced endings (*-m, -n, -l*). Avoid holding a short closed vowel or a cluster
+      (*stuck, kissed; prst, smrt*).
+    - **The highest note** (D in bar 7) carries the most important word of the line.
+    - **Feminine endings:** a two-syllable word stressed on the first (*SUN-ny, VO-da*) fits
+      where a strong note is followed by a weak one in the same bar, never across a held note
+      and a pickup.
+    - **Serbian:** words are never stressed on the last syllable (L-001), so one-syllable words
+      and the first syllables of words go on strong beats; proclitics (*u, na, i, da*) fit
+      pickups perfectly.
+    - **All verses match.** Verse 2 has to fit the same notes: same syllable count and stress on
+      the same positions as verse 1.
+
+    ### What to submit
+
+    Write each verse with bars separated by "|" and the pickup before the first bar, like:
+    *(the) | win-ter road is | long, (and) | ...*. Write held syllables in CAPITALS if you
+    like. The reviewer checks syllable counts and stress positions bar by bar.
+
+    Want a familiar tune instead? You may write new words to the **Ode to Joy** melody from
+    PV-002 (16 bars, no pickup, one syllable per note): say so at the top.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **2 do 4 strofe reči na zadatu melodiju**, na engleskom ili srpskom. Dosad si pisao
+    reči i zamišljao muziku; ove nedelje je muzika data, a reči moraju da joj odgovaraju. Veština
+    je **prozodija**: da prirodni naglasci jezika padnu na jake dobe muzike, a dugi tonovi na
+    slogove koji mogu da se drže.
+
+    ### Melodija (originalna, 8 taktova, C-dur, 4/4, sa predtaktom od jedne dobe)
+
+    ```abc
+    X:1
+    T:Melody for words
+    M:4/4
+    L:1/8
+    Q:1/4=84
+    K:C
+    G2 | c3 B A2 G2 | E6 !breath! G2 | A2 A2 G2 E2 |
+    D6 !breath! G2 | c3 B A2 G2 | E2 G2 c4 !breath! | A2 B2 d2 B2 |
+    c6 |]
+    ```
+
+    Pusti je u aplikaciji nekoliko puta i pevuši dok je ne naučiš.
+
+    | takt | tonovi | slogova | gde ide naglasak |
+    |---|---|---|---|
+    | predtakt | G | 1 | **nenaglašen** (predtakt je slaba doba: *the, a, and, i, pa*) |
+    | 1 | C (duže) H A G | 4 | jako na C (1. doba), sporedno na A (3. doba) |
+    | 2 | E (3 dobe) G | 2 | **E traje tri dobe**: naglašen slog sa otvorenim vokalom; G je predtakt za 3. takt (nenaglašen) |
+    | 3 | A A G E | 4 | jako na prvom A (1. doba) i na G (3. doba) |
+    | 4 | D (3 dobe) G | 2 | kao 2. takt: zadržan naglašen slog, pa nenaglašen predtakt |
+    | 5 | C H A G | 4 | isti ritam kao 1. takt |
+    | 6 | E G C (2 dobe) | 3 | jako na E (1. doba) i C (3. doba, zadržano): C traži jaku, otvorenu reč |
+    | 7 | A H D H | 4 | jako na A (1. doba) i D (3. doba, najviši ton: najvažnija reč) |
+    | 8 | C (3 dobe) | 1 | naglašen, zadržan slog koji završava strofu |
+
+    Dakle, svaka strofa ima **25 slogova** u četiri stiha, podeljena na znacima za udah:
+    1. stih = predtakt + 1. takt + dugo E (**6**); 2. stih = G na kraju 2. takta + 3. takt +
+    dugo D (**6**); 3. stih = G na kraju 4. takta + taktovi 5–6 (**8**); 4. stih = taktovi 7–8
+    (**5**).
+
+    ### Pravila prozodije
+
+    - **Naglašeni slogovi na jakim dobama** (1. doba, pa 3. doba). Reč naglašena na pogrešnom
+      slogu je najčujnija greška u pisanju pesama: engleski *de-SIRE* otpevan kao *DE-sire*,
+      srpski *PLA-ni-na* otpevan kao *pla-NI-na*.
+    - **Dugi tonovi na slogovima koji mogu da traju:** otvoreni vokali (*a, o, e*; *day, go,
+      free*) i zvučni završeci (*-m, -n, -l*). Izbegavaj da držiš kratak zatvoren vokal ili
+      suglasničku grupu (*stuck, kissed; prst, smrt*).
+    - **Najviši ton** (D u 7. taktu) nosi najvažniju reč stiha.
+    - **Ženski završeci:** dvosložna reč sa naglaskom na prvom slogu (*SUN-ny, VO-da*) staje
+      tamo gde posle jakog tona dolazi slab u istom taktu, nikad preko zadržanog tona i
+      predtakta.
+    - **Srpski:** reči nikad nisu naglašene na poslednjem slogu (L-001), pa jednosložne reči i
+      prvi slogovi reči idu na jake dobe; proklitike (*u, na, i, da*) savršeno staju u predtakt.
+    - **Sve strofe se poklapaju.** Druga strofa mora da stane na iste tonove: isti broj slogova i
+      naglasci na istim mestima kao u prvoj.
+
+    ### Šta predaješ
+
+    Napiši svaku strofu sa taktovima odvojenim „|” i predtaktom pre prvog takta, na primer:
+    *(i) | ze-mlja spa-va | du-go (a) | ...*. Zadržane slogove možeš pisati VELIKIM slovima.
+    Recenzent proverava broj slogova i mesta naglasaka takt po takt.
+
+    Hoćeš poznatu melodiju? Možeš da napišeš nove reči na melodiju **Ode radosti** iz PV-002
+    (16 taktova, bez predtakta, jedan slog po tonu): navedi to na vrhu.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: fit
+    weight: 2
+    label: {en: "Syllables fit the notes", sr: "Slogovi staju na tonove"}
+    top:
+      en: "Every verse has exactly one syllable per note (25), with the pickups and bar lines marked correctly; nothing squeezed or stretched."
+      sr: "Svaka strofa ima tačno jedan slog po tonu (25), sa tačno obeleženim predtaktovima i taktnim crtama; ništa sabijeno ni razvučeno."
+  - id: stress
+    weight: 3
+    label: {en: "Stress on strong beats", sr: "Naglasak na jakim dobama"}
+    top:
+      en: "Natural word stresses fall on beats 1 and 3 in every bar; pickups carry unstressed syllables; no word is sung with a wrong stress."
+      sr: "Prirodni naglasci reči padaju na 1. i 3. dobu u svakom taktu; predtaktovi nose nenaglašene slogove; nijedna reč se ne peva sa pogrešnim naglaskom."
+  - id: vowels
+    weight: 1
+    label: {en: "Long notes on open sounds", sr: "Dugi tonovi na otvorenim zvucima"}
+    top:
+      en: "The held notes (bars 2, 4, 6, 8) sit on open vowels or voiced endings; the top D in bar 7 carries the key word."
+      sr: "Zadržani tonovi (taktovi 2, 4, 6, 8) leže na otvorenim vokalima ili zvučnim završecima; gornje D u 7. taktu nosi ključnu reč."
+  - id: sense
+    weight: 1
+    label: {en: "Still good words", sr: "I dalje dobre reči"}
+    top:
+      en: "Despite the constraints the verses make sense, sound natural and say something; matching verses fit the same notes."
+      sr: "Uprkos ograničenjima strofe imaju smisla, zvuče prirodno i nešto kažu; strofe se međusobno poklapaju na istim tonovima."

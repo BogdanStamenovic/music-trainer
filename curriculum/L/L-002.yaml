@@ -1,0 +1,223 @@
+id: L-002
+track: L
+order: 2
+prereqs: [L-001]
+title: {en: "Meter in lyrics: iamb and trochee; osmerac and deseterac", sr: "Metar u tekstu: jamb i trohej; osmerac i deseterac"}
+minutes: 15
+tags: [lyrics, meter]
+explain:
+  en: |
+    **Meter** is a repeating pattern of stressed and unstressed syllables. It is what makes a
+    line easy to set to a steady beat, and it is why some lines "sing themselves".
+
+    ### English: feet
+
+    English verse counts **feet**, small stress patterns:
+
+    | foot | pattern | words | starts like |
+    |---|---|---|---|
+    | **iamb** | da-DUM | a-LONE, to-NIGHT, the STREET | a **pickup** (anacrusis) before beat 1 |
+    | **trochee** | DUM-da | MOR-ning, LONE-ly, HIGH-way | **on** beat 1 |
+
+    Four feet make a **tetrameter** (8 syllables), three a **trimeter** (6).
+
+    > iambic tetrameter: i WALKED / a-LONG / the EMP- / ty STREET
+    > trochaic tetrameter: LONE-ly / HIGH-way, / BURN-ing / DAY-light
+
+    One-syllable words take their stress from meaning: nouns, verbs, adjectives are usually
+    stressed; *the, a, to, and, I* usually are not. That is why *i WALKED* works but *I walked*
+    with a strong *I* would only fit if the point is "me, not you".
+
+    Songs are looser than poems. You can drop the first unstressed syllable, or squeeze two
+    unstressed ones into one beat. What you cannot do without it sounding wrong is put a
+    **stressed** syllable on a weak beat. Meter is a tool for finding where that happens.
+
+    At the piano: an iambic line starts with an upbeat (T-018), a trochaic one starts on the
+    downbeat. Tap both lines above while playing a C chord on beat 1 and you will feel it.
+
+    ### Serbian folk verse: syllables and a cesura
+
+    Traditional Serbian verse is **syllabic**: it counts syllables and places a fixed break, the
+    **cesura** (cezura), instead of counting feet. The two most important lines:
+
+    **Osmerac**, 8 syllables, split **4 + 4**. The metre of many lyric folk songs,
+    sevdalinke and starogradske pesme. Because Serbian words are usually stressed on the first
+    syllable and never on the last, it naturally falls into a trochaic swing:
+
+    > KI-ša PA-da, | GRAD se BU-di  (4 + 4, original example)
+    > Kad ja pođoh | na Bembašu  (4 + 4; traditional sevdalinka, public domain)
+
+    **Deseterac** (epic), 10 syllables, split **4 + 6**. The metre of the gusle epics:
+
+    > Poletio | soko tica siva  (4 + 6; Vuk Karadžić, *Srpske narodne pjesme* II,
+    > "Propast carstva srpskoga", 1845, public domain)
+
+    Rules of the epic deseterac:
+
+    1. Exactly **10 syllables** (syllabic r counts, see L-001).
+    2. A **word must end after the 4th syllable**. No word may straddle syllables 4 and 5:
+       *Pevač zapevao nasred sela* has 10 syllables but *zapevao* covers syllables 3–6, so it
+       is not a deseterac.
+    3. Both halves tend to end **weak**: the 4th and 10th syllables are normally unstressed.
+       Serbian makes this easy (no final stress on long words); avoid closing a half with a
+       stressed one-syllable word.
+    4. One line is usually one complete thought; sentences rarely run on into the next line.
+
+    There is also a *lyric* deseterac split **5 + 5**; do not confuse it with the epic 4 + 6.
+
+    ### Practical
+    - Serbian lines start strong by default. To get an iambic feel (a pickup), open with an
+      unstressed little word: *i, a, da, kad, pa*.
+    - An osmerac line in quarter notes fills exactly two bars of 4/4, one half per bar.
+    - Never pad to hit the count (*oh, yeah, baby; pa, joj, sad*). If a line is short, change
+      words, not filler.
+  sr: |
+    **Metar** je ponavljajući raspored naglašenih i nenaglašenih slogova. Zbog njega se stih
+    lako postavlja na ujednačen puls i zbog njega neki stihovi „sami pevaju”.
+
+    ### Engleski: stope
+
+    Engleski stih broji **stope**, male naglasne obrasce:
+
+    | stopa | obrazac | reči | počinje kao |
+    |---|---|---|---|
+    | **jamb** | ta-TAM | a-LONE, to-NIGHT, the STREET | **predtakt** (anakruza) pre prve dobe |
+    | **trohej** | TAM-ta | MOR-ning, LONE-ly, HIGH-way | **na** prvoj dobi |
+
+    Četiri stope čine **tetrametar** (8 slogova), tri **trimetar** (6).
+
+    > jampski tetrametar: i WALKED / a-LONG / the EMP- / ty STREET
+    > trohejski tetrametar: LONE-ly / HIGH-way, / BURN-ing / DAY-light
+
+    Jednosložne reči dobijaju naglasak po značenju: imenice, glagoli i pridevi su obično
+    naglašeni; *the, a, to, and, I* obično nisu. Zato *i WALKED* radi, a jako *I* bi išlo samo ako
+    je poenta „ja, a ne ti”.
+
+    Pesme su slobodnije od poezije. Možeš izostaviti prvi nenaglašeni slog ili ugurati dva
+    nenaglašena u jednu dobu. Ono što ne možeš, a da ne zvuči pogrešno, jeste da staviš
+    **naglašen** slog na slabu dobu. Metar je alat da nađeš gde se to dešava.
+
+    Za klavirom: jampski stih počinje predtaktom (T-018), trohejski na prvoj dobi. Otapši oba
+    stiha gore dok sviraš C akord na prvu dobu i osetićeš razliku.
+
+    ### Srpski narodni stih: slogovi i cezura
+
+    Tradicionalni srpski stih je **silabički**: broji slogove i ima stalnu pauzu, **cezuru**,
+    umesto da broji stope. Dva najvažnija stiha:
+
+    **Osmerac**, 8 slogova, podela **4 + 4**. Stih mnogih lirskih narodnih pesama, sevdalinki i
+    starogradskih pesama. Pošto su srpske reči obično naglašene na prvom slogu, a nikad na
+    poslednjem, prirodno dobija trohejsko njihanje:
+
+    > KI-ša PA-da, | GRAD se BU-di  (4 + 4, izmišljen primer)
+    > Kad ja pođoh | na Bembašu  (4 + 4; narodna sevdalinka, javno dobro)
+
+    **Deseterac** (epski), 10 slogova, podela **4 + 6**. Stih guslarskih epskih pesama:
+
+    > Poletio | soko tica siva  (4 + 6; Vuk Karadžić, *Srpske narodne pjesme* II,
+    > „Propast carstva srpskoga”, 1845, javno dobro)
+
+    Pravila epskog deseterca:
+
+    1. Tačno **10 slogova** (slogotvorno r se računa, vidi L-001).
+    2. **Reč mora da se završi posle 4. sloga.** Nijedna reč ne sme da pređe preko 4. i 5. sloga:
+       *Pevač zapevao nasred sela* ima 10 slogova, ali *zapevao* zauzima slogove 3–6, pa to nije
+       deseterac.
+    3. Obe polovine teže da se završe **slabo**: 4. i 10. slog su po pravilu nenaglašeni.
+       Srpski to olakšava (duže reči nemaju naglasak na kraju); izbegavaj da polovinu zatvoriš
+       naglašenom jednosložnom rečju.
+    4. Jedan stih je obično jedna zaokružena misao; rečenica retko prelazi u sledeći stih.
+
+    Postoji i *lirski* deseterac sa podelom **5 + 5**; ne mešaj ga sa epskim 4 + 6.
+
+    ### U praksi
+    - Srpski stih podrazumevano počinje jako. Za jampski osećaj (predtakt) počni nenaglašenom
+      malom rečju: *i, a, da, kad, pa*.
+    - Osmerac u četvrtinama tačno popunjava dva takta 4/4, po jednu polovinu u svakom taktu.
+    - Nikad ne dopunjuj stih praznim rečima da pogodiš broj (*oh, yeah, baby; pa, joj, sad*). Ako
+      je stih kratak, menjaj reči, ne dodaj punjenje.
+exercises:
+  - id: L-002-1
+    type: mcq
+    prompt: {en: "Which line is in iambs (da-DUM da-DUM)?", sr: "Koji stih je u jambima (ta-TAM ta-TAM)?"}
+    options: ["Morning coffee, silent kitchen", "I left the keys beneath the door", "Tell me, tell me, where you're going"]
+    answer: 1
+  - id: L-002-2
+    type: mcq
+    prompt: {en: "“Lonely highway, burning daylight” is…", sr: "„Lonely highway, burning daylight” je…"}
+    options:
+      - {en: "iambic tetrameter", sr: "jampski tetrametar"}
+      - {en: "trochaic tetrameter", sr: "trohejski tetrametar"}
+      - {en: "iambic trimeter", sr: "jampski trimetar"}
+      - {en: "trochaic trimeter", sr: "trohejski trimetar"}
+    answer: 1
+  - id: L-002-3
+    type: mcq
+    prompt: {en: "You set “i WALKED a-LONG the EMP-ty STREET” in 4/4 with the stressed syllables on beats. Where does the first word “I” go?", sr: "Postavljaš „i WALKED a-LONG the EMP-ty STREET” u 4/4 tako da naglašeni slogovi padnu na dobe. Gde ide prva reč „I”?"}
+    options:
+      - {en: "On beat 1", sr: "Na prvu dobu"}
+      - {en: "On beat 2", sr: "Na drugu dobu"}
+      - {en: "As a pickup (anacrusis) before beat 1", sr: "Kao predtakt (anakruza) pre prve dobe"}
+      - {en: "Held across the whole first bar", sr: "Zadržano preko celog prvog takta"}
+    answer: 2
+  - id: L-002-4
+    type: mcq
+    prompt: {en: "Which line is a correct epic deseterac (10 syllables, 4 + 6)?", sr: "Koji stih je ispravan epski deseterac (10 slogova, 4 + 6)?"}
+    options: ["Bela vila kraj vode sedi", "Kiša pada, grad se budi", "Mladi momak konja izvodio", "Stara majka pred kućom čeka sina"]
+    answer: 2
+    checks:
+      - syllables: {text: "Bela vila kraj vode sedi", lang: sr, is: 9}
+      - syllables: {text: "Kiša pada, grad se budi", lang: sr, is: 8}
+      - syllables: {text: "Mladi momak konja izvodio", lang: sr, is: 10}
+      - syllables: {text: "Mladi momak", lang: sr, is: 4}
+      - syllables: {text: "Stara majka pred kućom čeka sina", lang: sr, is: 11}
+  - id: L-002-5
+    type: mcq
+    prompt: {en: "“Pevač zapevao nasred sela” has 10 syllables. Why is it still not an epic deseterac?", sr: "„Pevač zapevao nasred sela” ima 10 slogova. Zašto ipak nije epski deseterac?"}
+    options:
+      - {en: "It ends on an unstressed syllable", sr: "Završava se nenaglašenim slogom"}
+      - {en: "The word “zapevao” crosses the cesura after syllable 4", sr: "Reč „zapevao” prelazi preko cezure posle 4. sloga"}
+      - {en: "It does not rhyme", sr: "Nema rimu"}
+      - {en: "A deseterac must split 5 + 5", sr: "Deseterac mora da se deli 5 + 5"}
+    answer: 1
+    checks:
+      - syllables: {text: "Pevač zapevao nasred sela", lang: sr, is: 10}
+      - syllables: {text: "Pevač za", lang: sr, is: 3}
+      - syllables: {text: "Pevač zapevao", lang: sr, is: 6}
+      - syllables: {text: "Kad ja pođoh na Bembašu", lang: sr, is: 8}
+      - syllables: {text: "Poletio soko tica siva", lang: sr, is: 10}
+      - syllables: {text: "Poletio", lang: sr, is: 4}
+  - id: L-002-6
+    type: write
+    prompt:
+      en: "Pop, in English: write 4 lines of iambic tetrameter (8 syllables, stresses on 2-4-6-8) about waiting for a message that does not come. Mark stresses in CAPITALS. Speak each line over 4/4 with the first syllable as a pickup."
+      sr: "Pop, na engleskom: napiši 4 stiha u jampskom tetrametru (8 slogova, naglasci na 2-4-6-8) o čekanju poruke koja ne stiže. Naglaske obeleži VELIKIM SLOVIMA. Izgovori svaki stih preko 4/4 sa prvim slogom kao predtaktom."
+    language: en
+    lines: [4, 4]
+    rubric:
+      - id: count
+        label: {en: "8 syllables", sr: "8 slogova"}
+        top: {en: "All four lines have exactly 8 syllables, counted aloud.", sr: "Sva četiri stiha imaju tačno 8 slogova, izbrojano naglas."}
+      - id: stress
+        label: {en: "Natural iambic stress", sr: "Prirodan jampski naglasak"}
+        top: {en: "Read at normal speed, every line stresses 2-4-6-8 and no word is bent away from its dictionary stress.", sr: "Pročitan normalnim tempom, svaki stih ima naglaske na 2-4-6-8 i nijedna reč nije izvrnuta iz svog rečničkog naglaska."}
+      - id: plain
+        label: {en: "No padding", sr: "Bez punjenja"}
+        top: {en: "No word is there only to fill the count (oh, yeah, so, do, just); every line reads like something a person would say.", sr: "Nijedna reč nije tu samo da popuni broj (oh, yeah, so, do, just); svaki stih zvuči kao nešto što bi čovek rekao."}
+  - id: L-002-7
+    type: write
+    prompt:
+      en: "Starogradska, in Serbian: write 4 lines of osmerac (8 syllables, cesura after the 4th) about an evening in an old part of town. Mark the cesura with | and count each line."
+      sr: "Starogradska, na srpskom: napiši 4 stiha u osmercu (8 slogova, cezura posle 4. sloga) o večeri u starom delu grada. Cezuru obeleži sa | i prebroj svaki stih."
+    language: sr
+    lines: [4, 4]
+    rubric:
+      - id: count
+        label: {en: "8 syllables, 4 + 4", sr: "8 slogova, 4 + 4"}
+        top: {en: "Every line has exactly 8 syllables (syllabic r counted) and a word ends after syllable 4.", sr: "Svaki stih ima tačno 8 slogova (slogotvorno r računato), a reč se završava posle 4. sloga."}
+      - id: flow
+        label: {en: "Trochaic flow", sr: "Trohejsko njihanje"}
+        top: {en: "Read aloud, stresses fall on syllables 1, 3, 5 or 7 without forcing; no stressed one-syllable word right before the cesura.", sr: "Pročitan naglas, naglasci padaju na 1, 3, 5. ili 7. slog bez nasilja; nema naglašene jednosložne reči odmah pre cezure."}
+      - id: plain
+        label: {en: "No filler", sr: "Bez punjenja"}
+        top: {en: "No pa, joj, sad, ej added only to make the count; word order sounds like natural Serbian (some folk inversion is fine if it sounds intended).", sr: "Nema pa, joj, sad, ej dodatih samo radi broja; red reči zvuči kao prirodan srpski (malo narodne inverzije je u redu ako zvuči namerno)."}

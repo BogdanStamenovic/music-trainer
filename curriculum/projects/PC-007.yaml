@@ -1,0 +1,127 @@
+id: PC-007
+kind: composition
+order: 25
+title: {en: "A modal melody: D Dorian", sr: "Modalna melodija: D dorski"}
+minutes: 75
+prereqs: [T-010, K-014, C-005]
+composition:
+  key: D minor
+  meter: 4/4
+  bars: 8
+  range: [D4, F5]
+  chords: [i7, IV7, i7, IV7, i7, IV7, bVII, i]
+  rules: [bars, key, range, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody in D Dorian, 4/4, over this vamp**, one chord per bar:
+
+    | bar | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | chord | i7 | IV7 | i7 | IV7 | i7 | IV7 | bVII | i |
+    | symbol | Dm7 | G7 | Dm7 | G7 | Dm7 | G7 | C | Dm |
+    | notes | D F A C | G **B** D F | D F A C | G **B** D F | D F A C | G **B** D F | C E G | D F A |
+
+    **Dorian** is the natural minor scale with a **raised 6th**: D E F G A **B** C D (all
+    white keys from D to D). That one note, B instead of Bb, makes the mode: minor, but with a
+    bright, slightly hopeful edge. Think *Scarborough Fair*, *Oye como va*, *So What*, and a
+    good deal of Balkan and Celtic folk music.
+
+    ### The idea
+
+    - **Feature the B.** The characteristic note of a mode is the one that differs from the
+      ordinary scale. Put **B natural** on strong beats over the G7 bars, where it is the
+      chord's 3rd and sounds at home.
+    - **No leading tone.** Dorian has **C natural**, not C#. There is no V chord with C#, and
+      the ending comes from **bVII → i** (C major → D minor) instead: a modal cadence, softer
+      than V–I. Approach the final D by step from **E** or **C**.
+    - **Vamp, not progression.** Two chords alternating do not create tension and release by
+      themselves; your melody has to. Use a motif, repeat it over the alternating chords,
+      vary it, and save the high point for bars 5–6.
+    - **Avoid the tritones F–B and B–F** as leaps: that is the one ugly spot of this mode.
+    - **Range: D4–F5.**
+
+    ### Practical tips
+
+    - Play D–E–F–G–A–B–C–D slowly and stop on each note over a D in the bass. Hear how the B
+      sounds compared with Bb (D natural minor). That difference is the whole project.
+    - Improvise over the vamp with only white keys for a few minutes; record the best phrase.
+    - In ABC with `K:Dm` the key signature has Bb, so B natural is written `=B`. (Or write
+      `K:D dorian`, which has no flats; check that your notes still sound right.)
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars; notes of D minor in any of its forms (natural,
+      harmonic or melodic, so **B natural passes**, but so would C#: avoiding C# is up to you
+      and the critique); range D4–F5; last note D; no augmented or diminished leaps; leaps under
+      control; sensible rhythm. No half-cadence check: modal music does not use V.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4, including whether it
+      really sounds Dorian.
+  sr: |
+    Napiši **melodiju od 8 taktova u D dorskom modusu, 4/4, nad ovim vampom** (ponavljajućom
+    harmonskom figurom), jedan akord po taktu:
+
+    | takt | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | akord | i7 | IV7 | i7 | IV7 | i7 | IV7 | bVII | i |
+    | oznaka | Dm7 | G7 | Dm7 | G7 | Dm7 | G7 | C | Dm |
+    | tonovi | D F A C | G **H** D F | D F A C | G **H** D F | D F A C | G **H** D F | C E G | D F A |
+
+    **Dorski modus** je prirodni mol sa **povišenim 6. stupnjem**: D E F G A **H** C D (sve
+    bele dirke od D do D). Taj jedan ton, H umesto B, pravi modus: molski, ali sa svetlom,
+    pomalo nadajućom ivicom. Seti se *Scarborough Fair*, *Oye como va*, *So What* i dobrog dela
+    balkanske i keltske narodne muzike.
+
+    ### Ideja
+
+    - **Istakni H.** Karakteristični ton modusa je onaj koji se razlikuje od obične lestvice.
+      Stavi **H** na jake dobe u taktovima sa G7, gde je terca akorda i zvuči kao kod kuće.
+    - **Bez vođice.** Dorski ima **C**, ne Cis. Nema dominante sa Cis, a kraj dolazi iz
+      **bVII → i** (C-dur → d-mol): modalna kadenca, mekša od V–I. Završno D dostigni korakom
+      sa **E** ili **C**.
+    - **Vamp, ne progresija.** Dva akorda koja se smenjuju sama ne stvaraju napetost i
+      razrešenje; to mora tvoja melodija. Koristi motiv, ponovi ga nad akordima koji se smenjuju,
+      variraj ga, a vrhunac sačuvaj za taktove 5–6.
+    - **Izbegavaj tritonuse F–H i H–F** kao skokove: to je jedino ružno mesto ovog modusa.
+    - **Opseg: D4–F5.**
+
+    ### Praktični saveti
+
+    - Sviraj D–E–F–G–A–H–C–D polako i zastani na svakom tonu nad D u basu. Čuj kako H zvuči u
+      poređenju sa B (prirodni d-mol). Ta razlika je ceo projekat.
+    - Nekoliko minuta improvizuj nad vampom samo belim dirkama; snimi najbolju frazu.
+    - U ABC zapisu sa `K:Dm` predznak je B (Bb), pa se H piše `=B`. (Ili napiši `K:D dorian`,
+      bez predznaka; proveri da tonovi i dalje zvuče kako treba.)
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova; tonovi d-mola u bilo kom obliku (prirodni,
+      harmonski ili melodijski, pa **H prolazi**, ali bi prošlo i Cis: izbegavanje Cis je na
+      tebi i na kritici); opseg D4–F5; poslednji ton D; bez povećanih i smanjenih skokova;
+      skokovi pod kontrolom; smislen ritam. Nema provere polukadence: modalna muzika ne koristi V.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4, uključujući da li
+      melodija zaista zvuči dorski.
+rubric:
+  - id: modal-colour
+    weight: 2
+    label: {en: "Sounds Dorian", sr: "Zvuči dorski"}
+    top:
+      en: "B natural is prominent (on strong beats over G7), C# never appears, Bb never appears; a listener hears minor with a raised 6th, not plain D minor and not D major."
+      sr: "H je istaknuto (na jakim dobama nad G7), Cis se nikad ne javlja, B se nikad ne javlja; slušalac čuje mol sa povišenom sekstom, a ne običan d-mol ni D-dur."
+  - id: modal-cadence
+    weight: 1
+    label: {en: "Modal cadence", sr: "Modalna kadenca"}
+    top:
+      en: "The ending uses the C chord of bar 7 and arrives on D by step (E–D or C–D) on beat 1 of bar 8, sounding settled without a leading tone."
+      sr: "Kraj koristi C-akord 7. takta i stiže na D korakom (E–D ili C–D) na prvoj dobi 8. takta, i zvuči smireno bez vođice."
+  - id: motif
+    weight: 1
+    label: {en: "Motif over the vamp", sr: "Motiv nad vampom"}
+    top:
+      en: "A short motif is stated over Dm7–G7 and developed (sequence, rhythmic variation, extension) so the repeating chords never feel static; the high point lands in bars 5–6."
+      sr: "Kratak motiv se izlaže nad Dm7–G7 i razvija (sekvenca, ritmička varijacija, proširenje), pa akordi koji se ponavljaju nikad ne deluju statično; vrhunac pada u taktove 5–6."
+  - id: line
+    weight: 1
+    label: {en: "Melodic line", sr: "Melodijska linija"}
+    top:
+      en: "Singable, mostly stepwise, no F–B tritone leaps, comfortable breathing places."
+      sr: "Pevljiva, uglavnom postupna, bez skokova F–H (tritonus), sa udobnim mestima za udah."

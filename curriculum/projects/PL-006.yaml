@@ -1,0 +1,138 @@
+id: PL-006
+kind: lyrics
+order: 22
+title: {en: "Lyrics: a sevdalinka", sr: "Tekst: sevdalinka"}
+minutes: 75
+prereqs: [L-002, L-003, L-004]
+lyrics:
+  genre: {en: "sevdalinka (follow-up to the starogradska)", sr: "sevdalinka (nastavak starogradske)"}
+  language: sr
+  lines: [8, 20]
+  structure:
+    en: "4–6 stanzas of 2 or 4 lines in deseterac (4 + 6) or osmerac, rhymed couplets; no fixed refrain"
+    sr: "4–6 strofa od 2 ili 4 stiha u desetercu (4 + 6) ili osmercu, parna rima; bez obaveznog refrena"
+brief:
+  en: |
+    Write a **sevdalinka**, in Serbian: the slow, ornamented love song of the Bosnian and
+    south Serbian towns, close cousin of the starogradska you wrote in week 6 (PL-002). This
+    time the challenge is the opposite of a pop song: **very few words, each one carrying a
+    long, ornamented melody**.
+
+    ### How it differs from the starogradska
+
+    - **Fewer words, longer notes.** A sevdalinka melody is slow and free in time (*rubato*), and
+      one syllable can carry five or ten notes of ornament (melisma). A whole song may be only
+      8–12 lines. Every word has to earn its place.
+    - **A scene, often a small story.** Many sevdalinke open with an image and a person in it
+      (*Kraj bunara...*, *Kad ja pođoh...*), then let a dialogue or a single gesture carry the
+      feeling: a look through a window, a gift sent, a message that never arrives.
+    - **Dialogue and address.** Lines spoken by the girl, the young man, a mother, even the
+      garden. Interjections *oj*, *aman*, *jao* fill a melisma and mark the emotion.
+    - **No refrain required.** Singers repeat half-lines instead (*bistre vode, bistre vode*), so
+      write half-lines that survive repetition.
+
+    ### Conventions
+
+    - **Meter (L-002):** **deseterac** split **4 + 6** (the lyric deseterac of the sevdalinka) or
+      **osmerac** 4 + 4. Stay with one.
+    - **Rhyme (L-003):** **rhymed couplets, AABB**, usually feminine (two-syllable) rhymes:
+      *beli / veli*, *bašti / tašti*. Avoid rhymes that are only repeated grammar endings.
+    - **Sound:** open vowels (*a, o, e*) at the ends of half-lines, where the melody holds and
+      ornaments. Consonant clusters (*-vstv-*, *-ršt-*) are hard to ornament.
+    - **Imagery (L-004):** the garden and the courtyard (*bašta, đul, zumbul, jorgovan,
+      ružica*), water (*bunar, česma, potok*), the window (*pendžer*, *demir-pendžer*), keepsakes
+      (*jagluk*, *đerdan*, *prsten*). Turkish loanwords are idiomatic here.
+    - **The ending turns:** the last couplet says something the beginning hid: the love is
+      impossible, the beloved is married off, or the speaker's pride breaks.
+
+    A made-up couplet (deseterac 4 + 6, feminine rhyme):
+
+    > Kraj bunara | đul procvao beli,
+    > čeka draga | da joj dragi veli.
+
+    ### Practical tips
+
+    - Sing or hum any slow melody and stretch one vowel over many notes; notice how few words you
+      need for a phrase.
+    - Mark the 4 + 6 split with "|" and count both halves of every line.
+    - Write the last couplet first, so the opening scene can lead to it.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **sevdalinku**, na srpskom: sporu, ukrašenu ljubavnu pesmu bosanskih i
+    južnosrpskih gradova, blisku rođaku starogradske koju si pisao u 6. nedelji (PL-002). Ovog
+    puta izazov je suprotan pop pesmi: **vrlo malo reči, a svaka nosi dugu, ukrašenu melodiju**.
+
+    ### Po čemu se razlikuje od starogradske
+
+    - **Manje reči, duže note.** Melodija sevdalinke je spora i slobodna u vremenu (*rubato*), a
+      jedan slog može da nosi pet ili deset tonova ukrasa (melizma). Cela pesma može imati samo
+      8–12 stihova. Svaka reč mora da zasluži svoje mesto.
+    - **Prizor, često mala priča.** Mnoge sevdalinke počinju slikom i osobom u njoj (*Kraj
+      bunara...*, *Kad ja pođoh...*), pa dijalog ili jedan pokret nosi osećanje: pogled kroz
+      pendžer, poslat dar, poruka koja nikad ne stigne.
+    - **Dijalog i obraćanje.** Stihove govore devojka, momak, majka, pa i bašta. Uzvici *oj*,
+      *aman*, *jao* ispunjavaju melizmu i obeležavaju osećanje.
+    - **Refren nije obavezan.** Pevači umesto toga ponavljaju polustihove (*bistre vode, bistre
+      vode*), pa piši polustihove koji podnose ponavljanje.
+
+    ### Konvencije
+
+    - **Metar (L-002):** **deseterac** podeljen **4 + 6** (lirski deseterac sevdalinke) ili
+      **osmerac** 4 + 4. Drži se jednog.
+    - **Rima (L-003):** **parna rima, AABB**, obično ženska (dvosložna): *beli / veli*,
+      *bašti / tašti*. Izbegavaj rime koje su samo ponovljeni gramatički nastavci.
+    - **Zvuk:** otvoreni vokali (*a, o, e*) na krajevima polustihova, gde melodija zastaje i
+      ukrašava. Suglasničke grupe (*-vstv-*, *-ršt-*) se teško ukrašavaju.
+    - **Slike (L-004):** bašta i avlija (*bašta, đul, zumbul, jorgovan, ružica*), voda (*bunar,
+      česma, potok*), prozor (*pendžer*, *demir-pendžer*), uspomene (*jagluk*, *đerdan*,
+      *prsten*). Turcizmi su ovde idiomatski.
+    - **Kraj se okreće:** poslednji par stihova kaže ono što je početak skrivao: ljubav je
+      nemoguća, voljenu udaju za drugog, ili se ponos onoga ko peva slomi.
+
+    Izmišljen dvostih (deseterac 4 + 6, ženska rima):
+
+    > Kraj bunara | đul procvao beli,
+    > čeka draga | da joj dragi veli.
+
+    ### Praktični saveti
+
+    - Otpevaj ili pevuši bilo koju sporu melodiju i razvuci jedan vokal preko mnogo tonova;
+      primeti koliko malo reči ti treba za frazu.
+    - Obeleži podelu 4 + 6 sa „|” i prebroj obe polovine svakog stiha.
+    - Prvo napiši poslednji dvostih, da bi početni prizor mogao da vodi ka njemu.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: economy
+    weight: 2
+    label: {en: "Economy of words", sr: "Štedljivost reči"}
+    top:
+      en: "Few words, each necessary; half-lines that survive being repeated; open vowels where the melody would hold and ornament."
+      sr: "Malo reči, svaka potrebna; polustihovi koji podnose ponavljanje; otvoreni vokali tamo gde bi melodija zastala i ukrašavala."
+  - id: meter-rhyme
+    weight: 2
+    label: {en: "Meter and rhyme", sr: "Metar i rima"}
+    top:
+      en: "Every line keeps the chosen count with a clear 4 + 6 (or 4 + 4) split; couplets rhyme fully, mostly feminine, not just on grammar endings."
+      sr: "Svaki stih drži izabrani broj slogova sa jasnom podelom 4 + 6 (ili 4 + 4); dvostihovi se rimuju čisto, uglavnom ženskom rimom, ne samo na gramatičkim nastavcima."
+  - id: scene
+    weight: 1
+    label: {en: "Scene and voice", sr: "Prizor i glas"}
+    top:
+      en: "Opens with a concrete scene; at least one line of direct speech or direct address carries the feeling."
+      sr: "Počinje konkretnim prizorom; bar jedan stih upravnog govora ili obraćanja nosi osećanje."
+  - id: turn
+    weight: 1
+    label: {en: "The turn", sr: "Obrt"}
+    top:
+      en: "The final couplet reveals or reverses something and recolours the opening image."
+      sr: "Poslednji dvostih otkriva ili preokreće nešto i daje novu boju početnoj slici."

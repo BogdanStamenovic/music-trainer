@@ -1,0 +1,141 @@
+id: K-016
+track: K
+order: 16
+title: {en: "Left-hand patterns: root–fifth, broken chords, Alberti bass", sr: "Obrasci leve ruke: osnovni ton–kvinta, razloženi akordi, Alberti bas"}
+prereqs: [K-008]
+minutes: 14
+tags: [keys, accompaniment, left-hand]
+explain:
+  en: |
+    Block chords tell you the harmony; a **left-hand pattern** turns that harmony into motion,
+    so a melody on top has something to ride on. Three patterns cover a huge amount of music.
+    Here each one runs over I–IV–V–I in C, one bar per chord.
+
+    **1. Root–fifth** (folk, country, ballads): root, 5th, root, 5th. The 5th is the most stable
+    note above the root, so this is the bare minimum that still defines the chord.
+
+    **2. Broken chord, 1–3–5–3**: the whole triad, rolled. Fuller, smooth, works at any tempo.
+
+    **3. Alberti bass**, low–high–middle–high (Mozart, Clementi, Haydn). It uses the close
+    voicings from K-009, so the hand barely moves:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=bass
+    C,G,E,G, C,G,E,G, | C,A,F,A, C,A,F,A, | B,,G,D,G, B,,G,D,G, | C,G,E,G, C,G,E,G, |]
+    ```
+
+    | chord | voicing | Alberti order |
+    |---|---|---|
+    | I | C–E–G | C G E G |
+    | IV (6/4) | C–F–A | C A F A |
+    | V (6) | B–D–G | B G D G |
+
+    Why it works: the **lowest note** of each group is heard as the bass line (C–C–B–C), the
+    repeated top note gives a steady pulse, and the middle note fills in the harmony.
+
+    Keep the left hand **quieter than the melody**. Thumb light on the repeated top note, the
+    bass note slightly heavier. In the exercises every note is one click (think of the click as
+    eighth notes).
+  sr: |
+    Akordi kao blokovi kažu koja je harmonija; **obrazac leve ruke** tu harmoniju pretvara u
+    kretanje, pa melodija gore ima na čemu da se vozi. Tri obrasca pokrivaju ogromnu količinu
+    muzike. Ovde svaki ide preko I–IV–V–I u C-duru, jedan takt po akordu.
+
+    **1. Osnovni ton–kvinta** (narodna muzika, kantri, balade): osnovni ton, kvinta, osnovni
+    ton, kvinta. Kvinta je najstabilniji ton iznad osnovnog, pa je ovo najmanje što još uvek
+    određuje akord.
+
+    **2. Razloženi akord, 1–3–5–3**: ceo kvintakord, razložen. Puniji, gladak, radi u svakom
+    tempu.
+
+    **3. Alberti bas**, dole–gore–sredina–gore (Mocart, Klementi, Hajdn). Koristi uske
+    rasporede iz K-009, pa se ruka jedva pomera:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=bass
+    C,G,E,G, C,G,E,G, | C,A,F,A, C,A,F,A, | B,,G,D,G, B,,G,D,G, | C,G,E,G, C,G,E,G, |]
+    ```
+
+    | akord | raspored | Alberti redosled |
+    |---|---|---|
+    | I | C–E–G | C G E G |
+    | IV (kvartsekstakord) | C–F–A | C A F A |
+    | V (sekstakord) | H–D–G | H G D G |
+
+    Zašto radi: **najniži ton** svake grupe čuje se kao bas linija (C–C–H–C), ponovljeni gornji
+    ton daje ravnomeran puls, a srednji popunjava harmoniju.
+
+    Leva ruka neka bude **tiša od melodije**. Palac lagan na ponovljenom gornjem tonu, bas malo
+    teži. U vežbama je svaki ton jedan udarac metronoma (zamisli udarce kao osmine).
+exercises:
+  - id: K-016-1
+    type: midi-play
+    prompt: {en: "Root–fifth over I–IV–V–I in C, left hand, ♩=80, one note per click.", sr: "Osnovni ton–kvinta preko I–IV–V–I u C-duru, leva ruka, ♩=80, jedan ton po udarcu."}
+    mode: sequence
+    expect: [C3, G3, C3, G3, F2, C3, F2, C3, G2, D3, G2, D3, C3, G3, C3, G3]
+    tempo: 80
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: F2, to: C3, is: P5}
+      - interval: {from: G2, to: D3, is: P5}
+  - id: K-016-2
+    type: midi-play
+    prompt: {en: "Broken chord 1–3–5–3 over I–IV–V–I in C, left hand, ♩=88.", sr: "Razloženi akord 1–3–5–3 preko I–IV–V–I u C-duru, leva ruka, ♩=88."}
+    mode: sequence
+    expect: [C3, E3, G3, E3, F2, A2, C3, A2, G2, B2, D3, B2, C3, E3, G3, E3]
+    tempo: 88
+    checks:
+      - chord: {notes: [C3, E3, G3], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [F2, A2, C3], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [G2, B2, D3], root: G, quality: maj, inversion: 0}
+  - id: K-016-3
+    type: midi-play
+    prompt: {en: "Alberti bass over I–IV64–V6–I in C (two groups per chord), ♩=96.", sr: "Alberti bas preko I–IV64–V6–I u C-duru (dve grupe po akordu), ♩=96."}
+    mode: sequence
+    expect: [C3, G3, E3, G3, C3, G3, E3, G3, C3, A3, F3, A3, C3, A3, F3, A3, B2, G3, D3, G3, B2, G3, D3, G3, C3, G3, E3, G3, C3, G3, E3, G3]
+    tempo: 96
+    checks:
+      - chord: {notes: [C3, E3, G3], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [C3, F3, A3], root: F, quality: maj, inversion: 2}
+      - chord: {notes: [B2, D3, G3], root: G, quality: maj, inversion: 1}
+  - id: K-016-4
+    type: midi-play
+    prompt: {en: "The same Alberti pattern in G major (I–IV64–V6–I, from G2), one group per chord, ♩=96.", sr: "Isti Alberti obrazac u G-duru (I–IV64–V6–I, od G2), jedna grupa po akordu, ♩=96."}
+    mode: sequence
+    expect: [G2, D3, B2, D3, G2, E3, C3, E3, "F#2", D3, A2, D3, G2, D3, B2, D3]
+    tempo: 96
+    showNotes: false
+    checks:
+      - chord: {notes: [G2, B2, D3], root: G, quality: maj, inversion: 0}
+      - chord: {notes: [G2, C3, E3], root: C, quality: maj, inversion: 2}
+      - chord: {notes: ["F#2", A2, D3], root: D, quality: maj, inversion: 1}
+  - id: K-016-5
+    type: midi-play
+    prompt: {en: "Root–fifth in F major over I–IV–V–I (F2–C3, B♭2–F3, C3–G3, F2–C3), ♩=80.", sr: "Osnovni ton–kvinta u F-duru preko I–IV–V–I (F2–C3, B2–F3, C3–G3, F2–C3), ♩=80."}
+    mode: sequence
+    expect: [F2, C3, F2, C3, Bb2, F3, Bb2, F3, C3, G3, C3, G3, F2, C3, F2, C3]
+    tempo: 80
+    showNotes: false
+    checks:
+      - interval: {from: F2, to: C3, is: P5}
+      - interval: {from: Bb2, to: F3, is: P5}
+      - interval: {from: C3, to: G3, is: P5}
+      - roman: {key: F, degree: 4, is: "IV"}
+  - id: K-016-6
+    type: mcq
+    prompt: {en: "A slow ballad in 4/4 with a sparse, open sound. Which left hand fits best to start with?", sr: "Spora balada u 4/4, retka i otvorena. Koja leva ruka najbolje pristaje za početak?"}
+    options:
+      - {en: "Alberti bass in eighths", sr: "Alberti bas u osminama"}
+      - {en: "Root–fifth (or root–fifth–octave), one note per beat or slower", sr: "Osnovni ton–kvinta (ili osnovni ton–kvinta–oktava), jedan ton po dobi ili ređe"}
+      - {en: "Repeated block chords in sixteenths", sr: "Ponovljeni akordi u šesnaestinama"}
+    answer: 1
+  - id: K-016-7
+    type: practice
+    prompt: {en: "Put a melody on top: right hand plays Twinkle Twinkle (C C G G | A A G – | F F E E | D D C –) while the left hand plays each pattern. Chords per bar: I | IV I | IV I | V I. Switch the pattern every time through.", sr: "Dodaj melodiju: desna ruka svira \"Sjaj, sjaj, zvezdice\" (C C G G | A A G – | F F E E | D D C –) dok leva svira svaki obrazac. Akordi po taktu: I | IV I | IV I | V I. Promeni obrazac pri svakom ponavljanju."}
+    minutes: 4

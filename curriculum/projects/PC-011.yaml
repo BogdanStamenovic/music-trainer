@@ -1,0 +1,115 @@
+id: PC-011
+kind: composition
+order: 41
+title: {en: "A 16-bar AABA song melody", sr: "Melodija pesme od 16 taktova u formi AABA"}
+minutes: 120
+prereqs: [T-028, C-002, C-006]
+composition:
+  key: Bb major
+  meter: 4/4
+  bars: 16
+  range: [D4, F5]
+  rules: [bars, key, range, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write a **16-bar melody in Bb major, 4/4, in AABA form**: four 4-bar sections, where
+    the **A** section is heard three times and the **B** section (the *bridge*) once, in third
+    place. This is the form of countless standards and early pop songs (*Over the Rainbow*,
+    *Blue Moon*, *Yesterday*), here compressed to 16 bars (the real ones usually have 8-bar
+    sections).
+
+    ### The idea
+
+    - **A1 (bars 1–4): the theme.** A memorable idea, ending **open** on C, F or D (a V-chord
+      note), so it wants to go on.
+    - **A2 (bars 5–8): the same, closed.** Repeat A1 almost exactly; change only the last bar
+      or two so it ends on **Bb**, the tonic. The listener now knows the tune.
+    - **B (bars 9–12): contrast.** New material: a different register (higher or lower),
+      a different rhythm (longer notes if A is busy, or the reverse), and a different
+      harmonic area (start on IV, Eb, or on vi, Gm). End bar 12 on **F** or another V-chord
+      note: the bridge leads back.
+    - **A3 (bars 13–16): the return.** A again, with the closed ending of A2. You may vary it
+      (a higher climax note in bar 15), but it has to be recognisably A.
+    - **Range: D4–F5.** Put the single highest note either in the bridge or in A3, not in
+      both.
+
+    ### Practical tips
+
+    - Spend most of your time on A: it is heard three times. B only has to be different and
+      lead home.
+    - Copy-paste is allowed and expected: A2 and A3 can reuse A1 note for note except the
+      ending.
+    - Hum bar 12 into bar 13 many times. The moment of return is the best moment of the form
+      when it is done well.
+    - In ABC, `K:Bb` puts Bb and Eb in the key signature: `B` and `E` are already flat.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 16 full bars; notes of Bb major; range D4–F5; last note Bb; no
+      augmented leaps (watch **Eb–A**, a tritone); leaps under control; sensible rhythm.
+      **No half-cadence check:** in AABA, bar 8 (the middle) is the *closed* end of A2, so the
+      usual "bar 8 ends on V" rule would mark a correct AABA wrong.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4, starting with whether
+      the form is audible.
+  sr: |
+    Napiši **melodiju od 16 taktova u B-duru, 4/4, u formi AABA**: četiri dela od po 4 takta,
+    pri čemu se deo **A** čuje tri puta, a deo **B** (*most*, bridge) jednom, na trećem mestu.
+    To je forma bezbrojnih standarda i ranih pop pesama (*Over the Rainbow*, *Blue Moon*,
+    *Yesterday*), ovde sabijena na 16 taktova (prave obično imaju delove od 8 taktova).
+
+    ### Ideja
+
+    - **A1 (taktovi 1–4): tema.** Upečatljiva ideja koja se završava **otvoreno** na C, F ili D
+      (ton dominante), pa želi dalje.
+    - **A2 (taktovi 5–8): isto, zatvoreno.** Ponovi A1 skoro tačno; promeni samo poslednji takt
+      ili dva tako da se završi na **B**, tonici. Slušalac sada zna melodiju.
+    - **B (taktovi 9–12): kontrast.** Novi materijal: drugi registar (viši ili niži), drugi
+      ritam (duži tonovi ako je A gusto, ili obrnuto) i druga harmonska oblast (počni na IV,
+      Es, ili na vi, g-mol). Završi 12. takt na **F** ili drugom tonu dominante: most vodi
+      nazad.
+    - **A3 (taktovi 13–16): povratak.** Opet A, sa zatvorenim krajem iz A2. Možeš da ga
+      variraš (viši vrhunac u 15. taktu), ali mora da se prepozna kao A.
+    - **Opseg: D4–F5.** Jedan najviši ton stavi ili u most ili u A3, ne u oba.
+
+    ### Praktični saveti
+
+    - Najviše vremena posveti delu A: čuje se tri puta. B samo treba da bude drugačiji i da
+      vodi kući.
+    - Kopiranje je dozvoljeno i očekivano: A2 i A3 mogu ton po ton da ponove A1, osim kraja.
+    - Mnogo puta pevuši prelaz iz 12. u 13. takt. Trenutak povratka je, kad je dobro urađen,
+      najlepši trenutak ove forme.
+    - U ABC zapisu `K:Bb` stavlja B i Es u predznak: `B` i `E` su već sniženi.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 16 punih taktova; tonovi B-dura; opseg D4–F5; poslednji ton B;
+      bez povećanih skokova (pazi na **Es–A**, tritonus); skokovi pod kontrolom; smislen ritam.
+      **Nema provere polukadence:** u AABA je 8. takt (sredina) *zatvoreni* kraj A2, pa bi
+      uobičajeno pravilo „8. takt se završava na V” ispravnu AABA formu označilo kao grešku.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4, počev od toga da
+      li se forma čuje.
+rubric:
+  - id: form
+    weight: 2
+    label: {en: "AABA form is audible", sr: "AABA forma se čuje"}
+    top:
+      en: "A1 ends open, A2 repeats it and ends on Bb, B is clearly different (register, rhythm, harmony) and leads back on V, A3 is recognisably A with the closed ending; a listener could mark the sections blind."
+      sr: "A1 se završava otvoreno, A2 ga ponavlja i završava na B, deo B je jasno drugačiji (registar, ritam, harmonija) i vraća se preko dominante, A3 se prepoznaje kao A sa zatvorenim krajem; slušalac bi mogao naslepo da obeleži delove."
+  - id: theme
+    weight: 2
+    label: {en: "A strong A section", sr: "Jak deo A"}
+    top:
+      en: "The A theme has a clear motif and rhythm, is worth hearing three times, and is easy to sing back after the second time."
+      sr: "Tema A ima jasan motiv i ritam, vredi je čuti tri puta i lako se otpeva posle drugog slušanja."
+  - id: return
+    weight: 1
+    label: {en: "The return", sr: "Povratak"}
+    top:
+      en: "Bar 12 builds expectation (ends on F or another V note) and bar 13 delivers A as a release; one climax, placed in the bridge or in A3."
+      sr: "12. takt gradi očekivanje (kraj na F ili drugom tonu dominante), a 13. donosi A kao olakšanje; jedan vrhunac, u mostu ili u A3."
+  - id: line
+    weight: 1
+    label: {en: "Melodic line", sr: "Melodijska linija"}
+    top:
+      en: "Singable, leaps recovered, sensible breaths at the end of each section."
+      sr: "Pevljiva, skokovi se vraćaju korakom, smislena mesta za udah na kraju svakog dela."

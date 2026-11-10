@@ -1,0 +1,139 @@
+id: PC-010
+kind: composition
+order: 37
+title: {en: "A 12-bar blues head", sr: "Bluz tema od 12 taktova"}
+minutes: 90
+prereqs: [T-020, K-020, C-003]
+composition:
+  key: C major
+  meter: 4/4
+  bars: 12
+  range: [C4, E5]
+  chords: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, I7]
+  rules: [bars, range, cadence, leaps, rhythm]
+brief:
+  en: |
+    Write a **blues head**: the 12-bar melody that a blues band plays at the start and end of
+    a tune, between the solos. **C, 4/4, over the 12-bar blues** (with the "quick change" to
+    IV in bar 2):
+
+    | bars | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+    |---|---|---|---|---|---|---|---|---|---|---|---|---|
+    | chord | C7 | F7 | C7 | C7 | F7 | F7 | C7 | C7 | G7 | F7 | C7 | C7 |
+
+    ### The idea
+
+    - **AAB.** The classic blues lyric and melody come in three 4-bar lines: **line 1 (bars
+      1–4) states a riff, line 2 (bars 5–8) repeats it over F7, line 3 (bars 9–12) answers**
+      with something new over G7–F7 that comes home to C. If you wrote a blues lyric (PL-001),
+      this is its music: the same three lines.
+    - **The riff can stay the same while the chords move.** That is the blues magic: a phrase
+      built from the **C blues scale** (C Eb F Gb G Bb) fits over C7 *and* F7. The clash
+      between the melody's **Eb** and the chord's **E** is the sound of the blues, not a
+      mistake.
+    - **Blue notes:** **Eb** (the blue 3rd, often slid up to E), **Bb** (the flat 7th) and
+      **Gb** (the blue 5th, used in passing between G and F). Major-scale notes (E, A, D) are
+      welcome too, especially in line 3 over G7 (B and D) and F7 (A).
+    - **Leave space.** A riff is usually 1–2 bars long, followed by a rest or a long note:
+      that gap is where, in a band, the guitar answers (call and response, K-track style).
+    - **End on C** in bar 11 or 12, on a strong beat.
+    - **Range: C4–E5.** Blues heads are compact; an octave is plenty.
+
+    A riff shape (not to copy):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 _B c- c2 z2 | _E E C2 z4 |]
+    ```
+
+    ### Practical tips
+
+    - Play the 12-bar left hand from K-020 (or just roots), and improvise blues-scale phrases
+      until one sticks. The best heads are almost too simple.
+    - **Swing feel:** write plain eighths; everybody swings them in performance (long-short).
+    - **Spelling matters for the checks:** write the blue 5th as **Gb** (`_G`), not F#, and the
+      blue 3rd as **Eb** (`_E`), not D#.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 12 full bars; range C4–E5; the last note is C; leaps under
+      control; sensible rhythm. **The key and augmented-interval checks are switched off:**
+      blue notes (Eb, Gb, Bb against a C major background) are exactly what a blues needs, and
+      the slides they make (Eb–E, Gb–G) would be flagged as chromatic by the usual rules.
+      Whether the melody sounds like the blues is the critique's job.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4.
+  sr: |
+    Napiši **bluz temu** (*head*): melodiju od 12 taktova koju bluz bend svira na početku i
+    kraju pesme, između solaža. **C, 4/4, nad bluzom od 12 taktova** (sa „brzom promenom” na
+    IV u 2. taktu):
+
+    | taktovi | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+    |---|---|---|---|---|---|---|---|---|---|---|---|---|
+    | akord | C7 | F7 | C7 | C7 | F7 | F7 | C7 | C7 | G7 | F7 | C7 | C7 |
+
+    ### Ideja
+
+    - **AAB.** Klasičan bluz tekst i melodija dolaze u tri stiha od po 4 takta: **1. stih
+      (taktovi 1–4) izlaže rif, 2. stih (taktovi 5–8) ga ponavlja nad F7, 3. stih (taktovi
+      9–12) odgovara** nečim novim nad G7–F7 i vraća se kući na C. Ako si napisao bluz tekst
+      (PL-001), ovo je njegova muzika: ista tri stiha.
+    - **Rif može da ostane isti dok se akordi menjaju.** To je čarolija bluza: fraza od tonova
+      **C bluz lestvice** (C Es F Ges G B) odgovara i nad C7 *i* nad F7. Sudar melodijskog
+      **Es** i akordskog **E** je zvuk bluza, a ne greška.
+    - **Plave note** (*blue notes*): **Es** (plava terca, često kliznuta naviše u E), **B**
+      (mala septima) i **Ges** (plava kvinta, u prolazu između G i F). Tonovi durske lestvice
+      (E, A, D) su takođe dobrodošli, naročito u 3. stihu nad G7 (H i D) i F7 (A).
+    - **Ostavi prostor.** Rif je obično dug 1–2 takta, a posle njega dolazi pauza ili dug ton:
+      u bendu je to mesto gde gitara odgovara (pitanje i odgovor, *call and response*).
+    - **Završi na C** u 11. ili 12. taktu, na jakoj dobi.
+    - **Opseg: C4–E5.** Bluz teme su zbijene; oktava je sasvim dovoljna.
+
+    Oblik jednog rifa (ne za prepisivanje):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 _B c- c2 z2 | _E E C2 z4 |]
+    ```
+
+    ### Praktični saveti
+
+    - Sviraj levu ruku bluza od 12 taktova iz K-020 (ili samo osnovne tonove) i improvizuj
+      fraze iz bluz lestvice dok se jedna ne zadrži. Najbolje teme su gotovo previše
+      jednostavne.
+    - **Sving:** piši obične osmine; svi ih u izvođenju svinguju (dugo-kratko).
+    - **Pravopis je važan za proveru:** plavu kvintu piši kao **Ges** (`_G`), ne Fis, a plavu
+      tercu kao **Es** (`_E`), ne Dis.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 12 punih taktova; opseg C4–E5; poslednji ton je C; skokovi
+      pod kontrolom; smislen ritam. **Provere tonaliteta i povećanih intervala su isključene:**
+      plave note (Es, Ges, B naspram C-dura) su upravo ono što bluzu treba, a klizanja koja
+      prave (Es–E, Ges–G) uobičajena pravila bi označila kao hromatiku. Da li melodija zvuči kao
+      bluz, posao je kritike.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4.
+rubric:
+  - id: aab-form
+    weight: 2
+    label: {en: "AAB form", sr: "AAB forma"}
+    top:
+      en: "Three clear 4-bar lines: a riff in bars 1–4, the same riff (or a near copy) over F7 in bars 5–8, and a different answering line in bars 9–12 that follows G7–F7 and resolves to C."
+      sr: "Tri jasna stiha od po 4 takta: rif u taktovima 1–4, isti rif (ili gotovo isti) nad F7 u taktovima 5–8 i drugačiji stih-odgovor u taktovima 9–12 koji prati G7–F7 i razrešava se u C."
+  - id: blues-language
+    weight: 2
+    label: {en: "Blues language", sr: "Jezik bluza"}
+    top:
+      en: "Blue notes (Eb, Bb, maybe Gb) are used idiomatically, e.g. Eb sliding to E, Bb over C7; line 3 acknowledges the G7 (B or D); it sounds like the blues, not like a major-scale tune over blues chords."
+      sr: "Plave note (Es, B, možda Ges) korišćene su idiomatski, npr. Es koje klizi u E, B nad C7; 3. stih uvažava G7 (H ili D); zvuči kao bluz, a ne kao durska melodija nad bluz akordima."
+  - id: space-and-rhythm
+    weight: 1
+    label: {en: "Space and rhythm", sr: "Prostor i ritam"}
+    top:
+      en: "Riffs are short and rhythmic (some syncopation or anticipations), with rests or long notes that leave room for an answer; the head is memorable after one listen."
+      sr: "Rifovi su kratki i ritmični (malo sinkope ili anticipacija), sa pauzama ili dugim tonovima koji ostavljaju mesta za odgovor; tema se pamti posle jednog slušanja."

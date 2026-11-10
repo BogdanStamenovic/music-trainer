@@ -1,0 +1,114 @@
+id: T-016
+track: T
+order: 16
+prereqs: [T-015]
+title: {en: "Simple meters: 2/4, 3/4, 4/4; beat and subdivision", sr: "Proste mere: 2/4, 3/4, 4/4; doba i podela dobe"}
+minutes: 12
+tags: [rhythm]
+explain:
+  en: |
+    **Meter** is how beats are grouped into bars, strong to weak. The time signature says it in two numbers:
+    the **top** is how many beats per bar, the **bottom** which note value is one beat (4 = quarter, 8 = eighth, 2 = half).
+
+    In a **simple meter** each beat divides into **two** (a quarter into two eighths). The three you will meet most:
+
+    | meter | beats | accent pattern | typical |
+    |---|---|---|---|
+    | 2/4 | 2 | **strong**–weak | march, polka |
+    | 3/4 | 3 | **strong**–weak–weak | waltz, minuet |
+    | 4/4 | 4 | **strong**–weak–*medium*–weak | most pop, rock, hymns |
+
+    Why it matters: the strong beats are where harmony changes and where a melody puts its important (chord) notes. When you improvise or compose, beat 1 is your anchor.
+    At the piano, count the subdivision aloud ("1 and 2 and") when a rhythm mixes quarters and eighths; that is what keeps the eighths even.
+
+    ```abc
+    X:1
+    L:1/8
+    M:2/4
+    K:C clef=perc
+    !>!B2 B2 | !>!BB B2 || [M:3/4] !>!B2 B2 B2 | !>!B4 B2 || [M:4/4] !>!B2 B2 B2 B2 | !>!B2 BB B2 B2 |]
+    ```
+  sr: |
+    **Mera** (taktovska mera) je način na koji se dobe grupišu u takt, od naglašene ka nenaglašenoj. Oznaka mere to kaže s dva broja:
+    **gornji** je broj doba u taktu, **donji** je nota koja traje jednu dobu (4 = četvrtina, 8 = osmina, 2 = polovina).
+
+    U **prostoj meri** svaka doba se deli na **dva** (četvrtina na dve osmine). Tri najčešće:
+
+    | mera | dobe | naglasci | tipično |
+    |---|---|---|---|
+    | 2/4 | 2 | **teška** (jaka)–laka (slaba) | marš, polka |
+    | 3/4 | 3 | **teška**–laka–laka | valcer, menuet |
+    | 4/4 | 4 | **teška**–laka–*poluteška*–laka | većina popa, roka, himni |
+
+    Zašto je važno: na jakim dobama se menja harmonija i tu melodija stavlja važne (akordske) tonove. Kad improvizuješ ili komponuješ, prva doba je tvoje sidro.
+    Za klavirom broj podelu naglas („1 i 2 i") kad se mešaju četvrtine i osmine; tako osmine ostaju ujednačene.
+
+    ```abc
+    X:1
+    L:1/8
+    M:2/4
+    K:C clef=perc
+    !>!B2 B2 | !>!BB B2 || [M:3/4] !>!B2 B2 B2 | !>!B4 B2 || [M:4/4] !>!B2 B2 B2 B2 | !>!B2 BB B2 B2 |]
+    ```
+exercises:
+  - id: T-016-1
+    type: mcq
+    prompt: {en: "The bar lines are there but the time signature is missing. Which one fits?", sr: "Taktne crte postoje, ali oznaka mere nedostaje. Koja odgovara?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      B2 B2 B2 | B4 B2 | B2 BB B2 | B6 |]
+    options: ["2/4", "3/4", "4/4"]
+    answer: 1
+  - id: T-016-2
+    type: mcq
+    prompt: {en: "And this one?", sr: "A ovde?"}
+    abc: |
+      X:1
+      M:none
+      L:1/8
+      K:C clef=perc
+      B2 B2 | BB B2 | B4 | B2 BB |]
+    options: ["2/4", "3/4", "4/4"]
+    answer: 0
+  - id: T-016-3
+    type: mcq
+    prompt: {en: "This is 4/4. Which bar is incomplete?", sr: "Ovo je 4/4. Koji takt nije potpun?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C clef=perc
+      "^A"B4 B4 | "^B"B3 B B4 | "^C"B2 B2 B3 | "^D"B8 |]
+    options: ["A", "B", "C", "D"]
+    answer: 2
+  - id: T-016-4
+    type: mcq
+    prompt: {en: "In 4/4, which beats are strong?", sr: "Koje su dobe teške (jake) u 4/4?"}
+    options:
+      - {en: "1 (strongest) and 3", sr: "1 (najteža) i 3"}
+      - {en: "2 and 4", sr: "2 i 4"}
+      - {en: "only 4", sr: "samo 4"}
+      - {en: "all four equally", sr: "sve četiri podjednako"}
+    answer: 0
+  - id: T-016-5
+    type: mcq
+    prompt: {en: "What does the lower 4 in 3/4 mean?", sr: "Šta znači donja četvorka u 3/4?"}
+    options:
+      - {en: "a quarter note is one beat", sr: "četvrtina traje jednu dobu"}
+      - {en: "there are 4 beats per bar", sr: "u taktu su 4 dobe"}
+      - {en: "the tempo is 4 beats per second", sr: "tempo je 4 dobe u sekundi"}
+      - {en: "every 4th bar is accented", sr: "svaki 4. takt je naglašen"}
+    answer: 0
+  - id: T-016-6
+    type: generated
+    prompt: {en: "Rhythm echo in 2/4", sr: "Ritamski eho u 2/4"}
+    count: 3
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[1], [0.5, 0.5]], tempo: 80}
+  - id: T-016-7
+    type: generated
+    prompt: {en: "Rhythm echo in 3/4: feel the strong first beat", sr: "Ritamski eho u 3/4: oseti tešku prvu dobu"}
+    count: 3
+    gen: {kind: rhythm-echo, meter: "3/4", bars: 2, cells: [[1], [0.5, 0.5]], tempo: 80}

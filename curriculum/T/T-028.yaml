@@ -1,0 +1,118 @@
+id: T-028
+track: T
+order: 28
+prereqs: [T-027]
+title: {en: "Phrase, cadence and the period (antecedent/consequent)", sr: "Fraza, kadenca i period (prednja i zadnja rečenica)"}
+minutes: 14
+tags: [form, harmony]
+explain:
+  en: |
+    A **phrase** is a musical sentence, typically 4 bars, that ends with a **cadence**. The cadence is its punctuation:
+    a **half cadence** (ending on V) is a comma, an **authentic cadence** (V–I) a full stop.
+
+    Two phrases that answer each other make a **period**:
+
+    - the **antecedent** (question) ends with a weaker cadence, usually a **half cadence**;
+    - the **consequent** (answer) ends with a stronger one, a **perfect authentic cadence** (V–I, tonic in the melody).
+
+    If both phrases begin the same way it is a **parallel period**; if the consequent starts with new material, a **contrasting period**.
+    The question–answer shape is why the 8-bar tune is so common: the ear hears the open ending, waits, and is satisfied by the close.
+    When you compose, write the question first, then reuse its opening and change only the ending.
+
+    Beethoven's "Ode to Joy" (public domain) is a textbook parallel period: bar 4 stops on D over V (half cadence), bar 8 lands D → C over V → I.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E E F G | G F E D | C C D E | "^HC"E3/2 D/ D2 | E E F G | G F E D | C C D E | "^PAC"D3/2 C/ C2 |]
+    ```
+  sr: |
+    **Rečenica** (engl. *phrase*; u našoj teoriji oblika fraza je njena polovina, 2 takta) je muzička celina, obično od 4 takta, koja se završava **kadencom**. Kadenca je njena interpunkcija:
+    **polukadenca** (završetak na V) je zarez, **autentična kadenca** (V–I) tačka.
+
+    Dve rečenice koje odgovaraju jedna drugoj čine **period**:
+
+    - **prednja rečenica** (pitanje) završava se slabijom kadencom, obično **polukadencom**;
+    - **zadnja rečenica** (odgovor) završava se jačom, **savršenom autentičnom kadencom** (V–I, tonika u melodiji).
+
+    Ako obe rečenice počinju isto, to je **paralelni period**; ako zadnja počinje novim materijalom, **kontrastni period**.
+    Oblik pitanje–odgovor je razlog što je melodija od 8 taktova toliko česta: uho čuje otvoren kraj, čeka i zadovolji se zatvaranjem.
+    Kad komponuješ, prvo napiši pitanje, zatim ponovi njegov početak i promeni samo kraj.
+
+    Betovenova „Oda radosti" (javno dobro) je udžbenički paralelni period: 4. takt staje na D nad V (polukadenca), 8. takt dolazi D → C nad V → I.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E E F G | G F E D | C C D E | "^HC"E3/2 D/ D2 | E E F G | G F E D | C C D E | "^PAC"D3/2 C/ C2 |]
+    ```
+exercises:
+  - id: T-028-1
+    type: mcq
+    prompt: {en: "Bar 4 stops on D, harmonized by V. What kind of cadence closes the first phrase?", sr: "4. takt staje na D, harmonizovanom sa V. Kojom kadencom se završava prednja rečenica?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      E E F G | G F E D | C C D E | E3/2 D/ D2 |]
+    options:
+      - {en: "half cadence", sr: "polukadenca"}
+      - {en: "perfect authentic cadence", sr: "savršena autentična kadenca"}
+      - {en: "plagal cadence", sr: "plagalna kadenca"}
+      - {en: "deceptive cadence", sr: "prekinuta kadenca"}
+    answer: 0
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: T-028-2
+    type: mcq
+    prompt: {en: "Bars 5–8 begin exactly like bars 1–4 and end on the tonic with V–I. The whole 8 bars form…", sr: "Taktovi 5–8 počinju tačno kao 1–4 i završavaju se na tonici sa V–I. Svih 8 taktova čini…"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      E E F G | G F E D | C C D E | E3/2 D/ D2 | E E F G | G F E D | C C D E | D3/2 C/ C2 |]
+    options:
+      - {en: "a parallel period", sr: "paralelni period"}
+      - {en: "a contrasting period", sr: "kontrastni period"}
+      - {en: "two unrelated phrases", sr: "dve nepovezane rečenice"}
+      - {en: "a sequence", sr: "sekvencu"}
+    answer: 0
+  - id: T-028-3
+    type: mcq
+    prompt: {en: "In a period, the stronger cadence comes…", sr: "U periodu jača kadenca dolazi…"}
+    options:
+      - {en: "at the end of the consequent (second phrase)", sr: "na kraju zadnje rečenice"}
+      - {en: "at the end of the antecedent (first phrase)", sr: "na kraju prednje rečenice"}
+      - {en: "in the middle of each phrase", sr: "u sredini svake rečenice"}
+    answer: 0
+  - id: T-028-4
+    type: generated
+    prompt: {en: "Listen to the end of the phrase: question (ends on V), answer (V–I), or surprise (V–vi)?", sr: "Slušaj kraj fraze: pitanje (završetak na V), odgovor (V–I) ili iznenađenje (V–vi)?"}
+    count: 3
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[I, ii, V], [I, ii, V, I], [I, ii, V, vi]], tempo: 60}
+  - id: T-028-5
+    type: compose
+    prompt: {en: "Here is a 4-bar antecedent in C major that ends on D (half cadence). Add a 4-bar consequent: start like bar 1, end on C approached by step (D–C or B–C). 8 bars in total.", sr: "Ovo je prednja rečenica od 4 takta u C-duru koja se završava na D (polukadenca). Dodaj zadnju rečenicu od 4 takta: počni kao 1. takt, završi na C, dođi do njega za stupanj (D–C ili H–C). Ukupno 8 taktova."}
+    key: C major
+    meter: "4/4"
+    bars: 8
+    rules: [bars, key, half-cadence, cadence, range]
+    range: [A3, C6]
+    given: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      C D E C | F E D2 | E F G E | D4 |
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      C D E C | F E D2 | E F G E | D4 | C D E C | F E D2 | E G F D | C4 |]

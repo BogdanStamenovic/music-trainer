@@ -1,0 +1,114 @@
+id: E-011
+track: E
+order: 11
+title: {en: "All simple intervals, melodic up and down", sr: "Svi prosti intervali, melodijski naviše i naniže"}
+prereqs: [E-010, T-006]
+minutes: 13
+tags: [ear, intervals]
+explain:
+  en: |
+    You have met every interval inside the octave in pieces (E-001, E-002, E-006). Now all twelve
+    at once, **up and down**. Down is the new part, and it is harder: the ear tends to hear the
+    second note as the new "home", which flips the feeling of the interval.
+
+    Three ways to identify an interval, from slowest (always works) to fastest:
+
+    1. **Fill it in.** Sing the first note, then sing up (or down) the major scale until you reach
+       the second note. Count the notes you sang, first and last included: that is the number.
+       Then decide the quality: does it land a half step short of the major-scale note (minor) or on it?
+    2. **Size families.** Steps (2nds) sound like a melody moving; 3rds sound like a chord being
+       spelled; 4ths and 5ths are open and hollow; 6ths are a wide "sweet" leap; 7ths almost reach the
+       octave and sound like they overshot or fell short of it. The **tritone** (A4) splits the octave
+       exactly in half and sounds unstable in both directions.
+    3. **Anchor tunes.** Only use ones you can sing reliably:
+
+    | interval | up | down |
+    |---|---|---|
+    | M2 | *Happy Birthday* "Hap-py **birth**" (G A) | *Mary Had a Little Lamb* (E D) |
+    | m3 | *Greensleeves* (A C) | *Hey Jude* "Hey **Jude**" |
+    | M3 | *When the Saints* (C E) | *Swing Low* (B G) |
+    | P4 | *Amazing Grace* (D G) | |
+    | P5 | *Twinkle Twinkle* (C C G) | *Ode to Joy*, end of the middle part (E down to A) |
+    | M6 | *My Bonnie* (G E) | |
+    | P8 | *Over the Rainbow* "**Some-where**" | |
+
+    **For descending intervals:** sing the *top* note, then sing down the scale from it. Do not
+    try to imagine the low note as the tonic; let the first note be your reference.
+
+    In the "play it back" exercise you find both notes on the keys: the first note is a pitch
+    you have to locate (E-006 skill), the second is the interval you just named.
+  sr: |
+    Sve intervale unutar oktave već si upoznao u delovima (E-001, E-002, E-006). Sada svih dvanaest
+    odjednom, **naviše i naniže**. Naniže je novo, i teže je: uho ima naviku da drugi ton čuje kao
+    novu „kuću", pa se osećaj intervala izokrene.
+
+    Tri načina da prepoznaš interval, od najsporijeg (uvek radi) do najbržeg:
+
+    1. **Popuni ga.** Otpevaj prvi ton, pa pevaj durskom lestvicom naviše (ili naniže) dok ne stigneš
+       do drugog tona. Izbroj otpevane tonove, uključujući prvi i poslednji: to je broj intervala.
+       Onda odredi vrstu: da li pada pola stepena pre tona durske lestvice (mali) ili tačno na njega?
+    2. **Porodice po veličini.** Sekunde zvuče kao melodija u pokretu; terce kao razložen akord;
+       kvarte i kvinte su otvorene i šuplje; sekste su širok, „sladak" skok; septime skoro stignu do
+       oktave i zvuče kao da su je promašile. **Tritonus** (povećana kvarta) deli oktavu tačno na pola i
+       zvuči nestabilno u oba smera.
+    3. **Pesme-sidra.** Koristi samo one koje sigurno znaš da otpevaš:
+
+    | interval | naviše | naniže |
+    |---|---|---|
+    | v2 | *Happy Birthday* „Hap-py **birth**" (G A) | *Mary Had a Little Lamb* (E D) |
+    | m3 | *Greensleeves* (A C) | *Hey Jude* „Hey **Jude**" |
+    | v3 | *When the Saints* (C E) | *Swing Low* (H G) |
+    | č4 | *Amazing Grace* (D G) | |
+    | č5 | *Sjaj, sjaj, zvezdice* (C C G) | *Oda radosti*, kraj srednjeg dela (E naniže do A) |
+    | v6 | *My Bonnie* (G E) | |
+    | č8 | *Over the Rainbow* „**Some-where**" | |
+
+    **Za silazne intervale:** otpevaj *gornji* ton, pa pevaj lestvicu naniže od njega. Ne pokušavaj
+    da donji ton zamisliš kao toniku; neka ti prvi ton bude referenca.
+
+    U vežbi „odsviraj" nalaziš oba tona na klavijaturi: prvi ton moraš da pronađeš (veština iz
+    E-006), a drugi je interval koji si upravo prepoznao.
+exercises:
+  - id: E-011-1
+    type: generated
+    prompt: {en: "Up: seconds to the fifth, with the tritone", sr: "Naviše: od sekunde do kvinte, sa tritonusom"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, A4, P5], direction: up}
+    checks:
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: G4, to: E5, is: M6}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: G4, to: A4, is: M2}
+      - interval: {from: E4, to: D4, is: M2}
+      - interval: {from: A3, to: E4, is: P5}
+  - id: E-011-2
+    type: generated
+    prompt: {en: "Up: the fifth to the octave", sr: "Naviše: od kvinte do oktave"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [P5, m6, M6, m7, M7, P8], direction: up}
+  - id: E-011-3
+    type: generated
+    prompt: {en: "Down: seconds to the fifth", sr: "Naniže: od sekunde do kvinte"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, P5], direction: down, range: [F3, C5]}
+  - id: E-011-4
+    type: generated
+    prompt: {en: "Down: the tritone to the octave", sr: "Naniže: od tritonusa do oktave"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [A4, P5, m6, M6, m7, M7, P8], direction: down, range: [C3, C5]}
+  - id: E-011-5
+    type: generated
+    prompt: {en: "All twelve, down: which one?", sr: "Svih dvanaest, naniže: koji je?"}
+    count: 10
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, A4, P5, m6, M6, m7, M7, P8], direction: down, range: [C3, C5]}
+  - id: E-011-6
+    type: generated
+    prompt: {en: "Play it back: all twelve, upward", sr: "Odsviraj: svih dvanaest, naviše"}
+    count: 6
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, A4, P5, m6, M6, m7, M7, P8], direction: up, answer: play, range: [C3, C5]}

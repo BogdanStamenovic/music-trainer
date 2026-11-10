@@ -1,0 +1,167 @@
+id: PV-013
+kind: vocal
+order: 51
+title: {en: "Sing: the year in one song (review)", sr: "Pevaj: godina u jednoj pesmi (pregled)"}
+minutes: 45
+prereqs: [V-017, V-019, V-023, V-024]
+melody:
+  title: {en: "Year's End Waltz", sr: "Valcer za kraj godine"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: Bb major
+  meter: 3/4
+  tempo: 96
+  notes: [F4, Bb4, D5, C5, Bb4, A4, Bb4, G4, Eb4, F4, F4, Bb4, D5, D5, C5, Bb4, A4, G4, G4, C5, A4, Bb4, D4, D5, C5, Bb4, A4, G4, A4, Bb4, C5, D5, C5, Bb4, A4, Bb4, G4, Eb4, G4, F4, A4, Bb4]
+  beats: [1, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 3, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 3, 1, 2, 1, 1, 1, 1.5, 0.5, 1, 3, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 3]
+tolerance: 50
+brief:
+  en: |
+    Record yourself singing **"Year's End Waltz"**, an original 16-bar waltz in B-flat major,
+    on **"lah"**, **"loo"** or words of your own: the last vocal piece of the year, built to use
+    everything at once. **Legato** lines, an **arpeggio** to the top, a **light run** of four
+    eighths (bar 6), an **octave leap** (bar 9), **dynamics** from *p* to *mf* and back, and a
+    **leading tone** to aim (bar 15). Tolerance is half a semitone.
+
+    ```abc
+    X:1
+    T:Year's End Waltz
+    M:3/4
+    L:1/8
+    Q:1/4=96
+    K:Bb
+    !p!F2 B2 d2 | c3 B A2 | B2 G2 E2 | F6 !breath! |
+    !mp!F2 B2 d2 | d2 cB AG | G2 c2 A2 | B6 !breath! |
+    !p!!crescendo(!D2 d4 | c2 B2 A2 | G3 A B2 | !crescendo)!!mf!c6 !breath! |
+    !diminuendo(!d2 cB A2 | B2 G2 E2 | G2 F2 A2 | !diminuendo)!!p!B6 |]
+    ```
+
+    ### The musical idea
+
+    - **Phrase 1** (1–4, *p*): the tonic arpeggio F–B♭–D, then down to an open F.
+    - **Phrase 2** (5–8, *mp*): the same start, a quick run down from D, a close on B♭.
+    - **Phrase 3** (9–12): the octave D4–D5, then a **crescendo** to *mf* on a long C (the
+      dominant), the high point of the piece.
+    - **Phrase 4** (13–16): **diminuendo** back to *p*, the A in bar 15 leading up into the final
+      B♭.
+    - Waltz: count ONE-two-three, one pulse per bar, light on beats 2 and 3.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D4–D5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Look back before you record.** Listen to your recording of the evening song (PV-003) or
+      "Four Long Lines" (PV-005) from earlier in the year. Note one thing that is easier now.
+    - **Each technique in its place:** legato through phrase 1; a light, rolling run in bar 6
+      (the minuet); a prepared, soft octave in bar 9 (the barcarolle); crescendo from the breath,
+      not the throat, in bars 9–12 (Tide).
+    - **The mf on C5** is the loudest moment and still comfortable: if it needs a push, it is
+      too loud.
+    - **No belting and no grit** anywhere: a clean, free voice from first note to last.
+    - **Breathe** at the four breath marks.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within half a semitone (50 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+
+    When you have rated it, write two sentences in your notes: what improved most this year,
+    and which skill you want to work on next.
+  sr: |
+    Snimi sebe kako pevaš **„Valcer za kraj godine”**, originalni valcer od 16 taktova u
+    B-duru, na **„la”**, **„lu”** ili na svoje reči: poslednji vokalni komad godine, napravljen
+    da koristi sve odjednom. **Legato** linije, **razloženi akord** do vrha, **lak niz** od
+    četiri osmine (6. takt), **skok za oktavu** (9. takt), **dinamika** od *p* do *mf* i nazad i
+    **vođica** koju treba pogoditi (15. takt). Tolerancija je pola polustepena.
+
+    ```abc
+    X:1
+    T:Year's End Waltz
+    M:3/4
+    L:1/8
+    Q:1/4=96
+    K:Bb
+    !p!F2 B2 d2 | c3 B A2 | B2 G2 E2 | F6 !breath! |
+    !mp!F2 B2 d2 | d2 cB AG | G2 c2 A2 | B6 !breath! |
+    !p!!crescendo(!D2 d4 | c2 B2 A2 | G3 A B2 | !crescendo)!!mf!c6 !breath! |
+    !diminuendo(!d2 cB A2 | B2 G2 E2 | G2 F2 A2 | !diminuendo)!!p!B6 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Fraza 1** (1–4, *p*): tonički razloženi akord F–B–D, pa naniže do otvorenog F.
+    - **Fraza 2** (5–8, *mp*): isti početak, brz niz naniže sa D, završetak na B.
+    - **Fraza 3** (9–12): oktava D4–D5, pa **crescendo** do *mf* na dugom C (dominanta),
+      vrhunac komada.
+    - **Fraza 4** (13–16): **diminuendo** nazad na *p*, A u 15. taktu vodi naviše u završno B.
+    - Valcer: broji JED-na-dva-tri, jedan puls po taktu, lako na drugoj i trećoj dobi.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je D4–D5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Osvrni se pre snimanja.** Preslušaj svoj snimak večernje pesme (PV-003) ili „Četiri duge
+      linije” (PV-005) od ranije ove godine. Zapiši jednu stvar koja je sada lakša.
+    - **Svaka tehnika na svom mestu:** legato kroz frazu 1; lak, kotrljajući niz u 6. taktu
+      (menuet); pripremljena, tiha oktava u 9. taktu (barkarola); crescendo iz daha, ne iz grla,
+      u taktovima 9–12 („Plima”).
+    - **Mf na C5** je najjači trenutak i i dalje udoban: ako traži guranje, preglasno je.
+    - **Bez beltinga i bez hrapavosti** nigde: čist, slobodan glas od prvog do poslednjeg tona.
+    - **Udiši** na četiri znaka za udah.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od pola polustepena (50 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+
+    Kad oceniš, napiši dve rečenice u beleškama: šta se ove godine najviše popravilo i koju
+    veštinu želiš sledeću da radiš.
+rubric:
+  - id: technique
+    weight: 2
+    label: {en: "Techniques in place", sr: "Tehnike na svom mestu"}
+    top:
+      en: "Legato phrase 1, a clean even run in bar 6, the octave in bar 9 landing in tune without a scoop, the A in bar 15 leading cleanly into B-flat."
+      sr: "Legato u frazi 1, čist ujednačen niz u 6. taktu, oktava u 9. taktu pogođena bez podvlačenja, A u 15. taktu čisto vodi u B."
+  - id: dynamics
+    weight: 2
+    label: {en: "Dynamics", sr: "Dinamika"}
+    top:
+      en: "Audible p, mp and mf where marked; gradual crescendo and diminuendo; the mf C5 is full but free."
+      sr: "Čujni p, mp i mf gde su zapisani; postepen crescendo i diminuendo; mf na C5 je pun ali slobodan."
+  - id: ease
+    weight: 1
+    label: {en: "Free voice", sr: "Slobodan glas"}
+    top:
+      en: "Clean, unforced tone from first to last note; no push, no grit, no fatigue by the end."
+      sr: "Čist, neforsiran ton od prvog do poslednjeg tona; bez guranja, hrapavosti i umora na kraju."
+  - id: waltz
+    weight: 1
+    label: {en: "Waltz feel", sr: "Osećaj valcera"}
+    top:
+      en: "One lilting pulse per bar, light beats 2 and 3, dotted rhythms crisp, long notes held full value."
+      sr: "Jedan njišući puls po taktu, lake druga i treća doba, punktirani ritmovi oštri, dugi tonovi traju punu vrednost."

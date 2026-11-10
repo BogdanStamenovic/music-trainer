@@ -1,0 +1,162 @@
+id: L-004
+track: L
+order: 4
+prereqs: [L-003]
+title: {en: "Show, don't tell: concrete images", sr: "Pokaži, ne pričaj: konkretne slike"}
+minutes: 13
+tags: [lyrics, imagery]
+explain:
+  en: |
+    **Telling** names the feeling: *I'm lonely*, *I miss you*, *we were happy*. **Showing** gives
+    the listener something to see, hear, smell or touch, and lets them arrive at the feeling
+    themselves. Listeners believe what they can picture, and a feeling they work out on their own
+    hits harder than one they are told about.
+
+    > tell: I'm so lonely since you left
+    > show: two cups on the table, and I only wash one
+
+    The second line never says *lonely*, and it does not need to.
+
+    ### Five tools
+
+    1. **Nouns you could photograph.** *Cup, bus ticket, radiator, ashtray, wedding ring*, not
+       *love, pain, memories, life*.
+    2. **Specific beats general.** *a car* → *an old car* → *a red Yugo with one grey door*.
+       The last one is a single car, so the listener sees it.
+    3. **Senses other than sight.** Sound, smell, touch and temperature are rarer in lyrics, so
+       they stand out: *your coat still smells of rain and cigarettes*.
+    4. **Verbs that act.** *The landlord knocked at nine* does more than *things were bad*.
+       Replace *is, was, feel* with a verb that shows something happening.
+    5. **Let one line tell.** The chorus, usually the hook, may say the feeling plainly, *after*
+       the verses have shown it. Verses show; the chorus sums up.
+
+    ### Clichés
+
+    If you have heard the image in ten songs (*heart of stone*, *tears like rain*, *srce
+    slomljeno*, *rana na duši*) the listener's ear slides past it. Either replace it with
+    something only your song could contain, or twist it: give the old image one specific new
+    detail.
+
+    ### By genre
+    - **Blues:** objects of daily life: rent, shoes, the bus, coffee, a door, a phone.
+    - **Starogradska:** a classic image set (kafana, svitanje, prozor, fenjer, violina, bagrem).
+      They are clichés by now; keep the setting but add a detail nobody else has, e.g. the
+      waiter stacking chairs while the violin still plays.
+    - **Rock:** physical and in motion: streets, engines, hands, weather, noise.
+    - **Pop:** one strong image, repeated and developed, often tied to the hook.
+
+    ### Test
+    For each line ask: *could a film camera shoot this?* If not, it is telling. One or two
+    telling lines per song is fine; a verse full of them is a diary entry.
+  sr: |
+    **Pričanje** imenuje osećanje: *usamljen sam*, *nedostaješ mi*, *bili smo srećni*.
+    **Pokazivanje** daje slušaocu nešto što može da vidi, čuje, omiriše ili dodirne, i pušta ga
+    da sam dođe do osećanja. Slušalac veruje onome što može da zamisli, a osećanje do kog dođe
+    sam pogodi ga jače nego ono koje mu saopšte.
+
+    > priča: tako sam sam otkad si otišla
+    > pokazuje: dve šolje na stolu, a perem samo jednu
+
+    Drugi stih nigde ne kaže *sam*, i ne mora.
+
+    ### Pet alata
+
+    1. **Imenice koje možeš da fotografišeš.** *Šolja, karta za autobus, radijator, pepeljara,
+       burma*, a ne *ljubav, bol, uspomene, život*.
+    2. **Određeno je jače od opšteg.** *auto* → *stari auto* → *crveni Jugo sa jednim sivim
+       vratima*. Ovo poslednje je jedan jedini auto, pa ga slušalac vidi.
+    3. **Čula osim vida.** Zvuk, miris, dodir i toplota su ređi u tekstovima, pa se ističu:
+       *kaput ti još miriše na kišu i cigarete*.
+    4. **Glagoli koji rade.** *Gazda je kucao u devet* govori više od *bilo je teško*. Zameni
+       *je, bio, osećam* glagolom koji pokazuje da se nešto dešava.
+    5. **Neka jedan stih kaže.** Refren, obično udica (hook), sme otvoreno da kaže osećanje,
+       *pošto* su ga strofe pokazale. Strofe pokazuju; refren sažima.
+
+    ### Klišei
+
+    Ako si sliku čuo u deset pesama (*srce od kamena*, *suze kao kiša*, *srce slomljeno*, *rana
+    na duši*), uho slušaoca klizne preko nje. Ili je zameni nečim što može da postoji samo u tvojoj
+    pesmi, ili je izvrni: daj staroj slici jedan nov, određen detalj.
+
+    ### Po žanrovima
+    - **Bluz:** predmeti iz svakodnevice: kirija, cipele, autobus, kafa, vrata, telefon.
+    - **Starogradska:** klasičan skup slika (kafana, svitanje, prozor, fenjer, violina, bagrem).
+      Danas su to klišei; zadrži ambijent, ali dodaj detalj koji niko drugi nema, npr. konobar
+      slaže stolice dok violina još svira.
+    - **Rok:** fizički i u pokretu: ulice, motori, ruke, vreme, buka.
+    - **Pop:** jedna jaka slika, ponovljena i razvijena, često vezana za udicu.
+
+    ### Provera
+    Za svaki stih pitaj: *može li kamera ovo da snimi?* Ako ne može, to je pričanje. Jedan ili dva
+    takva stiha po pesmi su u redu; strofa puna njih je dnevnik.
+exercises:
+  - id: L-004-1
+    type: mcq
+    prompt: {en: "Which line shows loneliness without naming a feeling?", sr: "Koji stih pokazuje usamljenost a da ne imenuje osećanje?"}
+    options:
+      - {en: "I'm so lonely without you", sr: "Tako sam usamljen bez tebe"}
+      - {en: "Two cups on the table, I only wash one", sr: "Dve šolje na stolu, a perem samo jednu"}
+      - {en: "My heart is empty and sad", sr: "Srce mi je prazno i tužno"}
+      - {en: "Loneliness is killing me", sr: "Ubija me samoća"}
+    answer: 1
+  - id: L-004-2
+    type: mcq
+    prompt: {en: "Which is the most specific image?", sr: "Koja slika je najodređenija?"}
+    options:
+      - {en: "a vehicle", sr: "vozilo"}
+      - {en: "an old car", sr: "stari auto"}
+      - {en: "a red Yugo with one grey door", sr: "crveni Jugo sa jednim sivim vratima"}
+      - {en: "a car", sr: "auto"}
+    answer: 2
+  - id: L-004-3
+    type: mcq
+    prompt: {en: "Which line uses a sense other than sight?", sr: "Koji stih koristi neko čulo osim vida?"}
+    options:
+      - {en: "The sky was grey above the town", sr: "Nebo je bilo sivo nad gradom"}
+      - {en: "I saw your picture on the wall", sr: "Video sam tvoju sliku na zidu"}
+      - {en: "Red lights were blinking in the dark", sr: "Crvena svetla su treptala u mraku"}
+      - {en: "Your coat still smells of rain and cigarettes", sr: "Kaput ti još miriše na kišu i cigarete"}
+    answer: 3
+  - id: L-004-4
+    type: mcq
+    prompt: {en: "Which line most needs rewriting because it is a cliché?", sr: "Koji stih najviše treba prepraviti jer je kliše?"}
+    options:
+      - {en: "My heart is broken into pieces", sr: "Srce mi je slomljeno na komade"}
+      - {en: "I still buy milk for two", sr: "Još kupujem mleko za dvoje"}
+      - {en: "The landlord knocked again at nine", sr: "Gazda je opet kucao u devet"}
+      - {en: "Your bike is rusting by the door", sr: "Tvoj bicikl rđa kraj vrata"}
+    answer: 0
+  - id: L-004-5
+    type: write
+    prompt:
+      en: "Rewrite these three telling lines as showing lines (English or Serbian, one or two lines each): 1) I miss you. 2) This city makes me tired. 3) We were happy back then. Do not use the feeling word or a synonym of it."
+      sr: "Prepravi ova tri stiha koji pričaju u stihove koji pokazuju (engleski ili srpski, jedan ili dva stiha za svaki): 1) Nedostaješ mi. 2) Ovaj grad me umara. 3) Tada smo bili srećni. Ne koristi reč za osećanje ni njen sinonim."
+    language: either
+    lines: [3, 6]
+    rubric:
+      - id: concrete
+        label: {en: "Camera test", sr: "Test kamere"}
+        top: {en: "Every line contains something a camera or microphone could record; no abstract nouns carry the line.", sr: "Svaki stih sadrži nešto što kamera ili mikrofon mogu da snime; nijedna apstraktna imenica ne nosi stih."}
+      - id: specific
+        label: {en: "Specific detail", sr: "Određen detalj"}
+        top: {en: "At least one detail per line belongs to this situation and not to any song (a brand, a time, a colour, a name, a number).", sr: "Bar jedan detalj u svakom stihu pripada baš ovoj situaciji, a ne bilo kojoj pesmi (marka, vreme, boja, ime, broj)."}
+      - id: feeling
+        label: {en: "Feeling arrives anyway", sr: "Osećanje ipak stiže"}
+        top: {en: "Someone reading only your lines could name the original feeling (missing, tiredness, past happiness) without being told.", sr: "Neko ko čita samo tvoje stihove može da imenuje prvobitno osećanje (čežnja, umor, prošla sreća) a da mu niko ne kaže."}
+  - id: L-004-6
+    type: write
+    prompt:
+      en: "Starogradska, in Serbian: write 4 lines set in a kafana near closing time. Use at least three concrete images, at least one from a sense other than sight, and no feeling words (tuga, sreća, ljubav, bol…). One classic image (violina, fenjer…) is allowed if you give it a new detail."
+      sr: "Starogradska, na srpskom: napiši 4 stiha smeštena u kafanu pred zatvaranje. Koristi bar tri konkretne slike, bar jednu iz čula osim vida, i nijednu reč za osećanje (tuga, sreća, ljubav, bol…). Jedna klasična slika (violina, fenjer…) je dozvoljena ako joj daš nov detalj."
+    language: sr
+    lines: [4, 4]
+    rubric:
+      - id: images
+        label: {en: "Three concrete images", sr: "Tri konkretne slike"}
+        top: {en: "Three or more things a camera could shoot, including one sound, smell, touch or temperature.", sr: "Tri ili više stvari koje kamera može da snimi, od toga jedan zvuk, miris, dodir ili toplota."}
+      - id: fresh
+        label: {en: "Fresh, not cliché", sr: "Sveže, ne kliše"}
+        top: {en: "Any classic starogradska image has a detail that could only be in this song.", sr: "Svaka klasična starogradska slika ima detalj koji može da postoji samo u ovoj pesmi."}
+      - id: mood
+        label: {en: "Mood without naming it", sr: "Raspoloženje bez imenovanja"}
+        top: {en: "No feeling word appears, yet the stanza has one clear mood a reader would agree on.", sr: "Nema nijedne reči za osećanje, a strofa ipak ima jedno jasno raspoloženje oko kog bi se čitaoci složili."}

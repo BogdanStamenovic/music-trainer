@@ -1,0 +1,134 @@
+id: E-021
+track: E
+order: 21
+title: {en: "First song by ear: phrase by phrase (public-domain tunes)", sr: "Prva pesma po sluhu: fraza po frazu (pesme u javnom domenu)"}
+prereqs: [E-020, E-019]
+minutes: 15
+tags: [ear, melody, song]
+# Tune: "Ode to Joy" (Beethoven, Symphony No. 9, finale, 1824; public domain), original key D major.
+explain:
+  en: |
+    Time for a real tune: **Ode to Joy** (Beethoven, 1824), in its original key, **D major**. You
+    probably know it, which is the point: by ear starts with tunes you can already sing. The work
+    is getting from "I can sing it" to "I can play it" without guessing key by key.
+
+    The method, for this and every song after it:
+
+    1. **Sing the phrase** (hum is fine) until it is stable in your head.
+    2. **Find the tonic.** A tune almost always ends on it. Ode to Joy ends on **D**: play D and sing
+       the last note of the tune; they should match.
+    3. **Find the first note as a degree.** Sing from the first note down to the tonic by step and
+       count. Ode to Joy starts on **3** (F#).
+    4. **Steps or leaps?** This tune is almost all steps and repeated notes. Mark the few leaps: they
+       are the landmarks.
+    5. **Play it, then compare** with a replay. Fix one wrong note at a time, not the whole phrase.
+
+    The form is **A A' B A'**: the first phrase ends on 2 (E, a question), the second is the same
+    tune ending on 1 (D, the answer). The middle part (B) is new and ends with the only big leap,
+    **E down to A** (a fifth), landing on the dominant so the opening can come back.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:D
+    F F G A | A G F E | D D E F | F>E E2 |
+    ```
+
+    Above is the first phrase with its real rhythm. The exercises play the real rhythm at ♩=88 and
+    grade pitches first, timing second (a steady tempo near 88 is fine). Play in the octave you hear: the tune
+    sits right above middle C (D4 to A4), and the B part dips to A3.
+  sr: |
+    Vreme je za pravu pesmu: **Oda radosti** (Betoven, 1824), u originalnom tonalitetu, **D-duru**.
+    Verovatno je znaš, i to je poenta: sviranje po sluhu počinje pesmama koje već umeš da otpevaš.
+    Posao je da od „umem da otpevam" stigneš do „umem da odsviram" bez pogađanja dirku po dirku.
+
+    Metod, za ovu i svaku sledeću pesmu:
+
+    1. **Otpevaj frazu** (pevušenje je u redu) dok ti ne bude stabilna u glavi.
+    2. **Nađi toniku.** Pesma se skoro uvek završava na njoj. Oda radosti se završava na **D**:
+       odsviraj D i otpevaj poslednji ton pesme; treba da se poklope.
+    3. **Nađi prvi ton kao stupanj.** Otpevaj korakom od prvog tona naniže do tonike i broj. Oda
+       radosti počinje na **3** (Fis).
+    4. **Koraci ili skokovi?** Ova pesma je skoro sva u koracima i ponovljenim tonovima. Obeleži
+       ono malo skokova: to su orijentiri.
+    5. **Odsviraj, pa uporedi** sa ponovnim slušanjem. Ispravljaj jedan pogrešan ton, ne celu frazu.
+
+    Forma je **A A' B A'**: prva fraza se završava na 2 (E, pitanje), druga je ista melodija sa
+    završetkom na 1 (D, odgovor). Srednji deo (B) je nov i završava se jedinim velikim skokom,
+    **E naniže do A** (kvinta), na dominanti, da bi se početak mogao vratiti.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:D
+    F F G A | A G F E | D D E F | F>E E2 |
+    ```
+
+    Gore je prva fraza sa pravim ritmom. Vežbe sviraju pravi ritam pri ♩=88 i ocenjuju prvo visine,
+    pa ritam (ravnomeran tempo blizu 88 je u redu). Sviraj u oktavi koju čuješ: pesma je odmah iznad
+    prvog C (D4 do A4), a deo B se spušta do A3.
+exercises:
+  - id: E-021-1
+    type: midi-echo
+    prompt: {en: "Bars 1–2 (D major, starts on F#4, degree 3). Sing it, then play it back.", sr: "Taktovi 1–2 (D-dur, počinje na Fis4, 3. stupanj). Otpevaj, pa odsviraj."}
+    mode: sequence
+    expect: [F#4, F#4, G4, A4, A4, G4, F#4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1]
+    tempo: 88
+    octave: exact
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: F#4, is: M3}
+      - interval: {from: A3, to: E4, is: P5}
+      - interval: {from: D4, to: A4, is: P5}
+      - keysig: {key: D, mode: major, is: 2}
+  - id: E-021-2
+    type: midi-echo
+    prompt: {en: "Bars 3–4: the phrase ends on degree 2 (a question).", sr: "Taktovi 3–4: fraza se završava na 2. stupnju (pitanje)."}
+    mode: sequence
+    expect: [D4, D4, E4, F#4, F#4, E4, E4]
+    beats: [1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 88
+    octave: exact
+  - id: E-021-3
+    type: midi-echo
+    prompt: {en: "Bars 7–8: same start, now it ends on the tonic (the answer).", sr: "Taktovi 7–8: isti početak, sada se završava na tonici (odgovor)."}
+    mode: sequence
+    expect: [D4, D4, E4, F#4, E4, D4, D4]
+    beats: [1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 88
+    octave: exact
+  - id: E-021-4
+    type: midi-echo
+    prompt: {en: "Bars 9–10, the middle part: it starts on degree 2 and circles around D.", sr: "Taktovi 9–10, srednji deo: počinje na 2. stupnju i kruži oko D."}
+    mode: sequence
+    expect: [E4, E4, F#4, D4, E4, F#4, G4, F#4, D4]
+    beats: [1, 1, 1, 1, 1, 0.5, 0.5, 1, 1]
+    tempo: 88
+    octave: exact
+  - id: E-021-5
+    type: midi-echo
+    prompt: {en: "Bars 11–12: ends with the leap down a fifth to A3.", sr: "Taktovi 11–12: završava se skokom za kvintu naniže do A3."}
+    mode: sequence
+    expect: [E4, F#4, G4, F#4, E4, D4, E4, A3]
+    beats: [1, 0.5, 0.5, 1, 1, 1, 1, 2]
+    tempo: 88
+    octave: exact
+  - id: E-021-6
+    type: midi-echo
+    prompt: {en: "Transfer: the whole first phrase (bars 1–4), now in G major. It starts on B4, degree 3 again.", sr: "Prenos: cela prva fraza (taktovi 1–4), sada u G-duru. Opet počinje na 3. stupnju, H4."}
+    mode: sequence
+    expect: [B4, B4, C5, D5, D5, C5, B4, A4, G4, G4, A4, B4, B4, A4, A4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 88
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+      - interval: {from: G4, to: B4, is: M3}
+  - id: E-021-7
+    type: practice
+    prompt: {en: "Play the whole tune in D (A A' B A') from memory, then add a left-hand bass note per bar, choosing D or A by ear. Where does the bass want A?", sr: "Odsviraj celu pesmu u D-duru (A A' B A') napamet, pa dodaj levom rukom po jedan bas ton u taktu, birajući D ili A po sluhu. Gde bas traži A?"}
+    minutes: 4

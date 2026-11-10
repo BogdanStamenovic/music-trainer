@@ -1,0 +1,98 @@
+id: E-013
+track: E
+order: 13
+title: {en: "Scale degrees 1–7 in major", sr: "Stupnjevi 1–7 u duru"}
+prereqs: [E-012, E-005]
+minutes: 13
+tags: [ear, degrees]
+explain:
+  en: |
+    E-005 covered degrees 1 to 5. The top of the scale, **6 and 7**, completes the set, and it is
+    where most of the "pull" in a melody lives. Every exercise again sets the key with
+    **I – IV – V – I**, then plays one note.
+
+    Hear each degree by **where it wants to go**:
+
+    | degree | in C | tendency |
+    |---|---|---|
+    | 1 | C | at rest |
+    | 2 | D | falls to 1 (or climbs to 3) |
+    | 3 | E | stable, the major colour |
+    | 4 | F | leans down a half step to 3 |
+    | 5 | G | stable but open |
+    | 6 | A | leans down to 5; sounds bright and a bit wistful |
+    | 7 | B | **leading tone**: a half step under 8, pulls up hard |
+
+    The two half steps of the major scale (3–4 and 7–8) are where the strongest pulls are: 4 wants
+    3, 7 wants 8. If a note makes you want to **resolve up immediately**, it is 7. If it sounds
+    like it is hanging just above something, try 4 or 6.
+
+    When you are unsure, **sing to the nearest stable note** (1, 3, 5 or 8) by step and count. From
+    6 and 7 it is quicker to go **up** to 8 than down to 1: 7–8 is one step, 6–7–8 is two.
+
+    Fast check: 6 is also the root of vi (A minor in C). If the note sounds like it could start a
+    minor chord, it is likely 6.
+  sr: |
+    E-005 je obradio stupnjeve 1 do 5. Vrh lestvice, **6 i 7**, zaokružuje skup, i tu je većina
+    „vuče" u melodiji. Svaka vežba opet postavlja tonalitet sa **I – IV – V – I**, pa pusti jedan ton.
+
+    Svaki stupanj čuj po tome **kuda hoće da ide**:
+
+    | stupanj | u C-duru | težnja |
+    |---|---|---|
+    | 1 | C | miruje |
+    | 2 | D | pada na 1 (ili se penje na 3) |
+    | 3 | E | stabilan, boja dura |
+    | 4 | F | naginje se pola stepena naniže ka 3 |
+    | 5 | G | stabilan ali otvoren |
+    | 6 | A | naginje se ka 5; zvuči svetlo i pomalo setno |
+    | 7 | H | **vođica**: pola stepena ispod 8, jako vuče naviše |
+
+    Dva polustepena durske lestvice (3–4 i 7–8) su mesta najjače vuče: 4 hoće na 3, 7 hoće na 8.
+    Ako te ton tera da **odmah razrešiš naviše**, to je 7. Ako zvuči kao da visi tik iznad nečega,
+    probaj 4 ili 6.
+
+    Kad nisi siguran, **otpevaj korakom do najbližeg stabilnog tona** (1, 3, 5 ili 8) i broj. Od 6 i
+    7 brže je ići **naviše** do 8 nego naniže do 1: 7–8 je jedan korak, 6–7–8 dva.
+
+    Brza provera: 6 je i osnovni ton akorda vi (a-mol u C-duru). Ako ton zvuči kao da bi mogao da
+    započne molski akord, verovatno je 6.
+exercises:
+  - id: E-013-1
+    type: generated
+    prompt: {en: "The top of the scale: 5, 6, 7, 8 in C major", sr: "Vrh lestvice: 5, 6, 7, 8 u C-duru"}
+    count: 8
+    gen: {kind: degree-ear, tonics: [C], type: major, degrees: [5, 6, 7, 8]}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - semitones: {from: E4, to: F4, is: 1}
+      - semitones: {from: B4, to: C5, is: 1}
+      - semitones: {from: A4, to: B4, is: 2}
+      - roman: {key: C, degree: 6, is: "vi"}
+  - id: E-013-2
+    type: generated
+    prompt: {en: "The leaning notes: 2, 4, 6, 7", sr: "Tonovi koji se naginju: 2, 4, 6, 7"}
+    count: 8
+    gen: {kind: degree-ear, tonics: [C, G], type: major, degrees: [2, 4, 6, 7]}
+  - id: E-013-3
+    type: generated
+    prompt: {en: "All seven degrees in C, G, F and D major", sr: "Svih sedam stupnjeva u C, G, F i D-duru"}
+    count: 10
+    pass: 0.7
+    gen: {kind: degree-ear, tonics: [C, G, F, D], type: major, degrees: [1, 2, 3, 4, 5, 6, 7]}
+  - id: E-013-4
+    type: generated
+    prompt: {en: "Play the note you hear (any octave)", sr: "Odsviraj ton koji čuješ (bilo koja oktava)"}
+    count: 6
+    pass: 0.7
+    gen: {kind: degree-ear, tonics: [C, G, F, D, Bb], type: major, degrees: [1, 2, 3, 4, 5, 6, 7], answer: play}
+  - id: E-013-5
+    type: generated
+    prompt: {en: "Echo short melodies that use the whole scale", sr: "Ponovi kratke melodije kroz celu lestvicu"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F], type: major, length: [4, 5], degrees: [1, 2, 3, 4, 5, 6, 7, 8], maxLeap: 2, startOnTonic: false, tempo: 72}
+  - id: E-013-6
+    type: practice
+    prompt: {en: "Away from the app: play a I–IV–V–I in any key, then one random note with your eyes closed. Name its degree, then sing to the tonic to check. Ten notes.", sr: "Bez aplikacije: odsviraj I–IV–V–I u bilo kom tonalitetu, pa jedan nasumičan ton zatvorenih očiju. Imenuj stupanj, pa otpevaj do tonike da proveriš. Deset tonova."}
+    minutes: 3

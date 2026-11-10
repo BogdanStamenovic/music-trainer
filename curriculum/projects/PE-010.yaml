@@ -1,0 +1,107 @@
+id: PE-010
+kind: byear
+order: 40
+title: {en: "By ear: a whole song (16-bar waltz)", sr: "Po sluhu: cela pesma (valcer od 16 taktova)"}
+minutes: 45
+prereqs: [T-018, E-019, E-021]
+melody:
+  title: {en: "Lantern Waltz (original melody)", sr: "Valcer sa fenjerom (originalna melodija)"}
+  source: "Original 16-bar waltz written for music-trainer (2026), form A A' B A'; no outside source."
+  key: F major
+  meter: 3/4
+  tempo: 108
+  pickup: 1
+  notes: [C4, F4, A4, C5, A4, Bb4, A4, G4, G4, C4, F4, A4, C5, F5, E5, C5, G4, F4, D5, Bb4, C5, A4, Bb4, G4, E4, G4, C4, F4, A4, C5, F5, C5, G4, E4, F4]
+  beats: [1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 3, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2]
+brief:
+  en: |
+    The app plays a **complete 16-bar song**, a waltz written for this course: four phrases
+    of four bars, with a pickup. **Play the whole thing back on the piano, right hand, any
+    key.** This is the length of a real song verse; learning it means keeping the map of the
+    form in your head, not just the next interval.
+
+    ### What to listen for
+
+    - **Form A A' B A'.** Phrase 1 ends **open**, on 2. Phrase 2 starts the same and climbs to
+      the high tonic, ending **closed** on 1. Phrase 3 (the B part) starts high on 6 and drifts
+      down to the V chord, ending open on 2 again, with the pickup back in. Phrase 4 = phrase 2
+      with a slightly different ending.
+    - **The pickup** (one beat, 5 below the tonic) opens the song and comes back at the end of
+      bars 4 and 12, before the phrases that start like the first. Every time it leaps up a
+      **fourth** to the tonic.
+    - **Waltz rhythm:** almost every bar is half note + quarter, or three quarters. Feel the
+      ONE of each bar.
+    - **Leaps to find:** the tonic triad going up (1 – 3 – 5) at the start of each A, then a
+      **fourth up to the high tonic** in bars 6 and 14, and a **sixth** from the closed tonic
+      up to the start of B (bar 8 to bar 9).
+    - **Bar 11 outlines a diminished triad** going down (the 7th, 5th and 3rd of the V7
+      chord): listen for two minor thirds.
+
+    ### Strategies
+
+    1. **Learn the A phrase first**: it is three of the four phrases.
+    2. **Map the form** before the notes: write A, A', B, A' and the last note of each phrase
+       (2, 1, 2, 1).
+    3. **The note after the pickup is the tonic.** Starting the pickup on G in C major
+       (G – C – E...) avoids black keys entirely.
+    4. Play the B part slowly until the sixth leap into it is secure.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    Aplikacija pušta **celu pesmu od 16 taktova**, valcer napisan za ovaj kurs: četiri fraze
+    od po četiri takta, sa predtaktom. **Odsviraj celu na klaviru, desnom rukom, u bilo kom
+    tonalitetu.** Ovo je dužina prave strofe pesme; da bi je naučio, moraš da držiš mapu forme
+    u glavi, a ne samo sledeći interval.
+
+    ### Šta da slušaš
+
+    - **Forma A A' B A'.** 1. fraza se završava **otvoreno**, na 2. 2. fraza počinje isto i
+      penje se do visoke tonike, pa se završava **zatvoreno** na 1. 3. fraza (deo B) počinje
+      visoko na 6 i spušta se ka dominanti, završavajući opet otvoreno na 2, sa predtaktom
+      nazad. 4. fraza = 2. fraza, sa malo drugačijim krajem.
+    - **Predtakt** (jedna doba, 5 ispod tonike) otvara pesmu i vraća se na kraju 4. i 12.
+      takta, pred frazama koje počinju kao prva. Svaki put skače za **kvartu** naviše u toniku.
+    - **Valcerski ritam:** skoro svaki takt je polovina + četvrtina ili tri četvrtine. Oseti
+      JED-an svakog takta.
+    - **Skokovi koje treba naći:** tonični trozvuk naviše (1 – 3 – 5) na početku svakog A, pa
+      **kvarta naviše do visoke tonike** u taktovima 6 i 14, i **seksta** od zatvorene tonike
+      naviše na početak B (iz 8. u 9. takt).
+    - **11. takt ocrtava smanjeni trozvuk** naniže (septima, kvinta i terca dominantnog
+      septakorda V7): slušaj dve male terce.
+
+    ### Strategije
+
+    1. **Prvo nauči frazu A**: to su tri od četiri fraze.
+    2. **Mapiraj formu** pre tonova: zapiši A, A', B, A' i poslednji ton svake fraze (2, 1, 2, 1).
+    3. **Ton posle predtakta je tonika.** Ako predtakt počneš na G u C-duru (G – C – E...),
+       potpuno izbegavaš crne dirke.
+    4. Deo B sviraj polako dok skok za sekstu ka njemu ne postane siguran.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: form
+    weight: 1
+    label: {en: "The whole form", sr: "Cela forma"}
+    top:
+      en: "All 16 bars in order without restarting; A and A' are distinguished at their endings (open on 2, closed on 1); the B part and the return are exact."
+      sr: "Svih 16 taktova redom, bez ponovnog počinjanja; A i A' se razlikuju na krajevima (otvoreno na 2, zatvoreno na 1); deo B i povratak su tačni."
+  - id: waltz-feel
+    weight: 1
+    label: {en: "Waltz feel", sr: "Valcerski karakter"}
+    top:
+      en: "A steady ONE-two-three, the pickups light and leading into the downbeat, half notes held their full two beats."
+      sr: "Ravnomerno JED-na-dva-tri, predtakti lagani i vode u jaku dobu, polovine zadržane pune dve dobe."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes include the form map you used (sections and their last notes) and the places you had to relearn."
+      sr: "Beleške sadrže mapu forme koju si koristio (delovi i njihovi poslednji tonovi) i mesta koja si morao ponovo da učiš."

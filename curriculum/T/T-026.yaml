@@ -1,0 +1,100 @@
+id: T-026
+track: T
+order: 26
+prereqs: [T-025]
+title: {en: "Circle-of-fifths progressions", sr: "Progresije po kvintnom krugu"}
+minutes: 13
+tags: [harmony]
+explain:
+  en: |
+    V → I is a root falling a **fifth** (G → C). ii → V is the same motion one step earlier (D → G). Keep going backwards and you get a **circle progression**, every root falling a fifth (or, the same note, rising a fourth):
+
+    **iii – vi – ii – V – I**: in C, E → A → D → G → C.
+
+    Each chord acts as a little "dominant" to the next, so the chain sounds inevitable: once it starts, the ear knows where it is going. That is why it shows up in Baroque sequences, jazz standards and pop turnarounds (**vi–ii–V–I**).
+
+    Run it all the way round inside one key and you get **I – IV – vii° – iii – vi – ii – V – I**.
+    All the fifths are perfect except **IV → vii°** (F → B): staying in the key forces one **diminished fifth**, otherwise you would need B♭ and leave C major.
+
+    With sevenths the chain becomes the jazz staple **iii7 – vi7 – ii7 – V7 – Imaj7** (Em7 – Am7 – Dm7 – G7 – Cmaj7), and the guide tones from the last lesson keep stepping down all the way.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "iii"[EGB] "vi"[Ace] | "ii"[DFA] "V"[GBd] | "I"[ceg]2 |]
+    ```
+  sr: |
+    V → I je osnovni ton koji silazi za **kvintu** (G → C). ii → V je isti pokret korak ranije (D → G). Nastavi unazad i dobijaš **progresiju po kvintnom krugu**: svaki osnovni ton silazi za kvintu (ili, isti ton, penje se za kvartu):
+
+    **iii – vi – ii – V – I**: u C-duru E → A → D → G → C.
+
+    Svaki akord deluje kao mala „dominanta" sledećem, pa lanac zvuči neizbežno: čim krene, uho zna kuda ide. Zato se javlja u baroknim sekvencama, džez standardima i pop završecima (**vi–ii–V–I**).
+
+    Prođi ceo krug unutar jednog tonaliteta i dobijaš **I – IV – vii° – iii – vi – ii – V – I**.
+    Sve kvinte su čiste osim **IV → vii°** (F → H): ostanak u tonalitetu nameće jednu **smanjenu kvintu**, inače bi trebalo B i napustio bi C-dur.
+
+    Sa septakordima lanac postaje džez klasika **iii7 – vi7 – ii7 – V7 – Imaj7** (Em7 – Am7 – Dm7 – G7 – Cmaj7), a ključni tonovi iz prošle lekcije silaze sve vreme.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "iii"[EGB] "vi"[Ace] | "ii"[DFA] "V"[GBd] | "I"[ceg]2 |]
+    ```
+exercises:
+  - id: T-026-1
+    type: mcq
+    prompt: {en: "In a circle progression, which chord comes after vi?", sr: "U progresiji po kvintnom krugu, koji akord dolazi posle vi?"}
+    options: ["ii", "IV", "V", "iii"]
+    answer: 0
+    checks:
+      - interval: {from: D4, to: A4, is: P5}
+  - id: T-026-2
+    type: mcq
+    prompt: {en: "In C major the roots of iii–vi–ii–V–I are E–A–D–G–C. Each step is…", sr: "U C-duru osnovni tonovi iii–vi–ii–V–I su E–A–D–G–C. Svaki korak je…"}
+    options:
+      - {en: "down a perfect fifth (= up a perfect fourth)", sr: "čista kvinta naniže (= čista kvarta naviše)"}
+      - {en: "down a major third", sr: "velika terca naniže"}
+      - {en: "up a perfect fifth", sr: "čista kvinta naviše"}
+      - {en: "down a whole step", sr: "ceo stepen naniže"}
+    answer: 0
+    checks:
+      - interval: {from: A4, to: E5, is: P5}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: G4, to: D5, is: P5}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: T-026-3
+    type: mcq
+    prompt: {en: "In the full diatonic circle I–IV–vii°–iii–vi–ii–V–I in C, why is IV → vii° (F → B) different from the other steps?", sr: "U punom krugu I–IV–vii°–iii–vi–ii–V–I u C-duru, zašto je IV → vii° (F → H) drugačiji od ostalih koraka?"}
+    options:
+      - {en: "F down to B is a diminished fifth; a perfect fifth would need B♭, outside the key", sr: "F naniže do H je smanjena kvinta; čista kvinta tražila bi B, van tonaliteta"}
+      - {en: "It is a perfect fifth like all the others", sr: "To je čista kvinta kao i ostale"}
+      - {en: "The root goes up instead of down", sr: "Osnovni ton ide naviše umesto naniže"}
+      - {en: "vii° has no root", sr: "vii° nema osnovni ton"}
+    answer: 0
+    checks:
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: Bb3, to: F4, is: P5}
+  - id: T-026-4
+    type: generated
+    prompt: {en: "Play the turnaround vi – ii – V – I", sr: "Odsviraj završni obrt vi – ii – V – I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [vi, ii, V, I]}
+  - id: T-026-5
+    type: generated
+    prompt: {en: "Play the seventh-chord chain iii7 – vi7 – ii7 – V7 – Imaj7", sr: "Odsviraj lanac septakorda iii7 – vi7 – ii7 – V7 – Imaj7"}
+    count: 2
+    gen: {kind: progression, keys: [C, F, Bb], numerals: [iii7, vi7, ii7, V7, Imaj7]}
+  - id: T-026-6
+    type: generated
+    prompt: {en: "Listen: which progression?", sr: "Slušaj: koja progresija?"}
+    count: 3
+    gen: {kind: progression-ear, keys: [C, G], options: [[vi, ii, V, I], [I, vi, IV, V], [IV, V, iii, vi]], tempo: 60}
+  - id: T-026-7
+    type: midi-play
+    prompt: {en: "The whole diatonic circle in C: I – IV – vii° – iii – vi – ii – V – I (root in the bass).", sr: "Ceo kvintni krug u C-duru: I – IV – vii° – iii – vi – ii – V – I (osnovni ton u basu)."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, IV, vii°, iii, vi, ii, V, I]}}

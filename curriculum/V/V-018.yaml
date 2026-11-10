@@ -1,0 +1,132 @@
+id: V-018
+track: V
+order: 18
+title: {en: "Minor-key phrases", sr: "Fraze u molu"}
+prereqs: [V-017]
+minutes: 10
+tags: [voice, phrases, intonation, minor]
+explain:
+  en: |
+    You know the minor scale from the keyboard: **A minor** is the white keys from A. The sound of minor comes mostly from its **third**:
+    a **minor 3rd** (3 half steps) above the tonic instead of a major 3rd (4 half steps). A to C is minor; A to C# is major.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    A, B, ^C B, | A,4 | A, B, C B, | A,4 |]
+    ```
+
+    The first two bars are major, the last two minor. Only one note differs, by one half step.
+
+    Things that go wrong when a major-trained ear sings minor:
+
+    - **The 3rd creeps up** toward the major 3rd. Listen for how close C sits to B; in A minor, 2 to 3 is only a half step.
+    - **Phrases sink.** Minor sounds darker, and singers tend to sing it heavier and flatter. Keep the same light, forward tone as in major.
+
+    In **harmonic minor** the 7th is raised a half step (G# in A minor), so it pulls up into the tonic like a leading tone does in major.
+    The step from F up to G# (an augmented 2nd, 3 half steps) is awkward to sing; we only use G# next to A today.
+
+    Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Molsku lestvicu znaš sa klavijature: **a-mol** su bele dirke od A. Zvuk mola dolazi pre svega od **terce**:
+    **mala terca** (3 polustepena) iznad tonike umesto velike terce (4 polustepena). Od A do C je mol; od A do Cis je dur.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    A, B, ^C B, | A,4 | A, B, C B, | A,4 |]
+    ```
+
+    Prva dva takta su dur, poslednja dva mol. Razlikuje se samo jedan ton, za jedan polustepen.
+
+    Šta krene naopako kad uvo naviknuto na dur peva mol:
+
+    - **Terca se penje** prema velikoj terci. Slušaj koliko je C blizu H; u a-molu je od 2. do 3. stupnja samo polustepen.
+    - **Fraze tonu.** Mol zvuči tamnije, pa ga pevači pevaju teže i niže. Zadrži isti lak ton „napred” kao u duru.
+
+    U **harmonskom molu** sedmi stupanj je povišen za polustepen (Gis u a-molu), pa vuče naviše u toniku kao vođica u duru.
+    Korak od F naviše do Gis (prekomerna sekunda, 3 polustepena) se teško peva; danas Gis koristimo samo pored A.
+
+    Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-018-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-018-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then hum along with the first five notes of A minor, up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa pevuši uz prvih pet tonova a-mola, gore i dole."
+    play: {notes: [A3, B3, C4, D4, E4, D4, C4, B3, A3], mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - interval: {from: A3, to: C4, is: m3}
+  - id: V-018-3
+    type: sing-phrase
+    prompt:
+      en: "Major first: 1-2-3-2-1 in A major on 'la'."
+      sr: "Prvo dur: 1-2-3-2-1 u A-duru na „la”."
+    notes: [A3, B3, C#4, B3, A3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A3, to: C#4, is: M3}
+      - scale: {tonic: A, type: major, is: [A, B, C#, D, E, F#, G#]}
+  - id: V-018-4
+    type: sing-phrase
+    prompt:
+      en: "Now minor: 1-2-3-2-1 in A minor on 'la'. Only the 3rd changes; keep it close to the 2nd, a half step."
+      sr: "Sada mol: 1-2-3-2-1 u a-molu na „la”. Menja se samo terca; drži je blizu drugog stupnja, na polustepen."
+    notes: [A3, B3, C4, B3, A3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: A3, to: C4, is: m3}
+      - interval: {from: B3, to: C4, is: m2}
+  - id: V-018-5
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 in A minor on 'la', light and forward, not heavy."
+      sr: "5-4-3-2-1 u a-molu na „la”, lagano i napred, ne teško."
+    notes: [E4, D4, C4, B3, A3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - interval: {from: A3, to: E4, is: P5}
+  - id: V-018-6
+    type: sing-phrase
+    prompt:
+      en: "Harmonic minor ending 3-2-7-1: C, B, down to G# and up into A. Feel the G# pull upward."
+      sr: "Završetak u harmonskom molu 3-2-7-1: C, H, dole do Gis i naviše u A. Oseti kako Gis vuče naviše."
+    notes: [C4, B3, G#3, A3]
+    beats: [1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: G#3, to: A3, is: m2}
+  - id: V-018-7
+    type: generated
+    prompt: {en: "Sing back the minor phrase", sr: "Otpevaj frazu u molu"}
+    count: 4
+    pass: 0.6
+    gen: {kind: phrase-sing, tonics: [A, E, D], type: natural-minor, length: [3, 5], degrees: [1, 2, 3, 4, 5], maxLeap: 2, tempo: 72, tolerance: 50}

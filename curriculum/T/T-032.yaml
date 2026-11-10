@@ -1,0 +1,160 @@
+id: T-032
+track: T
+order: 32
+prereqs: [T-031]
+title: {en: "Review: harmonizing a melody with I, IV, V(7), ii, vi", sr: "Ponavljanje: harmonizacija melodije sa I, IV, V(7), ii, vi"}
+minutes: 15
+tags: [harmony, review]
+explain:
+  en: |
+    Harmonizing a melody puts this whole wave together: chord tones, non-chord tones, function and cadence.
+
+    **The method**
+    1. Mark the notes on **strong beats** (and long notes). Those are your chord tones; passing and neighbor tones on weak beats can be ignored.
+    2. List the chords that **contain** each marked note. In C major:
+
+    | melody note | chords that contain it |
+    |---|---|
+    | C | I, IV, vi |
+    | D | ii, V(7) |
+    | E | I, vi (iii) |
+    | F | IV, ii, V7 |
+    | G | I, V(7) (iii) |
+    | A | IV, ii, vi |
+    | B | V(7) (iii, vii°) |
+
+    3. Choose by **function**: start on I, end with a cadence (**V(7) → I** at the end, often V for a half cadence in the middle), and prefer T → PD → D → T inside a phrase.
+    4. Play it and listen. If two chords both fit, pick the one that makes the bass move well (by step or by fifth).
+
+    A simple 4-bar example, one chord per bar:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"C E G E | "IV"F A c A | "V7"B d G F | "I"E4 |]
+    ```
+  sr: |
+    Harmonizacija melodije spaja ceo ovaj talas: akordske tonove, vanakordske tonove, funkcije i kadencu.
+
+    **Postupak**
+    1. Označi tonove na **jakim dobama** (i duge tonove). To su akordski tonovi; prolaznice i skretnice na slabim dobama možeš zanemariti.
+    2. Za svaki označeni ton nabroj akorde koji ga **sadrže**. U C-duru:
+
+    | ton melodije | akordi koji ga sadrže |
+    |---|---|
+    | C | I, IV, vi |
+    | D | ii, V(7) |
+    | E | I, vi (iii) |
+    | F | IV, ii, V7 |
+    | G | I, V(7) (iii) |
+    | A | IV, ii, vi |
+    | H | V(7) (iii, vii°) |
+
+    3. Biraj po **funkciji**: počni na I, završi kadencom (**V(7) → I** na kraju, u sredini često V kao polukadenca) i unutar fraze se drži toka T → S → D → T.
+    4. Odsviraj i slušaj. Ako dva akorda odgovaraju, izaberi onaj koji daje dobar pokret basa (za stupanj ili za kvintu).
+
+    Jednostavan primer od 4 takta, jedan akord po taktu:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"C E G E | "IV"F A c A | "V7"B d G F | "I"E4 |]
+    ```
+exercises:
+  - id: T-032-1
+    type: mcq
+    prompt: {en: "Bar 2 uses F, A and C. Which chord fits the whole bar?", sr: "2. takt koristi F, A i C. Koji akord odgovara celom taktu?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      G E C E | A F A c | B G d B | c4 |]
+    options: ["I", "IV", "V7", "vi"]
+    answer: 1
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+  - id: T-032-2
+    type: mcq
+    prompt: {en: "Bar 3 uses B, G and D. Which chord fits?", sr: "3. takt koristi H, G i D. Koji akord odgovara?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      G E C E | A F A c | B G d B | c4 |]
+    options: ["ii", "IV", "V", "vi"]
+    answer: 2
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: T-032-3
+    type: mcq
+    prompt: {en: "In C major, a melody A on a strong beat can be harmonized by…", sr: "U C-duru, ton A na jakoj dobi može se harmonizovati sa…"}
+    options: ["IV, ii, vi", "I, iii, V", "V, vii°, iii", "I, IV, V"]
+    answer: 0
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+  - id: T-032-4
+    type: mcq
+    prompt: {en: "In C major, which chord can NOT harmonize a melody E?", sr: "Koji akord u C-duru NE može da harmonizuje ton E u melodiji?"}
+    options: ["I", "vi", "iii", "V"]
+    answer: 3
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+      - chord: {notes: [E4, G4, B4], root: E, quality: min}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: T-032-5
+    type: mcq
+    prompt: {en: "The melody ends D → C on the last downbeat. The best final two chords are…", sr: "Melodija se završava sa D → C na poslednjoj jakoj dobi. Najbolja poslednja dva akorda su…"}
+    options: ["V(7) → I", "IV → I", "ii → vi", "I → V"]
+    answer: 0
+  - id: T-032-6
+    type: midi-play
+    prompt: {en: "Play the harmonization of the melody above, one chord per bar: I – IV – V – I in C (root in the bass).", sr: "Odsviraj harmonizaciju melodije iznad, jedan akord po taktu: I – IV – V – I u C-duru (osnovni ton u basu)."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      G E C E | A F A c | B G d B | c4 |]
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, IV, V, I]}}
+  - id: T-032-7
+    type: compose
+    prompt: {en: "Add a bass line under this melody (voice 2, bass clef): one note per bar or more, roots of I – IV – V – I or your own choice. Avoid parallel fifths and octaves with the melody; end with the bass going G → C.", sr: "Dodaj basovu liniju ispod ove melodije (2. glas, bas ključ): jedan ton po taktu ili više, osnovni tonovi I – IV – V – I ili po tvom izboru. Izbegavaj paralelne kvinte i oktave sa melodijom; završi basom G → C."}
+    key: C major
+    meter: "4/4"
+    bars: 4
+    voices: 2
+    rules: [bars, key, cadence, parallels]
+    given: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      G E C E | A F A c | B G d B | c4 |]
+      V:2 clef=bass
+      z4 | z4 | z4 | z4 |]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      G E C E | A F A c | B G d B | c4 |]
+      V:2 clef=bass
+      C,4 | F,4 | G,4 | C,4 |]
+    checks:
+      - chord: {notes: [C3, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F3, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G3, B4, D5], root: G, quality: maj}

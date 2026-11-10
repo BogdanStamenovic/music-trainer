@@ -1,0 +1,125 @@
+id: K-011
+track: K
+order: 11
+title: {en: "Dominant seventh chords in all inversions (C, G, F, D)", sr: "Dominantni septakord u svim obrtajima (C, G, F, D)"}
+prereqs: [K-010, T-021]
+minutes: 14
+tags: [keys, harmony, seventh-chords]
+explain:
+  en: |
+    The **dominant seventh** (V7) is the V triad plus a minor 7th above the root. In C major:
+    G–B–D–**F**. Its engine is the **tritone** between the 3rd and the 7th, **B–F**: those two
+    notes squeeze inward by a half step each, B→C and F→E, and you are home on the tonic.
+
+    Four notes means four positions. The figures name the intervals above the bass:
+
+    | figure | bass is | in C (V7 = G7) | resolves to |
+    |---|---|---|---|
+    | V7 | root | G–B–D–F | I |
+    | V65 | 3rd | B–D–F–G | I |
+    | V43 | 5th | D–F–G–B | I (or I6) |
+    | V42 | 7th | F–G–B–D | **I6** (the F in the bass must fall to E) |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [G,B,DF] [CEG] | [B,DFG] [CEG] | [DFGB] [CEGc] | [FGBd] [EGc] |]
+    ```
+
+    **Keyboard trick:** every inversion of a seventh chord has exactly one **2nd** in it (two
+    neighbouring keys): the 7th and the root. The **upper** key of that pair is the root. G7 in
+    any inversion: find the F–G pair, G is the root. That is the fastest way to read and to
+    find these chords.
+
+    Your keys: C (V7 = G7), G (V7 = D7, with F♯), F (V7 = C7, with B♭), D (V7 = A7, with C♯).
+    Play each resolution slowly and listen to the 7th fall by a step and the 3rd (the leading
+    tone) rise by a half step.
+  sr: |
+    **Dominantni septakord** (V7) je kvintakord V stupnja plus mala septima iznad osnovnog tona.
+    U C-duru: G–H–D–**F**. Njegov motor je **tritonus** između terce i septime, **H–F**: ta dva
+    tona se stežu ka unutra za po polustepen, H→C i F→E, i stigao si na toniku.
+
+    Četiri tona znače četiri položaja. Šifre imenuju intervale iznad basa:
+
+    | šifra | u basu je | u C-duru (V7 = G7) | razrešava se na |
+    |---|---|---|---|
+    | V7 (septakord) | osnovni ton | G–H–D–F | I |
+    | V65 (kvintsekstakord) | terca | H–D–F–G | I |
+    | V43 (terckvartakord) | kvinta | D–F–G–H | I (ili I6) |
+    | V42 (sekundakord) | septima | F–G–H–D | **I6** (F u basu mora da padne na E) |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [G,B,DF] [CEG] | [B,DFG] [CEG] | [DFGB] [CEGc] | [FGBd] [EGc] |]
+    ```
+
+    **Trik za klavijaturu:** svaki obrtaj septakorda ima tačno jednu **sekundu** (dve susedne
+    dirke): septimu i osnovni ton. **Gornja** dirka tog para je osnovni ton. G7 u bilo kom
+    obrtaju: nađi par F–G, G je osnovni ton. To je najbrži način da pročitaš i nađeš ove akorde.
+
+    Tvoji tonaliteti: C (V7 = G7), G (V7 = D7, sa Fis), F (V7 = C7, sa B), D (V7 = A7, sa Cis).
+    Sviraj svako razrešenje polako i slušaj kako septima pada za korak, a terca (vođica) raste
+    za polustepen.
+exercises:
+  - id: K-011-1
+    type: midi-play
+    prompt: {en: "C major: V7–I, V65–I, V43–I, V42–I6 (right hand, the notes are shown).", sr: "C-dur: V7–I, V65–I, V43–I, V42–I6 (desna ruka, tonovi su prikazani)."}
+    mode: chords
+    derive: {roman: {key: C4, numerals: [V7, I, V65, I, V43, I, V42, I6]}}
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [B3, D4, F4, G4], root: G, quality: "7", inversion: 1}
+      - chord: {notes: [D4, F4, G4, B4], root: G, quality: "7", inversion: 2}
+      - chord: {notes: [F4, G4, B4, D5], root: G, quality: "7", inversion: 3}
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: F4, to: B4, is: A4}
+  - id: K-011-2
+    type: mcq
+    prompt: {en: "D–F–G–B: which position of G7 is this?", sr: "D–F–G–H: koji je ovo položaj G7?"}
+    abc: "X:1\nL:1/1\nK:C\n[DFGB] |]"
+    options: ["V7", "V65", "V43", "V42"]
+    answer: 2
+    checks:
+      - chord: {notes: [D4, F4, G4, B4], root: G, quality: "7", inversion: 2}
+  - id: K-011-3
+    type: mcq
+    prompt: {en: "V42 has the 7th in the bass. Where does it resolve?", sr: "V42 ima septimu u basu. Gde se razrešava?"}
+    options:
+      - {en: "I, root position (bass jumps to the tonic)", sr: "I, osnovni položaj (bas skače na toniku)"}
+      - {en: "I6 (the 7th in the bass falls a step to the 3rd of I)", sr: "I6 (septima u basu pada za korak na tercu akorda I)"}
+      - {en: "IV", sr: "IV"}
+      - {en: "vi", sr: "vi"}
+    answer: 1
+    checks:
+      - chord: {notes: [F4, G4, B4, D5], root: G, quality: "7", inversion: 3}
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - semitones: {from: E4, to: F4, is: 1}
+  - id: K-011-4
+    type: generated
+    prompt: {en: "V7 of C, G, F and D in any inversion (any octave; the bass note counts)", sr: "V7 u C, G, F i D-duru, u bilo kom obrtaju (bilo koja oktava; bas se računa)"}
+    count: 5
+    gen: {kind: chord-build, qualities: ["7"], roots: [G, D, C, A], inversions: [0, 1, 2, 3], answer: play}
+    checks:
+      - chord: {notes: [D4, "F#4", A4, C5], root: D, quality: "7"}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - chord: {notes: [A3, "C#4", E4, G4], root: A, quality: "7"}
+      - keysig: {key: G, is: 1}
+      - keysig: {key: F, is: -1}
+      - keysig: {key: D, is: 2}
+  - id: K-011-5
+    type: midi-play
+    prompt: {en: "G major, notes hidden: V7–I, V65–I, V43–I, V42–I6 (any octave, right bass note).", sr: "G-dur, bez prikaza tonova: V7–I, V65–I, V43–I, V42–I6 (bilo koja oktava, tačan bas)."}
+    mode: chords
+    derive: {roman: {key: G3, numerals: [V7, I, V65, I, V43, I, V42, I6]}}
+    octave: any
+    bass: true
+    showNotes: false
+  - id: K-011-6
+    type: generated
+    prompt: {en: "The passing V43 and the V65 in a phrase: I – V43 – I6 – V65 – I, with tempo", sr: "Prolazni V43 i V65 u frazi: I – V43 – I6 – V65 – I, u tempu"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, V43, I6, V65, I], tempo: 60}

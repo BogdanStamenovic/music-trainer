@@ -1,0 +1,113 @@
+id: E-012
+track: E
+order: 12
+title: {en: "Harmonic intervals and compound intervals (9ths, 10ths)", sr: "Harmonski i složeni intervali (none, decime)"}
+prereqs: [E-011]
+minutes: 14
+tags: [ear, intervals]
+explain:
+  en: |
+    **Harmonic** means both notes sound together. You lose the motion that made melodic intervals
+    easy, so you judge the **blend** instead:
+
+    | blend | intervals | what you hear |
+    |---|---|---|
+    | hollow, open | P4, P5, P8 | almost one sound; the octave fuses completely |
+    | sweet, full | m3, M3, m6, M6 | the "harmony" sound of thirds and sixths |
+    | rough, rubbing | m2, M7 | a fast beating, the notes fight |
+    | mild rub | M2, m7 | dissonant but soft, like a jazz chord tone |
+    | restless | A4 (tritone) | neither consonant nor harsh, wants to move |
+
+    Then split it: **hum the lower note, then the upper**, which turns it back into a melodic
+    interval you already know. Within a family, size decides: a 6th is wider than a 3rd, a 7th
+    wider than a 2nd.
+
+    **Compound intervals** are larger than an octave. A **9th** is an octave plus a 2nd, a **10th**
+    an octave plus a 3rd. They keep the colour of the simple interval but sound more open, because
+    the notes are far apart. On the keyboard a major 10th is C3–E4, the left-hand stretch you use in
+    ballad and stride accompaniment.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C_d] [Cd] | [C_e] [Ce] |]
+    ```
+
+    Above: m9 (C4–Db5), M9 (C4–D5), m10 (C4–Eb5), M10 (C4–E5). To name a compound interval:
+    find the simple interval (fold the top note down an octave in your head) and **add 7** to the
+    number: a 2nd becomes a 9th, a 3rd a 10th. The quality stays the same.
+  sr: |
+    **Harmonski** znači da oba tona zvuče zajedno. Gubiš pokret koji je melodijske intervale činio
+    lakim, pa umesto toga procenjuješ **stapanje**:
+
+    | stapanje | intervali | šta čuješ |
+    |---|---|---|
+    | šuplje, otvoreno | č4, č5, č8 | skoro jedan zvuk; oktava se potpuno stapa |
+    | slatko, puno | m3, v3, m6, v6 | „harmonski" zvuk terci i seksti |
+    | grubo, trlja | m2, v7 | brzo treperenje, tonovi se bore |
+    | blago trlja | v2, m7 | disonantno ali meko, kao ton džez akorda |
+    | nemirno | povećana kvarta (tritonus) | ni konsonantno ni oštro, hoće da se pomeri |
+
+    Onda ga razloži: **otpevuši donji ton, pa gornji**, i interval postaje melodijski, a te već
+    znaš. Unutar porodice odlučuje veličina: seksta je šira od terce, septima šira od sekunde.
+
+    **Složeni intervali** su veći od oktave. **Nona** je oktava plus sekunda, **decima** oktava plus
+    terca. Zadržavaju boju prostog intervala, ali zvuče otvorenije jer su tonovi daleko. Na
+    klavijaturi velika decima je C3–E4, raspon leve ruke iz balada i strajd pratnje.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [C_d] [Cd] | [C_e] [Ce] |]
+    ```
+
+    Gore: mala nona (C4–Des5), velika nona (C4–D5), mala decima (C4–Es5), velika decima
+    (C4–E5). Kako da imenuješ složen interval: nađi prosti (u glavi spusti gornji ton za
+    oktavu) i broju **dodaj 7**: sekunda postaje nona, terca decima. Vrsta ostaje ista.
+exercises:
+  - id: E-012-1
+    type: generated
+    prompt: {en: "Together: hollow or sweet? (4ths, 5ths, octaves, 3rds)", sr: "Zajedno: šuplje ili slatko? (kvarte, kvinte, oktave, terce)"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [M3, P4, P5, P8], direction: harmonic}
+    checks:
+      - interval: {from: C4, to: D5, is: M9}
+      - interval: {from: C4, to: Db5, is: m9}
+      - interval: {from: C4, to: E5, is: M10}
+      - interval: {from: C4, to: Eb5, is: m10}
+      - interval: {from: C3, to: E4, is: M10}
+  - id: E-012-2
+    type: generated
+    prompt: {en: "Together: thirds and sixths", sr: "Zajedno: terce i sekste"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m3, M3, m6, M6], direction: harmonic}
+  - id: E-012-3
+    type: generated
+    prompt: {en: "Together: the dissonances", sr: "Zajedno: disonance"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m2, M2, A4, m7, M7], direction: harmonic}
+  - id: E-012-4
+    type: generated
+    prompt: {en: "Together: all twelve", sr: "Zajedno: svih dvanaest"}
+    count: 10
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, A4, P5, m6, M6, m7, M7, P8], direction: harmonic}
+  - id: E-012-5
+    type: generated
+    prompt: {en: "Compound, melodic up: octave, 9ths, 10ths", sr: "Složeni, melodijski naviše: oktava, none, decime"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [P8, m9, M9, m10, M10], direction: up, range: [C3, G4]}
+  - id: E-012-6
+    type: generated
+    prompt: {en: "Compound, together: 9ths and 10ths", sr: "Složeni, zajedno: none i decime"}
+    count: 8
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [m9, M9, m10, M10], direction: harmonic, range: [C3, G4]}
+  - id: E-012-7
+    type: generated
+    prompt: {en: "Play it back: 9ths and 10ths", sr: "Odsviraj: none i decime"}
+    count: 5
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [M9, m10, M10], direction: up, answer: play, range: [C3, G4]}

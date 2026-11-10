@@ -1,0 +1,97 @@
+id: T-024
+track: T
+order: 24
+prereqs: [T-023]
+title: {en: "Harmonic function: tonic, predominant, dominant", sr: "Harmonske funkcije: tonika, subdominanta (predominanta), dominanta"}
+minutes: 13
+tags: [harmony]
+explain:
+  en: |
+    Seven chords, but only **three jobs**. A chord's **function** is what it does in the phrase:
+
+    | function | chords (major) | job |
+    |---|---|---|
+    | **tonic (T)** | **I**, also vi (and iii) | home, rest |
+    | **predominant (PD)**, also called subdominant | **IV, ii** (ii7, IVmaj7) | moves away, prepares the dominant |
+    | **dominant (D)** | **V, V7, vii°** (viiø7) | tension that wants the tonic |
+
+    Why chords share a function: they share notes. vi (A C E) has two notes of I (C E G); ii (D F A) has two notes of IV (F A C); vii° (B D F) is G7 without its G.
+    Swap a chord for a relative with the same job and the phrase still works; that is how you vary a progression without breaking it.
+
+    The normal flow is **T → PD → D → T**: I–IV–V–I, I–ii–V7–I, I–vi–ii–V–I (vi extends the tonic, ii is the predominant).
+    Going backwards, D → PD (V → IV), is rare in classical style but common in rock and blues, where it sounds deliberately loose.
+
+    When you hear a progression, ask "home, leaving, or about to return?" before asking "which chord?". Function is easier to hear than exact numerals.
+  sr: |
+    Sedam akorada, a samo **tri posla**. **Funkcija** akorda je ono što on radi u frazi:
+
+    | funkcija | akordi (dur) | posao |
+    |---|---|---|
+    | **tonika (T)** | **I**, takođe vi (i iii) | kuća, mir |
+    | **subdominanta (S)**, u engleskoj literaturi i *predominanta* | **IV, ii** (ii7, IVmaj7) | udaljava se, priprema dominantu |
+    | **dominanta (D)** | **V, V7, vii°** (viiø7) | napetost koja traži toniku |
+
+    Zašto akordi dele funkciju: dele tonove. vi (A C E) ima dva tona iz I (C E G); ii (D F A) ima dva tona iz IV (F A C); vii° (H D F) je G7 bez G.
+    Zameni akord srodnikom iste funkcije i fraza i dalje funkcioniše; tako variraš progresiju a da je ne pokvariš.
+
+    Uobičajen tok je **T → S → D → T**: I–IV–V–I, I–ii–V7–I, I–vi–ii–V–I (vi produžava toniku, ii je subdominanta).
+    Obrnuti smer, D → S (V → IV), redak je u klasičnom stilu, ali čest u roku i bluzu, gde namerno zvuči opušteno.
+
+    Kad čuješ progresiju, prvo pitaj „kod kuće, odlazi ili se vraća?", pa tek onda „koji je akord?". Funkcija se čuje lakše od tačnog broja.
+exercises:
+  - id: T-024-1
+    type: mcq
+    prompt: {en: "ii belongs to which function?", sr: "Kojoj funkciji pripada ii?"}
+    options:
+      - {en: "tonic", sr: "tonika"}
+      - {en: "predominant (subdominant)", sr: "subdominanta (predominanta)"}
+      - {en: "dominant", sr: "dominanta"}
+    answer: 1
+    checks:
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+  - id: T-024-2
+    type: mcq
+    prompt: {en: "vii° (B–D–F in C major) belongs to which function?", sr: "Kojoj funkciji pripada vii° (H–D–F u C-duru)?"}
+    options:
+      - {en: "tonic", sr: "tonika"}
+      - {en: "predominant (subdominant)", sr: "subdominanta (predominanta)"}
+      - {en: "dominant", sr: "dominanta"}
+    answer: 2
+    checks:
+      - chord: {notes: [B4, D5, F5], root: B, quality: dim}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+  - id: T-024-3
+    type: mcq
+    prompt: {en: "Why can vi stand in for I?", sr: "Zašto vi može da zameni I?"}
+    options:
+      - {en: "It shares two notes with I (C and E in C major)", sr: "Deli dva tona sa I (C i E u C-duru)"}
+      - {en: "It has the same root", sr: "Ima isti osnovni ton"}
+      - {en: "It contains the leading tone", sr: "Sadrži vođicu"}
+      - {en: "It is a major chord", sr: "Durski je akord"}
+    answer: 0
+    checks:
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+  - id: T-024-4
+    type: mcq
+    prompt: {en: "Which progression follows T → PD → D → T?", sr: "Koja progresija ide T → S → D → T?"}
+    options: ["I – ii – V7 – I", "I – V – IV – I", "I – V7 – ii – vi", "ii – I – V – IV"]
+    answer: 0
+  - id: T-024-5
+    type: generated
+    prompt: {en: "Listen and pick the progression. Hear the function first: where does it leave home, where does it want to return?", sr: "Slušaj i izaberi progresiju. Prvo čuj funkciju: gde odlazi od kuće, gde želi nazad?"}
+    count: 3
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[I, IV, V7, I], [I, vi, ii, V7], [I, V7, vi, IV]], tempo: 60}
+  - id: T-024-6
+    type: midi-play
+    prompt: {en: "Play I – vi – ii – V7 – I in C major (T – T – PD – D – T), root in the bass.", sr: "Odsviraj I – vi – ii – V7 – I u C-duru (T – T – S – D – T), osnovni ton u basu."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, vi, ii, V7, I]}}
+  - id: T-024-7
+    type: generated
+    prompt: {en: "Play T – PD – D – T with ii as the predominant", sr: "Odsviraj T – S – D – T sa ii kao subdominantom"}
+    count: 2
+    gen: {kind: progression, keys: [G, F, D, Bb], numerals: [I, ii, V7, I]}

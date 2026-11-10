@@ -1,0 +1,124 @@
+id: PL-008
+kind: lyrics
+order: 30
+title: {en: "Lyrics: a country story song with a twist", sr: "Tekst: kantri pesma-priča sa obrtom"}
+minutes: 75
+prereqs: [L-004, L-005, L-006]
+lyrics:
+  genre: {en: "country (story + twist)", sr: "kantri (priča + obrt)"}
+  language: en
+  lines: [28, 44]
+  structure:
+    en: "verse (6–8) – chorus (4) – verse (6–8) – chorus – verse (6–8) – chorus with the twist"
+    sr: "strofa (6–8) – refren (4) – strofa (6–8) – refren – strofa (6–8) – refren sa obrtom"
+brief:
+  en: |
+    Write a **country story song** in English: three verses that move through time, and a
+    chorus whose words stay (almost) the same while their **meaning changes**, so that the last
+    chorus lands as a **twist**. This is the most structurally clever form in popular song.
+
+    ### Conventions
+
+    - **Three verses, three moments in time.** Often years apart: childhood, adulthood, old age;
+      or before, during, after. Each verse is a small scene with concrete details.
+    - **The chorus is a turnaround.** The same words come back after each verse, but each verse
+      changes what they mean. In the last chorus, usually one line is changed or a pronoun is
+      swapped, and the whole song flips.
+    - **The title is an ordinary phrase with two meanings:** something people say every day
+      (*keep the change*, *drive safe*, *same time next year*) that the story fills with a
+      second sense.
+    - **Plain, spoken diction.** Country lyrics sound like a person talking: contractions,
+      everyday names, brand names, places (*a Ford, the Waffle House, County Road 9*). No
+      poetic word order.
+    - **Specific objects carry the emotion** (L-004): a truck, a kitchen radio, a jacket, a
+      photograph, a tip on a diner table. The listener feels it because they can see it.
+    - **Rhyme:** AABB or ABCB, mostly perfect rhymes; lines of **7–10 syllables** in a steady
+      4/4, easy to sing over three chords.
+    - **The twist must be fair:** when it comes, the listener should think "of course", because
+      the clues were in verses 1 and 2.
+
+    How the turnaround works (made-up example):
+
+    > *(chorus after verse 1, a father to his teenage son)* Drive safe, he'd say, the porch light on...
+    > *(final chorus, the son, now grey, to his own child)* Drive safe, I say, the porch light on...
+
+    ### Practical tips
+
+    - Write the title first, then list two or three situations where that phrase could be said
+      and mean something different each time. Those are your verses.
+    - Draft the last chorus before the first verse: you need to know where the song lands.
+    - Read each verse aloud with a "boom-chick" country beat; the lines should feel like natural
+      speech set to music.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **kantri pesmu-priču** na engleskom: tri strofe koje se kreću kroz vreme i refren
+    čije reči ostaju (skoro) iste dok im se **značenje menja**, tako da poslednji refren padne
+    kao **obrt**. To je oblik sa najpametnijom gradnjom u popularnoj pesmi.
+
+    ### Konvencije
+
+    - **Tri strofe, tri trenutka u vremenu.** Često sa godinama razmaka: detinjstvo, zrelost,
+      starost; ili pre, za vreme, posle. Svaka strofa je mala scena sa konkretnim detaljima.
+    - **Refren je preokret (turnaround).** Iste reči se vraćaju posle svake strofe, ali svaka
+      strofa menja ono što znače. U poslednjem refrenu obično se promeni jedan stih ili zamenica, i
+      cela pesma se okrene.
+    - **Naslov je obična fraza sa dva značenja:** nešto što ljudi kažu svakog dana (*keep the
+      change*, *drive safe*, *same time next year*), a priča mu da drugi smisao.
+    - **Jednostavan, govorni jezik.** Kantri tekstovi zvuče kao čovek koji priča: skraćenice,
+      svakodnevna imena, marke, mesta (*a Ford, the Waffle House, County Road 9*). Bez
+      pesničkog reda reči.
+    - **Konkretni predmeti nose emociju** (L-004): kamionet, radio u kuhinji, jakna, fotografija,
+      bakšiš na stolu u restoranu. Slušalac oseća jer može da vidi.
+    - **Rima:** AABB ili ABCB, uglavnom čiste rime; stihovi od **7–10 slogova** u ravnomernom
+      4/4, lako se pevaju preko tri akorda.
+    - **Obrt mora biti pošten:** kad stigne, slušalac treba da pomisli „pa naravno”, jer su
+      tragovi bili u prvoj i drugoj strofi.
+
+    Kako radi preokret (izmišljen primer):
+
+    > *(refren posle 1. strofe, otac sinu tinejdžeru)* Drive safe, he'd say, the porch light on...
+    > *(poslednji refren, sin, sad sed, svom detetu)* Drive safe, I say, the porch light on...
+
+    ### Praktični saveti
+
+    - Prvo napiši naslov, pa nabroj dve-tri situacije u kojima ta fraza može da se kaže i svaki
+      put znači nešto drugo. To su tvoje strofe.
+    - Napiši poslednji refren pre prve strofe: moraš da znaš gde pesma sleće.
+    - Pročitaj svaku strofu naglas uz kantri ritam „bum-čik”; stihovi treba da zvuče kao
+      prirodan govor uglazbljen.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: twist
+    weight: 3
+    label: {en: "Turnaround and twist", sr: "Preokret i obrt"}
+    top:
+      en: "The chorus words return but mean something new after each verse; the final chorus flips the song with a small, earned change, set up by clues in verses 1 and 2."
+      sr: "Reči refrena se vraćaju, ali posle svake strofe znače nešto novo; poslednji refren okreće pesmu malom, zasluženom promenom, pripremljenom tragovima u 1. i 2. strofi."
+  - id: story
+    weight: 2
+    label: {en: "Three scenes in time", sr: "Tri scene u vremenu"}
+    top:
+      en: "Three verses at clearly different moments, each a scene with people, a place and an action; the time jumps are clear without explanation."
+      sr: "Tri strofe u jasno različitim trenucima, svaka scena sa ljudima, mestom i radnjom; skokovi u vremenu su jasni bez objašnjavanja."
+  - id: detail
+    weight: 1
+    label: {en: "Concrete, plain-spoken detail", sr: "Konkretan, jednostavan jezik"}
+    top:
+      en: "Ordinary objects, names and places carry the feeling; the diction sounds like natural speech."
+      sr: "Obični predmeti, imena i mesta nose osećanje; jezik zvuči kao prirodan govor."
+  - id: title
+    weight: 1
+    label: {en: "Title with two meanings", sr: "Naslov sa dva značenja"}
+    top:
+      en: "An everyday phrase as the title, used in the chorus, whose second meaning is revealed by the story."
+      sr: "Svakodnevna fraza kao naslov, upotrebljena u refrenu, čije drugo značenje otkriva priča."

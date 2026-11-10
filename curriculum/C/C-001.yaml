@@ -1,0 +1,178 @@
+id: C-001
+track: C
+order: 1
+prereqs: [T-011]
+title: {en: "The motif: 2–4 notes that a melody is built from", sr: "Motiv: 2–4 tona od kojih se gradi melodija"}
+minutes: 15
+tags: [composition, melody]
+explain:
+  en: |
+    A **motif** is the smallest idea in a melody that you still recognise when it comes back:
+    usually **2–4 notes with their own rhythm and their own direction** (up, down, turn).
+    Most melodies you have played are built from one or two motifs, used again and again.
+    That reuse is the difference between a melody that sounds *meant* and a line that just wanders.
+
+    A motif has two halves, and **rhythm is the stronger one**. Tap "short-short-short-long"
+    on the table and anyone recognises Beethoven's Fifth without a single pitch. The second half
+    is the **contour**, the shape: up a step, down a 3rd, up and back...
+
+    Here one motif (*upper note, the note below, back up, then a drop*) makes a whole 4-bar melody.
+    Bar 2 is the same shape a third lower, bar 3 a third lower again (its drop shrinks to a third, so it
+    lands on D), bar 4 lands on C:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^motif"c B c2 G4 | A G A2 E4 | F E F2 D4 | C8 |]
+    ```
+
+    **What makes a good motif**
+
+    - **A distinct rhythm.** Four equal quarters are hard to remember; *two eighths and a quarter*,
+      or *long-short*, stick.
+    - **A clear shape.** One direction or one turn. More than that is already a phrase.
+    - **Room to continue.** It should not sound finished: ending on C in C major closes the door,
+      ending on D, E or G leaves it open.
+
+    **At the keyboard:** put three fingers on C D E, play short rhythms on them until one makes you
+    want to play it again. That is your motif. Then play it twice in a row: if the second time sounds
+    like an echo rather than a mistake, it works.
+
+    **Entering music.** The main way is to **record on the piano**: press Record, wait for the
+    count-in, play in time with the click; the app turns it into notation (ABC text) that you can
+    fix by hand. You can also type ABC directly. The minimum you need:
+
+    | ABC | meaning |
+    |---|---|
+    | `M:4/4`, `K:C`, `K:Am` | meter, key (the key signature is applied for you) |
+    | `L:1/8` | the default note length is an eighth |
+    | `C D E F G A B` | the octave from middle C (C4) up |
+    | `c d e` ... `c'` | the octave above (C5 ...), `c'` = C6 |
+    | `B,` `A,` `G,` | below middle C (B3, A3, G3) |
+    | `C` `C2` `C3` `C4` `C8` | eighth, quarter, dotted quarter, half, whole (with `L:1/8`) |
+    | `z2` | a quarter rest |
+    | `^F` `_B` `=F` | sharp, flat, natural |
+    | `\|` and `\|]` | bar line, final bar line |
+
+    The checker uses your bar lines: every bar must add up to exactly one bar of the meter.
+  sr: |
+    **Motiv** je najmanja ideja u melodiji koju još uvek prepoznaješ kad se vrati:
+    obično **2–4 tona sa sopstvenim ritmom i sopstvenim smerom** (gore, dole, okret).
+    Većina melodija koje si svirao sagrađena je od jednog ili dva motiva, upotrebljenih iznova i iznova.
+    To ponovno korišćenje je razlika između melodije koja zvuči *namerno* i linije koja samo luta.
+
+    Motiv ima dve polovine, i **ritam je jača**. Otkucaj „kratko-kratko-kratko-dugo" po stolu i svako
+    prepoznaje Betovenovu Petu bez ijednog tona. Druga polovina je **kontura (oblik)**: sekunda gore,
+    terca dole, gore pa nazad...
+
+    Ovde jedan motiv (*gornji ton, ton ispod, nazad gore, pa skok naniže*) gradi celu melodiju od 4 takta.
+    Takt 2 je isti oblik tercu niže, takt 3 još tercu niže (skok se smanjuje na tercu, pa staje na D),
+    takt 4 se spušta na C:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^motiv"c B c2 G4 | A G A2 E4 | F E F2 D4 | C8 |]
+    ```
+
+    **Šta čini dobar motiv**
+
+    - **Prepoznatljiv ritam.** Četiri jednake četvrtine teško se pamte; *dve osmine i četvrtina*
+      ili *dugo-kratko* ostaju u uhu.
+    - **Jasan oblik.** Jedan smer ili jedan okret. Više od toga je već fraza.
+    - **Prostor za nastavak.** Ne treba da zvuči završeno: kraj na C u C-duru zatvara vrata,
+      kraj na D, E ili G ih ostavlja otvorenim.
+
+    **Za klavirom:** stavi tri prsta na C D E i sviraj kratke ritmove na njima dok jedan ne poželiš
+    da ponoviš. To je tvoj motiv. Onda ga odsviraj dvaput zaredom: ako drugi put zvuči kao odjek,
+    a ne kao greška, radi.
+
+    **Unos muzike.** Glavni način je **snimanje na klaviru**: pritisni Snimi, sačekaj odbrojavanje,
+    sviraj uz metronom; aplikacija to pretvara u notni zapis (ABC tekst) koji možeš ručno da ispraviš.
+    ABC možeš i direktno da kucaš. Minimum koji ti treba (u ABC-u se tonovi pišu engleskim slovima:
+    **B = H**, `_B` = B):
+
+    | ABC | značenje |
+    |---|---|
+    | `M:4/4`, `K:C`, `K:Am` | takt, tonalitet (predznaci se primenjuju sami) |
+    | `L:1/8` | osnovno trajanje je osmina |
+    | `C D E F G A B` | oktava od srednjeg C (C4) naviše (`B` = H) |
+    | `c d e` ... `c'` | oktava iznad (C5 ...), `c'` = C6 |
+    | `B,` `A,` `G,` | ispod srednjeg C (H3, A3, G3) |
+    | `C` `C2` `C3` `C4` `C8` | osmina, četvrtina, četvrtina s tačkom, polovina, cela (uz `L:1/8`) |
+    | `z2` | četvrtinska pauza |
+    | `^F` `_B` `=F` | povisilica, snizilica, razrešilica |
+    | `\|` i `\|]` | taktna crta, završna crta |
+
+    Provera koristi tvoje taktne crte: svaki takt mora da ima tačno jedan takt zadate mere.
+exercises:
+  - id: C-001-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nc B c2 G4 | A G A2 E4 | F E F2 D4 | C8 |]"
+    prompt: {en: "Which figure is this melody built from?", sr: "Od koje figure je sagrađena ova melodija?"}
+    options:
+      - {en: "upper note, the note below, back up, then a drop", sr: "gornji ton, ton ispod, nazad gore, pa skok naniže"}
+      - {en: "a rising scale of four notes", sr: "uzlazna lestvica od četiri tona"}
+      - {en: "a broken C major chord", sr: "razloženi C-durski akord"}
+      - {en: "one repeated note", sr: "jedan ponovljeni ton"}
+    answer: 0
+    checks:
+      - interval: {from: C5, to: G4, is: P4}
+      - interval: {from: A4, to: E4, is: P4}
+  - id: C-001-2
+    type: mcq
+    prompt: {en: "A motif comes back starting on a different note. What lets you still recognise it?", sr: "Motiv se vraća od drugog tona. Šta ti omogućava da ga i dalje prepoznaš?"}
+    options:
+      - {en: "its rhythm and its shape (contour)", sr: "njegov ritam i oblik (kontura)"}
+      - {en: "its exact starting note", sr: "njegov tačan početni ton"}
+      - {en: "its dynamics", sr: "njegova dinamika"}
+      - {en: "nothing: a moved motif is a new motif", sr: "ništa: pomereni motiv je novi motiv"}
+    answer: 0
+  - id: C-001-3
+    type: mcq
+    prompt: {en: "Listen. A short motif is played twice. Which notes is it?", sr: "Slušaj. Kratak motiv se čuje dvaput. Koji su to tonovi?"}
+    play: {notes: [G4, A4, G4, E4, G4, A4, G4, E4], durations: [0.5, 0.5, 1, 2, 0.5, 0.5, 1, 2], tempo: 90}
+    options: ["G A G E", "G A G C", "G F G E", "E G A G"]
+    answer: 0
+  - id: C-001-4
+    type: midi-play
+    prompt: {en: "Play the melody from the lesson (as written). Feel how the motif drives it.", sr: "Odsviraj melodiju iz lekcije (kako je zapisana). Oseti kako je motiv pokreće."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nc B c2 G4 | A G A2 E4 | F E F2 D4 | C8 |]"
+    mode: sequence
+    expect: [C5, B4, C5, G4, A4, G4, A4, E4, F4, E4, F4, D4, C4]
+  - id: C-001-5
+    type: compose
+    prompt:
+      en: "Invent a motif (2–4 notes, give it a distinct rhythm) and put it in bar 1; fill the rest of the bar with a rest or a held note. In bar 2 play it again, exactly or with one note changed. 2 bars of 4/4 in C major, between C4 and C5."
+      sr: "Smisli motiv (2–4 tona, sa prepoznatljivim ritmom) i stavi ga u prvi takt; ostatak takta popuni pauzom ili zadržanim tonom. U drugom taktu ga ponovi, tačno ili sa jednim promenjenim tonom. 2 takta 4/4 u C-duru, između C4 i C5."
+    key: C major
+    meter: 4/4
+    bars: 2
+    range: [C4, C5]
+    rules: [bars, rhythm, key, range]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      E D C2 z4 | E D C2 G4 |]
+  - id: C-001-6
+    type: compose
+    prompt:
+      en: "4 bars in C major, 4/4: state your motif in bars 1, 2 and 3 (change one or two notes each time, keep the rhythm), and end bar 4 on C, reached by step from D or B and held. Check as often as you like before you submit."
+      sr: "4 takta u C-duru, 4/4: izloži svoj motiv u taktovima 1, 2 i 3 (svaki put promeni jedan ili dva tona, ritam zadrži), a takt 4 završi na C, do kog stižeš za korak od D ili H, i zadrži ga. Proveravaj koliko god hoćeš pre predaje."
+    key: C major
+    meter: 4/4
+    bars: 4
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      G2 E2 G4 | A2 F2 G4 | G2 E2 D4 | C8 |]

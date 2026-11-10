@@ -1,0 +1,131 @@
+id: T-018
+track: T
+order: 18
+prereqs: [T-017]
+title: {en: "Syncopation, triplets and anacrusis (pickup)", sr: "Sinkopa, triola i predtakt"}
+minutes: 13
+tags: [rhythm]
+explain:
+  en: |
+    Three things that bend the regular beat, all common in pop, jazz and folk:
+
+    **Syncopation**: a note starts on a weak beat or between beats and is held *through* the next stronger beat, so the accent lands where you do not expect it.
+    Below (bar 1), the quarter starting on "1-and" is held across beat 2: count "1 **and** (2) and 3 4". Off-beat accents are the engine of most groove music.
+
+    **Triplet**: three notes in the time normally taken by two of the same value, marked with a 3. An eighth-note triplet fills one beat (bar 2, beats 1 and 3).
+    It borrows the compound "three per beat" feel inside a simple meter.
+
+    **Anacrusis (pickup)**: the tune starts before the first full bar, on the weak beat(s) that lead into beat 1. A melody that starts "on the way in" usually has a pickup.
+    The pickup and the last bar normally add up to one full bar.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B B2 B B2 B2 | (3BBB B2 (3BBB B2 |]
+    ```
+
+    "Amazing Grace" (John Newton, tune *New Britain*, public domain) starts with a one-beat pickup in 3/4, so its last bar here has two beats:
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 |]
+    ```
+  sr: |
+    Tri stvari koje savijaju pravilan puls, sve česte u popu, džezu i narodnoj muzici:
+
+    **Sinkopa**: nota počinje na slaboj dobi ili između doba i drži se *preko* sledeće teže dobe, pa naglasak pada tamo gde ga ne očekuješ.
+    Dole (takt 1) četvrtina koja počinje na „1-i" drži se preko druge dobe: broji „1 **i** (2) i 3 4". Naglasci van dobe su motor skoro svake muzike sa grovom.
+
+    **Triola**: tri note u vremenu u kome inače idu dve iste vrednosti, označene brojem 3. Osminska triola ispunjava jednu dobu (takt 2, prva i treća doba).
+    To je „tri na dobu" iz složene mere, pozajmljeno u prostu meru.
+
+    **Predtakt (uzmah, anakruza)**: melodija počinje pre prvog punog takta, na slaboj dobi (ili dobama) koja vodi u prvu dobu. Melodija koja „ulazi" obično ima predtakt.
+    Predtakt i poslednji takt zajedno obično čine jedan pun takt.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C clef=perc
+    B B2 B B2 B2 | (3BBB B2 (3BBB B2 |]
+    ```
+
+    „Amazing Grace" (Džon Njuton, napev *New Britain*, javno dobro) počinje predtaktom od jedne dobe u 3/4, pa poslednji takt ovde ima dve dobe:
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:G
+    D | G2 B/G/ | B2 A | G2 E | D2 |]
+    ```
+exercises:
+  - id: T-018-1
+    type: mcq
+    prompt: {en: "4/4. Which numbered note is syncopated (starts off the beat and is held across the next beat)?", sr: "4/4. Koja numerisana nota je sinkopa (počinje van dobe i drži se preko sledeće dobe)?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C clef=perc
+      "^1"B2 "^2"B "^3"B2 "^4"B "^5"B2 |]
+    options: ["1", "3", "4", "5"]
+    answer: 1
+  - id: T-018-2
+    type: mcq
+    prompt: {en: "How many beats does the triplet group take in this 4/4 bar?", sr: "Koliko doba traje triola u ovom taktu 4/4?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C clef=perc
+      (3BBB B2 B4 |]
+    options:
+      - {en: "1 beat", sr: "1 dobu"}
+      - {en: "1½ beats", sr: "1½ doba"}
+      - {en: "2 beats", sr: "2 dobe"}
+      - {en: "3 beats", sr: "3 dobe"}
+    answer: 0
+  - id: T-018-3
+    type: mcq
+    prompt: {en: "A quarter-note triplet in 4/4 fits three quarters into the time of…", sr: "Četvrtinska triola u 4/4 smešta tri četvrtine u vreme…"}
+    options:
+      - {en: "a half note (2 beats)", sr: "jedne polovine (2 dobe)"}
+      - {en: "one quarter (1 beat)", sr: "jedne četvrtine (1 doba)"}
+      - {en: "a dotted half (3 beats)", sr: "polovine s tačkom (3 dobe)"}
+      - {en: "a whole note (4 beats)", sr: "cele note (4 dobe)"}
+    answer: 0
+  - id: T-018-4
+    type: mcq
+    prompt: {en: "\"Amazing Grace\" in 3/4: how long is the pickup?", sr: "„Amazing Grace\" u 3/4: koliko traje predtakt?"}
+    abc: |
+      X:1
+      M:3/4
+      L:1/4
+      K:G
+      D | G2 B/G/ | B2 A | G2 E | D2 |]
+    options:
+      - {en: "1 beat", sr: "1 dobu"}
+      - {en: "2 beats", sr: "2 dobe"}
+      - {en: "3 beats", sr: "3 dobe"}
+      - {en: "there is no pickup", sr: "nema predtakta"}
+    answer: 0
+  - id: T-018-5
+    type: mcq
+    prompt: {en: "A song in 4/4 starts with a 1-beat pickup. Written out in full, its last bar usually has…", sr: "Pesma u 4/4 počinje predtaktom od jedne dobe. Kad je zapisana do kraja, poslednji takt obično ima…"}
+    options:
+      - {en: "3 beats", sr: "3 dobe"}
+      - {en: "1 beat", sr: "1 dobu"}
+      - {en: "4 beats", sr: "4 dobe"}
+      - {en: "5 beats", sr: "5 doba"}
+    answer: 0
+  - id: T-018-6
+    type: generated
+    prompt: {en: "Rhythm echo with syncopation: keep counting the beat while the notes fall between it", sr: "Ritamski eho sa sinkopama: broji dobe i kad note padaju između njih"}
+    count: 3
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, values: [1.5, 1, 0.5], tempo: 72}

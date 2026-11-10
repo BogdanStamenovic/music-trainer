@@ -1,0 +1,104 @@
+id: E-016
+track: E
+order: 16
+title: {en: "I–IV–V–vi progressions by ear", sr: "Progresije I–IV–V–vi po sluhu"}
+prereqs: [E-015, E-009]
+minutes: 14
+tags: [ear, harmony, progressions]
+explain:
+  en: |
+    Four chords cover a huge share of pop, rock and folk: **I, IV, V and vi**. In C major: C, F, G
+    and A minor. To recognise a progression, listen in this order:
+
+    1. **The bass first.** Hum the lowest note of each chord. You already know these bass moves
+       (E-009): I up a 4th to IV, I down a 4th to V (the app plays V below I), I down a minor 3rd to vi. In these exercises the
+       chords are in root position, so the bass *is* the root.
+    2. **Then the colour.** vi is the only minor chord: it sounds like I gone darker. I, IV and V
+       are all major.
+    3. **Then the function.** V sounds like a question that wants I. IV sounds like moving away,
+       softer. I is home.
+
+    Typical patterns:
+
+    | progression | in C | character |
+    |---|---|---|
+    | I – IV – V – I | C F G C | the basic cadence; ends at home |
+    | I – vi – IV – V | C Am F G | 1950s "doo-wop"; ends on a question |
+    | I – V – vi – IV | C G Am F | the modern pop loop |
+    | vi – IV – I – V | Am F C G | same loop starting on the minor chord: sounds sadder |
+    | I – IV – V – vi | C F G Am | **deceptive**: you expect I after V and get vi instead |
+
+    The deceptive move (V – vi) is worth knowing by ear: the bass goes **up a step** (G to A)
+    instead of the leap home, and the chord turns minor. It feels like a door that opens onto the
+    wrong room.
+
+    Each progression is played slowly, one chord per beat. Replay it
+    and hum the bass along before you answer.
+  sr: |
+    Četiri akorda pokrivaju ogroman deo pop, rok i narodne muzike: **I, IV, V i vi**. U C-duru: C, F,
+    G i a-mol. Da prepoznaš progresiju, slušaj ovim redom:
+
+    1. **Prvo bas.** Otpevuši najdublji ton svakog akorda. Ove pokrete basa već znaš (E-009): od I
+       kvartu naviše do IV, kvartu naniže do V (aplikacija svira V ispod I), malu tercu naniže do vi. U ovim vežbama akordi su u
+       osnovnom položaju, pa je bas *isto što i* osnovni ton.
+    2. **Onda boja.** vi je jedini molski akord: zvuči kao potamneli I. I, IV i V su durski.
+    3. **Onda funkcija.** V zvuči kao pitanje koje traži I. IV zvuči kao odlazak, mekše. I je kuća.
+
+    Tipični obrasci:
+
+    | progresija | u C-duru | karakter |
+    |---|---|---|
+    | I – IV – V – I | C F G C | osnovna kadenca; završava kod kuće |
+    | I – vi – IV – V | C a F G | „du-vop" iz 1950-ih; završava pitanjem |
+    | I – V – vi – IV | C G a F | savremena pop petlja |
+    | vi – IV – I – V | a F C G | ista petlja počev od molskog akorda: zvuči tužnije |
+    | I – IV – V – vi | C F G a | **varljiva kadenca**: posle V očekuješ I, a dobiješ vi |
+
+    Varljiv pokret (V – vi) vredi znati po sluhu: bas ide **korak naviše** (G u A) umesto skoka
+    kući, a akord postaje molski. Kao vrata koja se otvore u pogrešnu sobu.
+
+    Svaka progresija se svira polako, jedan akord po dobi. Pusti je ponovo i pevuši
+    bas zajedno pre nego što odgovoriš.
+exercises:
+  - id: E-016-1
+    type: generated
+    prompt: {en: "Where does V come: before or after IV?", sr: "Gde je V: pre ili posle IV?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F], type: major, options: [[I, IV, V, I], [I, V, IV, I]], tempo: 60}
+    checks:
+      - roman: {key: C, degree: 1, is: "I"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - interval: {from: C3, to: F3, is: P4}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: A2, to: C3, is: m3}
+      - interval: {from: G3, to: A3, is: M2}
+  - id: E-016-2
+    type: generated
+    prompt: {en: "Authentic or deceptive ending?", sr: "Autentična ili varljiva kadenca?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V, I], [I, IV, V, vi]], tempo: 60}
+  - id: E-016-3
+    type: generated
+    prompt: {en: "Where is the minor chord?", sr: "Gde je molski akord?"}
+    count: 8
+    gen: {kind: progression-ear, keys: [C, G, F], type: major, options: [[I, vi, IV, V], [I, IV, vi, V], [I, V, vi, IV]], tempo: 66}
+  - id: E-016-4
+    type: generated
+    prompt: {en: "The pop loops", sr: "Pop petlje"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, D, F, Bb], type: major, options: [[I, V, vi, IV], [vi, IV, I, V], [I, vi, IV, V], [I, IV, I, V]], tempo: 72}
+  - id: E-016-5
+    type: generated
+    prompt: {en: "Bass line only: I, IV, V, vi", sr: "Samo bas linija: I, IV, V, vi"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [F, Bb, D, A], type: major, numerals: [I, IV, V, vi], length: 5, octave: 2, tempo: 72}
+  - id: E-016-6
+    type: generated
+    prompt: {en: "Hear it, then play it: I–V–vi–IV", sr: "Čuj, pa odsviraj: I–V–vi–IV"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, D], type: major, numerals: [I, V, vi, IV], echo: true}

@@ -1,0 +1,152 @@
+id: PL-007
+kind: lyrics
+order: 26
+title: {en: "Lyrics: a 16-bar rap verse", sr: "Tekst: rep strofa od 16 taktova"}
+minutes: 75
+prereqs: [L-001, L-002, L-003]
+lyrics:
+  genre: {en: "rap / hip-hop verse", sr: "rep / hip-hop strofa"}
+  language: either
+  lines: [16, 24]
+  structure:
+    en: "one 16-bar verse (16 lines, one per bar), optionally plus a 4–8 line hook"
+    sr: "jedna strofa od 16 taktova (16 stihova, jedan po taktu), opciono i hook od 4–8 stihova"
+brief:
+  en: |
+    Write one **16-bar rap verse**, in English or Serbian (or both, if you write two). One
+    line per bar, 16 lines, over an imagined beat at **85–95 BPM** (classic boom-bap). The focus
+    is **flow and internal rhyme**: rap is rhythm first.
+
+    ### How a rap bar works
+
+    - **One bar = four beats = one line.** The kick drum is on 1 (and often 3), the snare on
+      **2 and 4**. The end rhyme usually lands **on or just before beat 4**.
+    - **Syllables per bar** range from about **8 (laid back)** to **16 or more (double time)**.
+      The number is a choice: dense bars feel urgent, sparse bars feel confident. Good verses
+      change density on purpose.
+    - **Flow** is where syllables sit against the beat: on the beat, between beats, starting
+      late, leaving rests. A **pocket** is a pattern that locks with the drums; switching the
+      pocket every 4 or 8 bars keeps a verse alive.
+
+    ### Rhyme in rap (L-003)
+
+    - **End rhyme in couplets** (AABB) is the base, but strong verses hold one rhyme sound for
+      **4 bars or more**.
+    - **Multisyllabic rhyme (multis):** rhyme two or three syllables at once, matching mainly the
+      *vowels*: *broken ladder / spoken matter*; in Serbian *staklo je palo / malo je falo*.
+    - **Internal rhyme:** a second rhyme in the middle of the line, often on beat 2, chaining to
+      the end: *late train, same name, rain on the windowpane*.
+    - **Serbian specifics:** stress is almost never on the last syllable, so Serbian rap rhymes are
+      naturally **feminine** (*grada / pada*, *betona / balkona*) and assonance is accepted.
+      Short monosyllables (*pas, nas, glas*) give hard masculine endings when you want them.
+
+    ### Content
+
+    - **Specific > general.** Name streets, objects, numbers. A **punchline** (wordplay, a reveal,
+      a sharp image) usually closes a 4- or 8-bar block.
+    - **One theme**, developed: where you are from, what you want, what you refuse.
+    - **Mark the flow:** write "/" between beats if you like, and **bold** the syllables that hit
+      beats 2 and 4. The reviewer reads it better that way.
+
+    Made-up couplets, one per language:
+
+    > Late train rattles through the station I was raised in,
+    > same names faded on the wall that I was praised in.
+
+    > Grad mi diše za vratom ko stari pas,
+    > svaki prozor u bloku zna ko je od nas.
+
+    ### Practical tips
+
+    - Loop any instrumental at ~90 BPM or just nod a steady pulse; say every bar out loud until
+      it sits. If you run out of breath, the bar is too full or the breath point is missing.
+    - Write the last 4 bars (the strongest punchline) first, then build toward them.
+    - Never use a rhyme you would not say in conversation. Twisted word order kills flow.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši jednu **rep strofu od 16 taktova**, na engleskom ili srpskom (ili obe, ako napišeš
+    dve). Jedan stih po taktu, 16 stihova, preko zamišljenog bita od **85–95 BPM** (klasični
+    boom-bap). Fokus je **flow i unutrašnja rima**: rep je pre svega ritam.
+
+    ### Kako radi rep takt
+
+    - **Jedan takt = četiri dobe = jedan stih.** Bas bubanj je na 1 (i često 3), doboš na **2 i
+      4**. Krajnja rima obično pada **na četvrtu dobu ili tik pred nju**.
+    - **Slogova po taktu** ima od oko **8 (opušteno)** do **16 i više (dupli tempo)**. Broj je
+      izbor: gusti taktovi zvuče hitno, retki zvuče samouvereno. Dobre strofe namerno menjaju
+      gustinu.
+    - **Flow** je gde slogovi sede u odnosu na bit: na dobi, između doba, sa zakašnjelim
+      početkom, sa pauzama. **Džep** (pocket) je obrazac koji se zaključa sa bubnjevima;
+      promena džepa na svaka 4 ili 8 taktova drži strofu živom.
+
+    ### Rima u repu (L-003)
+
+    - **Krajnja rima u parovima** (AABB) je osnova, ali jake strofe drže jedan rimovni zvuk **4
+      takta ili duže**.
+    - **Višesložna rima (multi):** rimuj dva-tri sloga odjednom, poklapajući pre svega
+      *vokale*: *broken ladder / spoken matter*; na srpskom *staklo je palo / malo je falo*.
+    - **Unutrašnja rima:** druga rima usred stiha, često na drugoj dobi, koja se lančano veže za
+      kraj: *late train, same name, rain on the windowpane*.
+    - **Srpske posebnosti:** naglasak skoro nikad nije na poslednjem slogu, pa su srpske rep rime
+      prirodno **ženske** (*grada / pada*, *betona / balkona*) i asonanca se prihvata. Kratke
+      jednosložne reči (*pas, nas, glas*) daju tvrde muške završetke kad ih želiš.
+
+    ### Sadržaj
+
+    - **Konkretno > opšte.** Imenuj ulice, predmete, brojeve. **Pančlajn** (igra reči, otkriće,
+      oštra slika) obično zatvara blok od 4 ili 8 taktova.
+    - **Jedna tema**, razvijena: odakle si, šta hoćeš, šta odbijaš.
+    - **Obeleži flow:** ako želiš, piši „/” između doba i **podebljaj** slogove koji padaju na 2.
+      i 4. dobu. Recenzent to tako bolje čita.
+
+    Izmišljeni parovi, po jedan na svakom jeziku:
+
+    > Late train rattles through the station I was raised in,
+    > same names faded on the wall that I was praised in.
+
+    > Grad mi diše za vratom ko stari pas,
+    > svaki prozor u bloku zna ko je od nas.
+
+    ### Praktični saveti
+
+    - Pusti bilo koji instrumental na ~90 BPM u petlji ili samo klimaj glavom u ravnomernom
+      pulsu; izgovaraj svaki takt naglas dok ne legne. Ako ti ponestane daha, takt je prepun ili
+      nedostaje mesto za udah.
+    - Prvo napiši poslednja 4 takta (najjači pančlajn), pa gradi ka njima.
+    - Nikad ne koristi rimu koju ne bi rekao u razgovoru. Izvrnut red reči ubija flow.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: flow
+    weight: 2
+    label: {en: "Flow", sr: "Flow"}
+    top:
+      en: "Every bar fits four beats when spoken over ~90 BPM; syllable density changes deliberately at least once; there are places to breathe; stresses land on the beat."
+      sr: "Svaki takt staje u četiri dobe kad se izgovori preko ~90 BPM; gustina slogova se namerno menja bar jednom; ima mesta za udah; naglasci padaju na dobu."
+  - id: rhyme
+    weight: 2
+    label: {en: "Rhyme craft", sr: "Zanat rime"}
+    top:
+      en: "Multisyllabic end rhymes, at least one rhyme sound held over 4+ bars, and internal rhymes in several bars; no forced word order."
+      sr: "Višesložne krajnje rime, bar jedan rimovni zvuk držan 4+ takta i unutrašnje rime u više taktova; bez iznuđenog reda reči."
+  - id: content
+    weight: 1
+    label: {en: "Specifics and punchlines", sr: "Konkretnost i pančlajnovi"}
+    top:
+      en: "Concrete names, places and objects; at least two punchlines that close a 4- or 8-bar block."
+      sr: "Konkretna imena, mesta i predmeti; bar dva pančlajna koji zatvaraju blok od 4 ili 8 taktova."
+  - id: structure
+    weight: 1
+    label: {en: "Shape of the verse", sr: "Oblik strofe"}
+    top:
+      en: "Exactly 16 bars with one theme that develops and builds to the strongest lines at the end."
+      sr: "Tačno 16 taktova sa jednom temom koja se razvija i gradi ka najjačim stihovima na kraju."

@@ -1,0 +1,153 @@
+id: PV-004
+kind: vocal
+order: 15
+title: {en: "Sing: a minor-key song", sr: "Pevaj: pesma u molu"}
+minutes: 30
+prereqs: [V-018, V-009]
+melody:
+  title: {en: "Song in D minor", sr: "Pesma u d-molu"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: D minor
+  meter: 4/4
+  tempo: 69
+  notes: [D4, F4, A4, G4, F4, E4, F4, G4, A4, Bb4, A4, D4, F4, A4, Bb4, A4, G4, F4, E4, F4, E4, C#4, D4]
+  beats: [1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 4]
+brief:
+  en: |
+    Record yourself singing an **original 8-bar melody in D minor**, slow 4/4, on **"lah"**
+    (or "noh"). It is your first sung piece in a minor key: the work is hearing and placing the
+    two notes that make minor sound minor.
+
+    ```abc
+    X:1
+    T:Song in D minor
+    M:4/4
+    L:1/8
+    Q:1/4=69
+    K:Dm
+    D2 F2 A4 | G2 F2 E4 | F2 G2 A2 B2 | A8 !breath! |
+    D2 F2 A4 | B2 A2 G2 F2 | E3 F E2 ^C2 | D8 |]
+    ```
+
+    ### The musical idea
+
+    - **The minor third.** Bar 1 outlines the tonic chord D–F–A. The F is a *minor* third above D;
+      it is the note that gives the colour. Sing D–F–A slowly a few times before you start and
+      listen to how close the F sits to the D.
+    - **The raised seventh.** In bar 7 the C# (harmonic minor, T-010) pulls up a semitone into the
+      final D. It is easy to sing it flat, because the natural-minor C is in the ear. Aim it high
+      and bright.
+    - **Shape:** phrase 1 climbs to the B-flat and settles on a long A (the dominant, a half
+      close); phrase 2 starts the same way, then turns downward to the tonic.
+    - **Bar 6** starts on the top note, B-flat, after the leap D–A in bar 5. Hear it before you
+      sing it; land on it gently rather than reaching up.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 3 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is C#4–Bb4. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Breathe at the breath mark** after bar 4, and nowhere else if you can: each phrase is
+      about 14 seconds. If that is too long today, add a quick breath after bar 2 and say so.
+    - **Minor is not sad by pressing.** Keep the same easy, forward tone as in a major song; the
+      mood comes from the notes, not from darkening or swallowing the sound.
+    - **Bar 7:** the dotted rhythm (E dotted quarter, F eighth) is a gentle lilt, not a jolt.
+    - **Bar 4 and bar 8:** whole notes, four full beats each. Keep them steady to the end.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within three quarters of a semitone (75 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **originalnu melodiju od 8 taktova u d-molu**, spori 4/4 takt, na
+    **„la”** (ili „no”). To je tvoja prva pevana melodija u molu: posao je da čuješ i tačno
+    postaviš dva tona koji molu daju boju.
+
+    ```abc
+    X:1
+    T:Song in D minor
+    M:4/4
+    L:1/8
+    Q:1/4=69
+    K:Dm
+    D2 F2 A4 | G2 F2 E4 | F2 G2 A2 B2 | A8 !breath! |
+    D2 F2 A4 | B2 A2 G2 F2 | E3 F E2 ^C2 | D8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Mala terca.** Takt 1 ocrtava tonički akord D–F–A. F je *mala* terca iznad D; to je ton
+      koji daje boju. Otpevaj polako D–F–A nekoliko puta pre početka i čuj koliko je F blizu D.
+    - **Povišeni sedmi stupanj.** U 7. taktu Cis (harmonski mol, T-010) vuče za polustepen naviše
+      u završno D. Lako ga je otpevati nisko, jer je u uhu prirodno C iz prirodnog mola. Ciljaj ga
+      visoko i svetlo.
+    - **Oblik:** prva fraza se penje do B i smiruje na dugom A (dominanta, polukadenca); druga
+      počinje isto, pa se okreće naniže ka tonici.
+    - **Takt 6** počinje najvišim tonom, B, posle skoka D–A u 5. taktu. Čuj ga pre nego što ga
+      otpevaš; spusti se na njega nežno umesto da se propinješ.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 3 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je Cis4–B4. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Udahni na znaku** posle 4. takta, i nigde više ako možeš: svaka fraza traje oko 14
+      sekundi. Ako ti je to danas predugo, dodaj kratak udah posle 2. takta i zapiši to.
+    - **Mol nije tužan od pritiskanja.** Zadrži isti lak, napred postavljen ton kao u duru;
+      raspoloženje dolazi od tonova, ne od zatamnjivanja ili gutanja zvuka.
+    - **Takt 7:** punktirani ritam (E četvrtina s tačkom, F osmina) je blago njihanje, ne trzaj.
+    - **Taktovi 4 i 8:** cele note, po četiri pune dobe. Drži ih mirno do kraja.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od tri četvrtine polustepena (75 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: minor-colour
+    weight: 2
+    label: {en: "Minor third and leading tone", sr: "Mala terca i vođica"}
+    top:
+      en: "The F in bars 1 and 5 is a clear minor third above D; the C# in bar 7 is bright and resolves cleanly up into D, not sung as C."
+      sr: "F u taktovima 1 i 5 je jasna mala terca iznad D; Cis u 7. taktu je svetao i čisto se razrešava naviše u D, ne peva se kao C."
+  - id: breath
+    weight: 1
+    label: {en: "Breath and phrasing", sr: "Dah i fraziranje"}
+    top:
+      en: "One breath at the mark (or a declared extra one after bar 2); both whole notes held four full beats with steady support."
+      sr: "Jedan udah na znaku (ili najavljen dodatni posle 2. takta); obe cele note traju pune četiri dobe uz miran oslonac."
+  - id: ease
+    weight: 2
+    label: {en: "Ease of tone", sr: "Lakoća tona"}
+    top:
+      en: "An easy, forward tone in both phrases; the B-flat in bar 6 is reached without reaching up or tightening; the low C# is not growled."
+      sr: "Lak, napred postavljen ton u obe fraze; B u 6. taktu je dosegnuto bez propinjanja i stezanja; donje Cis nije krkljavo."
+  - id: shape
+    weight: 1
+    label: {en: "Shape", sr: "Oblikovanje"}
+    top:
+      en: "Phrase 1 sounds open (a question ending on A), phrase 2 closed (an answer on D); the dotted rhythm in bar 7 lilts."
+      sr: "Prva fraza zvuči otvoreno (pitanje koje se završava na A), druga zatvoreno (odgovor na D); punktirani ritam u 7. taktu se njiše."

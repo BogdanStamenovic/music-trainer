@@ -1,0 +1,171 @@
+id: PV-009
+kind: vocal
+order: 35
+title: {en: "Sing: a pop verse and chorus (comfortable mix, a small riff)", sr: "Pevaj: pop strofa i refren (udobni miks, mali rif)"}
+minutes: 40
+prereqs: [V-020, V-023]
+melody:
+  title: {en: "Streetlight", sr: "Ulično svetlo"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: C major
+  meter: 4/4
+  tempo: 84
+  notes: [C4, C4, E4, G4, G4, E4, F4, F4, E4, D4, D4, C4, C4, E4, G4, A4, G4, E4, r, F4, F4, A4, F4, E4, C4, D4, D4, F4, E4, D4, E4, F4, G4, A4, G4, F4, G4, r, r, E4, G4, A4, G4, E4, D4, E4, C4, r, r, E4, G4, A4, C5, A4, G4, r, A4, A4, G4, E4, G4, A4, G4, E4, D4, E4, G4, A4, G4, E4, D4, C4, D4, C4]
+  beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 3, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 3, 1, 0.5, 0.5, 0.5, 1, 0.5, 1, 0.5, 0.5, 1, 2, 0.5, 0.5, 0.5, 1, 0.5, 1, 4, 0.5, 0.5, 0.5, 1, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 2, 0.25, 0.25, 0.25, 0.25, 1, 1, 1, 4]
+tolerance: 60
+brief:
+  en: |
+    Record yourself singing **"Streetlight"**, an original pop-style melody in C major: an
+    **8-bar verse** (low, speech-like) and an **8-bar chorus** (higher, syncopated), 84 BPM, on
+    **"nay"**, **"yeah"** or words of your own. It is the first piece in a contemporary style:
+    **syncopation**, a lift into the chorus in **comfortable mix**, and one tiny **riff** (a
+    four-note sixteenth turn in bar 15).
+
+    ```abc
+    X:1
+    T:Streetlight
+    M:4/4
+    L:1/8
+    Q:1/4=84
+    K:C
+    CC EG G2 E2 | FF ED D4 !breath! | CC EG A2 G2 | E6 z2 !breath! |
+    FF AF E2 C2 | DD FE D4 !breath! | EF GA G2 F2 | G6 z2 !breath! |
+    z E G A2 G E2 | DE C2 z4 !breath! | z E G A2 c A2 | G8 !breath! |
+    z A A G2 E G2 | AG ED E4 !breath! | G/A/G/E/ D2 C2 D2 | C8 |]
+    ```
+
+    ### The musical idea
+
+    - **Verse vs. chorus.** The verse stays between C4 and A4 and moves like speech (straight
+      eighths, repeated notes). The chorus starts *after* the beat (the eighth rest) and leans on
+      syncopations: in bars 9, 11 and 13 a quarter note starts on the "and" of beat 2 and is held
+      across beat 3. That off-beat push is what makes it sound like pop.
+    - **The top of the chorus**, C5 in bar 11, is touched once and released. It is a lift, not a
+      climax to lean on.
+    - **The riff** in bar 15 (G–A–G–E in sixteenths) is a small decoration, like the runs from the
+      minuet but quicker. Light and precise beats fast and fancy.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is C4–C5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Verse: talk-sing.** Close to your speaking voice, relaxed, clear consonants if you use
+      words.
+    - **Chorus: comfortable mix**, a little brighter and more forward than the verse, *not* much
+      louder. If the C5 or the A4s make you squeeze, take the chorus softer or let it go lighter;
+      the brightness should come from the vowel ("nay", "yeah"), not from pushing.
+    - **No belting and no grit.** Pop singers use both, but here the goal is a clean, easy mix
+      you could sing for an hour.
+    - **Syncopation:** count "1-and-2-and" out loud first, clap the chorus rhythm, then sing it.
+      Start each chorus phrase exactly on the "and" after the rest; do not anticipate.
+    - **The riff:** practise bar 15 alone at half speed on "nay" until the four notes are all
+      there, then build up to tempo. If it smears at 84, sing it at a slower tempo you control.
+    - **Breathe** in the rests and at the breath marks.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within 60 cents, a bit more than half a semitone.
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **„Ulično svetlo”**, originalnu melodiju u pop stilu u C-duru:
+    **strofa od 8 taktova** (nisko, blizu govora) i **refren od 8 taktova** (više, sinkopirano),
+    84 BPM, na **„nej”**, **„jeah”** ili na svoje reči. Prvi komad u savremenom stilu:
+    **sinkopa**, podizanje u refren u **udobnom miksu** i jedan sićušan **rif** (okret od četiri
+    šesnaestine u 15. taktu).
+
+    ```abc
+    X:1
+    T:Streetlight
+    M:4/4
+    L:1/8
+    Q:1/4=84
+    K:C
+    CC EG G2 E2 | FF ED D4 !breath! | CC EG A2 G2 | E6 z2 !breath! |
+    FF AF E2 C2 | DD FE D4 !breath! | EF GA G2 F2 | G6 z2 !breath! |
+    z E G A2 G E2 | DE C2 z4 !breath! | z E G A2 c A2 | G8 !breath! |
+    z A A G2 E G2 | AG ED E4 !breath! | G/A/G/E/ D2 C2 D2 | C8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Strofa i refren.** Strofa ostaje između C4 i A4 i kreće se kao govor (ravne osmine,
+      ponovljeni tonovi). Refren počinje *posle* dobe (osminska pauza) i oslanja se na sinkope:
+      u taktovima 9, 11 i 13 četvrtina počinje na „i” druge dobe i traje preko treće. Taj
+      pomak sa dobe je ono po čemu zvuči kao pop.
+    - **Vrh refrena**, C5 u 11. taktu, dotakne se jednom i pusti. To je podizanje, ne vrhunac
+      na koji se naslanja.
+    - **Rif** u 15. taktu (G–A–G–E u šesnaestinama) je mali ukras, kao nizovi iz menueta ali
+      brži. Lako i precizno pobeđuje brzo i kitnjasto.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je C4–C5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Strofa: govor-pevanje.** Blizu tvog glasa u govoru, opušteno, jasni suglasnici ako
+      pevaš reči.
+    - **Refren: udobni miks**, malo svetliji i više napred od strofe, *ne* mnogo glasniji. Ako
+      te C5 ili A4 teraju da stežeš, otpevaj refren tiše ili ga pusti lakšim; sjaj treba da
+      dolazi od vokala („nej”, „jeah”), ne od guranja.
+    - **Bez beltinga i bez hrapavosti.** Pop pevači koriste oboje, ali ovde je cilj čist, lak
+      miks koji bi mogao da pevaš sat vremena.
+    - **Sinkopa:** prvo broj naglas „1-i-2-i”, otkucaj ritam refrena, pa ga otpevaj. Počni svaku
+      frazu refrena tačno na „i” posle pauze; ne uleći ranije.
+    - **Rif:** vežbaj sam 15. takt u pola brzine na „nej” dok sva četiri tona ne budu tu, pa
+      podiži do tempa. Ako se u 84 razmazuje, otpevaj ga u sporijem tempu koji kontrolišeš.
+    - **Udiši** u pauzama i na znacima za udah.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od 60 centi, nešto više od pola polustepena.
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: mix
+    weight: 2
+    label: {en: "Comfortable mix in the chorus", sr: "Udobni miks u refrenu"}
+    top:
+      en: "The chorus is brighter than the verse but not pushed: A4 and C5 are easy and clean, no squeeze, no chin lift, no grit; volume stays medium."
+      sr: "Refren je svetliji od strofe ali nije guran: A4 i C5 su laki i čisti, bez stezanja, podizanja brade i hrapavosti; jačina ostaje srednja."
+  - id: syncopation
+    weight: 2
+    label: {en: "Syncopation and groove", sr: "Sinkopa i ritmički osećaj"}
+    top:
+      en: "Each chorus phrase starts exactly after the eighth rest; the off-beat quarter notes in bars 9, 11 and 13 start on the 'and' and are held across beat 3; the pulse never drifts."
+      sr: "Svaka fraza refrena počinje tačno posle osminske pauze; četvrtine van dobe u taktovima 9, 11 i 13 počinju na „i” i traju preko treće dobe; puls ne pluta."
+  - id: riff
+    weight: 1
+    label: {en: "The riff", sr: "Rif"}
+    top:
+      en: "The four sixteenths in bar 15 are all audible, in tune and even, at whatever tempo was chosen."
+      sr: "Četiri šesnaestine u 15. taktu se sve čuju, čiste su i ujednačene, u kom god je tempu izabrano."
+  - id: contrast
+    weight: 1
+    label: {en: "Verse/chorus contrast", sr: "Kontrast strofe i refrena"}
+    top:
+      en: "The verse sounds relaxed and speech-like, the chorus lifts; the difference comes from colour and rhythm, not volume."
+      sr: "Strofa zvuči opušteno i govorno, refren se podiže; razlika dolazi od boje i ritma, ne od jačine."

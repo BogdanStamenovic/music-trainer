@@ -1,0 +1,99 @@
+id: PE-009
+kind: byear
+order: 36
+title: {en: "By ear: a blues phrase", sr: "Po sluhu: bluz fraza"}
+minutes: 40
+prereqs: [K-020, E-018, E-021]
+melody:
+  title: {en: "Back Porch Blues (original melody)", sr: "Bluz sa trema (originalna melodija)"}
+  source: "Original 12-bar blues head written for music-trainer (2026), over C7–F7–C7–C7 | F7–F7–C7–C7 | G7–F7–C7–C7; no outside source."
+  key: C major
+  meter: 4/4
+  tempo: 100
+  pickup: 1
+  notes: [G4, Bb4, C5, Bb4, G4, Eb4, C4, r, G4, Bb4, C5, Eb5, C5, Bb4, G4, G4, r, G4, Bb4, C5, Bb4, G4, Eb4, C4, r, G4, Bb4, C5, Eb5, C5, Bb4, G4, G4, r, D5, C5, B4, G4, C5, Bb4, A4, F4, Bb4, G4, Gb4, F4, Eb4, E4, C4]
+  beats: [0.5, 0.5, 1.5, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 2, 1, 0.5, 0.5, 1.5, 0.5, 1, 1, 2, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 2, 2, 1, 0.5, 0.5, 2, 1, 0.5, 0.5, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 3]
+brief:
+  en: |
+    The app plays a **12-bar blues head**, written for this course. **Play it back on the
+    piano, right hand, any key.** If you wrote a blues head (PC-010) or blues lyrics (PL-001),
+    you will recognise the shape.
+
+    ### What to listen for
+
+    - **AAB.** Line 1 (bars 1–4) is a riff with an answer; **line 2 (bars 5–8) is the same
+      notes** over a different chord. Line 3 (bars 9–12) is new and comes home.
+    - **The pickup:** the riff starts on the last beat *before* bar 1: two quick notes
+      (5 – b7) leading to the tonic on the downbeat.
+    - **Blue notes:** the **flat 7th** (b7) and **flat 3rd** (b3) are everywhere in lines 1–2.
+      In line 3 the **natural 7th** (over the V chord) and the natural 6th (over IV) appear,
+      and bar 11 slides down through the **blue 5th** (5 – b5 – 4 – b3) and lands on the
+      **natural 3rd** before the tonic.
+    - **Rests are part of the phrase.** Each riff ends with a beat of silence before the next
+      pickup. The playback is straight (no swing); you may swing it, but keep the long-short
+      proportions the same on every repeat.
+
+    ### Strategies
+
+    1. **Sing line 1** until you have it. Lines 1 and 2 are identical, so that is two-thirds
+       of the tune.
+    2. **The tonic is the note on beat 1 of bar 1.** In C, the blue notes are Eb, Gb and Bb.
+    3. **Find bar 11 slowly**: a chromatic slide from 5 down to b3, then up a half step.
+    4. Play along with the playback before playing alone.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    Aplikacija pušta **bluz temu od 12 taktova**, napisanu za ovaj kurs. **Odsviraj je na
+    klaviru, desnom rukom, u bilo kom tonalitetu.** Ako si napisao bluz temu (PC-010) ili bluz
+    tekst (PL-001), prepoznaćeš oblik.
+
+    ### Šta da slušaš
+
+    - **AAB.** 1. stih (taktovi 1–4) je rif sa odgovorom; **2. stih (taktovi 5–8) su isti
+      tonovi** nad drugim akordom. 3. stih (taktovi 9–12) je nov i vraća se kući.
+    - **Predtakt:** rif počinje na poslednjoj dobi *pre* 1. takta: dva brza tona (5 – b7) koji
+      vode u toniku na jakoj dobi.
+    - **Plave note:** **mala septima** (b7) i **mala terca** (b3) su svuda u stihovima 1–2. U 3.
+      stihu se javljaju **velika septima** (nad dominantom) i velika seksta (nad IV), a 11. takt
+      klizi naniže preko **plave kvinte** (5 – b5 – 4 – b3) i stiže na **veliku tercu** pre
+      tonike.
+    - **Pauze su deo fraze.** Svaki rif se završava dobom tišine pre sledećeg predtakta.
+      Reprodukcija je ravna (bez svinga); možeš da svinguješ, ali neka odnosi dugo-kratko budu
+      isti pri svakom ponavljanju.
+
+    ### Strategije
+
+    1. **Otpevaj 1. stih** dok ga ne savladaš. Stihovi 1 i 2 su isti, pa su to dve trećine
+       melodije.
+    2. **Tonika je ton na prvoj dobi 1. takta.** U C-duru plave note su Es, Ges i B.
+    3. **11. takt nađi polako**: hromatsko klizanje od 5 naniže do b3, pa polustepen naviše.
+    4. Sviraj zajedno sa reprodukcijom pre nego što sviraš sam.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: blues-feel
+    weight: 1
+    label: {en: "Blues feel", sr: "Bluz osećaj"}
+    top:
+      en: "The blue notes are exact (b3, b5, b7 where the tune has them, naturals where it has them), the rests are respected, and the riff sounds relaxed and in the pocket."
+      sr: "Plave note su tačne (b3, b5, b7 gde ih melodija ima, prirodni tonovi gde njih ima), pauze su poštovane, a rif zvuči opušteno i „u džepu”."
+  - id: form
+    weight: 1
+    label: {en: "AAB heard", sr: "AAB se čuje"}
+    top:
+      en: "Lines 1 and 2 are played identically, line 3 is distinct, and the pickups land the tonic squarely on the downbeat."
+      sr: "Stihovi 1 i 2 su odsvirani identično, 3. stih se razlikuje, a predtakti postavljaju toniku tačno na jaku dobu."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes say which blue notes you heard where, how you found the bar-11 slide, and what you corrected."
+      sr: "U beleškama piše koje si plave note gde čuo, kako si našao klizanje u 11. taktu i šta si ispravio."

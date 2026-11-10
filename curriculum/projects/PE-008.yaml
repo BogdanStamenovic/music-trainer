@@ -1,0 +1,103 @@
+id: PE-008
+kind: byear
+order: 32
+title: {en: "By ear: chromatic neighbours", sr: "Po sluhu: hromatski skretni tonovi"}
+minutes: 40
+prereqs: [T-029, E-011, E-021]
+melody:
+  title: {en: "Turning Corners (original melody)", sr: "Iza ugla (originalna melodija)"}
+  source: "Original melody written for music-trainer (2026); no outside source."
+  key: F major
+  meter: 4/4
+  tempo: 88
+  notes: [A4, G#4, A4, C5, A4, G4, F#4, G4, Bb4, D5, C#5, D5, F5, D5, C5, A4, G#4, A4, C5, A4, Bb4, B4, C5, D5, C5, A4, G4, E4, F4]
+  beats: [1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 2, 1, 0.5, 0.5, 1, 1, 4, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+brief:
+  en: |
+    An **8-bar melody in a major key with notes outside the scale**, written for this course.
+    **Play it back on the piano, right hand, any key.** Up to now every by-ear tune used only
+    scale notes (plus a leading tone in minor). Here the black keys come in where the scale
+    says they should not.
+
+    ### What to listen for
+
+    - **Chromatic lower neighbours.** The motif in bar 1 dips **a half step below** a scale
+      note and comes straight back (3 – #2 – 3). It is a short, quick ornament on the "and"
+      of a beat. Bars 2 and 3 do the same figure on other scale notes (2 – #1 – 2, then
+      6 – #5 – 6): a **sequence**, so once you have bar 1 you know the pattern.
+    - **The trick:** a chromatic neighbour is **always a half step** away. If what you played
+      sounds "folksy" rather than "jazzy", you used a whole step (the scale note) instead.
+    - **A chromatic passing note.** Bar 6 climbs **4 – #4 – 5 – 6**: two half steps in a row,
+      then a whole step. The #4 fills the gap between 4 and 5.
+    - **Rhythm:** quarter notes, two eighths for each neighbour figure, half and whole notes
+      at the phrase ends.
+
+    ### Strategies
+
+    1. **Sing it** slowly; the chromatic notes are easier to hear when sung.
+    2. **The first note is the 3rd of the key.** Starting on E and playing in C major is the
+       easiest choice (E – D# – E – G – E...).
+    3. **First play it without the chromatic notes** (just the scale-note skeleton), then add
+       the half-step dips.
+    4. **Bars 1 and 5 are the same.**
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key. Every half step
+      counts: a whole step instead of a chromatic neighbour is a wrong interval twice.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    **Melodija od 8 taktova u duru, sa tonovima van lestvice**, napisana za ovaj kurs.
+    **Odsviraj je na klaviru, desnom rukom, u bilo kom tonalitetu.** Do sada je svaka melodija
+    po sluhu koristila samo tonove lestvice (uz vođicu u molu). Ovde crne dirke dolaze tamo gde
+    lestvica kaže da ne bi trebalo.
+
+    ### Šta da slušaš
+
+    - **Hromatski donji skretni tonovi.** Motiv u 1. taktu se spušta **polustepen ispod** tona
+      lestvice i odmah se vraća (3 – #2 – 3). To je kratak, brz ukras na „i” dobe. Taktovi 2 i 3
+      rade istu figuru na drugim tonovima (2 – #1 – 2, pa 6 – #5 – 6): **sekvenca**, pa kad
+      savladaš 1. takt, znaš obrazac.
+    - **Trik:** hromatski skretni ton je **uvek polustepen** daleko. Ako ono što si odsvirao
+      zvuči „narodski”, a ne „džezerski”, upotrebio si ceo stepen (ton lestvice).
+    - **Hromatska prolaznica.** 6. takt se penje **4 – #4 – 5 – 6**: dva polustepena zaredom,
+      pa ceo stepen. #4 popunjava razmak između 4 i 5.
+    - **Ritam:** četvrtine, dve osmine za svaku figuru skretnog tona, polovine i cele note na
+      krajevima fraza.
+
+    ### Strategije
+
+    1. **Otpevaj je** polako; hromatski tonovi se lakše čuju kad se pevaju.
+    2. **Prvi ton je 3. stupanj tonaliteta.** Najlakše je početi na E i svirati u C-duru
+       (E – Dis – E – G – E...).
+    3. **Prvo je odsviraj bez hromatskih tonova** (samo skelet od tonova lestvice), pa dodaj
+       spuštanja za polustepen.
+    4. **Taktovi 1 i 5 su isti.**
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+      Svaki polustepen se računa: ceo stepen umesto hromatskog skretnog tona su dva pogrešna
+      intervala.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: chromatic-accuracy
+    weight: 1
+    label: {en: "Chromatic notes exact", sr: "Hromatski tonovi tačni"}
+    top:
+      en: "All four chromatic neighbours and the #4 passing note are real half steps, played lightly as ornaments rather than as accented notes."
+      sr: "Sva četiri hromatska skretna tona i prolazni #4 su pravi polustepeni, odsvirani lako, kao ukrasi, a ne kao naglašeni tonovi."
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One steady take; the eighth-note figures are even and in time, the long notes held."
+      sr: "Jedan ravnomeran snimak; figure u osminama su ujednačene i u ritmu, dugi tonovi zadržani."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes explain the skeleton-first approach (or what you did instead), name the sequence in bars 1–3, and say which half step you missed first."
+      sr: "U beleškama objašnjavaš pristup „prvo skelet” (ili šta si uradio umesto toga), imenuješ sekvencu u taktovima 1–3 i navodiš koji si polustepen prvo promašio."

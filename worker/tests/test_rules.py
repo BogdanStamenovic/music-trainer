@@ -432,3 +432,14 @@ def test_unreadable_note_is_reported_as_warning():
     res = run({"abc": abc("C2 D2 ^2 F2 | G8 |]"), "key": "C major", "meter": "4/4", "rules": ["key"]})
     assert res["ok"]
     assert any("read as C" in w for w in res.get("warnings", [])), res
+
+
+def test_chord_symbols_are_not_melody_notes():
+    """Lead sheets: "C"E2 ... must count only the melody (regression, PC-008)."""
+    abc = 'X:1\nM:4/4\nL:1/4\nK:C\n"C"C D E C | "F"F A "G"G2 | "Am"A G E C | "G7"D2 "C"C2 |]'
+    r = run({"abc": abc, "key": "C major", "meter": "4/4", "bars": 4, "rules": ["bars", "rhythm", "range", "leaps", "cadence"]})
+    assert r["ok"], r
+    assert r["parsed"]["notes"] == 13  # 4 + 3 + 4 + 2
+    by = {c["id"]: c for c in r["checks"]}
+    assert by["rhythm"]["pass"] and by["bars"]["pass"] and by["range"]["pass"], by
+    assert by["cadence"]["score"] == 1.0

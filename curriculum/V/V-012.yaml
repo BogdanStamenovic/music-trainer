@@ -1,0 +1,108 @@
+id: V-012
+track: V
+order: 12
+title: {en: "Resonance: hum, \"ng\", forward placement", sr: "Rezonancija: pevušenje, „ng”, osećaj napred"}
+prereqs: [V-011]
+minutes: 10
+tags: [voice, resonance]
+explain:
+  en: |
+    The vocal folds make a small, thin buzz. The throat, mouth and nose shape and amplify it: that is **resonance** (Serbian: *rezonancija*).
+    Good resonance gives a clear, carrying tone **without extra effort**, which is why it matters more than volume.
+
+    Singers talk about **forward placement**: a feeling of buzz on the lips, around the nose and the cheekbones. You cannot literally "place" sound anywhere;
+    the feeling is a side effect of an efficient tone, and chasing the feeling is a practical way to find that tone.
+
+    Two tools:
+
+    - **Hum ("mm")**: lips closed loosely, teeth apart, tongue relaxed. You should feel the lips tingle. If you feel only the throat, hum quieter and higher in your speaking range.
+    - **"ng"** (the end of *sing*): the back of the tongue touches the soft palate, and the sound goes out through the nose. The buzz sits behind the nose and in the face.
+
+    Then the key move: **open from the hum or "ng" into a vowel and keep the buzz**. "Mm-ah", "ng-ah". The vowel should feel as easy and as "in the face" as the hum before it.
+
+    Check with the **nose pinch**: sing "ah" and pinch your nose for a moment. If the sound hardly changes, the vowel is clear. If it changes a lot, too much is going through the nose (nasal);
+    English and Serbian vowels are oral, so relax the soft palate up a little, as in the start of a yawn. On "mm" and "ng" pinching stops the sound: that is expected, they are nasal on purpose.
+
+    Buzz comes from efficiency, not loudness. Quiet is fine.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Glasnice proizvode mali, tanak zvuk. Grlo, usta i nos ga oblikuju i pojačavaju: to je **rezonancija** (engl. *resonance*).
+    Dobra rezonancija daje jasan, nosiv ton **bez dodatnog napora**, i zato je važnija od jačine.
+
+    Pevači pričaju o **osećaju napred** (engl. *forward placement*): vibraciji na usnama, oko nosa i na jagodicama. Zvuk ne može bukvalno da se „postavi” bilo gde;
+    osećaj je posledica efikasnog tona, a traženje tog osećaja je praktičan put do takvog tona.
+
+    Dva alata:
+
+    - **Pevušenje („mm”)**: usne labavo zatvorene, zubi razdvojeni, jezik opušten. Usne treba da golicaju. Ako osećaš samo grlo, pevuši tiše i malo više u opsegu govora.
+    - **„ng”** (kraj engl. reči *sing*, kao „n” u „banka”): zadnji deo jezika dodiruje meko nepce, a zvuk izlazi kroz nos. Vibracija je iza nosa i u licu.
+
+    Zatim ključni potez: **iz pevušenja ili „ng” otvori u samoglasnik i zadrži vibraciju**. „Mm-a”, „ng-a”. Samoglasnik treba da bude jednako lak i „u licu” kao pevušenje pre njega.
+
+    Proveri **štipanjem nosa**: pevaj „a” i na trenutak stisni nos. Ako se zvuk skoro ne menja, samoglasnik je čist. Ako se mnogo menja, previše ide kroz nos (nazalno);
+    srpski i engleski samoglasnici su oralni, pa malo podigni meko nepce, kao na početku zevanja. Na „mm” i „ng” štipanje prekida zvuk: to je očekivano, oni su namerno nazalni.
+
+    Vibracija dolazi od efikasnosti, ne od jačine. Tiho je sasvim u redu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-012-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-012-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then lip trills along with the five notes up and down."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa treperenje usnama uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-012-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Find the buzz: hum on an easy note and gently 'chew' with the lips closed. Slide the hum a little up and down until the lips and nose tingle most. Quiet; the tingle is the goal, not volume."
+      sr: "Pronađi vibraciju: pevuši na lakom tonu i nežno „žvaći” zatvorenih usana. Pomeraj pevušenje malo gore-dole dok usne i nos najviše ne zagolicaju. Tiho; cilj je golicanje, ne jačina."
+  - id: V-012-4
+    type: sing-pitch
+    prompt:
+      en: "Hum 'mm' on the note for 4 seconds: loose lips, teeth apart, feel the tingle."
+      sr: "Pevuši „mm” na tonu 4 sekunde: labave usne, zubi razdvojeni, oseti golicanje."
+    notes: [A3]
+    sustain: 4
+    tolerance: 50
+    pass: 0.65
+  - id: V-012-5
+    type: sing-pitch
+    prompt:
+      en: "'ng' for one second, then open to 'ah' without a break and hold for 3 more seconds. Keep the buzz in the face as the vowel opens."
+      sr: "„ng” jednu sekundu, pa bez prekida otvori u „a” i drži još 3 sekunde. Zadrži vibraciju u licu dok se samoglasnik otvara."
+    notes: [C4]
+    sustain: 4
+    tolerance: 50
+    pass: 0.65
+  - id: V-012-6
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1: hum the first two notes on 'mm', open to 'ah' on the third and keep the same buzz to the end."
+      sr: "5-4-3-2-1: prva dva tona pevuši na „mm”, na trećem otvori u „a” i zadrži istu vibraciju do kraja."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-012-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Nose-pinch check: sing 'ah', 'ee' and 'oo' on an easy note and pinch the nose halfway through each. Rate how little the sound changed (little change = clear, not nasal)."
+      sr: "Provera štipanjem nosa: otpevaj „a”, „i” i „u” na lakom tonu i stisni nos na pola svakog. Oceni koliko se malo zvuk promenio (mala promena = čisto, nije nazalno)."

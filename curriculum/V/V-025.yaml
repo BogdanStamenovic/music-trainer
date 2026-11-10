@@ -1,0 +1,98 @@
+id: V-025
+track: V
+order: 25
+title: {en: "Range: gentle extension at both ends", sr: "Opseg: nežno proširivanje na oba kraja"}
+prereqs: [V-024]
+minutes: 10
+tags: [voice, range]
+explain:
+  en: |
+    Your comfortable range was measured weeks ago. Since then you have learned lighter coordination at the top (head voice, falsetto, the break)
+    and easier breath, so it may have grown. Today you explore its edges **gently** and then **measure it again**; every later voice lesson uses the new value.
+
+    Range grows from **coordination and ease, not effort**. The notes at the edges come with a lighter, quieter sound; they never come by force.
+
+    **The low end**
+
+    - Let the sound get quieter and a little breathier as you go down. Low notes need less air, not more.
+    - Do not press the chin down or push the larynx down to "find" lower notes. Where the tone turns to a creak or loses a clear pitch, that is the edge for today.
+
+    **The high end**
+
+    - Use the light tools: "oo", lip trills, "ng", as in the head-voice and passaggio lessons.
+    - Go up by half steps. Stop at the **first** sign of tightness, thinning to a squeeze, or the urge to get louder. That note is not yet comfortable.
+    - No shouting, ever, to reach a note.
+
+    Expect small changes: a half step or a whole step at each end over a month is normal progress; no change for weeks is also normal.
+    For the measurement, record **comfortable** notes only, not the very last one you can squeeze out.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Udoban opseg je izmeren pre nekoliko nedelja. Od tada si naučio lakšu koordinaciju na vrhu (glavni glas, falset, lom)
+    i lakše disanje, pa je možda porastao. Danas **nežno** istražuješ njegove ivice i onda ga **ponovo meriš**; svaka sledeća lekcija glasa koristi novu vrednost.
+
+    Opseg raste od **koordinacije i lakoće, ne od napora**. Tonovi na ivicama dolaze sa lakšim, tišim zvukom; nikad ne dolaze silom.
+
+    **Donji kraj**
+
+    - Pusti da zvuk postane tiši i malo dahtaviji dok ideš naniže. Dubokim tonovima treba manje vazduha, ne više.
+    - Ne pritiskaj bradu naniže i ne guraj grkljan dole da bi „našao” niže tonove. Gde ton pređe u krčanje ili izgubi jasnu visinu, to je današnja ivica.
+
+    **Gornji kraj**
+
+    - Koristi lake alate: „u”, treperenje usnama, „ng”, kao u lekcijama o glavnom glasu i prelazu.
+    - Penji se po polustepen. Stani na **prvi** znak tesnoće, stanjivanja u stezanje ili poriva da pojačaš. Taj ton još nije udoban.
+    - Nikad ne viči da bi stigao do tona.
+
+    Očekuj male promene: polustepen ili ceo stepen na svakom kraju za mesec dana je normalan napredak; ni promena nedeljama nije neobična.
+    Za merenje snimaj samo **udobne** tonove, ne poslednji koji jedva istisneš.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-025-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-025-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 4 quiet lip-trill sirens through your whole comfortable range, then 3 light owl hoots sliding down."
+      sr: "Zagrevanje: 4 niska udaha, 4 tihe sirene treperenjem usana kroz ceo udoban opseg, pa 3 lagana huktanja uz klizanje naniže."
+  - id: V-025-3
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Low end: lip-trill or hum 5-4-3-2-1 (play it on the piano), then repeat a half step lower each time. Quieter as you go down. Stop where the bottom note loses a clear pitch; note that key."
+      sr: "Donji kraj: treperenje usnama ili pevušenje 5-4-3-2-1 (odsviraj na klaviru), pa svaki put ponovi polustepen niže. Što niže, to tiše. Stani gde donji ton izgubi jasnu visinu; zapamti tu dirku."
+  - id: V-025-4
+    type: practice
+    minutes: 2
+    prompt:
+      en: "High end: 1-3-5-3-1 on 'oo' (play it on the piano), then repeat a half step higher each time. Light and quiet. Stop at the first tightness or urge to push; note that key."
+      sr: "Gornji kraj: 1-3-5-3-1 na „u” (odsviraj na klaviru), pa svaki put ponovi polustepen više. Lagano i tiho. Stani na prvu tesnoću ili poriv da guraš; zapamti tu dirku."
+  - id: V-025-5
+    type: sing-phrase
+    prompt:
+      en: "Octave glide down on 'oo': light at the top, quiet and easy at the bottom."
+      sr: "Klizanje za oktavu naniže na „u”: lagano na vrhu, tiho i lako na dnu."
+    notes: [A4, A3]
+    beats: [2, 2]
+    tempo: 60
+    tolerance: 75
+    pass: 0.75
+    checks:
+      - interval: {from: A3, to: A4, is: P8}
+  - id: V-025-6
+    type: voice-range
+    pass: 0.6
+    prompt:
+      en: "Measure again: a slow, quiet glide down to the lowest note you can sing without strain, then up to the highest without strain. Not forced: the app keeps a 2-semitone safety margin inside both ends by itself."
+      sr: "Izmeri ponovo: sporo, tiho klizanje naniže do najdubljeg tona koji pevaš bez napora, pa naviše do najvišeg bez napora. Bez forsiranja: aplikacija sama ostavlja sigurnosnu marginu od 2 polustepena unutar oba kraja."
+  - id: V-025-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet hums sliding gently downward, then breathe normally. Compare the two keys you noted with your old range."
+      sr: "Smirivanje: 3 tiha pevušenja uz blago klizanje naniže, pa diši normalno. Uporedi dve dirke koje si zapamtio sa starim opsegom."

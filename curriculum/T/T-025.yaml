@@ -1,0 +1,114 @@
+id: T-025
+track: T
+order: 25
+prereqs: [T-024]
+title: {en: "The ii–V–I progression", sr: "Progresija ii–V–I"}
+minutes: 14
+tags: [harmony]
+explain:
+  en: |
+    **ii–V–I** is PD → D → T in its most compact form, and with sevenths, **ii7–V7–Imaj7**, it is the basic sentence of jazz and much of soul and pop.
+    In C: **Dm7 – G7 – Cmaj7**. The roots fall in fifths (D → G → C), the strongest root motion there is.
+
+    The smoothness comes from the **guide tones**, the 3rd and 7th of each chord (they define the chord's quality; root and 5th are often left to the bass or omitted):
+
+    | chord | 3rd | 7th |
+    |---|---|---|
+    | Dm7 | F | C |
+    | G7 | B | F |
+    | Cmaj7 | E | B |
+
+    The 7th of each chord moves **down a step** to the 3rd of the next (C → B, F → E), while the other guide tone **stays** (F, then B).
+    Two voices, each moving at most a half step: that is all the left hand of a jazz pianist plays under a melody.
+
+    In minor the progression is **iiø7 – V7 – i**: in A minor, Bø7 – E7 – Am.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Dm7"[Fc] "G7"[FB] "Cmaj7"[EB] |]
+    ```
+  sr: |
+    **ii–V–I** je S → D → T u najsažetijem obliku, a sa septakordima, **ii7–V7–Imaj7**, osnovna je rečenica džeza i dobrog dela soula i popa.
+    U C-duru: **Dm7 – G7 – Cmaj7**. Osnovni tonovi silaze za kvintu (D → G → C), što je najjače kretanje osnovnih tonova.
+
+    Glatkoća dolazi od **ključnih tonova akorda** (*guide tones*): terce i septime svakog akorda (one određuju vrstu akorda; osnovni ton i kvintu često svira bas ili se izostavljaju):
+
+    | akord | terca | septima |
+    |---|---|---|
+    | Dm7 | F | C |
+    | G7 | H | F |
+    | Cmaj7 | E | H |
+
+    Septima svakog akorda ide **za stupanj naniže** u tercu sledećeg (C → H, F → E), dok drugi ton **ostaje** (F, pa H).
+    Dva glasa, svaki se pomera najviše za polustepen: to je sve što leva ruka džez pijaniste svira ispod melodije.
+
+    U molu progresija glasi **iiø7 – V7 – i**: u a-molu Hø7 – E7 – Am.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Dm7"[Fc] "G7"[FB] "Cmaj7"[EB] |]
+    ```
+exercises:
+  - id: T-025-1
+    type: generated
+    prompt: {en: "Play ii7 – V7 – Imaj7", sr: "Odsviraj ii7 – V7 – Imaj7"}
+    count: 3
+    gen: {kind: progression, keys: [C, F, G, Bb, D, Eb], numerals: [ii7, V7, Imaj7]}
+  - id: T-025-2
+    type: mcq
+    prompt: {en: "In B♭ major, ii7 – V7 – Imaj7 is… (international chord symbols)", sr: "U B-duru ii7 – V7 – Imaj7 je… (međunarodne akordske oznake, B♭ = B)"}
+    options: ["Cm7 – F7 – B♭maj7", "C7 – F7 – B♭maj7", "Cm7 – Fm7 – B♭maj7", "Gm7 – C7 – Fmaj7"]
+    answer: 0
+    checks:
+      - interval: {from: C4, to: Eb4, is: m3}
+      - interval: {from: C4, to: Bb4, is: m7}
+      - chord: {notes: [F4, A4, C5, Eb5], root: F, quality: "7"}
+      - chord: {notes: [Bb3, D4, F4, A4], root: Bb, quality: maj7}
+  - id: T-025-3
+    type: mcq
+    prompt: {en: "Which notes do Dm7 and G7 have in common?", sr: "Koje zajedničke tonove imaju Dm7 i G7?"}
+    options:
+      - {en: "D and F", sr: "D i F"}
+      - {en: "F and A", sr: "F i A"}
+      - {en: "C and B", sr: "C i H"}
+      - {en: "none", sr: "nijedan"}
+    answer: 0
+    checks:
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: D4, to: C5, is: m7}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+  - id: T-025-4
+    type: mcq
+    prompt: {en: "Dm7 → G7: where does the 7th of Dm7 (C) go?", sr: "Dm7 → G7: kuda ide septima akorda Dm7 (C)?"}
+    options:
+      - {en: "down a half step to B, the 3rd of G7", sr: "polustepenom naniže na H, tercu G7"}
+      - {en: "up to D, the 5th of G7", sr: "naviše na D, kvintu G7"}
+      - {en: "it stays and becomes the 7th of G7", sr: "ostaje i postaje septima G7"}
+      - {en: "down to G, the root of G7", sr: "naniže na G, osnovni ton G7"}
+    answer: 0
+    checks:
+      - interval: {from: B4, to: C5, is: m2}
+  - id: T-025-5
+    type: midi-play
+    prompt: {en: "Guide tones only: play F+C, F+B, E+B (Dm7 – G7 – Cmaj7). Feel how little the hand moves.", sr: "Samo ključni tonovi: odsviraj F+C, F+H, E+H (Dm7 – G7 – Cmaj7). Oseti koliko se malo ruka pomera."}
+    mode: chords
+    octave: any
+    expectChords: [[F4, C5], [F4, B4], [E4, B4]]
+    checks:
+      - interval: {from: F4, to: C5, is: P5}
+      - interval: {from: F4, to: B4, is: A4}
+      - interval: {from: E4, to: B4, is: P5}
+  - id: T-025-6
+    type: generated
+    prompt: {en: "Listen: which progression?", sr: "Slušaj: koja progresija?"}
+    count: 3
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[ii7, V7, Imaj7], [IVmaj7, V7, Imaj7], [ii7, V7, vi7]], tempo: 50}
+  - id: T-025-7
+    type: generated
+    prompt: {en: "Minor ii–V–i: play iiø7 – V7 – i", sr: "ii–V–i u molu: odsviraj iiø7 – V7 – i"}
+    count: 2
+    gen: {kind: progression, keys: [A, D, E], type: harmonic-minor, numerals: [iiø7, V7, i]}

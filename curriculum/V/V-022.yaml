@@ -1,0 +1,123 @@
+id: V-022
+track: V
+order: 22
+title: {en: "Pure vowels II: diphthongs (EN) and Serbian vowel clarity", sr: "Čisti samoglasnici II: diftonzi (EN) i jasnoća srpskih samoglasnika"}
+prereqs: [V-021]
+minutes: 10
+tags: [voice, vowels, diction]
+explain:
+  en: |
+    **English** is full of **diphthongs**: two vowels glided together in one syllable. Spoken, the glide is quick and you never notice it.
+    Sung on a long note, it becomes a problem: drift into the second vowel too early and "day" turns into "da-eeeee".
+
+    The rule: **sustain the first vowel, add the second only at the very end**, quickly, just before the next consonant or the release.
+
+    | word | sustain | add at the end |
+    |---|---|---|
+    | d**ay**, n**a**me | e (as in "bed") | i |
+    | m**y**, l**i**ght | a (as in "father") | i |
+    | g**o**, h**o**me | o (pure) | u |
+    | n**ow**, l**ou**d | a | u |
+    | b**oy** | o (open, as in "law") | i |
+
+    English also **reduces** unstressed vowels to a short neutral "uh" (schwa: the "a" in "**a**bout"). In singing that stays, but it is never the vowel you hold.
+
+    **Serbian** has none of that: its five vowels are pure, and **unstressed vowels keep their full colour**. Clear Serbian singing means singing
+    each vowel as itself, even short and unstressed ones, without letting "e" slide toward "i" or "o" toward "u" on long notes.
+
+    Serbian's special case is the **syllabic r** (*slogotvorno r*): in *srce, prst, crn, vrh, trg* the r itself is the syllable's vowel. On a short note just say it.
+    On a long note a rolled r cannot be held comfortably, so singers usually place a very short, neutral vowel sound just before a brief r and carry the tone on that
+    ("s-ᵊr-ce"), keeping it so short that the word still sounds like *srce*, not *serce*. Listen to recordings of Serbian singers for how much they use.
+
+    The app checks pitch; how clear the vowels are is for you to listen for.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Engleski** je pun **diftonga**: dva samoglasnika spojena klizanjem u jednom slogu. U govoru je klizanje brzo i ne primećuje se.
+    Na dugom tonu postaje problem: ako prerano pređeš u drugi samoglasnik, „day” postaje „de-iiiii”.
+
+    Pravilo: **drži prvi samoglasnik, drugi dodaj tek na samom kraju**, brzo, neposredno pre sledećeg suglasnika ili kraja tona.
+
+    | reč | drži | dodaj na kraju |
+    |---|---|---|
+    | d**ay**, n**a**me | e | i |
+    | m**y**, l**i**ght | a | i |
+    | g**o**, h**o**me | o (čisto) | u |
+    | n**ow**, l**ou**d | a | u |
+    | b**oy** | o (otvoreno) | i |
+
+    Engleski takođe **redukuje** nenaglašene samoglasnike u kratko neutralno „ə” (šva: „a” u „**a**bout”). U pevanju to ostaje, ali to nikad nije samoglasnik koji držiš.
+
+    **Srpski** toga nema: njegovih pet samoglasnika su čisti, a **nenaglašeni samoglasnici zadržavaju punu boju**. Jasno pevanje na srpskom znači otpevati
+    svaki samoglasnik kao njega samog, i kratke i nenaglašene, bez klizanja „e” ka „i” ili „o” ka „u” na dugim tonovima.
+
+    Poseban slučaj u srpskom je **slogotvorno r**: u rečima *srce, prst, crn, vrh, trg* samo r je nosilac sloga. Na kratkom tonu ga samo izgovori.
+    Na dugom tonu se kotrljano r ne može prijatno držati, pa pevači obično stave vrlo kratak, neutralan glas neposredno pre kratkog r i na njemu nose ton
+    („s-ᵊr-ce”), ali tako kratko da reč i dalje zvuči kao *srce*, a ne *serce*. Poslušaj snimke srpskih pevača koliko to koriste.
+
+    Aplikacija proverava visinu; koliko su samoglasnici jasni, procenjuješ ti, sluhom.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-022-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-022-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet sirens on 'ng', then 'a e i o u' along with the five notes up and down, one vowel per note, each pure."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene na „ng”, pa „a e i o u” uz pet tonova gore i dole, po jedan samoglasnik na tonu, svaki čist."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-022-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Slow-motion speech: say 'day, my, go, now, boy' stretching the first vowel for 2 seconds and snapping the second on at the end. Then Serbian 'pet, mir, sto, kuća, srce' with every vowel full and pure."
+      sr: "Usporeni govor: izgovori „day, my, go, now, boy” razvlačeći prvi samoglasnik 2 sekunde, a drugi dodaj brzo na kraju. Pa srpski „pet, mir, sto, kuća, srce”, svaki samoglasnik pun i čist."
+  - id: V-022-4
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 on 'day, my, go, now, boy', one word per note: hold the first vowel, add the second only at the very end."
+      sr: "5-4-3-2-1 na „day, my, go, now, boy”, jedna reč po tonu: drži prvi samoglasnik, drugi dodaj tek na samom kraju."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1.5, 1.5, 1.5, 1.5, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-022-5
+    type: sing-pitch
+    prompt:
+      en: "'My' held for 3 seconds: 'ah' the whole time, the 'i' only in the last instant."
+      sr: "„My” zadržano 3 sekunde: „a” sve vreme, „i” tek u poslednjem trenutku."
+    notes: [C4]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-022-6
+    type: sing-phrase
+    prompt:
+      en: "Serbian: 1-2-3-2-1 on 'Sr-ce mi ku-ca' (my heart beats), one syllable per note, the last held. Keep 'e' and 'a' pure; try the short neutral sound before the r of 'sr'."
+      sr: "Srpski: 1-2-3-2-1 na „Sr-ce mi ku-ca”, jedan slog po tonu, poslednji zadržan. „E” i „a” neka budu čisti; probaj kratak neutralan glas pre r u „sr”."
+    notes: [C4, D4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-022-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record yourself singing 'home' and 'srce' on one long note each and listen back. Rate: did 'home' stay on 'o' until the end, and did 'srce' still sound like srce?"
+      sr: "Samoprocena: snimi sebe kako pevaš „home” i „srce”, svaku na jednom dugom tonu, i preslušaj. Oceni: da li je „home” ostalo na „o” do kraja, i da li je „srce” i dalje zvučalo kao srce?"

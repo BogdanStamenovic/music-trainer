@@ -1,0 +1,148 @@
+id: PC-013
+kind: composition
+order: 49
+title: {en: "Reharmonize a simple tune", sr: "Reharmonizuj jednostavnu melodiju"}
+minutes: 120
+prereqs: [T-026, T-032, K-017, K-021]
+composition:
+  key: C major
+  meter: 4/4
+  bars: 12
+  voices: 2
+  rules: [bars, key, cadence, parallels, rhythm]
+brief:
+  en: |
+    Take the plainest tune there is, ***Twinkle, Twinkle, Little Star*** (you played it by ear in
+    the first month), and **give it new harmony**. Keep the melody exactly as written below;
+    write a **new bass line** under it that implies richer chords than the obvious I, IV and V.
+    Submit both voices: `V:1` the given melody, `V:2` your bass.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    C C G G | A A G2 | F F E E | D D C2 | G G F F | E E D2 |
+    G G F F | E E D2 | C C G G | A A G2 | F F E E | D D C2 |]
+    ```
+
+    ### The idea
+
+    - **Any chord that contains the melody note can go under it.** A sustained G can be
+      harmonized by C (G = 5th), Em (3rd), G (root), Eb (3rd: a chromatic mediant!), A7 (7th)
+      or Ab maj7 (7th). That freedom is what reharmonization is.
+    - **Tools from this year**, to use where they make sense:
+      - **vi and iii instead of I** (C C G G over Am or Em),
+      - **secondary dominants**: E7 → Am, A7 → Dm, D7 → G (each one gives the bass a strong
+        5th-down move),
+      - **a descending or chromatic bass**: C – B – Bb – A..., or F – F# – G (a #iv°7 leading
+        into V),
+      - **ii–V instead of V**, and in the last line a **Neapolitan** (Db) or a **dim7** before
+        the cadence,
+      - **chromatic mediants** (Ab, E, Eb major) for one surprising moment.
+    - **The tune repeats itself** (bars 9–12 = bars 1–4, bars 7–8 = bars 5–6):
+      **harmonize each repetition differently.** The repetition is the opportunity:
+      the listener knows the tune, so new chords under it are heard as colour.
+    - **Keep it a piece, not a catalogue.** Two or three striking moments in a mostly
+      functional progression beat twelve surprises in a row. The final cadence stays **V → I**:
+      bass **G → C**.
+    - **Voice leading still counts:** no parallel 5ths or octaves between melody and bass.
+      Chromatic bass lines make this easier: they move by half steps where the melody repeats.
+    - **Bass rhythm:** half notes (two chords per bar) suit the tune; quarter notes for a
+      walking moment are fine.
+
+    ### Practical tips
+
+    - Make a table: for each half bar, the melody note and three possible chords containing
+      it. Then choose a path through the table where the **bass moves well** (steps, 4ths/5ths).
+    - Play your bass with the melody slowly, and also with full chords in the left hand, to
+      hear what the bass implies.
+    - Add a note listing the chords you mean (e.g. `| C  Am | F  C/E | Dm7 G7 | ...`): the
+      reviewer will read it.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 12 full bars in both voices; the melody is still C major (if
+      this fails, you changed the given melody); the melody ends on C and the **bass ends G → C**;
+      **no parallel 5ths or octaves** (counts double); sensible rhythm. Your bass may be as
+      chromatic as you like: the key check looks at the melody only.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4, using the chord list in
+      your notes.
+  sr: |
+    Uzmi najjednostavniju melodiju koja postoji, ***Twinkle, Twinkle, Little Star*** (svirao si
+    je po sluhu u prvom mesecu), i **daj joj novu harmoniju**. Melodiju zadrži tačno ovakvu kakva
+    je ispod; ispod nje napiši **novu bas liniju** koja nagoveštava bogatije akorde od očiglednih
+    I, IV i V. Predaj oba glasa: `V:1` zadata melodija, `V:2` tvoj bas.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    C C G G | A A G2 | F F E E | D D C2 | G G F F | E E D2 |
+    G G F F | E E D2 | C C G G | A A G2 | F F E E | D D C2 |]
+    ```
+
+    ### Ideja
+
+    - **Ispod tona melodije može da stoji svaki akord koji taj ton sadrži.** Zadržano G može
+      da se harmonizuje sa C (G = kvinta), e-mol (terca), G (osnovni ton), Es (terca:
+      hromatska medijanta!), A7 (septima) ili As maj7 (septima). Ta sloboda je suština
+      reharmonizacije.
+    - **Alati iz ove godine**, tamo gde imaju smisla:
+      - **vi i iii umesto I** (C C G G nad a-molom ili e-molom),
+      - **sporedne dominante**: E7 → a-mol, A7 → d-mol, D7 → G (svaka daje basu jak pokret za
+        kvintu naniže),
+      - **silazni ili hromatski bas**: C – H – B – A..., ili F – Fis – G (#iv°7 koji vodi u V),
+      - **ii–V umesto V**, a u poslednjem stihu **napuljski akord** (Des) ili **smanjeni
+        septakord** pre kadence,
+      - **hromatske medijante** (As, E, Es-dur) za jedan iznenađujući trenutak.
+    - **Melodija ponavlja samu sebe** (taktovi 9–12 = taktovi 1–4, taktovi 7–8 = taktovi
+      5–6): **svako ponavljanje harmonizuj drugačije.** Ponavljanje je prilika: slušalac zna melodiju, pa
+      nove akorde ispod nje čuje kao boju.
+    - **Neka bude komad, a ne katalog.** Dva-tri upečatljiva trenutka u uglavnom funkcionalnoj
+      progresiji bolja su od dvanaest iznenađenja zaredom. Završna kadenca ostaje **V → I**:
+      bas **G → C**.
+    - **Vođenje glasova se i dalje računa:** bez paralelnih kvinti i oktava između melodije i
+      basa. Hromatski bas to olakšava: kreće se polustepenima tamo gde melodija ponavlja ton.
+    - **Ritam basa:** polovine (dva akorda po taktu) odgovaraju melodiji; četvrtine za trenutak
+      šetajućeg basa su u redu.
+
+    ### Praktični saveti
+
+    - Napravi tabelu: za svaku polovinu takta ton melodije i tri moguća akorda koji ga sadrže.
+      Onda izaberi put kroz tabelu na kom se **bas lepo kreće** (koraci, kvarte/kvinte).
+    - Sviraj svoj bas sa melodijom polako, i još jednom sa punim akordima u levoj ruci, da
+      čuješ šta bas nagoveštava.
+    - Dodaj belešku sa spiskom akorada koje misliš (npr. `| C  Am | F  C/E | Dm7 G7 | ...`):
+      recenzent će je pročitati.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 12 punih taktova u oba glasa; melodija je i dalje u C-duru
+      (ako ovo padne, promenio si zadatu melodiju); melodija se završava na C, a **bas sa
+      G → C**; **bez paralelnih kvinti i oktava** (računa se dvostruko); smislen ritam. Bas sme
+      da bude hromatski koliko god hoćeš: provera tonaliteta gleda samo melodiju.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4, uz spisak akorada
+      iz tvoje beleške.
+rubric:
+  - id: harmonic-interest
+    weight: 2
+    label: {en: "New colours", sr: "Nove boje"}
+    top:
+      en: "At least three techniques beyond I–IV–V (e.g. vi/iii substitutes, secondary dominants, a chromatic bass, a Neapolitan or chromatic mediant), each audible and each fitting the melody note above it."
+      sr: "Bar tri postupka mimo I–IV–V (npr. zamene vi/iii, sporedne dominante, hromatski bas, napuljski akord ili hromatska medijanta), svaki čujan i svaki u skladu sa tonom melodije iznad."
+  - id: coherence
+    weight: 2
+    label: {en: "Still makes sense", sr: "I dalje ima smisla"}
+    top:
+      en: "The progression has direction (functional motion, clear cadences at bars 4, 8 and 12, V–I at the end); repeated melody lines get different harmony; the surprises are placed, not scattered."
+      sr: "Progresija ima pravac (funkcionalno kretanje, jasne kadence u taktovima 4, 8 i 12, V–I na kraju); ponovljeni stihovi melodije dobijaju različitu harmoniju; iznenađenja su postavljena, a ne razbacana."
+  - id: bass-line
+    weight: 1
+    label: {en: "Bass line and voice leading", sr: "Bas linija i vođenje glasova"}
+    top:
+      en: "The bass is a good line by itself (steps, chromatic passing notes, strong root motion), no parallel 5ths/octaves with the melody, and the chord list in the notes matches what the bass implies."
+      sr: "Bas je sam po sebi dobra linija (koraci, hromatske prolaznice, jako kretanje osnovnih tonova), bez paralelnih kvinti/oktava sa melodijom, a spisak akorada u belešci odgovara onome što bas nagoveštava."

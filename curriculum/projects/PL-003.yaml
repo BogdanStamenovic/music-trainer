@@ -1,0 +1,150 @@
+id: PL-003
+kind: lyrics
+order: 10
+title: {en: "Lyrics: a pop song with a pre-chorus", sr: "Tekst: pop pesma sa pred-refrenom"}
+minutes: 60
+prereqs: [L-005, L-006]
+lyrics:
+  genre: {en: "pop (verse – pre-chorus – chorus)", sr: "pop (strofa – pred-refren – refren)"}
+  language: en
+  lines: [22, 40]
+  structure:
+    en: "verse (6–8) – pre-chorus (2–4) – chorus (4–6) – verse (6–8) – pre-chorus – chorus – bridge (2–4) – chorus"
+    sr: "strofa (6–8) – pred-refren (2–4) – refren (4–6) – strofa (6–8) – pred-refren – refren – most (2–4) – refren"
+brief:
+  en: |
+    Write the words for a **pop song** in English with the modern three-part build:
+    **verse → pre-chorus → chorus**, twice, then a **bridge** and a final chorus. Write the
+    repeated sections out once; mark where they come back.
+
+    ### What each section does (L-006)
+
+    | section | lines | job | typical sound |
+    |---|---|---|---|
+    | **verse** | 6–8 | the situation, in concrete detail: who, where, what just happened | lower, conversational, more words per line |
+    | **pre-chorus** | 2–4 | raise the tension; the lines feel like a run-up | shorter lines, often a repeated phrase, ends on an unresolved lead-in |
+    | **chorus** | 4–6 | the point of the song, built around the **title** (L-005) | fewer words, longer notes, open vowels, repetition |
+    | **bridge** | 2–4 | a new angle: a confession, a time jump, the other person's side | different rhythm and rhyme from everything else |
+
+    ### Conventions
+
+    - **The title is in the chorus**, in its first or last line (often both). If someone hums the
+      chorus once, they should be able to search for the song by the title.
+    - **Contrast is the engine.** Verses are busy and specific; the chorus is simple and big.
+      Count syllables: a verse line of 8–10 syllables against a chorus line of 4–7 already sounds
+      like a lift.
+    - **Rhyme:** verses usually **ABAB** or **XAXA** (only lines 2 and 4 rhyme); the
+      pre-chorus and chorus tighter, **AABB** or one rhyme sound throughout. Slant rhyme
+      (*home / alone*) is normal in pop; forced rhyme is not.
+    - **Verse 2 moves the story on.** Same melody, new information: later that night, the next
+      morning, her side. Never the first verse with the words shuffled.
+    - **Held words want open vowels.** The long notes of a chorus sit best on *oh, ay, ee, i*
+      (*go, stay, free, night*); avoid ending a held line on a closed, clipped word (*kissed*,
+      *stuck*).
+
+    A made-up example of the build:
+
+    > *(verse)* The kettle clicks at half past two,
+    > your jacket's still across the chair,
+    > *(pre-chorus)* and I keep saying I'm fine,
+    > I keep saying I'm fine,
+    > *(chorus)* just leave the porch light on,
+    > leave the porch light on.
+
+    ### Practical tips
+
+    - Write the chorus first, then ask of every verse line: does it make the chorus hit harder?
+    - Speak the pre-chorus over a steady beat and feel whether it accelerates into the chorus.
+      If it does not, shorten the lines or repeat a phrase.
+    - Read verse 1 and verse 2 side by side: line *n* of each should have about the same number
+      of syllables and the same stress pattern, so they fit the same melody.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši tekst za **pop pesmu** na engleskom, sa savremenom gradnjom u tri dela:
+    **strofa → pred-refren → refren**, dvaput, pa **most** i poslednji refren. Ponovljene delove
+    napiši jednom i označi gde se vraćaju. (Pop na engleskom je vežba ove nedelje; sledeći
+    projekti se smenjuju sa srpskim.)
+
+    ### Šta koji deo radi (L-006)
+
+    | deo | stihova | posao | tipičan zvuk |
+    |---|---|---|---|
+    | **strofa** | 6–8 | situacija, konkretno: ko, gde, šta se upravo desilo | niže, kao razgovor, više reči po stihu |
+    | **pred-refren** | 2–4 | podiže napetost; stihovi se osećaju kao zalet | kraći stihovi, često ponovljena fraza, završava se nerazrešenim uvodom |
+    | **refren** | 4–6 | poenta pesme, izgrađena oko **naslova** (L-005) | manje reči, duže note, otvoreni vokali, ponavljanje |
+    | **most** | 2–4 | nov ugao: priznanje, skok u vremenu, strana druge osobe | drugačiji ritam i rima od svega ostalog |
+
+    ### Konvencije
+
+    - **Naslov je u refrenu**, u prvom ili poslednjem stihu (često u oba). Ko jednom otpevuši
+      refren, treba da može da nađe pesmu po naslovu.
+    - **Kontrast je motor.** Strofe su gusto napisane i konkretne; refren je jednostavan i velik.
+      Prebroj slogove: stih strofe od 8–10 slogova naspram stiha refrena od 4–7 već zvuči kao
+      podizanje.
+    - **Rima:** strofe obično **ABAB** ili **XAXA** (rimuju se samo 2. i 4. stih);
+      pred-refren i refren gušće, **AABB** ili jedan isti rimovni zvuk. Približna rima
+      (*home / alone*) je u popu normalna; nategnuta rima nije.
+    - **Druga strofa pomera priču.** Ista melodija, nova informacija: kasnije te noći, sledećeg
+      jutra, njena strana. Nikad prva strofa sa izmešanim rečima.
+    - **Dugi tonovi traže otvorene vokale.** Duge note refrena najbolje leže na *oh, ay, ee, i*
+      (*go, stay, free, night*); ne završavaj zadržan stih zatvorenom, odsečenom rečju
+      (*kissed*, *stuck*).
+
+    Izmišljen primer gradnje:
+
+    > *(strofa)* The kettle clicks at half past two,
+    > your jacket's still across the chair,
+    > *(pred-refren)* and I keep saying I'm fine,
+    > I keep saying I'm fine,
+    > *(refren)* just leave the porch light on,
+    > leave the porch light on.
+
+    ### Praktični saveti
+
+    - Prvo napiši refren, pa za svaki stih strofe pitaj: da li zbog njega refren jače udara?
+    - Izgovori pred-refren preko stalnog ritma i oseti da li ubrzava ka refrenu. Ako ne, skrati
+      stihove ili ponovi frazu.
+    - Stavi prvu i drugu strofu jednu pored druge: *n*-ti stih svake treba da ima približno isti
+      broj slogova i isti raspored naglasaka, da bi stali na istu melodiju.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: sections
+    weight: 2
+    label: {en: "Sections do their jobs", sr: "Delovi rade svoj posao"}
+    top:
+      en: "Verses are specific and conversational, the pre-chorus audibly builds and leads in, the chorus is the simplest and biggest part, the bridge brings a genuinely new angle."
+      sr: "Strofe su konkretne i razgovorne, pred-refren čujno gradi i uvodi, refren je najjednostavniji i najveći deo, most donosi zaista nov ugao."
+  - id: hook
+    weight: 2
+    label: {en: "Title and hook", sr: "Naslov i hook"}
+    top:
+      en: "The title sits in the first or last line of the chorus, is short and memorable, and means a little more each time it returns."
+      sr: "Naslov stoji u prvom ili poslednjem stihu refrena, kratak je i pamtljiv i svaki put kad se vrati znači malo više."
+  - id: development
+    weight: 1
+    label: {en: "Verse 2 moves on", sr: "Druga strofa ide dalje"}
+    top:
+      en: "Verse 2 adds new information (time, place or point of view) while matching verse 1 line by line in length and stress."
+      sr: "Druga strofa donosi novu informaciju (vreme, mesto ili tačku gledišta), a stih po stih se poklapa sa prvom po dužini i naglascima."
+  - id: singability
+    weight: 1
+    label: {en: "Singability and rhyme", sr: "Pevljivost i rima"}
+    top:
+      en: "Chorus lines are short with open vowels on the held words; rhymes are natural (slant is fine), never forced by twisted word order."
+      sr: "Stihovi refrena su kratki, sa otvorenim vokalima na dugim rečima; rime su prirodne (približne su u redu), nikad iznuđene izvrnutim redom reči."
+  - id: imagery
+    weight: 1
+    label: {en: "Concrete detail", sr: "Konkretni detalji"}
+    top:
+      en: "At least three specific, visible details in the verses (objects, places, times) instead of named emotions."
+      sr: "Najmanje tri određena, vidljiva detalja u strofama (predmeti, mesta, vreme) umesto imenovanih osećanja."

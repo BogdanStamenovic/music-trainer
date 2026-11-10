@@ -1,0 +1,104 @@
+id: E-022
+track: E
+order: 22
+title: {en: "ii–V–I by ear", sr: "ii–V–I po sluhu"}
+prereqs: [E-021, E-020, T-025]
+minutes: 14
+tags: [ear, harmony, progressions, jazz]
+explain:
+  en: |
+    **ii – V – I** is the most common cadence in jazz and very common in pop and classical music. In
+    C: Dm – G – C, with sevenths **Dm7 – G7 – Cmaj7**.
+
+    How it sounds, layer by layer:
+
+    1. **The bass moves by fifths:** D → G → C, each time down a fifth (or up a fourth). Hum it: it
+       feels like falling into place twice. Compare IV – V – I (F → G → C): F and G are neighbouring roots, so
+       there is no second fall by a fifth.
+    2. **ii is minor, IV is major.** Both lead to V, so they do the same job (predominant). ii
+       sounds softer and darker; IV brighter and plainer.
+    3. **With sevenths, listen to the guide tones.** The 7th of each chord slides down a half step
+       (or stays) to become the 3rd of the next:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [D,FAc] [G,FB] [C,EB] |]
+    ```
+
+    C (7th of Dm7) falls to B (3rd of G7); F (3rd of Dm7) stays as the 7th of G7, then falls to E (3rd
+    of Cmaj7); B stays as the 7th of Cmaj7. Two lines moving by tiny steps: that smooth inner
+    motion is the ii–V–I sound, whatever the voicing.
+
+    In the exercises the chords are in close root position, so the bass is easy to follow; real
+    jazz voicings hide it more. Start with the bass every time, then decide ii or IV by colour, then
+    check the ending: I, or the deceptive vi.
+  sr: |
+    **ii – V – I** je najčešća kadenca u džezu, a vrlo česta i u popu i klasičnoj muzici. U C-duru:
+    d – G – C, sa septimama **Dm7 – G7 – Cmaj7**.
+
+    Kako zvuči, sloj po sloj:
+
+    1. **Bas se kreće po kvintama:** D → G → C, svaki put kvintu naniže (ili kvartu naviše).
+       Otpevuši ga: deluje kao da dvaput padne na svoje mesto. Uporedi sa IV – V – I (F → G → C): F i G su
+       susedni osnovni tonovi, pa nema drugog pada za kvintu.
+    2. **ii je molski, IV durski.** Oba vode ka V, pa imaju istu ulogu (predominanta). ii zvuči mekše
+       i tamnije; IV svetlije i jednostavnije.
+    3. **Sa septimama slušaj ključne tonove** (guide tones). Septima svakog akorda klizi pola
+       stepena naniže (ili ostaje) i postaje terca sledećeg:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [D,FAc] [G,FB] [C,EB] |]
+    ```
+
+    C (septima od Dm7) pada na H (terca od G7); F (terca od Dm7) ostaje kao septima od G7, pa pada na
+    E (terca od Cmaj7); H ostaje kao septima od Cmaj7. Dve linije koje se pomeraju sitnim koracima:
+    taj glatki unutrašnji pokret je zvuk ii–V–I, bez obzira na raspored glasova.
+
+    U vežbama su akordi u uskom osnovnom položaju, pa je bas lako pratiti; pravi džez rasporedi ga
+    više kriju. Svaki put kreni od basa, pa po boji odluči ii ili IV, pa proveri kraj: I, ili
+    varljivi vi.
+exercises:
+  - id: E-022-1
+    type: generated
+    prompt: {en: "ii or IV before the V?", sr: "ii ili IV pre V?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[ii, V, I], [IV, V, I]], tempo: 60}
+    checks:
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - interval: {from: G2, to: D3, is: P5}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: B3, to: C4, is: m2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: D3, to: C4, is: m7}
+  - id: E-022-2
+    type: generated
+    prompt: {en: "With sevenths: ii7–V7–Imaj7, IVmaj7–V7–Imaj7, or ii7–V7–vi7?", sr: "Sa septimama: ii7–V7–Imaj7, IVmaj7–V7–Imaj7, ili ii7–V7–vi7?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[ii7, V7, Imaj7], [IVmaj7, V7, Imaj7], [ii7, V7, vi7]], tempo: 56}
+  - id: E-022-3
+    type: generated
+    prompt: {en: "Longer: where does the ii come?", sr: "Duže: gde dolazi ii?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, vi, ii, V], [I, IV, ii, V], [I, vi, IV, V], [I, ii, V, I]], tempo: 66}
+  - id: E-022-4
+    type: generated
+    prompt: {en: "The ii–V–I bass line (I–vi–ii–V–I): echo the roots", sr: "Bas linija ii–V–I (I–vi–ii–V–I): ponovi osnovne tonove"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, F, Bb, G, Eb], type: major, numerals: [I, vi, ii, V], line: [I, vi, ii, V, I], octave: 2, tempo: 72}
+  - id: E-022-5
+    type: generated
+    prompt: {en: "Hear it, then play it: ii7–V7–Imaj7", sr: "Čuj, pa odsviraj: ii7–V7–Imaj7"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, Bb], type: major, numerals: [ii7, V7, Imaj7], echo: true}

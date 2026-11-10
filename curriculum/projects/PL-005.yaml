@@ -1,0 +1,130 @@
+id: PL-005
+kind: lyrics
+order: 18
+title: {en: "Lyrics: a rock song", sr: "Tekst: rok pesma"}
+minutes: 60
+prereqs: [L-001, L-005, L-006]
+lyrics:
+  genre: {en: "rock", sr: "rok"}
+  language: en
+  lines: [18, 36]
+  structure:
+    en: "verse (4–8) – chorus (4) – verse (4–8) – chorus – bridge or breakdown (2–4) – chorus ×2"
+    sr: "strofa (4–8) – refren (4) – strofa (4–8) – refren – most ili breakdown (2–4) – refren ×2"
+brief:
+  en: |
+    Write the words for a **rock song** in English: the kind built on a guitar riff and a
+    backbeat, with a chorus a room can shout back. (Serbian rock has its own great tradition;
+    the next projects switch to Serbian, and you may of course write a Serbian rock song
+    for yourself.)
+
+    ### Conventions
+
+    - **Short, punchy lines.** A rock line usually carries **4–8 syllables** and **2–3 strong
+      stresses**, landing on the beats where the drums hit hardest (2 and 4, the backbeat). Long,
+      wordy lines get buried under loud guitars.
+    - **Strong monosyllables and verbs.** *Run, burn, break, drive, shout, stay.* Rock says things
+      directly; adjectives are rare and abstract nouns rarer.
+    - **The chorus is a chant:** the **title repeated 2–4 times**, maybe with one answering line.
+      Imagine twenty people singing it in a basement: it must be short, rhythmic and vowel-heavy
+      (*go, night, down, alive*).
+    - **Attitude and point of view.** A clear *I* or *we* against something: a town, a job, a
+      rule, time. Energy, restlessness, defiance, release. Tension between the narrow verse and
+      the wide-open chorus.
+    - **Rhyme is loose:** AABB couplets or XAXA, with plenty of slant rhyme (*town / around /
+      down*). Rhythm matters more than rhyme.
+    - **The breakdown/bridge** strips back to a few words, often half-spoken, before the final
+      chorus explodes. Two lines can be enough.
+    - **Leave space for the riff.** Not every bar needs words; a 2-bar gap between lines is normal.
+
+    A made-up chorus and verse fragment:
+
+    > *(verse)* Engine cold, the gate's still locked,
+    > nine years punching the same clock,
+    > *(chorus)* Turn it up, turn it up,
+    > every light in this sleeping town,
+    > turn it up, turn it up.
+
+    ### Practical tips
+
+    - Clap a backbeat (rest–CLAP–rest–CLAP) and speak each line over it; the most important
+      syllable should fall on a clap.
+    - Read the chorus as loud as you can. If any word is hard to shout, change it.
+    - Cut every *very, really, just, so* unless you need the syllable for the rhythm.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši tekst za **rok pesmu** na engleskom: onu sagrađenu na gitarskom rifu i bekbitu, sa
+    refrenom koji cela prostorija može da vikne nazad. (Srpski rok ima sopstvenu veliku
+    tradiciju; sledeći projekti prelaze na srpski, a srpsku rok pesmu naravno možeš da napišeš
+    i za sebe.)
+
+    ### Konvencije
+
+    - **Kratki, udarni stihovi.** Rok stih obično nosi **4–8 slogova** i **2–3 jaka naglaska**, koji
+      padaju na dobe gde bubanj najjače udara (2 i 4, bekbit). Dugi, opširni stihovi se zakopaju
+      pod glasnim gitarama.
+    - **Jake jednosložne reči i glagoli.** *Run, burn, break, drive, shout, stay.* Rok govori
+      direktno; pridevi su retki, a apstraktne imenice još ređe.
+    - **Refren je skandiranje:** **naslov ponovljen 2–4 puta**, možda sa jednim stihom-odgovorom.
+      Zamisli dvadeset ljudi koji ga pevaju u podrumu: mora da bude kratak, ritmičan i pun
+      vokala (*go, night, down, alive*).
+    - **Stav i tačka gledišta.** Jasno *ja* ili *mi* protiv nečega: grada, posla, pravila,
+      vremena. Energija, nemir, prkos, oslobađanje. Napetost između uske strofe i širom otvorenog
+      refrena.
+    - **Rima je labava:** parovi AABB ili XAXA, sa dosta približnih rima (*town / around / down*).
+      Ritam je važniji od rime.
+    - **Breakdown/most** svede sve na nekoliko reči, često napola izgovorenih, pre nego što
+      poslednji refren eksplodira. Dva stiha mogu biti dovoljna.
+    - **Ostavi mesta za rif.** Ne treba svakom taktu tekst; razmak od 2 takta između stihova je
+      normalan.
+
+    Izmišljen refren i deo strofe:
+
+    > *(strofa)* Engine cold, the gate's still locked,
+    > nine years punching the same clock,
+    > *(refren)* Turn it up, turn it up,
+    > every light in this sleeping town,
+    > turn it up, turn it up.
+
+    ### Praktični saveti
+
+    - Kucaj bekbit (pauza–PLJES–pauza–PLJES) i izgovaraj svaki stih preko njega; najvažniji slog
+      treba da padne na pljesak.
+    - Pročitaj refren što glasnije možeš. Ako je neku reč teško viknuti, promeni je.
+    - Izbaci svako *very, really, just, so* osim ako ti slog treba zbog ritma.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: punch
+    weight: 2
+    label: {en: "Punch and rhythm", sr: "Udarnost i ritam"}
+    top:
+      en: "Lines are short (mostly 4–8 syllables) with the key stresses on the backbeat; strong verbs and monosyllables; nothing wordy enough to get buried."
+      sr: "Stihovi su kratki (uglavnom 4–8 slogova) sa ključnim naglascima na bekbitu; jaki glagoli i jednosložne reči; ništa toliko opširno da se zakopa."
+  - id: chorus
+    weight: 2
+    label: {en: "Shout-along chorus", sr: "Refren za vikanje"}
+    top:
+      en: "The chorus is built on the repeated title, short, vowel-heavy and easy to shout on first hearing."
+      sr: "Refren je sagrađen na ponovljenom naslovu, kratak, pun vokala i lako se vikne već posle prvog slušanja."
+  - id: attitude
+    weight: 1
+    label: {en: "Attitude and stakes", sr: "Stav i ulog"}
+    top:
+      en: "A clear point of view pushing against something concrete; the verses give it specific details (a place, a job, a time)."
+      sr: "Jasna tačka gledišta koja se upire o nešto konkretno; strofe joj daju određene detalje (mesto, posao, vreme)."
+  - id: arc
+    weight: 1
+    label: {en: "Build and release", sr: "Gradnja i oslobađanje"}
+    top:
+      en: "A breakdown or bridge strips back before the final chorus, and the song ends stronger than it started."
+      sr: "Breakdown ili most sve svede pre poslednjeg refrena, a pesma se završava jače nego što je počela."

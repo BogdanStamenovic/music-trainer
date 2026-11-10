@@ -6,7 +6,8 @@ schedules what to learn and review next. Built for one learner: a fluent pianist
 with almost no theory, in English and Serbian.
 
 Spec: [SPEC.md](SPEC.md). This repo covers milestones M1 (trainer skeleton + seed
-content), the trainer side of M2 (voice track) and M3 (weekly test + projects). Singing analysis is a separate
+content), the trainer side of M2 (voice track), M3 (weekly test + projects) and M4
+(the year's curriculum, shipped in waves; plan in [curriculum/MAP.md](curriculum/MAP.md)). Singing analysis is a separate
 service, [voice-score](https://github.com/BogdanStamenovic/voice-score); its browser
 fallback is vendored here.
 
@@ -43,12 +44,23 @@ Project grades combine a measured part with a rubric part:
 | vocal piece | voice-score pitch per note (60%) | self-assessment (40%): an LLM reading text cannot judge a performance it did not hear |
 | by ear | interval accuracy, key-independent (60%) + rhythm ratios (20%) | self-assessment (20%) |
 
+Curriculum status (wave 1, 2026-11-10): 115 lessons (T 32, E 22, K 22, V 27, C 6,
+L 6) covering weeks 1–8, and 52 weekly projects (13 per kind, no repeats in a year).
+Each track was written by one author agent and then read by an independent reviewer
+agent. The reviewers fixed 35 errors (wrong facts in explanations, a fingering, a
+Serbian stress example, unfair exercises), and their findings drove the engine fixes
+listed in the git log.
+
 Correctness of content is enforced, not assumed:
 
 - Every musical fact in a lesson is either produced by the theory library
   (generators, `derive`) or carries a `checks` entry that the tests run.
 - Every exercise is generated with several seeds, and each correct answer is played
-  back through the grader, which must score it 1.0.
+  back through the grader, which must score it 1.0 (improvisation: at least 0.8).
+- Every compose exercise carries a model answer that is run through the real music21
+  worker and must pass its own rules (`tests/compose-examples.test.ts`).
+- Chord claims are checked by spelling from the stated root (so Dm7 is not mistaken
+  for F6); Serbian syllable counts are checked (vowels + syllabic r).
 - Grading happens twice. The client grades for instant feedback; the server
   regenerates the same items from (exercise, seed) and grades again, and its result
   is the one stored.
@@ -203,4 +215,12 @@ What does not exist yet:
 - **Content is hand-written, about two weeks of it** (42 lessons + warm-up). Terminology
   that `checks` cannot verify (degree names, cadence names) was reviewed but
   not machine-checked.
+- **Language facts are only partly machine-checked.** Serbian syllable counts are;
+  stress positions, English syllables and terminology rest on the authors and the
+  review pass.
+- **Improvisation grading is a coarse screen:** notes in the scale or the current
+  chord, chord tones on the downbeats of the changes you play, and activity. It cannot
+  judge phrasing or taste.
+- **Waves 2–9 of the curriculum are not written yet** (see MAP.md). When a track runs
+  out, the planner fills days with drills from passed lessons.
 - **One user, no auth.** It is reachable only via localhost and the tailnet.

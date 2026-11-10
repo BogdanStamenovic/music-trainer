@@ -1,0 +1,99 @@
+id: T-027
+track: T
+order: 27
+prereqs: [T-026]
+title: {en: "The cadential 6/4 and inversions in progressions", sr: "Kadencirajući kvartsekstakord i obrtaji u progresijama"}
+minutes: 14
+tags: [harmony]
+explain:
+  en: |
+    Inversions are mostly about the **bass line**. Compare the root-position bass of I–ii–V–I (C D G C, a leap) with **I6 – ii6 – I64 – V7 – I**: bass **E – F – G – G – C**, stepwise up to the dominant. Same harmony, much smoother.
+
+    The **cadential 6/4** is the I64 in that line: C–E over G in the bass, placed right before V.
+    It *looks* like a tonic chord, but it **functions as dominant**: the G bass is already the dominant, and the C and E above it are two notes leaning on the dominant chord's B and D:
+
+    - the **6th** above the bass (E) falls to the **5th** (D)
+    - the **4th** above the bass (C) falls to the **3rd** (B)
+
+    So I64 – V is really "V with two suspensions" that resolve. It is the grand ritardando moment at the end of a classical phrase (in a concerto, the soloist's cadenza starts on it). On a lead sheet you will see it as **C/G – G7 – C**.
+
+    In general: **6** = 3rd in the bass (I6), **64** = 5th in the bass (I64). The 64 position is unstable, so it appears in a few set patterns only, and the cadential one is the most important.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "I6"[EGc] "ii6"[FAd] | "I64"[Gce] "V7"[GBdf] | "I"[ceg]2 |]
+    ```
+  sr: |
+    Obrtaji su pre svega pitanje **basove linije**. Uporedi bas I–ii–V–I u osnovnom položaju (C D G C, sa skokom) sa **I6 – ii6 – I64 – V7 – I**: bas **E – F – G – G – C**, za stupanj naviše do dominante. Ista harmonija, mnogo glatkije.
+
+    **Kadencirajući kvartsekstakord** (K64) je I64 u toj liniji: C–E nad G u basu, neposredno pre V.
+    *Izgleda* kao tonika, ali **ima funkciju dominante**: bas G je već dominanta, a C i E iznad njega su dva tona naslonjena na H i D dominantnog akorda:
+
+    - **seksta** iznad basa (E) silazi u **kvintu** (D)
+    - **kvarta** iznad basa (C) silazi u **tercu** (H)
+
+    Dakle I64 – V je zapravo „V sa dve zadržice" koje se razrešavaju. To je onaj svečani trenutak usporavanja na kraju klasične fraze (u koncertu solistina kadenca počinje upravo na njemu). U akordskim oznakama izgleda kao **C/G – G7 – C**.
+
+    Uopšte: **6** = terca u basu (sekstakord, I6), **64** = kvinta u basu (kvartsekstakord, I64). Kvartsekstakord je nestabilan, pa se javlja samo u nekoliko ustaljenih obrazaca, a kadencirajući je najvažniji.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "I6"[EGc] "ii6"[FAd] | "I64"[Gce] "V7"[GBdf] | "I"[ceg]2 |]
+    ```
+exercises:
+  - id: T-027-1
+    type: mcq
+    prompt: {en: "Which numbered chord is the cadential 6/4?", sr: "Koji numerisani akord je kadencirajući kvartsekstakord?"}
+    abc: |
+      X:1
+      L:1/2
+      K:C
+      "^1"[EGc] "^2"[FAd] | "^3"[Gce] "^4"[GBdf] | "^5"[ceg]2 |]
+    options: ["1", "2", "3", "4", "5"]
+    answer: 2
+    checks:
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [F4, A4, D5], root: D, quality: min, inversion: 1}
+      - chord: {notes: [G4, C5, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+  - id: T-027-2
+    type: mcq
+    prompt: {en: "What is the real function of the cadential I64?", sr: "Koja je prava funkcija kadencirajućeg I64?"}
+    options:
+      - {en: "dominant: it decorates V over the dominant bass", sr: "dominanta: ukrašava V nad dominantnim basom"}
+      - {en: "tonic: it is a C major chord", sr: "tonika: to je C-dur akord"}
+      - {en: "predominant: it prepares V", sr: "subdominanta: priprema V"}
+    answer: 0
+  - id: T-027-3
+    type: mcq
+    prompt: {en: "I64 → V in C, over G in the bass: the C and E move…", sr: "I64 → V u C-duru, nad G u basu: C i E idu…"}
+    options:
+      - {en: "down by step to B and D", sr: "za stupanj naniže na H i D"}
+      - {en: "up by step to D and F", sr: "za stupanj naviše na D i F"}
+      - {en: "they stay", sr: "ostaju"}
+      - {en: "down a third to A and C", sr: "za tercu naniže na A i C"}
+    answer: 0
+    checks:
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: D5, to: E5, is: M2}
+      - interval: {from: G4, to: E5, is: M6}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: T-027-4
+    type: generated
+    prompt: {en: "Play I – IV – I64 – V7 – I", sr: "Odsviraj I – IV – I64 – V7 – I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, I64, V7, I]}
+  - id: T-027-5
+    type: generated
+    prompt: {en: "Play I6 – ii6 – I64 – V7 – I and listen to the stepwise bass", sr: "Odsviraj I6 – ii6 – I64 – V7 – I i slušaj bas koji ide za stupanj"}
+    count: 2
+    gen: {kind: progression, keys: [C, F, G], numerals: [I6, ii6, I64, V7, I]}
+  - id: T-027-6
+    type: generated
+    prompt: {en: "Listen: which progression?", sr: "Slušaj: koja progresija?"}
+    count: 3
+    gen: {kind: progression-ear, keys: [C, G], options: [[I, IV, I64, V, I], [I, IV, V, I], [I, IV, V, vi]], tempo: 60}

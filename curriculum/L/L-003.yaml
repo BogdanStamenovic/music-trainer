@@ -1,0 +1,190 @@
+id: L-003
+track: L
+order: 3
+prereqs: [L-002]
+title: {en: "Rhyme: perfect, slant, masculine/feminine; Serbian rima", sr: "Rima: čista, približna, muška/ženska; srpska rima"}
+minutes: 15
+tags: [lyrics, rhyme]
+explain:
+  en: |
+    Two words rhyme when they sound the same **from the last stressed vowel to the end**. That
+    one rule covers both English and Serbian, and it is why stress (L-001) comes first.
+
+    ### Kinds of rhyme
+
+    | kind | what matches | examples |
+    |---|---|---|
+    | **perfect** | stressed vowel and everything after it; the consonant before it differs | night / light, re-MEM-ber / de-CEM-ber |
+    | **masculine** | rhyme on a final stressed syllable (one syllable) | night / light, a-LONE / STONE |
+    | **feminine** | stressed syllable plus an unstressed one after it | FALL-ing / CALL-ing, re-MEM-ber / de-CEM-ber |
+    | **slant** (near) | almost: same vowel, different consonant (*assonance*), or same final consonant, different vowel (*consonance*) | home / alone, love / enough; bell / fall |
+    | identical | the same sound including the consonant before | night / knight, see / sea: feels like cheating |
+
+    Masculine/feminine describes **where** the rhyme sits; perfect/slant describes **how exact**
+    it is. *Night / light* is perfect and masculine.
+
+    **Why slant rhyme is not a failure:** English has few perfect rhymes for its most-sung words
+    (*love*: above, of, glove, dove). Forcing a perfect rhyme drags in a word you did not mean.
+    Modern pop, rock and rap use slant rhyme constantly; a strong slant (same stressed vowel)
+    on a held note sounds rhymed to the ear.
+
+    ### Serbian rima
+
+    Same rule: from the last stressed vowel. Because a Serbian word of two or more syllables is
+    never stressed on its last syllable, **rhymes on such words are at least two syllables
+    long**: *ženska rima* (feminine).
+
+    - *RU-ka / MU-ka*, *KO-sa / RO-sa*: perfect feminine (*-uka*, *-osa*).
+    - *dan / san*, *noć / moć*: **muška rima** (masculine) needs one-syllable words.
+    - If the stress is three syllables from the end, the rhyme is three syllables long
+      (*trosložna*, dactylic rhyme).
+    - *KU-ća / RU-ka*: same vowels, different consonants: **asonanca** (slant).
+
+    The classic trap: *JA-bu-ka / RU-ka* share the letters *-uka*, but in *jabuka* the stress is
+    on *ja*, so the shared part is unstressed. Sung, the stressed syllables land in different
+    places and the ear hears only a weak echo. Same with *TE-le-fon / on*.
+
+    Another trap is the **grammatical rhyme**: *pevala / volela*, *gledati / čekati*. Same
+    endings are too easy and sound lazy; a rhyme between words of different form and meaning
+    (*kosa / rosa*) carries more.
+
+    ### Rhyme schemes
+
+    Letters mark which lines rhyme: **AABB** (couplets), **ABAB** (alternating, common in
+    starogradska), **XAXA** (only lines 2 and 4 rhyme; very common in pop and folk because it
+    leaves lines 1 and 3 free), **AAB** (blues: the line is sung twice, the answer rhymes with
+    it, see PL-001).
+
+    ### Practical
+    - The rhyme word usually sits on the last, longest note of the phrase. Choose it for sound
+      as well as sense: open vowels (*a, o*) hold well.
+    - Write the line you care about **second**, and find a first line that sets up its rhyme.
+      The punch belongs on the rhyme, not before it.
+  sr: |
+    Dve reči se rimuju kada zvuče isto **od poslednjeg naglašenog samoglasnika do kraja**. To
+    jedno pravilo važi i za engleski i za srpski, i zato naglasak (L-001) ide prvi.
+
+    ### Vrste rime
+
+    | vrsta | šta se poklapa | primeri |
+    |---|---|---|
+    | **čista** (potpuna) | naglašeni samoglasnik i sve posle njega; suglasnik ispred se razlikuje | night / light, re-MEM-ber / de-CEM-ber |
+    | **muška** | rima na poslednjem naglašenom slogu (jednosložna) | night / light, a-LONE / STONE |
+    | **ženska** | naglašeni slog i jedan nenaglašen posle njega | FALL-ing / CALL-ing, re-MEM-ber / de-CEM-ber |
+    | **približna** (slant) | skoro: isti samoglasnik, drugi suglasnik (*asonanca*), ili isti završni suglasnik, drugi samoglasnik (*konsonanca*) | home / alone, love / enough; bell / fall |
+    | identična | isti zvuk zajedno sa suglasnikom ispred | night / knight, see / sea: zvuči kao varanje |
+
+    Muška/ženska govori **gde** je rima; čista/približna govori **koliko je tačna**.
+    *Night / light* je čista i muška.
+
+    **Zašto približna rima nije greška:** engleski ima malo čistih rima za najčešće pevane reči
+    (*love*: above, of, glove, dove). Kad nateraš čistu rimu, uvučeš reč koju nisi mislio. Savremeni
+    pop, rok i rep stalno koriste približnu rimu; jaka približna rima (isti naglašeni
+    samoglasnik) na držanoj noti uhu zvuči kao rima.
+
+    ### Srpska rima
+
+    Isto pravilo: od poslednjeg naglašenog samoglasnika. Pošto srpska reč od dva ili više slogova
+    nikad nema naglasak na poslednjem slogu, **rima na takvim rečima ima bar dva sloga**:
+    *ženska rima*.
+
+    - *RU-ka / MU-ka*, *KO-sa / RO-sa*: čista ženska rima (*-uka*, *-osa*).
+    - *dan / san*, *noć / moć*: **muška rima** traži jednosložne reči.
+    - Ako je naglasak treći slog od kraja, rima je trosložna (daktilska).
+    - *KU-ća / RU-ka*: isti samoglasnici, drugi suglasnici: **asonanca** (približna rima).
+
+    Klasična zamka: *JA-bu-ka / RU-ka* dele slova *-uka*, ali u *jabuka* naglasak je na *ja*, pa
+    je zajednički deo nenaglašen. Kad se peva, naglašeni slogovi padnu na različita mesta i uho čuje
+    samo slab odjek. Isto važi za *TE-le-fon / on*.
+
+    Druga zamka je **gramatička rima**: *pevala / volela*, *gledati / čekati*. Isti nastavci su
+    prelaki i zvuče lenjo; rima koja spaja različite reči i značenja (*kosa / rosa*) nosi više.
+
+    ### Šeme rime
+
+    Slova označavaju koji se stihovi rimuju: **AABB** (parna), **ABAB** (ukrštena, česta u
+    starogradskoj), **XAXA** (rimuju se samo 2. i 4. stih; veoma česta u popu i narodnoj pesmi
+    jer ostavlja 1. i 3. slobodnim), **AAB** (bluz: stih se peva dvaput, odgovor se rimuje sa
+    njim, vidi PL-001).
+
+    ### U praksi
+    - Reč u rimi obično stoji na poslednjoj, najdužoj noti fraze. Biraj je i po zvuku, ne samo po
+      smislu: otvoreni samoglasnici (*a, o*) se dobro drže.
+    - Stih do kog ti je stalo napiši **drugi**, a prvi stih napravi tako da pripremi njegovu
+      rimu. Poenta ide na rimu, ne pre nje.
+exercises:
+  - id: L-003-1
+    type: mcq
+    prompt: {en: "night / light is a…", sr: "night / light je…"}
+    options:
+      - {en: "perfect feminine rhyme", sr: "čista ženska rima"}
+      - {en: "perfect masculine rhyme", sr: "čista muška rima"}
+      - {en: "slant rhyme", sr: "približna rima"}
+      - {en: "identical rhyme", sr: "identična rima"}
+    answer: 1
+  - id: L-003-2
+    type: mcq
+    prompt: {en: "remember / December is a…", sr: "remember / December je…"}
+    options:
+      - {en: "perfect feminine rhyme", sr: "čista ženska rima"}
+      - {en: "perfect masculine rhyme", sr: "čista muška rima"}
+      - {en: "slant rhyme", sr: "približna rima"}
+      - {en: "not a rhyme", sr: "nije rima"}
+    answer: 0
+  - id: L-003-3
+    type: mcq
+    prompt: {en: "home / alone is a…", sr: "home / alone je…"}
+    options:
+      - {en: "perfect masculine rhyme", sr: "čista muška rima"}
+      - {en: "perfect feminine rhyme", sr: "čista ženska rima"}
+      - {en: "slant rhyme (same vowel, different consonant)", sr: "približna rima (isti samoglasnik, drugi suglasnik)"}
+      - {en: "identical rhyme", sr: "identična rima"}
+    answer: 2
+  - id: L-003-4
+    type: mcq
+    prompt: {en: "Which Serbian pair is a full rhyme by the last-stressed-vowel rule?", sr: "Koji srpski par je čista rima po pravilu poslednjeg naglašenog samoglasnika?"}
+    options: ["jabuka / ruka", "ruka / muka", "telefon / on", "kuća / sunce"]
+    answer: 1
+  - id: L-003-5
+    type: mcq
+    prompt: {en: "kuća / ruka is…", sr: "kuća / ruka je…"}
+    options:
+      - {en: "a full feminine rhyme", sr: "čista ženska rima"}
+      - {en: "a masculine rhyme", sr: "muška rima"}
+      - {en: "assonance (slant): same vowels, different consonants", sr: "asonanca (približna rima): isti samoglasnici, drugi suglasnici"}
+      - {en: "no sound match at all", sr: "nikakvo zvučno poklapanje"}
+    answer: 2
+  - id: L-003-6
+    type: write
+    prompt:
+      en: "Blues, in English: write one 12-bar blues stanza, A A B (see PL-001). Line A states a situation; it is repeated (word for word or with a small change like 'I said'); line B answers it and rhymes with A on the last stressed word. Each line 8–14 syllables."
+      sr: "Bluz, na engleskom: napiši jednu bluz strofu od 12 taktova, A A B (vidi PL-001). Stih A iznosi situaciju; ponavlja se (doslovno ili sa malom izmenom kao 'I said'); stih B odgovara i rimuje se sa A na poslednjoj naglašenoj reči. Svaki stih 8–14 slogova."
+    language: en
+    lines: [3, 3]
+    rubric:
+      - id: rhyme
+        label: {en: "A–B rhyme", sr: "Rima A–B"}
+        top: {en: "B rhymes with A from the last stressed vowel: perfect, or a slant with the same stressed vowel; not a grammatical ending rhyme (-ing / -ing).", sr: "B se rimuje sa A od poslednjeg naglašenog samoglasnika: čisto, ili približno sa istim naglašenim samoglasnikom; nije gramatička rima (-ing / -ing)."}
+      - id: payoff
+        label: {en: "B is the payoff", sr: "B je poenta"}
+        top: {en: "Line B adds something the listener did not expect after hearing A twice: a reason, a twist, a joke or a hard fact.", sr: "Stih B donosi nešto što slušalac nije očekivao posle dvostrukog A: razlog, obrt, šalu ili gorku činjenicu."}
+      - id: length
+        label: {en: "Singable length", sr: "Pevljiva dužina"}
+        top: {en: "Each line is 8–14 syllables with about 4 strong stresses and fits in the first half of its 4 bars when spoken over a slow 4/4.", sr: "Svaki stih ima 8–14 slogova i oko 4 jaka naglaska i staje u prvu polovinu svoja 4 takta kad se izgovori preko sporog 4/4."}
+  - id: L-003-7
+    type: write
+    prompt:
+      en: "Starogradska, in Serbian: write one 4-line stanza in osmerac (4 + 4), rhymed ABAB or XAXA. Every rhyme must match from the last stressed vowel (mark the stressed syllables of the rhyme words in CAPITALS). At least one rhyme pair must not be a grammatical rhyme (same ending, like -ala / -ela)."
+      sr: "Starogradska, na srpskom: napiši jednu strofu od 4 stiha u osmercu (4 + 4), sa rimom ABAB ili XAXA. Svaka rima mora da se poklapa od poslednjeg naglašenog samoglasnika (naglašene slogove reči u rimi napiši VELIKIM SLOVIMA). Bar jedan par rima ne sme da bude gramatička rima (isti nastavak, kao -ala / -ela)."
+    language: sr
+    lines: [4, 4]
+    rubric:
+      - id: rhyme
+        label: {en: "Rhyme from the stressed vowel", sr: "Rima od naglašenog samoglasnika"}
+        top: {en: "Every rhyme pair matches from the last stressed vowel to the end (no jabuka / ruka traps), and at least one pair is not a grammatical rhyme (same ending).", sr: "Svaki par rima se poklapa od poslednjeg naglašenog samoglasnika do kraja (bez zamke jabuka / ruka), a bar jedan par nije gramatička rima (isti nastavak)."}
+      - id: meter
+        label: {en: "Osmerac 4 + 4", sr: "Osmerac 4 + 4"}
+        top: {en: "All four lines have 8 syllables with a word ending after the 4th.", sr: "Sva četiri stiha imaju 8 slogova i reč se završava posle 4. sloga."}
+      - id: sense
+        label: {en: "Rhyme serves the sense", sr: "Rima služi smislu"}
+        top: {en: "No line exists only to reach a rhyme; the stanza would make sense read as prose.", sr: "Nijedan stih ne postoji samo da bi stigao do rime; strofa ima smisla i pročitana kao proza."}

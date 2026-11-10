@@ -1,0 +1,148 @@
+id: PV-003
+kind: vocal
+order: 11
+title: {en: "Sing: an evening song (legato, 8 bars)", sr: "Pevaj: večernja pesma (legato, 8 taktova)"}
+minutes: 25
+prereqs: [V-009, V-024]
+melody:
+  title: {en: "Evening Song", sr: "Večernja pesma"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: G major
+  meter: 3/4
+  tempo: 66
+  notes: [B4, A4, G4, E4, D4, E4, G4, A4, B4, A4, G4, A4, B4, A4, F#4, G4]
+  beats: [2, 1, 2, 1, 1, 1, 1, 3, 2, 1, 1, 1, 1, 2, 1, 3]
+brief:
+  en: |
+    Record yourself singing a short **original lullaby**: 8 bars in G major, slow 3/4, on
+    **"loo"** (or "noo"). The range is only a sixth and there is a breath after every four bars.
+    After two big tunes, this week is deliberately small: the whole job is **legato**, one
+    smooth line with no bumps between the notes.
+
+    ```abc
+    X:1
+    T:Evening Song
+    M:3/4
+    L:1/8
+    Q:1/4=66
+    K:G
+    B4 A2 | G4 E2 | D2 E2 G2 | A6 !breath! |
+    B4 A2 | G2 A2 B2 | A4 F2 | G6 |]
+    ```
+
+    Two 4-bar phrases. The first ends on A, the second degree, held for a whole bar: it sounds
+    open, like a question. The second ends on G, the tonic: the answer. Bar 6 climbs G–A–B
+    where bar 2 fell to E; that is the only difference to remember.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 3 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D4–B4. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Legato means the air never stops between notes.** Imagine the line drawn with one pen
+      stroke. Change the pitch, not the effort.
+    - **"Loo" first, then try "noo"**: the *n* helps start each phrase gently (a balanced onset,
+      V-005) without a click or a puff of air.
+    - **One breath per phrase** at the breath mark after bar 4: low and quiet, belly and ribs out.
+      The phrase is about 11 seconds at this tempo, well inside your V-009 phrases.
+    - **The long notes** (A in bar 4, G in bar 8) stay steady to their very end (V-008). Count
+      "1-2-3" through them; release on the next beat, do not let them fade early.
+    - **Bar 7:** the step down to F#, the lowest-but-one note, should be as soft as the rest; do
+      not lean on it.
+    - Listen to the playback twice, hum along once, then record.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within three quarters of a semitone (75 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš kratku **originalnu uspavanku**: 8 taktova u G-duru, spori 3/4
+    takt, na **„lu”** (ili „nu”). Opseg je samo seksta, a udah dolazi posle svaka četiri takta.
+    Posle dve velike melodije, ova nedelja je namerno mala: ceo posao je **legato**, jedna
+    glatka linija bez udaraca između tonova.
+
+    ```abc
+    X:1
+    T:Evening Song
+    M:3/4
+    L:1/8
+    Q:1/4=66
+    K:G
+    B4 A2 | G4 E2 | D2 E2 G2 | A6 !breath! |
+    B4 A2 | G2 A2 B2 | A4 F2 | G6 |]
+    ```
+
+    Dve fraze od po 4 takta. Prva se završava na A, drugom stupnju, zadržanom ceo takt: zvuči
+    otvoreno, kao pitanje. Druga se završava na G, tonici: odgovor. Takt 6 se penje G–A–H tamo
+    gde je takt 2 padao na E; to je jedina razlika koju treba zapamtiti.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 3 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je D4–H4. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Legato znači da vazduh ne staje između tonova.** Zamisli liniju povučenu jednim potezom
+      olovke. Menja se visina, ne napor.
+    - **Prvo „lu”, pa probaj „nu”**: *n* pomaže da fraza počne nežno (uravnotežena ataka, V-005),
+      bez kliktaja i bez šuma vazduha.
+    - **Jedan udah po frazi**, na znaku za udah posle 4. takta: nisko i tiho, stomak i rebra se
+      šire. Fraza traje oko 11 sekundi u ovom tempu, lako u okviru tvojih fraza iz V-009.
+    - **Dugi tonovi** (A u 4. taktu, G u 8.) ostaju mirni do samog kraja (V-008). Broj „1-2-3”
+      kroz njih i pusti ton na sledećoj dobi; ne daj mu da utihne ranije.
+    - **Takt 7:** korak naniže na Fis, pretposlednji najniži ton, neka bude tih kao i ostalo; ne
+      oslanjaj se na njega.
+    - Poslušaj reprodukciju dva puta, jednom pevuši uz nju, pa snimaj.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od tri četvrtine polustepena (75 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: legato
+    weight: 2
+    label: {en: "Legato line", sr: "Legato linija"}
+    top:
+      en: "Each 4-bar phrase is one unbroken line: no gaps, bumps or re-attacks between notes; pitch changes glide in without scooping."
+      sr: "Svaka fraza od 4 takta je jedna neprekinuta linija: bez rupa, udaraca i ponovnih ataka između tonova; promene visine ulaze glatko, bez podvlačenja odozdo."
+  - id: breath
+    weight: 1
+    label: {en: "Breath and long notes", sr: "Dah i dugi tonovi"}
+    top:
+      en: "One quiet, low breath after bar 4 and none elsewhere; the A in bar 4 and the final G are held for a full three beats, steady in pitch and volume."
+      sr: "Jedan tih, nizak udah posle 4. takta i nigde više; A u 4. taktu i završno G traju pune tri dobe, mirni po visini i jačini."
+  - id: ease
+    weight: 2
+    label: {en: "Ease and onset", sr: "Lakoća i ataka"}
+    top:
+      en: "A soft, relaxed tone throughout; each phrase starts cleanly on 'loo'/'noo' without a glottal click or a breathy puff; no strain on B4."
+      sr: "Mek, opušten ton kroz celu pesmu; svaka fraza počinje čisto na „lu”/„nu”, bez kliktaja u grlu i bez šuma vazduha; bez naprezanja na H4."
+  - id: time
+    weight: 1
+    label: {en: "Steady slow time", sr: "Miran spor tempo"}
+    top:
+      en: "The slow 3/4 pulse never drags or hurries; the quarter notes in bars 3 and 6 are even."
+      sr: "Spori puls 3/4 takta ne vuče i ne žuri; četvrtine u taktovima 3 i 6 su ujednačene."

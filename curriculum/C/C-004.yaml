@@ -1,0 +1,167 @@
+id: C-004
+track: C
+order: 4
+prereqs: [C-003, T-014]
+title: {en: "A melody over I–IV–V–I", sr: "Melodija nad I–IV–V–I"}
+minutes: 15
+tags: [composition, melody, harmony]
+explain:
+  en: |
+    So far the melody came first. Now turn it around: take a chord progression and write a line
+    that **fits** it. One chord per bar, **I – IV – V – I** in C major:
+
+    | bar | chord | chord tones |
+    |---|---|---|
+    | 1 | I | C E G |
+    | 2 | IV | F A C |
+    | 3 | V | G B D |
+    | 4 | I | C E G |
+
+    **Chord tones on the strong beats.** In 4/4, beats 1 and 3 are strong. Put a note of the bar's
+    chord there and the melody and the harmony agree where the ear checks hardest.
+
+    **Steps in between.** On the weak beats and eighths, connect the chord tones by step. A note
+    that is not in the chord but sits between two chord tones (E–**D**–C over I) is a *passing tone*;
+    one that steps away and back (C–**D**–C) is a *neighbour tone*. They give the line motion without
+    clashing, because they are short and they go somewhere.
+
+    **Move by the nearest chord tone when the chord changes.** From G over I, the closest note of IV is
+    A (a step) or F: no need to jump to the root. Melodies that follow the nearest chord tones are
+    smooth and singable, and they avoid parallel 5ths and octaves with the bass.
+
+    **The ending.** Bar 3 (V) gives you 2 (D) and 7 (B); bar 4 (I) lands on 1. That is a full
+    authentic cadence, in the melody *and* the harmony.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    "I"E2 D2 C2 G2 | "IV"A2 G2 F2 A2 | "V"B2 A2 G2 D2 | "I"C8 |]
+    V:2 clef=bass
+    C,8 | F,,8 | G,,8 | C,8 |]
+    ```
+
+    Check it: beats 1 and 3 are E C, A F, B G, C: all chord tones. D (bar 1) and G (bar 2) are passing
+    tones. **At the keyboard:** hold the chords in the left hand and improvise the right hand with only
+    chord tones on beats 1 and 3, anything stepwise in between. Do that for a minute before you write.
+
+    The rule checker does not know which chords you imagine (it checks key, range, leaps, the ending
+    and, with two voices, parallels), so listening against the chords is your job. To type two voices
+    instead of recording them, write them as in the example: a `V:1` line for the melody, a `V:2` line
+    for the bass (`F,,` is F2, two octaves below the `F` above middle C).
+  sr: |
+    Do sada je melodija bila prva. Sada obrnuto: uzmi niz akorada i napiši liniju koja mu
+    **odgovara**. Jedan akord po taktu, **I – IV – V – I** u C-duru:
+
+    | takt | akord | tonovi akorda |
+    |---|---|---|
+    | 1 | I | C E G |
+    | 2 | IV | F A C |
+    | 3 | V | G H D |
+    | 4 | I | C E G |
+
+    **Tonovi akorda na jakim dobama.** U 4/4 jake su prva i treća doba. Stavi tu ton akorda tog takta,
+    i melodija i harmonija se slažu tamo gde uho najstrože proverava.
+
+    **Koraci između.** Na slabim dobama i osminama poveži tonove akorda postupno. Ton koji nije u
+    akordu, a stoji između dva tona akorda (E–**D**–C nad I), je *prolaznica*; ton koji odstupi
+    korakom i vrati se (C–**D**–C) je *skretnica (pomoćni ton)*. Daju liniji kretanje bez sudara,
+    jer su kratki i nekud idu.
+
+    **Kad se akord promeni, idi na najbliži ton akorda.** Sa G nad I najbliži ton IV je A (korak)
+    ili F: nema potrebe skakati na osnovni ton. Melodije koje prate najbliže tonove akorda su glatke
+    i pevljive, i izbegavaju paralelne kvinte i oktave sa basom.
+
+    **Završetak.** Takt 3 (V) ti daje 2 (D) i 7 (H); takt 4 (I) se spušta na 1. To je potpuna
+    autentična kadenca, i u melodiji *i* u harmoniji.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    V:1
+    "I"E2 D2 C2 G2 | "IV"A2 G2 F2 A2 | "V"B2 A2 G2 D2 | "I"C8 |]
+    V:2 clef=bass
+    C,8 | F,,8 | G,,8 | C,8 |]
+    ```
+
+    Proveri: na prvoj i trećoj dobi su E C, A F, H G, C: sve tonovi akorda. D (takt 1) i G (takt 2) su
+    prolaznice. **Za klavirom:** drži akorde u levoj ruci i improvizuj desnom samo tonovima akorda
+    na prvoj i trećoj dobi, a između bilo šta postupno. Radi to minut pre nego što počneš da pišeš.
+
+    Provera pravila ne zna koje akorde zamišljaš (proverava tonalitet, opseg, skokove, završetak
+    i, sa dva glasa, paralele), pa je slušanje uz akorde tvoj posao. Ako dva glasa kucaš umesto da ih
+    snimiš, piši ih kao u primeru: red `V:1` za melodiju, red `V:2` za bas (`F,,` je F2, dve oktave ispod
+    `F` iznad srednjeg C).
+exercises:
+  - id: C-004-1
+    type: generated
+    prompt: {en: "Play I–IV–V–I: this is the frame you will write over.", sr: "Odsviraj I–IV–V–I: ovo je okvir nad kojim ćeš pisati."}
+    count: 2
+    gen: {kind: progression, keys: [C, G], numerals: [I, IV, V, I]}
+  - id: C-004-2
+    type: mcq
+    prompt: {en: "In C major, bar 2 has the IV chord. Which note belongs on beat 1?", sr: "U C-duru, u taktu 2 je akord IV. Koji ton ide na prvu dobu?"}
+    options: ["A", "B", "D", "G"]
+    answer: 0
+    checks:
+      - roman: {key: C, degree: 4, is: "IV"}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+  - id: C-004-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\n\"I\"E2 G2 c2 G2 | \"IV\"A2 c2 F2 A2 | \"V\"c2 B2 G2 D2 | \"I\"C8 |]"
+    prompt: {en: "In which bar is beat 1 NOT a chord tone?", sr: "U kom taktu prva doba NIJE ton akorda?"}
+    options:
+      - {en: "bar 1", sr: "takt 1"}
+      - {en: "bar 2", sr: "takt 2"}
+      - {en: "bar 3", sr: "takt 3"}
+      - {en: "bar 4", sr: "takt 4"}
+    answer: 2
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+  - id: C-004-4
+    type: midi-play
+    prompt: {en: "Play the melody from the lesson (right hand). Add the bass notes in your left hand if you like; only the melody is graded.", sr: "Odsviraj melodiju iz lekcije (desna ruka). Ako želiš, dodaj bas tonove levom rukom; ocenjuje se samo melodija."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 D2 C2 G2 | A2 G2 F2 A2 | B2 A2 G2 D2 | C8 |]"
+    mode: sequence
+    expect: [E4, D4, C4, G4, A4, G4, F4, A4, B4, A4, G4, D4, C4]
+  - id: C-004-5
+    type: compose
+    prompt:
+      en: "Write a 4-bar melody in C major over I–IV–V–I (one chord per bar; play the chords while you try ideas). Chord tones on beats 1 and 3, steps in between, end on C held after D or B."
+      sr: "Napiši melodiju od 4 takta u C-duru nad I–IV–V–I (jedan akord po taktu; sviraj akorde dok isprobavaš ideje). Tonovi akorda na prvoj i trećoj dobi, koraci između, kraj na zadržanom C posle D ili H."
+    key: C major
+    meter: 4/4
+    bars: 4
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, stepwise, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      E2 D2 C2 G2 | A2 G2 F2 A2 | B2 A2 G2 D2 | C8 |]
+  - id: C-004-6
+    type: compose
+    prompt:
+      en: "Now with the bass (shown above). Record with both hands; the app splits at G3: left hand below it holds C3 – F2 – G2 – C3, one whole note per bar; right hand plays your melody. Watch for parallel 5ths and octaves at the bar lines, where both hands move."
+      sr: "Sada sa basom (prikazan gore). Snimaj obema rukama; aplikacija deli na G3: leva ruka ispod toga drži C3 – F2 – G2 – C3, jednu celu notu po taktu; desna svira tvoju melodiju. Pazi na paralelne kvinte i oktave na taktnim crtama, gde se obe ruke pomeraju."
+    abc: "X:1\nM:4/4\nL:1/8\nK:C clef=bass\nC,8 | F,,8 | G,,8 | C,8 |]"
+    key: C major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    rules: [bars, rhythm, key, leaps, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      V:1
+      E2 D2 C2 G2 | A2 G2 F2 A2 | B2 A2 G2 D2 | C8 |]
+      V:2 clef=bass
+      C,8 | F,,8 | G,,8 | C,8 |]

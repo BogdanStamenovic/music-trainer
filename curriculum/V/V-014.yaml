@@ -1,0 +1,116 @@
+id: V-014
+track: V
+order: 14
+title: {en: "Head voice I: hoots and \"oo\" sirens down from the top", sr: "Glavni glas I: huktanje i sirene na „u” odozgo naniže"}
+prereqs: [V-013]
+minutes: 10
+tags: [voice, register]
+explain:
+  en: |
+    **Head voice** (Serbian: *glavni glas*) is the lighter register of the upper range. The buzz moves out of the chest into the face and head;
+    the sound is thinner and feels like it floats. Every voice has it, whatever its type.
+
+    The easiest way in is an **owl hoot**: a short, light "hoo" a little above your speaking pitch, like a gentle "whoo-hoo". The rounded "oo" and the soft volume
+    make the light coordination happen almost by itself.
+
+    Why **from the top down**? If you start low and climb, you tend to carry the heavy chest feel up with you until it gets tight.
+    Starting high and light, then sliding **down**, brings the lightness down into the middle of the voice instead. That is the direction we train today.
+
+    What to expect:
+
+    - The sound may be **weak, thin or a bit breathy** at first. That is normal; head voice gets stronger over weeks of light use, never by pushing.
+    - Quiet is right. If you need to get louder to reach a note, it is above today's range; go lower.
+    - A flip or crack on the way down is information about where your transition is, not a mistake.
+
+    The app checks the pitch of each target note only. Which register you are in is for you to feel.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Glavni glas** (engl. *head voice*) je lakši registar gornjeg dela opsega. Vibracija izlazi iz grudi u lice i glavu;
+    zvuk je tanji i kao da lebdi. Ima ga svaki glas, kog god tipa bio.
+
+    Najlakši ulaz je **huktanje sove**: kratko, lagano „hu” malo iznad visine govora, kao nežno „huu-hu”. Zaobljeno „u” i tiha jačina
+    skoro sami od sebe dovode do lake koordinacije.
+
+    Zašto **odozgo naniže**? Ako kreneš odozdo i penješ se, obično nosiš težak grudni osećaj sa sobom dok se ne stegne.
+    Kad počneš visoko i lagano, pa kliziš **naniže**, lakoću spuštaš u sredinu glasa. To je smer koji danas vežbamo.
+
+    Šta da očekuješ:
+
+    - Zvuk može u početku da bude **slab, tanak ili malo dahtav**. To je normalno; glavni glas jača kroz nedelje lakog korišćenja, nikad guranjem.
+    - Tiho je ispravno. Ako moraš da pojačaš da bi stigao do tona, on je iznad današnjeg opsega; idi niže.
+    - Preskok ili pucanje pri silasku je informacija o tome gde ti je prelaz, ne greška.
+
+    Aplikacija proverava samo visinu ciljnih tonova. U kom si registru, osećaš ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-014-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-014-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, then 4 quiet sirens on 'ng', each starting a little higher than the last, and lip trills on the five notes."
+      sr: "Zagrevanje: 4 niska udaha, pa 4 tihe sirene na „ng”, svaka počinje malo više od prethodne, i treperenje usnama na pet tonova."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-014-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Owl hoots: 6 short, light 'hoo's a little above your speaking pitch, then 4 'hoo's that slide down from there like a sigh. Quiet; let it be thin."
+      sr: "Huktanje sove: 6 kratkih, laganih „hu” malo iznad visine govora, pa 4 „hu” koja odatle klize naniže kao uzdah. Tiho; neka bude tanko."
+  - id: V-014-4
+    type: sing-phrase
+    prompt:
+      en: "Descending glide 8-5-3-1 on 'oo': start light on the top note and slide down through the chord, landing on each note. Keep the top lightness all the way down."
+      sr: "Silazno klizanje 8-5-3-1 na „u”: počni lagano na gornjem tonu i klizi naniže kroz akord, sleti na svaki ton. Zadrži lakoću vrha do kraja."
+    notes: [C5, G4, E4, C4]
+    beats: [2, 1.5, 1.5, 2]
+    tempo: 60
+    fitRange: high
+    tolerance: 75
+    pass: 0.75
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-014-5
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 on 'oo', light and quiet, starting in the upper part of your range. If the top note needs effort, sing it all an octave lower."
+      sr: "5-4-3-2-1 na „u”, lagano i tiho, od gornjeg dela opsega. Ako gornji ton traži napor, pevaj sve oktavu niže."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    fitRange: high
+    tolerance: 75
+    pass: 0.7
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-014-6
+    type: sing-phrase
+    prompt:
+      en: "Octave glide down on 'hoo': top note light and floating, slide down to the bottom note without getting heavier."
+      sr: "Klizanje za oktavu naniže na „hu”: gornji ton lagan i lebdeći, klizi do donjeg tona bez otežavanja."
+    notes: [A4, A3]
+    beats: [2, 2]
+    tempo: 60
+    fitRange: high
+    tolerance: 75
+    pass: 0.75
+    checks:
+      - interval: {from: A3, to: A4, is: P8}
+  - id: V-014-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Cool-down: 3 quiet 'oo' sirens from high to low, then hum gently near your speaking pitch. Rate how easy the top felt (easy = right, effort = too high today)."
+      sr: "Smirivanje: 3 tihe sirene na „u” odozgo naniže, pa nežno pevuši blizu visine govora. Oceni koliko je vrh bio lak (lako = dobro, napor = danas previsoko)."

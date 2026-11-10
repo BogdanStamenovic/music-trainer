@@ -1,0 +1,144 @@
+id: PL-009
+kind: lyrics
+order: 34
+title: {en: "Lyrics: a love song without clichés", sr: "Tekst: ljubavna pesma bez klišea"}
+minutes: 60
+prereqs: [L-003, L-004, L-005]
+lyrics:
+  genre: {en: "love song", sr: "ljubavna pesma"}
+  language: sr
+  lines: [16, 32]
+  structure:
+    en: "free: verse–chorus or 3–4 stanzas of 4 lines; one recurring title line"
+    sr: "slobodno: strofa–refren ili 3–4 strofe od po 4 stiha; jedan stih-naslov koji se vraća"
+brief:
+  en: |
+    Write a **love song** in Serbian that does not use a single **cliché**. Love is the most
+    written-about subject in song, so it is where stock phrases pile up. The craft this week is
+    **finding the detail only you could have written**.
+
+    ### The banned list
+
+    Do not use these, or their close relatives (and add any you catch yourself writing):
+
+    | Serbian | English, for comparison |
+    |---|---|
+    | *srce / bol*, *srce mi krvari*, *srce od kamena* | *heart / apart*, *broken heart* |
+    | *suze kao kiša*, *more suza* | *tears like rain* |
+    | *ti si moje sunce / nebo / sve* | *you're my everything*, *you complete me* |
+    | *ljubav / nebo* (rima), *volim te više od života* | *fire / desire*, *love / above* |
+    | *zauvek*, *dok nas smrt ne rastavi* | *forever and ever* |
+    | *anđeo*, *zvezde*, *mesečina* as decoration | *angel*, *stars in your eyes* |
+
+    ### How to replace them
+
+    - **Private, specific details.** How the person cuts bread, what they leave in the sink, the
+      word they mispronounce. A detail that belongs to one couple says *love* more strongly than
+      any general statement (L-004).
+    - **The camera test.** For every line ask: could a camera film this? *Volim te ludo* cannot be
+      filmed; *a spoon left in your cup every morning* can.
+    - **One central image (a conceit)** that runs through the song and develops: a shared
+      umbrella, a key, a recipe, a commute.
+    - **Fresh rhymes (L-003).** If the rhyme is the first one that comes to mind, the listener
+      has heard it. Slant rhymes and rhymes on less obvious words help.
+    - **Understatement.** Ordinary language under strong feeling sounds more true than big words.
+    - **A title (L-005)** that is concrete and slightly surprising, returning in the chorus or at
+      the end of each stanza.
+
+    A made-up stanza (osmerac, ABAB; the feeling is never named):
+
+    > Kašika u tvojoj šolji,
+    > ja je vadim svakog jutra;
+    > to je, valjda, kad se voli:
+    > ćutiš, pa to radiš sutra.
+
+    ### Practical tips
+
+    - Before writing, list 15 things only this (real or invented) person does. Use the 3 best.
+    - After drafting, circle every abstract noun (*ljubav, sreća, bol, duša*). Keep at most two.
+    - Read it to someone: if they say "lepo", it may be a cliché; if they ask "who is that?",
+      you have specifics.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **ljubavnu pesmu** na srpskom bez ijednog **klišea**. O ljubavi se u pesmama piše
+    najviše, pa se tu gomilaju gotove fraze. Zanat ove nedelje je **naći detalj koji si samo ti
+    mogao da napišeš**.
+
+    ### Zabranjeni spisak
+
+    Ne koristi ovo, ni bliske rođake (i dodaj sve što uhvatiš sebe da pišeš):
+
+    | srpski | engleski, radi poređenja |
+    |---|---|
+    | *srce / bol*, *srce mi krvari*, *srce od kamena* | *heart / apart*, *broken heart* |
+    | *suze kao kiša*, *more suza* | *tears like rain* |
+    | *ti si moje sunce / nebo / sve* | *you're my everything*, *you complete me* |
+    | *ljubav / nebo* (rima), *volim te više od života* | *fire / desire*, *love / above* |
+    | *zauvek*, *dok nas smrt ne rastavi* | *forever and ever* |
+    | *anđeo*, *zvezde*, *mesečina* kao ukras | *angel*, *stars in your eyes* |
+
+    ### Čime ih zameniti
+
+    - **Lični, određeni detalji.** Kako osoba seče hleb, šta ostavlja u sudoperi, koju reč
+      pogrešno izgovara. Detalj koji pripada jednom paru kaže *ljubav* jače od bilo koje opšte
+      izjave (L-004).
+    - **Test kamere.** Za svaki stih pitaj: može li kamera ovo da snimi? *Volim te ludo* ne može;
+      *kašika ostavljena u tvojoj šolji svakog jutra* može.
+    - **Jedna središnja slika (koncept)** koja prolazi kroz pesmu i razvija se: zajednički kišobran,
+      ključ, recept, put na posao.
+    - **Sveže rime (L-003).** Ako je rima prva koja ti padne na pamet, slušalac ju je već čuo.
+      Pomažu približne rime i rime na manje očekivanim rečima.
+    - **Uzdržanost.** Običan jezik ispod jakog osećanja zvuči istinitije od velikih reči.
+    - **Naslov (L-005)** koji je konkretan i pomalo iznenađujući, i vraća se u refrenu ili na kraju
+      svake strofe.
+
+    Izmišljena strofa (osmerac, ABAB; osećanje se nijednom ne imenuje):
+
+    > Kašika u tvojoj šolji,
+    > ja je vadim svakog jutra;
+    > to je, valjda, kad se voli:
+    > ćutiš, pa to radiš sutra.
+
+    ### Praktični saveti
+
+    - Pre pisanja nabroj 15 stvari koje radi samo ta (stvarna ili izmišljena) osoba. Iskoristi 3
+      najbolje.
+    - Posle nacrta zaokruži svaku apstraktnu imenicu (*ljubav, sreća, bol, duša*). Zadrži najviše
+      dve.
+    - Pročitaj nekome: ako kaže „lepo”, možda je kliše; ako pita „ko je to?”, imaš konkretnost.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: no-cliche
+    weight: 3
+    label: {en: "No clichés", sr: "Bez klišea"}
+    top:
+      en: "None of the banned phrases or their relatives; no stock rhyme pairs; at most two abstract emotion nouns in the whole song."
+      sr: "Nijedna zabranjena fraza ni njen rođak; nijedan otrcan rimovni par; najviše dve apstraktne imenice za osećanja u celoj pesmi."
+  - id: specificity
+    weight: 2
+    label: {en: "Private, filmable detail", sr: "Lični detalji koji se mogu snimiti"}
+    top:
+      en: "At least three details that could only belong to this couple, all passing the camera test; one central image that develops."
+      sr: "Najmanje tri detalja koji mogu pripadati samo ovom paru, svi prolaze test kamere; jedna središnja slika koja se razvija."
+  - id: feeling
+    weight: 1
+    label: {en: "Feeling without naming it", sr: "Osećanje bez imenovanja"}
+    top:
+      en: "The love is unmistakable but mostly unstated; the understatement makes it stronger, not colder."
+      sr: "Ljubav je nedvosmislena, ali uglavnom neizrečena; uzdržanost je čini jačom, ne hladnijom."
+  - id: form
+    weight: 1
+    label: {en: "Form, rhyme and title", sr: "Oblik, rima i naslov"}
+    top:
+      en: "A consistent stanza or verse-chorus shape, fresh rhymes in natural word order, a concrete title that returns."
+      sr: "Dosledan oblik strofe ili strofe-refrena, sveže rime u prirodnom redu reči, konkretan naslov koji se vraća."

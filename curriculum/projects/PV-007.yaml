@@ -1,0 +1,165 @@
+id: PV-007
+kind: vocal
+order: 27
+title: {en: "Sing: a barcarolle across an octave", sr: "Pevaj: barkarola kroz oktavu"}
+minutes: 40
+prereqs: [V-016, V-017, V-025]
+melody:
+  title: {en: "Barcarolle", sr: "Barkarola"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: D major
+  meter: 6/8
+  tempo: 69
+  notes: [F#4, A4, D5, C#5, B4, A4, F#4, G4, E4, A4, G4, F#4, E4, D4, F#4, A4, D5, D5, C#5, B4, A4, G4, B4, A4, E4, D4, B4, A4, G4, F#4, E4, F#4, G4, B4, A4, G4, F#4, E4, A4, D4, D5, C#5, B4, A4, F#4, F#4, G4, E4, D4]
+  beats: [1, 0.5, 1, 0.5, 1, 0.5, 1.5, 1, 0.5, 1, 0.5, 1.5, 1.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 3, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 3, 1.5, 1.5, 1, 0.5, 1, 0.5, 1, 0.5, 1.5, 3]
+tolerance: 60
+brief:
+  en: |
+    Record yourself singing **"Barcarolle"**, an original 16-bar melody in D major, in a
+    slow, rocking **6/8** (two swaying beats per bar, like a boat). Sing it on **"loo"** or
+    **"lah"**. It uses a **full octave, D4 to D5**, with arpeggios up to the top and, in bar 13,
+    the **octave leap** itself. The craft is to keep one legato line and one even tone across
+    that whole span.
+
+    ```abc
+    X:1
+    T:Barcarolle
+    M:6/8
+    L:1/8
+    Q:3/8=46
+    K:D
+    F2A d2c | B2A F3 | G2E A2G | F3 E3 !breath! |
+    D2F A2d | d2c B2A | G2B A2E | D6 !breath! |
+    B2A G2F | E2F G2B | A2G F2E | A6 !breath! |
+    D3 d3 | c2B A2F | F2G E3 | D6 |]
+    ```
+
+    ### The musical idea
+
+    - **6/8 counts in two:** ONE-and-a TWO-and-a. The quarter-eighth pattern (long-short) is the
+      rocking. Feel two slow beats per bar, not six.
+    - **Four phrases.** 1: rises to D5 and floats down to E. 2: an arpeggio D–F#–A–D up the
+      octave, then home to D. 3: the middle section, rocking around G and A, ending open on A.
+      4: the leap D4–D5 and a calm descent to the end.
+    - **The octave leap (bar 13)** is the peak of the piece. It is not a shout; it is the same
+      note, higher.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 3 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is D4–D5 (one octave). Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Prepare the top note before you leave the bottom one.** Before the leap in bar 13, think
+      the D5 during the low D. Sing the top D *softer* than you expect; it will sound fuller than
+      it feels.
+    - **Do not change the vowel or the effort as you rise.** Let the voice thin out naturally
+      toward head voice at the top (V-014, V-016: smooth transitions). A small change in colour is
+      fine; a break or a push is what to avoid.
+    - **Legato through the leaps.** The voice slides through the leap without a scoop: no
+      audible glissando, no gap.
+    - **Breathe at the four breath marks**, each about 8 seconds of singing.
+    - If D5 is not comfortable today in either octave, stop there and record next week; do not
+      force it.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within 60 cents, a bit more than half a semitone.
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **„Barkarolu”**, originalnu melodiju od 16 taktova u D-duru, u
+    sporom, ljuljajućem **6/8** taktu (dve njišuće dobe po taktu, kao čamac). Pevaj je na
+    **„lu”** ili **„la”**. Koristi **celu oktavu, D4 do D5**, sa razloženim akordima do vrha i,
+    u 13. taktu, sa samim **skokom za oktavu**. Zanat je zadržati jednu legato liniju i jedan
+    ujednačen ton kroz ceo taj raspon.
+
+    ```abc
+    X:1
+    T:Barcarolle
+    M:6/8
+    L:1/8
+    Q:3/8=46
+    K:D
+    F2A d2c | B2A F3 | G2E A2G | F3 E3 !breath! |
+    D2F A2d | d2c B2A | G2B A2E | D6 !breath! |
+    B2A G2F | E2F G2B | A2G F2E | A6 !breath! |
+    D3 d3 | c2B A2F | F2G E3 | D6 |]
+    ```
+
+    ### Muzička ideja
+
+    - **6/8 se broji na dva:** JED-na-i DVA-i-a. Obrazac četvrtina-osmina (dugo-kratko) je
+      ljuljanje. Oseti dve spore dobe u taktu, ne šest.
+    - **Četiri fraze.** 1: penje se do D5 i lebdi naniže do E. 2: razloženi akord D–Fis–A–D kroz
+      oktavu, pa kući na D. 3: srednji deo, njiše se oko G i A, završava se otvoreno na A.
+      4: skok D4–D5 i miran silazak do kraja.
+    - **Skok za oktavu (13. takt)** je vrhunac komada. Nije uzvik; to je isti ton, više.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 3 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je D4–D5 (jedna oktava). Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Pripremi gornji ton pre nego što napustiš donji.** Pre skoka u 13. taktu, misli D5 dok
+      pevaš donje D. Otpevaj gornje D *tiše* nego što očekuješ; zvučaće punije nego što ga
+      osećaš.
+    - **Ne menjaj vokal ni napor dok se penješ.** Pusti glas da se prirodno istanji ka glavenom
+      registru na vrhu (V-014, V-016: glatki prelazi). Mala promena boje je u redu; pucanje ili
+      guranje je ono što izbegavamo.
+    - **Legato kroz skokove.** Glas prelazi skok bez podvlačenja: bez čujnog klizanja, bez rupe.
+    - **Udiši na četiri znaka za udah**, oko 8 sekundi pevanja po frazi.
+    - Ako ti D5 danas nije udobno ni u jednoj oktavi, stani tu i snimaj sledeće nedelje; ne
+      forsiraj.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od 60 centi, nešto više od pola polustepena.
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: range-ease
+    weight: 2
+    label: {en: "Even tone across the octave", sr: "Ujednačen ton kroz oktavu"}
+    top:
+      en: "D4 and D5 sound like the same voice: the top is light and free, the bottom clear; any register shift is smooth, with no break, push or chin lift."
+      sr: "D4 i D5 zvuče kao isti glas: vrh je lak i slobodan, dno jasno; svaka promena registra je glatka, bez pucanja, guranja ili podizanja brade."
+  - id: leaps
+    weight: 2
+    label: {en: "Leaps in tune", sr: "Čisti skokovi"}
+    top:
+      en: "The octave in bar 13 and the arpeggio in bar 5 land in tune on the first try, with no scoop from below."
+      sr: "Oktava u 13. taktu i razloženi akord u 5. taktu pogađaju ton iz prve, bez podvlačenja odozdo."
+  - id: legato
+    weight: 1
+    label: {en: "Legato", sr: "Legato"}
+    top:
+      en: "Each phrase is one connected line, the leaps included; no gaps or re-attacks."
+      sr: "Svaka fraza je jedna povezana linija, i sa skokovima; bez rupa i ponovnih ataka."
+  - id: lilt
+    weight: 1
+    label: {en: "6/8 lilt", sr: "Ljuljanje u 6/8"}
+    top:
+      en: "A clear two-beat sway; the long-short pattern is distinct from even eighths; dotted-quarter notes held full length."
+      sr: "Jasno njihanje na dve dobe; obrazac dugo-kratko jasno se razlikuje od ravnih osmina; četvrtine s tačkom traju punu vrednost."

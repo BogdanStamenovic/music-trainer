@@ -1,0 +1,150 @@
+id: K-015
+track: K
+order: 15
+title: {en: "Arpeggios with timing: triads and 7ths, two octaves", sr: "Arpeđa u tempu: kvintakordi i septakordi, dve oktave"}
+prereqs: [K-012]
+minutes: 14
+tags: [keys, technique, arpeggios]
+explain:
+  en: |
+    An **arpeggio** is a chord played one note at a time. Accompaniments, runs and most
+    improvised lines are built from them, so they need to be even and in time, not just correct.
+
+    **Triads (3 notes) over two octaves** need a thumb crossing every octave:
+
+    | | up | down |
+    |---|---|---|
+    | right hand, C major | 1 2 3 · 1 2 3 · 5 | 5 3 2 1 · 3 2 1 |
+    | left hand, A minor | 5 4 2 · 1 4 2 · 1 | 1 2 4 · 1 2 4 5 |
+
+    **Seventh chords (4 notes)** fit the hand exactly: 1 2 3 4, then the thumb takes the next
+    root: G7 right hand = 1 2 3 4 · 1 2 3 4 · 5.
+
+    ```abc
+    X:1
+    L:1/8
+    K:C
+    C E G c e g c'2 | G, B, D F G B d f g2 |]
+    ```
+
+    Why the thumb crossing goes wrong and how to fix it: the hand waits until the 3rd finger is
+    down and then jerks sideways. Instead **move the arm early**: while finger 2 and 3 play, the
+    elbow is already travelling, and the thumb arrives under the hand on its own. Listen for a
+    gap or an accent at the crossing; the grading here measures exactly that (timing per note
+    against the click).
+
+    Each exercise below is **one note per click**. Start at the given tempo; when it grades
+    well, play the same notes as eighth notes against the same click (twice as fast) in your own
+    practice.
+  sr: |
+    **Arpeđo** (razloženi akord) je akord odsviran ton po ton. Od njih se grade pratnje, pasaži i
+    većina improvizovanih linija, pa treba da budu ravnomerni i u tempu, a ne samo tačni.
+
+    **Kvintakordi (3 tona) kroz dve oktave** traže podmetanje palca na svakoj oktavi:
+
+    | | uzlazno | silazno |
+    |---|---|---|
+    | desna ruka, C-dur | 1 2 3 · 1 2 3 · 5 | 5 3 2 1 · 3 2 1 |
+    | leva ruka, a-mol | 5 4 2 · 1 4 2 · 1 | 1 2 4 · 1 2 4 5 |
+
+    **Septakordi (4 tona)** tačno staju u šaku: 1 2 3 4, pa palac uzima sledeći osnovni ton:
+    G7 desnom rukom = 1 2 3 4 · 1 2 3 4 · 5.
+
+    ```abc
+    X:1
+    L:1/8
+    K:C
+    C E G c e g c'2 | G, B, D F G B d f g2 |]
+    ```
+
+    Zašto podmetanje palca ne uspeva i kako to popraviti: šaka čeka da 3. prst padne pa se
+    trzne u stranu. Umesto toga **pomeri ruku ranije**: dok sviraju 2. i 3. prst, lakat već
+    putuje, a palac sam stiže ispod šake. Slušaj da li na prelazu ima rupe ili akcenta; ocena
+    ovde meri baš to (vreme svakog tona u odnosu na metronom).
+
+    Svaka vežba ispod je **jedan ton po udarcu metronoma**. Počni od zadatog tempa; kad ocena
+    bude dobra, u svom vežbanju sviraj iste tonove kao osmine uz isti metronom (dvostruko brže).
+exercises:
+  - id: K-015-1
+    type: midi-play
+    prompt: {en: "C major, right hand, two octaves up and down from C4, ♩=80 (one note per click).", sr: "C-dur, desna ruka, dve oktave gore i dole od C4, ♩=80 (jedan ton po udarcu)."}
+    mode: sequence
+    expect: [C4, E4, G4, C5, E5, G5, C6, G5, E5, C5, G4, E4, C4]
+    tempo: 80
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+      - interval: {from: E4, to: E5, is: P8}
+      - interval: {from: G4, to: G5, is: P8}
+      - interval: {from: C5, to: C6, is: P8}
+  - id: K-015-2
+    type: midi-play
+    prompt: {en: "A minor, left hand, two octaves up and down from A2, ♩=80.", sr: "a-mol, leva ruka, dve oktave gore i dole od A2, ♩=80."}
+    mode: sequence
+    expect: [A2, C3, E3, A3, C4, E4, A4, E4, C4, A3, E3, C3, A2]
+    tempo: 80
+    showNotes: false
+    checks:
+      - chord: {notes: [A2, C3, E3], root: A, quality: min, inversion: 0}
+      - interval: {from: A2, to: A3, is: P8}
+      - interval: {from: C3, to: C4, is: P8}
+      - interval: {from: E3, to: E4, is: P8}
+      - interval: {from: A3, to: A4, is: P8}
+  - id: K-015-3
+    type: midi-play
+    prompt: {en: "G7, right hand, two octaves up and down from G3 (1 2 3 4 · 1 2 3 4 · 5), ♩=80.", sr: "G7, desna ruka, dve oktave gore i dole od G3 (1 2 3 4 · 1 2 3 4 · 5), ♩=80."}
+    mode: sequence
+    expect: [G3, B3, D4, F4, G4, B4, D5, F5, G5, F5, D5, B4, G4, F4, D4, B3, G3]
+    tempo: 80
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7", inversion: 0}
+      - interval: {from: G3, to: G4, is: P8}
+      - interval: {from: B3, to: B4, is: P8}
+      - interval: {from: D4, to: D5, is: P8}
+      - interval: {from: F4, to: F5, is: P8}
+      - interval: {from: G4, to: G5, is: P8}
+  - id: K-015-4
+    type: midi-play
+    prompt: {en: "Cmaj7, right hand, two octaves up and down from C4, ♩=80, notes hidden.", sr: "Cmaj7, desna ruka, dve oktave gore i dole od C4, ♩=80, bez prikaza tonova."}
+    mode: sequence
+    expect: [C4, E4, G4, B4, C5, E5, G5, B5, C6, B5, G5, E5, C5, B4, G4, E4, C4]
+    tempo: 80
+    showNotes: false
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7, inversion: 0}
+      - interval: {from: C4, to: C5, is: P8}
+      - interval: {from: E4, to: E5, is: P8}
+      - interval: {from: G4, to: G5, is: P8}
+      - interval: {from: B4, to: B5, is: P8}
+      - interval: {from: C5, to: C6, is: P8}
+  - id: K-015-5
+    type: midi-play
+    prompt: {en: "G major, right hand, two octaves up and down from G3, faster: ♩=100.", sr: "G-dur, desna ruka, dve oktave gore i dole od G3, brže: ♩=100."}
+    mode: sequence
+    expect: [G3, B3, D4, G4, B4, D5, G5, D5, B4, G4, D4, B3, G3]
+    tempo: 100
+    showNotes: false
+    checks:
+      - chord: {notes: [G3, B3, D4], root: G, quality: maj, inversion: 0}
+      - interval: {from: G3, to: G4, is: P8}
+      - interval: {from: B3, to: B4, is: P8}
+      - interval: {from: D4, to: D5, is: P8}
+      - interval: {from: G4, to: G5, is: P8}
+  - id: K-015-6
+    type: midi-play
+    prompt: {en: "D7, left hand, two octaves up and down from D2, ♩=80 (5 4 3 2 · 1 4 3 2 · 1).", sr: "D7, leva ruka, dve oktave gore i dole od D2, ♩=80 (5 4 3 2 · 1 4 3 2 · 1)."}
+    mode: sequence
+    expect: [D2, "F#2", A2, C3, D3, "F#3", A3, C4, D4, C4, A3, "F#3", D3, C3, A2, "F#2", D2]
+    tempo: 80
+    showNotes: false
+    checks:
+      - chord: {notes: [D2, "F#2", A2, C3], root: D, quality: "7", inversion: 0}
+      - interval: {from: D2, to: D3, is: P8}
+      - interval: {from: "F#2", to: "F#3", is: P8}
+      - interval: {from: A2, to: A3, is: P8}
+      - interval: {from: C3, to: C4, is: P8}
+      - interval: {from: D3, to: D4, is: P8}
+  - id: K-015-7
+    type: practice
+    prompt: {en: "Hands together, an octave apart: C major and A minor two octaves at ♩=60, then raise the click by 8 each time it feels even. Stop at the first tempo where the thumb crossing bumps.", sr: "Obe ruke zajedno, na oktavu razmaka: C-dur i a-mol kroz dve oktave na ♩=60, pa podigni metronom za 8 kad god je ravnomerno. Stani na prvom tempu gde podmetanje palca zapinje."}
+    minutes: 4

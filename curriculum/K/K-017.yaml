@@ -1,0 +1,157 @@
+id: K-017
+track: K
+order: 17
+title: {en: "Harmonizing a melody with I–IV–V", sr: "Harmonizacija melodije sa I–IV–V"}
+prereqs: [K-016, T-032, T-024]
+minutes: 15
+tags: [keys, harmony, harmonization, by-ear]
+explain:
+  en: |
+    Three chords, I, IV and V, between them contain **every note of the major scale**. So any
+    simple major-key melody can be harmonized with them. The method:
+
+    1. Find the key (key signature, last note).
+    2. Decide how often the chord changes: usually once per bar, or once per half bar.
+    3. For each span, look at the **strong-beat notes and the long notes**, and pick the chord
+       that contains them. Notes on weak beats that do not fit are passing notes; leave them.
+    4. Where two chords fit, let the **phrase** decide: end on V–I (or on V for a half-way
+       pause), and prefer the choice that gives a good bass line.
+
+    Which chord contains which scale degree (C major):
+
+    | degree | note | I (C–E–G) | IV (F–A–C) | V (G–B–D) |
+    |---|---|---|---|---|
+    | 1 | C | ✓ | ✓ | |
+    | 2 | D | | | ✓ |
+    | 3 | E | ✓ | | |
+    | 4 | F | | ✓ | (V7) |
+    | 5 | G | ✓ | | ✓ |
+    | 6 | A | | ✓ | |
+    | 7 | B | | | ✓ |
+
+    Degrees 2, 3, 6 and 7 have **one** answer; 1, 4 (with V7) and 5 give you a choice.
+
+    Example: *Twinkle, Twinkle* (a traditional French tune), one chord per half bar:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"C C "I"G G | "IV"A A "I"G2 | "IV"F F "I"E E | "V"D D "I"C2 |]
+    ```
+
+    The A's can only be IV, the D's only V, the E's only I. The F's could be IV or V7; IV is
+    simpler. At the keyboard: left hand plays the chord (root in the bass), right hand the tune.
+  sr: |
+    Tri akorda, I, IV i V, zajedno sadrže **svaki ton durske lestvice**. Zato se svaka
+    jednostavna durska melodija može harmonizovati njima. Postupak:
+
+    1. Nađi tonalitet (predznaci, poslednji ton).
+    2. Odluči koliko često se akord menja: obično jednom po taktu ili jednom po polutaktu.
+    3. Za svaki odsek pogledaj **tonove na jakim dobama i duge tonove** i izaberi akord koji ih
+       sadrži. Tonovi na slabim dobama koji ne pripadaju akordu su prolazni; ostavi ih.
+    4. Gde odgovaraju dva akorda, neka odluči **fraza**: završi sa V–I (ili na V za pauzu na
+       pola puta) i biraj ono što daje dobru bas liniju.
+
+    Koji akord sadrži koji stupanj (C-dur):
+
+    | stupanj | ton | I (C–E–G) | IV (F–A–C) | V (G–H–D) |
+    |---|---|---|---|---|
+    | 1 | C | ✓ | ✓ | |
+    | 2 | D | | | ✓ |
+    | 3 | E | ✓ | | |
+    | 4 | F | | ✓ | (V7) |
+    | 5 | G | ✓ | | ✓ |
+    | 6 | A | | ✓ | |
+    | 7 | H | | | ✓ |
+
+    Stupnjevi 2, 3, 6 i 7 imaju **jedan** odgovor; 1, 4 (uz V7) i 5 daju izbor.
+
+    Primer: *Sjaj, sjaj, zvezdice* (tradicionalna francuska melodija), jedan akord po polutaktu:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "I"C C "I"G G | "IV"A A "I"G2 | "IV"F F "I"E E | "V"D D "I"C2 |]
+    ```
+
+    A može biti samo IV, D samo V, E samo I. F može biti IV ili V7; IV je jednostavnije. Za
+    klavirom: leva ruka svira akord (osnovni ton u basu), desna melodiju.
+exercises:
+  - id: K-017-1
+    type: mcq
+    prompt: {en: "C major. A strong-beat melody note is D. Which chord?", sr: "C-dur. Ton melodije na jakoj dobi je D. Koji akord?"}
+    options: ["I", "IV", "V"]
+    answer: 2
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - roman: {key: C, degree: 5, is: "V"}
+  - id: K-017-2
+    type: mcq
+    prompt: {en: "C major. The melody note is A. Which chord?", sr: "C-dur. Ton melodije je A. Koji akord?"}
+    options: ["I", "IV", "V"]
+    answer: 1
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - roman: {key: C, degree: 4, is: "IV"}
+  - id: K-017-3
+    type: mcq
+    prompt: {en: "G major. The melody note is G (the tonic). Which chords contain it?", sr: "G-dur. Ton melodije je G (tonika). Koji akordi ga sadrže?"}
+    options:
+      - {en: "I only", sr: "samo I"}
+      - {en: "I or IV", sr: "I ili IV"}
+      - {en: "IV or V", sr: "IV ili V"}
+      - {en: "V only", sr: "samo V"}
+    answer: 1
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [C5, E5, G5], root: C, quality: maj}
+      - chord: {notes: [D5, "F#5", A5], root: D, quality: maj}
+      - roman: {key: G, degree: 4, is: "IV"}
+  - id: K-017-4
+    type: mcq
+    prompt: {en: "Last bar of a phrase in C: the melody goes D–B–C (C is the long final note). Which harmonization?", sr: "Poslednji takt fraze u C-duru: melodija ide D–H–C (C je dugi završni ton). Koja harmonizacija?"}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nD B C2 |]"
+    options: ["I – I", "IV – I", "V – I", "V – IV"]
+    answer: 2
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+  - id: K-017-5
+    type: midi-play
+    prompt: {en: "Twinkle, Twinkle in C, one chord per half bar (I I IV I IV I V I), ♩=60, one chord per click. Root in the left hand; add the melody note on top if you like.", sr: "\"Sjaj, sjaj, zvezdice\" u C-duru, jedan akord po polutaktu (I I IV I IV I V I), ♩=60, jedan akord po udarcu. Osnovni ton u levoj ruci; ako želiš, dodaj ton melodije gore."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |]"
+    mode: chords
+    derive: {roman: {key: C4, numerals: [I, I, IV, I, IV, I, V, I]}}
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+  - id: K-017-6
+    type: midi-play
+    prompt: {en: "The middle phrase: G G F F | E E D –. One triad (I, IV or V) per half bar, chosen from the melody notes (G fits I or V: stay on I, the phrase starts at home). ♩=60, root in the bass.", sr: "Srednja fraza: G G F F | E E D –. Jedan kvintakord (I, IV ili V) po polutaktu, prema tonovima melodije (G odgovara I ili V: ostani na I, fraza počinje kod kuće). ♩=60, osnovni ton u basu."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nG G F F | E E D2 |]"
+    mode: chords
+    derive: {roman: {key: C4, numerals: [I, IV, I, V]}}
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+  - id: K-017-7
+    type: midi-play
+    prompt: {en: "The opening phrase in G major: G G D D | E E D – | C C B B | A A G –. Harmonize it, one chord per half bar (♩=60).", sr: "Početna fraza u G-duru: G G D D | E E D – | C C H H | A A G –. Harmonizuj je, jedan akord po polutaktu (♩=60)."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:G\nG G d d | e e d2 | c c B B | A A G2 |]"
+    mode: chords
+    derive: {roman: {key: G3, numerals: [I, I, IV, I, IV, I, V, I]}}
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [D4, "F#4", A4], root: D, quality: maj}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - roman: {key: G, degree: 5, is: "V"}

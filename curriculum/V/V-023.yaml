@@ -1,0 +1,114 @@
+id: V-023
+track: V
+order: 23
+title: {en: "Staccato and agility on 3-5 note patterns", sr: "Stakato i okretnost na obrascima od 3-5 tonova"}
+prereqs: [V-022]
+minutes: 10
+tags: [voice, onset, agility]
+explain:
+  en: |
+    **Staccato** (short, separated notes; Serbian: *stakato*) is a row of **balanced onsets** (lesson 5) with tiny silences between them.
+    Each note gets its own small impulse from the breath: the same little inward bounce of the belly you felt in the pulsed hiss "ts-ts-ts".
+
+    Keep it **light**. If each note starts with a click in the throat (a hard onset), the folds are banging together; add the faintest "h" ("ha-ha-ha")
+    until the clicks go away. Staccato is bounce from below, not chopping from the throat.
+
+    **Agility** (*okretnost*) is moving quickly and cleanly through several notes. Short patterns first: 1-2-3-2-1, 1-3-5-3-1, then five notes.
+
+    - Speed comes from **lightness and accuracy at a slower tempo**, not from effort. Get the pattern right slowly, then speed up.
+    - Quick notes stay **small and quiet**. The heavier the voice, the slower it moves.
+    - Keep the vowel the same through the run ("ah" all the way), so only the pitch changes.
+
+    A note on the scores: the pitch tracker has less to measure on very short notes, so its numbers here are rougher than on long tones and the pass bar is lower.
+    Your ear is the better judge of whether a run was clean.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Stakato** (kratki, odvojeni tonovi; ital. *staccato*) je niz **uravnoteženih ataka** (5. lekcija) sa malim tišinama između.
+    Svaki ton dobija sopstveni mali impuls iz daha: isti mali odskok stomaka ka unutra koji si osetio kod isprekidanog šištanja „c-c-c”.
+
+    Neka bude **lagano**. Ako svaki ton počinje klikom u grlu (tvrda ataka), glasnice udaraju jedna o drugu; dodaj najblaže „h” („ha-ha-ha”)
+    dok klikovi ne nestanu. Stakato je odskok odozdo, a ne seckanje grlom.
+
+    **Okretnost** (engl. *agility*) je brzo i čisto kretanje kroz više tonova. Prvo kratki obrasci: 1-2-3-2-1, 1-3-5-3-1, pa pet tonova.
+
+    - Brzina dolazi od **lakoće i tačnosti u sporijem tempu**, ne od napora. Prvo tačno polako, pa ubrzaj.
+    - Brzi tonovi ostaju **mali i tihi**. Što je glas teži, to se sporije kreće.
+    - Zadrži isti samoglasnik kroz ceo niz (sve na „a”), da se menja samo visina.
+
+    O ocenama: merač visine ima manje da izmeri na vrlo kratkim tonovima, pa su brojevi ovde grublji nego na dugim tonovima, a prag prolaza niži.
+    Tvoje uvo bolje sudi da li je niz bio čist.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-023-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-023-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: pulsed hiss 'ts-ts-ts-ts', 8 per breath, 3 rounds (feel the belly bounce); then lip trills along with the five notes up and down."
+      sr: "Zagrevanje: isprekidano šištanje „c-c-c-c”, 8 na jedan dah, 3 runde (oseti odskok stomaka); pa treperenje usnama uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-023-3
+    type: sing-phrase
+    prompt:
+      en: "Staccato 1-3-5-3-1 on 'ha': short, light, each note bounced from the belly. No clicks in the throat."
+      sr: "Stakato 1-3-5-3-1 na „ha”: kratko, lagano, svaki ton odskočen iz stomaka. Bez klikova u grlu."
+    notes: [C4, E4, G4, E4, C4]
+    beats: [1, 1, 1, 1, 1]
+    tempo: 80
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-023-4
+    type: sing-phrase
+    prompt:
+      en: "Staccato 1-2-3-4-5-4-3-2-1 on 'ha', same lightness, one breath."
+      sr: "Stakato 1-2-3-4-5-4-3-2-1 na „ha”, ista lakoća, jedan dah."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    tempo: 90
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-023-5
+    type: sing-phrase
+    prompt:
+      en: "Agility, connected: 1-2-3-2-1 on 'ah' in quick eighth notes, landing on a held 1. Small and quiet."
+      sr: "Okretnost, povezano: 1-2-3-2-1 na „a” u brzim osminama, sa zadržanim 1 na kraju. Malo i tiho."
+    notes: [C4, D4, E4, D4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 80
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-023-6
+    type: sing-phrase
+    prompt:
+      en: "Agility: 1-2-3-4-5-4-3-2-1 on 'ah' in eighth notes, last note held. Same vowel all the way; only the pitch moves."
+      sr: "Okretnost: 1-2-3-4-5-4-3-2-1 na „a” u osminama, poslednji ton zadržan. Isti samoglasnik do kraja; pomera se samo visina."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 72
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-023-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: sing 1-2-3-4-5-4-3-2-1 in eighths with the piano at a tempo where it is clean, then 4-8 clicks faster, but only if it stays clean and light. Rate the cleanest tempo you reached."
+      sr: "Samostalno: pevaj 1-2-3-4-5-4-3-2-1 u osminama uz klavir u tempu u kome je čisto, pa 4-8 udaraca metronoma brže, ali samo ako ostane čisto i lagano. Oceni najbrži čist tempo koji si postigao."

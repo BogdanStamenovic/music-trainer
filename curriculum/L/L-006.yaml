@@ -1,0 +1,154 @@
+id: L-006
+track: L
+order: 6
+prereqs: [L-005]
+title: {en: "Song sections: what verse, pre-chorus, chorus and bridge do", sr: "Delovi pesme: šta rade strofa, pred-refren, refren i most"}
+minutes: 15
+tags: [lyrics, form]
+explain:
+  en: |
+    Each section of a song has a **job**. Lyrics get weak when two sections do the same job,
+    most often when the chorus just repeats what the verse already said.
+
+    | section | job | lyric traits | words repeat? |
+    |---|---|---|---|
+    | **verse** | story and detail: who, where, what happened | more syllables, conversational, concrete images (L-004) | no, new words each time |
+    | **pre-chorus** | build tension, lead into the chorus | 2–4 lines, shorter or rising lines, often ends on an open question | usually yes |
+    | **chorus** | the main idea and the hook (L-005) | fewer, longer syllables, open vowels, the most general statement: the "tell" the verses earned | yes |
+    | **bridge** | once, a new angle: a different time, a realisation, the other person's side | new rhymes, different line length, often after the second chorus | appears once |
+
+    A common pop or rock form: **V – PC – C – V – PC – C – B – C**.
+
+    ### The second-verse problem
+    Verse 2 must **move the story**: new information, later in time, higher stakes. If it only
+    re-describes verse 1, the song stands still and the listener drifts off before the second
+    chorus.
+
+    ### Not every song has a chorus
+    - **Strophic** form: the same music for every stanza, the words change. Blues (AAB stanzas),
+      most starogradske pesme and folk ballads work this way, sometimes with a short refrain line.
+      The story moves stanza to stanza, and the hook lives in a repeated line.
+    - **AABA** (older pop and jazz standards): the A sections carry the title, usually in their
+      first or last line; B is the bridge.
+    - Rap (later in the year) uses long verses (often 16 bars) and a short sung or chanted hook.
+
+    ### At the piano
+    Sections differ musically too: verses sit lower and busier, choruses higher and with longer
+    notes. Play a C–Am–F–G loop low and quiet while speaking a verse, then the same loop an
+    octave higher and louder for the chorus. The words should feel right in each register:
+    many quick syllables in the verse, few held ones in the chorus.
+
+    ### Writing order
+    Many writers write the **chorus first** (it holds the title), then verse 1 to set it up,
+    then verse 2 to push it further, then the bridge last.
+
+    > verse: *The bus was late, the station clock said ten, / I counted coins and read your note again*
+    > chorus: *Last bus out, last bus out*
+  sr: |
+    Svaki deo pesme ima svoj **zadatak**. Tekst slabi kad dva dela rade isti posao, najčešće kad
+    refren samo ponavlja ono što je strofa već rekla.
+
+    | deo | zadatak | osobine teksta | ponavljaju se reči? |
+    |---|---|---|---|
+    | **strofa** (verse) | priča i detalji: ko, gde, šta se desilo | više slogova, razgovorno, konkretne slike (L-004) | ne, svaki put nove reči |
+    | **pred-refren** (pre-chorus) | gradi napetost, vodi u refren | 2–4 stiha, kraći ili stihovi koji se penju, često se završava otvorenim pitanjem | obično da |
+    | **refren** (chorus) | glavna ideja i udica (L-005) | manje slogova, duži, otvoreni samoglasnici, najopštija izjava: „pričanje” koje su strofe zaslužile | da |
+    | **most** (bridge) | jednom, nov ugao: drugo vreme, spoznaja, strana druge osobe | nove rime, druga dužina stiha, često posle drugog refrena | jednom |
+
+    Čest pop ili rok oblik: **S – PR – R – S – PR – R – M – R**.
+
+    ### Problem druge strofe
+    Druga strofa mora da **pomeri priču**: nova informacija, kasnije u vremenu, veći ulog. Ako samo
+    ponovo opisuje prvu, pesma stoji, a slušalac odluta pre drugog refrena.
+
+    ### Nema svaka pesma refren
+    - **Strofni oblik**: ista muzika za svaku strofu, reči se menjaju. Bluz (AAB strofe), većina
+      starogradskih pesama i narodne balade rade ovako, ponekad sa kratkim refrenom. Priča ide od
+      strofe do strofe, a udica živi u ponovljenom stihu.
+    - **AABA** (stariji pop i džez standardi): delovi A nose naslov, obično u prvom ili poslednjem
+      stihu; B je most.
+    - Rep (kasnije ove godine) ima duge strofe (često 16 taktova) i kratku pevanu ili izvikanu udicu.
+
+    ### Za klavirom
+    Delovi se razlikuju i muzički: strofe su niže i gušće, refreni viši i sa dužim notama. Sviraj
+    krug C–a–F–G nisko i tiho dok izgovaraš strofu, pa isti krug oktavu više i glasnije za refren.
+    Reči treba da leže u oba registra: mnogo brzih slogova u strofi, malo držanih u refrenu.
+
+    ### Redosled pisanja
+    Mnogi autori prvo pišu **refren** (u njemu je naslov), pa prvu strofu koja ga priprema, pa
+    drugu koja ga gura dalje, a most na kraju.
+
+    > strofa: *Bus kasni, sat na stanici kaže deset, / brojim sitno i opet čitam tvoju poruku*
+    > refren: *Poslednji bus, poslednji bus*
+exercises:
+  - id: L-006-1
+    type: mcq
+    prompt: {en: "Which section normally keeps the same words every time it returns?", sr: "Koji deo obično zadržava iste reči svaki put kad se vrati?"}
+    options:
+      - {en: "Verse", sr: "Strofa"}
+      - {en: "Chorus", sr: "Refren"}
+      - {en: "Bridge", sr: "Most"}
+      - {en: "None: every section changes its words", sr: "Nijedan: svaki deo menja reči"}
+    answer: 1
+  - id: L-006-2
+    type: mcq
+    prompt: {en: "“The bus was late, the station clock said ten, / I counted coins and read your note again.” Which section is this most likely?", sr: "„Bus kasni, sat na stanici kaže deset, / brojim sitno i opet čitam tvoju poruku.” Koji je ovo deo najverovatnije?"}
+    options:
+      - {en: "Verse", sr: "Strofa"}
+      - {en: "Chorus", sr: "Refren"}
+      - {en: "Pre-chorus", sr: "Pred-refren"}
+      - {en: "Outro", sr: "Završetak (outro)"}
+    answer: 0
+  - id: L-006-3
+    type: mcq
+    prompt: {en: "What is the pre-chorus for?", sr: "Čemu služi pred-refren?"}
+    options:
+      - {en: "Introducing a new character", sr: "Uvođenju novog lika"}
+      - {en: "Repeating the hook as often as possible", sr: "Ponavljanju udice što češće"}
+      - {en: "Building tension and leading into the chorus", sr: "Građenju napetosti i uvođenju u refren"}
+      - {en: "Ending the song", sr: "Završetku pesme"}
+    answer: 2
+  - id: L-006-4
+    type: mcq
+    prompt: {en: "What does a bridge usually do?", sr: "Šta most obično radi?"}
+    options:
+      - {en: "Repeats the first verse word for word", sr: "Ponavlja prvu strofu reč po reč"}
+      - {en: "Comes before every chorus", sr: "Dolazi pre svakog refrena"}
+      - {en: "Opens the song", sr: "Otvara pesmu"}
+      - {en: "Appears once, usually after the second chorus, with a new angle", sr: "Pojavi se jednom, obično posle drugog refrena, sa novim uglom"}
+    answer: 3
+  - id: L-006-5
+    type: mcq
+    prompt: {en: "A blues or a starogradska often uses the same music for every stanza while the words change. This form is called…", sr: "Bluz ili starogradska često imaju istu muziku za svaku strofu, a reči se menjaju. Taj oblik se zove…"}
+    options:
+      - {en: "verse–chorus", sr: "strofa–refren"}
+      - {en: "strophic", sr: "strofni"}
+      - {en: "AABA", sr: "AABA"}
+      - {en: "rondo", sr: "rondo"}
+    answer: 1
+  - id: L-006-6
+    type: mcq
+    prompt: {en: "Verse 2 of your song only re-describes the scene of verse 1. What should it do instead?", sr: "Druga strofa tvoje pesme samo ponovo opisuje scenu iz prve. Šta bi trebalo da radi?"}
+    options:
+      - {en: "Move the story: new information, later in time or higher stakes", sr: "Pomeri priču: nova informacija, kasnije u vremenu ili veći ulog"}
+      - {en: "Repeat the chorus instead", sr: "Umesto nje ponovi refren"}
+      - {en: "Use the same rhymes as verse 1", sr: "Koristi iste rime kao prva strofa"}
+      - {en: "Become shorter than verse 1", sr: "Bude kraća od prve strofe"}
+    answer: 0
+  - id: L-006-7
+    type: write
+    prompt:
+      en: "Rock: write the skeleton of one song (English or Serbian). Label each part in brackets: [Verse 1] 4 lines of story and concrete detail, [Pre-chorus] 2 lines that build, [Chorus] 4 lines with the hook as title, [Verse 2] 2 lines that move the story forward. Speak the verse over a low, quiet piano loop and the chorus an octave higher."
+      sr: "Rok: napiši kostur jedne pesme (engleski ili srpski). Obeleži svaki deo u zagradama: [Strofa 1] 4 stiha priče i konkretnih detalja, [Pred-refren] 2 stiha koji grade napetost, [Refren] 4 stiha sa udicom kao naslovom, [Strofa 2] 2 stiha koji pomeraju priču. Izgovori strofu preko niskog, tihog klavirskog kruga, a refren oktavu više."
+    language: either
+    lines: [12, 16]
+    rubric:
+      - id: jobs
+        label: {en: "Each section does its job", sr: "Svaki deo radi svoj posao"}
+        top: {en: "The verse shows a scene, the pre-chorus raises tension, the chorus states the main idea with the hook; no two sections say the same thing.", sr: "Strofa pokazuje scenu, pred-refren podiže napetost, refren iznosi glavnu ideju sa udicom; nikoja dva dela ne govore isto."}
+      - id: contrast
+        label: {en: "Verse/chorus contrast", sr: "Kontrast strofe i refrena"}
+        top: {en: "Verse lines are longer and denser than chorus lines; the chorus has fewer syllables and open vowels on its held notes.", sr: "Stihovi strofe su duži i gušći od stihova refrena; refren ima manje slogova i otvorene samoglasnike na držanim notama."}
+      - id: motion
+        label: {en: "Verse 2 moves", sr: "Strofa 2 ide dalje"}
+        top: {en: "Verse 2 adds a new fact, a later moment or higher stakes; it could not be swapped with verse 1.", sr: "Strofa 2 dodaje novu činjenicu, kasniji trenutak ili veći ulog; ne bi mogla da zameni mesto sa strofom 1."}

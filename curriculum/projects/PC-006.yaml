@@ -1,0 +1,118 @@
+id: PC-006
+kind: composition
+order: 21
+title: {en: "A melody that modulates to the dominant", sr: "Melodija koja modulira u dominantu"}
+minutes: 90
+prereqs: [T-008, T-028, C-006]
+composition:
+  key: C major
+  meter: 4/4
+  bars: 8
+  range: [C4, E5]
+  rules: [bars, range, half-cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody that starts in C major and ends in G major**, its dominant. 4/4,
+    one line, no chords given. This is a **modulating period**: the question is in C, the
+    answer travels and lands in the new key.
+
+    ### The idea
+
+    - **Bars 1–4: establish C.** Make C unmistakably home: start on a C-chord note, touch C
+      on a strong beat, use F (natural). End bar 4 on **G, D or B** (a half cadence in C).
+    - **Bars 5–6: the turn.** Begin like bar 1 again, then bring in **F#**. One note does the
+      modulation: F# is the leading tone of G, and the moment it appears, F natural is gone and
+      the ear starts hearing G as the new tonic. A chord that belongs to both keys (C major =
+      IV in G, Am = ii in G) makes a smooth **pivot**.
+    - **Bars 7–8: cadence in G.** Approach G the way you approached C in your earlier
+      melodies: **F# → G** (7 → 1 in the new key) or **A → G** (2 → 1). Bar 8 ends on G, long,
+      on beat 1.
+    - **Do not go back to F natural after the F#.** If you do, the ear falls back into C and
+      the ending sounds like a half cadence, not an arrival.
+    - **Range: C4–E5.**
+
+    ### Practical tips
+
+    - Play I – IV – V – I in C, then I – IV – V – I in G, back to back. Notice that only one
+      note changes (F → F#). That is why the dominant is the nearest key.
+    - Sing the ending first: something like D – C – B – A – G, with F# just before the last G
+      or in bar 7.
+    - In ABC (key C), F# is `^F`. An F later in the same bar is still F#; write `=F` if you
+      ever mean F natural there.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars of 4/4; range C4–E5; bar 4 ends on 2, 5 or 7 of C
+      (D, G or B); no augmented or diminished leaps (watch **C–F#**, a tritone); leaps under
+      control; sensible rhythm.
+    - **What the rules do not check, and why:** the rule checks only know one key per piece,
+      and they measure it against **C major**. Your F#s would count as "out of key" and an
+      ending on G would score as "not the tonic", so the **key** and **final-cadence** rules are
+      switched off for this project. **Whether the modulation works** (F# introduced, F natural
+      gone, a convincing cadence on G) is judged by the critique, and counts double there.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4.
+  sr: |
+    Napiši **melodiju od 8 taktova koja počinje u C-duru, a završava u G-duru**, njegovoj
+    dominanti. 4/4, jedna linija, bez zadatih akorda. To je **modulirajući period**: pitanje je
+    u C, odgovor putuje i stiže u novi tonalitet.
+
+    ### Ideja
+
+    - **Taktovi 1–4: učvrsti C.** Neka C bude nepogrešivo kuća: počni tonom C-akorda, dotakni C
+      na jakoj dobi, koristi F (bez povisilice). Završi 4. takt na **G, D ili H** (polukadenca
+      u C).
+    - **Taktovi 5–6: okret.** Počni opet kao u 1. taktu, pa uvedi **Fis**. Jedan ton obavlja
+      modulaciju: Fis je vođica G-dura, i čim se pojavi, F nestaje, a uho počinje da čuje G kao
+      novu toniku. Akord koji pripada obama tonalitetima (C-dur = IV u G, a-mol = ii u G) daje
+      glatku **pivot-vezu** (*zajednički akord*).
+    - **Taktovi 7–8: kadenca u G.** Dođi do G onako kako si dolazio do C u ranijim melodijama:
+      **Fis → G** (7 → 1 u novom tonalitetu) ili **A → G** (2 → 1). 8. takt se završava na G,
+      dugo, na prvoj dobi.
+    - **Posle Fis ne vraćaj F.** Ako ga vratiš, uho pada nazad u C i kraj zvuči kao
+      polukadenca, a ne kao dolazak.
+    - **Opseg: C4–E5.**
+
+    ### Praktični saveti
+
+    - Sviraj I – IV – V – I u C, pa I – IV – V – I u G, jedno za drugim. Primeti da se menja
+      samo jedan ton (F → Fis). Zato je dominanta najbliži tonalitet.
+    - Prvo otpevaj kraj: nešto kao D – C – H – A – G, sa Fis tik pre poslednjeg G ili u 7. taktu.
+    - U ABC zapisu (tonalitet C) Fis je `^F`. F kasnije u istom taktu je i dalje Fis; napiši
+      `=F` ako tu ikad misliš na F bez povisilice.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova 4/4; opseg C4–E5; 4. takt se završava na 2,
+      5 ili 7 C-dura (D, G ili H); bez povećanih i smanjenih skokova (pazi na **C–Fis**,
+      tritonus); skokovi pod kontrolom; smislen ritam.
+    - **Šta pravila ne proveravaju, i zašto:** provera pravila zna samo jedan tonalitet po
+      komadu i meri ga prema **C-duru**. Tvoja Fis bi se računala kao „van tonaliteta”, a kraj
+      na G kao „nije tonika”, pa su pravila **tonaliteta** i **završne kadence** za ovaj
+      projekat isključena. **Da li modulacija uspeva** (uvedeno Fis, F nestalo, ubedljiva
+      kadenca na G) ocenjuje kritika, i tamo se računa dvostruko.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4.
+rubric:
+  - id: modulation
+    weight: 2
+    label: {en: "The modulation works", sr: "Modulacija uspeva"}
+    top:
+      en: "Bars 1–4 are clearly in C; F# enters in bars 5–7 and F natural does not return; the last bar lands on G as a new home (F#–G or A–G), not as a half cadence in C."
+      sr: "Taktovi 1–4 su jasno u C; Fis ulazi u taktovima 5–7 i F se ne vraća; poslednji takt stiže na G kao novu kuću (Fis–G ili A–G), a ne kao polukadenca u C."
+  - id: pivot
+    weight: 1
+    label: {en: "Smooth turn", sr: "Gladak okret"}
+    top:
+      en: "The change of key is prepared (a pivot moment that belongs to both keys) rather than an abrupt switch; the listener is surprised in a pleasant way, not lost."
+      sr: "Promena tonaliteta je pripremljena (pivot-trenutak koji pripada oba tonaliteta), a ne nagla; slušalac je prijatno iznenađen, a ne izgubljen."
+  - id: phrase-structure
+    weight: 1
+    label: {en: "Question and answer", sr: "Pitanje i odgovor"}
+    top:
+      en: "Bar 4 is a comma in C; bar 5 audibly restarts the opening idea before it turns."
+      sr: "4. takt je zarez u C; 5. takt čujno ponovo počinje početnu ideju pre nego što skrene."
+  - id: line
+    weight: 1
+    label: {en: "Melodic line", sr: "Melodijska linija"}
+    top:
+      en: "Mostly stepwise, singable, one high point; no C–F# tritone leap."
+      sr: "Uglavnom postupno, pevljivo, jedan vrhunac; bez skoka C–Fis (tritonus)."

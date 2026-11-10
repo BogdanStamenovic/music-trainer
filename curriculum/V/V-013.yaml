@@ -1,0 +1,108 @@
+id: V-013
+track: V
+order: 13
+title: {en: "Chest voice: speaking-range singing", sr: "Grudni glas: pevanje u opsegu govora"}
+prereqs: [V-012]
+minutes: 10
+tags: [voice, register]
+explain:
+  en: |
+    **Chest voice** (Serbian: *grudni glas*) is the register you speak in. It has its name from the feeling, not from where the sound is made:
+    put a hand flat on your breastbone and say "hello" at a normal level; the buzz you feel is chest resonance.
+
+    Every voice has a chest register, at different pitches for different people. The easiest place to find yours is your **speaking pitch**:
+    say a relaxed "mm-hm" (as in agreeing). The note it lands on is roughly the middle of your easy chest voice.
+
+    The skill today is to **sing like you speak**: same ease, same loudness as a normal conversation, just on pitch and held longer.
+    Try "sing-speaking": count "one, two, three" on one note, then make the vowels longer until it is singing.
+
+    Limits that keep it healthy:
+
+    - **Conversation volume, not shouting.** A fuller sound comes from resonance (last lesson), not from pressing.
+    - **Do not drag the heavy feel upward.** As the notes rise, chest voice gets heavier and tighter. Before it gets tight, let the sound get lighter;
+      that handover is the topic of the next lessons. Today stay in the lower, speech-like part of your range.
+    - If a note feels high for a speech-like sound, sing it an octave lower; the app counts any octave.
+
+    The app does not judge which register you use (that classification is not reliable enough to grade); it checks the pitches. The register is for you to feel.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Grudni glas** (engl. *chest voice*) je registar u kome govoriš. Ime je dobio po osećaju, ne po mestu gde nastaje zvuk:
+    stavi dlan na grudnu kost i reci „zdravo” normalnim glasom; vibracija koju osećaš je grudna rezonancija.
+
+    Svaki glas ima grudni registar, kod različitih ljudi na različitim visinama. Najlakše ga nalaziš preko **visine govora**:
+    reci opušteno „mhm” (kao kad se slažeš). Ton na koji padne je otprilike sredina tvog lakog grudnog glasa.
+
+    Današnja veština je **pevati kao što govoriš**: ista lakoća, ista jačina kao u običnom razgovoru, samo na tonu i duže.
+    Probaj „pevani govor”: broji „jedan, dva, tri” na jednom tonu, pa produžavaj samoglasnike dok ne postane pevanje.
+
+    Granice koje ga čuvaju zdravim:
+
+    - **Jačina razgovora, ne vikanja.** Puniji zvuk dolazi od rezonancije (prošla lekcija), ne od pritiska.
+    - **Ne vuci težak osećaj naviše.** Kako tonovi rastu, grudni glas postaje teži i tesniji. Pre nego što se stegne, pusti da zvuk postane lakši;
+      ta predaja je tema sledećih lekcija. Danas ostani u nižem delu opsega, sličnom govoru.
+    - Ako ti je ton previsok za zvuk nalik govoru, pevaj ga oktavu niže; aplikacija priznaje bilo koju oktavu.
+
+    Aplikacija ne ocenjuje koji registar koristiš (to prepoznavanje nije dovoljno pouzdano za ocenu); proverava visine. Registar osećaš ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-013-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-013-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then 5 relaxed 'mm-hm's, letting each slide a little down like speech."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa 5 opuštenih „mhm”, svako uz malo klizanje naniže, kao u govoru."
+  - id: V-013-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Sing-speaking, hand on the breastbone: count 'one, two, three, four, five' on one comfortable note, conversation volume. Repeat 3 times, making the vowels longer each time. Feel the buzz under your hand."
+      sr: "Pevani govor, dlan na grudnoj kosti: broji „jedan, dva, tri, četiri, pet” na jednom udobnom tonu, jačinom razgovora. Ponovi 3 puta, svaki put duže samoglasnike. Oseti vibraciju pod dlanom."
+  - id: V-013-4
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 on 'ma', speech-like and easy, conversation volume. Take it an octave lower if it feels high for a speaking sound."
+      sr: "5-4-3-2-1 na „ma”, nalik govoru i lako, jačinom razgovora. Pevaj oktavu niže ako ti je visoko za zvuk govora."
+    notes: [G3, F3, E3, D3, C3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    fitRange: low
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+  - id: V-013-5
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-2-1 on 'hey', like calling a friend across a small room, not across a street."
+      sr: "1-2-3-2-1 na „hej”, kao da dozivaš prijatelja preko male sobe, ne preko ulice."
+    notes: [C3, D3, E3, D3, C3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    fitRange: low
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C3, to: E3, is: M3}
+  - id: V-013-6
+    type: sing-pitch
+    prompt:
+      en: "Steady chest-voice 'ah' for 3 seconds, low in your range, at speaking volume."
+      sr: "Miran „a” u grudnom glasu 3 sekunde, nisko u opsegu, jačinom govora."
+    notes: [A3]
+    sustain: 3
+    fitRange: low
+    tolerance: 50
+    pass: 0.65
+  - id: V-013-7
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: sing 1-2-3-4-5 on 'ma' slowly upward from your speaking pitch. Rate: did you let it get lighter before it got tight, instead of pushing?"
+      sr: "Samoprocena: otpevaj 1-2-3-4-5 na „ma” polako naviše od visine govora. Oceni: da li si pustio da postane lakše pre nego što se stegne, umesto da guraš?"

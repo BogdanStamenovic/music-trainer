@@ -1,0 +1,137 @@
+id: K-012
+track: K
+order: 12
+title: {en: "Diatonic seventh chords up the scale (C, F, G)", sr: "Dijatonski septakordi uz lestvicu (C, F, G)"}
+prereqs: [K-011, T-022]
+minutes: 13
+tags: [keys, harmony, seventh-chords]
+explain:
+  en: |
+    Add one more 3rd from the scale on top of every diatonic triad and you get seven seventh
+    chords. In C major only white keys are used, yet the qualities differ, because the 3rds you
+    stack are sometimes major and sometimes minor:
+
+    | numeral | in C | quality | sound |
+    |---|---|---|---|
+    | Imaj7 | C–E–G–B | major 7th | open, "dreamy" |
+    | ii7 | D–F–A–C | minor 7th | soft |
+    | iii7 | E–G–B–D | minor 7th | soft |
+    | IVmaj7 | F–A–C–E | major 7th | open |
+    | V7 | G–B–D–F | dominant 7th | tense, wants I |
+    | vi7 | A–C–E–G | minor 7th | soft |
+    | viiø7 | B–D–F–A | half-diminished | dark, unstable |
+
+    The pattern **maj7 – m7 – m7 – maj7 – 7 – m7 – ø7** is the same in every major key, for the
+    same reason the triad pattern (I ii iii IV V vi vii°) is: the half steps are always between
+    3–4 and 7–1. Two useful consequences:
+
+    - **V7 is the only dominant seventh in a major key.** Hearing a dominant 7th tells you where
+      the tonic is (a 4th above its root).
+    - The maj7 chords sit on I and IV only; the major 7th (C–B, F–E) is a half step below the
+      octave, which gives them their shimmer.
+
+    **Hand shape:** fingers 1–2–3–5, root position, and slide the whole shape up one key at a
+    time. Do not look for each chord; keep the shape and let the key signature decide the black
+    keys (B♭ in F, F♯ in G). In F the B♭ turns IV into B♭maj7 and vii into Eø7; in G the F♯
+    gives Gmaj7 (I) and F♯ø7 (vii).
+  sr: |
+    Dodaj na svaki dijatonski kvintakord još jednu tercu iz lestvice i dobijaš sedam septakorda.
+    U C-duru su sve dirke bele, a ipak se vrste razlikuju, jer su terce koje slažeš nekad velike,
+    a nekad male:
+
+    | stupanj | u C-duru | vrsta | zvuk |
+    |---|---|---|---|
+    | Imaj7 | C–E–G–H | veliki durski septakord | otvoren, "sanjiv" |
+    | ii7 | D–F–A–C | mali molski septakord | mek |
+    | iii7 | E–G–H–D | mali molski septakord | mek |
+    | IVmaj7 | F–A–C–E | veliki durski septakord | otvoren |
+    | V7 | G–H–D–F | dominantni septakord | napet, traži I |
+    | vi7 | A–C–E–G | mali molski septakord | mek |
+    | viiø7 | H–D–F–A | polusmanjeni septakord | taman, nestabilan |
+
+    Obrazac **maj7 – m7 – m7 – maj7 – 7 – m7 – ø7** isti je u svakom duru, iz istog razloga kao
+    i obrazac kvintakorda (I ii iii IV V vi vii°): polustepeni su uvek između 3–4 i 7–1. Dve
+    korisne posledice:
+
+    - **V7 je jedini dominantni septakord u duru.** Kad čuješ dominantni septakord, znaš gde je
+      tonika (kvartu iznad njegovog osnovnog tona).
+    - Veliki septakordi su samo na I i IV; velika septima (C–H, F–E) je polustepen ispod oktave,
+      odatle njihov sjaj.
+
+    **Oblik ruke:** prsti 1–2–3–5, osnovni položaj, i ceo oblik pomeraj za jednu dirku naviše.
+    Ne traži svaki akord posebno; zadrži oblik, a predznaci odlučuju o crnim dirkama (B u
+    F-duru, Fis u G-duru). U F-duru B pretvara IV u Bmaj7, a vii u Eø7; u G-duru Fis daje
+    Gmaj7 (I) i Fisø7 (vii).
+exercises:
+  - id: K-012-1
+    type: midi-play
+    prompt: {en: "C major: the seven seventh chords up the scale and back to Imaj7, root position, fingers 1-2-3-5 (any octave, root in the bass).", sr: "C-dur: sedam septakorda uz lestvicu i nazad na Imaj7, osnovni položaj, prsti 1-2-3-5 (bilo koja oktava, osnovni ton u basu)."}
+    mode: chords
+    derive: {roman: {key: C4, numerals: [Imaj7, ii7, iii7, IVmaj7, V7, vi7, viiø7, Imaj7]}}
+    octave: any
+    bass: true
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: E4, to: B4, is: P5}
+      - interval: {from: E4, to: D5, is: m7}
+      - chord: {notes: [F4, A4, C5, E5], root: F, quality: maj7}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: A4, to: E5, is: P5}
+      - interval: {from: A4, to: G5, is: m7}
+      - chord: {notes: [B4, D5, F5, A5], root: B, quality: m7b5}
+      - chord: {notes: [Bb4, D5, F5, A5], root: Bb, quality: maj7}
+      - chord: {notes: [E4, G4, Bb4, D5], root: E, quality: m7b5}
+      - chord: {notes: [G4, B4, D5, "F#5"], root: G, quality: maj7}
+      - chord: {notes: ["F#4", A4, C5, E5], root: "F#", quality: m7b5}
+  - id: K-012-2
+    type: mcq
+    prompt: {en: "Listen. Which quality is this chord?", sr: "Slušaj. Koje je vrste ovaj akord?"}
+    play: {notes: [B3, D4, F4, A4], mode: harmonic, tempo: 60}
+    options:
+      - {en: "major 7th", sr: "veliki durski septakord"}
+      - {en: "dominant 7th", sr: "dominantni septakord"}
+      - {en: "minor 7th", sr: "mali molski septakord"}
+      - {en: "half-diminished 7th", sr: "polusmanjeni septakord"}
+    answer: 3
+    checks:
+      - chord: {notes: [B3, D4, F4, A4], root: B, quality: m7b5}
+  - id: K-012-3
+    type: midi-play
+    prompt: {en: "F major, notes hidden: up the scale, Imaj7 to Imaj7 (watch the B♭).", sr: "F-dur, bez prikaza tonova: uz lestvicu, od Imaj7 do Imaj7 (pazi na B)."}
+    mode: chords
+    derive: {roman: {key: F4, numerals: [Imaj7, ii7, iii7, IVmaj7, V7, vi7, viiø7, Imaj7]}}
+    octave: any
+    bass: true
+    showNotes: false
+  - id: K-012-4
+    type: midi-play
+    prompt: {en: "G major, notes hidden, one chord per beat at ♩=60.", sr: "G-dur, bez prikaza tonova, jedan akord po dobi, ♩=60."}
+    mode: chords
+    derive: {roman: {key: G3, numerals: [Imaj7, ii7, iii7, IVmaj7, V7, vi7, viiø7, Imaj7]}}
+    octave: any
+    bass: true
+    tempo: 60
+    showNotes: false
+  - id: K-012-5
+    type: generated
+    prompt: {en: "Name the seventh chord by its numeral", sr: "Imenuj septakord stupnjem"}
+    count: 4
+    gen: {kind: roman, keys: [C, F, G], seventh: true, ask: numeral}
+  - id: K-012-6
+    type: generated
+    prompt: {en: "Play the seventh chord on a given degree (any octave)", sr: "Odsviraj septakord na zadatom stupnju (bilo koja oktava)"}
+    count: 4
+    gen: {kind: roman, keys: [C, F, G], seventh: true, ask: play}
+  - id: K-012-7
+    type: mcq
+    prompt: {en: "You hear a dominant seventh chord on D, in some major key. Which key?", sr: "Čuješ dominantni septakord na D, u nekom duru. U kom?"}
+    play: {notes: [D4, "F#4", A4, C5], mode: harmonic, tempo: 60}
+    options: ["D", "A", "G", "C"]
+    answer: 2
+    checks:
+      - chord: {notes: [D4, "F#4", A4, C5], root: D, quality: "7"}
+      - interval: {from: D4, to: G4, is: P4}
+      - roman: {key: G, degree: 5, is: "V"}

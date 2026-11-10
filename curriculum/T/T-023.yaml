@@ -1,0 +1,128 @@
+id: T-023
+track: T
+order: 23
+prereqs: [T-022]
+title: {en: "Seventh chords in minor; viiø7 vs vii°7", sr: "Septakordi u molu; viiø7 i vii°7"}
+minutes: 14
+tags: [chords, harmony]
+explain:
+  en: |
+    In minor, the chords that **lead to the tonic** use the raised 7th (harmonic minor); the others usually keep the natural 7th.
+    The set you actually meet in A minor:
+
+    | numeral | notes | type |
+    |---|---|---|
+    | i7 | A C E G | minor 7th |
+    | iiø7 | B D F A | half-diminished |
+    | IIImaj7 | C E G B | major 7th |
+    | iv7 | D F A C | minor 7th |
+    | **V7** | E **G♯** B D | dominant 7th |
+    | VImaj7 | F A C E | major 7th |
+    | **vii°7** | **G♯** B D F | **fully diminished** |
+
+    (Strict harmonic minor also gives i(maj7) A–C–E–G♯ and III+maj7; both exist as special colours, mostly in jazz and film music.)
+
+    **viiø7 vs vii°7**: both start with a diminished triad. The difference is the 7th:
+    - **ø7, half-diminished** (major keys, B–D–F–A in C): diminished triad + **minor 7th**.
+    - **°7, fully diminished** (minor keys, G♯–B–D–F in A minor): diminished triad + **diminished 7th**. Every interval is a minor third, so the chord is **symmetrical**: invert it and it still sounds like a dim7 (on the keyboard, still a stack of minor thirds). There are only three different dim7 chords in all.
+
+    Both work as dominants: each is V7 without its root plus one more note on top (B–D–F + A in C major, G♯–B–D + F in A minor), built on the leading tone; °7 sounds more dramatic.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Bø7 (C major)"[Bdfa] "G#°7 (A minor)"[^GBdf] |]
+    ```
+  sr: |
+    U molu akordi koji **vode ka tonici** koriste povišeni VII stupanj (harmonski mol); ostali obično zadržavaju prirodni.
+    Skup koji stvarno srećeš u a-molu:
+
+    | oznaka | tonovi | vrsta |
+    |---|---|---|
+    | i7 | A C E G | mali molski |
+    | iiø7 | H D F A | polusmanjeni |
+    | IIImaj7 | C E G H | veliki durski |
+    | iv7 | D F A C | mali molski |
+    | **V7** | E **Gis** H D | dominantni |
+    | VImaj7 | F A C E | veliki durski |
+    | **vii°7** | **Gis** H D F | **smanjeni** |
+
+    (Strogi harmonski mol daje i i(maj7) A–C–E–Gis i III+maj7; oba postoje kao posebne boje, uglavnom u džezu i filmskoj muzici.)
+
+    **viiø7 i vii°7**: oba počinju smanjenim trozvukom. Razlika je u septimi:
+    - **ø7, polusmanjeni septakord** (dur, H–D–F–A u C-duru): smanjeni trozvuk + **mala septima**.
+    - **°7, smanjeni septakord** (mol, Gis–H–D–F u a-molu): smanjeni trozvuk + **smanjena septima**. Svi susedni intervali su male terce, pa je akord **simetričan**: obrni ga i i dalje zvuči kao smanjeni septakord (na klavijaturi i dalje niz malih terci). Postoje samo tri različita smanjena septakorda.
+
+    Oba deluju kao dominanta: svaki je V7 bez osnovnog tona, sa još jednim tonom na vrhu (H–D–F + A u C-duru, Gis–H–D + F u a-molu), sagrađen na vođici; °7 zvuči dramatičnije.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "Hø7 (C-dur)"[Bdfa] "Gis°7 (a-mol)"[^GBdf] |]
+    ```
+exercises:
+  - id: T-023-1
+    type: generated
+    prompt: {en: "Which numeral is this seventh chord in A harmonic minor?", sr: "Koji je rimski broj ovog septakorda u harmonskom a-molu?"}
+    count: 5
+    gen: {kind: roman, keys: [A], type: harmonic-minor, degrees: [2, 4, 5, 6, 7], seventh: true, ask: numeral}
+    checks:
+      - chord: {notes: [B4, D5, F5, A5], root: B, quality: m7b5}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: D4, to: C5, is: m7}
+      - chord: {notes: [E4, G#4, B4, D5], root: E, quality: "7"}
+      - chord: {notes: [F4, A4, C5, E5], root: F, quality: maj7}
+      - chord: {notes: [G#4, B4, D5, F5], root: G#, quality: dim7}
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: A4, to: G5, is: m7}
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+  - id: T-023-2
+    type: generated
+    prompt: {en: "Spell iiø7, V7 and vii°7 in minor", sr: "Napiši iiø7, V7 i vii°7 u molu"}
+    count: 4
+    gen: {kind: roman, keys: [D, E, G], type: harmonic-minor, degrees: [2, 5, 7], seventh: true, ask: name}
+  - id: T-023-3
+    type: generated
+    prompt: {en: "Play V7 and vii°7 in minor keys", sr: "Odsviraj V7 i vii°7 u molu"}
+    count: 3
+    gen: {kind: roman, keys: [A, D, E], type: harmonic-minor, degrees: [5, 7], seventh: true, ask: play}
+  - id: T-023-4
+    type: generated
+    prompt: {en: "Listen: half-diminished or fully diminished?", sr: "Slušaj: polusmanjeni ili smanjeni septakord?"}
+    count: 4
+    gen: {kind: chord-ear, qualities: [m7b5, dim7]}
+  - id: T-023-5
+    type: generated
+    prompt: {en: "Name the chord", sr: "Imenuj akord"}
+    count: 4
+    gen: {kind: chord-name, qualities: [m7b5, dim7, min7]}
+  - id: T-023-6
+    type: mcq
+    prompt: {en: "In vii°7 of A minor (G♯–B–D–F), the interval from root to 7th is…", sr: "U vii°7 a-mola (Gis–H–D–F) interval od osnovnog tona do septime je…"}
+    options:
+      - {en: "diminished 7th", sr: "smanjena septima"}
+      - {en: "minor 7th", sr: "mala septima"}
+      - {en: "major 7th", sr: "velika septima"}
+      - {en: "major 6th", sr: "velika seksta"}
+    answer: 0
+    checks:
+      - interval: {from: G#4, to: F5, is: d7}
+      - interval: {from: G#4, to: B4, is: m3}
+      - interval: {from: B4, to: D5, is: m3}
+      - interval: {from: D5, to: F5, is: m3}
+  - id: T-023-7
+    type: mcq
+    prompt: {en: "What makes viiø7 in C major (B–D–F–A) half-diminished rather than fully diminished?", sr: "Po čemu je viiø7 u C-duru (H–D–F–A) polusmanjen, a ne smanjen?"}
+    options:
+      - {en: "Its 7th is minor (B–A), not diminished", sr: "Septima mu je mala (H–A), a ne smanjena"}
+      - {en: "Its triad is minor, not diminished", sr: "Trozvuk mu je molski, a ne smanjeni"}
+      - {en: "Its 5th is perfect", sr: "Kvinta mu je čista"}
+      - {en: "It has no 3rd", sr: "Nema tercu"}
+    answer: 0
+    checks:
+      - interval: {from: B4, to: A5, is: m7}
+      - interval: {from: B4, to: F5, is: d5}
+      - interval: {from: B4, to: D5, is: m3}

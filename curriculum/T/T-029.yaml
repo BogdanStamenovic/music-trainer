@@ -1,0 +1,149 @@
+id: T-029
+track: T
+order: 29
+prereqs: [T-028]
+title: {en: "Non-chord tones I: passing and neighbor tones", sr: "Vanakordski tonovi I: prolaznica i skretnica"}
+minutes: 12
+tags: [harmony, melody]
+explain:
+  en: |
+    Melodies are not made only of chord tones. A **non-chord tone** is a melody note that does not belong to the chord sounding under it.
+    The two most common ones are simple, usually sit on a **weak** beat, and move **by step**:
+
+    - **Passing tone**: fills the gap between two *different* chord tones, stepwise, in one direction. Over C: E **F** G, or C **D** E.
+    - **Neighbor tone**: steps away from a chord tone and comes back to the *same* one. Upper neighbor G **A** G; lower neighbor G **F** G (over F major: A **G** A).
+
+    How to tell them apart: look at the notes on either side. Different chord tones, same direction → passing. Same chord tone on both sides → neighbor.
+    Why it matters: when you harmonize a melody, only the chord tones decide the chord; passing and neighbor notes can be ignored. When you improvise, chord tones on the beat with passing tones between them is the simplest way to sound "inside" the harmony.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"E "^P"F G2 | "C"G "^N"A G2 | "F"A "^N"G A2 | "Am"c "^P"B A2 |]
+    ```
+
+    P = passing tone, N = neighbor tone.
+  sr: |
+    Melodije nisu napravljene samo od akordskih tonova. **Vanakordski ton** je ton melodije koji ne pripada akordu koji zvuči ispod njega.
+    Dva najčešća su jednostavna, obično na **lakoj** dobi, i kreću se **za stupanj**:
+
+    - **Prolaznica**: popunjava razmak između dva *različita* akordska tona, za stupanj, u jednom smeru. Nad C: E **F** G, ili C **D** E.
+    - **Skretnica**: odlazi za stupanj od akordskog tona i vraća se na *isti* ton. Gornja skretnica G **A** G; donja G **F** G (nad F-durom: A **G** A).
+
+    Kako ih razlikovati: pogledaj tonove sa obe strane. Različiti akordski tonovi, isti smer → prolaznica. Isti akordski ton sa obe strane → skretnica.
+    Zašto je važno: kad harmonizuješ melodiju, akord određuju samo akordski tonovi; prolaznice i skretnice možeš zanemariti. Kad improvizuješ, akordski tonovi na dobi i prolaznice između njih su najjednostavniji način da zvučiš „unutar" harmonije.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"E "^P"F G2 | "C"G "^S"A G2 | "F"A "^S"G A2 | "Am"c "^P"B A2 |]
+    ```
+
+    P = prolaznica, S = skretnica.
+exercises:
+  - id: T-029-1
+    type: mcq
+    prompt: {en: "Over the C chord, the F is a…", sr: "Nad akordom C, ton F je…"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      "C"E F G2 |]
+    options:
+      - {en: "passing tone", sr: "prolaznica"}
+      - {en: "neighbor tone", sr: "skretnica"}
+      - {en: "chord tone", sr: "akordski ton"}
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: T-029-2
+    type: mcq
+    prompt: {en: "Over the C chord, the A is a…", sr: "Nad akordom C, ton A je…"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      "C"G A G2 |]
+    options:
+      - {en: "passing tone", sr: "prolaznica"}
+      - {en: "upper neighbor tone", sr: "gornja skretnica"}
+      - {en: "lower neighbor tone", sr: "donja skretnica"}
+      - {en: "chord tone", sr: "akordski ton"}
+    answer: 1
+    checks:
+      - interval: {from: G4, to: A4, is: M2}
+  - id: T-029-3
+    type: mcq
+    prompt: {en: "Over the F chord, the G is a…", sr: "Nad akordom F, ton G je…"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      "F"A G A2 |]
+    options:
+      - {en: "passing tone", sr: "prolaznica"}
+      - {en: "upper neighbor tone", sr: "gornja skretnica"}
+      - {en: "lower neighbor tone", sr: "donja skretnica"}
+      - {en: "chord tone", sr: "akordski ton"}
+    answer: 2
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - interval: {from: G4, to: A4, is: M2}
+  - id: T-029-4
+    type: mcq
+    prompt: {en: "Over A minor, the B is a…", sr: "Nad a-mol akordom, ton H je…"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      "Am"c B A2 |]
+    options:
+      - {en: "passing tone", sr: "prolaznica"}
+      - {en: "neighbor tone", sr: "skretnica"}
+      - {en: "chord tone", sr: "akordski ton"}
+    answer: 0
+    checks:
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: A4, to: B4, is: M2}
+  - id: T-029-5
+    type: mcq
+    prompt: {en: "Over the C chord: how many non-chord tones are in this bar?", sr: "Nad akordom C: koliko vanakordskih tonova ima u ovom taktu?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      "C"c B A G |]
+    options: ["0", "1", "2", "3"]
+    answer: 2
+    checks:
+      - chord: {notes: [G4, C5, E5], root: C, quality: maj, inversion: 2}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: T-029-6
+    type: midi-play
+    prompt: {en: "Over a C chord, connect the chord tones C, E, G with passing tones: play C D E F G (one octave from middle C).", sr: "Nad C akordom poveži akordske tonove C, E, G prolaznicama: odsviraj C D E F G (od prvog C)."}
+    mode: sequence
+    expect: [C4, D4, E4, F4, G4]
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: E4, to: G4, is: m3}
+  - id: T-029-7
+    type: midi-play
+    prompt: {en: "In G major, decorate G with an upper and a lower neighbor: G A G F♯ G (from G above middle C).", sr: "U G-duru ukrasi G gornjom i donjom skretnicom: G A G Fis G (od G iznad prvog C)."}
+    mode: sequence
+    expect: [G4, A4, G4, F#4, G4]
+    checks:
+      - interval: {from: G4, to: A4, is: M2}
+      - interval: {from: F#4, to: G4, is: m2}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}

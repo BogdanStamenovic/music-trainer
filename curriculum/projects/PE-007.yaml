@@ -1,0 +1,98 @@
+id: PE-007
+kind: byear
+order: 28
+title: {en: "By ear: the bass line of a progression", sr: "Po sluhu: bas linija progresije"}
+minutes: 35
+prereqs: [E-016, E-020, K-009]
+melody:
+  title: {en: "Walking Down (original bass line)", sr: "Silazak (originalna bas linija)"}
+  source: "Original bass line written for music-trainer (2026), implying in C: I – V6 | vi – I64 | IV – V – vi | V | I – I6 | IV – #iv°7 | V | I; no outside source."
+  key: C major
+  meter: 4/4
+  tempo: 80
+  notes: [C3, B2, A2, G2, F2, G2, A2, G2, C3, E3, F3, F#3, G3, G2, C3]
+  beats: [2, 2, 2, 2, 1, 1, 2, 4, 2, 2, 2, 2, 2, 2, 4]
+brief:
+  en: |
+    The app plays a **bass line**, low, on its own: the bottom of an 8-bar chord progression.
+    **Play it back with your left hand, any key.** Bass players and pianists do this all the
+    time: the bass is the first thing you need to find when you learn a song by ear.
+
+    ### What to listen for
+
+    - **A descending line.** Bars 1–2 walk **down the scale by step** from the tonic, one note
+      every two beats: 1 – 7 – 6 – 5. Under a melody this is the famous I – V6 – vi – (I64) –
+      IV... descent of countless songs (think of the bass of *A Whiter Shade of Pale*).
+    - **Steps up to V.** Bar 3 climbs 4 – 5 – 6, and bar 4 settles on 5 (the dominant) for a
+      whole bar: a half cadence.
+    - **Bars 5–7 climb by step**, through one **chromatic note**: 1 – 3 – 4 – **#4** – 5. The
+      raised 4th is the leading tone *to the dominant*, the bass note of a #iv°7 chord.
+    - **The octave drop.** In bar 7 the dominant is played high, then an **octave lower**,
+      before the final tonic. Octaves in the bass are common: the note is the same, only the
+      register changes.
+
+    ### Strategies
+
+    1. **Sing it** an octave up if the low notes are hard to hear (that is normal).
+    2. **The first note is the tonic.** Start on C (left hand around C3) and the only black
+       key is F#.
+    3. **Count the length of each note**: two beats almost everywhere, one beat for the quick
+       steps in bar 3, four beats on the dominant in bar 4 and the final tonic.
+    4. **Then play it with chords** in the right hand, if you like: you will hear the
+       progression appear.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the line's, in any key and any octave.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    Aplikacija pušta **bas liniju**, nisko, samu: dno harmonske progresije od 8 taktova.
+    **Odsviraj je levom rukom, u bilo kom tonalitetu.** Basisti i pijanisti to stalno rade:
+    bas je prvo što treba da nađeš kad skidaš pesmu po sluhu.
+
+    ### Šta da slušaš
+
+    - **Silazna linija.** Taktovi 1–2 silaze **postupno niz lestvicu** od tonike, ton na svake
+      dve dobe: 1 – 7 – 6 – 5. Ispod melodije, to je čuveni silazak I – V6 – vi – (I64) –
+      IV... bezbrojnih pesama (seti se basa pesme *A Whiter Shade of Pale*).
+    - **Koraci naviše do V.** 3. takt se penje 4 – 5 – 6, a 4. takt se smiruje na 5 (dominanta)
+      ceo takt: polukadenca.
+    - **Taktovi 5–7 se penju postupno**, preko jednog **hromatskog tona**: 1 – 3 – 4 – **#4** – 5.
+      Povišeni 4. stupanj je vođica *ka dominanti*, bas ton akorda #iv°7.
+    - **Pad za oktavu.** U 7. taktu dominanta se svira visoko, pa **oktavu niže**, pre završne
+      tonike. Oktave u basu su česte: ton je isti, menja se samo registar.
+
+    ### Strategije
+
+    1. **Pevaj** oktavu više ako se niski tonovi teško čuju (to je normalno).
+    2. **Prvi ton je tonika.** Počni na C (leva ruka oko C3), i jedina crna dirka je Fis.
+    3. **Broj trajanje svakog tona**: dve dobe skoro svuda, jedna doba za brze korake u 3.
+       taktu, četiri dobe za dominantu u 4. taktu i završnu toniku.
+    4. **Onda je sviraj uz akorde** u desnoj ruci, ako želiš: čućeš kako se progresija pojavljuje.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima linije, u bilo kom tonalitetu i
+      oktavi.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: flow
+    weight: 1
+    label: {en: "Steady bass", sr: "Ravnomeran bas"}
+    top:
+      en: "Played like a bass player: even, in time, every note held to its full length so a band could lock to it."
+      sr: "Odsvirano kao što bi basista: ravnomerno, u ritmu, svaki ton zadržan punu dužinu, pa bi bend mogao da se osloni na njega."
+  - id: line
+    weight: 1
+    label: {en: "The shape of the line", sr: "Oblik linije"}
+    top:
+      en: "The stepwise descent, the climb through #4 and the octave drop are all exact; the chromatic note is a real half step, not a whole step."
+      sr: "Postupni silazak, penjanje preko #4 i pad za oktavu su tačni; hromatski ton je pravi polustepen, a ne ceo stepen."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes describe how you heard the low register (singing an octave up, for instance), name the chords you think the bass implies, and say what you fixed."
+      sr: "U beleškama opisuješ kako si slušao niski registar (na primer, pevajući oktavu više), imenuješ akorde koje bas po tvom mišljenju nagoveštava i navodiš šta si ispravio."

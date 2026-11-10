@@ -1,0 +1,98 @@
+id: PE-006
+kind: byear
+order: 24
+title: {en: "By ear: Row, Row, Row Your Boat (6/8)", sr: "Po sluhu: Row, Row, Row Your Boat (6/8)"}
+minutes: 30
+prereqs: [T-017, E-018, E-021]
+melody:
+  title: {en: "Row, Row, Row Your Boat", sr: "Row, Row, Row Your Boat (veslaj, veslaj)"}
+  source: "Traditional American round, printed in the 19th century (the familiar melody in E. O. Lyte's version, 1881). Public domain."
+  key: C major
+  meter: 6/8
+  tempo: 120
+  notes: [C4, C4, C4, D4, E4, E4, D4, E4, F4, G4, C5, C5, C5, G4, G4, G4, E4, E4, E4, C4, C4, C4, G4, F4, E4, D4, C4]
+  beats: [1.5, 1.5, 1, 0.5, 1.5, 1, 0.5, 1, 0.5, 3, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 1, 0.5, 3]
+brief:
+  en: |
+    The app plays ***Row, Row, Row Your Boat***, the round. The tune is easy; the point is the
+    **meter: 6/8**, compound time, where each beat divides into **three**, not two.
+
+    ### What to listen for
+
+    - **Two beats per bar, each a dotted quarter.** Count "ONE-and-a TWO-and-a". The first
+      bar is just those two beats: *Row, row*.
+    - **The 6/8 lilt: long-short.** *"row your boat"* and *"gent-ly down the"* are a **quarter
+      + eighth** inside one beat (long-short), the rocking rhythm of compound meter. Do not
+      straighten it into two equal halves.
+    - **"Merrily, merrily..." is three even eighths per beat**, four groups in a row,
+      dropping from the high tonic down through 5 and 3 to the low tonic: an arpeggio in
+      groups of three repeated notes (*do do do, sol sol sol, mi mi mi, do do do*).
+    - **The leap:** from the end of bar 4 (*stream*, on 5) up a **fourth** to the high
+      tonic (*mer-*), the highest note.
+
+    ### Strategies
+
+    1. **Sing it** while tapping only the two big beats per bar.
+    2. **Start on C** and stay in C major: no black keys.
+    3. **Bars 5–6 first**: the repeated-note arpeggio is the easiest part to find and anchors
+       the high and low C.
+    4. Play it in time with a slow pulse; then try it as a round with the playback (start
+       when the playback reaches bar 3).
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo. This is where 6/8 counts:
+      the long-short pairs must be long-short.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    Aplikacija pušta ***Row, Row, Row Your Boat***, poznati kanon. Melodija je laka; poenta
+    je **takt: 6/8**, složeni takt, u kom se svaka doba deli na **tri**, a ne na dva.
+
+    ### Šta da slušaš
+
+    - **Dve dobe u taktu, svaka je četvrtina s tačkom.** Broji „JED-an-i DVA-a-i”. Prvi takt
+      su samo te dve dobe: *Row, row*.
+    - **Njihanje 6/8: dugo-kratko.** *„row your boat”* i *„gent-ly down the”* su **četvrtina
+      + osmina** unutar jedne dobe (dugo-kratko), ljuljajući ritam složenog takta. Ne ispravljaj
+      ga u dve jednake polovine.
+    - **„Merrily, merrily...” su tri jednake osmine po dobi**, četiri grupe zaredom, koje
+      silaze od visoke tonike preko 5 i 3 do niske tonike: razloženi akord u grupama od po tri
+      ponovljena tona (*do do do, sol sol sol, mi mi mi, do do do*).
+    - **Skok:** sa kraja 4. takta (*stream*, na 5) naviše za **kvartu** na visoku toniku
+      (*mer-*), najviši ton.
+
+    ### Strategije
+
+    1. **Otpevaj** dok lupkaš samo dve velike dobe u taktu.
+    2. **Počni na C** i ostani u C-duru: bez crnih dirki.
+    3. **Prvo taktovi 5–6**: arpeggio od ponovljenih tonova se najlakše nalazi i učvršćuje
+       visoko i nisko C.
+    4. Sviraj u ritmu uz spor puls; onda probaj kao kanon sa reprodukcijom (uđi kad
+       reprodukcija stigne do 3. takta).
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu. Ovde se 6/8 računa:
+      parovi dugo-kratko moraju biti dugo-kratko.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: compound-feel
+    weight: 1
+    label: {en: "Compound meter", sr: "Složeni takt"}
+    top:
+      en: "Two clear beats per bar; every quarter–eighth pair is long-short in a 2:1 ratio; the merrily triplets are even."
+      sr: "Dve jasne dobe u taktu; svaki par četvrtina–osmina je dugo-kratko u odnosu 2:1; osmine u „merrily” su ravnomerne."
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One unbroken take that rocks like a boat, held notes (stream, dream) given their full bar."
+      sr: "Jedan neprekinut snimak koji se ljulja kao čamac, dugi tonovi (stream, dream) zadržani ceo takt."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes describe how you counted 6/8 and what you corrected (usually evened-out long-short pairs)."
+      sr: "U beleškama opisuješ kako si brojao 6/8 i šta si ispravio (obično izjednačene parove dugo-kratko)."

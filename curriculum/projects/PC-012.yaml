@@ -1,0 +1,123 @@
+id: PC-012
+kind: composition
+order: 45
+title: {en: "A waltz in G minor: melody and bass", sr: "Valcer u g-molu: melodija i bas"}
+minutes: 120
+prereqs: [T-016, T-019, K-016, C-006]
+composition:
+  key: G minor
+  meter: 3/4
+  bars: 16
+  range: [D4, F5]
+  voices: 2
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, parallels, rhythm]
+brief:
+  en: |
+    Write a **16-bar waltz in G minor, 3/4, for two voices: melody and bass.** Think of a
+    Viennese waltz slowed down, or a Serbian **starogradska** song (a great many of them are waltzes, swaying in this
+    lilting three): if you wrote starogradska lyrics in PL-002,
+    this could be their tune.
+
+    ### The idea
+
+    - **The waltz pulse is ONE two three.** Beat 1 is heavy and the other two are light. In
+      a full arrangement the bass plays beat 1 and the chords ("oom-pah-pah") play 2 and 3;
+      here you write the **"oom"**: one bass note per bar, usually a dotted half on beat 1.
+    - **Two 8-bar periods.** Bars 1–8 end **open on V** (D major: melody on A, D or **F#**, a
+      half cadence at bar 8). Bars 9–16 begin like bars 1–8 and close with **V → i**: bass
+      **D → G**, melody to G from A or F#.
+    - **Harmonic minor at the cadences.** The V chord in G minor is **D F# A**: F# is the
+      leading tone. Elsewhere (descending lines, over iv) F natural is fine. Avoid the
+      augmented second **Eb → F#**.
+    - **Waltz melodies sing in long-short shapes:** a half note and a quarter, a dotted half,
+      a quarter-note pickup into the next bar. A leap up on beat 1 and a step down after it is
+      the gesture of the dance.
+    - **Bass:** mostly roots of i (G), iv (C), V (D), VI (Eb), and the occasional passing note.
+      **No parallel 5ths or octaves** between melody and bass, as in PC-004: watch especially
+      the bar lines, where both voices change at once.
+    - **Range:** melody **D4–F5**, bass **G2–D3** or so.
+
+    ### Practical tips
+
+    - Play a G minor "oom-pah-pah" (left hand bass note, then the chord twice) and hum over it
+      until you find the first 2 bars. Then sequence them.
+    - Check each bar line: the interval melody/bass on beat 1 of a bar and on the last note of
+      the bar before. Two 5ths or two octaves in a row with both voices moving = change one.
+    - In ABC: `M:3/4`, `K:Gm` (Bb and Eb in the key signature), F# is `^F`; voices `V:1` and
+      `V:2`. Or record with two hands, bass below G3.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 16 full bars of 3/4 in both voices; melody notes of G minor
+      (F# and E allowed: harmonic and melodic minor); range D4–F5; bar 8 ends on 2, 5 or 7
+      (A, D or F#); melody ends on G, bass D → G; no augmented leaps; leaps under control;
+      **no parallel 5ths or octaves** (counts double); sensible rhythm.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4.
+  sr: |
+    Napiši **valcer od 16 taktova u g-molu, 3/4, za dva glasa: melodiju i bas.** Zamisli
+    usporeni bečki valcer ili srpsku **starogradsku** pesmu (mnoge od njih su valceri i njišu
+    se u ovom trodelnom koraku): ako si u PL-002 napisao starogradski tekst, ovo
+    može da bude njegova melodija.
+
+    ### Ideja
+
+    - **Valcerski puls je JED-na dva tri.** Prva doba je teška, druge dve lake. U punom
+      aranžmanu bas svira prvu dobu, a akordi („um-pa-pa”) drugu i treću; ovde pišeš to
+      **„um”**: jedan bas ton po taktu, obično polovina s tačkom na prvoj dobi.
+    - **Dva perioda od 8 taktova.** Taktovi 1–8 se završavaju **otvoreno na V** (D-dur:
+      melodija na A, D ili **Fis**, polukadenca u 8. taktu). Taktovi 9–16 počinju kao 1–8 i
+      zatvaraju se sa **V → i**: bas **D → G**, melodija u G sa A ili Fis.
+    - **Harmonski mol u kadencama.** Dominanta g-mola je **D Fis A**: Fis je vođica. Drugde
+      (silazne linije, nad iv) F bez povisilice je u redu. Izbegavaj povećanu sekundu
+      **Es → Fis**.
+    - **Valcerske melodije pevaju u oblicima dugo-kratko:** polovina i četvrtina, polovina s
+      tačkom, četvrtina kao predtakt u sledeći takt. Skok naviše na prvoj dobi i korak naniže
+      posle njega je pokret samog plesa.
+    - **Bas:** uglavnom osnovni tonovi i (G), iv (C), V (D), VI (Es) i poneka prolaznica.
+      **Bez paralelnih kvinti i oktava** između melodije i basa, kao u PC-004: pazi naročito na
+      taktne crte, gde se oba glasa menjaju istovremeno.
+    - **Opseg:** melodija **D4–F5**, bas otprilike **G2–D3**.
+
+    ### Praktični saveti
+
+    - Sviraj g-mol „um-pa-pa” (levom rukom bas ton, pa dvaput akord) i pevuši nad tim dok ne
+      nađeš prva 2 takta. Onda ih sekvenciraj.
+    - Proveri svaku taktnu crtu: interval melodija/bas na prvoj dobi takta i na poslednjem
+      tonu prethodnog takta. Dve kvinte ili dve oktave zaredom, a oba glasa se pomeraju =
+      promeni jedan.
+    - U ABC zapisu: `M:3/4`, `K:Gm` (B i Es u predznaku), Fis je `^F`; glasovi `V:1` i `V:2`.
+      Ili snimi obema rukama, bas ispod G3.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 16 punih taktova 3/4 u oba glasa; tonovi melodije u g-molu
+      (Fis i E su dozvoljeni: harmonski i melodijski mol); opseg D4–F5; 8. takt se završava na
+      2, 5 ili 7 (A, D ili Fis); melodija se završava na G, bas D → G; bez povećanih skokova;
+      skokovi pod kontrolom; **bez paralelnih kvinti i oktava** (računa se dvostruko); smislen
+      ritam.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4.
+rubric:
+  - id: waltz-feel
+    weight: 2
+    label: {en: "Waltz feel", sr: "Valcerski karakter"}
+    top:
+      en: "Beat 1 is felt in every bar (bass on the downbeat, melody's long notes or leaps on beat 1), the melody uses long-short waltz rhythms and pickups, and it would be danceable at a moderate tempo."
+      sr: "Prva doba se oseća u svakom taktu (bas na jakoj dobi, dugi tonovi ili skokovi melodije na prvoj dobi), melodija koristi valcerske ritmove dugo-kratko i predtakte i na nju bi moglo da se pleše u umerenom tempu."
+  - id: voice-leading
+    weight: 2
+    label: {en: "Melody and bass together", sr: "Melodija i bas zajedno"}
+    top:
+      en: "No parallel 5ths/octaves; the bass clearly implies i, iv, V (and maybe VI) with V–i at the end; melody and bass move in contrary or oblique motion at most bar lines."
+      sr: "Nema paralelnih kvinti/oktava; bas jasno nagoveštava i, iv, V (i možda VI) sa V–i na kraju; melodija i bas se na većini taktnih crta kreću suprotno ili koso."
+  - id: minor-colour
+    weight: 1
+    label: {en: "Minor colour and cadences", sr: "Molska boja i kadence"}
+    top:
+      en: "F# is used at the cadences (bar 8 half cadence, bars 15–16 V–i), F natural in descending passages; no Eb–F# leap; the mood is wistful rather than generic."
+      sr: "Fis se koristi u kadencama (polukadenca u 8. taktu, V–i u taktovima 15–16), F u silaznim pasažima; nema skoka Es–Fis; raspoloženje je setno, a ne bezlično."
+  - id: form
+    weight: 1
+    label: {en: "Two periods", sr: "Dva perioda"}
+    top:
+      en: "Bars 9–16 recognisably restart bars 1–8 and differ at the end to close; the climax comes in the second half."
+      sr: "Taktovi 9–16 prepoznatljivo ponovo počinju taktove 1–8 i razlikuju se na kraju da bi zatvorili; vrhunac dolazi u drugoj polovini."

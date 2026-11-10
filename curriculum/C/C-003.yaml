@@ -1,0 +1,147 @@
+id: C-003
+track: C
+order: 3
+prereqs: [C-002]
+title: {en: "Question and answer: a 2+2 bar phrase pair", sr: "Pitanje i odgovor: par fraza od 2+2 takta"}
+minutes: 15
+tags: [composition, melody, form]
+explain:
+  en: |
+    Put two 2-bar phrases side by side and make the first **ask** and the second **answer**.
+    This is the smallest complete musical thought, and the seed of every period and song verse.
+
+    **The question ends open.** Its last note is a note of the **V chord**: degree **2, 5 or 7**
+    (in C major D, G or B). Over a V chord that is a *half cadence*: a comma. You can feel it at
+    the piano: stop on D and your hand wants to go on.
+
+    **The answer ends closed.** Its last note is the **tonic (1)**, on a strong beat, held, and
+    reached **by step from 2 or 7** (D → C or B → C). That is the melodic half of the authentic
+    cadence V → I: a full stop.
+
+    **The answer usually starts like the question.** Same motif, same rhythm, so the listener hears
+    the two as a pair; then it bends toward home. Changing only the ending is the strongest link of
+    all, and the easiest place to start.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^question"E2 G2 F2 D2 | E2 C2 D4 | "^answer"E2 G2 F2 D2 | E2 D2 C4 |]
+    ```
+
+    Play both halves: the only difference is the end of bar 2 versus bar 4, D held versus C held, and
+    that one note turns a question into an answer.
+
+    In minor it works the same way. In A minor the question ends on B, E or G♯ (the V chord E–G♯–B,
+    with the raised 7th from harmonic minor), the answer on A, often from G♯ (the leading tone) or B.
+
+    **Recording with a given question:** the app starts the text with the question. Either type your
+    two bars after it, or press Record and play all four bars (the question too): recording replaces
+    the whole text.
+  sr: |
+    Stavi dve fraze od po 2 takta jednu do druge, tako da prva **pita**, a druga **odgovara**.
+    To je najmanja zaokružena muzička misao i klica svakog perioda i strofe pesme. (U našoj teoriji
+    oblika: motiv, fraza (2 takta), rečenica (4 takta), period (8 taktova).)
+
+    **Pitanje se završava otvoreno.** Njegov poslednji ton je ton **akorda V**: stupanj **2, 5 ili 7**
+    (u C-duru D, G ili H). Nad akordom V to je *polukadenca*: zarez. Osetićeš to za klavirom:
+    stani na D i ruka hoće dalje.
+
+    **Odgovor se završava zatvoreno.** Poslednji ton je **tonika (1)**, na jakom delu takta, zadržan,
+    i do njega se stiže **za korak od 2 ili 7** (D → C ili H → C). To je melodijska polovina
+    autentične kadence V → I: tačka.
+
+    **Odgovor obično počinje kao pitanje.** Isti motiv, isti ritam, pa slušalac čuje to dvoje kao par;
+    onda skreće ka kući. Promeniti samo završetak je najjača veza od svih i najlakši početak.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^pitanje"E2 G2 F2 D2 | E2 C2 D4 | "^odgovor"E2 G2 F2 D2 | E2 D2 C4 |]
+    ```
+
+    Odsviraj obe polovine: jedina razlika je kraj takta 2 naspram takta 4, zadržano D naspram
+    zadržanog C, i taj jedan ton pretvara pitanje u odgovor.
+
+    U molu je isto. U a-molu se pitanje završava na H, E ili Gis (akord V: E–Gis–H, sa povišenim
+    sedmim stupnjem iz harmonskog mola), a odgovor na A, često od Gis (vođice) ili H.
+
+    **Snimanje uz zadato pitanje:** aplikacija počinje tekst pitanjem. Ili otkucaj svoja dva takta
+    posle njega, ili pritisni Snimi i odsviraj sva četiri takta (i pitanje): snimak zamenjuje ceo tekst.
+exercises:
+  - id: C-003-1
+    type: mcq
+    prompt: {en: "Listen. Is this phrase a question or an answer?", sr: "Slušaj. Da li je ova fraza pitanje ili odgovor?"}
+    play: {notes: [E4, G4, F4, D4, E4, C4, D4], durations: [1, 1, 1, 1, 1, 1, 2], tempo: 90}
+    options:
+      - {en: "a question: it stops on 2 (D), open", sr: "pitanje: staje na 2 (D), otvoreno"}
+      - {en: "an answer: it stops on 1 (C), closed", sr: "odgovor: staje na 1 (C), zatvoreno"}
+    answer: 0
+  - id: C-003-2
+    type: mcq
+    prompt: {en: "Listen. Is this phrase a question or an answer?", sr: "Slušaj. Da li je ova fraza pitanje ili odgovor?"}
+    play: {notes: [G4, F4, E4, D4, E4, D4, C4], durations: [1, 1, 1, 1, 1, 1, 2], tempo: 90}
+    options:
+      - {en: "a question: it stops open", sr: "pitanje: staje otvoreno"}
+      - {en: "an answer: it stops on the tonic", sr: "odgovor: staje na tonici"}
+    answer: 1
+  - id: C-003-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nG2 A2 B2 c2 | A2 F2 G4 |]"
+    prompt: {en: "This question ends on G. Which ending of the answer (its bar 2) closes it most firmly?", sr: "Ovo pitanje se završava na G. Koji završetak odgovora (njegov drugi takt) ga najčvršće zatvara?"}
+    options:
+      - {en: "E–D–C, C held", sr: "E–D–C, C zadržano"}
+      - {en: "C–D–E, E held", sr: "C–D–E, E zadržano"}
+      - {en: "E–F–G, G held", sr: "E–F–G, G zadržano"}
+      - {en: "A–B–D, D held", sr: "A–H–D, D zadržano"}
+    answer: 0
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: C-003-4
+    type: midi-play
+    prompt: {en: "Play the question and answer from the lesson.", sr: "Odsviraj pitanje i odgovor iz lekcije."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nE2 G2 F2 D2 | E2 C2 D4 | E2 G2 F2 D2 | E2 D2 C4 |]"
+    mode: sequence
+    expect: [E4, G4, F4, D4, E4, C4, D4, E4, G4, F4, D4, E4, D4, C4]
+  - id: C-003-5
+    type: compose
+    prompt:
+      en: "Here is a 2-bar question in C major that ends on D. Write the 2-bar answer (bars 3–4): start like the question, end on C held, reached by step."
+      sr: "Evo pitanja od 2 takta u C-duru koje se završava na D. Napiši odgovor od 2 takta (taktovi 3–4): počni kao pitanje, završi zadržanim C, do kog stižeš za korak."
+    given: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 G2 E2 | F2 E2 D4 |\n"
+    key: C major
+    meter: 4/4
+    bars: 4
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      C2 E2 G2 E2 | F2 E2 D4 |
+      C2 E2 G2 c2 | B2 d2 c4 |]
+  - id: C-003-6
+    type: compose
+    prompt:
+      en: "The same in A minor. The question ends on B. Answer it in bars 3–4 and end on A; G♯ (written ^G) is the leading tone that pulls to A."
+      sr: "Isto u a-molu. Pitanje se završava na H. Odgovori u taktovima 3–4 i završi na A; Gis (piše se ^G) je vođica koja vuče ka A."
+    given: "X:1\nM:4/4\nL:1/8\nK:Am\nA2 c2 B2 A2 | ^G2 A2 B4 |\n"
+    key: A minor
+    meter: 4/4
+    bars: 4
+    range: [E4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:Am
+      A2 c2 B2 A2 | ^G2 A2 B4 |
+      c2 e2 d2 B2 | ^G2 B2 A4 |]
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj}

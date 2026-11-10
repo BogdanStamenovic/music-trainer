@@ -1,0 +1,142 @@
+id: PC-009
+kind: composition
+order: 33
+title: {en: "Set your own lyric to music", sr: "Uglazbi sopstveni tekst"}
+minutes: 120
+prereqs: [L-001, L-002, T-018, C-006]
+composition:
+  key: G major
+  meter: 4/4
+  bars: 16
+  range: [D4, E5]
+  rules: [bars, key, range, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Take **a lyric you wrote yourself** (from one of your lyrics projects, or a new one) and
+    **set it to a 16-bar melody in G major, 4/4**: two stanzas of four lines, or a verse and
+    a chorus, about **two bars per line**. Submit the melody with the words under the notes.
+    This is where the lyrics track and the composition track meet.
+
+    ### The idea
+
+    - **Stressed syllables on strong beats.** Speak each line aloud in rhythm and tap the
+      beats: the syllables you stress naturally go on beats 1 and 3 (in 4/4), unstressed ones on
+      weak beats and offbeats. *"to-MOR-row"*, not *"TO-mor-ROW"*. This is **prosody**, the
+      single thing listeners notice first when it is wrong.
+    - **Serbian stress is never on the last syllable** of a word with more than one syllable
+      (*VO-da*, *ŽI-vo-ta*, *LJU-bav*). A melody that puts a long, high note on a
+      final syllable makes a Serbian word sound foreign. English allows end stress
+      (*a-LONE*), Serbian does not.
+    - **One syllable per note** is the default. A **melisma** (one syllable over several
+      notes) is a decoration: use it on an open vowel (a, o) at a line end, not on a
+      consonant cluster.
+    - **Let the words shape the melody.** The emotional peak of the text gets the highest note;
+      a question can end up, a statement down. The last word of the lyric lands on **G**,
+      bar 16, ideally from A or F#.
+    - **Breathing.** Leave a breath at each line end (a long note or a short rest).
+    - **Range: D4–E5**, singable.
+
+    How words go under notes in ABC: a `w:` line after the music line, syllables separated by
+    spaces, hyphens inside a word, `_` to hold a syllable over an extra note.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    D2 G A B2 B2 | A2 G E D4 |
+    w: Rain on the win-dow, light on the stair
+    ```
+
+    ### Practical tips
+
+    - Write the rhythm before the pitches: speak the line in time, write down the rhythm,
+      then find notes for it.
+    - If a line does not fit, change the words (it is your lyric) as readily as the notes.
+    - If your lyric is sad, G major can still carry it: lean on E minor (vi) and B minor
+      (iii) colours and a descending line. Note your choice for the reviewer.
+    - Record the melody on the piano, then type the `w:` lines under it in the text box.
+      Add a note saying which lyrics project the words come from.
+
+    ### How it is graded
+
+    - **Rule checks (half):** the music only: 16 full bars; notes of G major; range D4–E5;
+      last note G; no augmented leaps; leaps under control; sensible rhythm. Words are not
+      checked by rules. There is no half-cadence check, because a stanza may close at bar 8.
+    - **Critique (half):** a reviewer (AI) reads the words with the notes and scores the
+      criteria below 0–4. Prosody counts double.
+  sr: |
+    Uzmi **tekst koji si sam napisao** (iz nekog od svojih projekata tekstova, ili nov) i
+    **uglazbi ga melodijom od 16 taktova u G-duru, 4/4**: dve strofe od po četiri stiha, ili
+    strofa i refren, otprilike **dva takta po stihu**. Predaj melodiju sa rečima ispod nota.
+    Ovde se sreću staza tekstova i staza kompozicije.
+
+    ### Ideja
+
+    - **Naglašeni slogovi na jakim dobama.** Izgovori svaki stih naglas u ritmu i lupkaj dobe:
+      slogovi koje prirodno naglašavaš idu na 1. i 3. dobu (u 4/4), nenaglašeni na slabe dobe
+      i između doba. Ovo je **prozodija**, stvar koju slušaoci prvu primete kad nije dobra.
+    - **Srpski akcenat nikad nije na poslednjem slogu** višesložne reči (*VO-da*, *ŽI-vo-ta*,
+      *LJU-bav*). Melodija koja stavi dug, visok ton na poslednji slog čini da srpska reč zvuči
+      strano. Engleski dozvoljava naglasak na kraju (*a-LONE*), srpski ne.
+    - **Jedan slog po tonu** je osnova. **Melizam** (jedan slog na više tonova) je ukras:
+      koristi ga na otvorenom vokalu (a, o) na kraju stiha, ne na grupi suglasnika.
+    - **Neka reči oblikuju melodiju.** Emotivni vrhunac teksta dobija najviši ton; pitanje može
+      da se završi naviše, izjava naniže. Poslednja reč teksta pada na **G**, u 16. taktu,
+      najbolje sa A ili Fis.
+    - **Disanje.** Na kraju svakog stiha ostavi mesta za udah (dug ton ili kratka pauza).
+    - **Opseg: D4–E5**, pevljivo.
+
+    Kako reči idu ispod nota u ABC zapisu: red `w:` posle reda sa notama, slogovi odvojeni
+    razmakom, crtice unutar reči, `_` da se slog zadrži na još jednom tonu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    D2 G A B2 B2 | A2 G E D4 |
+    w: Ki-ša na ok-nu, sve-tlo i mrak
+    ```
+
+    ### Praktični saveti
+
+    - Ritam napiši pre visina: izgovori stih u tempu, zapiši ritam, pa mu nađi tonove.
+    - Ako stih ne staje, menjaj reči (tvoj je tekst) jednako spremno kao note.
+    - Ako je tekst tužan, G-dur može i dalje da ga nosi: osloni se na boje e-mola (vi) i
+      h-mola (iii) i silaznu liniju. Zapiši izbor za recenzenta.
+    - Snimi melodiju na klaviru, pa u tekstualnom polju ukucaj redove `w:` ispod nje. Dodaj
+      belešku iz kog projekta tekstova su reči.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** samo muzika: 16 punih taktova; tonovi G-dura; opseg D4–E5;
+      poslednji ton G; bez povećanih skokova; skokovi pod kontrolom; smislen ritam. Reči
+      pravila ne proveravaju. Nema provere polukadence, jer strofa može da se zatvori u 8. taktu.
+    - **Kritika (pola):** recenzent (AI) čita reči zajedno sa notama i ocenjuje kriterijume
+      ispod od 0 do 4. Prozodija se računa dvostruko.
+rubric:
+  - id: prosody
+    weight: 2
+    label: {en: "Prosody: words and beats agree", sr: "Prozodija: reči i dobe se slažu"}
+    top:
+      en: "Every stressed syllable falls on a strong beat or a long/high note, no unstressed syllable is lengthened or accented, and (in Serbian) no word is stressed on its last syllable; sung at speaking speed, the words sound natural."
+      sr: "Svaki naglašeni slog pada na jaku dobu ili dug/visok ton, nijedan nenaglašen slog nije produžen ni naglašen, i (na srpskom) nijedna reč nije naglašena na poslednjem slogu; otpevane brzinom govora, reči zvuče prirodno."
+  - id: text-painting
+    weight: 1
+    label: {en: "Melody serves the words", sr: "Melodija služi rečima"}
+    top:
+      en: "The emotional peak of the lyric gets the melodic high point, line endings match the sense (open where the thought continues, closed where it ends), and the mood of the melody matches the text."
+      sr: "Emotivni vrhunac teksta dobija melodijski vrhunac, krajevi stihova prate smisao (otvoreno gde misao teče dalje, zatvoreno gde se završava), a raspoloženje melodije odgovara tekstu."
+  - id: form
+    weight: 1
+    label: {en: "Form", sr: "Forma"}
+    top:
+      en: "The 16 bars have audible sections that follow the lyric's structure (stanza/stanza or verse/chorus), with musical repetition where the text repeats or parallels."
+      sr: "16 taktova ima čujne delove koji prate strukturu teksta (strofa/strofa ili strofa/refren), sa muzičkim ponavljanjem tamo gde se tekst ponavlja ili paralelno gradi."
+  - id: singability
+    weight: 1
+    label: {en: "Singability", sr: "Pevljivost"}
+    top:
+      en: "Comfortable range, a breath at every line end, melismas only on open vowels; someone could sing it from the page."
+      sr: "Udoban opseg, udah na kraju svakog stiha, melizmi samo na otvorenim vokalima; neko bi mogao da je otpeva sa papira."

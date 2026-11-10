@@ -1,0 +1,140 @@
+id: L-005
+track: L
+order: 5
+prereqs: [L-004]
+title: {en: "The hook and the title", sr: "Udica (hook) i naslov"}
+minutes: 14
+tags: [lyrics, hook]
+explain:
+  en: |
+    The **hook** is the part a listener remembers and sings back after one hearing. In the
+    lyric it is usually a short phrase that is also the **title**. A good song can be
+    summarised by its hook; if you cannot say what yours is, the song probably does not have one.
+
+    ### What makes a lyric hook work
+
+    | quality | rule of thumb | weak → strong |
+    |---|---|---|
+    | **short** | 2–6 syllables | *I am feeling many things about leaving* → *Last Bus Out* |
+    | **concrete or turned** | an image, or a common phrase with a twist | *Goodbye* → *Spare Key* |
+    | **singable** | open vowels (*a, o, ay, oh*) on the long notes; few consonant clusters | *Strength in steps* → *Show me the road* |
+    | **repeated** | it returns in every chorus, often 2–4 times | said once → first and last line of the chorus |
+    | **carries the idea** | the whole song is about this phrase | a nice line in verse 2 → the title |
+
+    ### Where it goes
+    - In a **verse–chorus** song: the first line of the chorus, the last line, or both (a
+      "bookend"). The last line is the strongest spot: it is what the listener carries into the
+      next verse.
+    - In a **blues**: usually the end of line A, so it is heard twice per stanza.
+    - In a **starogradska** or other strophic song: the first line of the stanza or a short
+      refrain line at its end.
+
+    ### Title first
+    A working method: write the title before anything else, then ask it questions. *Spare Key*:
+    whose key? why does she still have it? what happens if she uses it? The verses answer the
+    questions, the chorus repeats the title. This stops the song from drifting.
+
+    ### Serbian hooks
+    Because Serbian words are never stressed on the last syllable, a hook that ends on a word
+    of two or more syllables ends **weak** (*O-pet je SU-bo-ta*). Put the stressed syllable on the
+    strong beat and let the last syllable fall after it. To end on a strong beat instead, finish
+    on a one-syllable word (*Laku noć*, *Još jedan dan*). Both work; choose on purpose.
+
+    ### Test it
+    Say the hook five times in a row, then clap its rhythm. If it gets boring by the third time,
+    or you stumble on it, it is not ready. Sing it on one long note at the top of your range:
+    if the vowel there is a closed *i* or *u*, try another word.
+  sr: |
+    **Udica** (hook) je deo koji slušalac zapamti i otpeva posle prvog slušanja. U tekstu je to
+    obično kratka fraza koja je ujedno i **naslov**. Dobra pesma može da se sažme svojom udicom;
+    ako ne možeš da kažeš koja je tvoja, pesma je verovatno nema.
+
+    ### Šta čini dobru udicu u tekstu
+
+    | osobina | pravilo | slabo → jako |
+    |---|---|---|
+    | **kratka** | 2–6 slogova | *Osećam mnogo toga zbog odlaska* → *Poslednji bus* |
+    | **konkretna ili izvrnuta** | slika, ili poznata fraza sa obrtom | *Zbogom* → *Rezervni ključ* |
+    | **pevljiva** | otvoreni samoglasnici (*a, o*) na dugim notama; malo suglasničkih grupa | *Crn prst* → *Ostavi svetlo* |
+    | **ponovljena** | vraća se u svakom refrenu, često 2–4 puta | rečena jednom → prvi i poslednji stih refrena |
+    | **nosi ideju** | cela pesma je o toj frazi | lep stih u drugoj strofi → naslov |
+
+    ### Gde stoji
+    - U pesmi sa **strofama i refrenom**: prvi stih refrena, poslednji, ili oba („okvir”).
+      Poslednji stih je najjače mesto: to slušalac nosi u sledeću strofu.
+    - U **bluzu**: obično kraj stiha A, pa se čuje dvaput u svakoj strofi.
+    - U **starogradskoj** ili drugoj strofnoj pesmi: prvi stih strofe ili kratak refren na kraju.
+
+    ### Prvo naslov
+    Radni metod: napiši naslov pre svega ostalog, pa mu postavljaj pitanja. *Rezervni ključ*: čiji
+    ključ? zašto ga ona još ima? šta ako ga upotrebi? Strofe odgovaraju na pitanja, refren ponavlja
+    naslov. Tako pesma ne odluta.
+
+    ### Srpske udice
+    Pošto srpske reči nikad nisu naglašene na poslednjem slogu, udica koja se završava rečju od
+    dva ili više slogova završava se **slabo** (*O-pet je SU-bo-ta*). Naglašeni slog stavi na jaku
+    dobu, a poslednji slog neka padne posle nje. Ako hoćeš kraj na jakoj dobi, završi
+    jednosložnom rečju (*Laku noć*, *Još jedan dan*). Oba rade; biraj namerno.
+
+    ### Proveri
+    Izgovori udicu pet puta zaredom, pa otapši njen ritam. Ako dosadi do trećeg puta ili se
+    sapleteš, nije gotova. Otpevaj je na jednoj dugoj noti pri vrhu svog opsega: ako je tamo
+    zatvoreno *i* ili *u*, probaj drugu reč.
+exercises:
+  - id: L-005-1
+    type: mcq
+    prompt: {en: "A song about leaving a small town for good. Which is the strongest hook/title?", sr: "Pesma o zauvek odlasku iz malog grada. Koja je najjača udica/naslov?"}
+    options:
+      - {en: "I Am Feeling Many Complicated Things About Leaving", sr: "Osećam mnogo složenih stvari zbog odlaska"}
+      - {en: "Last Bus Out", sr: "Poslednji bus"}
+      - {en: "Goodbye", sr: "Zbogom"}
+      - {en: "The Economic Decline of My Hometown", sr: "Ekonomsko propadanje mog grada"}
+    answer: 1
+  - id: L-005-2
+    type: mcq
+    prompt: {en: "In a verse–chorus song, where does the hook usually go?", sr: "U pesmi sa strofama i refrenom, gde obično stoji udica?"}
+    options:
+      - {en: "First and/or last line of the chorus", sr: "Prvi i/ili poslednji stih refrena"}
+      - {en: "Only in the middle of the first verse", sr: "Samo u sredini prve strofe"}
+      - {en: "Only in the bridge", sr: "Samo u mostu (bridge)"}
+      - {en: "Anywhere, as long as it appears once", sr: "Bilo gde, samo da se pojavi jednom"}
+    answer: 0
+  - id: L-005-3
+    type: mcq
+    prompt: {en: "English hooks: which is easiest to sing on a long, high note?", sr: "Engleske udice: koju je najlakše otpevati na dugoj, visokoj noti?"}
+    options: ["Strength in steps", "Just this", "Stick with it", "Show me the road"]
+    answer: 3
+  - id: L-005-4
+    type: mcq
+    prompt: {en: "Your hook is “Opet je subota”. Which syllable of “subota” belongs on the strong beat?", sr: "Udica ti je „Opet je subota”. Koji slog reči „subota” ide na jaku dobu?"}
+    options: ["SU-bo-ta", "su-BO-ta", "su-bo-TA"]
+    answer: 0
+    keepOrder: true
+    checks:
+      - syllables: {text: "subota", lang: sr, is: 3}
+  - id: L-005-5
+    type: mcq
+    prompt: {en: "Your title is “Spare Key”. Which verse idea serves it best?", sr: "Naslov ti je „Rezervni ključ”. Koja ideja za strofu mu najbolje služi?"}
+    options:
+      - {en: "A verse about the weather that week", sr: "Strofa o vremenu te nedelje"}
+      - {en: "A verse about feeling sad in general", sr: "Strofa o tuzi uopšte"}
+      - {en: "A verse where she still has the key to your flat and has not given it back", sr: "Strofa u kojoj ona još ima ključ tvog stana i nije ga vratila"}
+      - {en: "A verse listing your favourite songs", sr: "Strofa koja nabraja tvoje omiljene pesme"}
+    answer: 2
+  - id: L-005-6
+    type: write
+    prompt:
+      en: "Pop: write a title, then a 4–6 line chorus built on it (English or Serbian). The title is the hook: 2–6 syllables, in the first and/or last line, at least twice in the chorus. Above the chorus, write three questions the verses would answer."
+      sr: "Pop: napiši naslov, pa refren od 4–6 stihova izgrađen na njemu (engleski ili srpski). Naslov je udica: 2–6 slogova, u prvom i/ili poslednjem stihu, bar dvaput u refrenu. Iznad refrena napiši tri pitanja na koja bi odgovorile strofe."
+    language: either
+    lines: [5, 10]
+    rubric:
+      - id: hook
+        label: {en: "Hook = title", sr: "Udica = naslov"}
+        top: {en: "The title is 2–6 syllables, concrete or a fresh twist on a common phrase, and appears at least twice, including the first or last line.", sr: "Naslov ima 2–6 slogova, konkretan je ili svež obrt poznate fraze, i pojavljuje se bar dvaput, uključujući prvi ili poslednji stih."}
+      - id: sing
+        label: {en: "Singable", sr: "Pevljivo"}
+        top: {en: "Said five times in a row it does not trip; the longest-held syllable has an open vowel; stresses fall where the beat would.", sr: "Izgovorena pet puta zaredom ne zapinje; najduže držani slog ima otvoren samoglasnik; naglasci padaju tamo gde bi bila doba."}
+      - id: idea
+        label: {en: "Carries the song", sr: "Nosi pesmu"}
+        top: {en: "The three questions follow from the title and could fill two different verses; the chorus lines support the hook instead of starting new topics.", sr: "Tri pitanja proizlaze iz naslova i mogu da popune dve različite strofe; stihovi refrena podržavaju udicu umesto da otvaraju nove teme."}

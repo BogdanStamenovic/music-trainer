@@ -1,0 +1,163 @@
+id: PV-005
+kind: vocal
+order: 19
+title: {en: "Sing: long phrases (16 bars)", sr: "Pevaj: duge fraze (16 taktova)"}
+minutes: 35
+prereqs: [V-010, V-024]
+melody:
+  title: {en: "Four Long Lines", sr: "Četiri duge linije"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: F major
+  meter: 4/4
+  tempo: 63
+  notes: [C4, F4, G4, A4, Bb4, A4, G4, A4, F4, D4, E4, G4, C4, F4, G4, A4, C5, Bb4, A4, G4, A4, F4, E4, F4, A4, Bb4, C5, A4, Bb4, A4, G4, G4, A4, Bb4, G4, A4, Bb4, C5, C5, A4, F4, A4, G4, F4, D4, C4, F4, A4, G4, F4]
+  beats: [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 4, 1.5, 0.5, 1, 1, 1.5, 0.5, 2, 1.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 4]
+brief:
+  en: |
+    Record yourself singing **"Four Long Lines"**, an original 16-bar melody in F major, slow
+    4/4, on **"lah"** or **"loo"**. Four phrases of four bars, one breath each. At this tempo
+    every phrase is **about 15 seconds**: longer than anything so far. This week is about
+    **spending air evenly** so the last bar of each phrase sounds as supported as the first.
+
+    ```abc
+    X:1
+    T:Four Long Lines
+    M:4/4
+    L:1/8
+    Q:1/4=63
+    K:F
+    C2 F2 G2 A2 | B4 A2 G2 | A2 F2 D2 E2 | G8 !breath! |
+    C2 F2 G2 A2 | c4 B2 A2 | G2 A2 F2 E2 | F8 !breath! |
+    A3 B c2 A2 | B3 A G4 | G3 A B2 G2 | A2 B2 c4 !breath! |
+    c2 A2 F2 A2 | G4 F2 D2 | C2 F2 A2 G2 | F8 |]
+    ```
+
+    ### The musical idea
+
+    - **Form A A' B A'':** phrases 1 and 2 begin identically (C–F–G–A); phrase 1 ends open on G,
+      phrase 2 closed on F. Phrase 3 is the contrast: dotted rhythms that climb to the top C.
+      Phrase 4 comes down from that C and ends home on F.
+    - **Every phrase ends on a long note.** That is where the air runs low, so it is where the
+      breath management shows.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 3 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is C4–C5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it
+
+    - **Before recording**, do this once: sing on a hiss ("sss") for the length of one phrase
+      (four bars at the playback tempo). If the hiss runs out before bar 4, slow the release of
+      air, not the tempo.
+    - **Breathe at the four breath marks only**, during the end of the long note (cut it by an
+      eighth to make room), so the next phrase starts on time.
+    - **Spend air slowly in the first two bars of each phrase.** The common mistake is a big,
+      generous start and an empty final note.
+    - **Keep the ribs wide** while you sing (V-002): the ribs stay out, the belly comes in slowly.
+    - **Phrase 3:** the dotted rhythms are lighter, not louder. The top C in bar 12 is held for
+      two beats, then breathe.
+    - **If 15 seconds is not possible yet**, add one quick breath in the middle of a phrase and
+      note where. That is honest and fine; aim to drop it next time.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within three quarters of a semitone (75 cents).
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **„Četiri duge linije”**, originalnu melodiju od 16 taktova u
+    F-duru, spori 4/4 takt, na **„la”** ili **„lu”**. Četiri fraze od po četiri takta, po jedan
+    udah. U ovom tempu svaka fraza traje **oko 15 sekundi**: duže od svega dosad. Ova nedelja
+    je o **ravnomernom trošenju vazduha**, da poslednji takt fraze zvuči jednako oslonjeno kao
+    prvi.
+
+    ```abc
+    X:1
+    T:Four Long Lines
+    M:4/4
+    L:1/8
+    Q:1/4=63
+    K:F
+    C2 F2 G2 A2 | B4 A2 G2 | A2 F2 D2 E2 | G8 !breath! |
+    C2 F2 G2 A2 | c4 B2 A2 | G2 A2 F2 E2 | F8 !breath! |
+    A3 B c2 A2 | B3 A G4 | G3 A B2 G2 | A2 B2 c4 !breath! |
+    c2 A2 F2 A2 | G4 F2 D2 | C2 F2 A2 G2 | F8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Oblik A A' B A'':** fraze 1 i 2 počinju isto (C–F–G–A); prva se završava otvoreno na G,
+      druga zatvoreno na F. Treća fraza je kontrast: punktirani ritmovi koji se penju do gornjeg
+      C. Četvrta silazi sa tog C i završava kod kuće, na F.
+    - **Svaka fraza se završava dugim tonom.** Tu ponestaje vazduha, pa se tu i vidi kako vodiš
+      dah.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 3 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je C4–C5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva
+
+    - **Pre snimanja**, jednom uradi ovo: sikći („sss”) koliko traje jedna fraza (četiri takta u
+      tempu reprodukcije). Ako sikt nestane pre 4. takta, sporije puštaj vazduh, ne usporavaj
+      tempo.
+    - **Udiši samo na četiri znaka za udah**, na kraju dugog tona (skrati ga za osminu da napraviš
+      mesta), da sledeća fraza krene u tempu.
+    - **Troši vazduh polako u prva dva takta svake fraze.** Česta greška je velik, širokogrud
+      početak i prazan poslednji ton.
+    - **Drži rebra široko** dok pevaš (V-002): rebra ostaju raširena, stomak se polako uvlači.
+    - **Fraza 3:** punktirani ritmovi su lakši, ne glasniji. Gornje C u 12. taktu traje dve dobe,
+      pa udah.
+    - **Ako 15 sekundi još ne ide**, dodaj jedan kratak udah usred fraze i zapiši gde. To je
+      pošteno i u redu; cilj je da ga sledeći put izbaciš.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od tri četvrtine polustepena (75 centi).
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: breath
+    weight: 3
+    label: {en: "Breath across long phrases", sr: "Dah kroz duge fraze"}
+    top:
+      en: "Four phrases on four breaths, all at the marks; the long note ending each phrase is as steady and supported as its first bar; no gasping for the next phrase."
+      sr: "Četiri fraze na četiri udaha, svi na znacima; dugi ton na kraju svake fraze je miran i oslonjen kao prvi takt fraze; bez hvatanja vazduha za sledeću frazu."
+  - id: legato
+    weight: 1
+    label: {en: "Connected line", sr: "Povezana linija"}
+    top:
+      en: "Each phrase is one connected line; the leaps (C–F at the start, C–A in bar 13) are smooth, not separate attacks."
+      sr: "Svaka fraza je jedna povezana linija; skokovi (C–F na početku, C–A u 13. taktu) su glatki, ne posebne atake."
+  - id: ease
+    weight: 1
+    label: {en: "Ease across the octave", sr: "Lakoća kroz oktavu"}
+    top:
+      en: "Top C5 in bars 6, 9, 12 and 13 is light and unforced; low C4 is clear, not pressed down."
+      sr: "Gornje C5 u taktovima 6, 9, 12 i 13 je lako i neforsirano; donje C4 je jasno, ne potiskuje se."
+  - id: form
+    weight: 1
+    label: {en: "Form and rhythm", sr: "Oblik i ritam"}
+    top:
+      en: "Phrase 3 is audibly a contrast (light dotted rhythms, a rising line), and the return in phrase 4 sounds like coming home; pulse steady throughout."
+      sr: "Fraza 3 se jasno čuje kao kontrast (lak punktirani ritam, linija koja se penje), a povratak u frazi 4 zvuči kao dolazak kući; puls stalan kroz celu pesmu."

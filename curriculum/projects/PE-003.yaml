@@ -1,0 +1,92 @@
+id: PE-003
+kind: byear
+order: 12
+title: {en: "By ear: Ode to Joy", sr: "Po sluhu: Oda radosti"}
+minutes: 30
+prereqs: [E-019, E-021]
+melody:
+  title: {en: "Ode to Joy (Beethoven, Symphony No. 9)", sr: "Oda radosti (Betoven, Deveta simfonija)"}
+  source: "Ludwig van Beethoven, Symphony No. 9 in D minor, Op. 125 (1824), finale: the first 8 bars of the 'Freude' theme, in Beethoven's key of D major. Public domain."
+  key: D major
+  meter: 4/4
+  tempo: 100
+  notes: [F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, F#4, E4, E4, F#4, F#4, G4, A4, A4, G4, F#4, E4, D4, D4, E4, F#4, E4, D4, D4]
+  beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+brief:
+  en: |
+    The app plays the first **8 bars of *Ode to Joy***, the theme from the last movement of
+    Beethoven's Ninth Symphony (and the anthem of the European Union). **Play it back on the
+    piano, right hand, in any key.**
+
+    ### What helps
+
+    - **Almost everything is a step.** The tune walks up and down the scale, mostly one note
+      at a time, with repeated notes. There is no leap at all in these 8 bars. So your job is
+      to hear **up, down or same**, and the hand follows the white keys.
+    - **Two phrases of 4 bars, nearly identical.** Only the ending differs: the first phrase
+      stops on **2** (*re*, a question), the second on **1** (*do*, the answer). You have heard
+      this question and answer in your own compositions.
+    - **The dotted rhythm at each phrase end:** long-short-long (dotted quarter, eighth, half).
+      Everything else is plain quarter notes.
+
+    ### Strategies
+
+    1. **Sing it** until you can do it without the playback.
+    2. **Find the lowest note** (it is the tonic, *do*). Starting on E in C major (E E F G...)
+       keeps you on white keys; that is the easiest choice.
+    3. **Phrase 1 first**, then notice that phrase 2 is a copy until the last bar.
+    4. **Keep a steady pulse** and give the long notes their full value.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below, scored by the reviewer or by you.
+  sr: |
+    Aplikacija pušta prvih **8 taktova *Ode radosti***, teme iz poslednjeg stava Betovenove
+    Devete simfonije (i himne Evropske unije). **Odsviraj je na klaviru, desnom rukom, u bilo
+    kom tonalitetu.**
+
+    ### Šta pomaže
+
+    - **Gotovo sve je korak.** Melodija hoda gore-dole po lestvici, uglavnom ton po ton, uz
+      ponovljene tonove. U ovih 8 taktova nema nijednog skoka. Tvoj posao je da čuješ
+      **gore, dole ili isto**, a ruka prati bele dirke.
+    - **Dve fraze od 4 takta, gotovo iste.** Razlikuje se samo kraj: prva fraza staje na **2**
+      (*re*, pitanje), druga na **1** (*do*, odgovor). To pitanje i odgovor znaš iz svojih
+      kompozicija.
+    - **Punktirani ritam na kraju svake fraze:** dugo-kratko-dugo (četvrtina s tačkom,
+      osmina, polovina). Sve ostalo su obične četvrtine.
+
+    ### Strategije
+
+    1. **Otpevaj je** dok ne budeš mogao bez reprodukcije.
+    2. **Nađi najniži ton** (to je tonika, *do*). Ako počneš na E u C-duru (E E F G...), ostaješ
+       na belim dirkama; to je najlakši izbor.
+    3. **Prvo 1. fraza**, pa primeti da je 2. fraza kopija sve do poslednjeg takta.
+    4. **Drži ravnomeran puls** i dugim tonovima daj punu vrednost.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod, ocenjuje recenzent ili ti sam.
+rubric:
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One take from first to last note at a steady tempo, no hesitation before the phrase endings."
+      sr: "Jedan snimak od prvog do poslednjeg tona u ravnomernom tempu, bez oklevanja pred krajevima fraza."
+  - id: phrasing
+    weight: 1
+    label: {en: "Phrasing", sr: "Fraziranje"}
+    top:
+      en: "The two phrases are audible as question and answer; the dotted long-short-long endings are exact and the final half notes held."
+      sr: "Dve fraze se čuju kao pitanje i odgovor; punktirani završeci dugo-kratko-dugo su tačni, a završne polovine zadržane."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes say which key you chose and why, how you heard up/down/same, and what you fixed between takes."
+      sr: "U beleškama piše koji si tonalitet izabrao i zašto, kako si čuo gore/dole/isto i šta si ispravio između snimaka."

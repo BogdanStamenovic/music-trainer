@@ -1,0 +1,108 @@
+id: PE-013
+kind: byear
+order: 52
+title: {en: "By ear: the year's last song", sr: "Po sluhu: poslednja pesma godine"}
+minutes: 50
+prereqs: [T-017, T-018, E-014, E-021]
+melody:
+  title: {en: "Long Way Round (original melody)", sr: "Dugim putem (originalna melodija)"}
+  source: "Original 16-bar song written for music-trainer (2026): E minor, 6/8, form A A' B A', with a middle section in the relative major (G); no outside source."
+  key: E minor
+  meter: 6/8
+  tempo: 132
+  pickup: 0.5
+  notes: [B3, E4, F#4, G4, A4, B4, A4, G4, F#4, G4, A4, B4, C5, B4, E5, D5, C5, B4, A4, C5, B4, A4, G4, F#4, E4, D#4, E4, G4, B4, D5, B4, C5, A4, F#4, A4, B4, G4, D5, B4, A4, F#4, B4, E5, D5, C5, B4, A4, C5, B4, A4, G4, F#4, E4, D#4, E4]
+  beats: [0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 3, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 3, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 1, 0.5, 2.5]
+brief:
+  en: |
+    The last by-ear project of the year: a **16-bar song in 6/8** that pulls together what you
+    practised: **minor key, compound meter, a pickup, arpeggio leaps, a leading tone, a
+    move to the relative major and back, and a form to keep in your head.** Written for this
+    course. **Play it back on the piano, right hand, any key.**
+
+    ### What to listen for
+
+    - **Form A A' B A'.** Bars 1–4 rise from the tonic and stop on **5**, held (open). Bars
+      5–8 start high, fall back and close on the **tonic** through the **raised 7th**
+      (a half step below it). Bars 9–12 are **in the relative major**, built from broken
+      chords. Bars 13–16 repeat bars 5–8.
+    - **6/8 again:** two beats per bar, mostly **quarter + eighth** (long-short) pairs. The
+      held notes at the end of bars 4 and 8 last a whole bar.
+    - **The pickup** is a single eighth on **5 below the tonic**, rising a fourth to the first
+      downbeat.
+    - **The B section** (bars 9–12) outlines the chords of the relative major: its tonic triad
+      (1 – 3 – 5 of G major, in E minor), its dominant seventh (F# – A – C), the tonic triad
+      again, and a turn back toward E minor at the end of bar 12. If you play in E minor, B uses only white keys plus F#.
+
+    ### Strategies
+
+    1. **Map the form first**: A, A', B, A', with the last note of each section (5, 1, ?, 1).
+       Fill in the "?" yourself.
+    2. **A' comes twice.** Learn bars 5–8 well and you have half the song.
+    3. **The note after the pickup is the tonic.** E minor is a good key for this (only F#
+       and D# are black), or A minor (only G#).
+    4. **Count the 6/8:** say "ONE-and-a TWO-and-a" and place each long-short pair.
+    5. Congratulations on a year of by-ear work. Compare this take with your *Twinkle, Twinkle*
+       from week 4 if you still have it.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    Poslednji projekat po sluhu ove godine: **pesma od 16 taktova u 6/8** koja okuplja ono što
+    si vežbao: **mol, složeni takt, predtakt, skokove po akordu, vođicu, prelazak u paralelni
+    dur i povratak, i formu koju držiš u glavi.** Napisana za ovaj kurs. **Odsviraj je na
+    klaviru, desnom rukom, u bilo kom tonalitetu.**
+
+    ### Šta da slušaš
+
+    - **Forma A A' B A'.** Taktovi 1–4 se penju od tonike i staju na **5**, zadržano
+      (otvoreno). Taktovi 5–8 počinju visoko, padaju nazad i zatvaraju se na **tonici** preko
+      **povišenog 7. stupnja** (polustepen ispod nje). Taktovi 9–12 su **u paralelnom duru**,
+      građeni od razloženih akorada. Taktovi 13–16 ponavljaju taktove 5–8.
+    - **Opet 6/8:** dve dobe u taktu, uglavnom parovi **četvrtina + osmina** (dugo-kratko).
+      Zadržani tonovi na kraju 4. i 8. takta traju ceo takt.
+    - **Predtakt** je jedna osmina na **5 ispod tonike**, koja se penje za kvartu do prve jake
+      dobe.
+    - **Deo B** (taktovi 9–12) ocrtava akorde paralelnog dura: njegov tonični trozvuk
+      (1 – 3 – 5 G-dura, u e-molu), njegov dominantni septakord (Fis – A – C), opet tonični
+      trozvuk, i okret nazad ka e-molu na kraju 12. takta. Ako
+      sviraš u e-molu, B koristi samo bele dirke i Fis.
+
+    ### Strategije
+
+    1. **Prvo mapiraj formu**: A, A', B, A', sa poslednjim tonom svakog dela (5, 1, ?, 1).
+       „?” popuni sam.
+    2. **A' dolazi dvaput.** Dobro nauči taktove 5–8 i imaš pola pesme.
+    3. **Ton posle predtakta je tonika.** E-mol je dobar tonalitet za ovo (crne su samo Fis i
+       Dis), ili a-mol (samo Gis).
+    4. **Broj 6/8:** izgovaraj „JED-an-i DVA-a-i” i smesti svaki par dugo-kratko.
+    5. Čestitamo na godini rada po sluhu. Uporedi ovaj snimak sa svojim *Twinkle, Twinkle* iz
+       4. nedelje, ako ga još imaš.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: form
+    weight: 1
+    label: {en: "The whole song", sr: "Cela pesma"}
+    top:
+      en: "All 16 bars in one take, in order; the open ending of bar 4, the closed endings of bars 8 and 16 and the B section's major colour are all audible."
+      sr: "Svih 16 taktova u jednom snimku, redom; otvoreni kraj 4. takta, zatvoreni krajevi 8. i 16. takta i durska boja dela B se jasno čuju."
+  - id: compound-feel
+    weight: 1
+    label: {en: "6/8 feel", sr: "Osećaj za 6/8"}
+    top:
+      en: "Two beats per bar throughout, long-short pairs in a 2:1 ratio, the pickup light and leading into the downbeat."
+      sr: "Dve dobe u taktu sve vreme, parovi dugo-kratko u odnosu 2:1, predtakt lagan i vodi u jaku dobu."
+  - id: process
+    weight: 1
+    label: {en: "Method and reflection", sr: "Postupak i osvrt"}
+    top:
+      en: "Your notes show the form map with the B section's last note filled in, the hardest spot and how you solved it, and one sentence on how your ear has changed this year."
+      sr: "Beleške pokazuju mapu forme sa popunjenim poslednjim tonom dela B, najteže mesto i kako si ga rešio, i jednu rečenicu o tome kako se tvoj sluh promenio ove godine."

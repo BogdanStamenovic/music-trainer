@@ -1,0 +1,154 @@
+id: C-006
+track: C
+order: 6
+prereqs: [C-005, T-028]
+title: {en: "The 8-bar period: half cadence, then authentic cadence", sr: "Period od 8 taktova: polukadenca, pa autentična kadenca"}
+minutes: 15
+tags: [composition, melody, form]
+explain:
+  en: |
+    Double the question and answer from C-003 and you have the most common shape in tonal music:
+    the **period**, 8 bars in two halves of 4.
+
+    | bars | name | ends with | melody ends on |
+    |---|---|---|---|
+    | 1–4 | **antecedent** (the question) | **half cadence** (on V) | 2, 5 or 7 (in C major D, G or B) |
+    | 5–8 | **consequent** (the answer) | **authentic cadence** (V → I) | 1, by step from 2 or 7 |
+
+    **Parallel period:** bars 5–6 start like bars 1–2, and only the ending changes. The listener
+    recognises the return and hears the second cadence as the real answer. **Contrasting period:**
+    the consequent begins with new material. Start with parallel ones; they almost write themselves.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^antecedent"C2 E2 G2 E2 | F2 A2 G2 E2 | F2 E2 D2 C2 | "^half cadence"E2 D2 D4 |
+    "^consequent"C2 E2 G2 E2 | F2 A2 c4 | B2 G2 A2 F2 | "^authentic cadence"E2 D2 C4 |]
+    ```
+
+    Read it bar by bar: bars 1–2 are the motif (C–E–G–E) and a variant; bar 3 walks down;
+    bar 4 stops on **D**, held: the comma. Bars 5–6 repeat the opening but bar 6 climbs higher, to
+    **c**, the **high point** of the whole period; bars 7–8 come down by step to **C**: the full stop.
+
+    **A working method**
+
+    1. Fix the cadences first: you already know bar 4 ends on 2, 5 or 7 and bar 8 on 1.
+    2. Write bars 1–2 (your motif and a repetition, sequence or rhythmic variant).
+    3. Bars 3–4: lead to the half cadence. Hold the last note.
+    4. Bars 5–6: copy bars 1–2, perhaps reaching a little higher.
+    5. Bars 7–8: head home by step. The single highest note of the period sits around bar 6, not at
+       the end.
+
+    **At the keyboard:** play the chords I – IV – V – V | I – IV – V – I, one per bar, and
+    improvise a right hand over them. The harmony makes the half cadence in bar 4 for you.
+  sr: |
+    Udvostruči pitanje i odgovor iz C-003 i dobićeš najčešći oblik u tonalnoj muzici:
+    **period**, 8 taktova u dve polovine po 4.
+
+    | taktovi | naziv | završava se | melodija staje na |
+    |---|---|---|---|
+    | 1–4 | **prednja rečenica** (antecedent, pitanje) | **polukadencom** (na V) | 2, 5 ili 7 (u C-duru D, G ili H) |
+    | 5–8 | **zadnja rečenica** (konsekvent, odgovor) | **autentičnom kadencom** (V → I) | 1, za korak od 2 ili 7 |
+
+    **Paralelni period:** taktovi 5–6 počinju kao taktovi 1–2, a menja se samo završetak. Slušalac
+    prepoznaje povratak i drugu kadencu čuje kao pravi odgovor. **Kontrastni period:** zadnja rečenica
+    počinje novim materijalom. Počni od paralelnih; oni se skoro sami pišu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^prednja rečenica"C2 E2 G2 E2 | F2 A2 G2 E2 | F2 E2 D2 C2 | "^polukadenca"E2 D2 D4 |
+    "^zadnja rečenica"C2 E2 G2 E2 | F2 A2 c4 | B2 G2 A2 F2 | "^autentična kadenca"E2 D2 C4 |]
+    ```
+
+    Čitaj takt po takt: taktovi 1–2 su motiv (C–E–G–E) i njegova varijanta; takt 3 silazi;
+    takt 4 staje na **D**, zadržano: zarez. Taktovi 5–6 ponavljaju početak, ali takt 6 se penje više,
+    do **c**, **kulminacije** celog perioda; taktovi 7–8 silaze postupno do **C**: tačka.
+
+    **Način rada**
+
+    1. Prvo odredi kadence: već znaš da se takt 4 završava na 2, 5 ili 7, a takt 8 na 1.
+    2. Napiši taktove 1–2 (motiv i ponavljanje, sekvenca ili ritmička varijanta).
+    3. Taktovi 3–4: vodi ka polukadenci. Zadrži poslednji ton.
+    4. Taktovi 5–6: prepiši taktove 1–2, možda uz malo viši vrh.
+    5. Taktovi 7–8: kući, postupno. Najviši ton perioda je oko takta 6, ne na kraju.
+
+    **Za klavirom:** sviraj akorde I – IV – V – V | I – IV – V – I, jedan po taktu, i improvizuj
+    desnom rukom nad njima. Harmonija sama pravi polukadencu u taktu 4.
+exercises:
+  - id: C-006-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 G2 E2 | F2 A2 G2 E2 | F2 E2 D2 C2 | E2 D2 D4 |\nC2 E2 G2 E2 | F2 A2 c4 | B2 G2 A2 F2 | E2 D2 C4 |]"
+    prompt: {en: "Where is the half cadence in this period?", sr: "Gde je polukadenca u ovom periodu?"}
+    options:
+      - {en: "end of bar 2", sr: "kraj takta 2"}
+      - {en: "end of bar 4", sr: "kraj takta 4"}
+      - {en: "end of bar 6", sr: "kraj takta 6"}
+      - {en: "end of bar 8", sr: "kraj takta 8"}
+    answer: 1
+  - id: C-006-2
+    type: mcq
+    prompt: {en: "Bar 4 of a period in C major. Which last note fits a half cadence?", sr: "Takt 4 perioda u C-duru. Koji poslednji ton odgovara polukadenci?"}
+    options: ["G", "C", "F", "A"]
+    answer: 0
+    checks:
+      - roman: {key: C, degree: 5, is: "V"}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: C-006-3
+    type: mcq
+    prompt: {en: "Bars 5–6 are the same as bars 1–2; only bars 7–8 differ from bars 3–4. What kind of period is it?", sr: "Taktovi 5–6 su isti kao taktovi 1–2; samo se taktovi 7–8 razlikuju od 3–4. Kakav je to period?"}
+    options:
+      - {en: "parallel", sr: "paralelni"}
+      - {en: "contrasting", sr: "kontrastni"}
+      - {en: "not a period: a period may not repeat material", sr: "nije period: period ne sme da ponavlja materijal"}
+    answer: 0
+  - id: C-006-4
+    type: mcq
+    prompt: {en: "Listen to these 4 bars. How do they end?", sr: "Slušaj ova 4 takta. Kako se završavaju?"}
+    play: {notes: [C4, E4, G4, E4, F4, A4, G4, E4, F4, E4, D4, C4, E4, D4, D4], durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], tempo: 110}
+    options:
+      - {en: "half cadence: open, an antecedent", sr: "polukadenca: otvoreno, prednja rečenica"}
+      - {en: "authentic cadence: closed, a consequent", sr: "autentična kadenca: zatvoreno, zadnja rečenica"}
+    answer: 0
+  - id: C-006-5
+    type: compose
+    prompt:
+      en: "The antecedent (bars 1–4, ending on D) is given. Write the consequent, bars 5–8: begin like bar 1, reach the high point around bar 6, end on C held, reached by step."
+      sr: "Prednja rečenica (taktovi 1–4, kraj na D) je zadata. Napiši drugu, taktove 5–8: počni kao takt 1, dostigni vrhunac oko takta 6, završi zadržanim C, do kog stižeš za korak."
+    given: "X:1\nM:4/4\nL:1/8\nK:C\nC2 E2 G2 E2 | F2 A2 G2 E2 | F2 E2 D2 C2 | E2 D2 D4 |\n"
+    key: C major
+    meter: 4/4
+    bars: 8
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, half-cadence, cadence, leaps, augmented, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:C
+      C2 E2 G2 E2 | F2 A2 G2 E2 | F2 E2 D2 C2 | E2 D2 D4 |
+      C2 E2 G2 E2 | F2 A2 c4 | B2 G2 A2 F2 | E2 D2 C4 |]
+  - id: C-006-6
+    type: compose
+    prompt:
+      en: "A whole parallel period of your own in G major, 4/4, 8 bars (every F is F♯). Bar 4 ends on A, D or F♯ (half cadence); bar 8 ends on G after A or F♯. Plan the two cadences first."
+      sr: "Ceo paralelni period po tvome u G-duru, 4/4, 8 taktova (svako F je Fis). Takt 4 se završava na A, D ili Fis (polukadenca); takt 8 na G posle A ili Fis. Prvo isplaniraj dve kadence."
+    key: G major
+    meter: 4/4
+    bars: 8
+    range: [D4, E5]
+    rules: [bars, rhythm, key, range, half-cadence, cadence, leaps, augmented, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:G
+      B2 d2 c2 A2 | B2 G2 A4 | G2 B2 A2 F2 | G2 F2 A4 |
+      B2 d2 c2 A2 | B2 G2 e4 | d2 c2 B2 G2 | A2 F2 G4 |]
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj}
+      - roman: {key: G, degree: 5, is: "V"}

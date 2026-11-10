@@ -1,0 +1,104 @@
+id: T-022
+track: T
+order: 22
+prereqs: [T-021]
+title: {en: "Diatonic seventh chords in major (Imaj7 ii7 iii7 IVmaj7 V7 vi7 viiø7)", sr: "Septakordi na stupnjevima dura (Imaj7 ii7 iii7 IVmaj7 V7 vi7 viiø7)"}
+minutes: 14
+tags: [chords, harmony]
+explain:
+  en: |
+    Stack one more scale third on **every** diatonic triad and you get seven seventh chords. Only **four types** come out:
+
+    | type | triad + 7th | symbol | where in major |
+    |---|---|---|---|
+    | major seventh | major + **major** 7th | Cmaj7 | **Imaj7, IVmaj7** |
+    | dominant seventh | major + **minor** 7th | G7 | **V7** only |
+    | minor seventh | minor + minor 7th | Dm7 | **ii7, iii7, vi7** |
+    | half-diminished | diminished + minor 7th | Bm7♭5 = Bø7 | **viiø7** |
+
+    In C major: Cmaj7 (C E G B), Dm7, Em7, Fmaj7, G7, Am7, Bø7 (B D F A).
+    The pattern **maj7 m7 m7 maj7 7 m7 ø7** is the same in every major key, exactly like I ii iii IV V vi vii° for triads.
+
+    Why it matters: this is the default harmony of jazz, soul, R&B and a lot of pop; a "plain" I–vi–ii–V becomes Imaj7–vi7–ii7–V7.
+    Ear tip: maj7 sounds soft and dreamy (the 7th is a half step below the octave), m7 mellow, 7 restless, ø7 dark and unresolved.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "Imaj7"[CEGB] "ii7"[DFAc] "iii7"[EGBd] "IVmaj7"[FAce] | "V7"[GBdf] "vi7"[Aceg] "viiø7"[Bdfa] "Imaj7"[cegb] |]
+    ```
+  sr: |
+    Dodaj još jednu tercu iz lestvice na **svaki** trozvuk i dobijaš sedam septakorda. Ispadaju samo **četiri vrste**:
+
+    | vrsta | trozvuk + septima | oznaka | gde u duru |
+    |---|---|---|---|
+    | veliki durski septakord | durski + **velika** septima | Cmaj7 | **Imaj7, IVmaj7** |
+    | dominantni septakord | durski + **mala** septima | G7 | samo **V7** |
+    | mali molski septakord | molski + mala septima | Dm7 | **ii7, iii7, vi7** |
+    | polusmanjeni septakord | smanjeni + mala septima | Hm7♭5 = Hø7 | **viiø7** |
+
+    U C-duru: Cmaj7 (C E G H), Dm7, Em7, Fmaj7, G7, Am7, Hø7 (H D F A).
+    Raspored **maj7 m7 m7 maj7 7 m7 ø7** isti je u svakom duru, tačno kao I ii iii IV V vi vii° kod trozvuka.
+
+    Zašto je važno: to je osnovna harmonija džeza, soula, R&B-ja i dobrog dela popa; „obično" I–vi–ii–V postaje Imaj7–vi7–ii7–V7.
+    Za uho: maj7 zvuči meko i sanjivo (septima je polustepen ispod oktave), m7 toplo, 7 nemirno, ø7 tamno i nerazrešeno.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "Imaj7"[CEGB] "ii7"[DFAc] "iii7"[EGBd] "IVmaj7"[FAce] | "V7"[GBdf] "vi7"[Aceg] "viiø7"[Bdfa] "Imaj7"[cegb] |]
+    ```
+exercises:
+  - id: T-022-1
+    type: generated
+    prompt: {en: "Which numeral is this seventh chord in C major?", sr: "Koji je rimski broj ovog septakorda u C-duru?"}
+    count: 5
+    gen: {kind: roman, keys: [C], seventh: true, ask: numeral}
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: D4, to: C5, is: m7}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: E4, to: D5, is: m7}
+      - chord: {notes: [F4, A4, C5, E5], root: F, quality: maj7}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: A4, to: G5, is: m7}
+      - chord: {notes: [B4, D5, F5, A5], root: B, quality: m7b5}
+  - id: T-022-2
+    type: generated
+    prompt: {en: "Spell diatonic seventh chords", sr: "Napiši septakorde na stupnjevima"}
+    count: 4
+    gen: {kind: roman, keys: [G, F, D], seventh: true, ask: name}
+  - id: T-022-3
+    type: generated
+    prompt: {en: "Play diatonic seventh chords", sr: "Odsviraj septakorde na stupnjevima"}
+    count: 4
+    gen: {kind: roman, keys: [C, G, F], seventh: true, ask: play}
+  - id: T-022-4
+    type: generated
+    prompt: {en: "Listen: which seventh-chord type?", sr: "Slušaj: koja vrsta septakorda?"}
+    count: 4
+    gen: {kind: chord-ear, qualities: [maj7, "7", min7, m7b5]}
+  - id: T-022-5
+    type: mcq
+    prompt: {en: "Fmaj7 and F7 differ only in…", sr: "Fmaj7 i F7 razlikuju se samo u…"}
+    options:
+      - {en: "the 7th: E (major 7th) vs E♭ (minor 7th)", sr: "septimi: E (velika septima) prema Es (mala septima)"}
+      - {en: "the 3rd: A vs A♭", sr: "terci: A prema As"}
+      - {en: "the 5th: C vs C♯", sr: "kvinti: C prema Cis"}
+      - {en: "the root", sr: "osnovnom tonu"}
+    answer: 0
+    checks:
+      - interval: {from: F4, to: E5, is: M7}
+      - interval: {from: F4, to: Eb5, is: m7}
+      - chord: {notes: [F4, A4, C5, E5], root: F, quality: maj7}
+      - chord: {notes: [F4, A4, C5, Eb5], root: F, quality: "7"}
+  - id: T-022-6
+    type: mcq
+    prompt: {en: "In a major key, which degree carries the only dominant seventh chord?", sr: "Na kom stupnju dura je jedini dominantni septakord?"}
+    options: ["V7", "Imaj7", "IVmaj7", "ii7"]
+    answer: 0

@@ -1,0 +1,127 @@
+id: V-010
+track: V
+order: 10
+title: {en: "Breath management: longer phrases, silent low breaths", sr: "Upravljanje dahom: duže fraze, tihi niski udah"}
+prereqs: [V-009]
+minutes: 11
+tags: [voice, breath, support]
+explain:
+  en: |
+    Short phrases fit in any breath. Longer ones need a plan: **how** you breathe in, **how fast** you spend the air, and **where** you breathe next.
+
+    **A silent breath.** A noisy, gasping intake means the throat is narrowed; that same tightness then carries into the first note.
+    Breathe in through a relaxed, slightly open mouth (or the nose) as if at the very start of a yawn: the throat opens, the belly and lower ribs move out, and the breath makes almost no sound.
+
+    **Not too much.** Fill to about three quarters, not to bursting. An over-full breath makes you hold and squeeze, and the first note comes out pressed.
+
+    **Spend it evenly.** Keep the ribs gently open while you sing, exactly as in the hiss from lesson 2 (support, *oslonac*).
+    Most of the air is lost in the first second when the onset is breathy, so start with a balanced onset.
+
+    **Plan the breaths.** In written music a breath mark looks like a comma above the staff. Breathe where the words or the melody pause, usually after a long note,
+    and take the time for it from the end of that note, not from the start of the next one:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    C D E F | G F E D | C3 !breath! z | E F G A | G F E D | C4 |]
+    ```
+
+    A **catch breath** is a quick, silent low breath between two phrases, in rhythm. It is small: the belly drops out, no shoulders.
+
+    Running out of air is not a failure; it shows you where to breathe next time. Do not squeeze the last bit out: stop, breathe, and the note will thank you.
+
+    **Stop if anything hurts, scratches or you get hoarse.** Dizzy from the breathing? Pause and breathe normally.
+  sr: |
+    Kratke fraze staju u svaki dah. Za duže treba plan: **kako** udišeš, **kojom brzinom** trošiš vazduh i **gde** sledeći put udišeš.
+
+    **Tih udah.** Bučan udah, sa „hvatanjem” vazduha, znači da je grlo suženo; ista napetost onda prelazi i na prvi ton.
+    Udahni kroz opuštena, blago otvorena usta (ili na nos), kao na samom početku zevanja: grlo se otvara, stomak i donja rebra idu ka spolja, a udah se skoro ne čuje.
+
+    **Ne previše.** Napuni se otprilike do tri četvrtine, ne do pucanja. Prepun udah tera te da zadržavaš i stežeš, pa prvi ton izađe stisnut.
+
+    **Troši ravnomerno.** Dok pevaš, drži rebra blago otvorena, tačno kao kod šištanja iz 2. lekcije (**oslonac**, engl. *support*).
+    Najviše vazduha se izgubi u prvoj sekundi kad je ataka dahtava, zato počni uravnoteženom atakom.
+
+    **Planiraj udahe.** U notnom zapisu znak za dah liči na zarez iznad linijskog sistema. Udiši gde reči ili melodija prave pauzu, obično posle dugog tona,
+    a vreme za udah uzmi sa kraja tog tona, ne sa početka sledećeg:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    C D E F | G F E D | C3 !breath! z | E F G A | G F E D | C4 |]
+    ```
+
+    **Brzi udah** (engl. *catch breath*) je kratak, tih, nizak udah između dve fraze, u ritmu. Mali je: stomak se opusti ka spolja, ramena miruju.
+
+    Kad ti ponestane vazduha, to nije neuspeh; pokazuje ti gde da sledeći put udahneš. Ne istiskuj poslednji deo: stani, udahni, i ton će ti biti zahvalan.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ako ti se zavrti u glavi od disanja, zastani i diši normalno.
+exercises:
+  - id: V-010-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-010-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 2 slow hisses on 'sss' (aim for 20 s, no squeezing), then lip trills along with the five notes up and down, twice."
+      sr: "Zagrevanje: 2 spora šištanja na „sss” (cilj 20 s, bez stezanja), pa treperenje usnama uz pet tonova gore i dole, dva puta."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-010-3
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Silent breath: 6 times, breathe in for 2 counts through a relaxed open mouth, as at the start of a yawn, so that you hear almost nothing. Then hiss for 8 counts. Last 3 rounds: a quick 1-count catch breath instead, still silent, belly out, shoulders still."
+      sr: "Tih udah: 6 puta udahni u 2 dobe kroz opuštena otvorena usta, kao na početku zevanja, tako da se skoro ništa ne čuje. Pa šišti 8 doba. Poslednje 3 runde: brzi udah u 1 dobu, i dalje tih, stomak ka spolja, ramena miruju."
+  - id: V-010-4
+    type: sing-phrase
+    prompt:
+      en: "One breath, nine notes: silent low breath, then sing 1-2-3-4-5-4-3-2-1 on 'la', holding the last note. Spend the air evenly."
+      sr: "Jedan dah, devet tonova: tih nizak udah, pa otpevaj 1-2-3-4-5-4-3-2-1 na „la”, poslednji ton zadrži. Troši vazduh ravnomerno."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 3]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-010-5
+    type: sing-phrase
+    prompt:
+      en: "A longer line: 1-2-3-4-5-6-5-4-3-2-1 on 'la', last note 4 beats, all on one breath. If the air runs out, stop and note where; next time breathe a little lower, not bigger."
+      sr: "Duža linija: 1-2-3-4-5-6-5-4-3-2-1 na „la”, poslednji ton 4 dobe, sve u jednom dahu. Ako ponestane vazduha, stani i zapamti gde; sledeći put udahni malo niže, ne više."
+    notes: [C4, D4, E4, F4, G4, A4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: A4, is: M6}
+  - id: V-010-6
+    type: sing-pitch
+    prompt:
+      en: "Long tone: one silent low breath, then 'ah' held for 6 seconds at an easy volume. Stopping a little early beats squeezing the end."
+      sr: "Dug ton: jedan tih nizak udah, pa „a” zadržano 6 sekundi, lakom jačinom. Bolje stati malo ranije nego stezati kraj."
+    notes: [A3]
+    sustain: 6
+    tolerance: 50
+    pass: 0.65
+  - id: V-010-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Catch breaths in rhythm: sing 1-2-3-2-1 on 'la' (any easy note), take a quick silent breath on one beat, sing it again; 4 pairs. Rate how quiet the breaths were and whether the shoulders stayed still."
+      sr: "Brzi udasi u ritmu: otpevaj 1-2-3-2-1 na „la” (bilo koji lak ton), uzmi brz tih udah na jednu dobu, pa ponovo; 4 para. Oceni koliko su udasi bili tihi i da li su ramena mirovala."

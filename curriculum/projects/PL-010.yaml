@@ -1,0 +1,124 @@
+id: PL-010
+kind: lyrics
+order: 38
+title: {en: "Lyrics: a protest song", sr: "Tekst: protestna pesma"}
+minutes: 75
+prereqs: [L-004, L-005, L-006]
+lyrics:
+  genre: {en: "protest / social song", sr: "protestna / društvena pesma"}
+  language: en
+  lines: [20, 40]
+  structure:
+    en: "3–4 verses (4–8 lines each) + a refrain or chorus (2–4 lines) that a crowd can sing"
+    sr: "3–4 strofe (po 4–8 stihova) + refren (2–4 stiha) koji masa može da peva"
+brief:
+  en: |
+    Write a **protest song** in English: a song that takes a side on a social problem and
+    makes a listener feel it. The craft is turning anger or grief into **specific stories and a
+    chorus people can sing together**, instead of slogans.
+
+    ### Conventions
+
+    - **One concrete case, not the whole issue.** A closed clinic, a flooded street, a worker
+      with two jobs, a neighbourhood being emptied. Tell what happened to *one* person or place;
+      the listener generalises on their own. Statistics and slogans persuade nobody in a song.
+    - **Show the cost (L-004).** What did it do to a day, a body, a family table? Let the facts
+      accuse; do not lecture.
+    - **Verses specific, chorus collective.** Verses are *she / he / I* in a particular place;
+      the chorus widens to *we*, short enough to sing at a march after one hearing. A refusal,
+      a question or a call to act works well as the chorus line.
+    - **Two classic shapes:** the **folk protest song** (strophic, 4-line stanzas, ABCB, a
+      one- or two-line refrain at the end of each stanza) and the **chorus anthem** (verse–chorus,
+      big repeated title). Pick one.
+    - **Irony and understatement** are sharper than shouting: a polite official phrase set next to
+      what it actually means.
+    - **Fair and safe:** use composite or invented characters; do not accuse real, named private
+      people. Aim at decisions and systems.
+
+    A made-up stanza (folk shape, ABCB):
+
+    > They closed the clinic Tuesday,
+    > put a notice on the door;
+    > now Mrs. Pavlov walks to Dorsey,
+    > and Dorsey's twelve miles more.
+
+    ### Practical tips
+
+    - Write one paragraph of plain prose first: who is hurt, how, by what decision, and what you
+      want to happen. Then turn the strongest sentence into the chorus.
+    - Test the chorus by chanting it at walking pace. If it does not fit a march, shorten it.
+    - Cut every line that tells the listener what to think; replace it with something they can
+      see.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Napiši **protestnu pesmu** na engleskom: pesmu koja zauzima stranu u nekom društvenom
+    problemu i čini da ga slušalac oseti. Zanat je pretvoriti bes ili tugu u **konkretne priče i
+    refren koji ljudi mogu zajedno da pevaju**, umesto u parole.
+
+    ### Konvencije
+
+    - **Jedan konkretan slučaj, ne ceo problem.** Zatvorena ambulanta, poplavljena ulica, radnik
+      sa dva posla, kraj koji se prazni. Ispričaj šta se desilo *jednoj* osobi ili mestu;
+      slušalac sam uopštava. Statistika i parole u pesmi nikog ne ubede.
+    - **Pokaži cenu (L-004).** Šta je to uradilo jednom danu, telu, porodičnom stolu? Pusti
+      činjenice da optužuju; ne drži predavanje.
+    - **Strofe konkretne, refren zajednički.** Strofe su *ona / on / ja* na određenom mestu;
+      refren se širi na *mi*, dovoljno kratak da se peva na protestnoj šetnji posle jednog
+      slušanja. Odbijanje, pitanje ili poziv na akciju dobro rade kao stih refrena.
+    - **Dva klasična oblika:** **folk protestna pesma** (strofična, strofe od 4 stiha, ABCB,
+      refren od jednog-dva stiha na kraju svake strofe) i **himna sa refrenom** (strofa–refren,
+      velik ponovljen naslov). Izaberi jedan.
+    - **Ironija i uzdržanost** su oštrije od vike: uljudna službena fraza stavljena pored onoga
+      što zapravo znači.
+    - **Pošteno i bezbedno:** koristi složene ili izmišljene likove; ne optužuj stvarne,
+      imenovane privatne osobe. Ciljaj odluke i sisteme.
+
+    Izmišljena strofa (folk oblik, ABCB):
+
+    > They closed the clinic Tuesday,
+    > put a notice on the door;
+    > now Mrs. Pavlov walks to Dorsey,
+    > and Dorsey's twelve miles more.
+
+    ### Praktični saveti
+
+    - Prvo napiši jedan pasus običnom prozom: ko je povređen, kako, kojom odlukom, i šta želiš da
+      se desi. Onda najjaču rečenicu pretvori u refren.
+    - Proveri refren tako što ga skandiraš u ritmu hoda. Ako ne staje u šetnju, skrati ga.
+    - Izbaci svaki stih koji slušaocu kaže šta da misli; zameni ga nečim što može da vidi.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: specific
+    weight: 2
+    label: {en: "One concrete case", sr: "Jedan konkretan slučaj"}
+    top:
+      en: "The song is built on a specific person or place and what happened to them; the cost is shown in visible detail; no slogans or statistics carry the argument."
+      sr: "Pesma je sagrađena na određenoj osobi ili mestu i onome što im se desilo; cena je pokazana vidljivim detaljima; nijedna parola ni statistika ne nosi argument."
+  - id: chorus
+    weight: 2
+    label: {en: "Collective chorus", sr: "Zajednički refren"}
+    top:
+      en: "A short refrain or chorus in the first person plural that fits a walking chant and could be sung by a crowd after one hearing."
+      sr: "Kratak refren u prvom licu množine koji staje u skandiranje u hodu i masa bi mogla da ga peva posle jednog slušanja."
+  - id: persuasion
+    weight: 1
+    label: {en: "Persuasion without preaching", sr: "Ubedljivost bez propovedi"}
+    top:
+      en: "Facts, irony or understatement make the case; no line tells the listener what to think."
+      sr: "Činjenice, ironija ili uzdržanost grade argument; nijedan stih ne govori slušaocu šta da misli."
+  - id: form
+    weight: 1
+    label: {en: "Form and singability", sr: "Oblik i pevljivost"}
+    top:
+      en: "A consistent folk-strophic or verse-chorus form; regular line lengths and natural rhymes that sing easily."
+      sr: "Dosledan strofični folk oblik ili strofa-refren; ujednačene dužine stihova i prirodne rime koje se lako pevaju."

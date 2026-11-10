@@ -242,13 +242,16 @@ function inRange(n: Note, range?: [string, string]): boolean {
   return m >= toMidi(parseNote(range[0])) && m <= toMidi(parseNote(range[1]));
 }
 
-/** Random natural/accidental note within range. Avoids double accidentals and E#/B#/Cb/Fb. */
+// common spellings for the black keys (the keys people actually play in)
+const COMMON = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+/** Random note within range, black keys spelled the common way (Db Eb F# Ab Bb). */
 function randomNote(rng: Rng, range: [string, string], accidentals = true): Note {
   const lo = toMidi(parseNote(range[0]));
   const hi = toMidi(parseNote(range[1]));
   for (let i = 0; i < 100; i++) {
     const m = rng.int(lo, hi);
-    const n = midiToNote(m, rng.next() < 0.5);
+    const pc = ((m % 12) + 12) % 12;
+    const n = parseNote(COMMON[pc], Math.floor(m / 12) - 1);
     if (!accidentals && n.acc !== 0) continue;
     return n;
   }
@@ -420,7 +423,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         } catch {
           continue;
         }
-        if (!inRange(b, [range[0], "C6"])) continue;
+        if (!inRange(b, [range[0], "C6"]) || Math.abs(b.acc) > 1) continue;
         const notes = [toMidi(a), toMidi(b)];
         const play: PlaySpec = { mode: dir === "harmonic" ? "harmonic" : "melodic", notes, tempo: 70 };
         if (g.answer === "play")
@@ -763,7 +766,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         bass: false,
         tempo: g.tempo,
         showNotes: false,
-        play: { mode: "melodic", notes: durs.map(() => pitch), durations: durs, tempo: g.tempo },
+        // one bar of high clicks first (a pulse to hear triplets vs eighths against), then the rhythm
+        play: { mode: "melodic", notes: [...Array.from({ length: num }, (_, i) => (i === 0 ? 96 : 91)), ...durs.map(() => pitch)], durations: [...Array.from({ length: num }, () => barBeats / num), ...durs], tempo: g.tempo },
         abc: g.showAbc ? abcRhythm(durs, g.meter) : undefined,
         prompt: L(`Listen, then tap the rhythm back on any key (♩=${g.tempo}).`, `Slušaj, pa otkucaj ritam na bilo kojoj dirki (♩=${g.tempo}).`),
         noteLabels: L(durs.map(fmtBeats).join(" "), durs.map(fmtBeats).join(" ")),

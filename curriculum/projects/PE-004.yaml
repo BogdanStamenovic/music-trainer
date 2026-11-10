@@ -1,0 +1,99 @@
+id: PE-004
+kind: byear
+order: 16
+title: {en: "By ear: leaps along the chord", sr: "Po sluhu: skokovi po akordu"}
+minutes: 35
+prereqs: [E-011, E-019, E-021]
+melody:
+  title: {en: "Up the Stairs (original melody)", sr: "Uz stepenice (originalna melodija)"}
+  source: "Original melody written for music-trainer (2026); no outside source."
+  key: G major
+  meter: 4/4
+  tempo: 96
+  notes: [G4, B4, D5, B4, C5, B4, A4, B4, G4, E4, G4, F#4, E4, D4, G4, B4, D5, G5, E5, C5, A4, D5, C5, B4, A4, G4]
+  beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1.5, 0.5, 1, 1, 4]
+brief:
+  en: |
+    An **8-bar melody you have never heard**, written for this course. **Play it back on the
+    piano, right hand, any key.** Unlike *Ode to Joy*, this one **leaps**: it climbs the notes
+    of the tonic chord and comes down by step.
+
+    ### What to listen for
+
+    - **Arpeggio leaps.** The tune opens by jumping up the **tonic triad**: 1 – 3 – 5 (*do –
+      mi – sol*), two thirds stacked. Later it goes one step further, 1 – 3 – 5 – 8, all the way
+      to the octave.
+    - **Thirds down, too.** Bar 3 falls by two thirds (3 – 1 – 6, *mi – do – la*) and turns back up. A third sounds
+      like a skip over one scale note: if you hear a jump that is "small but not a step",
+      try a third first.
+    - **Leaps up, steps down.** That is how most good melodies balance a leap; this one mostly does.
+    - **Rhythm:** quarter notes, half notes at the end of every second bar, and one dotted
+      figure (long-short) in bar 7. The last note is held for the whole bar.
+
+    ### Strategies
+
+    1. **Sing it** with the playback, then alone.
+    2. **Find the first note: it is the tonic.** The melody starts and ends on *do*. Starting
+       on C (C – E – G – E...) is easy.
+    3. **Name each leap before you play it:** third, fourth, fifth or octave? Compare with
+       intervals you know (E-003): a fourth opens *Here comes the bride*, a fifth *Twinkle,
+       Twinkle*.
+    4. **Two bars at a time**, then join them.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    **Melodija od 8 taktova koju nikad nisi čuo**, napisana za ovaj kurs. **Odsviraj je na
+    klaviru, desnom rukom, u bilo kom tonalitetu.** Za razliku od *Ode radosti*, ova
+    **skače**: penje se po tonovima toničnog akorda i silazi korakom.
+
+    ### Šta da slušaš
+
+    - **Skokovi po razloženom akordu.** Melodija počinje skokovima naviše po **toničnom
+      trozvuku**: 1 – 3 – 5 (*do – mi – sol*), dve terce jedna na drugoj. Kasnije ide još dalje,
+      1 – 3 – 5 – 8, sve do oktave.
+    - **I terce naniže.** U 3. taktu melodija pada za dve terce (3 – 1 – 6, *mi – do – la*) i okreće se naviše. Terca
+      zvuči kao preskok jednog tona lestvice: ako čuješ skok koji je „mali, ali nije korak”,
+      prvo probaj tercu.
+    - **Skokovi naviše, koraci naniže.** Tako većina dobrih melodija uravnotežuje skok; ova to
+      uglavnom radi.
+    - **Ritam:** četvrtine, polovine na kraju svakog drugog takta i jedna punktirana figura
+      (dugo-kratko) u 7. taktu. Poslednji ton traje ceo takt.
+
+    ### Strategije
+
+    1. **Otpevaj je** uz reprodukciju, pa sam.
+    2. **Nađi prvi ton: to je tonika.** Melodija počinje i završava se na *do*. Lako je
+       početi na C (C – E – G – E...).
+    3. **Imenuj svaki skok pre nego što ga odsviraš:** terca, kvarta, kvinta ili oktava?
+       Uporedi sa intervalima koje znaš (E-003): kvartom počinje *Svadbeni hor* iz Lohengrina
+       („Here comes the bride”), kvintom *Twinkle, Twinkle*.
+    4. **Po dva takta**, pa ih spoji.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One steady take; the leaps are played in time, without stopping to look for the next key."
+      sr: "Jedan ravnomeran snimak; skokovi su odsvirani u ritmu, bez zastajanja da se traži sledeća dirka."
+  - id: phrasing
+    weight: 1
+    label: {en: "Phrasing", sr: "Fraziranje"}
+    top:
+      en: "The climb to the octave in bar 5 sounds like the high point; half notes are held, the last note gets its full bar."
+      sr: "Penjanje do oktave u 5. taktu zvuči kao vrhunac; polovine su zadržane, poslednji ton traje ceo takt."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes name the leaps you heard (third, fourth, octave...), which one you got wrong first and how you found the right size."
+      sr: "U beleškama imenuješ skokove koje si čuo (terca, kvarta, oktava...), koji si prvo pogrešio i kako si našao pravu veličinu."

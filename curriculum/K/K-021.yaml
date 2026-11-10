@@ -1,0 +1,167 @@
+id: K-021
+track: K
+order: 21
+title: {en: "Circle progressions in C and G (vi–ii–V–I, iii–vi–ii–V–I)", sr: "Progresije po kvintnom krugu u C i G-duru (vi–ii–V–I, iii–vi–ii–V–I)"}
+prereqs: [K-013, T-026]
+minutes: 14
+tags: [keys, harmony, voice-leading]
+explain:
+  en: |
+    ii–V–I is the end of a longer chain. Keep going backwards by the same step, roots **down a
+    5th** (= up a 4th), and you get the **circle progression**:
+
+    | | iii | vi | ii | V | I |
+    |---|---|---|---|---|---|
+    | C | Em | Am | Dm | G | C |
+    | G | Bm | Em | Am | D | G |
+
+    Every move is the strongest root motion there is, the same V→I pull, repeated. That is why
+    the chain sounds inevitable and why it is everywhere: Baroque sequences, jazz standards,
+    "I Will Survive", Christmas songs.
+
+    **Triads, smooth.** Keep common tones and move the rest by step. In C, vi–ii–V–I with the
+    left hand on the roots:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [A,,A,CE] [D,A,DF] | [G,,G,B,D] [C,G,CE] |]
+    ```
+
+    **Sevenths, guide tones.** In K-013 the 3rd and 7th swapped roles at every chord. Around
+    the circle that continues for the whole chain: the 7th falls a step to the next 3rd, the
+    3rd stays as the next 7th. In C, right hand only two notes, left hand the root:
+
+    | chord | Em7 | Am7 | Dm7 | G7 | Cmaj7 |
+    |---|---|---|---|---|---|
+    | left hand | E3 | A2 | D3 | G2 | C3 |
+    | right hand | D4 G4 | C4 G4 | C4 F4 | B3 F4 | B3 E4 |
+
+    The right hand walks down by half and whole steps while the bass jumps around the circle.
+    That is the sound of a jazz pianist "comping" through changes.
+  sr: |
+    ii–V–I je kraj dužeg lanca. Nastavi unazad istim korakom, osnovni tonovi **za kvintu
+    naniže** (= kvartu naviše), i dobijaš **progresiju po kvintnom krugu**:
+
+    | | iii | vi | ii | V | I |
+    |---|---|---|---|---|---|
+    | C | e | a | d | G | C |
+    | G | h | e | a | D | G |
+
+    Svaki korak je najjače kretanje osnovnih tonova koje postoji, isto privlačenje V→I,
+    ponovljeno. Zato lanac zvuči neizbežno i zato je svuda: barokne sekvence, džez standardi,
+    "I Will Survive", božićne pesme.
+
+    **Kvintakordi, glatko.** Zadrži zajedničke tonove, ostale pomeri za korak. U C-duru,
+    vi–ii–V–I sa levom rukom na osnovnim tonovima:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [A,,A,CE] [D,A,DF] | [G,,G,B,D] [C,G,CE] |]
+    ```
+
+    **Septakordi, ključni tonovi.** U K-013 terca i septima su menjale uloge na svakom akordu.
+    Po kvintnom krugu to se nastavlja kroz ceo lanac: septima pada za korak na sledeću tercu,
+    terca ostaje kao sledeća septima. U C-duru, desna ruka samo dva tona, leva osnovni ton:
+
+    | akord | Em7 | Am7 | Dm7 | G7 | Cmaj7 |
+    |---|---|---|---|---|---|
+    | leva ruka | E3 | A2 | D3 | G2 | C3 |
+    | desna ruka | D4 G4 | C4 G4 | C4 F4 | H3 F4 | H3 E4 |
+
+    Desna ruka silazi polustepenima i stepenima dok bas skače po krugu. Tako zvuči džez
+    pijanista koji prati kroz akorde (comping).
+exercises:
+  - id: K-021-1
+    type: mcq
+    prompt: {en: "In a circle progression, each root moves…", sr: "U progresiji po kvintnom krugu, svaki osnovni ton se kreće…"}
+    options:
+      - {en: "down a 5th (or up a 4th)", sr: "za kvintu naniže (ili kvartu naviše)"}
+      - {en: "up a 5th", sr: "za kvintu naviše"}
+      - {en: "down a 3rd", sr: "za tercu naniže"}
+      - {en: "up a step", sr: "za korak naviše"}
+    answer: 0
+    checks:
+      - interval: {from: D3, to: A3, is: P5}
+      - interval: {from: G3, to: D4, is: P5}
+      - interval: {from: G3, to: C4, is: P4}
+      - roman: {key: C, degree: 3, is: "iii"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: C, degree: 2, is: "ii"}
+  - id: K-021-2
+    type: midi-play
+    prompt: {en: "vi–ii–V–I in C, smooth: left hand roots, right hand A3 C4 E4 → A3 D4 F4 → G3 B3 D4 → G3 C4 E4.", sr: "vi–ii–V–I u C-duru, glatko: leva ruka osnovni tonovi, desna A3 C4 E4 → A3 D4 F4 → G3 H3 D4 → G3 C4 E4."}
+    mode: chords
+    expectChords: [[A2, A3, C4, E4], [D3, A3, D4, F4], [G2, G3, B3, D4], [C3, G3, C4, E4]]
+    tempo: 60
+    checks:
+      - chord: {notes: [A2, A3, C4, E4], root: A, quality: min, inversion: 0}
+      - chord: {notes: [D3, A3, D4, F4], root: D, quality: min, inversion: 0}
+      - chord: {notes: [G2, G3, B3, D4], root: G, quality: maj, inversion: 0}
+      - chord: {notes: [C3, G3, C4, E4], root: C, quality: maj, inversion: 0}
+  - id: K-021-3
+    type: generated
+    prompt: {en: "vi–ii–V–I in C or G, block chords (any octave)", sr: "vi–ii–V–I u C ili G-duru, akordi (bilo koja oktava)"}
+    count: 2
+    gen: {kind: progression, keys: [C, G], numerals: [vi, ii, V, I], tempo: 66}
+  - id: K-021-4
+    type: generated
+    prompt: {en: "The longer chain: iii–vi–ii–V–I", sr: "Duži lanac: iii–vi–ii–V–I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G], numerals: [iii, vi, ii, V, I], tempo: 66}
+  - id: K-021-5
+    type: midi-play
+    prompt: {en: "Guide tones around the circle in C: Em7 → Am7 → Dm7 → G7 → Cmaj7 (see the table), ♩=60.", sr: "Ključni tonovi po kvintnom krugu u C-duru: Em7 → Am7 → Dm7 → G7 → Cmaj7 (vidi tabelu), ♩=60."}
+    mode: chords
+    expectChords: [[E3, D4, G4], [A2, C4, G4], [D3, C4, F4], [G2, B3, F4], [C3, B3, E4]]
+    tempo: 60
+    checks:
+      - interval: {from: E3, to: G3, is: m3}
+      - interval: {from: E3, to: D4, is: m7}
+      - interval: {from: A2, to: C3, is: m3}
+      - interval: {from: A2, to: G3, is: m7}
+      - interval: {from: D3, to: F3, is: m3}
+      - interval: {from: D3, to: C4, is: m7}
+      - interval: {from: G2, to: B2, is: M3}
+      - interval: {from: G2, to: F3, is: m7}
+      - interval: {from: C3, to: E3, is: M3}
+      - interval: {from: C3, to: B3, is: M7}
+      - semitones: {from: E3, to: G4, is: 15}
+      - semitones: {from: A2, to: C4, is: 15}
+      - semitones: {from: A2, to: G4, is: 22}
+      - semitones: {from: D3, to: F4, is: 15}
+      - semitones: {from: G2, to: B3, is: 16}
+      - semitones: {from: G2, to: F4, is: 22}
+      - semitones: {from: C3, to: B3, is: 11}
+      - semitones: {from: C3, to: E4, is: 16}
+  - id: K-021-6
+    type: midi-play
+    prompt: {en: "The same in G, notes hidden: Bm7 (B2 · A3 D4) → Em7 (E3 · G3 D4) → Am7 (A2 · G3 C4) → D7 (D3 · F♯3 C4) → Gmaj7 (G2 · F♯3 B3).", sr: "Isto u G-duru, bez prikaza tonova: Hm7 (H2 · A3 D4) → Em7 (E3 · G3 D4) → Am7 (A2 · G3 C4) → D7 (D3 · Fis3 C4) → Gmaj7 (G2 · Fis3 H3)."}
+    mode: chords
+    expectChords: [[B2, A3, D4], [E3, G3, D4], [A2, G3, C4], [D3, "F#3", C4], [G2, "F#3", B3]]
+    tempo: 60
+    showNotes: false
+    checks:
+      - interval: {from: B2, to: D3, is: m3}
+      - interval: {from: B2, to: A3, is: m7}
+      - interval: {from: E3, to: G3, is: m3}
+      - interval: {from: E3, to: D4, is: m7}
+      - interval: {from: A2, to: C3, is: m3}
+      - interval: {from: A2, to: G3, is: m7}
+      - interval: {from: D3, to: "F#3", is: M3}
+      - interval: {from: D3, to: C4, is: m7}
+      - interval: {from: G2, to: B2, is: M3}
+      - interval: {from: G2, to: "F#3", is: M7}
+      - semitones: {from: B2, to: D4, is: 15}
+      - semitones: {from: A2, to: C4, is: 15}
+      - semitones: {from: G2, to: B3, is: 16}
+      - roman: {key: G, degree: 3, is: "iii"}
+  - id: K-021-7
+    type: mcq
+    prompt: {en: "Listen. Which progression is it?", sr: "Slušaj. Koja je ovo progresija?"}
+    play: {derive: {roman: {key: C4, numerals: [iii, vi, ii, V, I]}}, tempo: 60}
+    options: ["I – vi – IV – V – I", "iii – vi – ii – V – I", "vi – ii – V – I – I", "I – IV – V – vi – I"]
+    answer: 1

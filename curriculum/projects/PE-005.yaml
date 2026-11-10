@@ -1,0 +1,93 @@
+id: PE-005
+kind: byear
+order: 20
+title: {en: "By ear: a melody in minor", sr: "Po sluhu: melodija u molu"}
+minutes: 35
+prereqs: [E-014, E-021]
+melody:
+  title: {en: "Winter Road (original melody)", sr: "Zimski put (originalna melodija)"}
+  source: "Original melody written for music-trainer (2026); no outside source."
+  key: D minor
+  meter: 4/4
+  tempo: 88
+  notes: [D4, F4, A4, F4, G4, F4, E4, F4, A4, D5, C5, Bb4, G4, A4, D4, F4, A4, F4, Bb4, A4, G4, F4, E4, D4, C#4, D4]
+  beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 4]
+brief:
+  en: |
+    An **8-bar melody in a minor key**, written for this course. **Play it back on the piano,
+    right hand, any key** (any *minor* key: the intervals decide).
+
+    ### What to listen for
+
+    - **The minor third.** The first three notes climb the **tonic minor triad**: 1 – b3 – 5.
+      The first leap is a **minor third** (three half steps), not the major third of the last
+      tune. If your version sounds cheerful, that third is too big.
+    - **The 6th degree is a half step above the 5th** in natural minor (A – Bb in D minor).
+      It appears in bars 4 and 6 and gives the melody its sad lean.
+    - **The leading tone at the very end.** Bar 7 walks down b3 – 2 – 1 and dips to the
+      **raised 7th** (C# in D minor), a half step below the tonic, which it then resolves to.
+      Earlier, in bar 3, the 7th is *not* raised (C natural): listen for the difference.
+    - **Rhythm:** quarter notes and half notes, one dotted figure (bar 3), a whole note at
+      the end.
+
+    ### Strategies
+
+    1. **Sing it** until secure.
+    2. **The first note is the tonic.** In A minor (A – C – E – C...) you stay on white keys
+       except one G# at the end; that is the easiest choice.
+    3. **Bars 1 and 5 are the same**: learn once, play twice.
+    4. **Check the two 7ths:** in A minor, bar 3 has G, bar 7 has G#.
+
+    ### How it is graded
+
+    - **Pitch (60%):** your intervals against the melody's, in any key.
+    - **Rhythm (20%):** relative note lengths at any steady tempo.
+    - **Rubric (20%):** the criteria below.
+  sr: |
+    **Melodija od 8 taktova u molu**, napisana za ovaj kurs. **Odsviraj je na klaviru, desnom
+    rukom, u bilo kom tonalitetu** (u bilo kom *molu*: odlučuju intervali).
+
+    ### Šta da slušaš
+
+    - **Mala terca.** Prva tri tona se penju po **toničnom molskom trozvuku**: 1 – b3 – 5. Prvi
+      skok je **mala terca** (tri polustepena), a ne velika terca iz prošle melodije. Ako tvoja
+      verzija zvuči veselo, ta terca je prevelika.
+    - **6. stupanj je polustepen iznad 5.** u prirodnom molu (A – B u d-molu). Javlja se u
+      taktovima 4 i 6 i daje melodiji tužan nagib.
+    - **Vođica na samom kraju.** 7. takt silazi b3 – 2 – 1 i spušta se na **povišeni 7. stupanj**
+      (Cis u d-molu), polustepen ispod tonike, u koju se zatim razrešava. Ranije, u 3. taktu, sedmi
+      stupanj *nije* povišen (C): slušaj razliku.
+    - **Ritam:** četvrtine i polovine, jedna punktirana figura (3. takt), cela nota na kraju.
+
+    ### Strategije
+
+    1. **Otpevaj je** dok ne bude sigurno.
+    2. **Prvi ton je tonika.** U a-molu (A – C – E – C...) ostaješ na belim dirkama, osim
+       jednog Gis na kraju; to je najlakši izbor.
+    3. **Taktovi 1 i 5 su isti**: nauči jednom, sviraj dvaput.
+    4. **Proveri dve sedmice:** u a-molu 3. takt ima G, a 7. takt Gis.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** tvoji intervali prema intervalima melodije, u bilo kom tonalitetu.
+    - **Ritam (20%):** odnosi trajanja u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod.
+rubric:
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "One steady take from first to last note; the dotted figure in bar 3 is long-short, not even."
+      sr: "Jedan ravnomeran snimak od prvog do poslednjeg tona; punktirana figura u 3. taktu je dugo-kratko, a ne ravno."
+  - id: minor-colour
+    weight: 1
+    label: {en: "Minor colour", sr: "Molska boja"}
+    top:
+      en: "Every third, sixth and seventh has the right size: minor third at the start, the half step 5–b6, the natural 7th in bar 3 and the raised 7th in bar 7."
+      sr: "Svaka terca, seksta i septima ima pravu veličinu: mala terca na početku, polustepen 5–b6, prirodni 7. stupanj u 3. taktu i povišeni u 7. taktu."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes say which key you played in, which notes you first got wrong (typically the 6th or the 7th) and how you heard the correction."
+      sr: "U beleškama piše u kom tonalitetu si svirao, koje tonove si prvo pogrešio (obično 6. ili 7. stupanj) i kako si čuo ispravku."

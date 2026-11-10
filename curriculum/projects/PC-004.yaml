@@ -1,0 +1,146 @@
+id: PC-004
+kind: composition
+order: 13
+title: {en: "Melody and bass line: two voices", sr: "Melodija i bas linija: dva glasa"}
+minutes: 90
+prereqs: [T-013, K-009, E-009, C-006]
+composition:
+  key: F major
+  meter: 4/4
+  bars: 8
+  range: [C4, F5]
+  voices: 2
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, parallels, rhythm]
+brief:
+  en: |
+    Write an **8-bar piece in F major, 4/4, for two voices: a melody and a bass line.** No
+    chords are given this time: the bass line *is* the harmony. Choose the chords yourself
+    from **I, ii, IV, V and vi** (inversions welcome) and let the bass say which one it is.
+
+    ### The idea
+
+    - **Still a period.** Bar 4 ends on V (half cadence: melody on G, C or E), bars 7–8 are
+      **V → I**: the bass goes **C → F** and the melody ends on F, ideally from G or E.
+    - **Two real lines, not a tune with a drone.** The bass moves too, mostly in half and
+      quarter notes, by step or by leaps of a 4th/5th between chord roots. A bass that walks
+      down by step (F – E – D – C, i.e. I – V6 – vi – V) is a classic.
+    - **Contrary motion is your friend.** When the melody rises, let the bass fall, and the
+      other way round. Oblique motion (one voice holds, the other moves) is fine too.
+    - **No parallel fifths or octaves.** If melody and bass are a 5th apart (or an octave,
+      or a 12th, a 15th...) and *both* move to another 5th or octave, the two voices fuse into
+      one and the texture goes hollow. This is the oldest rule of voice leading. Thirds, sixths
+      and tenths in parallel are the good kind and sound full.
+    - **Inversions make the bass smooth.** I6 puts A in the bass, V6 puts E: they let the bass
+      move by step instead of jumping between roots (as in K-009).
+    - **Range:** melody **C4–F5**; bass roughly **F2–C4**, below the melody.
+
+    How two voices look in ABC (only the shape, not a model answer):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:F
+    V:1
+    A2 G F c4 | ...
+    V:2
+    F,4 E,4 | ...
+    ```
+
+    ### Practical tips
+
+    - Write the outer frame first: the bass notes of bars 1, 4, 7 and 8 (F, C, C, F) and the
+      melody notes above them. Then fill in.
+    - Check every pair of neighbouring beats: what interval do melody and bass make now, and
+      next? Two 5ths or two octaves in a row with both voices moving = fix one voice.
+    - **Entering it:** record with both hands (right hand melody, left hand bass; notes below
+      G3 count as bass), or type ABC with `V:1` (melody) and `V:2` (bass).
+    - Play it slowly and listen to the bass alone. It should make sense as a line by itself.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars in both voices; melody in F major (Bb, not B);
+      melody range C4–F5; half cadence in bar 4; melody ends on F and bass on F from C;
+      no augmented leaps, leaps under control; **no parallel 5ths or octaves** (counts double);
+      sensible rhythm.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4, including whether the
+      bass line implies clear chords and works as a line on its own.
+  sr: |
+    Napiši **komad od 8 taktova u F-duru, 4/4, za dva glasa: melodiju i bas liniju.** Ovog
+    puta akordi nisu zadati: bas linija *jeste* harmonija. Sam izaberi akorde među **I, ii,
+    IV, V i vi** (obrtaji su dobrodošli) i neka bas kaže koji je koji.
+
+    ### Ideja
+
+    - **I dalje period.** 4. takt se završava na V (polukadenca: melodija na G, C ili E),
+      taktovi 7–8 su **V → I**: bas ide **C → F**, a melodija se završava na F, najbolje sa
+      G ili E.
+    - **Dve prave linije, ne melodija sa burdonom.** I bas se kreće, uglavnom u polovinama i
+      četvrtinama, korakom ili skokom za kvartu/kvintu između osnovnih tonova akorada. Bas koji
+      silazi postupno (F – E – D – C, tj. I – V6 – vi – V) je klasika.
+    - **Suprotno kretanje ti je prijatelj.** Kad se melodija penje, neka bas silazi, i
+      obrnuto. Koso kretanje (jedan glas stoji, drugi se kreće) je takođe u redu.
+    - **Bez paralelnih kvinti i oktava.** Ako su melodija i bas na kvinti (ili oktavi, duodecimi,
+      dve oktave...) i *oba* glasa pređu u novu kvintu ili oktavu, glasovi se stapaju u jedan i
+      faktura zvuči šuplje. To je najstarije pravilo vođenja glasova. Paralelne terce, sekste i
+      decime su dobra vrsta i zvuče puno.
+    - **Obrtaji čine bas glatkim.** I6 stavlja A u bas, V6 stavlja E: bas tada može da ide
+      korakom umesto da skače između osnovnih tonova (kao u K-009).
+    - **Opseg:** melodija **C4–F5**; bas otprilike **F2–C4**, ispod melodije.
+
+    Kako dva glasa izgledaju u ABC zapisu (samo oblik, ne rešenje):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:F
+    V:1
+    A2 G F c4 | ...
+    V:2
+    F,4 E,4 | ...
+    ```
+
+    ### Praktični saveti
+
+    - Prvo napiši spoljni okvir: bas tonove taktova 1, 4, 7 i 8 (F, C, C, F) i tonove melodije
+      iznad njih. Onda popuni ostalo.
+    - Proveri svaki par susednih doba: koji interval melodija i bas čine sada, a koji sledeći?
+      Dve kvinte ili dve oktave zaredom, a oba glasa se pomeraju = popravi jedan glas.
+    - **Unos:** snimi obema rukama (desna melodija, leva bas; tonovi ispod G3 se računaju kao
+      bas) ili ukucaj ABC sa `V:1` (melodija) i `V:2` (bas).
+    - Sviraj polako i slušaj samo bas. I on sam treba da ima smisla kao linija.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova u oba glasa; melodija u F-duru (B, ne H);
+      opseg melodije C4–F5; polukadenca u 4. taktu; melodija se završava na F, a bas na F
+      posle C; bez povećanih skokova, skokovi pod kontrolom; **bez paralelnih kvinti i oktava**
+      (računa se dvostruko); smislen ritam.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4, uključujući da li
+      bas jasno nagoveštava akorde i da li funkcioniše kao samostalna linija.
+rubric:
+  - id: voice-leading
+    weight: 2
+    label: {en: "Voice leading", sr: "Vođenje glasova"}
+    top:
+      en: "No parallel 5ths or octaves; plenty of contrary and oblique motion; parallel motion happens in 3rds, 6ths or 10ths; the voices never cross."
+      sr: "Nema paralelnih kvinti ni oktava; dosta suprotnog i kosog kretanja; paralelno kretanje ide u tercama, sekstama ili decimama; glasovi se nikad ne ukrštaju."
+  - id: bass-line
+    weight: 2
+    label: {en: "The bass line", sr: "Bas linija"}
+    top:
+      en: "The bass is a melody of its own (steps, a few root leaps, at least one inversion used to smooth it) and makes the chords audible: you could name the progression from the bass alone, with V–I at the end."
+      sr: "Bas je samostalna melodija (koraci, poneki skok između osnovnih tonova, bar jedan obrtaj koji ga uglađuje) i čini akorde čujnim: progresiju bi mogao da imenuješ samo iz basa, sa V–I na kraju."
+  - id: phrase-structure
+    weight: 1
+    label: {en: "Question and answer", sr: "Pitanje i odgovor"}
+    top:
+      en: "Bar 4 rests on V in both voices; bars 5–8 recall the opening and close firmly on F."
+      sr: "4. takt počiva na dominanti u oba glasa; taktovi 5–8 podsećaju na početak i čvrsto se zatvaraju na F."
+  - id: melody
+    weight: 1
+    label: {en: "Melody", sr: "Melodija"}
+    top:
+      en: "The top line is singable and has a motif and one high point; it is not just the top notes of chords."
+      sr: "Gornja linija je pevljiva i ima motiv i jedan vrhunac; nije samo niz gornjih tonova akorada."

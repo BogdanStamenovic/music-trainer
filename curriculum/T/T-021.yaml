@@ -1,0 +1,110 @@
+id: T-021
+track: T
+order: 21
+prereqs: [T-020]
+title: {en: "Inversions of V7 (V65, V43, V42)", sr: "Obrtaji dominantnog septakorda (V65, V43, V42)"}
+minutes: 13
+tags: [chords, harmony]
+explain:
+  en: |
+    A four-note chord has **four** positions: root position plus **three inversions**, named by which chord tone is in the bass.
+    The figures are the important intervals above the bass (the same figured-bass logic as 6 and 64 for triads):
+
+    | bass | name | figure | in C (G7) | usually resolves to |
+    |---|---|---|---|---|
+    | root | root position | **V7** | G B D F | I |
+    | 3rd | first inversion | **V65** | B D F G | I (bass B → C) |
+    | 5th | second inversion | **V43** | D F G B | I or I6 (bass D → C or E) |
+    | 7th | third inversion | **V42** | F G B D | **I6** (bass F → E) |
+
+    Why use them: the bass moves **by step** instead of leaping a fifth, which makes a smoother, more singable bass line.
+    The resolution rules do not change: leading tone up, 7th down. In V42 the 7th *is* the bass, so the bass must fall a step, and that is why V42 goes to **I6** (E in the bass).
+
+    At the keyboard: keep your right hand on G–B–D–F in some position and walk the left hand through G, B, D, F. Each bass note is a different inversion.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "V7"[G,B,DF] "V65"[B,DFG] "V43"[DFGB] "V42"[F,G,B,D] |]
+    ```
+  sr: |
+    Četvorozvuk ima **četiri** položaja: osnovni i **tri obrtaja**, prema tome koji je ton akorda u basu.
+    Brojevi (šifre) su važni intervali iznad basa (ista logika generalbasa kao 6 i 64 kod trozvuka):
+
+    | bas | naziv | šifra | u C-duru (G7) | obično se razrešava u |
+    |---|---|---|---|---|
+    | osnovni ton | osnovni položaj | **V7** | G H D F | I |
+    | terca | 1. obrtaj, **kvintsekstakord** | **V65** | H D F G | I (bas H → C) |
+    | kvinta | 2. obrtaj, **terckvartakord** | **V43** | D F G H | I ili I6 (bas D → C ili E) |
+    | septima | 3. obrtaj, **sekundakord** | **V42** | F G H D | **I6** (bas F → E) |
+
+    Zašto ih koristimo: bas ide **za stupanj** umesto skoka kvinte, pa je basova linija glatkija i pevljivija.
+    Pravila razrešenja se ne menjaju: vođica naviše, septima naniže. U sekundakordu (V42) septima *je* bas, pa bas mora da siđe za stupanj, i zato V42 ide u **I6** (E u basu).
+
+    Za klavirom: drži desnu ruku na G–H–D–F u nekom položaju, a levom prođi kroz G, H, D, F. Svaki ton u basu je drugi obrtaj.
+
+    ```abc
+    X:1
+    L:1/1
+    K:C
+    "V7"[G,B,DF] "V65"[B,DFG] "V43"[DFGB] "V42"[F,G,B,D] |]
+    ```
+exercises:
+  - id: T-021-1
+    type: mcq
+    prompt: {en: "Which position of G7 is this?", sr: "Koji je ovo položaj G7?"}
+    abc: |
+      X:1
+      L:1/1
+      K:C
+      [B,DFG] |]
+    options: ["V7", "V65", "V43", "V42"]
+    answer: 1
+    checks:
+      - chord: {notes: [B3, D4, F4, G4], root: G, quality: "7", inversion: 1}
+  - id: T-021-2
+    type: mcq
+    prompt: {en: "And this one?", sr: "A ovaj?"}
+    abc: |
+      X:1
+      L:1/1
+      K:C
+      [F,G,B,D] |]
+    options: ["V7", "V65", "V43", "V42"]
+    answer: 3
+    checks:
+      - chord: {notes: [F3, G3, B3, D4], root: G, quality: "7", inversion: 3}
+  - id: T-021-3
+    type: notation-input
+    prompt: {en: "Spell D7 (V7 of G major) in second inversion, V43 (terckvartakord), lowest note first.", sr: "Napiši D7 (V7 u G-duru) u 2. obrtaju, terckvartakord (V43), od najniže note."}
+    derive: {chord: {root: D4, quality: "7", inversion: 2}}
+    checks:
+      - chord: {notes: [A3, C4, D4, F#4], root: D, quality: "7", inversion: 2}
+  - id: T-021-4
+    type: notation-input
+    prompt: {en: "Spell F7 (V7 of B♭ major) in first inversion, V65 (kvintsekstakord), lowest note first.", sr: "Napiši F7 (V7 u B-duru) u 1. obrtaju, kvintsekstakord (V65), od najniže note."}
+    derive: {chord: {root: F4, quality: "7", inversion: 1}}
+    checks:
+      - chord: {notes: [A4, C5, Eb5, F5], root: F, quality: "7", inversion: 1}
+  - id: T-021-5
+    type: midi-play
+    prompt: {en: "Play A7 (V7 of D major) in third inversion, V42 (sekundakord): G, the 7th, in the bass. Any octave.", sr: "Odsviraj A7 (V7 u D-duru) u 3. obrtaju, sekundakord (V42): G, septima, u basu. Bilo koja oktava."}
+    mode: chord
+    octave: any
+    bass: true
+    derive: {chord: {root: A3, quality: "7", inversion: 3}}
+    checks:
+      - chord: {notes: [G3, A3, C#4, E4], root: A, quality: "7", inversion: 3}
+  - id: T-021-6
+    type: midi-play
+    prompt: {en: "Play I – V65 – I in C major: the bass goes C–B–C.", sr: "Odsviraj I – V65 – I u C-duru: bas ide C–H–C."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [I, V65, I]}}
+  - id: T-021-7
+    type: generated
+    prompt: {en: "Play I – V42 – I6: the 7th in the bass falls a step", sr: "Odsviraj I – V42 – I6: septima u basu silazi za stupanj"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, V42, I6]}

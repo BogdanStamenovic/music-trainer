@@ -1,0 +1,173 @@
+id: PV-011
+kind: vocal
+order: 43
+title: {en: "Sing: a 32-bar song in AABA form (stamina)", sr: "Pevaj: pesma od 32 takta u obliku AABA (izdržljivost)"}
+minutes: 45
+prereqs: [V-010, V-027]
+melody:
+  title: {en: "Harbour Lights", sr: "Svetla luke"}
+  source: "Original melody written for music-trainer (2026); free to use."
+  key: F major
+  meter: 4/4
+  tempo: 96
+  notes: [F4, A4, C5, A4, Bb4, G4, E4, F4, G4, A4, Bb4, A4, G4, F4, A4, C5, D5, C5, Bb4, A4, G4, A4, G4, F4, E4, F4, F4, A4, C5, A4, Bb4, G4, E4, F4, G4, A4, Bb4, A4, G4, F4, A4, C5, D5, C5, Bb4, A4, G4, A4, G4, F4, E4, F4, D5, D5, C5, A4, Bb4, G4, C5, C5, Bb4, G4, A4, F4, G4, A4, Bb4, G4, A4, Bb4, C5, D5, C5, Bb4, G4, C5, F4, A4, C5, A4, Bb4, G4, E4, F4, G4, A4, Bb4, A4, G4, F4, A4, C5, D5, C5, Bb4, A4, G4, A4, G4, F4, E4, F4]
+  beats: [1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 4, 1, 1, 1.5, 0.5, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+tolerance: 60
+brief:
+  en: |
+    Record yourself singing **"Harbour Lights"**, an original **32-bar song in AABA form**
+    (the shape of countless standards: four 8-bar sections, the third one different), in F major
+    at 96 BPM, on **"lah"**, **"loo"** or words of your own. About **80 seconds of continuous
+    singing**: the longest piece of the year. This week is **stamina**: the last A should sound as
+    fresh as the first.
+
+    ```abc
+    X:1
+    T:Harbour Lights
+    M:4/4
+    L:1/8
+    Q:1/4=96
+    K:F
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 !breath! |
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 !breath! |
+    d2 d2 c2 A2 | B4 G4 | c2 c2 B2 G2 | A4 F4 !breath! |
+    G2 A2 B2 G2 | A2 B2 c4 | d2 c2 B2 G2 | c8 !breath! |
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 |]
+    ```
+
+    ### The musical idea
+
+    - **A (bars 1–8)** is the tune: an arch up to C and down, half close on G in bar 4, full close
+      on F in bar 8. It comes **three times, identical**. Learn it once.
+    - **B, the bridge (bars 17–24)**, is the contrast: it starts at the top on repeated Ds,
+      sits higher, and ends on a long C (the dominant) that *asks* for the return of A.
+    - In theory terms (T track, forms) this is a **32-bar AABA** song form.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is E4–D5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+
+    ### How to sing it: stamina
+
+    - **Pace yourself.** Sing the first A at a comfortable medium-soft level. If you start at
+      your maximum, there is nowhere to go and the last A gets tired.
+    - **The bridge is higher, not louder.** Repeated D5s are where voices start to push; keep
+      them as easy as an A in the first section. Comfortable mix or head voice, whichever is
+      easy: no belting, no grit.
+    - **Breathe at every breath mark** (after each 4 bars) and in the middle of a section if you
+      need to. Silent, low breaths; tension builds when breaths get high and noisy.
+    - **Watch for fatigue signs:** a dry throat, a voice that starts to sound husky, or notes that
+      need more effort than at the start. Sip water between takes. If the voice is noticeably
+      tired after two takes, **stop for the day**.
+    - **Before recording**, sing it through once at half voice (marking) to learn the form without
+      spending the voice.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within 60 cents, a bit more than half a semitone.
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš **„Svetla luke”**, originalnu **pesmu od 32 takta u obliku
+    AABA** (oblik bezbroj standarda: četiri dela od po 8 taktova, treći drugačiji), u F-duru,
+    96 BPM, na **„la”**, **„lu”** ili na svoje reči. Oko **80 sekundi neprekidnog pevanja**:
+    najduži komad godine. Ova nedelja je **izdržljivost**: poslednje A treba da zvuči sveže kao
+    prvo.
+
+    ```abc
+    X:1
+    T:Harbour Lights
+    M:4/4
+    L:1/8
+    Q:1/4=96
+    K:F
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 !breath! |
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 !breath! |
+    d2 d2 c2 A2 | B4 G4 | c2 c2 B2 G2 | A4 F4 !breath! |
+    G2 A2 B2 G2 | A2 B2 c4 | d2 c2 B2 G2 | c8 !breath! |
+    F2 A2 c3 A | B2 G2 E4 | F2 G2 A2 B2 | A4 G4 !breath! |
+    F2 A2 c3 d | c2 B2 A2 G2 | A2 G2 F2 E2 | F8 |]
+    ```
+
+    ### Muzička ideja
+
+    - **A (taktovi 1–8)** je melodija: luk do C i nazad, polukadenca na G u 4. taktu, puna
+      kadenca na F u 8. Dolazi **tri puta, isto**. Nauči je jednom.
+    - **B, most (taktovi 17–24)**, je kontrast: počinje na vrhu ponovljenim D, leži više i
+      završava se dugim C (dominanta) koje *traži* povratak A.
+    - Teorijski (staza T, oblici) ovo je **pesma od 32 takta u obliku AABA**.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je E4–D5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+
+    ### Kako se peva: izdržljivost
+
+    - **Rasporedi snagu.** Otpevaj prvo A udobno, srednje tiho. Ako počneš na svom maksimumu,
+      nemaš gde dalje i poslednje A se umori.
+    - **Most je viši, ne glasniji.** Ponovljena D5 su mesto gde glasovi počnu da guraju; drži ih
+      lakim kao A u prvom delu. Udobni miks ili glaveni registar, šta god je lako: bez beltinga,
+      bez hrapavosti.
+    - **Udahni na svakom znaku za udah** (posle svaka 4 takta), i usred dela ako ti treba.
+      Nečujni, niski udasi; napetost raste kad udasi postanu visoki i bučni.
+    - **Prati znake umora:** suvo grlo, glas koji počne da zvuči promuklo, ili tonovi koji traže
+      više napora nego na početku. Pij vodu između snimaka. Ako je glas posle dva snimka primetno
+      umoran, **prekini za danas**.
+    - **Pre snimanja** otpevaj je jednom polu-glasom (markiranje), da naučiš oblik bez trošenja
+      glasa.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od 60 centi, nešto više od pola polustepena.
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: stamina
+    weight: 3
+    label: {en: "Stamina", sr: "Izdržljivost"}
+    top:
+      en: "The final A (bars 25-32) sounds as free and in tune as the first: no husky edge, no flattening, no extra effort audible by the end."
+      sr: "Poslednje A (taktovi 25-32) zvuči slobodno i čisto kao prvo: bez promuklosti, bez spuštanja visine, bez čujnog dodatnog napora na kraju."
+  - id: bridge
+    weight: 1
+    label: {en: "Bridge without pushing", sr: "Most bez guranja"}
+    top:
+      en: "The repeated D5s and the long C5 in the bridge are easy (comfortable mix or head voice), not louder than the A sections."
+      sr: "Ponovljena D5 i dugo C5 u mostu su laki (udobni miks ili glaveni registar), ne glasniji od delova A."
+  - id: form
+    weight: 1
+    label: {en: "Form and memory", sr: "Oblik i pamćenje"}
+    top:
+      en: "All four sections sung without stopping; the three A sections match each other; the long C at bar 24 leads audibly into the return."
+      sr: "Sva četiri dela otpevana bez zaustavljanja; tri dela A su međusobno ista; dugo C u 24. taktu čujno vodi u povratak."
+  - id: breath
+    weight: 1
+    label: {en: "Breath", sr: "Dah"}
+    top:
+      en: "Breaths silent, low and on time at the marks; no phrase ends gasping."
+      sr: "Udasi nečujni, niski i na vreme na znacima; nijedna fraza se ne završava hvatanjem vazduha."

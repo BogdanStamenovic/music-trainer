@@ -21,7 +21,8 @@ describe("rhythm echo", () => {
       expect(m.mode).toBe("rhythm");
       const last = m.rhythm!.at(-1)!;
       const total = (m.play!.durations ?? []).reduce((a, b) => a + b, 0);
-      expect(total).toBeCloseTo(6);
+      expect(total).toBeCloseTo(6 + 3); // + one count-in bar of clicks
+      expect(m.play!.notes!.slice(0, 3)).toEqual([96, 91, 91]);
       expect(last).toBeLessThan(6);
       expect(m.abc).toContain("M:3/4");
     }
@@ -112,7 +113,7 @@ describe("rhythm cells, triplets, written rhythm timing", () => {
     const ex = Exercise.parse({ id: "E-097-1", type: "generated", prompt: { en: "r", sr: "r" }, count: 6, gen: { kind: "rhythm-echo", meter: "4/4", bars: 2, cells: [[1 / 3, 1 / 3, 1 / 3], [0.5, 0.5], [1]] } });
     for (const x of generateItems(ex, "s")) {
       const m = x as MidiItem;
-      expect((m.play!.durations ?? []).reduce((a, b) => a + b, 0)).toBeCloseTo(8);
+      expect((m.play!.durations ?? []).reduce((a, b) => a + b, 0)).toBeCloseTo(8 + 4); // + count-in bar
       if ((m.play!.durations ?? []).some((d) => Math.abs(d - 1 / 3) < 1e-6)) expect(m.abc).toContain("(3B2B2B2");
     }
     const hidden = Exercise.parse({ id: "E-097-2", type: "generated", prompt: { en: "r", sr: "r" }, count: 1, gen: { kind: "rhythm-echo", values: [1], showAbc: false } });

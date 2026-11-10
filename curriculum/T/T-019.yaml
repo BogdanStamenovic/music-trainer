@@ -1,0 +1,119 @@
+id: T-019
+track: T
+order: 19
+prereqs: [T-018]
+title: {en: "Diatonic triads in minor (harmonic minor: i ii° III+ iv V VI vii°)", sr: "Trozvuci na stupnjevima mola (harmonski mol: i ii° III+ iv V VI vii°)"}
+minutes: 13
+tags: [chords, harmony]
+explain:
+  en: |
+    Build triads on the **natural minor** scale and V comes out **minor**: in A minor, E–G–B.
+    A minor v has no **leading tone**: G is a whole step below A, so it does not pull home. V–i cadences sound weak.
+
+    The fix is **harmonic minor**: raise the 7th degree (G → G♯). That one note changes three chords:
+
+    | degree | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+    |---|---|---|---|---|---|---|---|
+    | A harmonic minor | A C E | B D F | C E G♯ | D F A | E G♯ B | F A C | G♯ B D |
+    | quality | minor | dim. | **aug.** | minor | **major** | major | **dim.** |
+    | numeral | **i** | **ii°** | **III+** | **iv** | **V** | **VI** | **vii°** |
+
+    **V** (major) and **vii°** are the reason harmonic minor exists: both contain G♯, which rises a half step to A.
+    **III+** is a side effect; in real music III usually keeps the natural 7th (C–E–G) because it does not lead to the tonic.
+
+    At the keyboard: in any minor key, play i–iv–V–i and notice that V is the only chord with an accidental outside the key signature.
+
+    ```abc
+    X:1
+    L:1/2
+    K:Am
+    "i"[ACe] "iv"[DFa] | "V"[E^GB] "i"[Ace] |]
+    ```
+  sr: |
+    Ako gradimo trozvuke na **prirodnom molu**, V ispada **molski**: u a-molu E–G–H.
+    Molska dominanta nema **vođicu**: G je ceo stepen ispod A, pa ne vuče ka tonici. Kadenca V–i zvuči slabo.
+
+    Rešenje je **harmonski mol**: povisimo VII stupanj (G → Gis). Taj jedan ton menja tri akorda:
+
+    | stupanj | I | II | III | IV | V | VI | VII |
+    |---|---|---|---|---|---|---|---|
+    | a-mol harmonski | A C E | H D F | C E Gis | D F A | E Gis H | F A C | Gis H D |
+    | vrsta | molski | smanjeni | **povećani** | molski | **durski** | durski | **smanjeni** |
+    | oznaka | **i** | **ii°** | **III+** | **iv** | **V** | **VI** | **vii°** |
+
+    **Durska dominanta (V)** i **vii°** su razlog postojanja harmonskog mola: oba sadrže Gis, koje ide polustepenom naviše na A.
+    **III+** je usputna posledica; u stvarnoj muzici III obično zadržava prirodni VII stupanj (C–E–G), jer ne vodi ka tonici.
+
+    Za klavirom: u bilo kom molu odsviraj i–iv–V–i i primeti da je V jedini akord sa predznakom van oznake tonaliteta.
+
+    ```abc
+    X:1
+    L:1/2
+    K:Am
+    "i"[ACe] "iv"[DFa] | "V"[E^GB] "i"[Ace] |]
+    ```
+exercises:
+  - id: T-019-1
+    type: generated
+    prompt: {en: "Which numeral is this chord in A harmonic minor?", sr: "Koji je rimski broj ovog akorda u harmonskom a-molu?"}
+    count: 5
+    gen: {kind: roman, keys: [A], type: harmonic-minor, ask: numeral}
+    checks:
+      - roman: {key: A, type: harmonic-minor, degree: 1, is: "i"}
+      - roman: {key: A, type: harmonic-minor, degree: 2, is: "ii°"}
+      - roman: {key: A, type: harmonic-minor, degree: 3, is: "III+"}
+      - roman: {key: A, type: harmonic-minor, degree: 4, is: "iv"}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+      - roman: {key: A, type: harmonic-minor, degree: 6, is: "VI"}
+      - roman: {key: A, type: harmonic-minor, degree: 7, is: "vii°"}
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - chord: {notes: [C4, E4, G#4], root: C, quality: aug}
+  - id: T-019-2
+    type: generated
+    prompt: {en: "Spell triads in harmonic minor", sr: "Napiši trozvuke u harmonskom molu"}
+    count: 4
+    gen: {kind: roman, keys: [D, E, G], type: harmonic-minor, ask: name}
+  - id: T-019-3
+    type: generated
+    prompt: {en: "Play i, iv and V in minor keys", sr: "Odsviraj i, iv i V u molu"}
+    count: 4
+    gen: {kind: roman, keys: [A, D, E], type: harmonic-minor, degrees: [1, 4, 5], ask: play}
+  - id: T-019-4
+    type: mcq
+    prompt: {en: "In A minor, V is…", sr: "U a-molu V je…"}
+    options:
+      - {en: "E–G–B", sr: "E–G–H"}
+      - {en: "E–G♯–B", sr: "E–Gis–H"}
+      - {en: "E–G♯–B♯", sr: "E–Gis–His"}
+      - {en: "G–B–D", sr: "G–H–D"}
+    answer: 1
+    checks:
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+  - id: T-019-5
+    type: mcq
+    prompt: {en: "Why raise the 7th degree in minor?", sr: "Zašto se u molu povisuje VII stupanj?"}
+    options:
+      - {en: "So V becomes major and has a leading tone a half step below the tonic", sr: "Da V postane durski i dobije vođicu polustepen ispod tonike"}
+      - {en: "So the scale has no augmented second", sr: "Da lestvica nema prekomernu sekundu"}
+      - {en: "So iv becomes major", sr: "Da iv postane durski"}
+      - {en: "So the key signature changes", sr: "Da se promeni oznaka tonaliteta"}
+    answer: 0
+  - id: T-019-6
+    type: mcq
+    prompt: {en: "Listen to i–iv–?–i in A minor. Which chord is on the third position?", sr: "Slušaj i–iv–?–i u a-molu. Koji je akord na trećem mestu?"}
+    play: {derive: {roman: {key: A3, type: natural-minor, numerals: [i, iv, v, i]}}, tempo: 60}
+    options:
+      - {en: "minor v (natural minor, no leading tone)", sr: "molska v (prirodni mol, bez vođice)"}
+      - {en: "major V (harmonic minor, with G♯)", sr: "durska V (harmonski mol, sa Gis)"}
+    answer: 0
+    checks:
+      - roman: {key: A, type: natural-minor, degree: 5, is: "v"}
+  - id: T-019-7
+    type: mcq
+    prompt: {en: "And now? Compare the pull into the last chord.", sr: "A sada? Uporedi koliko vuče ka poslednjem akordu."}
+    play: {derive: {roman: {key: A3, type: harmonic-minor, numerals: [i, iv, V, i]}}, tempo: 60}
+    options:
+      - {en: "minor v (natural minor, no leading tone)", sr: "molska v (prirodni mol, bez vođice)"}
+      - {en: "major V (harmonic minor, with G♯)", sr: "durska V (harmonski mol, sa Gis)"}
+    answer: 1

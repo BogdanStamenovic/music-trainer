@@ -1,0 +1,140 @@
+id: K-020
+track: K
+order: 20
+title: {en: "12-bar blues in C: left-hand shuffle, blues scale improvisation", sr: "Bluz od 12 taktova u C-duru: šafl u levoj ruci, improvizacija na bluz lestvici"}
+prereqs: [K-019]
+minutes: 15
+tags: [keys, improvisation, blues, accompaniment]
+explain:
+  en: |
+    The **12-bar blues** is the most played chord form in popular music: blues, early rock and
+    roll, boogie-woogie, jazz. Three chords, twelve bars:
+
+    | bars 1–4 | bars 5–8 | bars 9–12 |
+    |---|---|---|
+    | I7 · I7 · I7 · I7 | IV7 · IV7 · I7 · I7 | V7 · IV7 · I7 · V7 |
+    | C7 C7 C7 C7 | F7 F7 C7 C7 | G7 F7 C7 G7 |
+
+    This lesson uses the "quick change" variant: **IV7 already in bar 2**, so it goes
+    I7 IV7 I7 I7 | IV7 IV7 I7 I7 | V7 IV7 I7 V7. The last V7 (the "turnaround") sends you back
+    to the top.
+
+    **The blues breaks the K-012 rule.** All three chords are **dominant sevenths**: C7 has B♭,
+    F7 has E♭. In C major only V7 is a dominant seventh. The blues borrows that tense sound for
+    every chord, and the tension never fully resolves; that is its colour.
+
+    **Left hand: the shuffle.** Root and 5th, then root and 6th, then root and ♭7, then back
+    to 6, one beat each (C–G, C–A, C–B♭, C–A). Played with a **swing** (long–short eighths), it
+    is the boogie left hand. The exercise grades straight beats; swing it in your practice.
+
+    **Right hand: the blues scale** C E♭ F G♭ G B♭: the minor pentatonic plus G♭. The
+    E♭ against the E of C7 is the **blue note**: rub it, or slide from E♭ up to E with one
+    finger. Phrases in the blues follow the lyrics' **AAB** form: say a riff, say it again
+    (over the new chord, it sounds different), then answer it.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C _E F _G G _B c |]
+    ```
+
+    The targets from K-019 still work: C or G over C7, C or F over F7, G over G7.
+  sr: |
+    **Bluz od 12 taktova** je najsviranija harmonska forma popularne muzike: bluz, rani rokenrol,
+    bugi-vugi, džez. Tri akorda, dvanaest taktova:
+
+    | taktovi 1–4 | taktovi 5–8 | taktovi 9–12 |
+    |---|---|---|
+    | I7 · I7 · I7 · I7 | IV7 · IV7 · I7 · I7 | V7 · IV7 · I7 · V7 |
+    | C7 C7 C7 C7 | F7 F7 C7 C7 | G7 F7 C7 G7 |
+
+    Ova lekcija koristi varijantu sa "brzom promenom": **IV7 već u 2. taktu**, dakle
+    I7 IV7 I7 I7 | IV7 IV7 I7 I7 | V7 IV7 I7 V7. Poslednji V7 (turnaround) te vraća na početak.
+
+    **Bluz krši pravilo iz K-012.** Sva tri akorda su **dominantni septakordi**: C7 ima B, F7
+    ima Es. U C-duru je samo V7 dominantni septakord. Bluz pozajmljuje taj napeti zvuk za svaki
+    akord, a napetost se nikad potpuno ne razreši; to je njegova boja.
+
+    **Leva ruka: šafl.** Osnovni ton i kvinta, pa osnovni ton i seksta, pa osnovni ton i mala
+    septima, pa nazad na sekstu, svaki po jednu dobu (C–G, C–A, C–B, C–A). Odsvirano sa
+    **svingom** (duga–kratka osmina), to je bugi leva ruka. Vežba ocenjuje ravne dobe; sving
+    dodaj u svom vežbanju.
+
+    **Desna ruka: bluz lestvica** C Es F Ges G B: molska pentatonika plus Ges. Es naspram E iz C7
+    je **plava nota** (blue note): trljaj je, ili jednim prstom klizni sa Es na E. Fraze u bluzu
+    prate **AAB** oblik stihova: izgovori rif, ponovi ga (preko novog akorda zvuči drugačije),
+    pa mu odgovori.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C _E F _G G _B c |]
+    ```
+
+    Ciljevi iz K-019 i dalje rade: C ili G preko C7, C ili F preko F7, G preko G7.
+exercises:
+  - id: K-020-1
+    type: mcq
+    prompt: {en: "In the blues, the I chord is C7 (C–E–G–B♭). Why is that not a diatonic chord of C major?", sr: "U bluzu je akord I C7 (C–E–G–B). Zašto to nije dijatonski akord C-dura?"}
+    options:
+      - {en: "B♭ is not in C major; the diatonic seventh chord on C is Cmaj7 (with B)", sr: "B nije u C-duru; dijatonski septakord na C je Cmaj7 (sa H)"}
+      - {en: "E is not in C major", sr: "E nije u C-duru"}
+      - {en: "It is diatonic; C7 is the V7 of C", sr: "Jeste dijatonski; C7 je V7 u C-duru"}
+    answer: 0
+    checks:
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - chord: {notes: [F4, A4, C5, Eb5], root: F, quality: "7"}
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: K-020-2
+    type: midi-play
+    prompt: {en: "The form as block chords: 12 bars, one chord per click at ♩=60 (any octave, root in the bass).", sr: "Forma kao akordi: 12 taktova, jedan akord po udarcu, ♩=60 (bilo koja oktava, osnovni ton u basu)."}
+    mode: chords
+    derive: {roman: {key: C3, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7]}}
+    octave: any
+    bass: true
+    tempo: 60
+  - id: K-020-3
+    type: midi-play
+    prompt: {en: "Left-hand shuffle, one bar each on C, F and G: root+5, root+6, root+♭7, root+6. ♩=92, one dyad per click.", sr: "Šafl u levoj ruci, po jedan takt na C, F i G: osnovni ton+kvinta, +seksta, +mala septima, +seksta. ♩=92, jedan dvozvuk po udarcu."}
+    mode: chords
+    expectChords: [[C3, G3], [C3, A3], [C3, Bb3], [C3, A3], [F2, C3], [F2, D3], [F2, Eb3], [F2, D3], [G2, D3], [G2, E3], [G2, F3], [G2, E3]]
+    tempo: 92
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: C3, to: A3, is: M6}
+      - interval: {from: C3, to: Bb3, is: m7}
+      - interval: {from: F2, to: C3, is: P5}
+      - interval: {from: F2, to: D3, is: M6}
+      - interval: {from: F2, to: Eb3, is: m7}
+      - interval: {from: G2, to: D3, is: P5}
+      - interval: {from: G2, to: E3, is: M6}
+      - interval: {from: G2, to: F3, is: m7}
+  - id: K-020-4
+    type: midi-play
+    prompt: {en: "The C blues scale up from C4, ♩=80.", sr: "C bluz lestvica naviše od C4, ♩=80."}
+    mode: sequence
+    derive: {scale: {tonic: C4, type: blues}}
+    tempo: 80
+    checks:
+      - scale: {tonic: C, type: blues, is: [C, Eb, F, Gb, G, Bb]}
+      - scale: {tonic: C, type: minor-pentatonic, is: [C, Eb, F, G, Bb]}
+  - id: K-020-5
+    type: generated
+    pass: 0.7
+    prompt: {en: "Once through the 12-bar blues with the blues scale. Riff, repeat, answer.", sr: "Jednom kroz bluz od 12 taktova sa bluz lestvicom. Rif, ponovi, odgovor."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: blues, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 1, tempo: 84}
+  - id: K-020-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "Twice through, faster, with the plain minor pentatonic (no G♭): fewer notes, more rhythm.", sr: "Dva puta, brže, sa običnom molskom pentatonikom (bez Ges): manje tonova, više ritma."}
+    count: 1
+    gen: {kind: improv, keys: [C], scale: minor-pentatonic, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 2, tempo: 100}
+  - id: K-020-7
+    type: practice
+    prompt: {en: "Both hands: swung shuffle in the left hand through all 12 bars, right hand plays one riff (e.g. G–B♭–C, repeated) and moves it only when the chord asks for it. Then trade: 4 bars riff, 4 bars rest.", sr: "Obe ruke: šafl sa svingom u levoj ruci kroz svih 12 taktova, desna svira jedan rif (npr. G–B–C, ponavljano) i menja ga samo kad akord to traži. Zatim naizmenično: 4 takta rif, 4 takta pauza."}
+    minutes: 5

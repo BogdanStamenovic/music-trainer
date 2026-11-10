@@ -1,0 +1,141 @@
+id: V-026
+track: V
+order: 26
+title: {en: "Song phrase II (8 bars)", sr: "Fraza iz pesme II (8 taktova)"}
+prereqs: [V-025]
+minutes: 12
+tags: [voice, song, phrases]
+explain:
+  en: |
+    Eight bars now: **"Frère Jacques"** ("Are You Sleeping?" in English), a French traditional round (18th century, public domain).
+
+    ```abc
+    X:1
+    T:Frère Jacques
+    M:4/4
+    L:1/8
+    Q:1/4=88
+    K:C
+    C2 D2 E2 C2 | C2 D2 E2 C2 | E2 F2 G4 | E2 F2 G4 |
+    GAGF E2 C2 | GAGF E2 C2 | C2 G,2 C4 | C2 G,2 C4 |]
+    ```
+
+    What is new compared with the Ode to Joy phrase:
+
+    - **Eight bars** made of four 2-bar ideas, each sung twice. Spot the repeats and there is only 4 bars of melody to learn.
+    - **Eighth notes** in bars 5-6 (G A G F): quick and light, like the agility lesson.
+    - A **leap down a 4th** in bars 7-8 (C down to G), and a total range of a **9th** (G below middle C to the A above it).
+
+    **Breathing**: take a quick, silent catch breath after each half note (end of bars 3, 4, 7) and at the end of bar 6 if you need one.
+    Steal the time from the end of the long note, not from the next beat.
+
+    Words, if you want them (one syllable per note): "*Frè-re Jac-ques, frè-re Jac-ques, dor-mez-vous? dor-mez-vous? Son-nez les ma-ti-nes, son-nez les ma-ti-nes, ding, dang, dong, ding, dang, dong*";
+    or in English "*Are you sleep-ing, are you sleep-ing, Bro-ther John, Bro-ther John? Mor-ning bells are ring-ing, mor-ning bells are ring-ing, ding, dang, dong, ding, dang, dong*".
+
+    Sing the rhythm as written; play it on the piano first if it helps. Sing in whatever octave is comfortable; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Sada osam taktova: **„Frère Jacques”** (engl. „Are You Sleeping?”), francuski tradicionalni kanon (18. vek, javno dobro).
+
+    ```abc
+    X:1
+    T:Frère Jacques
+    M:4/4
+    L:1/8
+    Q:1/4=88
+    K:C
+    C2 D2 E2 C2 | C2 D2 E2 C2 | E2 F2 G4 | E2 F2 G4 |
+    GAGF E2 C2 | GAGF E2 C2 | C2 G,2 C4 | C2 G,2 C4 |]
+    ```
+
+    Šta je novo u odnosu na frazu iz „Ode radosti”:
+
+    - **Osam taktova** od četiri ideje po 2 takta, svaka otpevana dva puta. Uoči ponavljanja, pa ostaju samo 4 takta melodije za učenje.
+    - **Osmine** u 5. i 6. taktu (G A G F): brzo i lagano, kao u lekciji o okretnosti.
+    - **Skok za kvartu naniže** u 7. i 8. taktu (od C dole do G) i ukupan opseg od **none** (od G ispod srednjeg C do A iznad njega).
+
+    **Disanje**: uzmi brz, tih udah posle svake polovine (kraj 3., 4. i 7. takta), a na kraju 6. takta ako ti treba.
+    Vreme ukradi sa kraja dugog tona, ne sa sledeće dobe.
+
+    Reči, ako ih želiš (jedan slog po tonu): „*Frè-re Jac-ques, frè-re Jac-ques, dor-mez-vous? dor-mez-vous? Son-nez les ma-ti-nes, son-nez les ma-ti-nes, ding, dang, dong, ding, dang, dong*”;
+    ili na engleskom „*Are you sleep-ing, are you sleep-ing, Bro-ther John, Bro-ther John? Mor-ning bells are ring-ing, mor-ning bells are ring-ing, ding, dang, dong, ding, dang, dong*”.
+
+    Pevaj ritam kako je zapisan; ako pomaže, prvo ga odsviraj na klaviru. Pevaj u oktavi koja ti prija; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-026-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-026-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then 'la' along with the five notes up and down; finish with 2 rounds of quick 1-2-3-2-1 on 'ah'."
+      sr: "Zagrevanje: 4 niska udaha, 3 tihe sirene treperenjem usana, pa „la” uz pet tonova gore i dole; završi sa 2 runde brzog 1-2-3-2-1 na „a”."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-026-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Play the eight bars on the piano from the notation, then play them again and hum along. Mark where you will breathe."
+      sr: "Odsviraj osam taktova na klaviru iz zapisa, pa ih odsviraj ponovo i pevuši uz njih. Označi gde ćeš udahnuti."
+  - id: V-026-4
+    type: sing-phrase
+    prompt:
+      en: "Bars 1-4 on 'la' (C D E C twice, then E F G twice), a quick breath after each half-note G."
+      sr: "Taktovi 1-4 na „la” (C D E C dva puta, pa E F G dva puta), brz udah posle svake polovine G."
+    notes: [C4, D4, E4, C4, C4, D4, E4, C4, E4, F4, G4, E4, F4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-026-5
+    type: sing-phrase
+    prompt:
+      en: "Bars 5-8 on 'la': the eighth notes G A G F light and quick, then the leap down C-G-C."
+      sr: "Taktovi 5-8 na „la”: osmine G A G F lagano i brzo, pa skok naniže C-G-C."
+    notes: [G4, A4, G4, F4, E4, C4, G4, A4, G4, F4, E4, C4, C4, G3, C4, C4, G3, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 2]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: G3, to: C4, is: P4}
+      - interval: {from: G4, to: A4, is: M2}
+  - id: V-026-6
+    type: sing-phrase
+    prompt:
+      en: "All eight bars on 'la', with quick silent breaths after the half notes."
+      sr: "Svih osam taktova na „la”, sa brzim tihim udasima posle polovina."
+    notes: [C4, D4, E4, C4, C4, D4, E4, C4, E4, F4, G4, E4, F4, G4, G4, A4, G4, F4, E4, C4, G4, A4, G4, F4, E4, C4, C4, G3, C4, C4, G3, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 2]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: G3, to: A4, is: M9}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-026-7
+    type: sing-phrase
+    prompt:
+      en: "Once more with words, French or English (or 'la' again). Pure vowels: hold the 'o' of 'dong', not the 'ng'."
+      sr: "Još jednom sa rečima, francuskim ili engleskim (ili opet na „la”). Čisti samoglasnici: drži „o” u „dong”, ne „ng”."
+    notes: [C4, D4, E4, C4, C4, D4, E4, C4, E4, F4, G4, E4, F4, G4, G4, A4, G4, F4, E4, C4, G4, A4, G4, F4, E4, C4, C4, G3, C4, C4, G3, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 2]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: G3, to: A4, is: M9}

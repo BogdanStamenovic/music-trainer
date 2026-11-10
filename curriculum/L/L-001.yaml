@@ -1,0 +1,210 @@
+id: L-001
+track: L
+order: 1
+prereqs: []
+title: {en: "Syllables and stress in English and Serbian", sr: "Slogovi i naglasak u engleskom i srpskom"}
+minutes: 14
+tags: [lyrics, prosody]
+explain:
+  en: |
+    A lyric is sung **one syllable per note**, unless you stretch one syllable over several
+    notes (a *melisma*). So before rhyme or imagery a lyricist checks two things in every line:
+    **how many syllables** it has, and **which of them are stressed**. Stressed syllables want
+    the strong beats; unstressed ones fit in between.
+
+    ### Counting syllables
+
+    **English:** count vowel *sounds*, not vowel letters.
+
+    | word | syllables | why |
+    |---|---|---|
+    | time | 1 | the final e is silent |
+    | walked | 1 | -ed is its own syllable only after t or d |
+    | wanted | 2 | want-ed |
+    | beautiful | 3 | beau-ti-ful |
+
+    A few words change with accent and tempo: *fire*, *hour*, *every* (2 or 3). In a song the
+    melody decides; just be consistent.
+
+    **Serbian:** one syllable per vowel **a e i o u**, and **syllabic r** counts as a vowel when it
+    stands between consonants or at the start of a word before a consonant.
+
+    | word | syllables |
+    |---|---|
+    | srce | 2 (sr-ce) |
+    | crven | 2 (cr-ven) |
+    | prst, trg, vrh | 1 |
+    | rđa | 2 (r-đa) |
+    | vrata | 2 (vra-ta: here r is next to a vowel, so it is an ordinary consonant) |
+    | pevao | 3 (pe-va-o: vowels side by side are separate syllables) |
+
+    In ijekavian, long *ije* (lijepo) is normally one syllable in speech, but singers often stretch
+    it into two. Listen to how a song you know handles it.
+
+    ### Finding the stress
+
+    Say the word as if calling it to a friend across a room and tap the table on each syllable:
+    the stressed one is louder and longer. Then try the wrong stress; the word stops sounding
+    like a word.
+
+    **English** stress can fall anywhere, and suffixes move it: *PHO-to-graph*,
+    *pho-TOG-ra-phy*, *pho-to-GRAPH-ic*. Some words change meaning with stress: a *RE-cord*,
+    to *re-CORD*.
+
+    **Serbian** has one rule that saves a lot of time: **in a word of two or more syllables the
+    stress never falls on the last syllable.** Most words are stressed on the first syllable
+    (*KU-ća*, *JA-bu-ka*, *DE-voj-ka*, *BE-o-grad*), some on a middle one (*pla-NI-na*,
+    *gi-TA-ra*, *za-BO-ra-vi-ti*). One-syllable words such as *dan*, *san*, *noć* carry their
+    own stress, except small words that lean on a neighbour (*i, a, u, na, se, mi, je, ću*):
+    those are unstressed.
+
+    Serbian has four accents (short or long, falling or rising). For lyrics, what matters is
+    **where** the stress is and whether the stressed vowel is **long or short**. A long one
+    (*grȃd*, city) sits naturally on a long note; a short one (*grȁd*, hail) held for a long
+    time sounds drawn out. That can be a style choice (starogradska does it often), but make it
+    on purpose. Rising versus falling pitch is mostly overwritten by the melody.
+
+    ### The keyboard connection
+
+    Play a steady 4/4 on the piano (one chord per bar) and speak a line in rhythm over it.
+    Stressed syllables should land on beats 1 and 3, or on every beat; unstressed ones go in
+    between. A stressed syllable on a weak beat (*re-mem-BER* instead of *re-MEM-ber*) is the
+    most common reason a lyric sounds wrong even when the words are good.
+
+    Mark lines like this: syllable count first, stressed syllables in capitals.
+
+    > (8) i WALKED a-LONG the EMP-ty STREET
+    > (8) KI-ša PA-da, GRAD se BU-di
+  sr: |
+    Tekst pesme se peva **jedan slog na jednu notu**, osim kada se jedan slog razvuče preko više
+    nota (*melizam*). Zato tekstopisac, pre rime i slika, u svakom stihu proverava dve stvari:
+    **koliko slogova** ima i **koji su naglašeni**. Naglašeni slogovi traže jake dobe; nenaglašeni
+    staju između.
+
+    ### Brojanje slogova
+
+    **Engleski:** broje se samoglasnički *glasovi*, ne slova.
+
+    | reč | slogova | zašto |
+    |---|---|---|
+    | time | 1 | završno e se ne izgovara |
+    | walked | 1 | -ed je poseban slog samo posle t ili d |
+    | wanted | 2 | want-ed |
+    | beautiful | 3 | beau-ti-ful |
+
+    Neke reči zavise od izgovora i tempa: *fire*, *hour*, *every* (2 ili 3). U pesmi odlučuje
+    melodija; samo budi dosledan.
+
+    **Srpski:** jedan slog po samoglasniku **a e i o u**, a **slogotvorno r** se računa kao
+    samoglasnik kada stoji između suglasnika ili na početku reči ispred suglasnika.
+
+    | reč | slogova |
+    |---|---|
+    | srce | 2 (sr-ce) |
+    | crven | 2 (cr-ven) |
+    | prst, trg, vrh | 1 |
+    | rđa | 2 (r-đa) |
+    | vrata | 2 (vra-ta: r je uz samoglasnik, pa je obični suglasnik) |
+    | pevao | 3 (pe-va-o: samoglasnici jedan do drugog su posebni slogovi) |
+
+    U ijekavici se dugo *ije* (lijepo) u govoru obično izgovara kao jedan slog, ali ga pevači
+    često razvuku na dva. Poslušaj kako to radi pesma koju znaš.
+
+    ### Kako naći naglasak
+
+    Izgovori reč kao da je dovikuješ prijatelju preko sobe i lupkaj po stolu na svaki slog:
+    naglašeni je glasniji i duži. Onda probaj pogrešan naglasak; reč prestane da zvuči kao reč.
+
+    U **engleskom** naglasak može biti bilo gde, a nastavci ga pomeraju: *PHO-to-graph*,
+    *pho-TOG-ra-phy*, *pho-to-GRAPH-ic*. Neke reči menjaju značenje: *RE-cord* (ploča, snimak),
+    *re-CORD* (snimiti).
+
+    **Srpski** ima pravilo koje štedi mnogo vremena: **u reči od dva ili više slogova naglasak
+    nikad nije na poslednjem slogu.** Većina reči je naglašena na prvom slogu (*KU-ća*,
+    *JA-bu-ka*, *DE-voj-ka*, *BE-o-grad*), neke na srednjem (*pla-NI-na*, *gi-TA-ra*,
+    *za-BO-ra-vi-ti*). Jednosložne reči kao *dan*, *san*, *noć* nose svoj naglasak, osim malih
+    reči koje se naslanjaju na susednu (*i, a, u, na, se, mi, je, ću*): one su nenaglašene
+    (proklitike i enklitike).
+
+    Srpski ima četiri akcenta (kratki ili dugi, silazni ili uzlazni). Za tekst je važno **gde**
+    je naglasak i da li je naglašeni samoglasnik **dug ili kratak**. Dug (*grȃd*, naselje)
+    prirodno nosi dugu notu; kratak (*grȁd*, led s neba) zadržan dugo zvuči razvučeno. To može
+    biti stilski izbor (starogradska to često radi), ali neka bude namerno. Uzlazna ili silazna
+    melodija akcenta se u pevanju uglavnom gubi pod melodijom pesme.
+
+    ### Veza sa klavirom
+
+    Sviraj ujednačen 4/4 na klaviru (jedan akord po taktu) i ritmično izgovaraj stih preko toga.
+    Naglašeni slogovi treba da padnu na prvu i treću dobu, ili na svaku dobu; nenaglašeni idu
+    između. Naglašen slog na slaboj dobi (*za-bo-ra-VI-ti* umesto *za-BO-ra-vi-ti*) je najčešći
+    razlog što tekst zvuči pogrešno iako su reči dobre.
+
+    Obeležavaj stihove ovako: broj slogova napred, naglašeni slogovi velikim slovima.
+
+    > (8) i WALKED a-LONG the EMP-ty STREET
+    > (8) KI-ša PA-da, GRAD se BU-di
+exercises:
+  - id: L-001-1
+    type: mcq
+    prompt: {en: "How many syllables: “I remember yesterday”?", sr: "Koliko slogova ima stih „I remember yesterday”?"}
+    options: ["5", "6", "7", "8"]
+    answer: 2
+    keepOrder: true
+  - id: L-001-2
+    type: mcq
+    prompt: {en: "How many syllables: “Srce moje, crveni trn” (remember syllabic r)?", sr: "Koliko slogova ima stih „Srce moje, crveni trn” (seti se slogotvornog r)?"}
+    options: ["5", "6", "7", "8"]
+    answer: 3
+    keepOrder: true
+    checks:
+      - syllables: {text: "Srce moje, crveni trn", lang: sr, is: 8}
+  - id: L-001-3
+    type: mcq
+    prompt: {en: "Which Serbian word has only one syllable?", sr: "Koja srpska reč ima samo jedan slog?"}
+    options: ["srce", "vrata", "prst", "crven"]
+    answer: 2
+    checks:
+      - syllables: {text: "srce", lang: sr, is: 2}
+      - syllables: {text: "vrata", lang: sr, is: 2}
+      - syllables: {text: "prst", lang: sr, is: 1}
+      - syllables: {text: "crven", lang: sr, is: 2}
+  - id: L-001-4
+    type: mcq
+    prompt: {en: "Where is the stress in “photography”?", sr: "Gde je naglasak u reči „photography”?"}
+    options: ["PHO-tog-ra-phy", "pho-TOG-ra-phy", "pho-tog-RA-phy", "pho-tog-ra-PHY"]
+    answer: 1
+    keepOrder: true
+  - id: L-001-5
+    type: mcq
+    prompt: {en: "Where is the stress in “planina”?", sr: "Gde je naglasak u reči „planina”?"}
+    options: ["PLA-ni-na", "pla-NI-na", "pla-ni-NA"]
+    answer: 1
+    keepOrder: true
+    checks:
+      - syllables: {text: "planina", lang: sr, is: 3}
+  - id: L-001-6
+    type: mcq
+    prompt: {en: "In standard Serbian, where can the stress NOT fall?", sr: "Gde u standardnom srpskom naglasak NE MOŽE da bude?"}
+    options:
+      - {en: "On the first syllable of a word", sr: "Na prvom slogu reči"}
+      - {en: "On a middle syllable of a word", sr: "Na srednjem slogu reči"}
+      - {en: "On the last syllable of a word with two or more syllables", sr: "Na poslednjem slogu reči od dva ili više slogova"}
+      - {en: "On a one-syllable word like dan or noć", sr: "Na jednosložnoj reči kao dan ili noć"}
+    answer: 2
+  - id: L-001-7
+    type: write
+    prompt:
+      en: "Write 4 lines about this morning (English or Serbian, any genre). Before each line write its syllable count in brackets, and put the stressed syllables in CAPITALS, as in the examples. Then speak each line over a steady 4/4 on the piano and check that the capitals land on beats."
+      sr: "Napiši 4 stiha o današnjem jutru (engleski ili srpski, bilo koji žanr). Ispred svakog stiha u zagradi upiši broj slogova, a naglašene slogove napiši VELIKIM SLOVIMA, kao u primerima. Onda izgovori svaki stih preko ujednačenog 4/4 na klaviru i proveri da li velika slova padaju na dobe."
+    language: either
+    lines: [4, 6]
+    rubric:
+      - id: count
+        label: {en: "Syllable counts", sr: "Broj slogova"}
+        top: {en: "Every bracketed count matches the line when you clap it syllable by syllable (syllabic r and -ed handled correctly).", sr: "Svaki broj u zagradi odgovara stihu kad ga otapšeš slog po slog (slogotvorno r i -ed su tačno računati)."}
+      - id: stress
+        label: {en: "Stress marking", sr: "Obeležen naglasak"}
+        top: {en: "Every capitalised syllable is where the word is stressed in normal speech; small words (the, a, i, u, se, je) are lower case.", sr: "Svaki slog velikim slovima je tamo gde je naglasak u običnom govoru; male reči (the, a, i, u, se, je) su malim slovima."}
+      - id: beat
+        label: {en: "Fits the beat", sr: "Leži na dobama"}
+        top: {en: "Spoken over 4/4, each line lands its stresses on beats without rushing or stretching any word; the four lines have similar length (within 1–2 syllables).", sr: "Izgovoren preko 4/4, svaki stih spušta naglaske na dobe bez žurbe i razvlačenja; četiri stiha su slične dužine (razlika najviše 1–2 sloga)."}

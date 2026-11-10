@@ -1,0 +1,164 @@
+id: K-013
+track: K
+order: 13
+title: {en: "ii–V–I with guide-tone voice leading (3rds and 7ths)", sr: "ii–V–I sa vođenjem ključnih tonova (terce i septime)"}
+prereqs: [K-012, T-025]
+minutes: 15
+tags: [keys, harmony, voice-leading, jazz]
+explain:
+  en: |
+    In a seventh chord, two notes carry the identity: the **3rd** (major or minor?) and the
+    **7th** (which kind of seventh?). The root is usually in the bass and the 5th adds little.
+    Jazz players call the 3rd and 7th the **guide tones**.
+
+    In ii7–V7–Imaj7 (C: Dm7–G7–Cmaj7) the guide tones connect almost without moving:
+
+    | | Dm7 | → G7 | → Cmaj7 |
+    |---|---|---|---|
+    | 7th of Dm7 = **C** | C | → **B** (3rd of G7) | B stays (7th of Cmaj7) |
+    | 3rd of Dm7 = **F** | F | F stays (7th of G7) | → **E** (3rd of Cmaj7) |
+
+    Each chord's 7th falls a step to the next chord's 3rd; each 3rd stays and becomes the next
+    7th. That happens because the roots move down a 5th (D→G→C), and it is why ii–V–I is the
+    backbone of jazz and so much pop.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [Fc] [FB] | [EB]2 |]
+    ```
+
+    **Voicing for two hands:** left hand plays the root; right hand plays the guide tones plus
+    one more note that also moves by step:
+
+    | key | ii7 | V7 | Imaj7 |
+    |---|---|---|---|
+    | C | D3 · F4 A4 C5 | G2 · F4 G4 B4 | C3 · E4 G4 B4 |
+    | G | A2 · C4 E4 G4 | D3 · C4 D4 F♯4 | G2 · B3 D4 F♯4 |
+    | F | G2 · B♭4 D5 F5 | C3 · B♭4 C5 E5 | F2 · A4 C5 E5 |
+
+    The V7 here has no 5th: it is not needed, the guide tones already say "dominant". Notice
+    that the right hand moves by at most one step at every change: that is what good voice
+    leading feels like under the fingers.
+  sr: |
+    U septakordu dva tona nose identitet: **terca** (velika ili mala?) i **septima** (koja vrsta
+    septime?). Osnovni ton je obično u basu, a kvinta malo dodaje. Džez muzičari tercu i septimu
+    zovu **ključni tonovi** (guide tones).
+
+    U ii7–V7–Imaj7 (C: Dm7–G7–Cmaj7) ključni tonovi se povezuju gotovo bez pomeranja:
+
+    | | Dm7 | → G7 | → Cmaj7 |
+    |---|---|---|---|
+    | septima Dm7 = **C** | C | → **H** (terca G7) | H ostaje (septima Cmaj7) |
+    | terca Dm7 = **F** | F | F ostaje (septima G7) | → **E** (terca Cmaj7) |
+
+    Septima svakog akorda pada za korak na tercu sledećeg; terca ostaje i postaje sledeća
+    septima. To se dešava jer osnovni tonovi idu za kvintu naniže (D→G→C), i zato je ii–V–I
+    kičma džeza i velikog dela popa.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [Fc] [FB] | [EB]2 |]
+    ```
+
+    **Raspored za dve ruke:** leva ruka svira osnovni ton; desna svira ključne tonove i još
+    jedan ton koji se takođe kreće za korak:
+
+    | tonalitet | ii7 | V7 | Imaj7 |
+    |---|---|---|---|
+    | C | D3 · F4 A4 C5 | G2 · F4 G4 H4 | C3 · E4 G4 H4 |
+    | G | A2 · C4 E4 G4 | D3 · C4 D4 Fis4 | G2 · H3 D4 Fis4 |
+    | F | G2 · B4 D5 F5 | C3 · B4 C5 E5 | F2 · A4 C5 E5 |
+
+    V7 ovde nema kvintu: nije potrebna, ključni tonovi već govore "dominanta". Primeti da se
+    desna ruka pri svakoj promeni pomera najviše za jedan korak: tako se dobro vođenje glasova
+    oseća pod prstima.
+exercises:
+  - id: K-013-1
+    type: midi-play
+    prompt: {en: "Guide tones only, right hand: Dm7 (F–C) → G7 (F–B) → Cmaj7 (E–B).", sr: "Samo ključni tonovi, desna ruka: Dm7 (F–C) → G7 (F–H) → Cmaj7 (E–H)."}
+    mode: chords
+    expectChords: [[F4, C5], [F4, B4], [E4, B4]]
+    checks:
+      - interval: {from: D4, to: A4, is: P5}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: D4, to: C5, is: m7}
+      - interval: {from: G4, to: B4, is: M3}
+      - interval: {from: G4, to: F5, is: m7}
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: C4, to: B4, is: M7}
+      - interval: {from: F4, to: B4, is: A4}
+      - semitones: {from: B4, to: C5, is: 1}
+      - semitones: {from: E4, to: F4, is: 1}
+  - id: K-013-2
+    type: midi-play
+    prompt: {en: "The other position: start with the 7th below the 3rd. Dm7 (C–F) → G7 (B–F) → Cmaj7 (B–E).", sr: "Drugi položaj: počni sa septimom ispod terce. Dm7 (C–F) → G7 (H–F) → Cmaj7 (H–E)."}
+    mode: chords
+    expectChords: [[C4, F4], [B3, F4], [B3, E4]]
+    checks:
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: B3, to: E4, is: P4}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-013-3
+    type: mcq
+    prompt: {en: "Which two notes are the guide tones of G7?", sr: "Koja dva tona su ključni tonovi G7?"}
+    options: ["G – D", "B – F", "G – B", "D – F"]
+    answer: 1
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - interval: {from: G3, to: B3, is: M3}
+      - interval: {from: G3, to: F4, is: m7}
+  - id: K-013-4
+    type: midi-play
+    prompt: {en: "Both hands in C: Dm7 (D3 · F4 A4 C5) → G7 (G2 · F4 G4 B4) → Cmaj7 (C3 · E4 G4 B4), one chord per beat at ♩=60.", sr: "Obe ruke u C-duru: Dm7 (D3 · F4 A4 C5) → G7 (G2 · F4 G4 H4) → Cmaj7 (C3 · E4 G4 H4), jedan akord po dobi, ♩=60."}
+    mode: chords
+    expectChords: [[D3, F4, A4, C5], [G2, F4, G4, B4], [C3, E4, G4, B4]]
+    tempo: 60
+    checks:
+      - semitones: {from: D3, to: F4, is: 15}
+      - semitones: {from: D3, to: A4, is: 19}
+      - semitones: {from: D3, to: C5, is: 22}
+      - chord: {notes: [C3, E4, G4, B4], root: C, quality: maj7, inversion: 0}
+      - semitones: {from: G2, to: B4, is: 28}
+      - semitones: {from: G2, to: F4, is: 22}
+  - id: K-013-5
+    type: midi-play
+    prompt: {en: "G major, notes hidden: Am7 (A2 · C4 E4 G4) → D7 (D3 · C4 D4 F♯4) → Gmaj7 (G2 · B3 D4 F♯4).", sr: "G-dur, bez prikaza tonova: Am7 (A2 · C4 E4 G4) → D7 (D3 · C4 D4 Fis4) → Gmaj7 (G2 · H3 D4 Fis4)."}
+    mode: chords
+    expectChords: [[A2, C4, E4, G4], [D3, C4, D4, "F#4"], [G2, B3, D4, "F#4"]]
+    tempo: 60
+    showNotes: false
+    checks:
+      - semitones: {from: A2, to: C4, is: 15}
+      - semitones: {from: A2, to: E4, is: 19}
+      - semitones: {from: A2, to: G4, is: 22}
+      - chord: {notes: [G2, B3, D4, "F#4"], root: G, quality: maj7, inversion: 0}
+      - semitones: {from: D3, to: "F#4", is: 16}
+      - semitones: {from: D3, to: C4, is: 10}
+      - roman: {key: G, degree: 2, is: "ii"}
+  - id: K-013-6
+    type: midi-play
+    prompt: {en: "F major, notes hidden: Gm7 (G2 · B♭4 D5 F5) → C7 (C3 · B♭4 C5 E5) → Fmaj7 (F2 · A4 C5 E5).", sr: "F-dur, bez prikaza tonova: Gm7 (G2 · B4 D5 F5) → C7 (C3 · B4 C5 E5) → Fmaj7 (F2 · A4 C5 E5)."}
+    mode: chords
+    expectChords: [[G2, Bb4, D5, F5], [C3, Bb4, C5, E5], [F2, A4, C5, E5]]
+    tempo: 60
+    showNotes: false
+    checks:
+      - semitones: {from: G2, to: Bb4, is: 27}
+      - semitones: {from: G2, to: D5, is: 31}
+      - semitones: {from: G2, to: F5, is: 34}
+      - chord: {notes: [F2, A4, C5, E5], root: F, quality: maj7, inversion: 0}
+      - semitones: {from: C3, to: E5, is: 28}
+      - semitones: {from: C3, to: Bb4, is: 22}
+      - roman: {key: F, degree: 2, is: "ii"}
+  - id: K-013-7
+    type: generated
+    prompt: {en: "ii7–V7–Imaj7 in close position, in C, G, F or B♭ (any octave)", sr: "ii7–V7–Imaj7 u uskom slogu, u C, G, F ili B-duru (bilo koja oktava)"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F, Bb], numerals: [ii7, V7, Imaj7], tempo: 60}

@@ -1,0 +1,143 @@
+id: C-005
+track: C
+order: 5
+prereqs: [C-004]
+title: {en: "Rhythmic variation of a motif", sr: "Ritmička varijacija motiva"}
+minutes: 14
+tags: [composition, melody, rhythm]
+explain:
+  en: |
+    A motif is pitches *and* rhythm. Change only the pitches and you get a sequence (C-002).
+    Change only the **rhythm** and keep the pitches, and you get a variation that the ear still
+    links to the original, because the notes are the same, while it sounds fresh.
+
+    The standard moves, on the motif G–A–B in G major (quarter, quarter, half):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    "^motif"G2 A2 B4 | "^dotted"G3 A B4 | "^diminution"G A B2 z4 | "^syncopated"z G2 A2 B3 | "^augmentation"G4 A4 | B8 |]
+    ```
+
+    | move | what changes | effect |
+    |---|---|---|
+    | **dotting** | even notes become long–short | more swing, more push |
+    | **diminution** | all values halved | faster, urgent, often used near a climax |
+    | **augmentation** | all values doubled | broad, solemn, good for an ending |
+    | **displacement / syncopation** | the motif starts off the beat | surprise; the accent moves |
+    | **splitting / joining** | one long note becomes two short repeated ones, or the reverse | fits new words, adds energy |
+
+    **Why it works.** The ear tracks pitch shape and rhythm separately. Keep one and change the
+    other, and the listener gets "same but different", which is exactly what a melody needs to hold
+    attention for 8 bars. Change both at once and it is a new idea.
+
+    **Combine with what you know.** A sequence *with* a rhythmic change (motif in bar 1, the same
+    shape a step higher and dotted in bar 2) is how real melodies move forward.
+
+    **At the keyboard:** play G–A–B five times in a row, each time with a different rhythm from the
+    table, without stopping. Then do it with your own motif.
+  sr: |
+    Motiv čine tonovi *i* ritam. Promeni samo tonove i dobiješ sekvencu (C-002).
+    Promeni samo **ritam**, a tonove zadrži, i dobiješ varijaciju koju uho i dalje vezuje za original,
+    jer su tonovi isti, a zvuči sveže.
+
+    Standardni postupci, na motivu G–A–H u G-duru (četvrtina, četvrtina, polovina):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    "^motiv"G2 A2 B4 | "^tačkasti ritam"G3 A B4 | "^diminucija"G A B2 z4 | "^sinkopa"z G2 A2 B3 | "^augmentacija"G4 A4 | B8 |]
+    ```
+
+    | postupak | šta se menja | efekat |
+    |---|---|---|
+    | **punktiranje (tačkasti ritam)** | jednake note postaju dugo–kratko | više zamaha, više potiska |
+    | **diminucija** | sva trajanja prepolovljena | brže, hitnije, često pred kulminacijom |
+    | **augmentacija** | sva trajanja udvostručena | široko, svečano, dobro za završetak |
+    | **pomeranje / sinkopa** | motiv počinje van dobe | iznenađenje; akcenat se pomera |
+    | **deljenje / spajanje** | jedan dug ton postaje dva kratka ponovljena, ili obrnuto | odgovara novim rečima, dodaje energiju |
+
+    **Zašto to radi.** Uho prati oblik tonova i ritam odvojeno. Zadrži jedno, promeni drugo, i
+    slušalac dobija „isto, a drugačije", što je baš ono što melodiji treba da zadrži pažnju 8 taktova.
+    Promeni oba odjednom i to je nova ideja.
+
+    **Kombinuj sa onim što znaš.** Sekvenca *sa* ritmičkom promenom (motiv u taktu 1, isti oblik
+    stupanj više i punktiran u taktu 2) je način na koji prave melodije idu napred.
+
+    **Za klavirom:** odsviraj G–A–H pet puta zaredom, svaki put drugim ritmom iz tabele, bez
+    zaustavljanja. Onda isto sa svojim motivom.
+exercises:
+  - id: C-005-1
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nG2 A2 B4 | G3 A B4 | G A B2 z4 | G4 A4 | B8 |]"
+    prompt: {en: "Where is the motif (bar 1) in augmentation?", sr: "Gde je motiv (takt 1) u augmentaciji?"}
+    options:
+      - {en: "bar 2", sr: "takt 2"}
+      - {en: "bar 3", sr: "takt 3"}
+      - {en: "bars 4–5", sr: "taktovi 4–5"}
+      - {en: "nowhere", sr: "nigde"}
+    answer: 2
+  - id: C-005-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nG2 A2 B4 | G3 A B4 | G A B2 z4 | G4 A4 | B8 |]"
+    prompt: {en: "What changed from bar 1 to bar 3?", sr: "Šta se promenilo od takta 1 do takta 3?"}
+    options:
+      - {en: "the rhythm: every value is halved (diminution)", sr: "ritam: svako trajanje je prepolovljeno (diminucija)"}
+      - {en: "the pitches: it is a sequence", sr: "tonovi: to je sekvenca"}
+      - {en: "the rhythm: it is dotted", sr: "ritam: punktiran je"}
+      - {en: "nothing", sr: "ništa"}
+    answer: 0
+  - id: C-005-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nG2 A2 B4 | A3 B c4 |]"
+    prompt: {en: "Bar 2 compared with bar 1 is...", sr: "Takt 2 u odnosu na takt 1 je..."}
+    options:
+      - {en: "a sequence a step up, with a dotted rhythm", sr: "sekvenca stupanj više, sa tačkastim ritmom"}
+      - {en: "an exact repetition", sr: "tačno ponavljanje"}
+      - {en: "the motif in augmentation", sr: "motiv u augmentaciji"}
+      - {en: "a new motif with nothing in common", sr: "novi motiv bez ičeg zajedničkog"}
+    answer: 0
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+  - id: C-005-4
+    type: generated
+    prompt: {en: "Rhythm echo: listen, then tap the rhythm back on any key. Notice dotted and long–short figures.", sr: "Ritmički odjek: slušaj, pa otkucaj ritam na bilo kojoj dirci. Obrati pažnju na tačkaste i dugo–kratko figure."}
+    count: 3
+    gen: {kind: rhythm-echo, meter: 4/4, bars: 1, values: [0.5, 1, 1.5, 2], tempo: 76}
+  - id: C-005-5
+    type: compose
+    prompt:
+      en: "The motif G–A–B is given in bar 1 (G major). Bar 2: the same three pitches in a new rhythm. Bar 3: a sequence a step up, in another rhythm again. Bar 4: end on G held, reached by step."
+      sr: "Motiv G–A–H je zadat u taktu 1 (G-dur). Takt 2: ista tri tona u novom ritmu. Takt 3: sekvenca stupanj više, opet u drugom ritmu. Takt 4: kraj na zadržanom G, do kog stižeš za korak."
+    given: "X:1\nM:4/4\nL:1/8\nK:G\nG2 A2 B4 |\n"
+    key: G major
+    meter: 4/4
+    bars: 4
+    range: [D4, E5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:G
+      G2 A2 B4 | G3 A B4 | A B c2 A B c2 | B2 A2 G4 |]
+  - id: C-005-6
+    type: compose
+    prompt:
+      en: "Your own motif in F major, 3/4, 4 bars: state it in bar 1, vary only its rhythm in bars 2 and 3 (try dotting, then diminution), and end on F in bar 4. Remember B is B♭ here."
+      sr: "Tvoj motiv u F-duru, 3/4, 4 takta: izloži ga u taktu 1, u taktovima 2 i 3 menjaj samo ritam (probaj punktiranje, pa diminuciju), a u taktu 4 završi na F. Seti se da je ovde B, ne H."
+    key: F major
+    meter: 3/4
+    bars: 4
+    range: [C4, D5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:3/4
+      L:1/8
+      K:F
+      A2 G2 F2 | A3 G F2 | A G F2 G2 | F6 |]

@@ -1,0 +1,133 @@
+id: PL-013
+kind: lyrics
+order: 50
+title: {en: "Lyrics: the rewrite (cut 30%, sharpen the images)", sr: "Tekst: prepravka (skrati 30%, izoštri slike)"}
+minutes: 75
+prereqs: [L-004, L-005]
+lyrics:
+  genre: {en: "editing / rewrite", sr: "uređivanje / prepravka"}
+  language: either
+  lines: [8, 40]
+  structure:
+    en: "the original lyric, then the revised version (at least 30% fewer words), then an edit log of 3–6 points"
+    sr: "originalni tekst, pa prepravljena verzija (bar 30% manje reči), pa dnevnik izmena od 3–6 tačaka"
+brief:
+  en: |
+    Take **one of your own lyrics from this year** (any of the lyrics projects, PL-001 to
+    PL-012) and **rewrite it**: cut at least **30% of the words** and make every remaining image
+    sharper. Professional songwriters spend more time rewriting than writing; this is the habit
+    that turns a draft into a song.
+
+    ### What to submit
+
+    1. **The original**, unchanged, with its word count.
+    2. **The rewrite**, with its word count. The rewrite must have **at least 30% fewer words**
+       (e.g. 180 → 126 or fewer). Count every word, repeated choruses written out once in both.
+    3. **An edit log** of 3–6 points: what you cut or changed and why.
+
+    ### Editing techniques
+
+    - **Cut the throat-clearing.** The first verse often starts with setup the listener does not
+      need. Try deleting the first two lines: does the song start better?
+    - **One idea once.** If two lines say the same thing in different words, keep the better one.
+    - **Abstract → concrete (L-004).** Replace every named emotion (*lonely, sad, sretan,
+      tužan*) with an image or an action that shows it.
+    - **Adjectives and adverbs:** most can go. A precise noun (*a Zastava*, not *an old car*) or
+      verb (*slammed*, not *closed angrily*) does both jobs.
+    - **Filler words:** *just, really, so, oh, baby, eto, sad, baš, onda* used only to fill the
+      meter. Fix the meter properly instead.
+    - **Shorten the chorus.** A chorus usually improves when it loses a line; the title stands out
+      more (L-005).
+    - **Check the title** after cutting: is it still the strongest phrase in the song?
+    - **Keep the form singable:** the rewrite still needs a consistent meter and rhyme scheme.
+      Cutting words is not the same as breaking lines.
+
+    A made-up before/after:
+
+    > Before (17 words): *I was feeling really lonely and so sad last night, / thinking about all
+    > the good times we had.*
+    > After (7 words): *Two cups still on the drying rack.*
+
+    ### Practical tips
+
+    - Leave the original alone for a day before you start (you already have: it is weeks old).
+    - Read the original aloud and mark every line where your attention drifts. Those go first.
+    - Count words with any editor's word counter; the reviewer will check the percentage.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line. If the reviewer is
+    unavailable you rate yourself against the same descriptions. There are no automatic rule
+    checks for lyrics; read your text aloud (or sing it) before you submit.
+  sr: |
+    Uzmi **jedan svoj tekst od ove godine** (bilo koji od projekata teksta, PL-001 do PL-012) i
+    **prepravi ga**: izbaci bar **30% reči** i izoštri svaku sliku koja ostane. Profesionalni
+    autori više vremena provode prepravljajući nego pišući; ovo je navika koja nacrt pretvara u
+    pesmu.
+
+    ### Šta predaješ
+
+    1. **Original**, neizmenjen, sa brojem reči.
+    2. **Prepravku**, sa brojem reči. Prepravka mora imati **bar 30% manje reči** (npr. 180 →
+       126 ili manje). Broji svaku reč; ponovljene refrene u oba teksta napiši jednom.
+    3. **Dnevnik izmena** od 3–6 tačaka: šta si izbacio ili promenio i zašto.
+
+    ### Tehnike uređivanja
+
+    - **Izbaci nakašljavanje.** Prva strofa često počinje uvodom koji slušaocu ne treba. Probaj
+      da obrišeš prva dva stiha: da li pesma bolje počinje?
+    - **Jedna ideja jednom.** Ako dva stiha kažu isto drugim rečima, zadrži bolji.
+    - **Apstraktno → konkretno (L-004).** Zameni svako imenovano osećanje (*lonely, sad, srećan,
+      tužan*) slikom ili radnjom koja ga pokazuje.
+    - **Pridevi i prilozi:** većina može da ode. Precizna imenica (*zastava*, ne *stari auto*) ili
+      glagol (*zalupio*, ne *ljutito zatvorio*) radi oba posla.
+    - **Reči-punila:** *just, really, so, oh, baby, eto, sad, baš, onda* upotrebljene samo da
+      popune metar. Umesto toga popravi metar kako treba.
+    - **Skrati refren.** Refren obično postane bolji kad izgubi jedan stih; naslov se više ističe
+      (L-005).
+    - **Proveri naslov** posle skraćivanja: da li je i dalje najjača fraza u pesmi?
+    - **Zadrži pevljiv oblik:** prepravka i dalje mora imati dosledan metar i šemu rime. Izbacivanje
+      reči nije isto što i lomljenje stihova.
+
+    Izmišljen primer pre/posle:
+
+    > Pre (17 reči na engleskom): *I was feeling really lonely and so sad last night, / thinking
+    > about all the good times we had.*
+    > Posle (7 reči): *Two cups still on the drying rack.*
+
+    ### Praktični saveti
+
+    - Ostavi original na miru dan pre nego što počneš (već jesi: star je nedeljama).
+    - Pročitaj original naglas i obeleži svaki stih gde ti pažnja odluta. Ti idu prvi.
+    - Broj reči bilo kojim brojačem reči u editoru; recenzent će proveriti procenat.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Ako
+    recenzent nije dostupan, oceniš se sam prema istim opisima. Za tekst nema automatske provere
+    pravila; pročitaj tekst naglas (ili ga otpevaj) pre predaje.
+rubric:
+  - id: cut
+    weight: 2
+    label: {en: "At least 30% cut", sr: "Bar 30% skraćeno"}
+    top:
+      en: "Word counts for both versions are given and correct, and the rewrite is at least 30% shorter, with cuts from every section rather than one deleted verse."
+      sr: "Brojevi reči za obe verzije su navedeni i tačni, a prepravka je bar 30% kraća, sa rezovima u svakom delu, a ne jednom obrisanom strofom."
+  - id: images
+    weight: 2
+    label: {en: "Sharper images", sr: "Oštrije slike"}
+    top:
+      en: "Named emotions and vague phrases are replaced by concrete images or actions; every remaining line earns its place; filler words are gone."
+      sr: "Imenovana osećanja i nejasne fraze zamenjene su konkretnim slikama ili radnjama; svaki preostali stih zaslužuje svoje mesto; reči-punila su nestale."
+  - id: song
+    weight: 1
+    label: {en: "Still a song", sr: "I dalje pesma"}
+    top:
+      en: "The rewrite keeps a consistent meter, rhyme scheme and structure, and the title is still (or now) the strongest phrase."
+      sr: "Prepravka zadržava dosledan metar, šemu rime i strukturu, a naslov je i dalje (ili sada) najjača fraza."
+  - id: log
+    weight: 1
+    label: {en: "Edit log", sr: "Dnevnik izmena"}
+    top:
+      en: "3–6 specific points that name what changed and why, showing the techniques were applied on purpose."
+      sr: "3–6 konkretnih tačaka koje imenuju šta je promenjeno i zašto, i pokazuju da su tehnike primenjene namerno."

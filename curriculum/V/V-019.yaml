@@ -1,0 +1,113 @@
+id: V-019
+track: V
+order: 19
+title: {en: "Dynamics: soft to medium on one note (no pushing)", sr: "Dinamika: od tihog do srednje jakog na jednom tonu (bez guranja)"}
+prereqs: [V-018]
+minutes: 10
+tags: [voice, dynamics, support]
+explain:
+  en: |
+    **Dynamics** (Serbian: *dinamika*) are the loudness levels of music. You know the marks from the piano: **p** (piano, soft), **mp** (mezzo-piano), **mf** (mezzo-forte, medium).
+    Today goes from p to mf and **no further**. Louder is not better, and it is not the goal of this lesson.
+
+    The voice is not a piano: you cannot just "press harder". A healthy louder sound comes from more efficient resonance and steady breath; squeezing the throat
+    gives a louder sound for a short while and a tired voice after. A good rule: **mf is about the loudness of a lively conversation**, never of a shout.
+
+    What happens to pitch when loudness changes:
+
+    - **Getting louder, the pitch creeps sharp**, because pushing adds tension.
+    - **Getting softer, the pitch sags flat**, because the support lets go. Soft singing needs the **same** steady air as medium, just less of it.
+
+    The main exercise is a small swell on one note: soft, a little louder, soft again (classical singers call the full version *messa di voce*).
+    The pitch must stay put while the volume moves. Start it on a hum or "oo", where it is easiest.
+
+    The app checks the pitch and how long you hold the note; the loudness is for you to judge (phone and laptop microphones are poor loudness meters).
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Dinamika** (engl. *dynamics*) su stepeni jačine u muzici. Oznake znaš sa klavira: **p** (piano, tiho), **mp** (mecopiano), **mf** (mecoforte, srednje jako).
+    Danas idemo od p do mf i **ne dalje**. Glasnije nije bolje, i nije cilj ove lekcije.
+
+    Glas nije klavir: ne može samo „jače da se pritisne”. Zdrav jači zvuk dolazi od efikasnije rezonancije i stabilnog daha; stezanje grla
+    nakratko daje jači zvuk, a posle umoran glas. Dobro pravilo: **mf je otprilike jačina živog razgovora**, nikad vike.
+
+    Šta se dešava sa visinom kad se jačina menja:
+
+    - **Kad pojačavaš, visina se penje**, jer guranje dodaje napetost.
+    - **Kad stišavaš, visina pada**, jer oslonac popusti. Tiho pevanje traži **isti** stabilan dah kao srednje jako, samo manje vazduha.
+
+    Glavna vežba je malo nadolaženje na jednom tonu: tiho, malo jače, pa opet tiho (klasični pevači punu verziju zovu *messa di voce*).
+    Visina mora da stoji dok se jačina pomera. Počni na pevušenju ili „u”, gde je najlakše.
+
+    Aplikacija proverava visinu i koliko dugo držiš ton; jačinu procenjuješ ti (mikrofoni telefona i laptopa su loši merači jačine).
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-019-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-019-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 2 slow hisses on 'sss', 3 quiet sirens on 'ng', then lip trills along with the five notes up and down."
+      sr: "Zagrevanje: 2 spora šištanja na „sss”, 3 tihe sirene na „ng”, pa treperenje usnama uz pet tonova gore i dole."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 100}
+    checks:
+      - interval: {from: C4, to: D4, is: M2}
+      - interval: {from: D4, to: E4, is: M2}
+      - interval: {from: E4, to: F4, is: m2}
+      - interval: {from: F4, to: G4, is: M2}
+  - id: V-019-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Swell on a hum: on one easy note, hum p, grow to mp, back to p, about 5 seconds in all. 4 times. The pitch stays put; the ribs stay open."
+      sr: "Nadolaženje na pevušenju: na jednom lakom tonu pevuši p, pojačaj do mp, vrati na p, ukupno oko 5 sekundi. 4 puta. Visina stoji; rebra ostaju otvorena."
+  - id: V-019-4
+    type: sing-pitch
+    prompt:
+      en: "Soft (p) 'ah', 3 seconds. Soft but not breathy: the same steady air, just less of it. Listen that it does not sag."
+      sr: "Tiho (p) „a”, 3 sekunde. Tiho, ali ne dahtavo: isti stabilan dah, samo manje. Slušaj da ne padne."
+    notes: [A3]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-019-5
+    type: sing-pitch
+    prompt:
+      en: "Medium (mf) 'ah' on the same note, 3 seconds: lively-conversation loudness, no more. Listen that it does not creep sharp."
+      sr: "Srednje jako (mf) „a” na istom tonu, 3 sekunde: jačina živog razgovora, ne više. Slušaj da se ne penje."
+    notes: [A3]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-019-6
+    type: sing-pitch
+    prompt:
+      en: "The swell on 'oo': p, grow to mf, back to p, over 6 seconds. The pitch does not move."
+      sr: "Nadolaženje na „u”: p, pojačaj do mf, vrati na p, tokom 6 sekundi. Visina se ne pomera."
+    notes: [G3]
+    sustain: 6
+    tolerance: 75
+    pass: 0.65
+  - id: V-019-7
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-4-5-4-3-2-1 on 'la': grow from p to mf going up, back to p coming down. The top note is mf, not louder."
+      sr: "1-2-3-4-5-4-3-2-1 na „la”: od p do mf naviše, nazad do p naniže. Gornji ton je mf, ne jače."
+    notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-019-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: rate how well the pitch stayed steady while the volume changed, and whether mf ever felt like pushing (if yes, your mf is lower than you thought: that is fine)."
+      sr: "Samoprocena: oceni koliko je visina ostala mirna dok se jačina menjala, i da li je mf ikad bilo kao guranje (ako jeste, tvoj mf je niži nego što misliš: to je u redu)."

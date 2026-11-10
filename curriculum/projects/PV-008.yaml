@@ -1,0 +1,165 @@
+id: PV-008
+kind: vocal
+order: 31
+title: {en: "Sing: light agility (Minuet in G, as a vocalise)", sr: "Pevaj: laka pokretljivost (Menuet u G-duru kao vokaliza)"}
+minutes: 40
+prereqs: [V-023]
+melody:
+  title: {en: "Minuet (BWV Anh. 114), transposed to D major", sr: "Menuet (BWV Anh. 114), transponovan u D-dur"}
+  source: "Minuet in G major, BWV Anh. 114, from the 1725 Notebook for Anna Magdalena Bach, now attributed to Christian Petzold (c. 1677-1733). Public domain. First section (bars 1-16, both endings written out), transposed down a fourth from G to D major for the voice."
+  key: D major
+  meter: 3/4
+  tempo: 84
+  notes: [A4, D4, E4, F#4, G4, A4, D4, D4, B4, G4, A4, B4, C#5, D5, D4, D4, G4, A4, G4, F#4, E4, F#4, G4, F#4, E4, D4, C#4, D4, E4, F#4, D4, E4, A4, D4, E4, F#4, G4, A4, D4, D4, B4, G4, A4, B4, C#5, D5, D4, D4, G4, A4, G4, F#4, E4, F#4, G4, F#4, E4, D4, E4, F#4, E4, D4, C#4, D4]
+  beats: [1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 3, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 3]
+tolerance: 60
+brief:
+  en: |
+    Record yourself singing the famous **Minuet in G** (the "Anna Magdalena" minuet, now
+    credited to Christian Petzold) as a **vocalise**: no words, on **"dah"** or **"doo"**,
+    transposed to **D major** so it sits in the middle of the voice. 16 bars of 3/4 with runs of
+    four eighth notes in almost every bar. This week is **light agility** (V-023): small, quick
+    notes that stay in tune and stay light.
+
+    ```abc
+    X:1
+    T:Minuet BWV Anh. 114 (in D)
+    M:3/4
+    L:1/8
+    Q:1/4=84
+    K:D
+    A2 DE FG | A2 D2 D2 | B2 GA Bc | d2 D2 D2 |
+    G2 AG FE | F2 GF ED | C2 DE FD | E6 !breath! |
+    A2 DE FG | A2 D2 D2 | B2 GA Bc | d2 D2 D2 |
+    G2 AG FE | F2 GF ED | E2 FE DC | D6 |]
+    ```
+
+    ### The musical idea
+
+    - **Two 8-bar halves, almost identical.** Bars 1–7 and 9–15 are the same until the last run:
+      the first half ends on E (open, a half close), the second runs down to C# and ends on D.
+    - **Each bar is a quarter note plus a run.** The quarter is the anchor; the four eighths are
+      a quick, even ornament around it.
+    - **The octave drops** in bars 4 and 12 (D5 down to D4, twice) are the one big jump. Keep the
+      low Ds light; they are an echo, not a landing.
+
+    ### Before you sing
+
+    - **Check in** (as in V-001): hum softly for a few seconds. Rested and clear? Go ahead. Hoarse,
+      sore, tired or getting a cold? Do the warm-up only and record another day.
+    - **Warm up first**, at least 5 minutes: low silent breaths, lip trills or a hum on
+      five-note scales, gentle sirens on "ng".
+    - **Stop if anything hurts, scratches or you get hoarse.** Nothing in this piece is worth
+      pushing through discomfort; rest and try another day.
+    - **Sing in a comfortable octave.** The written range is C#4–D5. Sing it wherever it sits easily
+      for your voice (most men an octave lower than written): pitch is measured against the note
+      names, not the octave.
+    - **Agility warm-up:** five-note scales on "dah" at a slow tempo, then a little faster, then
+      the first bar of the piece on its own, three times.
+
+    ### How to sing it
+
+    - **Light, not loud.** Agility only works with a small, easy sound. Think of the eighths as
+      *rolling*, not as separate punches; a soft "d" on each note keeps them clean without
+      aspirating ("ha-ha-ha" is what to avoid).
+    - **Slow first.** Practise at about 60 BPM until every eighth is in tune, then go up to the
+      recording tempo of 84. If 84 makes the notes smear, record at a slower tempo you can
+      control; clean beats fast.
+    - **Breathe** after bar 8 (the mark); with this much movement you may also take a quick sip
+      of air after bar 4 or bar 12, on the low D. Keep those sips silent.
+    - **The C#s** (bars 3, 7, 11, 15) are raised notes leading upward; aim them high.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody,
+      within 60 cents, a bit more than half a semitone.
+    - **The rubric (40%)** below covers what a pitch meter cannot hear. A reviewer
+      scores it, or you rate yourself from the recording if the reviewer is unavailable. Listen
+      back once before rating.
+  sr: |
+    Snimi sebe kako pevaš poznati **Menuet u G-duru** („menuet Ane Magdalene”, danas
+    pripisan Kristijanu Pecoldu) kao **vokalizu**: bez reči, na **„da”** ili **„du”**,
+    transponovan u **D-dur** da leži u sredini glasa. 16 taktova u 3/4 sa nizovima od četiri
+    osmine u skoro svakom taktu. Ova nedelja je **laka pokretljivost** (V-023): sitni, brzi
+    tonovi koji ostaju čisti i laki.
+
+    ```abc
+    X:1
+    T:Minuet BWV Anh. 114 (in D)
+    M:3/4
+    L:1/8
+    Q:1/4=84
+    K:D
+    A2 DE FG | A2 D2 D2 | B2 GA Bc | d2 D2 D2 |
+    G2 AG FE | F2 GF ED | C2 DE FD | E6 !breath! |
+    A2 DE FG | A2 D2 D2 | B2 GA Bc | d2 D2 D2 |
+    G2 AG FE | F2 GF ED | E2 FE DC | D6 |]
+    ```
+
+    ### Muzička ideja
+
+    - **Dve polovine od 8 taktova, skoro iste.** Taktovi 1–7 i 9–15 su isti do poslednjeg niza:
+      prva polovina se završava na E (otvoreno, polukadenca), druga silazi do Cis i završava na D.
+    - **Svaki takt je četvrtina plus niz.** Četvrtina je sidro; četiri osmine su brz, ujednačen
+      ukras oko nje.
+    - **Padovi za oktavu** u taktovima 4 i 12 (D5 naniže na D4, dvaput) su jedini veliki skok.
+      Neka donja D budu laka; ona su eho, ne doskok.
+
+    ### Pre pevanja
+
+    - **Provera** (kao u V-001): tiho pevuši nekoliko sekundi. Odmoran i čist glas? Samo napred.
+      Promuklost, bol, umor ili prehlada na pomolu? Uradi samo zagrevanje i snimaj drugog dana.
+    - **Prvo se zagrej**, najmanje 5 minuta: niski tihi udasi, treperenje usnama ili
+      pevušenje na lestvicama od pet tonova, blage sirene na „ng”.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Ništa u ovoj pesmi ne vredi
+      guranja kroz nelagodu; odmori se i probaj drugog dana.
+    - **Pevaj u udobnoj oktavi.** Zapisani opseg je Cis4–D5. Pevaj tamo gde ti glasu lako leži
+      (većina muškaraca oktavu niže od zapisanog): visina se meri prema imenima tonova, ne prema
+      oktavi.
+    - **Zagrevanje za pokretljivost:** lestvice od pet tonova na „da” u sporom tempu, pa malo
+      brže, pa sam prvi takt komada, tri puta.
+
+    ### Kako se peva
+
+    - **Lako, ne glasno.** Pokretljivost radi samo sa malim, lakim zvukom. Zamišljaj osmine kako
+      se *kotrljaju*, ne kao posebne udarce; meko „d” na svakom tonu ih drži čistim bez
+      izduvavanja vazduha („ha-ha-ha” je ono što izbegavamo).
+    - **Prvo sporo.** Vežbaj oko 60 BPM dok svaka osmina ne bude čista, pa idi na tempo snimka,
+      84. Ako se u 84 tonovi razmazuju, snimaj u sporijem tempu koji kontrolišeš; čisto pobeđuje
+      brzo.
+    - **Udahni** posle 8. takta (znak); uz ovoliko kretanja možeš i kratko da gucneš vazduha
+      posle 4. ili 12. takta, na donjem D. Neka ti gutljaji budu nečujni.
+    - **Cis** (taktovi 3, 7, 11, 15) su povišeni tonovi koji vode naviše; ciljaj ih visoko.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju
+      od 60 centi, nešto više od pola polustepena.
+    - **Rubrika (40%)** ispod pokriva ono što merač visine ne čuje. Ocenjuje je
+      recenzent, ili ti sam sa snimka ako recenzent nije dostupan. Preslušaj snimak jednom pre
+      ocenjivanja.
+rubric:
+  - id: agility
+    weight: 2
+    label: {en: "Clean runs", sr: "Čisti nizovi"}
+    top:
+      en: "Every group of four eighths is even in rhythm and each note distinct and in tune; no smearing, no 'h' between notes."
+      sr: "Svaka grupa od četiri osmine je ritmički ujednačena, a svaki ton jasan i čist; bez razmazivanja, bez „h” između tonova."
+  - id: lightness
+    weight: 2
+    label: {en: "Light, easy tone", sr: "Lak, neforsiran ton"}
+    top:
+      en: "A small, bright, effortless sound throughout; the D5s in bars 4 and 12 are not pushed and the low D4s after them are light."
+      sr: "Mali, svetao zvuk bez napora kroz ceo komad; D5 u taktovima 4 i 12 nije gurano, a donja D4 posle njih su laka."
+  - id: time
+    weight: 1
+    label: {en: "Steady minuet pulse", sr: "Stalan puls menueta"}
+    top:
+      en: "An even three-beat pulse at a chosen tempo, not rushing the runs or stretching the quarter notes."
+      sr: "Ravnomeran puls na tri dobe u izabranom tempu, bez žurenja u nizovima i razvlačenja četvrtina."
+  - id: phrase
+    weight: 1
+    label: {en: "Two halves", sr: "Dve polovine"}
+    top:
+      en: "The first half sounds open on E and the second clearly concludes on D; breaths silent and placed on the low notes."
+      sr: "Prva polovina zvuči otvoreno na E, a druga se jasno zaključuje na D; udasi nečujni i postavljeni na donje tonove."

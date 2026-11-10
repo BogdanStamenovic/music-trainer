@@ -1,0 +1,94 @@
+id: E-018
+track: E
+order: 18
+title: {en: "Rhythm echo: syncopation, triplets, compound meter", sr: "Ritmički eho: sinkopa, triole, složeni takt"}
+prereqs: [E-017, T-018]
+minutes: 14
+tags: [ear, rhythm]
+explain:
+  en: |
+    **Syncopation** is a note that starts *off* the beat and holds *through* the next beat, so the
+    accent lands where you did not expect it. The classic figure is eighth–quarter–eighth:
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/8
+    K:C clef=perc
+    B B2 B | B B2 B | B4 |]
+    ```
+
+    Counting **1 & 2 &**, the quarter starts on the "&" of 1 and nothing new happens on beat 2. The
+    trap is to tap something on 2 because your body expects it. Keep the pulse in your foot and let
+    the hand skip the beat.
+
+    **Compound meter** (6/8): the beat is a **dotted quarter** divided into **three** eighths.
+    Count "**1** & a **2** & a". Common figures: three eighths, quarter + eighth (*long–short*,
+    a lilt), dotted quarter (one note per beat).
+
+    **Triplets** in 2/4 sound exactly like eighths in 6/8: three even notes per beat. The only
+    difference is how it is written. So if you can feel 6/8, you can feel triplets. Count
+    "**1**-trip-let **2**-trip-let" and listen for grouping: two notes per beat (straight eighths)
+    or three (triplets)? Exercise 4 mixes both without notation.
+
+    The app states the tempo as a quarter note. In 6/8 a dotted quarter is one and a half
+    quarters, so at ♩=90 the felt pulse (♩.) is 60, one per second.
+  sr: |
+    **Sinkopa** je ton koji počinje *van* dobe i traje *preko* sledeće dobe, pa akcenat padne gde ga
+    nisi očekivao. Klasična figura je osmina–četvrtina–osmina:
+
+    ```abc
+    X:1
+    M:2/4
+    L:1/8
+    K:C clef=perc
+    B B2 B | B B2 B | B4 |]
+    ```
+
+    Brojeći **1 i 2 i**, četvrtina počinje na „i" prve dobe, a na 2 se ništa novo ne dešava. Zamka je
+    da otkucaš nešto na 2 jer telo to očekuje. Drži puls u nozi i pusti ruku da preskoči dobu.
+
+    **Složeni takt** (6/8): doba je **četvrtina s tačkom** podeljena na **tri** osmine. Broji
+    „**1** i a **2** i a". Česte figure: tri osmine, četvrtina + osmina (*dugo–kratko*, njihanje),
+    četvrtina s tačkom (jedan ton po dobi).
+
+    **Triole** u 2/4 zvuče potpuno isto kao osmine u 6/8: tri ravnomerna tona po dobi. Razlika je
+    samo u zapisu. Ako osećaš 6/8, osećaš i triole. Broji „**1** i a **2** i a" i slušaj
+    grupisanje: dva tona po dobi (obične osmine) ili tri (triole)? Vežba 4 meša oba, bez nota.
+
+    Aplikacija navodi tempo u četvrtinama. U 6/8 četvrtina s tačkom je jedna i po četvrtina, pa je
+    pri ♩=90 osećani puls (♩.) 60, jedan u sekundi.
+exercises:
+  - id: E-018-1
+    type: generated
+    prompt: {en: "Syncopation in 2/4: eighth–quarter–eighth and friends", sr: "Sinkopa u 2/4: osmina–četvrtina–osmina i srodne figure"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[0.5, 1, 0.5], [1], [0.5, 0.5], [0.5, 1.5]], tempo: 66}
+  - id: E-018-2
+    type: generated
+    prompt: {en: "Syncopation in 4/4, by ear only (no notation)", sr: "Sinkopa u 4/4, samo po sluhu (bez nota)"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "4/4", bars: 2, cells: [[0.5, 1, 0.5], [1], [0.5, 0.5], [1.5, 0.5], [0.5, 1.5]], tempo: 76, showAbc: false}
+  - id: E-018-3
+    type: generated
+    prompt: {en: "Triplets against quarters in 2/4", sr: "Triole i četvrtine u 2/4"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[0.3333333333333333, 0.3333333333333333, 0.3333333333333333], [1]], tempo: 60}
+  - id: E-018-4
+    type: generated
+    prompt: {en: "Triplets or eighths? By ear only, in 2/4", sr: "Triole ili osmine? Samo po sluhu, u 2/4"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "2/4", bars: 2, cells: [[0.3333333333333333, 0.3333333333333333, 0.3333333333333333], [0.5, 0.5], [1]], tempo: 60, showAbc: false}
+  - id: E-018-5
+    type: generated
+    prompt: {en: "6/8: eighths, quarter–eighth, dotted quarters (♩.=60)", sr: "6/8: osmine, četvrtina–osmina, četvrtine s tačkom (♩.=60)"}
+    count: 5
+    gen: {kind: rhythm-echo, meter: "6/8", bars: 2, cells: [[0.5, 0.5, 0.5], [1, 0.5], [1.5]], tempo: 90}
+  - id: E-018-6
+    type: generated
+    prompt: {en: "6/8 with dotted halves, by ear only", sr: "6/8 sa polovinama s tačkom, samo po sluhu"}
+    count: 5
+    pass: 0.7
+    gen: {kind: rhythm-echo, meter: "6/8", bars: 2, cells: [[0.5, 0.5, 0.5], [1, 0.5], [1.5], [3]], tempo: 90, showAbc: false}
