@@ -17,6 +17,7 @@ export interface Submission {
   seed: string;
   count?: number; // item count used for generated exercises (reviews use fewer)
   ctx?: GenCtx; // learner state the items were generated with (e.g. voice range)
+  ms?: number; // client-measured time on the exercise (calibration only; never graded)
   responses: { itemId: string; response: Response; clientScore?: number }[];
 }
 
@@ -190,6 +191,7 @@ export function submit(sub: Submission): SubmissionResult {
       result.lessonPassed = refreshLesson(lesson);
     }
     db.prepare("INSERT INTO submissions(uuid, received_at, result) VALUES (?,?,?)").run(sub.uuid, now(), JSON.stringify(result));
+    logEvent(sub.date, "exercise_done", lesson?.id ?? null, ex.id, { ms: typeof sub.ms === "number" && sub.ms > 0 && sub.ms < 4 * 3600_000 ? Math.round(sub.ms) : null, score: result.score, pass: result.pass, context: sub.context, items: graded.length });
   })();
   return result;
 }
@@ -276,4 +278,9 @@ export function placementStatus() {
 
 export function placementDone(): boolean {
   return !!getDb().prepare("SELECT 1 FROM placement_results LIMIT 1").get();
+}
+
+/** Calibration events (append-only; read by /api/admin/calibration). Never affects grading. */
+export function logEvent(date: string, kind: string, lessonId: string | null, exerciseId: string | null, detail: Record<string, unknown> = {}) {
+  getDb().prepare("INSERT INTO events(at, date, kind, lesson_id, exercise_id, detail) VALUES (?,?,?,?,?,?)").run(now(), date, kind, lessonId, exerciseId, JSON.stringify(detail));
 }

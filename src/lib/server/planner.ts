@@ -1,7 +1,7 @@
 import { getDb, now } from "./db";
 import { getCurriculum } from "../curriculum/loader";
 import { getSettings, Settings, WEEKDAYS, Weekday, Focus } from "./settings";
-import { lessonStatuses, dueReviews, placementDone, addDays } from "./progress";
+import { lessonStatuses, dueReviews, placementDone, addDays, logEvent } from "./progress";
 import { config } from "./config";
 import type { Lesson, Track } from "../curriculum/schema";
 import { needsPiano } from "../curriculum/items";
@@ -215,6 +215,7 @@ export function getPlan(date: string): DayPlan {
 
 /** Rebuild one day's plan with/without the "no piano today" override (the weekly schedule is untouched). */
 export function setNoPiano(date: string, on: boolean): DayPlan {
+  logEvent(date, on ? "no_piano_on" : "no_piano_off", null, null);
   const plan = buildPlan(date, getSettings(), { noPiano: on });
   if (plan.kind !== "placement") getDb().prepare("INSERT OR REPLACE INTO day_plans(date, plan, created_at) VALUES (?,?,?)").run(date, JSON.stringify(plan), now());
   return getPlan(date);

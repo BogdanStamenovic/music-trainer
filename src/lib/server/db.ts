@@ -38,6 +38,10 @@ const MIGRATIONS: string[] = [
      status TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, last_error TEXT, result TEXT,
      created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL, next_run_at INTEGER NOT NULL);
    CREATE INDEX jobs_due ON jobs(status, next_run_at);`,
+  // 4: usage events for calibrating the curriculum (pace, retries, abandoned work)
+  `CREATE TABLE events (id INTEGER PRIMARY KEY, at INTEGER NOT NULL, date TEXT NOT NULL, kind TEXT NOT NULL,
+     lesson_id TEXT, exercise_id TEXT, detail TEXT);
+   CREATE INDEX events_date ON events(date, kind);`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

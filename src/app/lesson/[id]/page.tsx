@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Lesson } from "@/lib/curriculum/schema";
 import { useI18n } from "@/lib/client/i18n";
 import { getJson } from "@/lib/client/api";
+import { track } from "@/lib/client/events";
 import { Markdown } from "@/components/Markdown";
 import { ExerciseQueue } from "@/components/ExerciseQueue";
 import { RunnerDone } from "@/components/ExerciseRunner";
@@ -41,6 +42,7 @@ function LessonInner({ id }: { id: string }) {
   const [noPiano, setNoPiano] = useState<boolean | null>(null);
   useEffect(() => {
     getJson<LessonResp>(`/api/lesson/${id}`).then(({ data }) => setD(data)).catch((e) => setErr(String(e)));
+    track("lesson_open", date, id);
     // generated voice items are fitted to the stored comfortable range
     getJson<{ plan: { date: string; noPiano?: boolean } }>("/api/today")
       .then(({ data }) => setNoPiano(!!data.plan.noPiano && data.plan.date === date))

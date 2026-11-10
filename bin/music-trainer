@@ -6,7 +6,8 @@ case "${1:-status}" in
   status) exec bash "$HERE/scripts/lifecycle.sh" status ;;
   logs) exec journalctl --user -u music-trainer.service -n "${2:-100}" --no-pager ;;
   restart) systemctl --user restart music-trainer.service && echo restarted ;;
+  calibrate) shift; exec node "$HERE/scripts/calibrate.mjs" "$@" ;;
   url) tailscale serve status 2>/dev/null | grep -B0 ":8448" || echo "http://127.0.0.1:3310/" ;;
-  -h|--help|help) echo "usage: music-trainer [status|logs [N]|restart|url]" ;;
-  *) echo "unknown command: $1 (try: status, logs, restart, url)" >&2; exit 2 ;;
+  -h|--help|help) echo "usage: music-trainer [status|logs [N]|restart|url|calibrate [--json]]" ;;
+  *) echo "unknown command: $1 (try: status, logs, restart, url, calibrate)" >&2; exit 2 ;;
 esac

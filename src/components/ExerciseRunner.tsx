@@ -8,6 +8,7 @@ import { grade, Response, MidiEvent, heldChord, clusterChords } from "@/lib/grad
 import { midiToNote, noteName, parseNote } from "@/lib/music/pitch";
 import { midi } from "@/lib/client/midi";
 import { send } from "@/lib/client/queue";
+import { track } from "@/lib/client/events";
 import { useI18n } from "@/lib/client/i18n";
 import { Abc } from "./Abc";
 import { Keyboard } from "./Keyboard";
@@ -43,6 +44,12 @@ export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, 
   const [results, setResults] = useState<{ itemId: string; response: Response; clientScore: number }[]>([]);
   const [final, setFinal] = useState<RunnerDone | null>(null);
   const sentRef = useRef(false);
+  // time on task (calibration): from first render of the exercise to its submission
+  const startRef = useRef(0);
+  useEffect(() => {
+    startRef.current = Date.now();
+    track("exercise_start", date, lessonId, ex.id);
+  }, [date, lessonId, ex.id, seed]);
 
   const record = useCallback((itemId: string, response: Response, clientScore: number) => {
     setResults((r) => [...r.filter((x) => x.itemId !== itemId), { itemId, response, clientScore }]);
@@ -53,7 +60,7 @@ export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, 
       if (sentRef.current) return;
       sentRef.current = true;
       const local = all.reduce((a, r) => a + r.clientScore, 0) / Math.max(1, items.length);
-      const { result, queued } = await send({ uuid: uuid(), date, context, lessonId, exerciseId: ex.id, seed, count: ex.type === "generated" ? items.length : undefined, ctx, responses: all });
+      const { result, queued } = await send({ uuid: uuid(), date, context, lessonId, exerciseId: ex.id, seed, count: ex.type === "generated" ? items.length : undefined, ctx, ms: Date.now() - startRef.current, responses: all });
       const score = result?.score ?? local;
       const done: RunnerDone = { exerciseId: ex.id, score, pass: result?.pass ?? local >= ex.pass, queued, server: result };
       setFinal(done);
