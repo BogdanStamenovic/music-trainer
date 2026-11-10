@@ -1,0 +1,67 @@
+id: T-001
+track: T
+order: 1
+title: {en: "Note names, octaves and the keyboard", sr: "Imena nota, oktave i klavijatura"}
+minutes: 10
+tags: [notation]
+explain:
+  en: |
+    You read notation already, so this lesson is about **names**, which theory leans on constantly.
+
+    - **Scientific pitch notation**: middle C is **C4**. The number changes at every C: B3 is just below C4.
+    - Serbian (and German) naming differs in one place: **H** is B natural and **B** is B flat.
+      Sharps add *-is* (Fis), flats add *-es* (Des, Ges), with the contractions **Es**, **As**, **B**.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C clef=treble
+    C D E F G A B c |]
+    ```
+  sr: |
+    Note već čitaš, pa je ova lekcija o **imenima**, na koja se teorija stalno oslanja.
+
+    - **Naučna notacija visine**: srednje C je **C4**. Broj se menja na svakom C: H3 je odmah ispod C4.
+    - U srpskom (i nemačkom) jedna razlika: **H** je B bez predznaka, a **B** je snižena H (engl. B flat).
+      Povisilica dodaje *-is* (Fis), snizilica *-es* (Des, Ges), uz skraćenja **Es**, **As**, **B**.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C clef=treble
+    C D E F G A B c |]
+    ```
+exercises:
+  - id: T-001-1
+    type: generated
+    prompt: {en: "Read treble-clef notes", sr: "Čitaj note u violinskom ključu"}
+    count: 6
+    gen: {kind: note-read, clef: treble, range: [A3, C6]}
+  - id: T-001-2
+    type: generated
+    prompt: {en: "Read bass-clef notes", sr: "Čitaj note u bas ključu"}
+    count: 6
+    gen: {kind: note-read, clef: bass, range: [C2, E4]}
+  - id: T-001-3
+    type: mcq
+    prompt: {en: "Which MIDI-world name is middle C?", sr: "Kako se zove srednje C u naučnoj notaciji?"}
+    options: ["C3", "C4", "C5", "C0"]
+    answer: 1
+  - id: T-001-4
+    type: mcq
+    prompt: {en: "In Serbian naming, what is \"B\"?", sr: "Šta je u srpskom nazivlju \"B\"?"}
+    options:
+      - {en: "B natural", sr: "H (bez predznaka)"}
+      - {en: "B flat", sr: "snižena H (engl. B flat)"}
+      - {en: "B sharp", sr: "povišena H (His)"}
+    answer: 1
+  - id: T-001-5
+    type: midi-play
+    prompt: {en: "Play C3, C4, C5 in that order.", sr: "Odsviraj C3, C4, C5 tim redom."}
+    mode: sequence
+    expect: [C3, C4, C5]
+  - id: T-001-6
+    type: generated
+    prompt: {en: "Find written notes on the keys", sr: "Nađi napisane note na klavijaturi"}
+    count: 5
+    gen: {kind: note-read, clef: both, answer: play}
