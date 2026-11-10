@@ -121,3 +121,10 @@ Done means exercised: fresh `ownbox install` works, `ownbox update` keeps the DB
 and recordings, the PWA installs on the tailnet URL and a lesson is completed
 end-to-end with a real MIDI device (or a virtual one: `snd-virmidi`/a2jmidid if
 no piano is attached to archserver — say which was used).
+
+## M1 status (2026-11-10, music-trainer-ad)
+
+Built and installed via ownbox (`music-trainer.service`, https://archserver.bongo-bortle.ts.net:8448/).
+Exercised end to end in Chrome with a **virtual** MIDI device (snd-virmidi), not
+the real Arius. Not in M1 (see README Limitations): voice grading, mic fallback for
+piano, the voice-score-lite browser module, M3 weekly projects.
