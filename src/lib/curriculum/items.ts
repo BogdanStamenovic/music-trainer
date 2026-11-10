@@ -101,12 +101,14 @@ export function fitToRange(ms: number[], range?: [number, number], where: boolea
   const target = where === "low" ? lo + (Math.max(...ms) - Math.min(...ms)) / 2 : where === "high" ? hi - (Math.max(...ms) - Math.min(...ms)) / 2 : (lo + hi) / 2;
   const center = (Math.min(...ms) + Math.max(...ms)) / 2;
   let shift = Math.round((target - center) / 12) * 12;
-  // prefer a shift that keeps every note inside the range, if one exists
-  for (const k of [shift, shift - 12, shift + 12]) {
-    if (Math.min(...ms) + k >= lo && Math.max(...ms) + k <= hi) {
-      shift = k;
-      break;
-    }
+  const fits = (k: number) => Math.min(...ms) + k >= lo && Math.max(...ms) + k <= hi;
+  const cands = [-24, -12, 0, 12, 24].map((d) => shift + d).filter(fits);
+  if (cands.length) {
+    // high: the highest placement that fits (it may reach 2 above the comfortable top);
+    // low: the lowest; centred: the one nearest the centre
+    if (where === "high") shift = Math.max(...cands);
+    else if (where === "low") shift = Math.min(...cands);
+    else shift = cands.reduce((a, b) => (Math.abs(b - shift) < Math.abs(a - shift) ? b : a));
   }
   return ms.map((m) => m + shift);
 }
@@ -873,7 +875,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             tempo: 60,
             tolerance: g.tolerance,
             octaveAgnostic: true,
-            noteLabels: midiLabels(ms),
+            noteLabels: join([nno(root), nno(top)]), // spelled like the prompt (Bb3, not A#3)
             play: { mode: "melodic", notes: [ms[0]], tempo: 40 },
             prompt: L(`You hear ${noteStr(root)}. Sing it, then the note a ${ivl.en} above (two beats each).`, `Čuješ ${noteNameSr(root, true)}. Otpevaj ga, pa ton koji je ${ivl.sr} iznad (po dve dobe).`),
           };
