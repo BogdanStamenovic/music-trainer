@@ -83,7 +83,9 @@ export default function HistoryPage() {
                 <tr key={p.id}>
                   <td>{p.week}</td>
                   <td>{t(("kind_" + p.kind) as "kind_composition")}</td>
-                  <td>{p.title ? l(p.title) : p.projectId}</td>
+                  <td>
+                    <Link href={`/project?id=${p.id}`}>{p.title ? l(p.title) : p.projectId}</Link>
+                  </td>
                   <td>{p.score != null ? `${Math.round(p.score * 100)}%` : p.status}</td>
                   <td className="muted">{p.score != null ? (p.final ? t("final") : t("provisional")) : ""} {p.parts ? Object.entries(p.parts).map(([k, v]) => `${k} ${Math.round(v * 100)}`).join(" · ") : ""}</td>
                 </tr>

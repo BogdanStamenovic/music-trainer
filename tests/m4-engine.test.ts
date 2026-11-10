@@ -155,3 +155,26 @@ describe("voice engine fixes", () => {
     expect(generateItems(ex, "s", undefined, { voiceRange: [50, 58] }).length).toBe(3);
   });
 });
+
+import { smoothVoicing } from "@/lib/curriculum/items";
+import { romanChord } from "@/lib/music/harmony";
+import { noteStr } from "@/lib/music/pitch";
+describe("smooth voicing", () => {
+  it("I-IV-V-I in C: bass on roots, upper voices move by step or stay", () => {
+    const v = smoothVoicing(["I", "IV", "V", "I"].map((r) => romanChord("C4", "major", r)));
+    expect(v.map((c) => noteStr(c[0]))).toEqual(["C3", "F3", "G3", "C3"]);
+    for (let i = 1; i < v.length; i++) {
+      const moves = v[i].slice(1).map((n, k) => Math.abs(toM(n) - toM(v[i - 1][k + 1])));
+      expect(Math.max(...moves)).toBeLessThanOrEqual(4); // at most a (major) third: smooth
+      expect(moves.reduce((a, b) => a + b, 0)).toBeLessThanOrEqual(6);
+      // no parallel perfect 5ths/8ves between any two voices
+      const a = v[i - 1].map(toM), b = v[i].map(toM);
+      for (let x = 0; x < 4; x++) for (let y = x + 1; y < 4; y++) {
+        const i0 = (((a[y] - a[x]) % 12) + 12) % 12, i1 = (((b[y] - b[x]) % 12) + 12) % 12;
+        const same = a[x] !== b[x] && a[y] !== b[y] && Math.sign(b[x] - a[x]) === Math.sign(b[y] - a[y]);
+        expect(same && i0 === i1 && (i0 === 0 || i0 === 7), `parallel in ${i}: ${x}-${y}`).toBe(false);
+      }
+    }
+  });
+});
+import { toMidi as toM } from "@/lib/music/pitch";

@@ -78,3 +78,4 @@ textarea.lyrics { font-family: inherit; font-size: 1rem; }
 ul.checks { list-style: none; padding: 0; } ul.checks li { padding: 2px 0; }
 .ai { border-left: 3px solid var(--accent); padding-left: 10px; }
 .composer .row label { display: inline-flex; gap: 4px; align-items: center; }
+pre.lyrics-view { white-space: pre-wrap; font: 0.9rem/1.4 ui-monospace, monospace; background: var(--bg); padding: 8px; border-radius: 6px; }

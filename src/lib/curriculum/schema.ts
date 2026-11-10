@@ -96,7 +96,7 @@ const SingCommon = {
   fitRange: z.union([z.boolean(), z.enum(["low", "high"])]).default(true),
 };
 export const SingPitch = z.object({ ...Base, type: z.literal("sing-pitch"), ...SingCommon, notes: z.array(NoteS).min(1), sustain: z.number().min(0).max(15).default(2) });
-export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(z.union([NoteS, z.literal("r")])).optional() /* "r" = rest */, derive: Derive.optional(), beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
+export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(z.union([NoteS, z.literal("r")])).optional() /* "r" = rest */, derive: Derive.optional(), accompany: Playback.optional() /* reference played instead of the targets (e.g. the melody to harmonize); sung alone afterwards: the mic would hear simultaneous playback */, beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
 /** Records a low glide and a high glide; stores the learner's range. */
 export const VoiceRange = z.object({ ...Base, type: z.literal("voice-range") });
 /** Fatigue/hoarseness check-in. Anything but "fine" ends voice work for the day. */
@@ -151,7 +151,8 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("progression-ear"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), options: z.array(z.array(z.string()).min(2)).min(2), tempo: z.number().default(60) }),
   // improvise over a looping backing progression; graded on scale use, chord tones on downbeats, activity
   z.object({ kind: z.literal("improv"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), scale: ScaleType, numerals: z.array(z.string()).min(1), beatsPerChord: z.number().int().min(1).max(8).default(4), loops: z.number().int().min(1).max(8).default(2), tempo: z.number().min(40).max(200).default(80) }),
-  z.object({ kind: z.literal("progression"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), tempo: z.number().optional(), octave: z.enum(["exact", "any"]).default("any"), echo: z.boolean().default(false) }),
+  // smooth: bass on the root, upper three voices moved to the nearest chord tones (voice leading)
+  z.object({ kind: z.literal("progression"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), tempo: z.number().optional(), octave: z.enum(["exact", "any"]).default("any"), echo: z.boolean().default(false), smooth: z.boolean().default(false) }),
   z.object({ kind: z.literal("melody-echo"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(1), z.number().int().min(1)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), startOnTonic: z.boolean().default(true), octave: z.number().int().default(4), tempo: z.number().default(80) }),
   z.object({ kind: z.literal("degree-ear"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(8)).min(2), answer: z.enum(["choose", "play"]).default("choose"), octave: z.number().int().default(4) }),
   z.object({ kind: z.literal("pitch-match"), range: Range.optional(), sustain: z.number().min(0).max(10).default(2), tolerance: z.number().min(10).max(200).default(50), intervals: z.array(IvS).optional() }),

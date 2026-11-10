@@ -1,5 +1,6 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Project, Criterion } from "@/lib/curriculum/schema";
 import { useI18n } from "@/lib/client/i18n";
@@ -159,6 +160,49 @@ function ByEar({ def, onEvents }: { def: Extract<Project, { kind: "byear" }>; on
 }
 
 export default function ProjectPage() {
+  return (
+    <Suspense>
+      <ProjectInner />
+    </Suspense>
+  );
+}
+
+/** Earlier submissions of the same kind (e.g. the lyric to rewrite in a later project). */
+function EarlierWork({ kind, currentId }: { kind: string; currentId: string }) {
+  const { t, l } = useI18n();
+  const [rows, setRows] = useState<ProjectView[] | null>(null);
+  useEffect(() => {
+    (async () => {
+      const { data } = await getJson<{ projects: { id: string; kind: string; status: string }[] }>("/api/history");
+      const ids = data.projects.filter((x) => x.kind === kind && x.id !== currentId && x.status !== "open").map((x) => x.id);
+      const full = await Promise.all(ids.map((id) => getJson<{ project: ProjectView }>(`/api/projects/${id}`).then((r) => r.data.project)));
+      setRows(full);
+    })().catch(() => setRows([]));
+  }, [kind, currentId]);
+  if (!rows?.length) return null;
+  return (
+    <section className="card" data-testid="earlier-work">
+      <h2>{t("earlierWork")}</h2>
+      {rows.map((r) => {
+        const sub = r.submission as { text?: string; abc?: string } | null;
+        return (
+          <details key={r.id}>
+            <summary>
+              {r.week} · {l(r.def.title)} · {r.score != null ? `${Math.round(r.score * 100)}%` : r.status}
+            </summary>
+            {sub?.text ? <pre className="lyrics-view">{sub.text}</pre> : null}
+            {sub?.abc ? <pre className="lyrics-view">{sub.abc}</pre> : null}
+            {r.ai?.summary ? <p className="small muted">{r.ai.summary}</p> : null}
+            <Link href={`/project?id=${r.id}`}>{t("open")} →</Link>
+          </details>
+        );
+      })}
+    </section>
+  );
+}
+
+function ProjectInner() {
+  const viewId = useSearchParams().get("id");
   const { t, l, locale } = useI18n();
   const [p, setP] = useState<ProjectView | null>(null);
   const [due, setDue] = useState("");
@@ -175,7 +219,10 @@ export default function ProjectPage() {
   const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Belgrade" }).format(new Date());
 
   const load = useCallback(async () => {
-    const { data } = await getJson<{ project: ProjectView | null; due: string; reason?: string }>("/api/projects/current");
+    // ?id=<project row> views an earlier week's project (read-only); otherwise this week's
+    const { data } = viewId
+      ? await getJson<{ project: ProjectView | null; due: string; reason?: string }>(`/api/projects/${viewId}`).then((r) => ({ data: { ...r.data, due: "" } }))
+      : await getJson<{ project: ProjectView | null; due: string; reason?: string }>("/api/projects/current");
     if (!data.project) return setErr(data.reason ?? "no project");
     setP(data.project);
     setDue(data.due);
@@ -188,7 +235,7 @@ export default function ProjectPage() {
     }
     if (data.project.self) setSelf(data.project.self);
     if (data.project.def.kind === "lyrics" && data.project.def.lyrics.language !== "either") setLang(data.project.def.lyrics.language);
-  }, []);
+  }, [viewId]);
   useEffect(() => {
     void load().catch((e) => setErr(String(e)));
     // a voice-rest day (from any check-in today) blocks the vocal project too
@@ -237,6 +284,7 @@ export default function ProjectPage() {
         <Markdown text={l(def.brief)} />
       </details>
 
+      {viewId ? null : (
       <section className="card">
         <h2>{t("yourWork")}</h2>
         {def.kind === "composition" ? (
@@ -309,7 +357,9 @@ export default function ProjectPage() {
         </button>
         {!complete ? <span className="muted small"> {t("rateAll")}</span> : null}
       </section>
+      )}
       {p.submission ? <Result p={p} /> : null}
+      {!viewId ? <EarlierWork kind={def.kind} currentId={p.id} /> : null}
     </div>
   );
 }

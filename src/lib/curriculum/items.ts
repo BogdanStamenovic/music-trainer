@@ -325,7 +325,7 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
         octaveAgnostic: ex.octaveAgnostic,
         noteLabels: spelledLabels(written, ms),
         layout: seq.some((n) => n === null) ? layout : undefined,
-        play: ex.reference ? { mode: "melodic", notes: layout.map((e) => e.midi ?? -1), durations: layout.map((e) => e.beats), tempo: ex.tempo } : undefined,
+        play: ex.accompany ? playSpec(ex.accompany) : ex.reference ? { mode: "melodic", notes: layout.map((e) => e.midi ?? -1), durations: layout.map((e) => e.beats), tempo: ex.tempo } : undefined,
       };
     }
     case "voice-range":
@@ -650,7 +650,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
     }
     case "progression": {
       const key = parseNote(rng.pick(g.keys), toMidi(parseNote(g.keys[0], 4)) > 67 ? 3 : 4);
-      const chords = g.numerals.map((r) => romanChord(key, g.type, r));
+      const chords = g.smooth ? smoothVoicing(g.numerals.map((r) => romanChord(key, g.type, r))) : g.numerals.map((r) => romanChord(key, g.type, r));
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       const prog = g.numerals.join(" – ");
       const ec = chords.map((c) => c.map(toMidi));
@@ -937,6 +937,55 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
 }
 
 /** Items for one exercise. `seed` must be stored with the attempt for re-grading. */
+/**
+ * Voice-led block chords: bass = root in octave 3; three upper voices = triad tones
+ * (root doubled) or, for seventh chords, 3rd/5th/7th. Each chord tries every
+ * assignment of its tones to the voices, each voice taking the nearest instance of
+ * its pitch class to where it was, and keeps the cheapest total movement. The first
+ * chord starts near E4-G4-C5.
+ */
+export function smoothVoicing(chords: Note[][]): Note[][] {
+  let prev = [64, 67, 72];
+  let prevBass: number | null = null;
+  // parallel perfect 5ths/8ves between any two voices (bass included) cost extra
+  const parallels = (a: number[], b: number[]) => {
+    let n = 0;
+    for (let i = 0; i < a.length; i++)
+      for (let j = i + 1; j < a.length; j++) {
+        const before = (((a[j] - a[i]) % 12) + 12) % 12;
+        const after = (((b[j] - b[i]) % 12) + 12) % 12;
+        const moved = a[i] !== b[i] && a[j] !== b[j] && Math.sign(b[i] - a[i]) === Math.sign(b[j] - a[j]);
+        if (moved && before === after && (before === 0 || before === 7)) n++;
+      }
+    return n;
+  };
+  const near = (pc: number, to: number) => {
+    const base = to - ((((to - pc) % 12) + 12) % 12);
+    return to - base <= 6 ? base : base + 12;
+  };
+  const perms = <T,>(a: T[]): T[][] => (a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((r) => [x, ...r])));
+  return chords.map((c) => {
+    const tones = c.length >= 4 ? c.slice(1, 4) : [c[0], c[1], c[2]];
+    let best: { midis: number[]; notes: Note[] } | null = null;
+    let bestCost = Infinity;
+    const bass = toMidi({ ...c[0], octave: 3 });
+    for (const order of perms(tones)) {
+      const midis = order.map((n, v) => near(pitchClassOf(n), prev[v]));
+      let cost = midis.reduce((a, m, v) => a + Math.abs(m - prev[v]), 0);
+      if (prevBass !== null) cost += 5 * parallels([prevBass, ...prev], [bass, ...midis]);
+      if (cost < bestCost) {
+        bestCost = cost;
+        best = { midis, notes: order };
+      }
+    }
+    const pairs = best!.midis.map((m, i) => ({ m, n: best!.notes[i] })).sort((a, b) => a.m - b.m);
+    prev = pairs.map((p) => p.m);
+    prevBass = bass;
+    const upper = pairs.map(({ m, n }) => ({ ...n, octave: n.octave + Math.round((m - toMidi(n)) / 12) }));
+    return [{ ...c[0], octave: 3 }, ...upper];
+  });
+}
+
 /** 0.5 -> "1/2", 0.333.. -> "1/3", 1.5 -> "3/2" (beats, for labels). */
 function fmtBeats(d: number): string {
   for (const den of [1, 2, 3, 4, 6, 8]) {

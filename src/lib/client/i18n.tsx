@@ -175,6 +175,7 @@ const D = {
   distortionCap: ["One distortion lesson per day: you have already done one today. Tomorrow.", "Jedna lekcija distorzije dnevno: danas si već radio jednu. Sutra."],
   practice: ["Practice", "Vežbanje"],
   practiceHint: ["drills from lessons you have passed", "vežbe iz položenih lekcija"],
+  earlierWork: ["Your earlier work of this kind", "Tvoji raniji radovi ove vrste"],
   mon: ["Mon", "Pon"], tue: ["Tue", "Uto"], wed: ["Wed", "Sre"], thu: ["Thu", "Čet"], fri: ["Fri", "Pet"], sat: ["Sat", "Sub"], sun: ["Sun", "Ned"],
   T: ["Theory", "Teorija"], E: ["Ear", "Sluh"], K: ["Keys", "Klavir"], V: ["Voice", "Glas"], C: ["Composition", "Kompozicija"], L: ["Lyrics", "Tekstovi"], test: ["Test", "Test"], rest: ["Rest", "Odmor"],
 } as const;
