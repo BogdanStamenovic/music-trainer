@@ -197,3 +197,15 @@ describe("accompaniment follows the singer's octave", () => {
     expect(low.play.notes).toEqual([48, 50, 52]); // the melody too
   });
 });
+
+describe("smooth voicing edge cases + inverted bass lines", () => {
+  it("no upper voice in unison with (or below) the bass", () => {
+    const v = smoothVoicing(["I", "vi", "IV", "V"].map((r) => romanChord("D4", "major", r)));
+    for (const c of v) for (const n of c.slice(1)) expect(toM(n)).toBeGreaterThan(toM(c[0]));
+  });
+  it("bass-echo honours inversion figures", () => {
+    const ex = Exercise.parse({ id: "E-096-1", type: "generated", prompt: { en: "b", sr: "b" }, count: 1, gen: { kind: "bass-echo", keys: ["C"], numerals: ["I", "V6"], line: ["I", "V6", "I"], octave: 3 } });
+    const it0 = generateItems(ex, "s")[0] as MidiItem;
+    expect(it0.expect.map((m) => m % 12)).toEqual([0, 11, 0]); // C, B (3rd of V), C
+  });
+});

@@ -225,6 +225,8 @@ export function derive(d: Derive): Note[][] {
   return d.roman.numerals.map((r) => romanChord(d.roman.key, d.roman.type, r));
 }
 
+const bassOf = (c: Note[]): Note => c.reduce((a, b) => (toMidi(a) <= toMidi(b) ? a : b));
+
 /** Move a playback by whole semitones (octave shifts from fitToRange); rests (-1) stay rests. */
 function shiftPlay(p: PlaySpec | undefined, by: number): PlaySpec | undefined {
   if (!p || !by) return p;
@@ -797,7 +799,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const key = parseNote(keyName0, toMidi(parseNote(keyName0, 4)) > 67 ? 3 : 4);
       const k = rng.int(0, g.options.length - 1);
       const opts = g.options.map((o) => o.join(" – "));
-      const chords = g.options[k].map((r) => romanChord(key, g.type, r).map(toMidi));
+      const raw = g.options[k].map((r) => romanChord(key, g.type, r));
+      const chords = (g.smooth ? smoothVoicing(raw) : raw).map((c) => c.map(toMidi));
       const { options, answer } = mcq(rng, opts[k], opts, Math.min(4, opts.length));
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       return {
@@ -927,14 +930,14 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       for (let i = 0; i < (g.line ? g.line.length : g.length); i++) {
         if (g.line) {
           names.push(g.line[i]);
-          roots.push(romanChord(key, g.type, g.line[i].replace(/[0-9]+$/, ""))[0]);
+          roots.push(bassOf(romanChord(key, g.type, g.line[i]))); // inversion figures give the bass (V6 -> the 3rd)
           continue;
         }
         // start and (from 3 notes on) end on the first numeral; no immediate repeats
         const prev = names[i - 1];
         const r = i === 0 || (i === g.length - 1 && g.length >= 3 && prev !== g.numerals[0]) ? g.numerals[0] : rng.pick(g.numerals.filter((x) => x !== prev).length ? g.numerals.filter((x) => x !== prev) : g.numerals);
         names.push(r);
-        roots.push(romanChord(key, g.type, r.replace(/[0-9]+$/, ""))[0]);
+        roots.push(bassOf(romanChord(key, g.type, r)));
       }
       const ms = roots.map(toMidi);
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").nom;
@@ -988,7 +991,12 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
     let bestCost = Infinity;
     const bass = toMidi({ ...c[0], octave: 3 });
     for (const order of perms(tones)) {
-      const midis = order.map((n, v) => near(pitchClassOf(n), prev[v]));
+      // upper voices stay strictly above the bass (no unison with it)
+      const midis = order.map((n, v) => {
+        let m = near(pitchClassOf(n), prev[v]);
+        while (m <= bass) m += 12;
+        return m;
+      });
       let cost = midis.reduce((a, m, v) => a + Math.abs(m - prev[v]), 0);
       if (prevBass !== null) cost += 5 * parallels([prevBass, ...prev], [bass, ...midis]);
       if (cost < bestCost) {

@@ -148,7 +148,7 @@ export const Gen = z.discriminatedUnion("kind", [
   // values: single durations placed freely; cells: groups placed whole (keeps eighth pairs together, allows triplets [1/3,1/3,1/3])
   z.object({ kind: z.literal("rhythm-echo"), meter: z.string().regex(/^\d+\/\d+$/).default("4/4"), bars: z.number().int().min(1).max(4).default(1), values: z.array(z.number().positive()).default([]), cells: z.array(z.array(z.number().positive()).min(1)).optional(), tempo: z.number().min(40).max(160).default(80), showAbc: z.boolean().default(true) }),
   // hear a progression, pick which one it was
-  z.object({ kind: z.literal("progression-ear"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), options: z.array(z.array(z.string()).min(2)).min(2), tempo: z.number().default(60) }),
+  z.object({ kind: z.literal("progression-ear"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), options: z.array(z.array(z.string()).min(2)).min(2), tempo: z.number().default(60), smooth: z.boolean().default(false) }),
   // improvise over a looping backing progression; graded on scale use, chord tones on downbeats, activity
   z.object({ kind: z.literal("improv"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), scale: ScaleType, numerals: z.array(z.string()).min(1), beatsPerChord: z.number().int().min(1).max(8).default(4), loops: z.number().int().min(1).max(8).default(2), tempo: z.number().min(40).max(200).default(80) }),
   // smooth: bass on the root, upper three voices moved to the nearest chord tones (voice leading)
