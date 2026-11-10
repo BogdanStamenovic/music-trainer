@@ -80,8 +80,8 @@ exercises:
     notes: [G3, D4, G3]
     beats: [2, 2, 2]
     tempo: 60
-    tolerance: 100
-    pass: 0.6
+    tolerance: 75
+    pass: 0.75
     checks:
       - interval: {from: G3, to: D4, is: P5}
   - id: V-006-5
@@ -92,8 +92,8 @@ exercises:
     notes: [G3, B3, D4, B3, G3]
     beats: [1.5, 1.5, 2, 1.5, 2]
     tempo: 60
-    tolerance: 100
-    pass: 0.6
+    tolerance: 75
+    pass: 0.75
     checks:
       - chord: {notes: [G3, B3, D4], root: G, quality: maj, inversion: 0}
       - interval: {from: G3, to: B3, is: M3}
@@ -105,7 +105,7 @@ exercises:
     notes: [D4, G3]
     beats: [2, 2]
     tempo: 60
-    tolerance: 100
-    pass: 0.6
+    tolerance: 75
+    pass: 0.75
     checks:
       - interval: {from: G3, to: D4, is: P5}
