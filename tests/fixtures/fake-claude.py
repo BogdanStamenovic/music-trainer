@@ -4,6 +4,8 @@ and returns a review scoring every rubric id 3. FAKE_CLAUDE_MODE=garbage|error|s
 exercises the failure paths."""
 import json, os, re, sys, time
 prompt = sys.stdin.read()
+if os.environ.get("FAKE_CLAUDE_CAPTURE"):
+    open(os.environ["FAKE_CLAUDE_CAPTURE"], "w").write(prompt)
 mode = os.environ.get("FAKE_CLAUDE_MODE", "ok")
 ids = re.findall(r'- id "([a-z0-9-]+)"', prompt)
 if mode == "slow":

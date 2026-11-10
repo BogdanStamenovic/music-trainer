@@ -144,3 +144,12 @@ describe("weekly test v2", () => {
     ]);
   });
 });
+
+describe("practice fill", () => {
+  it("tops up a short day with drills from passed lessons (generated exercises only)", async () => {
+    const { practiceFill } = await import("@/lib/server/planner");
+    // fixture lessons are mcq-only (no generated exercises): nothing to drill
+    expect(practiceFill(["T"], 30, "2026-11-20")).toEqual([]);
+    expect(practiceFill(["T"], 3, "2026-11-20")).toEqual([]);
+  });
+});

@@ -105,13 +105,21 @@ class MidiManager {
   }
 
   /** Play a spec; resolves when finished. */
-  play(spec: PlaySpec): Promise<void> {
+  play(spec: PlaySpec, opts: { muteInput?: boolean } = {}): Promise<void> {
     unlockAudio();
     this.stop();
     const beat = 60 / spec.tempo;
     const events: { at: number; notes: number[]; dur: number }[] = [];
     if (spec.mode === "harmonic") events.push({ at: 0, notes: spec.notes ?? [], dur: beat * 2 });
-    else if (spec.mode === "chords") (spec.chords ?? []).forEach((c, i) => events.push({ at: i * beat * 1.5, notes: c, dur: beat * 1.4 }));
+    else if (spec.mode === "chords") {
+      // with durations (backing tracks): chords back to back; without: spaced for listening
+      let at = 0;
+      (spec.chords ?? []).forEach((c, i) => {
+        const d = spec.durations ? spec.durations[i] * beat : beat * 1.5;
+        events.push({ at, notes: c, dur: spec.durations ? d * 0.97 : beat * 1.4 });
+        at += d;
+      });
+    }
     else {
       let at = 0;
       (spec.notes ?? []).forEach((n, i) => {
@@ -129,7 +137,7 @@ class MidiManager {
           out.send([0x90, n, 80], now + e.at * 1000);
           out.send([0x80, n, 0], now + (e.at + e.dur) * 1000);
         }
-      this.muteUntil = now + total * 1000 + 250;
+      if (opts.muteInput !== false) this.muteUntil = now + total * 1000 + 250;
     } else if (this.playback !== "midi") {
       for (const e of events) for (const n of e.notes) synthNote(n, e.at, e.dur);
     }

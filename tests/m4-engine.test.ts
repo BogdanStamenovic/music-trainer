@@ -1,0 +1,87 @@
+import { describe, it, expect } from "vitest";
+import { gradeRhythm, gradeImprov, gradeCompose, gradeWrite } from "@/lib/grading";
+import { generateItems, type MidiItem } from "@/lib/curriculum/items";
+import { Exercise } from "@/lib/curriculum/schema";
+
+const taps = (beats: number[], ms: number, offset = 300) => beats.flatMap((b) => [{ t: offset + b * ms, type: "on" as const, note: 64 }, { t: offset + b * ms + 80, type: "off" as const, note: 64 }]);
+
+describe("rhythm echo", () => {
+  const exp = [0, 1, 1.5, 2, 3]; // q, e e, q, q
+  it("right rhythm at a steady (even slightly different) tempo, any pitch, late start: full marks", () => {
+    expect(gradeRhythm(exp, taps(exp, 790), 80).score).toBe(1);
+  });
+  it("evened-out eighths lose points; a missing tap costs its share", () => {
+    expect(gradeRhythm(exp, taps([0, 1, 1.75, 2.25, 3], 750), 80).score).toBeLessThan(0.8);
+    expect(gradeRhythm(exp, taps([0, 1, 2, 3], 750), 80).score).toBeLessThanOrEqual(0.8);
+  });
+  it("generator fills bars exactly and exposes onsets", () => {
+    const ex = Exercise.parse({ id: "E-099-1", type: "generated", prompt: { en: "r", sr: "r" }, count: 5, gen: { kind: "rhythm-echo", meter: "3/4", bars: 2, values: [1, 0.5, 2, 1.5] } });
+    for (const x of generateItems(ex, "s")) {
+      const m = x as MidiItem;
+      expect(m.mode).toBe("rhythm");
+      const last = m.rhythm!.at(-1)!;
+      const total = (m.play!.durations ?? []).reduce((a, b) => a + b, 0);
+      expect(total).toBeCloseTo(6);
+      expect(last).toBeLessThan(6);
+      expect(m.abc).toContain("M:3/4");
+    }
+  });
+});
+
+describe("improvisation", () => {
+  const ex = Exercise.parse({ id: "K-099-1", type: "generated", prompt: { en: "i", sr: "i" }, count: 1, gen: { kind: "improv", keys: ["C"], scale: "major-pentatonic", numerals: ["I", "IV", "V", "I"], beatsPerChord: 4, loops: 1, tempo: 120 } });
+  const item = generateItems(ex, "s")[0] as MidiItem;
+  const beat = 500;
+  it("backing: 4 chords of 4 beats", () => {
+    expect(item.play!.chords!.length).toBe(4);
+    expect(item.play!.durations).toEqual([4, 4, 4, 4]);
+    expect(item.improv!.scale).toEqual([0, 2, 4, 7, 9]);
+  });
+  it("chord tones on downbeats, in scale, active: high; out-of-scale noodling: low; silence: 0", () => {
+    const good = [60, 64, 67, 69, 65, 69, 72, 69, 67, 71, 74, 72, 64, 62, 60, 67].map((n, i) => ({ t: i * beat, type: "on" as const, note: n }));
+    // F and B are not in C major pentatonic, so the in-scale part drops for those
+    const g = gradeImprov(item, good);
+    expect(g.score).toBeGreaterThan(0.85);
+    const bad = [61, 63, 66, 68, 70, 61, 63, 66].map((n, i) => ({ t: i * beat * 2 + 120, type: "on" as const, note: n }));
+    expect(gradeImprov(item, bad).score).toBeLessThan(0.3);
+    expect(gradeImprov(item, []).score).toBe(0);
+  });
+});
+
+describe("compose / write", () => {
+  const ci = { id: "x#0", exerciseId: "x", kind: "compose" as const, prompt: { en: "", sr: "" }, key: "C major", meter: "4/4", bars: 2, rules: ["bars"], voices: 1 as const };
+  it("compose uses the server's rule result; unavailable worker = completion credit flagged", () => {
+    expect(gradeCompose(ci, { abc: "C D E F |]", rules: { ok: true, score: 0.7 } }).score).toBe(0.7);
+    expect(gradeCompose(ci, { abc: "C D E F |]", rules: { ok: false, unavailable: true, error: "no venv" } })).toEqual({ score: 1, detail: { unchecked: true, error: "no venv" } });
+    expect(gradeCompose(ci, { abc: "C D E F |]" }).score).toBe(0);
+    expect(gradeCompose(ci, { abc: "  ", rules: { ok: true, score: 1 } }).score).toBe(0);
+  });
+  it("write = weighted self rubric", () => {
+    const wi = { id: "w#0", exerciseId: "w", kind: "write" as const, prompt: { en: "", sr: "" }, language: "en" as const, rubric: [{ id: "a", label: { en: "", sr: "" }, weight: 1, top: { en: "", sr: "" } }, { id: "b", label: { en: "", sr: "" }, weight: 3, top: { en: "", sr: "" } }] };
+    expect(gradeWrite(wi, { text: "x\ny", self: { a: 4, b: 2 } }).score).toBeCloseTo(0.625);
+  });
+  it("roman generator with sevenths", () => {
+    const ex = Exercise.parse({ id: "T-099-1", type: "generated", prompt: { en: "r", sr: "r" }, count: 7, gen: { kind: "roman", keys: ["C"], seventh: true, ask: "name" } });
+    for (const x of generateItems(ex, "s")) expect((x as unknown as { expect: string[] }).expect.length).toBe(4);
+  });
+});
+
+import { validateLessons } from "@/lib/curriculum/validate";
+import { Lesson } from "@/lib/curriculum/schema";
+describe("distortion gate (voice safety)", () => {
+  const L = (id: string, tags: string[], prereqs: string[], explainEn = "x", explainSr = "x") =>
+    Lesson.parse({ id, track: "V", order: Number(id.slice(2)), title: { en: id, sr: id + "s" }, prereqs, minutes: 8, tags, explain: { en: explainEn, sr: explainSr },
+      exercises: [{ id: `${id}-1`, type: "checkin", prompt: { en: "c", sr: "c" } }, { id: `${id}-2`, type: "practice", prompt: { en: "w", sr: "w" } }] });
+  const sup = L("V-101", ["support"], []);
+  const ons = L("V-102", ["onset"], ["V-101"]);
+  it("passes when support + onset are prerequisites and the stop protocol is stated", () => {
+    const d = L("V-103", ["distortion"], ["V-102"], "Stop at any pain.", "Odmah prekini na bilo kakav bol.");
+    expect(validateLessons([sup, ons, d])).toEqual([]);
+  });
+  it("rejects missing prerequisites and a missing stop protocol", () => {
+    const d = L("V-104", ["distortion"], ["V-101"]);
+    const errs = validateLessons([sup, ons, d]).join("\n");
+    expect(errs).toMatch(/onset/);
+    expect(errs).toMatch(/stop protocol/);
+  });
+});

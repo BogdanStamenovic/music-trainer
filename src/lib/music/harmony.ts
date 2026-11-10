@@ -9,6 +9,12 @@ export const SCALES = {
   "melodic-minor": ["P1", "M2", "m3", "P4", "P5", "M6", "M7"], // ascending form
   "major-pentatonic": ["P1", "M2", "M3", "P5", "M6"],
   "minor-pentatonic": ["P1", "m3", "P4", "P5", "m7"],
+  blues: ["P1", "m3", "P4", "d5", "P5", "m7"], // minor pentatonic + the "blue" b5
+  dorian: ["P1", "M2", "m3", "P4", "P5", "M6", "m7"],
+  phrygian: ["P1", "m2", "m3", "P4", "P5", "m6", "m7"],
+  lydian: ["P1", "M2", "M3", "A4", "P5", "M6", "M7"],
+  mixolydian: ["P1", "M2", "M3", "P4", "P5", "M6", "m7"],
+  locrian: ["P1", "m2", "m3", "P4", "d5", "m6", "m7"],
 } as const;
 export type ScaleType = keyof typeof SCALES;
 
@@ -31,6 +37,16 @@ export const CHORDS = {
   min7: ["P1", "m3", "P5", "m7"],
   m7b5: ["P1", "m3", "d5", "m7"],
   dim7: ["P1", "m3", "d5", "d7"],
+  minmaj7: ["P1", "m3", "P5", "M7"], // i(maj7) in harmonic minor
+  augmaj7: ["P1", "M3", "A5", "M7"], // III+maj7 in harmonic minor
+  "9": ["P1", "M3", "P5", "m7", "M9"],
+  maj9: ["P1", "M3", "P5", "M7", "M9"],
+  min9: ["P1", "m3", "P5", "m7", "M9"],
+  sus4: ["P1", "P4", "P5"],
+  sus2: ["P1", "M2", "P5"],
+  "7sus4": ["P1", "P4", "P5", "m7"],
+  "6": ["P1", "M3", "P5", "M6"],
+  min6: ["P1", "m3", "P5", "M6"],
 } as const;
 export type ChordQuality = keyof typeof CHORDS;
 export const TRIAD_QUALITIES: ChordQuality[] = ["maj", "min", "dim", "aug"];
@@ -47,7 +63,7 @@ export function chord(root: Note | string, quality: ChordQuality, inversion = 0)
 }
 
 export function chordSymbol(root: Note, quality: ChordQuality): string {
-  const suf: Record<ChordQuality, string> = { maj: "", min: "m", dim: "dim", aug: "aug", maj7: "maj7", "7": "7", min7: "m7", m7b5: "m7b5", dim7: "dim7" };
+  const suf: Record<ChordQuality, string> = { maj: "", min: "m", dim: "dim", aug: "aug", maj7: "maj7", "7": "7", min7: "m7", m7b5: "m7b5", dim7: "dim7", minmaj7: "m(maj7)", augmaj7: "+maj7", "9": "9", maj9: "maj9", min9: "m9", sus4: "sus4", sus2: "sus2", "7sus4": "7sus4", "6": "6", min6: "m6" };
   return pcName(root) + suf[quality];
 }
 
@@ -61,6 +77,16 @@ const QUAL_NAMES: Record<ChordQuality, { en: string; sr: string }> = {
   min7: { en: "minor seventh", sr: "mali molski septakord" },
   m7b5: { en: "half-diminished seventh", sr: "polusmanjeni septakord" },
   dim7: { en: "diminished seventh", sr: "smanjeni septakord" },
+  minmaj7: { en: "minor-major seventh", sr: "molski septakord s velikom septimom" },
+  augmaj7: { en: "augmented major seventh", sr: "povećani septakord s velikom septimom" },
+  "9": { en: "dominant ninth", sr: "dominantni nonakord" },
+  maj9: { en: "major ninth", sr: "veliki durski nonakord" },
+  min9: { en: "minor ninth", sr: "molski nonakord" },
+  sus4: { en: "suspended fourth", sr: "sus4 (kvarta umesto terce)" },
+  sus2: { en: "suspended second", sr: "sus2 (sekunda umesto terce)" },
+  "7sus4": { en: "dominant seventh sus4", sr: "dominantni septakord sus4" },
+  "6": { en: "major sixth", sr: "durski sekstakord (dodata seksta)" },
+  min6: { en: "minor sixth", sr: "molski akord s dodatom sekstom" },
 };
 export function qualityName(q: ChordQuality, locale: Locale): string {
   return QUAL_NAMES[q][locale];
@@ -125,7 +151,7 @@ export function triadQualityOf(notes: Note[]): ChordQuality | null {
 
 export function seventhQualityOf(notes: Note[]): ChordQuality | null {
   const ivs = notes.slice(1).map((n) => ivStr(intervalBetween(notes[0], n))).join(",");
-  for (const q of ["maj7", "7", "min7", "m7b5", "dim7"] as ChordQuality[]) {
+  for (const q of ["maj7", "7", "min7", "m7b5", "dim7", "minmaj7", "augmaj7"] as ChordQuality[]) {
     if (CHORDS[q].slice(1).join(",") === ivs) return q;
   }
   return null;
@@ -156,9 +182,25 @@ export function romanNumeral(tonic: Note | string, type: ScaleType, degree: numb
   throw new Error("non-tertian diatonic triad");
 }
 
-/** Parse "I", "ii", "V", "vii°", "IV6", "V64", "V7" into degree/inversion/seventh. */
+/** Diatonic seventh chord numeral: Imaj7 ii7 iii7 IVmaj7 V7 vi7 viiø7 (vii°7, i(maj7), III+maj7 in harmonic minor). */
+export function romanNumeral7(tonic: Note | string, type: ScaleType, degree: number): string {
+  const q = seventhQualityOf(diatonicChord(tonic, type, degree, true));
+  const r = ROMAN[degree - 1];
+  switch (q) {
+    case "maj7": return r + "maj7";
+    case "7": return r + "7";
+    case "min7": return r.toLowerCase() + "7";
+    case "m7b5": return r.toLowerCase() + "ø7";
+    case "dim7": return r.toLowerCase() + "°7";
+    case "minmaj7": return r.toLowerCase() + "(maj7)";
+    case "augmaj7": return r + "+maj7";
+  }
+  throw new Error("non-tertian diatonic seventh chord");
+}
+
+/** Parse "I", "ii", "V", "vii°", "IV6", "V64", "V7", "Imaj7", "viiø7", "ii65" into degree/inversion/seventh. */
 export function parseRoman(s: string): { degree: number; inversion: number; seventh: boolean } {
-  const m = /^(VII|VI|V|IV|III|II|I|vii|vi|v|iv|iii|ii|i)(°|o|\+)?(7|65|43|42|6|64)?$/.exec(s.trim());
+  const m = /^(VII|VI|V|IV|III|II|I|vii|vi|v|iv|iii|ii|i)(°|o|\+|ø)?(?:\(?maj\)?)?(7|65|43|42|6|64)?\)?$/.exec(s.trim());
   if (!m) throw new Error(`bad roman numeral: ${s}`);
   const degree = ROMAN.indexOf(m[1].toUpperCase()) + 1;
   const fig = m[3] ?? "";

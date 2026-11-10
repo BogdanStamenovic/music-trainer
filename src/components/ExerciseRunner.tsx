@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import type { Exercise } from "@/lib/curriculum/schema";
 import { generateItems, Item, MidiItem, GenCtx } from "@/lib/curriculum/items";
 import { SingInput, RangeInput, CheckinInput, SingFeedback } from "./VoiceInputs";
+import { ComposeInput, WriteInput, ImprovInput } from "./LessonInputs";
 import { grade, Response, MidiEvent, heldChord, clusterChords } from "@/lib/grading";
 import { midiToNote, noteName, parseNote } from "@/lib/music/pitch";
 import { midi } from "@/lib/client/midi";
@@ -101,9 +102,10 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
   };
   const play = useCallback(() => (item.play ? midi().play(item.play) : Promise.resolve()), [item.play]);
   useEffect(() => {
-    if (item.play) void play();
+    // improvisation starts its backing on demand, with a count-in
+    if (item.play && !(item.kind === "midi" && item.mode === "improv")) void play();
     return () => midi().stop();
-  }, [item.id, item.play, play]);
+  }, [item.id, item.play, play, item]);
   useEffect(() => {
     const k = (e: KeyboardEvent) => {
       if (e.key === "Enter" && fb && (e.target as HTMLElement)?.tagName !== "INPUT") onNext();
@@ -116,7 +118,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
     <div className="item" data-testid="item" data-kind={item.kind}>
       <p className="prompt">{l(item.prompt)}</p>
       {item.abc ? <Abc abc={item.abc} /> : null}
-      {item.play ? (
+      {item.play && !(item.kind === "midi" && item.mode === "improv") ? (
         <button type="button" className="secondary" onClick={() => void play()}>
           ▶ {t("replay")}
         </button>
@@ -138,7 +140,10 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
         </div>
       ) : null}
       {item.kind === "names" ? <NamesInput onSubmit={(text) => answer({ kind: "names", text, locale })} disabled={!!fb} /> : null}
-      {item.kind === "midi" ? <MidiInput item={item} onSubmit={(events) => answer({ kind: "midi", events })} disabled={!!fb} /> : null}
+      {item.kind === "midi" && item.mode === "improv" ? <ImprovInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "midi" && item.mode !== "improv" ? <MidiInput item={item} onSubmit={(events) => answer({ kind: "midi", events })} disabled={!!fb} /> : null}
+      {item.kind === "compose" ? <ComposeInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "write" ? <WriteInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "sing" ? <SingInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "range" ? <RangeInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} /> : null}
@@ -162,8 +167,9 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
       ) : null}
       {fb ? (
         <div className={`feedback ${fb.score >= pass ? "good" : "bad"}`} data-testid="feedback">
-          <strong>{item.kind === "practice" || item.kind === "checkin" || item.kind === "range" ? t("saved") : fb.score >= 0.999 ? t("correct") : fb.score >= pass ? `${Math.round(fb.score * 100)}%` : t("wrong")}</strong>
-          {item.kind === "midi" && fb.score < 0.999 ? (
+          <strong>{item.kind === "practice" || item.kind === "checkin" || item.kind === "range" || item.kind === "write" ? t("saved") : item.kind === "compose" && !(fb.resp as { rules?: unknown }).rules ? t("checkedOnServer") : fb.score >= 0.999 ? t("correct") : fb.score >= pass ? `${Math.round(fb.score * 100)}%` : t("wrong")}</strong>
+          {item.kind === "midi" && (item.mode === "improv" || item.mode === "rhythm") ? <div className="small">{JSON.stringify(fb.detail)}</div> : null}
+          {item.kind === "midi" && item.mode !== "improv" && item.mode !== "rhythm" && fb.score < 0.999 ? (
             <>
               <div>
                 {t("expected")}: {item.noteLabels ? l(item.noteLabels) : names(item.expect, locale)}
@@ -237,7 +243,7 @@ function MidiInput({ item, onSubmit, disabled }: { item: MidiItem; onSubmit: (e:
       if (!allUp) return;
       if (item.mode === "chord") {
         if (heldChord(ev).length >= item.expect.length) timer.current = window.setTimeout(submit, 250);
-      } else if (item.mode === "sequence") {
+      } else if (item.mode === "sequence" || item.mode === "rhythm") {
         if (ev.filter((x) => x.type === "on").length >= item.expect.length) timer.current = window.setTimeout(submit, 900);
       } else if (clusterChords(ev).length >= (item.expectChords?.length ?? 1)) timer.current = window.setTimeout(submit, 1200);
     });

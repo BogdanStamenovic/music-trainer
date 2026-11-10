@@ -1,7 +1,7 @@
 // Deterministic grading for T (answers), E/K (MIDI performance, optional timing).
 // Shared by client (instant feedback, offline) and server (authoritative re-grade).
 
-import type { Item, MidiItem, SingItem } from "./curriculum/items";
+import type { Item, MidiItem, SingItem, ComposeItem, WriteItem } from "./curriculum/items";
 import { parseNoteLoose, pcName, Locale } from "./music/pitch";
 
 export interface MidiEvent {
@@ -18,7 +18,10 @@ export type Response =
   | { kind: "practice"; selfScore: number } // 0..1
   | { kind: "sing"; recordingId: string; analysis: VoiceAnalysis | null; reason?: string }
   | { kind: "range"; recordingIds: string[]; lowMidi: number | null; highMidi: number | null }
-  | { kind: "checkin"; state: "fine" | "tired" | "hoarse" };
+  | { kind: "checkin"; state: "fine" | "tired" | "hoarse" }
+  // rules: set by the SERVER (it runs the music21 worker before grading); a client copy is ignored
+  | { kind: "compose"; abc: string; rules?: { ok: boolean; score?: number; checks?: unknown[]; error?: string; unavailable?: boolean } | null }
+  | { kind: "write"; text: string; self: Record<string, number> };
 
 /** The subset of a voice-score /analyze result that grading uses (server and browser share the shape). */
 export interface VoiceNote {
@@ -74,6 +77,10 @@ function gradeRaw(item: Item, r: Response): { score: number; detail: Record<stri
     case "checkin":
       // not a skill: always "passes"; the state is what matters (it can end the voice block)
       return { score: 1, detail: { state: (r as { state: string }).state } };
+    case "compose":
+      return gradeCompose(item, r as Extract<Response, { kind: "compose" }>);
+    case "write":
+      return gradeWrite(item, r as Extract<Response, { kind: "write" }>);
   }
 }
 
@@ -205,6 +212,8 @@ export function timingScore(beats: number[], times: number[], tempo: number) {
 }
 
 export function gradeMidi(item: MidiItem, events: MidiEvent[]) {
+  if (item.mode === "rhythm") return gradeRhythm(item.rhythm ?? [], events, item.tempo ?? 80);
+  if (item.mode === "improv") return gradeImprov(item, events);
   if (item.mode === "chord") {
     const played = heldChord(events);
     return { score: chordScore(played, item.expect, item.octave, item.bass), detail: { played, expect: item.expect } };
@@ -268,4 +277,70 @@ export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; r
     return { target: t, score: Math.round(sc * 1000) / 1000, cents: n.cents_error, sustain: n.sustain_s };
   });
   return { score: per.reduce((s, p) => s + p.score, 0) / per.length, detail: { tracker: a.tracker, notes: per } };
+}
+
+/**
+ * Tapped rhythm vs expected onsets (beats). Pitch is ignored. The played onsets are
+ * fitted to the expected grid (one tempo factor, one offset), so starting late or a
+ * slightly different steady tempo is fine; missing/extra taps cost proportionally.
+ */
+export function gradeRhythm(expected: number[], events: MidiEvent[], tempo: number) {
+  const on = onsets(events).map((o) => o.t);
+  if (on.length < 2 || expected.length < 2) return { score: on.length === expected.length ? 1 : 0, detail: { taps: on.length, expected: expected.length } };
+  const countScore = Math.max(0, 1 - Math.abs(on.length - expected.length) / expected.length);
+  const n = Math.min(on.length, expected.length);
+  const tm = timingScore(expected.slice(0, n), on.slice(0, n), tempo);
+  return { score: countScore * tm.score, detail: { taps: on.length, expected: expected.length, timing: tm } };
+}
+
+/**
+ * Improvisation over a backing loop. Event times are relative to the backing start.
+ * Score = 50% notes in the scale + 30% chord tones on each chord's first beat
+ * (+-1/4 beat) + 20% activity (about one note per beat or more, at least 4 pitch
+ * classes). A screen for "on the changes and playing", not a judgement of taste.
+ */
+export function gradeImprov(item: MidiItem, events: MidiEvent[]) {
+  const im = item.improv!;
+  const beatMs = 60000 / (item.tempo ?? 80);
+  const on = onsets(events);
+  const total = im.chords.length * im.loops;
+  if (!on.length) return { score: 0, detail: { notes: 0 } };
+  const pc = (m: number) => ((m % 12) + 12) % 12;
+  const inScale = on.filter((o) => im.scale.includes(pc(o.note))).length / on.length;
+  let hit = 0;
+  for (let k = 0; k < total; k++) {
+    const t = k * im.beatsPerChord * beatMs;
+    const chordPcs = im.chords[k % im.chords.length];
+    const near = on.filter((o) => Math.abs(o.t - t) <= beatMs / 4);
+    if (near.some((o) => chordPcs.includes(pc(o.note)))) hit++;
+  }
+  const downbeats = hit / total;
+  const beats = total * im.beatsPerChord;
+  const density = Math.min(1, on.length / (beats * 0.75));
+  const variety = Math.min(1, new Set(on.map((o) => pc(o.note))).size / 4);
+  const activity = density * variety;
+  const score = 0.5 * inScale + 0.3 * downbeats + 0.2 * activity;
+  return { score, detail: { notes: on.length, inScale: round3(inScale), chordTonesOnDownbeats: `${hit}/${total}`, activity: round3(activity) } };
+}
+const round3 = (x: number) => Math.round(x * 1000) / 1000;
+
+/** Composition exercise: the server's music21 result; unavailable worker = completion credit, flagged. */
+export function gradeCompose(_item: ComposeItem, r: { abc: string; rules?: { ok: boolean; score?: number; checks?: unknown[]; error?: string; unavailable?: boolean } | null }) {
+  if (!r.abc?.trim()) return { score: 0, detail: { error: "empty" } };
+  if (!r.rules) return { score: 0, detail: { pending: "rules are checked on the server" } };
+  if (!r.rules.ok) return r.rules.unavailable ? { score: 1, detail: { unchecked: true, error: r.rules.error } } : { score: 0, detail: { error: r.rules.error } };
+  return { score: r.rules.score ?? 0, detail: { checks: r.rules.checks } };
+}
+
+/** Writing exercise: the learner's rubric rating (0..4 per criterion, weighted). */
+export function gradeWrite(item: WriteItem, r: { text: string; self: Record<string, number> }) {
+  if (!r.text?.trim()) return { score: 0, detail: { error: "empty" } };
+  let w = 0,
+    s = 0;
+  for (const c of item.rubric) {
+    w += c.weight;
+    s += c.weight * (Math.max(0, Math.min(4, r.self?.[c.id] ?? 0)) / 4);
+  }
+  const lines = r.text.split("\n").filter((l) => l.trim() && !/^\[.*\]$/.test(l.trim())).length;
+  return { score: w ? s / w : 0, detail: { self: r.self, lines } };
 }

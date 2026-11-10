@@ -11,8 +11,8 @@ const PcS = z.string().regex(/^[A-G](##|#|bb|b)?$/, "pitch name without octave, 
 const Track = z.enum(["T", "E", "K", "V", "C", "L"]);
 export type Track = z.infer<typeof Track>;
 
-const ScaleType = z.enum(["major", "natural-minor", "harmonic-minor", "melodic-minor", "major-pentatonic", "minor-pentatonic"]);
-const ChordQ = z.enum(["maj", "min", "dim", "aug", "maj7", "7", "min7", "m7b5", "dim7"]);
+const ScaleType = z.enum(["major", "natural-minor", "harmonic-minor", "melodic-minor", "major-pentatonic", "minor-pentatonic", "blues", "dorian", "phrygian", "lydian", "mixolydian", "locrian"]);
+const ChordQ = z.enum(["maj", "min", "dim", "aug", "maj7", "7", "min7", "m7b5", "dim7", "minmaj7", "augmaj7", "9", "maj9", "min9", "sus4", "sus2", "7sus4", "6", "min6"]);
 const IvS = z.string().regex(/^(dd|d|m|M|P|A|AA)\d+$/);
 const Mode = z.enum(["major", "minor"]);
 
@@ -95,6 +95,28 @@ export const VoiceRange = z.object({ ...Base, type: z.literal("voice-range") });
 /** Fatigue/hoarseness check-in. Anything but "fine" ends voice work for the day. */
 export const Checkin = z.object({ ...Base, type: z.literal("checkin") });
 
+// ---------- composition / writing exercises (C and L tracks) ----------
+/** Write a short passage in ABC (recorded on the piano or typed); graded by the music21 worker's rule checks. */
+export const Compose = z.object({
+  ...Base,
+  type: z.literal("compose"),
+  key: z.string().regex(/^[A-G](#|b)? (major|minor)$/),
+  meter: z.string().regex(/^\d+\/\d+$/),
+  bars: z.number().int().min(1).max(32),
+  rules: z.array(z.enum(["bars", "range", "key", "cadence", "half-cadence", "leaps", "stepwise", "augmented", "parallels", "rhythm"])).min(1),
+  given: z.string().optional(), // ABC shown as the starting point (e.g. the question phrase)
+  range: z.tuple([NoteS, NoteS]).optional(),
+  voices: z.number().int().min(1).max(2).default(1),
+});
+/** Write text (lyrics); graded by the learner's own rubric rating; AI feedback is optional and never blocks. */
+export const Write = z.object({
+  ...Base,
+  type: z.literal("write"),
+  language: z.enum(["en", "sr", "either"]).default("either"),
+  lines: z.tuple([z.number().int().min(1), z.number().int().min(1)]).optional(),
+  rubric: z.array(z.object({ id: z.string().regex(/^[a-z][a-z0-9-]*$/), label: Loc, weight: z.number().positive().default(1), top: Loc })).min(1),
+});
+
 /** Self-reported activity (warm-ups, practice routines). Scored by the learner. */
 export const Practice = z.object({ ...Base, type: z.literal("practice"), minutes: z.number().min(0.5).max(30).default(3), play: Playback.optional() });
 
@@ -111,7 +133,13 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("chord-name"), qualities: z.array(ChordQ).min(2), roots: z.array(PcS).optional(), inversions: z.array(z.number().int().min(0).max(3)).default([0]) }),
   z.object({ kind: z.literal("scale-build"), types: z.array(ScaleType).min(1), tonics: z.array(PcS).min(1), answer: z.enum(["name", "play"]).default("play"), tempo: z.number().optional(), descending: z.boolean().default(false) }),
   z.object({ kind: z.literal("keysig"), keys: z.array(PcS).min(2), mode: Mode.default("major"), ask: z.enum(["count", "key", "relative"]).default("count") }),
-  z.object({ kind: z.literal("roman"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(7)).optional(), ask: z.enum(["numeral", "play", "name"]).default("numeral") }),
+  z.object({ kind: z.literal("roman"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(7)).optional(), ask: z.enum(["numeral", "play", "name"]).default("numeral"), seventh: z.boolean().default(false) }),
+  // tap back a rhythm heard on one pitch; pitch is ignored, timing is graded
+  z.object({ kind: z.literal("rhythm-echo"), meter: z.string().regex(/^\d+\/\d+$/).default("4/4"), bars: z.number().int().min(1).max(4).default(1), values: z.array(z.number().positive()).min(1), tempo: z.number().min(40).max(160).default(80) }),
+  // hear a progression, pick which one it was
+  z.object({ kind: z.literal("progression-ear"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), options: z.array(z.array(z.string()).min(2)).min(2), tempo: z.number().default(60) }),
+  // improvise over a looping backing progression; graded on scale use, chord tones on downbeats, activity
+  z.object({ kind: z.literal("improv"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), scale: ScaleType, numerals: z.array(z.string()).min(1), beatsPerChord: z.number().int().min(1).max(8).default(4), loops: z.number().int().min(1).max(8).default(2), tempo: z.number().min(40).max(200).default(80) }),
   z.object({ kind: z.literal("progression"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), tempo: z.number().optional(), octave: z.enum(["exact", "any"]).default("any"), echo: z.boolean().default(false) }),
   z.object({ kind: z.literal("melody-echo"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(1), z.number().int().min(1)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), startOnTonic: z.boolean().default(true), octave: z.number().int().default(4), tempo: z.number().default(80) }),
   z.object({ kind: z.literal("degree-ear"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(8)).min(2), answer: z.enum(["choose", "play"]).default("choose"), octave: z.number().int().default(4) }),
@@ -123,7 +151,7 @@ export type Gen = z.infer<typeof Gen>;
 
 export const Generated = z.object({ ...Base, type: z.literal("generated"), count: z.number().int().min(1).max(30).default(5), gen: Gen });
 
-export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated, SingPitch, SingPhrase, VoiceRange, Checkin]);
+export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated, SingPitch, SingPhrase, VoiceRange, Checkin, Compose, Write]);
 export type Exercise = z.infer<typeof Exercise>;
 
 export const Lesson = z.object({

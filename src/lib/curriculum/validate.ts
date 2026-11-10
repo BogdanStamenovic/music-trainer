@@ -111,6 +111,21 @@ export function validateLessons(lessons: Lesson[]): string[] {
     }
   }
   for (const l of lessons) for (const p of l.prereqs) if (!ids.has(p)) errs.push(`${l.id}: unknown prereq ${p}`);
+  // Voice safety (SPEC): distortion work unlocks only after support + onset units, and
+  // every distortion lesson states the stop protocol in both languages.
+  const byIdV = new Map(lessons.map((l) => [l.id, l]));
+  const ancestors = (id: string, seen = new Set<string>()): Set<string> => {
+    for (const p of byIdV.get(id)?.prereqs ?? []) if (!seen.has(p)) { seen.add(p); ancestors(p, seen); }
+    return seen;
+  };
+  for (const l of lessons) {
+    if (!l.tags.includes("distortion")) continue;
+    if (l.track !== "V") errs.push(`${l.id}: distortion lessons belong in V`);
+    const anc = [...ancestors(l.id)].map((a) => byIdV.get(a)).filter(Boolean);
+    if (!anc.some((a) => a!.tags.includes("support"))) errs.push(`${l.id}: distortion lesson must (transitively) require a lesson tagged "support"`);
+    if (!anc.some((a) => a!.tags.includes("onset"))) errs.push(`${l.id}: distortion lesson must (transitively) require a lesson tagged "onset"`);
+    if (!/stop/i.test(l.explain.en) || !/prekin|stani/i.test(l.explain.sr)) errs.push(`${l.id}: distortion lesson must state the stop protocol (EN "stop", SR "prekini/stani")`);
+  }
   // prereq cycles
   const byId = new Map(lessons.map((l) => [l.id, l]));
   const state = new Map<string, number>();

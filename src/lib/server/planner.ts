@@ -29,6 +29,7 @@ export interface DayPlan {
   focusMinutes: number;
   maintenance: null | { reviews: { exerciseId: string; lessonId: string }[]; warmup: string | null; minutes: number };
   test: null | { exercises: { exerciseId: string; lessonId: string; source: "week" | "review" }[] };
+  practice?: { exerciseId: string; lessonId: string }[]; // drills from passed lessons when new content runs short
   noPiano?: boolean; // "no piano today": non-piano focus, no piano-only reviews (this day only)
   createdAt: number;
 }
@@ -84,7 +85,7 @@ export function available(track: Track, statuses: Map<string, { status: string }
  * a single lesson is longer). Lessons chain: a lesson planned today counts as
  * done for unlocking the next one, since it will be done before it.
  */
-export function fillFocus(tracks: Track[], target: number, statuses: Map<string, { status: string }>): PlanLesson[] {
+export function fillFocus(tracks: Track[], target: number, statuses: Map<string, { status: string }>, opts?: { date?: string }): PlanLesson[] {
   const sim = new Map(statuses);
   const picked: PlanLesson[] = [];
   let minutes = 0;
@@ -93,7 +94,12 @@ export function fillFocus(tracks: Track[], target: number, statuses: Map<string,
     let progressed = false;
     for (const t of tracks) {
       if (minutes >= target) break;
-      const next = available(t, sim).find((a) => !picked.some((p) => p.id === a.lesson.id));
+      const c = getCurriculum();
+      const distortionPicked = picked.some((p) => c.byId.get(p.id)?.tags.includes("distortion"));
+      // voice safety: at most one distortion lesson a day, never on a voice-rest day
+      const next = available(t, sim).find(
+        (a) => !picked.some((p) => p.id === a.lesson.id) && !(a.lesson.tags.includes("distortion") && (distortionPicked || (opts?.date && voiceRest(opts.date)))),
+      );
       if (!next) continue;
       if (picked.length > 0 && minutes + next.lesson.minutes > cap) continue;
       picked.push({ id: next.lesson.id, track: t, minutes: next.lesson.minutes, status: statuses.get(next.lesson.id)?.status ?? "new", aheadOfTheory: next.ahead.length ? next.ahead : undefined });
@@ -138,10 +144,10 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   if (opts.noPiano) {
     // theory unless it is ahead of schedule (then voice); voice never on a voice-rest day
     let tracks: Track[] = theoryAhead(date, s) && !voiceRest(date) ? ["V"] : ["T"];
-    let lessons = fillFocus(tracks, s.focusMinutes, statuses);
+    let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date });
     if (!lessons.length) {
       const alt: Track[] = tracks[0] === "T" && !voiceRest(date) ? ["V"] : ["T"];
-      const got = fillFocus(alt, s.focusMinutes, statuses);
+      const got = fillFocus(alt, s.focusMinutes, statuses, { date });
       if (got.length) [tracks, lessons] = [alt, got];
     }
     const name = tracks.map((t) => TRACK_NAMES[t]);
@@ -167,13 +173,13 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   // Focus tracks with content; otherwise walk the week forward to the next day that has some.
   const tracksOf = (f: Focus[]) => f.filter((x): x is Track => !["test", "rest"].includes(x));
   let tracks = tracksOf(focus);
-  let lessons = fillFocus(tracks, s.focusMinutes, statuses);
+  let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date });
   if (lessons.length === 0) {
     const idx = WEEKDAYS.indexOf(weekday);
     for (let k = 1; k <= 7 && lessons.length === 0; k++) {
       const alt = tracksOf(s.schedule[WEEKDAYS[(idx + k) % 7]]);
       if (!alt.length || alt.join() === tracks.join()) continue;
-      const got = fillFocus(alt, s.focusMinutes, statuses);
+      const got = fillFocus(alt, s.focusMinutes, statuses, { date });
       if (got.length) {
         const from = tracks.map((t) => TRACK_NAMES[t]);
         const to = alt.map((t) => TRACK_NAMES[t]);
@@ -187,7 +193,8 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
     }
   }
   if (lessons.length === 0 && !base.note) base.note = { en: "You have finished every available lesson. Reviews only today.", sr: "Završio si sve dostupne lekcije. Danas samo ponavljanje." };
-  return { ...base, focusUsed: tracks, lessons, maintenance: maintenance() };
+  const practice = practiceFill(tracks, s.focusMinutes - lessons.reduce((a, l) => a + l.minutes, 0), date);
+  return { ...base, focusUsed: tracks, lessons, maintenance: maintenance(), practice: practice.length ? practice : undefined };
 }
 
 /** Today's plan is built once and kept stable for the day; statuses are refreshed on read. */
@@ -269,4 +276,34 @@ export function weeklyTest(date: string): { exercises: { exerciseId: string; les
     n++;
   }
   return { exercises: out };
+}
+
+/**
+ * When a focus track has fewer unlocked minutes than the target, top the day up with
+ * drills: generated exercises from lessons already passed in that track (fresh items
+ * each time), least recently practised first. ~1.5 min per drill (3 items).
+ */
+export function practiceFill(tracks: Track[], minutesLeft: number, date: string): { exerciseId: string; lessonId: string }[] {
+  if (minutesLeft < 5) return [];
+  const c = getCurriculum();
+  const st = lessonStatuses();
+  const last = new Map(
+    (getDb().prepare("SELECT exercise_id, max(date) d FROM attempts GROUP BY exercise_id").all() as { exercise_id: string; d: string }[]).map((r) => [r.exercise_id, r.d]),
+  );
+  const pool: { exerciseId: string; lessonId: string; last: string }[] = [];
+  for (const l of c.lessons) {
+    if (!tracks.includes(l.track) || !done(st.get(l.id)?.status) || l.tags.includes("maintenance") || l.tags.includes("distortion")) continue;
+    for (const e of l.exercises) if (e.type === "generated") pool.push({ exerciseId: e.id, lessonId: l.id, last: last.get(e.id) ?? "" });
+  }
+  pool.sort((a, b) => a.last.localeCompare(b.last));
+  return pool.slice(0, Math.min(10, Math.floor(minutesLeft / 1.5))).map(({ exerciseId, lessonId }) => ({ exerciseId, lessonId }));
+}
+
+/** Distortion lessons: another one already attempted today blocks this one (daily cap, SPEC voice safety). */
+export function distortionBlocked(lessonId: string, date: string): string | null {
+  const c = getCurriculum();
+  if (!c.byId.get(lessonId)?.tags.includes("distortion")) return null;
+  if (voiceRest(date)) return "voice-rest";
+  const others = getDb().prepare("SELECT DISTINCT lesson_id FROM attempts WHERE date = ? AND lesson_id IS NOT NULL AND lesson_id != ?").all(date, lessonId) as { lesson_id: string }[];
+  return others.some((o) => c.byId.get(o.lesson_id)?.tags.includes("distortion")) ? "daily-cap" : null;
 }

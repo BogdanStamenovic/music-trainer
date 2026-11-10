@@ -145,6 +145,17 @@ export default function TodayPage() {
         </section>
       ) : null}
 
+      {p.practice?.length ? (
+        <section className="card">
+          <h2>
+            {t("practice")} <span className="muted small">~{Math.round(p.practice.length * 1.5)} {t("min")} · {t("practiceHint")}</span>
+          </h2>
+          <Link className="button secondary" href="/practice" data-testid="practice-link">
+            {t("start")}
+          </Link>
+        </section>
+      ) : null}
+
       {proj?.project ? (
         <section className={`card ${p.weekday === "sat" || p.weekday === "sun" ? "highlight" : ""}`} data-testid="project-card">
           <h2>

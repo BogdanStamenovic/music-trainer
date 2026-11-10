@@ -139,6 +139,24 @@ describe("weekly projects", () => {
     expect(j).toEqual({ status: "done", attempts: 2, result: "42" });
   });
 
+  it("the reviewer receives the WHOLE submission: every stanza, line and blank line", async () => {
+    const id = (getDb().prepare("SELECT id FROM projects WHERE kind='lyrics'").get() as { id: string }).id;
+    const stanza = (n: number) => [1, 2, 3, 4].map((i) => `strofa ${n} stih ${i} čežnja`).join("\n");
+    const refrain = "Oj, sevdahu, rano moja\nne daj srcu da zaspi";
+    const text = `[Strofa 1]\n${stanza(1)}\n\n[Refren]\n${refrain}\n\n[Strofa 2]\n${stanza(2)}\n\n[Refren]\n${refrain}\n\n[Strofa 3]\n${stanza(3)}\n\n[Refren]\n${refrain}`;
+    const cap = path.join(os.tmpdir(), `mt-prompt-${Date.now()}.txt`);
+    process.env.FAKE_CLAUDE_CAPTURE = cap;
+    await submitProject(id, { kind: "lyrics", text, language: "sr", self: self("PL-002", 2), locale: "sr" });
+    await drain();
+    delete process.env.FAKE_CLAUDE_CAPTURE;
+    const prompt = fs.readFileSync(cap, "utf8");
+    expect(prompt).toContain(text); // verbatim, blank lines included
+    for (const n of [1, 2, 3]) for (const i of [1, 2, 3, 4]) expect(prompt).toContain(`strofa ${n} stih ${i}`);
+    expect(prompt.split("ne daj srcu da zaspi").length - 1).toBe(3);
+    expect(prompt).toMatch(/18 lines/); // stats counted all sung lines (12 + 3x2)
+    expect(getProject(id)!.ai_status).toBe("done");
+  });
+
   it("helpers", () => {
     expect(extractJson('Sure!\n```json\n{"a":1}\n```')).toEqual({ a: 1 });
     expect(rubricScore([{ id: "a", weight: 1, label: { en: "", sr: "" }, top: { en: "", sr: "" } }, { id: "b", weight: 3, label: { en: "", sr: "" }, top: { en: "", sr: "" } }], { a: 4, b: 0 })).toBe(0.25);

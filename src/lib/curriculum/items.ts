@@ -5,7 +5,7 @@
 import type { Exercise, Derive, Playback as PlaybackDef, Gen, Loc } from "./schema";
 import { Note, parseNote, toMidi, noteStr, noteNameSr, pcName, midiToNote, LETTERS } from "../music/pitch";
 import { parseInterval, transpose, intervalBetween, ivStr, intervalName } from "../music/interval";
-import { scale, chord, CHORDS, ChordQuality, keySignature, relativeMinor, romanNumeral, romanChord, diatonicChord, qualityName, chordSymbol, SCALES, ScaleType } from "../music/harmony";
+import { scale, chord, CHORDS, ChordQuality, keySignature, relativeMinor, romanNumeral, romanNumeral7, romanChord, diatonicChord, qualityName, chordSymbol, SCALES, ScaleType } from "../music/harmony";
 import { abcTune, abcChords } from "../music/abc";
 
 export interface PlaySpec {
@@ -35,7 +35,9 @@ export interface NamesItem extends ItemBase {
 }
 export interface MidiItem extends ItemBase {
   kind: "midi";
-  mode: "chord" | "sequence" | "chords";
+  mode: "chord" | "sequence" | "chords" | "rhythm" | "improv";
+  rhythm?: number[]; // rhythm mode: expected onsets in beats from the first note
+  improv?: { scale: number[]; chords: number[][]; beatsPerChord: number; loops: number; tonicPc: number }; // pitch classes; chords as pcs
   expect: number[];
   expectChords?: number[][];
   octave: "exact" | "any";
@@ -67,7 +69,23 @@ export interface RangeItem extends ItemBase {
 export interface CheckinItem extends ItemBase {
   kind: "checkin";
 }
-export type Item = McqItem | NamesItem | MidiItem | PracticeItem | SingItem | RangeItem | CheckinItem;
+export interface ComposeItem extends ItemBase {
+  kind: "compose";
+  key: string;
+  meter: string;
+  bars: number;
+  rules: string[];
+  given?: string;
+  range?: [number, number];
+  voices: 1 | 2;
+}
+export interface WriteItem extends ItemBase {
+  kind: "write";
+  language: "en" | "sr" | "either";
+  lines?: [number, number];
+  rubric: { id: string; label: Loc; weight: number; top: Loc }[];
+}
+export type Item = McqItem | NamesItem | MidiItem | PracticeItem | SingItem | RangeItem | CheckinItem | ComposeItem | WriteItem;
 
 /** Learner state that shapes generated items. Stored with each submission so the server regenerates the same items. */
 export interface GenCtx {
@@ -142,21 +160,34 @@ const SCALE_NAMES: Record<ScaleType, Loc> = {
   "melodic-minor": L("melodic minor (ascending)", "melodijska molska (uzlazno)"),
   "major-pentatonic": L("major pentatonic", "durska pentatonska"),
   "minor-pentatonic": L("minor pentatonic", "molska pentatonska"),
+  blues: L("blues scale", "bluz lestvica"),
+  dorian: L("dorian", "dorski"),
+  phrygian: L("phrygian", "frigijski"),
+  lydian: L("lydian", "lidijski"),
+  mixolydian: L("mixolydian", "miksolidijski"),
+  locrian: L("locrian", "lokrijski"),
 };
+const MODES = new Set<ScaleType>(["blues", "dorian", "phrygian", "lydian", "mixolydian", "locrian"]);
 const ivLoc = (s: string): Loc => {
   const iv = parseInterval(s);
   return L(`${intervalName(iv, "en")} (${s})`, `${intervalName(iv, "sr")} (${s})`);
 };
 const qLoc = (q: ChordQuality): Loc => L(qualityName(q, "en"), qualityName(q, "sr"));
 const isMinor = (t: ScaleType) => t.includes("minor");
-const SR_VARIANT_LOC: Record<ScaleType, string> = { major: "", "natural-minor": "prirodnom", "harmonic-minor": "harmonskom", "melodic-minor": "melodijskom", "major-pentatonic": "(pentatonika)", "minor-pentatonic": "(pentatonika)" };
-const SR_VARIANT: Record<ScaleType, string> = { major: "", "natural-minor": "prirodni", "harmonic-minor": "harmonski", "melodic-minor": "melodijski", "major-pentatonic": "pentatonika", "minor-pentatonic": "pentatonika" };
+const SR_VARIANT_LOC: Record<ScaleType, string> = { major: "", "natural-minor": "prirodnom", "harmonic-minor": "harmonskom", "melodic-minor": "melodijskom", "major-pentatonic": "(pentatonika)", "minor-pentatonic": "(pentatonika)", blues: "", dorian: "", phrygian: "", lydian: "", mixolydian: "", locrian: "" };
+const SR_VARIANT: Record<ScaleType, string> = { major: "", "natural-minor": "prirodni", "harmonic-minor": "harmonski", "melodic-minor": "melodijski", "major-pentatonic": "pentatonika", "minor-pentatonic": "pentatonika", blues: "", dorian: "", phrygian: "", lydian: "", mixolydian: "", locrian: "" };
 /**
  * Key/scale names. Serbian: "C-dur", "a-mol" (minor keys lower case), locative
  * "u C-duru", "u a-molu"; scale variants follow ("a-mol harmonski").
  * `variant` adds the scale variant (needed for scales, not for keys).
  */
 function keyName(tonic: Note, type: ScaleType, variant = true): { nom: Loc; loc: Loc } {
+  if (MODES.has(type)) {
+    // modes and the blues scale are named as such: "D dorian" / "D dorski" (locative "u D dorskom")
+    const sr = SCALE_NAMES[type].sr;
+    const srLoc = type === "blues" ? `${noteNameSr(tonic)} bluz lestvici` : `${noteNameSr(tonic)} ${sr.replace(/i$/, "om")}`;
+    return { nom: L(`${pcName(tonic)} ${SCALE_NAMES[type].en}`, `${noteNameSr(tonic)} ${sr}`), loc: L(`${pcName(tonic)} ${SCALE_NAMES[type].en}`, srLoc) };
+  }
   const minor = isMinor(type);
   const base = minor ? noteNameSr(tonic).toLowerCase() + "-mol" : noteNameSr(tonic) + "-dur";
   const showVar = variant && type !== "major" && (type !== "natural-minor" || variant);
@@ -267,6 +298,10 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
       return { ...base, kind: "range" };
     case "checkin":
       return { ...base, kind: "checkin" };
+    case "compose":
+      return { ...base, kind: "compose", key: ex.key, meter: ex.meter, bars: ex.bars, rules: ex.rules, given: ex.given, voices: ex.voices as 1 | 2, range: ex.range ? [toMidi(parseNote(ex.range[0])), toMidi(parseNote(ex.range[1]))] : undefined };
+    case "write":
+      return { ...base, kind: "write", language: ex.language, lines: ex.lines, rubric: ex.rubric };
   }
 }
 
@@ -556,17 +591,17 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
     case "roman": {
       const key = parseNote(rng.pick(g.keys), 4);
       const deg = rng.pick(g.degrees ?? [1, 2, 3, 4, 5, 6, 7]);
-      const rn = romanNumeral(key, g.type, deg);
-      const notes = diatonicChord(key, g.type, deg);
+      const rn = g.seventh ? romanNumeral7(key, g.type, deg) : romanNumeral(key, g.type, deg);
+      const notes = diatonicChord(key, g.type, deg, g.seventh);
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       if (g.ask === "numeral") {
-        const pool = [1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral(key, g.type, d));
+        const pool = [1, 2, 3, 4, 5, 6, 7].map((d) => (g.seventh ? romanNumeral7(key, g.type, d) : romanNumeral(key, g.type, d)));
         const chordTxt = join(notes.map(nn), "-");
         const { options, answer } = mcq(rng, rn, pool);
         return { ...base, kind: "mcq", prompt: L(`In ${keyLoc.en}, the chord ${chordTxt.en} is…`, `U ${keyLoc.sr}, akord ${chordTxt.sr} je…`), options: options.map((o) => L(o, o)), answer };
       }
       if (g.ask === "name")
-        return { ...base, kind: "names", ordered: true, expect: notes.map(pcName), prompt: L(`Spell ${rn} in ${keyLoc.en} (root, third, fifth).`, `Napiši ${rn} u ${keyLoc.sr} (osnovni ton, terca, kvinta).`) };
+        return { ...base, kind: "names", ordered: true, expect: notes.map(pcName), prompt: g.seventh ? L(`Spell ${rn} in ${keyLoc.en} (root, third, fifth, seventh).`, `Napiši ${rn} u ${keyLoc.sr} (osnovni ton, terca, kvinta, septima).`) : L(`Spell ${rn} in ${keyLoc.en} (root, third, fifth).`, `Napiši ${rn} u ${keyLoc.sr} (osnovni ton, terca, kvinta).`) };
       return {
         ...base,
         kind: "midi",
@@ -663,6 +698,92 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         prompt: L(`Key: ${keyLoc.en} (you hear I–IV–V–I). Which scale degree is the last note?`, `Tonalitet: ${keyLoc.sr} (čuješ I–IV–V–I). Koji je stupanj lestvice poslednji ton?`),
         options: options.map((o) => (o === "8" ? L("8 (tonic, octave up)", "8. (tonika, oktavu više)") : L(`degree ${o}`, `${o}. stupanj`))),
         answer,
+      };
+    }
+    case "rhythm-echo": {
+      const [num, den] = g.meter.split("/").map(Number);
+      const barBeats = num * (4 / den);
+      const durs: number[] = [];
+      for (let b = 0; b < g.bars; b++) {
+        let left = barBeats;
+        for (let guard = 0; left > 1e-9 && guard < 64; guard++) {
+          const fit = g.values.filter((v) => v <= left + 1e-9);
+          const v = fit.length ? rng.pick(fit) : left;
+          durs.push(v);
+          left -= v;
+        }
+      }
+      const onsets: number[] = [];
+      let t = 0;
+      for (const d of durs) {
+        onsets.push(t);
+        t += d;
+      }
+      const pitch = 72;
+      return {
+        ...base,
+        kind: "midi",
+        mode: "rhythm",
+        expect: durs.map(() => pitch),
+        rhythm: onsets,
+        octave: "any",
+        bass: false,
+        tempo: g.tempo,
+        showNotes: false,
+        play: { mode: "melodic", notes: durs.map(() => pitch), durations: durs, tempo: g.tempo },
+        abc: abcRhythm(durs, g.meter),
+        prompt: L(`Listen, then tap the rhythm back on any key (♩=${g.tempo}).`, `Slušaj, pa otkucaj ritam na bilo kojoj dirki (♩=${g.tempo}).`),
+        noteLabels: L(durs.join(" "), durs.join(" ")),
+      };
+    }
+    case "progression-ear": {
+      const key = parseNote(rng.pick(g.keys), 4);
+      const k = rng.int(0, g.options.length - 1);
+      const opts = g.options.map((o) => o.join(" – "));
+      const chords = g.options[k].map((r) => romanChord(key, g.type, r).map(toMidi));
+      const { options, answer } = mcq(rng, opts[k], opts, Math.min(4, opts.length));
+      const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
+      return {
+        ...base,
+        kind: "mcq",
+        play: { mode: "chords", chords, tempo: g.tempo },
+        prompt: L(`Which progression do you hear (in ${keyLoc.en})?`, `Koju progresiju čuješ (u ${keyLoc.sr})?`),
+        options: options.map((o) => L(o, o)),
+        answer,
+      };
+    }
+    case "improv": {
+      const key = parseNote(rng.pick(g.keys), 3);
+      const chordNotes = g.numerals.map((r) => romanChord(key, g.type, r));
+      const scaleTonic = key;
+      const sc = scale(scaleTonic, g.scale).map((n) => pitchClassOf(n));
+      const chordsPc = chordNotes.map((c) => c.map((n) => pitchClassOf(n)));
+      const beat = g.beatsPerChord;
+      const all: number[][] = [];
+      const durations: number[] = [];
+      for (let l = 0; l < g.loops; l++)
+        for (const c of chordNotes) {
+          all.push(c.map(toMidi));
+          durations.push(beat);
+        }
+      const keyLoc = keyName(key, g.type, g.type !== "natural-minor").nom;
+      const scLoc = keyName(scaleTonic, g.scale, true).nom;
+      return {
+        ...base,
+        kind: "midi",
+        mode: "improv",
+        expect: [],
+        octave: "any",
+        bass: false,
+        tempo: g.tempo,
+        showNotes: false,
+        improv: { scale: sc, chords: chordsPc, beatsPerChord: beat, loops: g.loops, tonicPc: pitchClassOf(key) },
+        play: { mode: "chords", chords: all, durations, tempo: g.tempo },
+        prompt: L(
+          `Improvise a melody over ${g.numerals.join(" – ")} in ${keyLoc.en} (×${g.loops}). Use the ${scLoc.en} scale; aim for chord tones on the first beat of each chord.`,
+          `Improvizuj melodiju preko ${g.numerals.join(" – ")} u ${keyLoc.sr} (×${g.loops}). Koristi lestvicu ${scLoc.sr}; na prvu dobu svakog akorda ciljaj ton akorda.`,
+        ),
+        noteLabels: L(g.numerals.join(" "), g.numerals.join(" ")),
       };
     }
     case "pitch-match": {
@@ -769,6 +890,28 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
 }
 
 /** Items for one exercise. `seed` must be stored with the attempt for re-grading. */
+function pitchClassOf(n: Note): number {
+  return ((toMidi(n) % 12) + 12) % 12;
+}
+
+/** Rhythm on one staff line (B4) in ABC; durations in quarter-note beats. */
+function abcRhythm(durs: number[], meter: string): string {
+  const [num, den] = meter.split("/").map(Number);
+  const bar = num * (4 / den);
+  let out = "";
+  let inBar = 0;
+  for (const d of durs) {
+    const sixteenths = Math.round(d * 4);
+    out += `B${sixteenths === 1 ? "" : sixteenths} `;
+    inBar += d;
+    if (inBar >= bar - 1e-9) {
+      out += "| ";
+      inBar = 0;
+    }
+  }
+  return `X:1\nM:${meter}\nL:1/16\nK:C clef=perc\n${out.trim().replace(/\|$/, "")}|]`;
+}
+
 export function generateItems(ex: Exercise, seed: string, countOverride?: number, ctx: GenCtx = {}): Item[] {
   if (ex.type !== "generated") return [staticItem(ex, ctx)];
   const rng = new Rng(`${ex.id}|${seed}`);

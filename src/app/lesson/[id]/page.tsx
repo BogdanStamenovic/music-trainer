@@ -12,6 +12,7 @@ import { needsPiano, type GenCtx } from "@/lib/curriculum/items";
 
 interface LessonResp {
   lesson: Lesson;
+  blocked?: string | null;
   status: { status: string } | null;
   exercises: { exercise_id: string; best: number; passed: number }[];
 }
@@ -76,8 +77,19 @@ function LessonInner({ id }: { id: string }) {
         <summary>{t("explain")}</summary>
         <Markdown text={l(lesson.explain)} />
       </details>
+      {lesson.tags.includes("distortion") ? (
+        <section className="card rest" data-testid="distortion-protocol">
+          <strong>⚠ {t("distortionProtocol")}</strong>
+          <p className="small">{t("distortionProtocolText")}</p>
+        </section>
+      ) : null}
       <h2>{t("exercises")}</h2>
-      <ExerciseQueue entries={entries} context="lesson" date={date} startAt={d.status?.status === "passed" ? 0 : firstOpen === -1 ? 0 : firstOpen} initial={initial} onFinished={setFinished} ctx={ctx} voiceLesson={lesson.track === "V"} />
+      {d.blocked ? (
+        <p className="card rest" data-testid="lesson-blocked">
+          🛑 {d.blocked === "voice-rest" ? t("voiceRestToday") : t("distortionCap")}
+        </p>
+      ) : null}
+      {d.blocked ? null : <ExerciseQueue entries={entries} context="lesson" date={date} startAt={d.status?.status === "passed" ? 0 : firstOpen === -1 ? 0 : firstOpen} initial={initial} onFinished={setFinished} ctx={ctx} voiceLesson={lesson.track === "V"} />}
       {finished ? (
         <section className={`card ${passedNow ? "good" : ""}`} data-testid="lesson-finished">
           <p>{passedNow ? `✓ ${t("lessonDone")}` : t("notPassed")}</p>

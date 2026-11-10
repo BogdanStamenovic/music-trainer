@@ -144,3 +144,29 @@ describe("chords", () => {
     expect(identifyChord([60, 61])).toBeNull();
   });
 });
+
+import { romanNumeral7, parseRoman as pr } from "@/lib/music/harmony";
+describe("sevenths, extended chords, modes", () => {
+  it("diatonic seventh numerals", () => {
+    expect([1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral7("C4", "major", d))).toEqual(["Imaj7", "ii7", "iii7", "IVmaj7", "V7", "vi7", "viiø7"]);
+    expect([1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral7("A3", "harmonic-minor", d))).toEqual(["i(maj7)", "iiø7", "III+maj7", "iv7", "V7", "VImaj7", "vii°7"]);
+    expect([1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral7("A3", "natural-minor", d))).toEqual(["i7", "iiø7", "IIImaj7", "iv7", "v7", "VImaj7", "VII7"]);
+  });
+  it("parses seventh numerals for voicing", () => {
+    expect(pr("Imaj7")).toEqual({ degree: 1, inversion: 0, seventh: true });
+    expect(pr("viiø7")).toEqual({ degree: 7, inversion: 0, seventh: true });
+    expect(pr("ii65")).toEqual({ degree: 2, inversion: 1, seventh: true });
+    expect(names(romanChord("C4", "major", "ii7"))).toEqual(["D4", "F4", "A4", "C5"]);
+  });
+  it("extended chords and modes", () => {
+    expect(names(chord("C4", "9"))).toEqual(["C4", "E4", "G4", "Bb4", "D5"]);
+    expect(names(chord("D4", "min9"))).toEqual(["D4", "F4", "A4", "C5", "E5"]);
+    expect(names(chord("G4", "7sus4"))).toEqual(["G4", "C5", "D5", "F5"]);
+    expect(names(scale("D4", "dorian"), false)).toEqual(["D", "E", "F", "G", "A", "B", "C"]);
+    expect(names(scale("G4", "mixolydian"), false)).toEqual(["G", "A", "B", "C", "D", "E", "F"]);
+    expect(names(scale("F4", "lydian"), false)).toEqual(["F", "G", "A", "B", "C", "D", "E"]);
+    expect(names(scale("E4", "phrygian"), false)).toEqual(["E", "F", "G", "A", "B", "C", "D"]);
+    expect(names(scale("B3", "locrian"), false)).toEqual(["B", "C", "D", "E", "F", "G", "A"]);
+    expect(names(scale("A3", "blues"), false)).toEqual(["A", "C", "D", "Eb", "E", "G"]);
+  });
+});
