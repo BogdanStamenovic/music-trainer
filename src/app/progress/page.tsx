@@ -56,7 +56,8 @@ export default function ProgressPage() {
     getJson<Prog>("/api/progress").then(({ data }) => setD(data)).catch(() => {});
   }, []);
   if (!d) return <p className="muted">…</p>;
-  const tracks = [...new Set(d.lessons.map((x) => x.track))];
+  const ORDER = "TEKVCL";
+  const tracks = [...new Set(d.lessons.map((x) => x.track))].sort((a, b) => ORDER.indexOf(a) - ORDER.indexOf(b));
   return (
     <div>
       <h1>{t("progress")}</h1>

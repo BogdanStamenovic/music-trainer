@@ -17,6 +17,8 @@ export function MidiStatus() {
   const { t } = useI18n();
   if (m.status === "unsupported" || m.status === "denied") return <span className="pill warn" title={t("midiUnsupported")}>MIDI ✕</span>;
   if (m.status === "pending") return <span className="pill">MIDI …</span>;
-  if (!m.inputs.length) return <span className="pill warn" title={t("midiNone")}>MIDI 0</span>;
-  return <span className="pill ok" title={m.inputs.map((i) => i.name).join(", ")}>🎹 {m.inputs[0].name}</span>;
+  // software "Through" ports exist on every Linux box; name the real device if there is one
+  const real = m.inputs.filter((i) => !/through|thru/i.test(i.name));
+  if (!real.length) return <span className="pill warn" title={t("midiNone")}>MIDI 0</span>;
+  return <span className="pill ok" title={m.inputs.map((i) => i.name).join(", ")}>🎹 {real[0].name}</span>;
 }

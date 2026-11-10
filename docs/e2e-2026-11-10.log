@@ -1,0 +1,46 @@
+SW active: True | manifest: music-trainer 3 icons
+Web MIDI inputs: ['Midi Through Port-0', 'VirMIDI 3-0'] outputs: ['Midi Through Port-0', 'VirMIDI 3-0']
+placement section notation
+  P-001-1: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  P-001-2: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  P-001-3: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct']
+placement section theory
+  P-002-1: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct']
+  P-002-2: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-002-3: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-002-4: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-002-5: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-002-6: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-002-7: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-002-8: Score: 7% · Not passed yet  items=['Not quite', 'Not quite']
+  P-002-9: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-002-10: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-002-11: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-002-12: Score: 0% · Not passed yet  items=['Not quite']
+placement section ear
+  P-003-1: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct']
+  P-003-2: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-003-3: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite', 'Not quite']
+  P-003-4: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  P-003-5: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite']
+  P-003-6: Score: 13% · Not passed yet  items=['Not quite', 'Not quite']
+  P-003-7: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite']
+placement result: Placement test  Placement done. Lessons skipped: T-001, T-002, E-001  Back to today
+plan: tue ['E', 'K'] [('E-002', 'new', ['T-004']), ('K-001', 'new', ['T-006']), ('E-003', 'new', ['T-005'])] maintenance: True
+lesson E-002: 6 exercises
+  E-002-1: Score: 0% · Not passed yet  items=['Not quite', 'Not quite', 'Not quite', 'Not quite', 'Not quite', 'Not quite']
+  E-002-1: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  E-002-2: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  E-002-3: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  E-002-4: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  E-002-5: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+  E-002-6: Score: 100% · Passed  items=['Correct', 'Correct', 'Correct', 'Correct', 'Correct']
+lesson finished: ✓ Lesson passed  Back to today
+lesson status in DB: {'lesson_id': 'E-002', 'status': 'passed', 'score': 1, 'source': 'lesson'}
+MIDI out to virtual piano during lesson: 670 bytes, ~68 note-ons
+SR heading: Uto 2026-11-10 · Sluh + Klavir
+  K-001-1: Rezultat: 100% · Položeno  items=['Tačno', 'Tačno', 'Tačno', 'Tačno', 'Tačno', 'Tačno']
+offline: lesson page rendered from cache; queued submissions: 1
+after reconnect: queued = 0 | server exercise state: [{'exercise_id': 'K-001-1', 'best': 1, 'last': 1, 'passed': 1, 'attempts': 1}]
+voice-score status: ✓ radi · http://127.0.0.1:3311 · v0.1.0
+console errors: 5 ['error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED', 'error: Failed to load resource: net::ERR_INTERNET_DISCONNECTED']

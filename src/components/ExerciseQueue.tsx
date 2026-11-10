@@ -13,6 +13,8 @@ export interface QueueEntry {
 
 /** Runs exercises one after another; failed ones can be retried with fresh items. */
 export function ExerciseQueue({ entries, context, date, count, onFinished, startAt = 0, initial = {} }: { entries: QueueEntry[]; context: Context; date: string; count?: number; onFinished?: (r: RunnerDone[]) => void; startAt?: number; initial?: Record<string, { best: number; passed: number }> }) {
+  // placement measures a first attempt; retrying would defeat it
+  const allowRetry = context !== "placement";
   const { t, l } = useI18n();
   const [i, setI] = useState(startAt);
   const [attempt, setAttempt] = useState<Record<string, number>>({});
@@ -59,7 +61,7 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
           <ExerciseRunner key={`${e.ex.id}:${attempt[e.ex.id] ?? 0}`} ex={e.ex} seed={`${date}:${attempt[e.ex.id] ?? 0}`} count={e.ex.type === "generated" ? count : undefined} context={context} date={date} lessonId={e.lessonId} onDone={onDone} />
           {current ? (
             <div className="row">
-              {!current.pass ? (
+              {!current.pass && allowRetry ? (
                 <button type="button" className="secondary" onClick={retry}>
                   ↻ {t("retryExercise")}
                 </button>
