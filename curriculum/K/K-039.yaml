@@ -1,0 +1,148 @@
+id: K-039
+track: K
+order: 39
+title: {en: "Dorian: the scale and a ii–V vamp", sr: "Dorski modus: lestvica i ii–V vamp"}
+prereqs: [K-033]
+minutes: 13
+tags: [keys, modes, dorian, comping]
+explain:
+  en: |
+    Play the white keys from D to D. That is **D dorian**: D E F G A B C D. Compare it with
+    D natural minor (D E F G A **B♭** C D): one note differs. Dorian is **minor with a raised
+    6th**. That B♮ is the whole character of the mode: minor, but brighter and less sad than
+    natural minor. You know it from "Scarborough Fair", "Oye Como Va", a lot of funk and
+    almost every modal jazz tune.
+
+    | degree | 1 | 2 | ♭3 | 4 | 5 | **6** | ♭7 |
+    |---|---|---|---|---|---|---|---|
+    | D dorian | D | E | F | G | A | **B** | C |
+    | D natural minor | D | E | F | G | A | B♭ | C |
+
+    **The vamp.** A dorian tune often sits on two chords for a long time: **Dm7 – G7**. In
+    D dorian these are i7 and IV7, and the G7 is where the B lives (its 3rd). The same two
+    chords are ii7 – V7 in C major, which is why players call it a "ii–V vamp"; but because
+    G7 never resolves to C, the ear keeps hearing **D** as home.
+
+    A left-hand-plus-right-hand voicing that moves as little as possible:
+
+    | | Dm7 | G7 |
+    |---|---|---|
+    | left hand | D3 | G2 |
+    | right hand | C4 F4 A4 | B3 F4 G4 |
+
+    C drops a half step to B (7th of Dm7 → 3rd of G7), F stays (3rd → 7th), A drops to G.
+    Comp it in the **Charleston rhythm**: a chord on beat 1, the next one on the "and" of 2,
+    and leave beats 3 and 4 empty.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Ddor
+    "Dm7"[D,CFA]3 [D,CFA] z4 | "G7"[G,,B,FG]3 [G,,B,FG] z4 |]
+    ```
+
+    The empty half-bar is the point: it leaves space for a melody (yours, in K-040).
+  sr: |
+    Odsviraj bele dirke od D do D. To je **D dorski**: D E F G A H C D. Uporedi ga sa
+    prirodnim d-molom (D E F G A **B** C D): razlikuje se jedan ton. Dorski je **mol sa
+    povišenim 6. stupnjem**. To H je ceo karakter modusa: mol, ali svetliji i manje tužan od
+    prirodnog mola. Znaš ga iz "Scarborough Fair", "Oye Como Va", mnogo fanka i skoro svake
+    modalne džez teme.
+
+    | stupanj | 1 | 2 | ♭3 | 4 | 5 | **6** | ♭7 |
+    |---|---|---|---|---|---|---|---|
+    | D dorski | D | E | F | G | A | **H** | C |
+    | prirodni d-mol | D | E | F | G | A | B | C |
+
+    **Vamp.** Dorska pesma često dugo stoji na dva akorda: **Dm7 – G7**. U D dorskom to su
+    i7 i IV7, a u G7 živi H (njegova terca). Ista dva akorda su ii7 – V7 u C-duru, zato ga
+    svirači zovu "ii–V vamp"; ali pošto se G7 nikad ne razreši u C, uho i dalje čuje **D**
+    kao kuću.
+
+    Raspored za levu i desnu ruku koji se pomera što manje:
+
+    | | Dm7 | G7 |
+    |---|---|---|
+    | leva ruka | D3 | G2 |
+    | desna ruka | C4 F4 A4 | H3 F4 G4 |
+
+    C pada za polustepen na H (septima od Dm7 → terca od G7), F ostaje (terca → septima), A
+    pada na G. Prati ga u **čarlston ritmu**: akord na prvu dobu, sledeći na "i" posle druge
+    dobe, a treća i četvrta doba ostaju prazne.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Ddor
+    "Dm7"[D,CFA]3 [D,CFA] z4 | "G7"[G,,B,FG]3 [G,,B,FG] z4 |]
+    ```
+
+    Prazna polovina takta je poenta: ostavlja mesto za melodiju (tvoju, u K-040).
+exercises:
+  - id: K-039-1
+    type: mcq
+    prompt: {en: "D dorian and D natural minor differ in one note. Which?", sr: "D dorski i prirodni d-mol se razlikuju u jednom tonu. Kojem?"}
+    options:
+      - {en: "The 6th: B in dorian, B♭ in natural minor", sr: "6. stupanj: H u dorskom, B u prirodnom molu"}
+      - {en: "The 7th: C♯ in dorian, C in natural minor", sr: "7. stupanj: Cis u dorskom, C u prirodnom molu"}
+      - {en: "The 3rd: F♯ in dorian, F in natural minor", sr: "3. stupanj: Fis u dorskom, F u prirodnom molu"}
+      - {en: "The 2nd: E♭ in dorian, E in natural minor", sr: "2. stupanj: Es u dorskom, E u prirodnom molu"}
+    answer: 0
+    checks:
+      - scale: {tonic: D, type: dorian, is: [D, E, F, G, A, B, C]}
+      - scale: {tonic: D, type: natural-minor, is: [D, E, F, G, A, Bb, C]}
+      - interval: {from: D4, to: B4, is: M6}
+  - id: K-039-2
+    type: midi-play
+    prompt: {en: "D dorian up and down from D4, ♩=96.", sr: "D dorski naviše i naniže od D4, ♩=96."}
+    mode: sequence
+    expect: [D4, E4, F4, G4, A4, B4, C5, D5, C5, B4, A4, G4, F4, E4, D4]
+    tempo: 96
+    checks:
+      - scale: {tonic: D, type: dorian, is: [D, E, F, G, A, B, C]}
+  - id: K-039-3
+    type: generated
+    prompt: {en: "Dorian in other keys: find the raised 6th first", sr: "Dorski u drugim tonalitetima: prvo nađi povišeni 6. stupanj"}
+    count: 4
+    gen: {kind: scale-build, types: [dorian], tonics: [A, E, G, C, B, F], answer: play, tempo: 96}
+  - id: K-039-4
+    type: mcq
+    prompt: {en: "In A dorian, the vamp is i7 – IV7. Which chords?", sr: "U A dorskom, vamp je i7 – IV7. Koji akordi?"}
+    options: ["Am7 – D7", "Am7 – Dm7", "Am – E7", "Am7 – G7"]
+    answer: 0
+    checks:
+      - scale: {tonic: A, type: dorian, is: [A, B, C, D, E, "F#", G]}
+      - numeral: {key: A, type: dorian, is: "i7", notes: [A3, C4, E4, G4]}
+      - numeral: {key: A, type: dorian, is: "IV7", notes: [D4, "F#4", A4, C5]}
+  - id: K-039-5
+    type: midi-play
+    prompt: {en: "The vamp in the Charleston rhythm, voicings from the table: Dm7 Dm7 | G7 G7 | Dm7 Dm7 | G7 G7 (each bar: beat 1, then the \"and\" of 2). ♩=100.", sr: "Vamp u čarlston ritmu, rasporedi iz tabele: Dm7 Dm7 | G7 G7 | Dm7 Dm7 | G7 G7 (svaki takt: prva doba, pa \"i\" posle druge). ♩=100."}
+    mode: chords
+    expectChords: [[D3, C4, F4, A4], [D3, C4, F4, A4], [G2, B3, F4, G4], [G2, B3, F4, G4], [D3, C4, F4, A4], [D3, C4, F4, A4], [G2, B3, F4, G4], [G2, B3, F4, G4]]
+    beats: [1.5, 2.5, 1.5, 2.5, 1.5, 2.5, 1.5, 2.5]
+    tempo: 100
+    checks:
+      - numeral: {key: D, type: dorian, is: "i7", notes: [D3, C4, F4, A4]}
+      - numeral: {key: C, is: "ii7", notes: [D3, C4, F4, A4]}
+      - chord: {notes: [G2, B3, F4, G4], root: G, quality: "7", inversion: 0}
+      - numeral: {key: D, type: dorian, is: "IV7", notes: [G2, B3, D4, F4]}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-039-6
+    type: mcq
+    prompt: {en: "Listen to the scale. Dorian or natural minor?", sr: "Slušaj lestvicu. Dorski ili prirodni mol?"}
+    options:
+      - {en: "Dorian (raised 6th)", sr: "Dorski (povišeni 6. stupanj)"}
+      - {en: "Natural minor", sr: "Prirodni mol"}
+    answer: 0
+    play: {derive: {scale: {tonic: G4, type: dorian}}, mode: melodic, tempo: 100}
+    checks:
+      - scale: {tonic: G, type: dorian, is: [G, A, Bb, C, D, E, F]}
+  - id: K-039-7
+    type: practice
+    prompt: {en: "Left hand: D3 on beat 1 of every bar, right hand: the Charleston comp. Then hand-swap: left hand plays the Dm7/G7 shells (D3 C4 / G2 B3) on the Charleston rhythm while the right hand plays D dorian in thirds up and down, landing on B over every G7.", sr: "Leva ruka: D3 na prvu dobu svakog takta, desna: čarlston pratnja. Zatim zamena: leva ruka svira školjke Dm7/G7 (D3 C4 / G2 H3) u čarlston ritmu, a desna D dorski u tercama naviše i naniže, sleteći na H preko svakog G7."}
+    minutes: 4
+    checks:
+      - chord: {notes: [D3, C4, F4], root: D, quality: min7}
+      - chord: {notes: [G2, B3, F4], root: G, quality: "7"}

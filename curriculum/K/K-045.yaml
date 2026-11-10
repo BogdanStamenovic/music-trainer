@@ -1,0 +1,144 @@
+id: K-045
+track: K
+order: 45
+title: {en: "Secondary dominants in minor at the keys", sr: "Sporedne dominante u molu za klavirom"}
+prereqs: [K-030, T-059]
+minutes: 14
+tags: [keys, harmony, secondary-dominant, minor, voice-leading]
+explain:
+  en: |
+    K-029 put V7/V into major keys. In minor the same idea works, and two secondary
+    dominants are everywhere:
+
+    | in A minor | V7/iv | V7/V |
+    |---|---|---|
+    | chord | **A7** (A C♯ E G) | **B7** (B D♯ F♯ A) |
+    | leans into | iv = Dm | V = E (or E7) |
+    | the new notes | C♯ (leading tone of D), G (its 7th) | D♯ (leading tone of E) |
+
+    **V7/iv is the tonic with a major 3rd and a minor 7th.** Am → A7 is a one-finger change
+    in sound (C → C♯) plus the added G. That is why it is so common in minor-key songs,
+    tango and klezmer: i – V7/iv – iv. At the keyboard:
+
+    | | Am | A7 | Dm | E7 | Am |
+    |---|---|---|---|---|---|
+    | left hand | A2 | A2 | D3 | E3 | A2 |
+    | right hand | E4 A4 C5 | G4 A4 C♯5 | F4 A4 D5 | E4 G♯4 D5 | E4 A4 C5 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:Am
+    "Am"[A,,EAc] "A7"[A,,GA^c] | "Dm"[D,FAd] "E7"[E,E^Gd] | "Am"[A,,EAc]2 |]
+    ```
+
+    Follow the top voice C → **C♯ → D**: a chromatic line, the leading tone of D arriving on
+    D. Inside, G (the 7th of A7) falls to F; then the E7 leads home as in K-030. The bass
+    stays on A for two chords, which makes the change of colour very audible.
+
+    **V7/V in minor** (B7 in A minor) leads to V; its D♯ resolves up to E. It is the same
+    move as V7/V in major, one key signature darker.
+  sr: |
+    K-029 je ubacio V7/V u durske tonalitete. U molu ista ideja radi, a dve sekundarne
+    dominante su svuda:
+
+    | u a-molu | V7/iv | V7/V |
+    |---|---|---|
+    | akord | **A7** (A Cis E G) | **H7** (H Dis Fis A) |
+    | naslanja se na | iv = Dm | V = E (ili E7) |
+    | novi tonovi | Cis (vođica od D), G (njegova septima) | Dis (vođica od E) |
+
+    **V7/iv je tonika sa velikom tercom i malom septimom.** Am → A7 je promena jednog prsta
+    po zvuku (C → Cis) plus dodato G. Zato je toliko čest u molskim pesmama, tangu i klezmeru:
+    i – V7/iv – iv. Za klavirom:
+
+    | | Am | A7 | Dm | E7 | Am |
+    |---|---|---|---|---|---|
+    | leva ruka | A2 | A2 | D3 | E3 | A2 |
+    | desna ruka | E4 A4 C5 | G4 A4 Cis5 | F4 A4 D5 | E4 Gis4 D5 | E4 A4 C5 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:Am
+    "Am"[A,,EAc] "A7"[A,,GA^c] | "Dm"[D,FAd] "E7"[E,E^Gd] | "Am"[A,,EAc]2 |]
+    ```
+
+    Prati gornji glas C → **Cis → D**: hromatska linija, vođica od D koja stiže na D. Unutra,
+    G (septima od A7) pada na F; zatim E7 vodi kući kao u K-030. Bas ostaje na A za dva
+    akorda, pa se promena boje jasno čuje.
+
+    **V7/V u molu** (H7 u a-molu) vodi ka V; njegovo Dis se razrešava naviše u E. To je isti
+    potez kao V7/V u duru, samo predznak tamnije.
+exercises:
+  - id: K-045-1
+    type: mcq
+    prompt: {en: "In D minor, V7/iv is…", sr: "U d-molu, V7/iv je…"}
+    options:
+      - {en: "D7 (D F♯ A C)", sr: "D7 (D Fis A C)"}
+      - {en: "G7 (G B D F)", sr: "G7 (G H D F)"}
+      - {en: "A7 (A C♯ E G)", sr: "A7 (A Cis E G)"}
+      - {en: "C7 (C E G B♭)", sr: "C7 (C E G B)"}
+    answer: 0
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: "V7/iv", notes: [D4, "F#4", A4, C5]}
+      - numeral: {key: D, type: harmonic-minor, is: "V7", notes: [A3, "C#4", E4, G4]}
+      - numeral: {key: D, type: harmonic-minor, is: "iv", notes: [G3, Bb3, D4]}
+  - id: K-045-2
+    type: mcq
+    prompt: {en: "V7/V in E minor is F♯7 (F♯ A♯ C♯ E). Which of its notes is the leading tone of the chord it resolves to?", sr: "V7/V u e-molu je Fis7 (Fis Ais Cis E). Koji njegov ton je vođica akorda u koji se razrešava?"}
+    options: ["A#", "F#", "C#", "E"]
+    answer: 0
+    checks:
+      - numeral: {key: E, type: harmonic-minor, is: "V7/V", notes: ["F#3", "A#3", "C#4", E4]}
+      - numeral: {key: E, type: harmonic-minor, is: "V", notes: [B3, "D#4", "F#4"]}
+      - semitones: {from: "A#3", to: B3, is: 1}
+  - id: K-045-3
+    type: midi-play
+    prompt: {en: "A minor, voicings from the table: Am – A7 – Dm – E7 – Am, two beats each, the last held, ♩=66. Top voice C – C♯ – D – D – C.", sr: "a-mol, rasporedi iz tabele: Am – A7 – Dm – E7 – Am, po dve dobe, poslednji držan, ♩=66. Gornji glas C – Cis – D – D – C."}
+    mode: chords
+    expectChords: [[A2, E4, A4, C5], [A2, G4, A4, "C#5"], [D3, F4, A4, D5], [E3, E4, "G#4", D5], [A2, E4, A4, C5]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "i", notes: [A2, E4, A4, C5]}
+      - chord: {notes: [A2, G4, A4, "C#5"], root: A, quality: "7", inversion: 0}
+      - numeral: {key: A, type: harmonic-minor, is: "V7/iv", notes: [A3, "C#4", E4, G4]}
+      - numeral: {key: A, type: harmonic-minor, is: "iv", notes: [D3, F4, A4, D5]}
+      - chord: {notes: [E3, E4, "G#4", D5], root: E, quality: "7", inversion: 0}
+      - numeral: {key: A, type: harmonic-minor, is: "V7", notes: [E3, E4, "G#4", D5], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: "V7/iv", notes: [A2, G4, A4, "C#5"], complete: false}
+      - semitones: {from: "C#5", to: D5, is: 1}
+  - id: K-045-4
+    type: midi-play
+    prompt: {en: "D minor, the same shape a fifth lower, notes hidden: Dm – D7 – Gm – A7 – Dm, any octave, root in the bass, ♩=66.", sr: "d-mol, isti oblik kvintu niže, bez prikaza tonova: Dm – D7 – Gm – A7 – Dm, bilo koja oktava, osnovni ton u basu, ♩=66."}
+    mode: chords
+    expectChords: [[D2, A3, D4, F4], [D2, C4, D4, "F#4"], [G2, Bb3, D4, G4], [A2, A3, "C#4", G4], [D2, A3, D4, F4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: "i", notes: [D2, A3, D4, F4]}
+      - chord: {notes: [D2, C4, D4, "F#4"], root: D, quality: "7", inversion: 0}
+      - numeral: {key: D, type: harmonic-minor, is: "V7/iv", notes: [D2, C4, D4, "F#4"], complete: false}
+      - numeral: {key: D, type: harmonic-minor, is: "iv", notes: [G2, Bb3, D4, G4]}
+      - chord: {notes: [A2, A3, "C#4", G4], root: A, quality: "7", inversion: 0}
+      - numeral: {key: D, type: harmonic-minor, is: "V7", notes: [A2, A3, "C#4", G4], complete: false}
+  - id: K-045-5
+    type: generated
+    prompt: {en: "i – V7/iv – iv – V7 – i in minor keys round the circle, voice-led", sr: "i – V7/iv – iv – V7 – i u molskim tonalitetima po kvintnom krugu, glatko vođenje glasova"}
+    count: 4
+    gen: {kind: progression, keys: [A, E, B, D, G, C], type: harmonic-minor, numerals: [i, V7/iv, iv, V7, i], tempo: 66, smooth: true}
+  - id: K-045-6
+    type: generated
+    prompt: {en: "i – iv – V7/V – V – i: the dominant's own dominant, in minor", sr: "i – iv – V7/V – V – i: dominanta dominante, u molu"}
+    count: 3
+    gen: {kind: progression, keys: [A, E, D, G], type: harmonic-minor, numerals: [i, iv, V7/V, V, i], tempo: 66, smooth: true}
+  - id: K-045-7
+    type: practice
+    prompt: {en: "Play i – V7/iv – iv – V7 – i in A minor as a slow tango: left hand on beats 1 and 3 (root, then 5th), right hand chords on the \"and\" of 2 and on 4. Then the same in E and D minor. Listen for the chromatic top line (C – C♯ – D in A minor) and bring it out.", sr: "Odsviraj i – V7/iv – iv – V7 – i u a-molu kao spori tango: leva ruka na prvu i treću dobu (osnovni ton, pa kvinta), desna akordi na \"i\" posle druge i na četvrtu dobu. Zatim isto u e-molu i d-molu. Osluškuj hromatsku gornju liniju (C – Cis – D u a-molu) i istakni je."}
+    minutes: 4

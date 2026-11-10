@@ -1,0 +1,113 @@
+id: T-061
+track: T
+order: 61
+prereqs: [T-060]
+title: {en: "The Neapolitan sixth (preview)", sr: "Napuljski sekstakord (uvod)"}
+minutes: 11
+tags: [harmony, chromatic, minor, four-part]
+explain:
+  en: |
+    The **Neapolitan sixth** (N6, written **♭II6**) is a **major triad on the lowered 2nd degree**, usually in **first inversion**. In A minor: B♭ D F, with D in the bass. It is a **predominant**: it replaces iv or ii°6 before V.
+
+    Why it works: compare it with **ii°6** in A minor, D F B. Lower the B to B♭ and you get D F B♭, the N6. Same bass (D, the 4th degree), same job, but the B♭ adds a dark, sudden colour, and B♭ sits a **half step above the tonic**, so it pulls hard *down*.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    "^a: i"[EAc] "^N6"[F_Bd] "^V7"[E^Gd] "^i"[EAc] |]
+    V:2 clef=bass
+    A,, D, E, A,, |]
+    ```
+
+    - In the N6 the **bass (the 3rd, D) is doubled**, as you double the bass of iv6 or ii°6. Do not double the B♭: it is a tendency tone.
+    - **B♭ falls**: to G♯ (a diminished 3rd, as here) or, more smoothly, through A (via a cadential 6/4: N6 – i64 – V – i).
+    - It is mostly a **minor-key** chord. In major it is borrowed from the parallel minor (C major: D♭ F A♭) and sounds even more surprising.
+
+    At the keyboard, find it fast: **a major chord a half step above the tonic**, with its 3rd in the bass. This lesson is a preview; the chromatic predominants (Neapolitan and augmented sixths) come back in depth later.
+  sr: |
+    **Napuljski sekstakord** (N6, piše se **♭II6**) je **durski trozvuk na sniženom 2. stupnju**, obično u **prvom obrtaju**. U a-molu: B D F, sa D u basu. To je **subdominantni akord**: zamenjuje iv ili ii°6 pred V.
+
+    Zašto radi: uporedi ga sa **ii°6** u a-molu, D F H. Snizi H u B i dobiješ D F B, napuljski sekstakord. Isti bas (D, 4. stupanj), isti posao, ali B dodaje tamnu, iznenadnu boju, a B je **polustepen iznad tonike**, pa snažno vuče *naniže*.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    "^a: i"[EAc] "^N6"[F_Bd] "^V7"[E^Gd] "^i"[EAc] |]
+    V:2 clef=bass
+    A,, D, E, A,, |]
+    ```
+
+    - U napuljskom sekstakordu se **udvaja bas (terca, D)**, kao što se udvaja bas iv6 ili ii°6. Ne udvajaj B: to je tendenčni ton.
+    - **B silazi**: na Gis (smanjena terca, kao ovde) ili, glatkije, preko A (kroz kadencirajući kvartsekstakord: N6 – i64 – V – i).
+    - To je uglavnom **molski** akord. U duru se pozajmljuje iz istoimenog mola (C-dur: Des F As) i zvuči još iznenađujuće.
+
+    Na klavijaturi ga nađi brzo: **durski akord polustepen iznad tonike**, sa tercom u basu. Ova lekcija je uvod; hromatski subdominantni akordi (napuljski i prekomerni sekstakordi) vraćaju se detaljnije kasnije.
+exercises:
+  - id: T-061-1
+    type: notation-input
+    prompt: {en: "Spell the Neapolitan chord of A minor in root position (root, 3rd, 5th).", sr: "Napiši napuljski akord a-mola u osnovnom položaju (osnovni ton, terca, kvinta)."}
+    derive: {roman: {key: A4, type: harmonic-minor, numerals: [bII]}}
+    expect: [Bb, D, F]
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: bII, notes: [Bb4, D5, F5]}
+  - id: T-061-2
+    type: notation-input
+    prompt: {en: "Spell the Neapolitan chord of C minor in root position.", sr: "Napiši napuljski akord c-mola u osnovnom položaju."}
+    derive: {roman: {key: C4, type: harmonic-minor, numerals: [bII]}}
+    expect: [Db, F, Ab]
+    checks:
+      - numeral: {key: C, type: harmonic-minor, is: bII, notes: [Db4, F4, Ab4]}
+  - id: T-061-3
+    type: mcq
+    prompt: {en: "D minor: which note is in the bass of the N6?", sr: "d-mol: koji ton je u basu napuljskog sekstakorda?"}
+    options: ["G", "E♭", "B♭", "A"]
+    answer: 0
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: bII6, notes: [G3, Bb3, Eb4]}
+      - numeral: {key: D, type: harmonic-minor, is: iv, notes: [G3, Bb3, D4]}
+  - id: T-061-4
+    type: mcq
+    prompt: {en: "In the example, B♭ (N6) goes straight to G♯ (V7). Which interval is that?", sr: "U primeru B (N6) ide pravo na Gis (V7). Koji je to interval?"}
+    options:
+      - {en: "Diminished 3rd (sounds like a whole step)", sr: "Smanjena terca (zvuči kao ceo stepen)"}
+      - {en: "Major 2nd", sr: "Velika sekunda"}
+      - {en: "Minor 3rd", sr: "Mala terca"}
+      - {en: "Augmented 2nd", sr: "Prekomerna sekunda"}
+    answer: 0
+    checks:
+      - interval: {from: G#4, to: Bb4, is: d3}
+      - semitones: {from: G#4, to: Bb4, is: 2}
+  - id: T-061-5
+    type: midi-play
+    prompt: {en: "Play a: i – N6 – V7 – i as in the example.", sr: "Odsviraj a: i – N6 – V7 – i kao u primeru."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Am
+      V:1
+      [EAc] [F_Bd] [E^Gd] [EAc] |]
+      V:2 clef=bass
+      A,, D, E, A,, |]
+    mode: chords
+    octave: exact
+    expectChords: [[A2, E4, A4, C5], [D3, F4, Bb4, D5], [E3, E4, G#4, D5], [A2, E4, A4, C5]]
+    beats: [1, 1, 1, 1]
+    tempo: 60
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: i, notes: [A2, E4, A4, C5]}
+      - numeral: {key: A, type: harmonic-minor, is: bII6, notes: [D3, F4, Bb4, D5]}
+      - chord: {notes: [E3, E4, G#4, D5], root: E, quality: "7"}
+      - numeral: {key: A, type: harmonic-minor, is: V7, notes: [E3, E4, G#4, D5], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: "ii°6", notes: [D3, F4, B4]}
+  - id: T-061-6
+    type: generated
+    count: 4
+    prompt: {en: "Which predominant comes before V: iv, ii°6, or the Neapolitan?", sr: "Koji subdominantni akord dolazi pre V: iv, ii°6 ili napuljski?"}
+    gen: {kind: progression-ear, keys: [A, D, E], type: harmonic-minor, options: [[i, bII6, V, i], [i, iv, V, i], ["i", "ii°6", V, i]], tempo: 60, smooth: true}

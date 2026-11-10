@@ -1,0 +1,120 @@
+id: T-063
+track: T
+order: 63
+prereqs: [T-062]
+title: {en: "Ternary form", sr: "Trodelni oblik"}
+minutes: 12
+tags: [form, analysis]
+explain:
+  en: |
+    **Ternary form** (trodelni oblik) is **A B A**: a statement, a contrast, and a return. Its big difference from rounded binary is that the first **A is closed**: it ends with a perfect cadence **in the tonic** and could stand alone as a complete piece. B is a full section with its own character, often in a different key, and then A returns (often unchanged).
+
+    | | rounded binary | ternary |
+    |---|---|---|
+    | end of A | open (in V or III) | closed (PAC in I) |
+    | B | a continuation, leads back | a separate, contrasting section |
+    | return | only part of A, inside the second half | all of A |
+
+    Where you meet it: the **minuet and trio** (minuet – trio – minuet *da capo*; each of the three parts is itself a small binary form), the Baroque *da capo* aria, nocturnes, many slow movements, and plenty of songs.
+
+    Contrast in B usually comes from several things at once: **key** (relative or parallel minor, the subdominant), **texture**, **rhythm**, **register**.
+
+    The return is often not written out. **D.C. al Fine** (*da capo al fine*) means: go back to the beginning and play to the word **Fine** (end).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C" E G c G | "F" A c "G7" B d | "C" c G E G | "G7" F D "C""^Fine" C2 ||
+    "Am" A c e c | "Dm" d f "E7" ^g e | "Am" a e c A | "E7" ^G B "Am""^D.C. al Fine" A2 |]
+    ```
+
+    Play bars 1–8, go back to bar 1, stop at Fine (bar 4): A B A, 12 bars. A is in C and closes with a perfect cadence; B moves to A minor (G♯ is the clue).
+  sr: |
+    **Trodelni oblik** je **A B A**: izlaganje, kontrast i povratak. Njegova velika razlika od zaokruženog dvodelnog oblika je u tome što je prvi **A deo zatvoren**: završava se savršenom kadencom **u tonici** i mogao bi da stoji sam kao celovit komad. B je ceo deo sa sopstvenim karakterom, često u drugom tonalitetu, a zatim se A vraća (često nepromenjen).
+
+    | | zaokruženi dvodelni | trodelni |
+    |---|---|---|
+    | kraj A | otvoren (u V ili III) | zatvoren (savršena kadenca u I) |
+    | B | nastavak, vodi nazad | poseban, kontrastni deo |
+    | povratak | samo deo A, unutar drugog dela | ceo A |
+
+    Gde ga srećeš: **menuet i trio** (menuet – trio – menuet *da capo*; svaki od tri dela je sam po sebi mali dvodelni oblik), barokna *da capo* arija, nokturna, mnogi spori stavovi i mnoge pesme.
+
+    Kontrast u B delu obično dolazi iz više stvari odjednom: **tonalitet** (paralelni ili istoimeni mol, subdominanta), **faktura**, **ritam**, **registar**.
+
+    Povratak često nije ispisan. **D.C. al Fine** (*da capo al fine*) znači: vrati se na početak i sviraj do reči **Fine** (kraj).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C" E G c G | "F" A c "G7" B d | "C" c G E G | "G7" F D "C""^Fine" C2 ||
+    "Am" A c e c | "Dm" d f "E7" ^g e | "Am" a e c A | "E7" ^G B "Am""^D.C. al Fine" A2 |]
+    ```
+
+    Odsviraj taktove 1–8, vrati se na 1. takt, stani kod Fine (4. takt): A B A, 12 taktova. A je u C-duru i zatvara se savršenom kadencom; B prelazi u a-mol (Gis je trag).
+exercises:
+  - id: T-063-1
+    type: mcq
+    prompt: {en: "In the example, which bars do you play, in order?", sr: "Koje taktove u primeru sviraš, redom?"}
+    options:
+      - {en: "1–8, then 1–4", sr: "1–8, pa 1–4"}
+      - {en: "1–8, then 1–8", sr: "1–8, pa 1–8"}
+      - {en: "1–4, 1–4, 5–8", sr: "1–4, 1–4, 5–8"}
+      - {en: "1–8 only", sr: "samo 1–8"}
+    answer: 0
+  - id: T-063-2
+    type: mcq
+    prompt: {en: "What makes the example ternary rather than rounded binary?", sr: "Šta primer čini trodelnim, a ne zaokruženim dvodelnim oblikom?"}
+    options:
+      - {en: "A is closed: it ends with a perfect cadence in C, and all of A returns", sr: "A je zatvoren: završava se savršenom kadencom u C-duru, i vraća se ceo A"}
+      - {en: "B is in a minor key", sr: "B je u molu"}
+      - {en: "There are no repeat signs", sr: "Nema znakova za ponavljanje"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: V7, notes: [G3, B3, D4, F4]}
+  - id: T-063-3
+    type: mcq
+    prompt: {en: "Which key is the B section in, and what is the clue?", sr: "U kom tonalitetu je B deo i šta je trag?"}
+    options:
+      - {en: "A minor: G♯, the leading tone, in E7", sr: "a-mol: Gis, vođica, u akordu E7"}
+      - {en: "C major: no accidentals", sr: "C-dur: nema predznaka"}
+      - {en: "E major: G♯", sr: "E-dur: Gis"}
+      - {en: "D minor: the Dm chord", sr: "d-mol: akord d-mol"}
+    answer: 0
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: V7, notes: [E4, G#4, B4, D5]}
+      - numeral: {key: A, type: harmonic-minor, is: iv, notes: [D4, F4, A4]}
+  - id: T-063-4
+    type: mcq
+    prompt: {en: "Listen to the chord plan of a short piece. Which form is it?", sr: "Slušaj plan akorada kratkog komada. Koji je to oblik?"}
+    options:
+      - {en: "A B A", sr: "A B A"}
+      - {en: "A A B", sr: "A A B"}
+      - {en: "A B B", sr: "A B B"}
+      - {en: "A A A", sr: "A A A"}
+    answer: 0
+    play: {mode: chords, tempo: 104, chords: [[C3, C4, E4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [A2, C4, E4, A4], [D3, D4, F4, A4], [E3, D4, G#4, B4], [A2, C4, E4, A4], [C3, C4, E4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4]], durations: [2, 2, 2, 4, 2, 2, 2, 4, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: V7, notes: [E3, D4, G#4, B4]}
+      - numeral: {key: C, is: V7, notes: [G2, B3, D4, F4]}
+  - id: T-063-5
+    type: mcq
+    prompt: {en: "Minuet – Trio – Minuet da capo: what is the form of the whole movement, and of each part?", sr: "Menuet – Trio – Menuet da capo: koji je oblik celog stava, a koji svakog dela?"}
+    options:
+      - {en: "Ternary as a whole; each part is a small binary form", sr: "Celina je trodelna; svaki deo je mali dvodelni oblik"}
+      - {en: "Binary as a whole; each part is ternary", sr: "Celina je dvodelna; svaki deo je trodelni"}
+      - {en: "Ternary, and so is each part", sr: "Trodelni, a takav je i svaki deo"}
+    answer: 0
+  - id: T-063-6
+    type: mcq
+    prompt: {en: "What does D.C. al Fine tell you to do?", sr: "Šta ti govori D.C. al Fine?"}
+    options:
+      - {en: "Go back to the beginning and play to Fine", sr: "Vrati se na početak i sviraj do Fine"}
+      - {en: "Go back to the sign and play to the coda", sr: "Vrati se na znak i sviraj do kode"}
+      - {en: "Repeat the last section, then stop", sr: "Ponovi poslednji deo, pa stani"}
+      - {en: "Play the ending a second time", sr: "Odsviraj završetak drugi put"}
+    answer: 0

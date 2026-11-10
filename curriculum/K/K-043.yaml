@@ -1,0 +1,139 @@
+id: K-043
+track: K
+order: 43
+title: {en: "Playing an AABA tune from a lead sheet", sr: "Sviranje AABA teme iz lead sheet-a"}
+prereqs: [T-064, K-034]
+minutes: 15
+tags: [keys, lead-sheet, form, accompaniment]
+explain:
+  en: |
+    Most standards from the 1920s–50s are **AABA**: an 8-bar A section, played twice, a
+    contrasting bridge (B), and A once more: 32 bars. A lead sheet writes the A section only
+    once, with a repeat sign, so reading the **form** is part of reading the page.
+
+    Below is a short original tune in the same shape with **4-bar sections** (16 bars), so
+    the form fits on one screen:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:F
+    |: "F"A G A c | "Dm7"d2 c2 | "Gm7"B A "C7"G E | "F"F4 :|
+    "Bb"d3 c | B2 F2 | "G7"G A =B d | "C7"c4 |
+    "F"A G A c | "Dm7"d2 c2 | "Gm7"B A "C7"G E | "F"F4 |]
+    ```
+
+    How to read it: A (bars 1–4), the repeat sign sends you back for A again (5–8), then the
+    bridge B (9–12), then the last A (13–16). Count it out loud once before you play: "A, A,
+    bridge, A".
+
+    What makes the bridge a bridge:
+
+    - **New harmony.** The A section circles around F (I – vi – ii – V – I). The bridge
+      starts on **B♭ (IV)**, the classic bridge move, then goes **G7 (V7/V) – C7 (V7)**.
+    - **G7 brings B♮**, the first note outside F major. It pulls to C, and C7 in turn pulls
+      back to F for the last A: the bridge ends on V, which is why the return of A feels
+      like coming home.
+    - **The melody goes higher** (D5 at the start) and moves in longer notes.
+
+    Left-hand voicings (as in K-034: root-position triads, 7th chords as root + 3rd + 7th):
+
+    | F | Dm7 | Gm7 | C7 | B♭ | G7 |
+    |---|---|---|---|---|---|
+    | F2 A2 C3 | D3 F3 C4 | G2 F3 B♭3 | C3 E3 B♭3 | B♭2 D3 F3 | G2 F3 B3 |
+  sr: |
+    Većina standarda od 1920-ih do 1950-ih je **AABA**: A deo od 8 taktova, odsviran dva
+    puta, kontrastni most (B) i još jednom A: 32 takta. Lead sheet zapisuje A deo samo
+    jednom, sa znakom ponavljanja, pa je čitanje **forme** deo čitanja stranice.
+
+    Ispod je kratka originalna tema istog oblika sa **delovima od 4 takta** (16 taktova), da
+    bi forma stala na jedan ekran:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:F
+    |: "F"A G A c | "Dm7"d2 c2 | "Gm7"B A "C7"G E | "F"F4 :|
+    "Bb"d3 c | B2 F2 | "G7"G A =B d | "C7"c4 |
+    "F"A G A c | "Dm7"d2 c2 | "Gm7"B A "C7"G E | "F"F4 |]
+    ```
+
+    Kako se čita: A (taktovi 1–4), znak ponavljanja te vraća na još jedno A (5–8), zatim
+    most B (9–12), pa poslednje A (13–16). Izbroj naglas jednom pre sviranja: "A, A, most, A".
+
+    Šta most čini mostom:
+
+    - **Nova harmonija.** A deo kruži oko F (I – vi – ii – V – I). Most počinje na
+      **B (IV)**, klasičan potez za most, pa ide **G7 (V7/V) – C7 (V7)**.
+    - **G7 donosi H**, prvi ton van F-dura. On vuče ka C, a C7 vuče nazad u F za poslednje
+      A: most se završava na V, i zato povratak A zvuči kao dolazak kući.
+    - **Melodija ide više** (D5 na početku) i kreće se dužim notama.
+
+    Rasporedi leve ruke (kao u K-034: kvintakordi u osnovnom položaju, septakordi kao osnovni
+    ton + terca + septima):
+
+    | F | Dm7 | Gm7 | C7 | B | G7 |
+    |---|---|---|---|---|---|
+    | F2 A2 C3 | D3 F3 C4 | G2 F3 B3 | C3 E3 B3 | B2 D3 F3 | G2 F3 H3 |
+exercises:
+  - id: K-043-1
+    type: mcq
+    prompt: {en: "In a standard 32-bar AABA tune (8-bar sections), at which bar does the bridge start?", sr: "U standardnoj AABA temi od 32 takta (delovi od 8 taktova), u kom taktu počinje most?"}
+    options: ["1", "9", "17", "25"]
+    answer: 2
+    keepOrder: true
+  - id: K-043-2
+    type: mcq
+    prompt: {en: "The bridge's G7 (G B♮ D F) is which numeral in F major?", sr: "G7 (G H D F) u mostu je koji stupanj u F-duru?"}
+    options: ["V7/V", "V7", "ii7", "V7/vi"]
+    answer: 0
+    checks:
+      - numeral: {key: F, is: "V7/V", notes: [G3, B3, D4, F4]}
+      - numeral: {key: F, is: "V7", notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: F, is: "ii7", notes: [G3, Bb3, D4, F4]}
+      - numeral: {key: F, is: "V7/vi", notes: [A3, "C#4", E4, G4]}
+  - id: K-043-3
+    type: midi-play
+    prompt: {en: "The A section, hands together: each left-hand chord with the melody note above it, ♩=88.", sr: "A deo, obe ruke: svaki akord leve ruke zajedno sa tonom melodije iznad njega, ♩=88."}
+    mode: chords
+    expectChords: [[F2, A2, C3, A4], [G4], [A4], [C5], [D3, F3, C4, D5], [C5], [G2, F3, Bb3, Bb4], [A4], [C3, E3, Bb3, G4], [E4], [F2, A2, C3, F4]]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 88
+    checks:
+      - numeral: {key: F, is: "I", notes: [F2, A2, C3, A4]}
+      - chord: {notes: [D3, F3, C4, D5], root: D, quality: min7, inversion: 0}
+      - chord: {notes: [G2, F3, Bb3, Bb4], root: G, quality: min7, inversion: 0}
+      - chord: {notes: [C3, E3, Bb3, G4], root: C, quality: "7", inversion: 0}
+      - numeral: {key: F, is: "I", notes: [F2, A2, C3, F4]}
+  - id: K-043-4
+    type: midi-play
+    prompt: {en: "The bridge, hands together, ♩=88. B♭ is held for two bars; B♮ appears with G7.", sr: "Most, obe ruke, ♩=88. B se drži dva takta; H se pojavljuje sa G7."}
+    mode: chords
+    expectChords: [[Bb2, D3, F3, D5], [C5], [Bb4], [F4], [G2, F3, B3, G4], [A4], [B4], [D5], [C3, E3, Bb3, C5]]
+    beats: [3, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 88
+    checks:
+      - numeral: {key: F, is: "IV", notes: [Bb2, D3, F3, D5]}
+      - chord: {notes: [G2, F3, B3, G4], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [C3, E3, Bb3, C5], root: C, quality: "7", inversion: 0}
+  - id: K-043-5
+    type: midi-play
+    prompt: {en: "Left hand only, the whole form from the lead sheet above (A A B A, 16 bars), notes hidden: follow the repeat sign yourself. ♩=96.", sr: "Samo leva ruka, cela forma iz lead sheet-a iznad (A A B A, 16 taktova), bez prikaza tonova: znak ponavljanja prati sam. ♩=96."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:F\n|: \"F\"A G A c | \"Dm7\"d2 c2 | \"Gm7\"B A \"C7\"G E | \"F\"F4 :|\n\"Bb\"d3 c | B2 F2 | \"G7\"G A =B d | \"C7\"c4 |\n\"F\"A G A c | \"Dm7\"d2 c2 | \"Gm7\"B A \"C7\"G E | \"F\"F4 |]"
+    mode: chords
+    expectChords: [[F2, A2, C3], [D3, F3, C4], [G2, F3, Bb3], [C3, E3, Bb3], [F2, A2, C3], [F2, A2, C3], [D3, F3, C4], [G2, F3, Bb3], [C3, E3, Bb3], [F2, A2, C3], [Bb2, D3, F3], [G2, F3, B3], [C3, E3, Bb3], [F2, A2, C3], [D3, F3, C4], [G2, F3, Bb3], [C3, E3, Bb3], [F2, A2, C3]]
+    beats: [4, 4, 2, 2, 4, 4, 4, 2, 2, 4, 8, 4, 4, 4, 4, 2, 2, 4]
+    tempo: 96
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - chord: {notes: [F2, A2, C3], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [Bb2, D3, F3], root: Bb, quality: maj, inversion: 0}
+      - chord: {notes: [G2, F3, B3], root: G, quality: "7", inversion: 0}
+  - id: K-043-6
+    type: practice
+    prompt: {en: "Hands together through the whole form twice. Second time through, on the last A, paraphrase the melody: same notes on the downbeats, but change the rhythm (anticipate a note, add a pickup, hold one longer). End with a small ritardando in the last bar.", sr: "Obe ruke kroz celu formu dva puta. Drugi put, u poslednjem A, parafraziraj melodiju: isti tonovi na prvim dobama, ali promeni ritam (najavi ton ranije, dodaj predtakt, zadrži jedan duže). Završi malim ritardandom u poslednjem taktu."}
+    minutes: 4

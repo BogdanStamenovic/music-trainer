@@ -1,0 +1,112 @@
+id: V-061
+track: V
+order: 61
+title: {en: "Range check and comfortable top in mix", sr: "Provera opsega i udobni vrh u miksu"}
+prereqs: [V-060, V-044, V-046]
+minutes: 11
+tags: [voice, range, mix]
+explain:
+  en: |
+    Two numbers today, and they are not the same:
+
+    | number | what it is | how you find it |
+    |---|---|---|
+    | **range** | the lowest and highest notes you can sing **clearly and easily**, in any register (the top is usually head voice) | the glides, as in lessons 3, 25 and 44 |
+    | **comfortable top in mix** | the highest note where the **light mix** still holds: same size, speech-like, no flip, no push | 5-note patterns stepping up until the first sign of strain |
+
+    The second number is the one songs care about. In pop and musical theatre most melodies sit in the mix range; the notes above it are sung in head voice or falsetto as a colour,
+    or the song is moved to a lower key. Knowing your mix top tells you **which keys to choose** for the songs in the next lessons. It is typically several semitones
+    below the top of your full range; that is normal.
+
+    Since lesson 44 you added carrying the mix higher (46), evening out the break (47), twang (48), support for stronger sound (52) and steadiness (53).
+    Expect a small change at most: a semitone or two, or nothing. On a tired day the number can be lower. The trend over months is what counts.
+
+    The rules from lesson 44 still hold: a note counts only if it is clear, quiet and easy. The app keeps a 2-semitone safety margin inside the ends of your range.
+    For the mix top there is no microphone measurement of register, so **you** decide where the mix stopped holding; write the note down.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Danas dva broja, i nisu isti:
+
+    | broj | šta je | kako ga nalaziš |
+    |---|---|---|
+    | **opseg** | najniži i najviši ton koji možeš da otpevaš **jasno i lako**, u bilo kom registru (vrh je obično glavni glas) | klizanja, kao u 3, 25. i 44. lekciji |
+    | **udobni vrh u miksu** | najviši ton na kome **lagani miks** još drži: ista veličina, kao govor, bez preskakanja, bez guranja | obrasci od 5 tonova koji idu naviše do prvog znaka naprezanja |
+
+    Drugi broj je onaj koji je bitan pesmama. U popu i mjuziklu većina melodija leži u opsegu miksa; tonovi iznad pevaju se u glavnom glasu ili falsetu kao boja,
+    ili se pesma prebaci u niži tonalitet. Kad znaš vrh svog miksa, znaš **koje tonalitete da biraš** za pesme u sledećim lekcijama. Obično je nekoliko polustepena
+    ispod vrha celog opsega; to je normalno.
+
+    Od 44. lekcije dodao si nošenje miksa naviše (46), izravnavanje loma (47), tvang (48), oslonac za jači zvuk (52) i mirnoću (53).
+    Očekuj najviše malu promenu: polustepen ili dva, ili ništa. Kad si umoran, broj može da bude niži. Važan je trend kroz mesece.
+
+    Pravila iz 44. lekcije i dalje važe: ton se računa samo ako je jasan, tih i lak. Aplikacija drži marginu od 2 polustepena unutar krajeva tvog opsega.
+    Za vrh miksa mikrofon ne meri registar, pa **ti** odlučuješ gde je miks prestao da drži; zapiši taj ton.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-061-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel? (Measure only on a 'fine' day; a tired voice gives a wrong number.)"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Meri samo kad je glas „dobro”; umoran glas daje pogrešan broj.)"
+  - id: V-061-2
+    type: practice
+    minutes: 2.5
+    prompt:
+      en: "Warm-up (a full one before measuring): 4 low breaths, 4 lip-trill sirens over your whole range, 3 'ng' sirens, then 5-4-3-2-1 on bratty 'nay' twice."
+      sr: "Zagrevanje (potpuno, pre merenja): 4 niska udaha, 4 sirene treperenjem usana kroz ceo opseg, 3 sirene na „ng”, pa 5-4-3-2-1 na zadirkujuće „nej” dva puta."
+  - id: V-061-3
+    type: voice-range
+    prompt:
+      en: "Range: a low glide on 'uh' down to your lowest clear note, then a high glide on 'oo' up to your highest easy note (head voice is fine). Quiet both ways; no reaching."
+      sr: "Opseg: klizanje na „ə” naniže do najnižeg jasnog tona, pa klizanje na „u” naviše do najvišeg lakog tona (glavni glas je u redu). Tiho u oba smera; bez dohvatanja."
+  - id: V-061-4
+    type: sing-phrase
+    prompt:
+      en: "Mix check 1: 5-4-3-2-1 on 'nay', placed at the top of your newly stored range. If the 5 will not stay a light mix, sing it in head voice and note that it is above your mix top."
+      sr: "Provera miksa 1: 5-4-3-2-1 na „nej”, postavljeno na vrh tvog upravo sačuvanog opsega. Ako 5 ne ostaje lagani miks, otpevaj ga u glavnom glasu i zabeleži da je iznad vrha miksa."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    fitRange: high
+    tolerance: 50
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-061-5
+    type: sing-phrase
+    prompt:
+      en: "Mix check 2: 1-3-5-3-1 on 'nay', in the upper middle. Same size on the 5 as on the 1?"
+      sr: "Provera miksa 2: 1-3-5-3-1 na „nej”, u gornjoj sredini. Ista veličina na 5 kao na 1?"
+    notes: [E4, G#4, B4, G#4, E4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj, inversion: 0}
+  - id: V-061-6
+    type: practice
+    minutes: 3
+    prompt:
+      en: "Find your mix top: on the piano, play 1-2-3-4-5-4-3-2-1 starting low and sing it on 'nay'; move up a half step each round. The first round where the 5 grows, flips, or the larynx climbs: stop. The 5 of the round before is your comfortable top in mix. Write it down (note name), next to your range."
+      sr: "Nađi vrh miksa: na klaviru odsviraj 1-2-3-4-5-4-3-2-1 počevši nisko i otpevaj na „nej”; svaku rundu pomeri za polustepen naviše. Prva runda u kojoj 5 poraste, preskoči ili se grkljan popne: stani. Ton 5 iz prethodne runde je tvoj udobni vrh u miksu. Zapiši ga (ime tona), pored opsega."
+  - id: V-061-7
+    type: mcq
+    prompt:
+      en: "Your full range reaches A4 in head voice, but the light mix holds only up to E4. A song's highest note is G4, sung in mix. What is the sensible choice?"
+      sr: "Tvoj ceo opseg dolazi do A4 u glavnom glasu, ali lagani miks drži samo do E4. Najviši ton pesme je G4, peva se u miksu. Šta je razuman izbor?"
+    options:
+      - {en: "Move the song down about a minor 3rd, so its top lands near E4", sr: "Spusti pesmu za oko malu tercu, da joj vrh padne blizu E4"}
+      - {en: "Keep the key and push the G4", sr: "Zadrži tonalitet i proguraj G4"}
+      - {en: "Sing the whole song in falsetto", sr: "Otpevaj celu pesmu u falsetu"}
+    answer: 0
+    checks:
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-061-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: compare today's numbers with lesson 44 (range) and lesson 46 (how far the mix went). Rate: same, a little higher, or lower today? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: uporedi današnje brojeve sa 44. lekcijom (opseg) i 46. lekcijom (dokle je miks išao). Oceni: isto, malo više ili danas niže? Pa 3 tiha pevušenja uz klizanje naniže."

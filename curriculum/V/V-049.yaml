@@ -1,0 +1,125 @@
+id: V-049
+track: V
+order: 49
+title: {en: "Speech-level singing: talk the line, then sing it", sr: "Pevanje na nivou govora: izgovori red, pa ga otpevaj"}
+prereqs: [V-048, V-013]
+minutes: 11
+tags: [voice, speech]
+explain:
+  en: |
+    **Speech-level singing** (Serbian: *pevanje na nivou govora*) means singing with the **same effort, larynx position and vowel shapes as when you talk**.
+    The voice already knows how to speak for hours without tiring; singing at speech level borrows that coordination instead of building a separate "singer voice".
+
+    Many beginners switch into a special mode when they start to sing: darker, deeper, the larynx pressed down, "important" vowels, more breath. It sounds
+    put-on, and it fights the light mix you have been building. The fix is to keep the talking and add only the pitches and the length.
+
+    The method, three passes on the same line:
+
+    1. **Talk it** in rhythm, on your natural speaking pitch, like telling someone something. Notice the size of the sound and where you feel it.
+    2. **Intone it**: speak it *on the pitches*, short and clipped, still talking (halfway between speech and song).
+    3. **Sing it**: lengthen the vowels, connect the notes, and change nothing else. Same size, same mouth, same consonants.
+
+    If pass 3 sounds very different from pass 1, something was added. Usual suspects: a deeper "covered" sound, a lower larynx, more air, a wider mouth on high notes.
+
+    Why this matters now: the next two lessons introduce a **low-intensity call** (belt), and a healthy call is basically **heightened speech**. If singing already
+    feels like talking, a call is a small step; if singing is a separate "voice", a call turns into shouting.
+
+    The lines are given in English and Serbian; sing in either language (the Serbian lines have the same number of syllables). The app grades **pitch only**.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Pevanje na nivou govora** (engl. *speech-level singing*) znači pevati **istim naporom, istim položajem grkljana i istim oblicima samoglasnika kao kad pričaš**.
+    Glas već zna da govori satima bez umora; pevanje na nivou govora pozajmljuje tu koordinaciju umesto da gradi poseban „pevački glas”.
+
+    Mnogi početnici kad počnu da pevaju pređu u poseban režim: tamnije, dublje, grkljan potisnut naniže, „važni” samoglasnici, više daha. To zvuči
+    namešteno i bori se protiv laganog miksa koji gradiš. Rešenje je da zadržiš govor i dodaš samo visine i trajanje.
+
+    Metoda, tri prolaza istog reda:
+
+    1. **Izgovori ga** u ritmu, na prirodnoj visini govora, kao da nekome nešto pričaš. Primeti veličinu zvuka i gde ga osećaš.
+    2. **Intoniraj ga**: izgovori ga *na visinama*, kratko i odsečno, i dalje kao govor (na pola puta između govora i pesme).
+    3. **Otpevaj ga**: produži samoglasnike, poveži tonove i ništa drugo ne menjaj. Ista veličina, ista usta, isti suglasnici.
+
+    Ako treći prolaz zvuči veoma drugačije od prvog, nešto je dodato. Uobičajeni krivci: dublji, „pokriven” zvuk, niži grkljan, više vazduha, šira usta na visokim tonovima.
+
+    Zašto je ovo važno sada: sledeće dve lekcije uvode **poziv niskog intenziteta** (belting), a zdrav poziv je u suštini **pojačan govor**. Ako pevanje već
+    deluje kao pričanje, poziv je mali korak; ako je pevanje poseban „glas”, poziv se pretvara u vikanje.
+
+    Redovi su dati na engleskom i srpskom; pevaj na kom god jeziku hoćeš (srpski redovi imaju isti broj slogova). Aplikacija ocenjuje **samo visinu**.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-049-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-049-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then read a sentence of any text aloud in a lively, friendly voice. Then 'nay-nay-nay' at that speaking pitch and two notes higher."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa naglas pročitaj jednu rečenicu bilo kog teksta, živo i prijateljski. Pa „nej-nej-nej” na toj visini govora i dva tona više."
+  - id: V-049-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Talk, intone, sing, without the app: 'Come and sit with me' (or 'Dođi, sedi tu'). Talk it twice, intone it on 3-3-2-2-1 twice, sing it twice. Rate how similar pass 3 sounded to pass 1."
+      sr: "Izgovori, intoniraj, otpevaj, bez aplikacije: „Dođi, sedi tu” (ili „Come and sit with me”). Izgovori dva puta, intoniraj na 3-3-2-2-1 dva puta, otpevaj dva puta. Oceni koliko je treći prolaz ličio na prvi."
+    checks:
+      - syllables: {text: "Dođi sedi tu", lang: sr, is: 5}
+  - id: V-049-4
+    type: sing-phrase
+    prompt:
+      en: "Now sung: 'Come and sit with me' / 'Dođi, sedi tu' on 3-3-2-2-1. Same size and same mouth as when you talked it."
+      sr: "Sada otpevano: „Dođi, sedi tu” / „Come and sit with me” na 3-3-2-2-1. Ista veličina i ista usta kao kad si ga izgovorio."
+    notes: [E4, E4, D4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - syllables: {text: "Dođi sedi tu", lang: sr, is: 5}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-049-5
+    type: sing-phrase
+    prompt:
+      en: "Talk it first, then sing: 'I can hear you calling' / 'Čujem kako zoveš' on 1-1-3-4-5-3. The 5 is on a stressed syllable ('call', 'zo-'); stress it like speech, not louder."
+      sr: "Prvo izgovori, pa otpevaj: „Čujem kako zoveš” / „I can hear you calling” na 1-1-3-4-5-3. 5 pada na naglašen slog („zo”, „call”); naglasi ga kao u govoru, ne glasnije."
+    notes: [D4, D4, F#4, G4, A4, F#4]
+    beats: [0.5, 0.5, 1, 1, 1, 2]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - syllables: {text: "Čujem kako zoveš", lang: sr, is: 6}
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-049-6
+    type: sing-phrase
+    prompt:
+      en: "A longer line, talk then sing: 'Walk with me along the river, darling' / 'Hajde sa mnom pored reke, dušo' on 1-2-3-3-3-2-1-2-3-2. Keep the consonants as crisp as in speech."
+      sr: "Duži red, izgovori pa otpevaj: „Hajde sa mnom pored reke, dušo” / „Walk with me along the river, darling” na 1-2-3-3-3-2-1-2-3-2. Suglasnici jasni kao u govoru."
+    notes: [F4, G4, A4, A4, A4, G4, F4, G4, A4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - syllables: {text: "Hajde sa mnom pored reke dušo", lang: sr, is: 10}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+  - id: V-049-7
+    type: mcq
+    prompt:
+      en: "Pass 1 (talking) felt easy and bright; in pass 3 (singing) the sound got darker and your larynx dropped. What do you do?"
+      sr: "Prvi prolaz (govor) bio je lak i svetao; u trećem (pevanje) zvuk je potamneo i grkljan se spustio. Šta radiš?"
+    options:
+      - {en: "Go back to intoning and keep the speech shape while lengthening the vowels", sr: "Vrati se na intoniranje i zadrži oblik govora dok produžavaš samoglasnike"}
+      - {en: "Keep it: a darker sound is more professional", sr: "Zadrži: tamniji zvuk je profesionalniji"}
+      - {en: "Press the larynx down further so it is consistent", sr: "Potisni grkljan još niže da bude dosledno"}
+    answer: 0
+  - id: V-049-8
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: record the river line talked, then sung, and listen. Rate: did the sung version sound like the same person talking? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi red o reci izgovoren, pa otpevan, i preslušaj. Oceni: da li je otpevana verzija zvučala kao ista osoba koja priča? Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,123 @@
+id: V-056
+track: V
+order: 56
+title: {en: "Phrasing: shaping a line (start, peak, landing)", sr: "Fraziranje: oblikovanje linije (početak, vrh, doskok)"}
+prereqs: [V-055, V-040, V-039]
+minutes: 11
+tags: [voice, phrasing, dynamics]
+explain:
+  en: |
+    You already phrase on the piano: a melody line is not a row of equal notes, it **goes somewhere** and comes back. The voice does the same with three moments:
+
+    | moment | what to do | what goes wrong |
+    |---|---|---|
+    | **start** | breath taken **before** the beat, a balanced onset exactly on time (lessons 5, 35) | breathing on the beat, so the first note is late or gasped |
+    | **peak** | the phrase grows toward its goal: usually the **stressed word** or the **highest or longest note**, often in the second half | every note the same size (flat), or the peak placed on an unimportant word |
+    | **landing** | the energy comes down onto the last note, which is **released on time**, like lifting the hand at the end of a slur | clipping the last note short, or letting it trail off flat and breathy |
+
+    How to find the peak: **speak the words** (lesson 49). The word your speech leans on is usually the peak. Then check the melody: if the highest note falls on the same
+    word, the composer agrees with you; if not, choose one and make it the goal.
+
+    The shape is made with **small** dynamic changes (lesson 40: soft to medium) and with **direction**: think forward to the peak, not note by note.
+    Nothing here is about getting loud. A peak at medium-soft is still a peak if the notes around it are softer.
+
+    The app grades **pitch only**; the shape is for your ears. Record each line and listen: from the inside, phrasing always feels bigger than it sounds.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Na klaviru već fraziraš: melodijska linija nije niz jednakih tonova, ona **ide negde** i vraća se. Glas radi isto, kroz tri trenutka:
+
+    | trenutak | šta radiš | šta pođe naopako |
+    |---|---|---|
+    | **početak** | udah **pre** dobe, uravnotežena ataka tačno na vreme (5. i 35. lekcija) | udah na dobi, pa prvi ton kasni ili je izdahnut |
+    | **vrh** | fraza raste ka svom cilju: obično **naglašenoj reči** ili **najvišem ili najdužem tonu**, često u drugoj polovini | svaki ton iste veličine (ravno), ili vrh na nevažnoj reči |
+    | **doskok** | energija se spušta na poslednji ton, koji je **pušten na vreme**, kao podizanje šake na kraju legato luka | odsečen poslednji ton, ili pušten da se razvuče nisko i vazdušasto |
+
+    Kako da nađeš vrh: **izgovori reči** (49. lekcija). Reč na koju se govor oslanja je obično vrh. Zatim proveri melodiju: ako najviši ton pada na istu
+    reč, kompozitor se slaže sa tobom; ako ne, izaberi jedno i neka to bude cilj.
+
+    Oblik se pravi **malim** promenama dinamike (40. lekcija: od tihog do srednjeg) i **smerom**: misli unapred ka vrhu, ne ton po ton.
+    Ništa ovde nije o glasnoći. Vrh na srednje tihom je i dalje vrh ako su tonovi oko njega tiši.
+
+    Aplikacija ocenjuje **samo visinu**; oblik je za tvoje uši. Snimi svaki red i preslušaj: iznutra fraziranje uvek deluje veće nego što se čuje.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-056-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-056-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then 1-2-3-4-5-4-3-2-1 on 'nay' with a small swell to the 5 and a soft landing on the 1."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa 1-2-3-4-5-4-3-2-1 na „nej” sa malim rastom do 5 i mekim doskokom na 1."
+    play: {notes: [C4, D4, E4, F4, G4, F4, E4, D4, C4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-056-3
+    type: sing-phrase
+    prompt:
+      en: "A line with a clear peak, on 'la': 1-2-3-5-6-5-3-2-1. Breath before the first beat, grow to the 6, land softly on the 1 and release it on time."
+      sr: "Linija sa jasnim vrhom, na „la”: 1-2-3-5-6-5-3-2-1. Udah pre prve dobe, rasti do 6, meko doskoči na 1 i pusti ga na vreme."
+    notes: [D4, E4, F#4, A4, B4, A4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2, 1, 1, 1, 3]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-056-4
+    type: sing-phrase
+    prompt:
+      en: "'Amazing grace, how sweet the sound' (lesson 39). Speak it first: the stresses fall on 'grace' and 'sweet', and the melody puts its highest long note on 'grace'. Make 'grace' the peak, keep 'sweet' warm, land softly on 'sound'."
+      sr: "„Amazing grace, how sweet the sound” (39. lekcija). Prvo ga izgovori: naglasci padaju na „grace” i „sweet”, a melodija stavlja svoj najviši dugi ton na „grace”. Neka „grace” bude vrh, „sweet” toplo, a doskok na „sound” mek."
+    notes: [D4, G4, B4, G4, B4, A4, G4, E4, D4]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 2, 1, 3]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+  - id: V-056-5
+    type: sing-phrase
+    prompt:
+      en: "'That saved a wretch like me': here the highest note is also the last and longest. Peak and landing meet: reach the D gently, then let it taper over its 5 beats instead of holding it flat."
+      sr: "„That saved a wretch like me”: ovde je najviši ton ujedno poslednji i najduži. Vrh i doskok se sreću: dohvati D nežno, pa ga pusti da se stišava tokom 5 doba umesto da ga držiš ravno."
+    notes: [D4, G4, B4, G4, B4, A4, D5]
+    beats: [1, 2, 0.5, 0.5, 2, 1, 5]
+    tempo: 88
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-056-6
+    type: sing-phrase
+    prompt:
+      en: "Two phrases, two shapes: the first rises to its peak and stays open (ends on 2), the second answers and lands home (ends on 1). Breathe in the rest."
+      sr: "Dve fraze, dva oblika: prva raste do vrha i ostaje otvorena (završava na 2), druga odgovara i doskače kući (završava na 1). Udahni u pauzi."
+    notes: [C4, E4, G4, A4, G4, D4, r, E4, G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 3]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-056-7
+    type: mcq
+    prompt:
+      en: "Where is the peak of a sung phrase usually found?"
+      sr: "Gde se obično nalazi vrh pevane fraze?"
+    options:
+      - {en: "On the stressed word or the highest/longest note, often in the second half", sr: "Na naglašenoj reči ili najvišem/najdužem tonu, često u drugoj polovini"}
+      - {en: "Always on the first note", sr: "Uvek na prvom tonu"}
+      - {en: "On the last note, which should be the loudest", sr: "Na poslednjem tonu, koji treba da bude najglasniji"}
+    answer: 0
+  - id: V-056-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: record the first Amazing Grace line twice: flat (every note the same size), then shaped (peak on 'grace', soft landing on 'sound'). Listen back. Rate: could a listener hear the difference? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi prvi red „Amazing Grace” dva puta: ravno (svaki ton iste veličine), pa oblikovano (vrh na „grace”, mek doskok na „sound”). Preslušaj. Oceni: da li bi slušalac čuo razliku? Pa 3 tiha pevušenja uz klizanje naniže."

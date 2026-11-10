@@ -51,7 +51,7 @@ brief:
     - **Rubric (20%):** the criteria below.
   sr: |
     **Melodija od 8 taktova u molu koja koristi dve najjače hromatske boje** koje si ove godine
-    upoznao u teoriji: **napuljski akord** (bII) i **povećanu sekundu** harmonskog mola.
+    upoznao u teoriji: **napuljski akord** (bII) i **prekomernu sekundu** harmonskog mola.
     Napisana za ovaj kurs. **Odsviraj je na klaviru, desnom rukom, u bilo kom tonalitetu.**
 
     ### Šta da slušaš
@@ -62,7 +62,7 @@ brief:
     - **6. takt: napuljski akord.** Melodija ocrtava iv akord, pa tone na **b2**, polustepen
       iznad tonike (B u a-molu). Taj sniženi 2. stupanj je zvuk napuljskog sekstakorda: taman i
       plemenit u isto vreme.
-    - **7. takt: povećana sekunda.** Od b6 naviše do povišenog 7. stupnja (F → Gis u a-molu):
+    - **7. takt: prekomerna sekunda.** Od b6 naviše do povišenog 7. stupnja (F → Gis u a-molu):
       **tri polustepena koja zvuče kao mala terca**, ali pripadaju „egzotičnom” uglu lestvice.
       Takt ocrtava **smanjeni septakord** Gis H D F (tri njegova tona: F, Gis, H) i
       razrešava se u toniku.
@@ -76,7 +76,7 @@ brief:
        i 7).
     3. **Nauči taktove 1–4** (obična molska fraza), pa je **5. takt opet 1. takt**, a novi su
        samo taktovi 6–7.
-    4. **Uporedi povećanu sekundu sa malom tercom:** odsviraj F–Gis i F–As. Iste dirke, isti
+    4. **Uporedi prekomernu sekundu sa malom tercom:** odsviraj F–Gis i F–As. Iste dirke, isti
        zvuk; u melodiji kontekst (Gis koje se penje u A) čini da je to sekunda.
 
     ### Kako se ocenjuje
@@ -90,7 +90,7 @@ rubric:
     label: {en: "Chromatic notes exact", sr: "Hromatski tonovi tačni"}
     top:
       en: "The b2 in bar 6, the augmented second and the diminished-seventh notes in bar 7 are all exact, and the raised 7th always resolves to the tonic."
-      sr: "b2 u 6. taktu, povećana sekunda i tonovi smanjenog septakorda u 7. taktu su tačni, a povišeni 7. stupanj se uvek razrešava u toniku."
+      sr: "b2 u 6. taktu, prekomerna sekunda i tonovi smanjenog septakorda u 7. taktu su tačni, a povišeni 7. stupanj se uvek razrešava u toniku."
   - id: expression
     weight: 1
     label: {en: "Expression", sr: "Izraz"}

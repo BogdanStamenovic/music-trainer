@@ -1,0 +1,127 @@
+id: T-068
+track: T
+order: 68
+prereqs: [T-067]
+title: {en: "Review: analysing a modulating song", sr: "Ponavljanje: analiza pesme koja modulira"}
+minutes: 15
+tags: [harmony, modulation, form, analysis, review]
+explain:
+  en: |
+    A 16-bar song in four 4-bar phrases. Analyse it the way you analysed the chorale in T-050, plus two new questions: **where does the key change, and how?**
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^1""C" E2 G2 | "Am" A2 E2 | "Dm7" F2 "G7" B,2 | "C" C4 |
+    "^5""E7" ^G2 B2 | "Am" c2 A2 | "D7" ^F2 A2 | "G" G4 |
+    "^9""G" B2 d2 | "Em" e2 B2 | "Am7" c A "D7" ^F A | "G" G4 |
+    "^13""G7" F2 D2 | "C" E2 G2 | "Dm7" F2 "G7" B,2 | "C" C4 |]
+    ```
+
+    A method:
+    1. **Home key**: signature and the first and last cadences (bars 3–4, 15–16).
+    2. **Every accidental**: what is it the leading tone of (or the 7th of)? G♯ in bar 5, F♯ in bars 7 and 11, F♮ in bar 13.
+    3. **For each one: tonicization or modulation?** Is there a cadence in the new key, and does the music stay there for a phrase (T-058)?
+    4. **The pivot**: the last chord that belongs to both keys before the new key's V7 (T-053). Label it in both keys.
+    5. **The way back**: how does the music return home? (Here, the new tonic itself becomes V of the old one, and its 7th, F♮, makes it unmistakable.)
+    6. **Form**: which phrases are alike? Bars 14–16 bring back bars 1, 3 and 4.
+
+    Do it on paper first, then answer the questions.
+  sr: |
+    Pesma od 16 taktova u četiri fraze od po 4 takta. Analiziraj je kao koral u T-050, uz dva nova pitanja: **gde se menja tonalitet i kako?**
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^1""C" E2 G2 | "Am" A2 E2 | "Dm7" F2 "G7" B,2 | "C" C4 |
+    "^5""E7" ^G2 B2 | "Am" c2 A2 | "D7" ^F2 A2 | "G" G4 |
+    "^9""G" B2 d2 | "Em" e2 B2 | "Am7" c A "D7" ^F A | "G" G4 |
+    "^13""G7" F2 D2 | "C" E2 G2 | "Dm7" F2 "G7" B,2 | "C" C4 |]
+    ```
+
+    Postupak:
+    1. **Polazni tonalitet**: predznak i prva i poslednja kadenca (taktovi 3–4, 15–16).
+    2. **Svaki predznak**: čija je to vođica (ili septima)? Gis u 5. taktu, Fis u 7. i 11. taktu, F u 13. taktu.
+    3. **Za svaki: tonikalizacija ili modulacija?** Postoji li kadenca u novom tonalitetu i da li muzika tu ostaje celu frazu (T-058)?
+    4. **Akord-most**: poslednji akord koji pripada oba tonaliteta pre V7 novog tonaliteta (T-053). Označi ga u oba tonaliteta.
+    5. **Put nazad**: kako se muzika vraća kući? (Ovde nova tonika sama postaje V starog tonaliteta, a njena septima, F, to čini nedvosmislenim.)
+    6. **Oblik**: koje fraze su slične? Taktovi 14–16 vraćaju taktove 1, 3 i 4.
+
+    Uradi to prvo na papiru, pa onda odgovori na pitanja.
+exercises:
+  - id: T-068-1
+    type: mcq
+    prompt: {en: "Bars 5–6: E7 → Am. What is it?", sr: "Taktovi 5–6: E7 → Am. Šta je to?"}
+    options:
+      - {en: "A tonicization of vi (V7/vi – vi): the music moves straight on", sr: "Tonikalizacija vi (V7/vi – vi): muzika odmah ide dalje"}
+      - {en: "A modulation to A minor", sr: "Modulacija u a-mol"}
+      - {en: "A deceptive cadence", sr: "Prekinuta kadenca"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: V7/vi, notes: [E3, G#3, B3, D4]}
+      - numeral: {key: C, is: vi, notes: [A3, C4, E4]}
+  - id: T-068-2
+    type: mcq
+    prompt: {en: "The pivot into G is the A minor chord of bar 6. Its labels?", sr: "Most ka G-duru je a-mol akord u 6. taktu. Njegove oznake?"}
+    options: ["C: vi = G: ii", "C: vi = G: vi", "C: ii = G: vi", "C: iv = G: ii"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: vi, notes: [A3, C4, E4]}
+      - numeral: {key: G, is: ii, notes: [A3, C4, E4]}
+  - id: T-068-3
+    type: mcq
+    prompt: {en: "Why are bars 9–12 a modulation to G and not a tonicization?", sr: "Zašto su taktovi 9–12 modulacija u G-dur, a ne tonikalizacija?"}
+    options:
+      - {en: "A whole phrase stays in G (I – vi – ii7 – V7 – I) and cadences there", sr: "Cela fraza ostaje u G-duru (I – vi – ii7 – V7 – I) i tu kadencira"}
+      - {en: "Because bar 9 starts on G", sr: "Zato što 9. takt počinje na G"}
+      - {en: "Because there is an F♯ in bar 7", sr: "Zato što u 7. taktu ima Fis"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: I, notes: [G3, B3, D4]}
+      - numeral: {key: G, is: vi, notes: [E3, G3, B3]}
+      - numeral: {key: G, is: ii7, notes: [A3, C4, E4, G4]}
+      - numeral: {key: G, is: V7, notes: [D3, F#3, A3, C4]}
+  - id: T-068-4
+    type: mcq
+    prompt: {en: "Bar 13: how does the song get back to C?", sr: "13. takt: kako se pesma vraća u C-dur?"}
+    options:
+      - {en: "The G chord (G: I = C: V) gets its 7th, F♮: G7 is V7 of C", sr: "G akord (G: I = C: V) dobija septimu, F: G7 je V7 C-dura"}
+      - {en: "By a direct modulation with no common chord", sr: "Direktnom modulacijom bez zajedničkog akorda"}
+      - {en: "Through a diminished 7th", sr: "Preko smanjenog septakorda"}
+      - {en: "Through the Neapolitan", sr: "Preko napuljskog akorda"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: I, notes: [G3, B3, D4]}
+      - numeral: {key: C, is: V, notes: [G3, B3, D4]}
+      - numeral: {key: C, is: V7, notes: [G3, B3, D4, F4]}
+  - id: T-068-5
+    type: mcq
+    prompt: {en: "Which describes the form of the 16 bars?", sr: "Šta opisuje oblik ovih 16 taktova?"}
+    options:
+      - {en: "a b c a′: the first phrase returns at the end, after a section in G", sr: "a b c a′: prva fraza se vraća na kraju, posle odseka u G-duru"}
+      - {en: "a a b a", sr: "a a b a"}
+      - {en: "a b a b", sr: "a b a b"}
+      - {en: "a 12-bar blues plus 4 bars", sr: "bluz od 12 taktova plus 4 takta"}
+    answer: 0
+  - id: T-068-6
+    type: midi-play
+    prompt: {en: "Play bars 5–8, one chord per bar: E7 – Am – D7 – G (any octave, ♩=80). Say the labels as you play: C: V7/vi, vi = G: ii, G: V7, I.", sr: "Odsviraj taktove 5–8, jedan akord po taktu: E7 – Am – D7 – G (bilo koja oktava, ♩=80). Izgovaraj oznake dok sviraš: C: V7/vi, vi = G: ii, G: V7, I."}
+    mode: chords
+    octave: any
+    expectChords: [[E3, D4, G#4, B4], [A2, C4, E4, A4], [D3, C4, F#4, A4], [G2, B3, D4, G4]]
+    beats: [4, 4, 4, 4]
+    tempo: 80
+    checks:
+      - numeral: {key: C, is: V7/vi, notes: [E3, D4, G#4, B4]}
+      - numeral: {key: G, is: ii, notes: [A2, C4, E4, A4]}
+      - numeral: {key: G, is: V7, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: G, is: I, notes: [G2, B3, D4, G4]}
+  - id: T-068-7
+    type: generated
+    count: 4
+    prompt: {en: "Which version of bars 5–8 do you hear? (Numerals in C.)", sr: "Koju verziju taktova 5–8 čuješ? (Brojevi u C-duru.)"}
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[V7/vi, vi, V7/V, V], [V7/vi, vi, ii7, V7], [V7, vi, IV, V]], tempo: 66, smooth: true}

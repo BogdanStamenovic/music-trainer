@@ -1,0 +1,138 @@
+id: T-058
+track: T
+order: 58
+prereqs: [T-057]
+title: {en: "Tonicization vs modulation: how long is \"in a new key\"?", sr: "Tonikalizacija ili modulacija: koliko dugo je \"u novom tonalitetu\"?"}
+minutes: 12
+tags: [harmony, modulation, analysis]
+explain:
+  en: |
+    V7/V – V (T-043) and a modulation to G use the same chords. The difference is **time and confirmation**:
+
+    | | tonicization | modulation |
+    |---|---|---|
+    | length | one or two chords inside a phrase | at least a phrase |
+    | cadence in the new key | no | yes, usually authentic (V–I) |
+    | afterwards | straight back to the home key | the new key continues |
+    | numerals | old key: V7/V – V | new key: G: V7 – I |
+
+    Compare. Example 1: D7 – G is a brief lean toward G, and the phrase cadences in C.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "D7"[D^FAc] "G"[DGB] | "F"[CFA] "G7"[B,DFG] | "C"[CEG]2 |]
+    ```
+
+    Example 2: the first phrase ends on G after D7, and the **second phrase** stays in G and closes with a perfect cadence there. Now G is home.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "Am"[CEA]2 | "D7"[D^FAc]2 | "G"[DGB]2 | "Em"[B,EG]2 | "Am"[CEA]2 | "D7"[D^FAc]2 | "G"[DGB]2 |]
+    ```
+
+    Note that at bar 4 you cannot yet tell: the phrase could be a half cadence in C with a tonicized V. **The next phrase decides.** If it returns to C, bar 4 was a half cadence; if it continues in G and cadences there, it was a modulation.
+
+    There is a grey zone, and analysts do disagree about middle cases (a few bars in a new key with a weak cadence). Do not worry about the label; ask your ear the real question: **where is home right now?** If you would end the piece on G at this moment and it would feel finished, you are in G.
+  sr: |
+    V7/V – V (T-043) i modulacija u G-dur koriste iste akorde. Razlika je u **trajanju i potvrdi**:
+
+    | | tonikalizacija | modulacija |
+    |---|---|---|
+    | trajanje | jedan ili dva akorda unutar fraze | najmanje jedna fraza |
+    | kadenca u novom tonalitetu | ne | da, obično autentična (V–I) |
+    | posle toga | odmah nazad u polazni tonalitet | novi tonalitet se nastavlja |
+    | brojevi | stari tonalitet: V7/V – V | novi tonalitet: G: V7 – I |
+
+    Uporedi. Primer 1: D7 – G je kratko naginjanje ka G, a fraza kadencira u C-duru.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "D7"[D^FAc] "G"[DGB] | "F"[CFA] "G7"[B,DFG] | "C"[CEG]2 |]
+    ```
+
+    Primer 2: prva fraza se završava na G posle D7, a **druga fraza** ostaje u G-duru i tamo se zatvara savršenom kadencom. Sada je G dom.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "Am"[CEA]2 | "D7"[D^FAc]2 | "G"[DGB]2 | "Em"[B,EG]2 | "Am"[CEA]2 | "D7"[D^FAc]2 | "G"[DGB]2 |]
+    ```
+
+    Obrati pažnju: u 4. taktu još ne možeš znati: fraza može biti polukadenca u C-duru sa tonikalizovanom dominantom. **Sledeća fraza odlučuje.** Ako se vrati u C, 4. takt je bio polukadenca; ako nastavi u G-duru i tamo kadencira, bila je to modulacija.
+
+    Postoji siva zona, i analitičari se zaista ne slažu oko srednjih slučajeva (nekoliko taktova u novom tonalitetu sa slabom kadencom). Ne brini o oznaci; postavi uhu pravo pitanje: **gde je dom upravo sada?** Ako bi u ovom trenutku završio komad na G i to bi zvučalo završeno, u G-duru si.
+exercises:
+  - id: T-058-1
+    type: mcq
+    prompt: {en: "Example 1: what is D7 – G in bar 2?", sr: "Primer 1: šta je D7 – G u 2. taktu?"}
+    options:
+      - {en: "A tonicization of V (C: V7/V – V)", sr: "Tonikalizacija dominante (C: V7/V – V)"}
+      - {en: "A modulation to G (G: V7 – I)", sr: "Modulacija u G-dur (G: V7 – I)"}
+      - {en: "A pivot chord", sr: "Akord-most"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: V7/V, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: C, is: V64, notes: [D4, G4, B4]}
+      - numeral: {key: C, is: V65, notes: [B3, D4, F4, G4]}
+  - id: T-058-2
+    type: mcq
+    prompt: {en: "Example 2: why is bars 5–8 a modulation?", sr: "Primer 2: zašto su taktovi 5–8 modulacija?"}
+    options:
+      - {en: "A whole phrase stays in G and ends with V7 – I in G", sr: "Cela fraza ostaje u G-duru i završava se sa V7 – I u G-duru"}
+      - {en: "Because it contains F♯", sr: "Zato što sadrži Fis"}
+      - {en: "Because it starts on a minor chord", sr: "Zato što počinje molskim akordom"}
+      - {en: "Because the bass moves by 5ths", sr: "Zato što se bas kreće po kvintama"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: vi64, notes: [B3, E4, G4]}
+      - numeral: {key: G, is: ii6, notes: [C4, E4, A4]}
+      - numeral: {key: G, is: V7, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: G, is: I64, notes: [D4, G4, B4]}
+  - id: T-058-3
+    type: mcq
+    prompt: {en: "A phrase in C ends I – ii – V7/V – V, and the next phrase begins on C and stays in C. Bar 4 was…", sr: "Fraza u C-duru se završava sa I – ii – V7/V – V, a sledeća fraza počinje na C i ostaje u C-duru. 4. takt je bio…"}
+    options:
+      - {en: "A half cadence in C with a tonicized V", sr: "Polukadenca u C-duru sa tonikalizovanom dominantom"}
+      - {en: "A modulation to G", sr: "Modulacija u G-dur"}
+      - {en: "A deceptive cadence", sr: "Prekinuta kadenca"}
+    answer: 0
+  - id: T-058-4
+    type: mcq
+    prompt: {en: "Listen. Does the music end at home in C, or in the new key?", sr: "Slušaj. Da li se muzika završava kod kuće u C-duru ili u novom tonalitetu?"}
+    options:
+      - {en: "In G: a modulation", sr: "U G-duru: modulacija"}
+      - {en: "In C: only a tonicization", sr: "U C-duru: samo tonikalizacija"}
+    answer: 0
+    keepOrder: true
+    play: {mode: chords, tempo: 96, chords: [[C3, C4, E4, G4], [A2, C4, E4, A4], [D3, C4, F#4, A4], [G2, B3, D4, G4], [E3, B3, E4, G4], [A2, C4, E4, A4], [D3, C4, F#4, A4], [G2, B3, D4, G4]], durations: [2, 2, 2, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: G, is: V7, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: G, is: I, notes: [G2, B3, D4, G4]}
+  - id: T-058-5
+    type: mcq
+    prompt: {en: "Listen. Does the music end at home in C, or in the new key?", sr: "Slušaj. Da li se muzika završava kod kuće u C-duru ili u novom tonalitetu?"}
+    options:
+      - {en: "In G: a modulation", sr: "U G-duru: modulacija"}
+      - {en: "In C: only a tonicization", sr: "U C-duru: samo tonikalizacija"}
+    answer: 1
+    keepOrder: true
+    play: {mode: chords, tempo: 96, chords: [[C3, C4, E4, G4], [D3, C4, F#4, A4], [G2, B3, D4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4]], durations: [4, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: C, is: V7/V, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: C, is: V7, notes: [G2, B3, D4, F4]}
+  - id: T-058-6
+    type: generated
+    count: 4
+    prompt: {en: "Which chord is tonicized before the phrase returns home?", sr: "Koji akord je tonikalizovan pre nego što se fraza vrati kući?"}
+    gen: {kind: progression-ear, keys: [C, G, F], options: [[I, V7/V, V, IV, V7, I], [I, V7/vi, vi, IV, V7, I], [I, V7/ii, ii, V7, I]], tempo: 66, smooth: true}

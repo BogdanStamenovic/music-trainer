@@ -1,0 +1,148 @@
+id: L-013
+track: L
+order: 13
+prereqs: [L-012]
+title: {en: "Rock lyrics: attitude, concrete images, short lines", sr: "Rok tekst: stav, konkretne slike, kratki stihovi"}
+minutes: 14
+tags: [lyrics, genre, rock]
+explain:
+  en: |
+    A rock lyric is a **voice with an attitude**: someone who wants, refuses, dares or cannot sit
+    still. The band is loud, so the words have to cut through: few of them, hard, and physical.
+
+    ### Three habits
+    | habit | instead of | rock does |
+    |---|---|---|
+    | **attitude as action** | naming the feeling: *I'm angry at this town* | showing what the speaker **does**: *I kick the station door* |
+    | **concrete, present, physical** | *our love was a journey* | engines, concrete, sweat, cheap things, a named street, **now** |
+    | **short lines** | 10–12 syllables | **3–6 syllables**, often a sentence fragment |
+
+    Short lines matter because a rock vocal sits on a driving beat with few long notes. Each
+    stressed syllable gets a hit, and a **one-syllable word** with hard consonants (*get, cut,
+    back, stop*) lands like a snare. Imperatives and direct address do the same: *Get in.
+    Drive.* There is someone to push against.
+
+    > pop: *I've been thinking about you every night* (10 syllables, a feeling)
+    > rock: *Can't sleep. Your name. Again.* (6 syllables, three blows)
+
+    ### The chorus is a chant
+    The rock chorus is often **two to four words**, repeated until the room shouts it with you.
+    The verse earns it with the specifics; the chant is the summary (L-006, L-011) in its
+    shortest form.
+
+    ### Serbian
+    Serbian words are longer than English ones, so short lines come from **fragments and
+    imperatives**, which are short and stressed on the first syllable: *Gasi svetlo* (4),
+    *Motor radi. Ulazi.* (7). Compare *Svake noći mislim samo na tebe* (11): correct, but
+    no hit. Ex-Yu rock (Azra, Ekatarina Velika, Partibrejkers, Riblja čorba) built whole
+    styles on city detail and clipped, spoken lines; listen for how little each line says.
+
+    ### At the piano
+    Play a low C power chord (C + G, a "C5" in chord symbols) in eighth notes, steady and hard. Speak your line over it:
+    every stressed syllable should land on a chord hit, and if you run out of breath before
+    the line ends, it is too long.
+  sr: |
+    Rok tekst je **glas sa stavom**: neko ko želi, odbija, izaziva ili ne može da miruje. Bend je
+    glasan, pa reči moraju da probiju: malo njih, tvrdih i telesnih.
+
+    ### Tri navike
+    | navika | umesto | rok radi |
+    |---|---|---|
+    | **stav kao radnja** | imenovanja osećanja: *ljut sam na ovaj grad* | pokazuje šta govornik **radi**: *šutnem vrata stanice* |
+    | **konkretno, sada, telesno** | *naša ljubav bila je putovanje* | motori, beton, znoj, jeftine stvari, ulica sa imenom, **sad** |
+    | **kratki stihovi** | 10–12 slogova | **3–6 slogova**, često fragment rečenice |
+
+    Kratki stihovi su važni jer rok vokal sedi na tvrdom ritmu sa malo dugih nota. Svaki
+    naglašeni slog dobije udarac, a **jednosložna reč** sa tvrdim suglasnicima (*stop, skok,
+    brat, krv*) pada kao doboš. Imperativ i direktno obraćanje rade isto: *Ulazi. Vozi.* Postoji
+    neko u koga se udara.
+
+    > pop: *Svake noći mislim samo na tebe* (11 slogova, osećanje)
+    > rok: *Ne spavam. Tvoje ime. Opet.* (9 slogova, tri udarca)
+
+    ### Refren je skandiranje
+    Rok refren je često **dve do četiri reči**, ponovljene dok ih cela sala ne viče sa tobom.
+    Strofa ga zaslužuje detaljima; skandiranje je sažetak (L-006, L-011) u najkraćem obliku.
+
+    ### Srpski
+    Srpske reči su duže od engleskih, pa kratki stihovi dolaze od **fragmenata i imperativa**,
+    koji su kratki i naglašeni na prvom slogu: *Gasi svetlo* (4), *Motor radi. Ulazi.* (7).
+    Uporedi *Svake noći mislim samo na tebe* (11): ispravno, ali bez udarca. Ju-rok (Azra,
+    Ekatarina Velika, Partibrejkers, Riblja čorba) gradio je čitave stilove na gradskim detaljima
+    i odsečenim, izgovorenim stihovima; slušaj koliko malo svaki stih kaže.
+
+    ### Za klavirom
+    Sviraj nisku kvintu C + G (power chord) u osminama, ravnomerno i tvrdo. Izgovori stih preko
+    nje: svaki naglašeni slog treba da padne na udarac akorda, a ako ti ponestane daha pre kraja
+    stiha, predugačak je.
+exercises:
+  - id: L-013-1
+    type: mcq
+    prompt: {en: "Which line sounds most like a rock lyric?", sr: "Koji stih najviše zvuči kao rok tekst?"}
+    options:
+      - {en: "Engine running. Get in.", sr: "Motor radi. Ulazi."}
+      - {en: "I feel so sad and lonely here tonight", sr: "Tužan sam i usamljen ove noći"}
+      - {en: "Love is a journey of the soul", sr: "Ljubav je putovanje duše"}
+      - {en: "Maybe someday we will understand", sr: "Možda ćemo jednom sve razumeti"}
+    answer: 0
+    checks:
+      - syllables: {text: "Motor radi. Ulazi.", lang: sr, is: 7}
+  - id: L-013-2
+    type: mcq
+    prompt: {en: "“I am angry at this town.” Which rewrite shows the attitude as an action?", sr: "„Ljut sam na ovaj grad.” Koja izmena pokazuje stav kao radnju?"}
+    options:
+      - {en: "I spit on the platform and walk", sr: "Pljujem na peron i idem"}
+      - {en: "I am very, very angry at this town", sr: "Baš sam mnogo ljut na ovaj grad"}
+      - {en: "My anger is a fire inside", sr: "Moj bes je vatra u meni"}
+      - {en: "This town makes me feel bad", sr: "Ovaj grad me čini lošim"}
+    answer: 0
+    checks:
+      - syllables: {text: "Pljujem na peron", lang: sr, is: 5}
+  - id: L-013-3
+    type: mcq
+    prompt: {en: "A chant on four hard hits, one syllable each. Which Serbian line fits?", sr: "Skandiranje na četiri tvrda udarca, po jedan slog. Koji srpski stih odgovara?"}
+    options: ["Gasi svetlo", "Ugasi to svetlo", "Molim te ugasi svetlo", "Hajde da ugasimo svetlo"]
+    answer: 0
+    checks:
+      - syllables: {text: "Gasi svetlo", lang: sr, is: 4}
+      - syllables: {text: "Ugasi to svetlo", lang: sr, is: 6}
+      - syllables: {text: "Molim te ugasi svetlo", lang: sr, is: 8}
+      - syllables: {text: "Hajde da ugasimo svetlo", lang: sr, is: 9}
+  - id: L-013-4
+    type: mcq
+    prompt: {en: "What does a typical rock chorus look like?", sr: "Kako izgleda tipičan rok refren?"}
+    options:
+      - {en: "Two to four words, repeated, easy to shout", sr: "Dve do četiri reči, ponovljene, lake za vikanje"}
+      - {en: "A long new verse with more story", sr: "Duga nova strofa sa još priče"}
+      - {en: "Eight lines, each with a different rhyme", sr: "Osam stihova, svaki sa drugom rimom"}
+      - {en: "An explanation of what the verse meant", sr: "Objašnjenje šta je strofa značila"}
+    answer: 0
+  - id: L-013-5
+    type: mcq
+    prompt: {en: "“We used to feel so free when we were young.” Which rewrite is concrete, present and short?", sr: "„Nekada smo bili slobodni kad smo bili mladi.” Koja izmena je konkretna, u sadašnjem vremenu i kratka?"}
+    options:
+      - {en: "Windows down. Ninety. Nobody home.", sr: "Prozori dole. Sto na sat. Nikog kod kuće."}
+      - {en: "Back then we felt that freedom was forever", sr: "Tada smo verovali da sloboda traje večno"}
+      - {en: "Youth is freedom, freedom is youth", sr: "Mladost je sloboda, sloboda je mladost"}
+      - {en: "I remember how free we used to feel", sr: "Sećam se koliko smo bili slobodni"}
+    answer: 0
+  - id: L-013-6
+    type: write
+    prompt:
+      en: "Write a rock verse of 4 lines and a chant chorus of 1–2 lines, English or Serbian. Verse lines at most 6 syllables, present tense, at least three physical things (objects, places, body). The chorus: 2–4 words, repeated. Speak it over steady eighth notes on a low C + G before you rate it."
+      sr: "Napiši rok strofu od 4 stiha i refren-skandiranje od 1–2 stiha, na engleskom ili srpskom. Stihovi strofe najviše 6 slogova, sadašnje vreme, bar tri telesne stvari (predmeti, mesta, telo). Refren: 2–4 reči, ponovljene. Izgovori sve preko ravnomernih osmina na niskom C + G pre nego što oceniš."
+    language: either
+    lines: [5, 6]
+    rubric:
+      - id: attitude
+        label: {en: "Attitude as action", sr: "Stav kao radnja"}
+        top: {en: "The speaker wants, refuses or dares something, and it shows in verbs (what they do), not in named feelings like angry, sad, free.", sr: "Govornik nešto želi, odbija ili izaziva, i to se vidi u glagolima (šta radi), a ne u imenovanim osećanjima kao ljut, tužan, slobodan."}
+      - id: concrete
+        label: {en: "Concrete and present", sr: "Konkretno i sadašnje"}
+        top: {en: "At least three physical nouns, present tense throughout the verse, no abstract nouns (love, soul, freedom) standing alone.", sr: "Bar tri telesne imenice, sadašnje vreme kroz celu strofu, nijedna apstraktna imenica (ljubav, duša, sloboda) sama za sebe."}
+      - id: short
+        label: {en: "Short lines that hit", sr: "Kratki stihovi koji udaraju"}
+        top: {en: "Every verse line has 6 syllables or fewer, counted aloud, and spoken over the eighth notes each stressed syllable lands on a hit.", sr: "Svaki stih strofe ima 6 slogova ili manje, prebrojano naglas, a izgovoren preko osmina svaki naglašeni slog pada na udarac."}
+      - id: chant
+        label: {en: "Chant chorus", sr: "Refren za skandiranje"}
+        top: {en: "The chorus is 2–4 words, repeats, sums up the verse, and you can shout it without running out of breath.", sr: "Refren ima 2–4 reči, ponavlja se, sažima strofu i može da se viče bez gubitka daha."}

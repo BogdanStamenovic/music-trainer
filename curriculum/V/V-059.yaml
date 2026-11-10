@@ -1,0 +1,146 @@
+id: V-059
+track: V
+order: 59
+title: {en: "Harmony singing II: a 3rd below, a 6th above", sr: "Pevanje druge deonice II: terca ispod, seksta iznad"}
+prereqs: [V-058, V-043]
+minutes: 12
+tags: [voice, harmony]
+explain:
+  en: |
+    In lesson 43 you sang a diatonic 3rd **above** a melody. The other common harmony part is a 3rd **below**: the melody stays on top, and your line runs underneath
+    it, two scale steps lower. On the piano: the melody note, then the note two white keys **lower** (in C major).
+
+    | melody | C | D | E | F | G |
+    |---|---|---|---|---|---|
+    | 3rd below | A | B | C | D | E |
+    | 6th above | A | B | C | D | E |
+
+    The two rows have the **same letters**, because a 6th above is a 3rd below moved up an octave. That is **interval inversion**: an interval and its inversion add up to
+    9 (3rd + 6th, 2nd + 7th, 4th + 5th), and the quality flips: a minor 3rd below becomes a major 6th above, a major 3rd below becomes a minor 6th above.
+
+    Why both exist: they are the **same notes, in different places**. If the melody is low in your voice, a 6th above may sit better than a 3rd below; in a duet,
+    the singer with the higher voice often takes the 6th above a lower melody. They sound different (a 3rd is close and sweet, a 6th open and wide), but they fit the same chord.
+
+    As in lesson 43, staying **in the key** takes care of the sizes. Watch the bottom of the C major line: the 3rd below C is **A**, not A flat, and the 3rd below D is **B**, not B flat.
+
+    How the exercises work (as in lesson 43): the app plays the melody, then you sing your line **alone**. Note that the app accepts any octave, so it cannot tell
+    a 3rd below from a 6th above: placing it is your job. Singing it **with** the melody is the self-rated practice at the end.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    U 43. lekciji pevao si dijatonsku tercu **iznad** melodije. Druga uobičajena deonica je terca **ispod**: melodija ostaje gore, a tvoja linija ide ispod
+    nje, dva stupnja niže. Na klaviru: ton melodije, pa ton dve bele dirke **niže** (u C-duru).
+
+    | melodija | C | D | E | F | G |
+    |---|---|---|---|---|---|
+    | terca ispod | A | H | C | D | E |
+    | seksta iznad | A | H | C | D | E |
+
+    Dva reda imaju **ista slova**, jer je seksta iznad isto što i terca ispod podignuta za oktavu. To je **obrtanje intervala**: interval i njegov obrtaj zajedno daju
+    9 (terca + seksta, sekunda + septima, kvarta + kvinta), a vrsta se menja: mala terca ispod postaje velika seksta iznad, velika terca ispod postaje mala seksta iznad.
+
+    Zašto postoje oba: to su **isti tonovi, na različitim mestima**. Ako je melodija nisko u tvom glasu, seksta iznad može da legne bolje od terce ispod; u duetu
+    viši glas često peva sekstu iznad niže melodije. Zvuče različito (terca je bliska i slatka, seksta otvorena i široka), ali pripadaju istom akordu.
+
+    Kao u 43. lekciji, kad ostaneš **u tonalitetu**, veličine se same srede. Pazi na dno linije u C-duru: terca ispod C je **A**, ne As, a terca ispod D je **H**, ne B.
+
+    Kako rade vežbe (kao u 43. lekciji): aplikacija svira melodiju, a ti zatim pevaš svoju liniju **sam**. Aplikacija prihvata svaku oktavu, pa ne može da razlikuje
+    tercu ispod od sekste iznad: postavljanje je tvoj posao. Pevanje **uz** melodiju je vežba sa samoprocenom na kraju.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-059-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-059-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then hum the C major scale down with the piano, and once more singing only every other note (C A F D... the skipped ones in your head)."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa pevuši C-dur lestvicu naniže uz klavir, i još jednom pevajući samo svaki drugi ton (C A F D..., preskočene u glavi)."
+    play: {notes: [C5, B4, A4, G4, F4, E4, D4, C4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-059-3
+    type: notation-input
+    prompt:
+      en: "The melody is C D E D C in C major. Write the harmony line a diatonic 3rd below it."
+      sr: "Melodija je C D E D C u C-duru. Napiši drugu deonicu tercu ispod nje."
+    expect: [A, B, C, B, A]
+    checks:
+      - interval: {from: A3, to: C4, is: m3}
+      - interval: {from: B3, to: D4, is: m3}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-059-4
+    type: mcq
+    prompt:
+      en: "A minor 3rd below a melody note, moved up an octave, becomes..."
+      sr: "Mala terca ispod tona melodije, podignuta za oktavu, postaje..."
+    options:
+      - {en: "a major 6th above", sr: "velika seksta iznad"}
+      - {en: "a minor 6th above", sr: "mala seksta iznad"}
+      - {en: "a perfect 5th above", sr: "čista kvinta iznad"}
+      - {en: "a major 3rd above", sr: "velika terca iznad"}
+    answer: 0
+    checks:
+      - interval: {from: B3, to: D4, is: m3}
+      - interval: {from: D4, to: B4, is: M6}
+  - id: V-059-5
+    type: sing-phrase
+    prompt:
+      en: "The app plays the melody E-F-G-F-E. Then sing the line a 3rd below, alone, on 'la': C-D-E-D-C."
+      sr: "Aplikacija svira melodiju E-F-G-F-E. Zatim sam otpevaj liniju tercu ispod, na „la”: C-D-E-D-C."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n[CE] [DF] [EG] [DF] | [CE]4 |]"
+    notes: [C4, D4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 4]
+    tempo: 72
+    accompany: {notes: [E4, F4, G4, F4, E4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 4]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-059-6
+    type: sing-phrase
+    prompt:
+      en: "The app plays C-D-E-D-C low. Then sing the line a 6th above it, alone: A-B-C-B-A. Same letters as a 3rd below, an octave higher."
+      sr: "Aplikacija svira C-D-E-D-C nisko. Zatim sam otpevaj liniju sekstu iznad nje: A-H-C-H-A. Ista slova kao terca ispod, oktavu više."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n[CA] [DB] [Ec] [DB] | [CA]4 |]"
+    notes: [A4, B4, C5, B4, A4]
+    beats: [1, 1, 1, 1, 4]
+    tempo: 72
+    accompany: {notes: [C4, D4, E4, D4, C4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 4]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: A4, is: M6}
+      - interval: {from: D4, to: B4, is: M6}
+      - interval: {from: E4, to: C5, is: m6}
+  - id: V-059-7
+    type: sing-phrase
+    prompt:
+      en: "'Ode to Joy', bars 1-4: the app plays the tune; then sing the harmony a 3rd below, alone: C C D E | E D C B | A A B C | C. B B."
+      sr: "„Oda radosti”, taktovi 1-4: aplikacija svira melodiju; zatim sam otpevaj drugu deonicu tercu ispod: C C D E | E D C H | A A H C | C. H H."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n[CE] [CE] [DF] [EG] | [EG] [DF] [CE] [B,D] | [A,C] [A,C] [B,D] [CE] | [CE]3/2 [B,D]/ [B,D]2 |]"
+    notes: [C4, C4, D4, E4, E4, D4, C4, B3, A3, A3, B3, C4, C4, B3, B3]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    tempo: 80
+    accompany: {notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4], mode: melodic, tempo: 80, durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]}
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: E4, to: G4, is: m3}
+      - interval: {from: B3, to: D4, is: m3}
+      - interval: {from: A3, to: C4, is: m3}
+  - id: V-059-8
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Together (self-rated, not graded): play the Ode to Joy melody with your right hand and sing the 3rd below; then play it an octave lower and sing the 6th above. Rate: which sat better in your voice, and did you stay on your line? Then 3 quiet hums sliding down."
+      sr: "Zajedno (samoprocena, bez ocene): odsviraj melodiju „Ode radosti” desnom rukom i pevaj tercu ispod; pa je odsviraj oktavu niže i pevaj sekstu iznad. Oceni: šta ti je bolje leglo u glas i da li si ostao na svojoj liniji? Pa 3 tiha pevušenja uz klizanje naniže."
+    play: {notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4], mode: melodic, tempo: 72, durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]}

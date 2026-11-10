@@ -1,0 +1,143 @@
+id: T-059
+track: T
+order: 59
+prereqs: [T-058]
+title: {en: "Secondary dominants in minor keys", sr: "Sporedne dominante u molu"}
+minutes: 13
+tags: [harmony, chromatic, minor, four-part]
+explain:
+  en: |
+    Secondary dominants work in minor exactly as in major (T-043, T-044): build a major triad or dominant 7th **a 5th above the target**, and the target is any major or minor chord of the key. In A minor (harmonic minor is the reference, so G♯ is normal and not a clue):
+
+    | target | secondary dominant | notes | new accidental |
+    |---|---|---|---|
+    | III (C) | V7/III | G B D F | none: **G♮** (natural 7th) |
+    | iv (Dm) | V7/iv | A C♯ E G | C♯ |
+    | v (Em) or V (E) | V7/v, V7/V | B D♯ F♯ A | D♯, F♯ |
+    | VI (F) | V7/VI | C E G B♭ | B♭ |
+    | VII (G) | V7/VII | D F♯ A C | F♯ |
+
+    Two things are special in minor:
+
+    - **V7/III needs no new accidental.** It is just the chord on the 7th degree of the *natural* minor (VII7). Whenever a minor piece uses G♮ instead of G♯ under a G7 chord, it is leaning toward the relative major (T-055).
+    - **V7/V and V7/v are the same chord** (B7 in A minor). Its target decides the label: before E major (the normal V) it is V7/V, and the phrase usually stops on a half cadence; before E minor it is V7/v.
+
+    The most common one in practice is **V7/iv**, the minor-key cousin of V7/IV: the tonic chord simply becomes major and adds a 7th (A minor → A7) and falls into iv.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    "^a: i"[EAc] "^V7/iv"[GA^c] "^iv"[FAd] "^V7"[E^Gd] | "^i"[EAc]4 |]
+    V:2 clef=bass
+    A,, A,, D, E, | A,,4 |]
+    ```
+
+    The chromatic line is in the top voice: C – C♯ – D. The 7th of each dominant (G, then D) falls by step.
+  sr: |
+    Sporedne dominante u molu rade isto kao u duru (T-043, T-044): sagradi durski trozvuk ili dominantni septakord **kvintu iznad cilja**, a cilj je bilo koji durski ili molski akord tonaliteta. U a-molu (polazište je harmonski mol, pa je Gis normalan i nije trag):
+
+    | cilj | sporedna dominanta | tonovi | nov predznak |
+    |---|---|---|---|
+    | III (C) | V7/III | G H D F | nijedan: **G** (prirodni 7. stupanj) |
+    | iv (d) | V7/iv | A Cis E G | Cis |
+    | v (e) ili V (E) | V7/v, V7/V | H Dis Fis A | Dis, Fis |
+    | VI (F) | V7/VI | C E G B | B |
+    | VII (G) | V7/VII | D Fis A C | Fis |
+
+    Dve stvari su posebne u molu:
+
+    - **V7/III ne traži nov predznak.** To je samo akord na 7. stupnju *prirodnog* mola (VII7). Kad god molski komad koristi G umesto Gis u akordu G7, naginje ka paralelnom duru (T-055).
+    - **V7/V i V7/v su isti akord** (H7 u a-molu). Cilj odlučuje o oznaci: pred E-dur akordom (normalna V) to je V7/V, i fraza obično staje na polukadenci; pred e-mol akordom to je V7/v.
+
+    U praksi je najčešća **V7/iv**, molski rođak akorda V7/IV: tonički akord jednostavno postane durski, doda septimu (a-mol → A7) i padne na iv.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:Am
+    V:1
+    "^a: i"[EAc] "^V7/iv"[GA^c] "^iv"[FAd] "^V7"[E^Gd] | "^i"[EAc]4 |]
+    V:2 clef=bass
+    A,, A,, D, E, | A,,4 |]
+    ```
+
+    Hromatska linija je u gornjem glasu: C – Cis – D. Septima svake dominante (G, pa D) silazi za stupanj.
+exercises:
+  - id: T-059-1
+    type: notation-input
+    prompt: {en: "Spell V7/iv in A minor (root, 3rd, 5th, 7th).", sr: "Napiši V7/iv u a-molu (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: A4, type: harmonic-minor, numerals: [V7/iv]}}
+    expect: [A, C#, E, G]
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: V7/iv, notes: [A4, C#5, E5, G5]}
+  - id: T-059-2
+    type: notation-input
+    prompt: {en: "Spell V7/V in D minor (root, 3rd, 5th, 7th).", sr: "Napiši V7/V u d-molu (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: D4, type: harmonic-minor, numerals: [V7/V]}}
+    expect: [E, G#, B, D]
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: V7/V, notes: [E4, G#4, B4, D5]}
+      - numeral: {key: D, type: harmonic-minor, is: V7/v, notes: [E4, G#4, B4, D5]}
+  - id: T-059-3
+    type: mcq
+    prompt: {en: "In A minor, which secondary dominant uses only notes of the natural minor scale?", sr: "Koja sporedna dominanta u a-molu koristi samo tonove prirodnog mola?"}
+    options: ["V7/III", "V7/iv", "V7/VI", "V7/V"]
+    answer: 0
+    checks:
+      - numeral: {key: A, type: natural-minor, is: V7/III, notes: [G3, B3, D4, F4]}
+      - numeral: {key: A, type: natural-minor, is: VII7, notes: [G3, B3, D4, F4]}
+      - numeral: {key: A, type: harmonic-minor, is: V7/iv, notes: [A3, C#4, E4, G4]}
+      - numeral: {key: A, type: harmonic-minor, is: V7/VI, notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: A, type: harmonic-minor, is: V7/V, notes: [B3, D#4, F#4, A4]}
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+  - id: T-059-4
+    type: mcq
+    prompt: {en: "E minor: which chord is V7/VI?", sr: "e-mol: koji akord je V7/VI?"}
+    options:
+      - {en: "G7 (G B D F)", sr: "G7 (G H D F)"}
+      - {en: "G (G B D)", sr: "G (G H D)"}
+      - {en: "D7 (D F♯ A C)", sr: "D7 (D Fis A C)"}
+      - {en: "C7 (C E G B♭)", sr: "C7 (C E G B)"}
+    answer: 0
+    checks:
+      - numeral: {key: E, type: harmonic-minor, is: VI, notes: [C4, E4, G4]}
+      - numeral: {key: E, type: harmonic-minor, is: V7/VI, notes: [G3, B3, D4, F4]}
+      - numeral: {key: E, type: natural-minor, is: V7/III, notes: [D4, F#4, A4, C5]}
+  - id: T-059-5
+    type: midi-play
+    prompt: {en: "Play a: i – V7/iv – iv – V7 – i as in the example. Top voice: C – C♯ – D – D – C.", sr: "Odsviraj a: i – V7/iv – iv – V7 – i kao u primeru. Gornji glas: C – Cis – D – D – C."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Am
+      V:1
+      [EAc] [GA^c] [FAd] [E^Gd] | [EAc]4 |]
+      V:2 clef=bass
+      A,, A,, D, E, | A,,4 |]
+    mode: chords
+    octave: exact
+    expectChords: [[A2, E4, A4, C5], [A2, G4, A4, C#5], [D3, F4, A4, D5], [E3, E4, G#4, D5], [A2, E4, A4, C5]]
+    beats: [1, 1, 1, 1, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: i, notes: [A2, E4, A4, C5]}
+      - chord: {notes: [A2, G4, A4, C#5], root: A, quality: "7"}
+      - numeral: {key: A, type: harmonic-minor, is: V7/iv, notes: [A2, G4, A4, C#5], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: iv, notes: [D3, F4, A4, D5]}
+      - chord: {notes: [E3, E4, G#4, D5], root: E, quality: "7"}
+      - numeral: {key: A, type: harmonic-minor, is: V7, notes: [E3, E4, G#4, D5], complete: false}
+  - id: T-059-6
+    type: generated
+    count: 4
+    prompt: {en: "Which chord is tonicized in this minor-key progression?", sr: "Koji akord je tonikalizovan u ovoj molskoj progresiji?"}
+    gen: {kind: progression-ear, keys: [A, D, E], type: harmonic-minor, options: [[i, V7/iv, iv, V, i], [i, V7/III, III, V, i], [i, V7/VI, VI, V, i]], tempo: 60, smooth: true}
+  - id: T-059-7
+    type: generated
+    count: 3
+    prompt: {en: "Play i – V7/iv – iv – V7 – i with smooth voice leading.", sr: "Odsviraj i – V7/iv – iv – V7 – i sa glatkim vođenjem glasova."}
+    gen: {kind: progression, keys: [A, D, E, G], type: harmonic-minor, numerals: [i, V7/iv, iv, V7, i], smooth: true}

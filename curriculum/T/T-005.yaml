@@ -44,7 +44,7 @@ explain:
 
     Na belim dirkama svaka kvarta je čista **osim F–H**, i svaka kvinta je čista **osim H–F**.
     Oba imaju 6 polustepena, pola oktave: to je **tritonus**.
-    F–H je *povećana kvarta* (A4), H–F *smanjena kvinta* (d5). Isti zvuk, drugačiji zapis.
+    F–H je *prekomerna kvarta* (A4), H–F *smanjena kvinta* (d5). Isti zvuk, drugačiji zapis.
 
     Čiste kvinte su veoma važne: nizanjem (C–G–D–A–E…) kasnije gradimo kvintni krug.
 
@@ -60,7 +60,7 @@ exercises:
     prompt: {en: "F up to B on white keys is a…", sr: "F naviše do H (bele dirke) je…"}
     options:
       - {en: "perfect 4th", sr: "čista kvarta"}
-      - {en: "augmented 4th", sr: "povećana kvarta"}
+      - {en: "augmented 4th", sr: "prekomerna kvarta"}
       - {en: "diminished 5th", sr: "smanjena kvinta"}
       - {en: "perfect 5th", sr: "čista kvinta"}
     answer: 1
@@ -72,7 +72,7 @@ exercises:
     prompt: {en: "B up to F on white keys is a…", sr: "H naviše do F (bele dirke) je…"}
     options:
       - {en: "perfect 5th", sr: "čista kvinta"}
-      - {en: "augmented 4th", sr: "povećana kvarta"}
+      - {en: "augmented 4th", sr: "prekomerna kvarta"}
       - {en: "diminished 5th", sr: "smanjena kvinta"}
       - {en: "perfect 4th", sr: "čista kvarta"}
     answer: 2

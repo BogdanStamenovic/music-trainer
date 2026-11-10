@@ -1,0 +1,164 @@
+id: C-018
+track: C
+order: 18
+prereqs: [C-017, T-066]
+title: {en: "A 12-bar blues melody", sr: "Bluz melodija od 12 taktova"}
+minutes: 15
+tags: [composition, melody, blues, form]
+explain:
+  en: |
+    The 12-bar blues (T-066) has a fixed chord plan, so the melody's job is clear from the
+    start. In C:
+
+    | bars | 1–4 | 5–6 | 7–8 | 9 | 10 | 11 | 12 |
+    |---|---|---|---|---|---|---|---|
+    | chord | C7 (I7) | F7 (IV7) | C7 (I7) | G7 (V7) | F7 (IV7) | C7 (I7) | G7 (V7, turnaround) |
+
+    **The melody follows the lyric (L-009): AAB.** Three 4-bar lines, and each line is a
+    **call** of about 2 bars followed by 2 bars of **space** (where a guitar or the piano's right
+    hand answers).
+
+    - **Line 1 (bars 1–2):** the riff, over I7.
+    - **Line 2 (bars 5–6):** **the same riff**, now over IV7. You do not change a note; the chord
+      changes the colour.
+    - **Line 3 (bars 9–10):** a new answer that comes down to the tonic in bar 11. Bar 12 is
+      the turnaround: rest, or a pickup into the next chorus.
+
+    **Blue notes.** The blues scale on C is C E♭ F G♭ G B♭. Over C7 (C E G B♭) the melody's
+    **E♭ rubs against the chord's E**: that half-step friction is the blues sound, not a
+    mistake. Singers and pianists often bend or slide E♭ → E. Over F7 (F A C E♭) the very same
+    E♭ is a **chord tone**, the 7th, which is why line 2 sounds like it "fits better" than line 1.
+    B♭ is in C7 already. G♭ is a passing note between F and G; do not land on it.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^C7"z C _E F G2 _E C | _E2 C6 | z8 | z8 |
+    "^F7"z C _E F G2 _E C | _E2 C6 | "^C7"z8 | z8 |
+    "^G7"z G G F D2 B,2 | "^F7"C2 _E2 F2 D2 | "^C7"C8 | "^G7"z8 |]
+    ```
+
+    Line 3 starts on G over G7 and walks down through B (the 3rd of G7), then through F7 to C.
+    Play the eighths **swung** (long-short), as blues always is.
+
+    **About the grading:** the "all notes in the key" check is off (the blue notes are
+    deliberate) and so is the augmented-interval check, because E♭ → F♯ spelled as F♯ would be
+    flagged although it is the same blues scale.
+
+    **At the keyboard:** left hand C7 – F7 – C7 – G7 – F7 – C7 in the 12-bar pattern. Right hand:
+    play the riff in bars 1–2, answer it with any two notes of the blues scale in bars 3–4, and
+    repeat the riff over F7 unchanged.
+  sr: |
+    Bluz od 12 taktova (T-066) ima utvrđen plan akorda, pa je zadatak melodije jasan od početka.
+    U C:
+
+    | taktovi | 1–4 | 5–6 | 7–8 | 9 | 10 | 11 | 12 |
+    |---|---|---|---|---|---|---|---|
+    | akord | C7 (I7) | F7 (IV7) | C7 (I7) | G7 (V7) | F7 (IV7) | C7 (I7) | G7 (V7, obrt) |
+
+    **Melodija prati tekst (L-009): AAB.** Tri stiha od po 4 takta, i svaki stih je **poziv** od
+    oko 2 takta posle kog idu 2 takta **prostora** (gde odgovara gitara ili desna ruka klavira).
+
+    - **Stih 1 (taktovi 1–2):** rif, nad I7.
+    - **Stih 2 (taktovi 5–6):** **isti rif**, sada nad IV7. Ne menjaš nijedan ton; akord menja
+      boju.
+    - **Stih 3 (taktovi 9–10):** nov odgovor koji silazi do tonike u taktu 11. Takt 12 je obrt
+      (turnaround): pauza ili predtakt u sledeći krug.
+
+    **Plave note.** Bluz lestvica od C je C Es F Ges G B. Nad C7 (C E G B) melodijsko **Es se
+    tare o E iz akorda**: to trenje od polustepena je zvuk bluza, a ne greška. Pevači i pijanisti
+    često savijaju ili klize Es → E. Nad F7 (F A C Es) isto to Es je **akordski ton**, septima, i
+    zato drugi stih zvuči kao da „bolje leži“ od prvog. B je već u C7. Ges je prolaznica između F
+    i G; ne zaustavljaj se na njemu.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^C7"z C _E F G2 _E C | _E2 C6 | z8 | z8 |
+    "^F7"z C _E F G2 _E C | _E2 C6 | "^C7"z8 | z8 |
+    "^G7"z G G F D2 B,2 | "^F7"C2 _E2 F2 D2 | "^C7"C8 | "^G7"z8 |]
+    ```
+
+    Stih 3 počinje na G nad G7 i silazi preko H (terca akorda G7), pa kroz F7 do C. Osmine sviraj
+    **svingovano** (dugo-kratko), kao što bluz uvek jeste.
+
+    **O ocenjivanju:** provera „svi tonovi u tonalitetu“ je isključena (plave note su namerne), a
+    isključena je i provera prekomernih intervala, jer bi Es → Fis zapisano kao Fis bilo
+    označeno iako je to ista bluz lestvica.
+
+    **Za klavirom:** leva ruka C7 – F7 – C7 – G7 – F7 – C7 po šemi od 12 taktova. Desna ruka:
+    odsviraj rif u taktovima 1–2, odgovori mu sa bilo koja dva tona bluz lestvice u taktovima
+    3–4, pa ponovi rif nad F7 bez promene.
+exercises:
+  - id: C-018-1
+    type: mcq
+    prompt: {en: "12-bar blues in C. Which chord is in bar 9?", sr: "Bluz od 12 taktova u C. Koji akord je u taktu 9?"}
+    options: ["G7", "F7", "C7", "D7"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - numeral: {key: C, is: "IV7", notes: [F3, A3, C4, Eb4]}
+      - numeral: {key: C, is: "I7", notes: [C4, E4, G4, Bb4]}
+  - id: C-018-2
+    type: mcq
+    prompt: {en: "Why does a melody E♭ work over C7, which contains E natural?", sr: "Zašto melodijsko Es funkcioniše nad C7, koji sadrži E?"}
+    options:
+      - {en: "The rub between the blue 3rd (E♭) and the chord's 3rd (E) is the blues sound itself", sr: "Trenje između plave terce (Es) i terce akorda (E) je sam zvuk bluza"}
+      - {en: "E♭ is a chord tone of C7", sr: "Es je akordski ton akorda C7"}
+      - {en: "It only works because the melody is played softly", sr: "Funkcioniše samo zato što se melodija svira tiho"}
+      - {en: "It does not work: blues melodies avoid E♭ over C7", sr: "Ne funkcioniše: bluz melodije izbegavaju Es nad C7"}
+    answer: 0
+    checks:
+      - scale: {tonic: C, type: blues, is: [C, Eb, F, Gb, G, Bb]}
+      - chord: {notes: [C4, E4, G4, Bb4], root: C, quality: "7"}
+      - semitones: {from: Eb4, to: E4, is: 1}
+  - id: C-018-3
+    type: mcq
+    prompt: {en: "In an AAB blues melody, what usually happens in bars 5–6?", sr: "U AAB bluz melodiji, šta se obično dešava u taktovima 5–6?"}
+    options:
+      - {en: "The riff from bars 1–2 again, unchanged, now over IV7", sr: "Ponovo rif iz taktova 1–2, bez promene, sada nad IV7"}
+      - {en: "A new melody that ends on the tonic", sr: "Nova melodija koja se završava na tonici"}
+      - {en: "The riff transposed up a 4th to follow the chord", sr: "Rif transponovan za kvartu naviše da prati akord"}
+      - {en: "Silence: the singer rests through the IV chord", sr: "Tišina: pevač pauzira kroz akord IV"}
+    answer: 0
+  - id: C-018-4
+    type: mcq
+    prompt: {en: "The riff takes bars 1–2. What are bars 3–4 for?", sr: "Rif zauzima taktove 1–2. Čemu služe taktovi 3–4?"}
+    options:
+      - {en: "Space: an instrument answers the call (or the singer breathes)", sr: "Prostor: instrument odgovara na poziv (ili pevač diše)"}
+      - {en: "The final cadence", sr: "Završna kadenca"}
+      - {en: "The turnaround", sr: "Obrt (turnaround)"}
+      - {en: "A key change to F", sr: "Promena tonaliteta u F"}
+    answer: 0
+  - id: C-018-5
+    type: generated
+    prompt: {en: "Improvise over the 12-bar blues with the blues scale: a 2-bar call, 2 bars of space, the same call over IV7, an answer from bar 9.", sr: "Improvizuj nad bluzom od 12 taktova bluz lestvicom: poziv od 2 takta, 2 takta prostora, isti poziv nad IV7, odgovor od takta 9."}
+    count: 1
+    gen: {kind: improv, keys: [C, G, F], scale: blues, numerals: [I7, I7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 1, tempo: 96}
+  - id: C-018-6
+    type: compose
+    prompt:
+      en: "A 12-bar blues melody in G (G7 – C7 – D7). Bars 1–2 (the riff) are given. Write bars 3–12: space in bars 3–4, the same riff over C7 in bars 5–6, space in 7–8, a new answer in bars 9–10 that lands on G in bar 11, and a rest in bar 12 (the cadence check reads your last note, so leave the pickup into the next chorus for when you play it). Key and augmented checks are off for the blue notes."
+      sr: "Bluz melodija od 12 taktova u G (G7 – C7 – D7). Taktovi 1–2 (rif) su zadati. Napiši taktove 3–12: prostor u taktovima 3–4, isti rif nad C7 u taktovima 5–6, prostor u 7–8, nov odgovor u taktovima 9–10 koji sleće na G u taktu 11, i pauza u taktu 12 (provera kadence čita poslednji ton, pa predtakt u sledeći krug ostavi za sviranje). Provere tonaliteta i prekomernih intervala su isključene zbog plavih nota."
+    given: "X:1\nM:4/4\nL:1/8\nK:G\nz G _B c d2 _B G | _B2 G6 |\n"
+    key: G major
+    meter: 4/4
+    bars: 12
+    range: [D4, E5]
+    rules: [bars, rhythm, range, leaps, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:G
+      z G _B c d2 _B G | _B2 G6 | z8 | z8 |
+      z G _B c d2 _B G | _B2 G6 | z8 | z8 |
+      z d d c A2 ^F2 | G2 _B2 c2 A2 | G8 | z8 |]
+    checks:
+      - scale: {tonic: G, type: blues, is: [G, Bb, C, Db, D, F]}
+      - numeral: {key: G, is: "IV7", notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: G, is: "V7", notes: [D4, "F#4", A4, C5]}

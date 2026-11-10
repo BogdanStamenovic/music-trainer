@@ -1,0 +1,112 @@
+id: T-064
+track: T
+order: 64
+prereqs: [T-063]
+title: {en: "Song forms I: AABA", sr: "Oblici pesme I: AABA"}
+minutes: 12
+tags: [form, song, analysis]
+explain:
+  en: |
+    **AABA** is the classic form of American popular song from the 1920s to the early 1960s (Tin Pan Alley, Broadway, most jazz standards): "Over the Rainbow", "Blue Moon", "I Got Rhythm", and later "Yesterday". It is often called **32-bar form**, because each section is usually 8 bars:
+
+    | section | bars | job |
+    |---|---|---|
+    | A | 1–8 | the main tune; the **title** usually sits in its first or last line |
+    | A | 9–16 | the same tune, new words (ending may close more firmly) |
+    | B (bridge, most) | 17–24 | **contrast**: new melody, new harmony, often a new key area; ends on **V7** to lead back |
+    | A | 25–32 | the return, often with the strongest ending |
+
+    There is **no chorus** in AABA: the A section itself carries the hook, and the bridge (Serbian **most**; also "middle eight" or "release") is heard only once per time through.
+
+    How bridges create contrast:
+    - start on **IV** (the classic move: the A sections circle around I, the bridge opens on IV),
+    - go to the relative minor or the **mediant**,
+    - or run a **chain of secondary dominants** back to V (T-047). The bridge of "rhythm changes" (the harmony of "I Got Rhythm", in B♭) is two bars each of D7 – G7 – C7 – F7: V7/vi – V7/ii – V7/V – V7, which then lands on I for the last A.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/1
+    K:Bb
+    "D7"[D^FAc] | [D^FAc] | "G7"[DFG=B] | [DFG=B] | "C7"[C=EGB] | [C=EGB] | "F7"[CEFA] | [CEFA] |]
+    ```
+
+    One time through the 32 bars is called a **chorus** by jazz musicians (as in "take two choruses"). This is a different meaning from the pop chorus of the next lesson.
+  sr: |
+    **AABA** je klasični oblik američke popularne pesme od 1920-ih do ranih 1960-ih (Tin Pan Alley, Brodvej, većina džez standarda): "Over the Rainbow", "Blue Moon", "I Got Rhythm", a kasnije i "Yesterday". Često se zove **oblik od 32 takta**, jer svaki deo obično ima 8 taktova:
+
+    | deo | taktovi | posao |
+    |---|---|---|
+    | A | 1–8 | glavna melodija; **naslov** je obično u prvom ili poslednjem stihu |
+    | A | 9–16 | ista melodija, novi tekst (kraj se može jače zatvoriti) |
+    | B (most) | 17–24 | **kontrast**: nova melodija, nova harmonija, često nova tonalna oblast; završava se na **V7** da bi vratio |
+    | A | 25–32 | povratak, često sa najjačim završetkom |
+
+    U AABA **nema refrena**: sam A deo nosi glavni motiv (hook), a most (engleski bridge, "middle eight" ili "release") se čuje samo jednom po prolazu.
+
+    Kako mostovi prave kontrast:
+    - počnu na **IV** (klasičan potez: A delovi kruže oko I, most se otvara na IV),
+    - odu u paralelni mol ili na **medijantu**,
+    - ili izvedu **lanac sporednih dominanti** nazad do V (T-047). Most "rhythm changes" (harmonija pesme "I Got Rhythm", u B-duru) je po dva takta D7 – G7 – C7 – F7: V7/vi – V7/ii – V7/V – V7, koji zatim pada na I za poslednji A.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/1
+    K:Bb
+    "D7"[D^FAc] | [D^FAc] | "G7"[DFG=B] | [DFG=B] | "C7"[C=EGB] | [C=EGB] | "F7"[CEFA] | [CEFA] |]
+    ```
+
+    Jedan prolaz kroz 32 takta džez muzičari zovu **chorus** (kao u "odsviraj dva chorusa"). To je drugo značenje od pop refrena iz sledeće lekcije.
+exercises:
+  - id: T-064-1
+    type: mcq
+    prompt: {en: "In a standard AABA song, on which bar does the bridge begin?", sr: "U standardnoj AABA pesmi, u kom taktu počinje most?"}
+    options: ["17", "9", "25", "13"]
+    answer: 0
+  - id: T-064-2
+    type: mcq
+    prompt: {en: "Rhythm changes in B♭: the bridge is D7 – G7 – C7 – F7. In numerals?", sr: "Rhythm changes u B-duru: most je D7 – G7 – C7 – F7. U rimskim brojevima?"}
+    options: ["V7/vi – V7/ii – V7/V – V7", "iii7 – vi7 – ii7 – V7", "V7/iii – V7/vi – V7/ii – V7", "I7 – IV7 – vii7 – iii7"]
+    answer: 0
+    checks:
+      - numeral: {key: Bb, is: V7/vi, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: Bb, is: V7/ii, notes: [G3, B3, D4, F4]}
+      - numeral: {key: Bb, is: V7/V, notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: Bb, is: V7, notes: [F3, A3, C4, Eb4]}
+  - id: T-064-3
+    type: mcq
+    prompt: {en: "Where does an AABA song keep its title and hook, since it has no chorus?", sr: "Gde AABA pesma drži naslov i glavni motiv, kad nema refren?"}
+    options:
+      - {en: "In the A section, usually its first or last line", sr: "U A delu, obično u prvom ili poslednjem stihu"}
+      - {en: "In the bridge", sr: "U mostu"}
+      - {en: "Only in the last A", sr: "Samo u poslednjem A"}
+      - {en: "In an instrumental intro", sr: "U instrumentalnom uvodu"}
+    answer: 0
+  - id: T-064-4
+    type: mcq
+    prompt: {en: "Listen to the chord plan (each section shortened to 4 chords). Which form?", sr: "Slušaj plan akorada (svaki deo skraćen na 4 akorda). Koji oblik?"}
+    options:
+      - {en: "A A B A", sr: "A A B A"}
+      - {en: "A B A B", sr: "A B A B"}
+      - {en: "A A A B", sr: "A A A B"}
+      - {en: "A B A C", sr: "A B A C"}
+    answer: 0
+    play: {mode: chords, tempo: 112, chords: [[C3, C4, E4, G4], [A2, C4, E4, A4], [D3, D4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [A2, C4, E4, A4], [D3, D4, F4, A4], [G2, B3, D4, F4], [F2, C4, F4, A4], [F2, C4, F4, A4], [D3, C4, F#4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [A2, C4, E4, A4], [D3, D4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4]], durations: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: C, is: IV, notes: [F2, C4, F4, A4]}
+      - numeral: {key: C, is: V7/V, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: C, is: V7, notes: [G2, B3, D4, F4]}
+  - id: T-064-5
+    type: mcq
+    prompt: {en: "What should the last bar of a bridge usually do?", sr: "Šta poslednji takt mosta obično treba da uradi?"}
+    options:
+      - {en: "Sit on V7, so the return of A lands on I", sr: "Stoji na V7, da povratak A dela padne na I"}
+      - {en: "Cadence on I, closing the song", sr: "Kadencira na I i zatvara pesmu"}
+      - {en: "Modulate to a distant key", sr: "Modulira u daleki tonalitet"}
+    answer: 0
+  - id: T-064-6
+    type: generated
+    count: 3
+    prompt: {en: "Play the rhythm-changes bridge resolving to I: V7/vi – V7/ii – V7/V – V7 – I.", sr: "Odsviraj most iz rhythm changes sa razrešenjem na I: V7/vi – V7/ii – V7/V – V7 – I."}
+    gen: {kind: progression, keys: [Bb, F, C, Eb], numerals: [V7/vi, V7/ii, V7/V, V7, I], smooth: true}

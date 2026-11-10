@@ -84,7 +84,7 @@ or `{"ok": false, "error": "could not parse ABC: ..."}`.
 | `range` | 1 | melody span <= 16 semitones (a 10th) and, if `range` given, every note inside it | span part `1 - (span-16)/12`; averaged with fraction of notes in range |
 | `key` | 1 | >= 90% of melody notes are in the key. Minor admits the natural, harmonic and melodic forms (raised 6th and 7th). | fraction in key |
 | `cadence` | 2 | score >= 0.75 | last note tonic approached by step from 2 or 7: 1.0; tonic otherwise: 0.8; 3rd or 5th: 0.5; else 0. Two voices: x0.75 if the bass ends on the tonic but not from 5, x0.5 if it does not end on the tonic. A repeated final note looks past the repeat. |
-| `half-cadence` | 1 | last melody note of bar `bars/2` is degree 2, 5 or 7. Fewer than 8 bars: pass, not applicable. | 1 or 0 |
+| `half-cadence` | 1 | last melody note of the antecedent's last bar is degree 2, 5 or 7: bar 4 of 8 (`bars/2`); bars 4 and 12 of 16 (bar 8 of 16 is not graded: a half cadence in a double period, a full close when two periods stand side by side). Fewer than 8 bars: pass, not applicable. | share of checked bars that pass |
 | `leaps` | 1 | no leap over 12 semitones; every leap of 8+ semitones (a 6th or more) is followed by a step (1-2 semitones) the other way | `1 - violations / leaps` |
 | `stepwise` | 1 | >= 50% of moves (repeated notes excluded) are 1-2 semitones | `fraction / 0.5`, capped at 1 |
 | `augmented` | 1 | no augmented melodic interval (A2, A4, A5, ... but not A1) and no diminished one, except a d5 followed by a step back inward | `1 - 1/3 per violation` |

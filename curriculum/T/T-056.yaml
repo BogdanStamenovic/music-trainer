@@ -1,0 +1,118 @@
+id: T-056
+track: T
+order: 56
+prereqs: [T-055]
+title: {en: "Direct (phrase) modulation", sr: "Direktna (frazna) modulacija"}
+minutes: 11
+tags: [harmony, modulation, pop]
+explain:
+  en: |
+    Not every key change is prepared by a pivot. In a **direct modulation** (also called a phrase modulation) one phrase ends with a cadence in the old key, and the **next phrase simply starts in the new key**. There is no chord that belongs to both; the phrase break does the work.
+
+    Why doesn't it sound wrong? A cadence closes a thought. A new phrase is a fresh start, and the ear accepts a new key at a fresh start far more easily than in the middle of a phrase. This is also why direct modulation can go to keys that are **not** closely related.
+
+    The best-known case is the pop **last-chorus key change**: the final chorus repeats a half step or a whole step higher. Two versions:
+    - **abrupt**: the last chord of one chorus, then straight into the new key;
+    - **with a lift**: one chord before the change is **V7 of the new key**, a single bar (or less) that points at the new tonic.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "Am"[CEA]2 | "F"[CFA] "G7"[B,DF] | "C"[CEG] "A7"[^CEG] |[K:D] "D"[DFA]2 | "Bm"[DFB]2 | "G"[DGB] "A7"[CEG] | "D"[DFA]2 |]
+    ```
+
+    C major, then the same four bars a whole step up in D major. The A7 in bar 4 is the lift: C♯ is the leading tone of D. Without it, C would go straight to D, which also works but hits harder.
+
+    Analysis: there is no pivot to label. You end the old key's numerals at the cadence and start the new key's numerals with the new phrase (C: ... I | D: V7 – I ...).
+  sr: |
+    Nije svaka promena tonaliteta pripremljena akordom-mostom. Kod **direktne modulacije** (zove se i frazna modulacija) jedna fraza se završi kadencom u starom tonalitetu, a **sledeća fraza jednostavno počne u novom**. Nema akorda koji pripada oba; posao obavlja granica između fraza.
+
+    Zašto to ne zvuči pogrešno? Kadenca zatvara misao. Nova fraza je nov početak, a uho mnogo lakše prihvata novi tonalitet na novom početku nego usred fraze. Zato direktna modulacija može da ode i u tonalitete koji **nisu** srodni.
+
+    Najpoznatiji slučaj je pop **promena tonaliteta u poslednjem refrenu**: poslednji refren se ponavlja polustepen ili ceo stepen više. Dve verzije:
+    - **nagla**: poslednji akord jednog refrena, pa pravo u novi tonalitet;
+    - **sa podizanjem**: jedan akord pre promene je **V7 novog tonaliteta**, jedan takt (ili manje) koji pokazuje na novu toniku.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[CEG]2 | "Am"[CEA]2 | "F"[CFA] "G7"[B,DF] | "C"[CEG] "A7"[^CEG] |[K:D] "D"[DFA]2 | "Bm"[DFB]2 | "G"[DGB] "A7"[CEG] | "D"[DFA]2 |]
+    ```
+
+    C-dur, pa ista četiri takta ceo stepen više, u D-duru. A7 u 4. taktu je podizanje: Cis je vođica za D. Bez njega bi C išao pravo na D, što takođe radi, ali udara jače.
+
+    Analiza: nema mosta za označavanje. Brojeve starog tonaliteta završiš na kadenci, a brojeve novog počneš sa novom frazom (C: ... I | D: V7 – I ...).
+exercises:
+  - id: T-056-1
+    type: mcq
+    prompt: {en: "Where does a direct (phrase) modulation happen?", sr: "Gde se dešava direktna (frazna) modulacija?"}
+    options:
+      - {en: "At a phrase boundary: the new phrase starts in the new key, with no pivot", sr: "Na granici fraza: nova fraza počinje u novom tonalitetu, bez mosta"}
+      - {en: "In the middle of a phrase, through a chord common to both keys", sr: "Usred fraze, preko akorda zajedničkog za oba tonaliteta"}
+      - {en: "Only between relative keys", sr: "Samo između paralelnih tonaliteta"}
+      - {en: "Only at the very end of a piece", sr: "Samo na samom kraju komada"}
+    answer: 0
+  - id: T-056-2
+    type: mcq
+    prompt: {en: "A song in E major lifts its last chorus a half step. Which chord makes the lift?", sr: "Pesma u E-duru podiže poslednji refren za polustepen. Koji akord pravi podizanje?"}
+    options: [{en: "C7", sr: "C7"}, {en: "B7", sr: "H7"}, {en: "F7", sr: "F7"}, {en: "E7", sr: "E7"}]
+    answer: 0
+    checks:
+      - interval: {from: E4, to: F4, is: m2}
+      - numeral: {key: F, is: V7, notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: E, is: V7, notes: [B3, D#4, F#4, A4]}
+  - id: T-056-3
+    type: mcq
+    prompt: {en: "In the example, which note of A7 is foreign to C major and points to D?", sr: "U primeru, koji ton akorda A7 je stran C-duru i pokazuje na D?"}
+    options: ["C♯", "G", "E", "A"]
+    answer: 0
+    checks:
+      - numeral: {key: D, is: V7, notes: [A3, C#4, E4, G4]}
+      - interval: {from: C#4, to: D4, is: m2}
+  - id: T-056-4
+    type: mcq
+    prompt: {en: "Listen: a phrase in C, then the same phrase in a new key. How far up did it go?", sr: "Slušaj: fraza u C-duru, pa ista fraza u novom tonalitetu. Koliko je otišla naviše?"}
+    options:
+      - {en: "A half step", sr: "Polustepen"}
+      - {en: "A whole step", sr: "Ceo stepen"}
+      - {en: "A minor 3rd", sr: "Malu tercu"}
+      - {en: "It stayed in C", sr: "Ostala je u C-duru"}
+    answer: 0
+    play: {mode: chords, tempo: 96, chords: [[C3, C4, E4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [Db3, Db4, F4, Ab4], [Gb2, Db4, Gb4, Bb4], [Ab2, C4, Eb4, Gb4], [Db3, Db4, F4, Ab4]], durations: [2, 2, 2, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: C, is: V7, notes: [G2, B3, D4, F4]}
+      - numeral: {key: Db, is: I, notes: [Db3, Db4, F4, Ab4]}
+      - numeral: {key: Db, is: IV, notes: [Gb2, Db4, Gb4, Bb4]}
+      - numeral: {key: Db, is: V7, notes: [Ab2, C4, Eb4, Gb4]}
+  - id: T-056-5
+    type: mcq
+    prompt: {en: "Listen again, a different song: how far up does the second phrase go, and is there a lift chord before it?", sr: "Slušaj ponovo, druga pesma: koliko naviše ide druga fraza i ima li akorda za podizanje pre nje?"}
+    options:
+      - {en: "A whole step, with a lift (V7 of the new key)", sr: "Ceo stepen, sa podizanjem (V7 novog tonaliteta)"}
+      - {en: "A whole step, abrupt", sr: "Ceo stepen, naglo"}
+      - {en: "A half step, with a lift", sr: "Polustepen, sa podizanjem"}
+      - {en: "A half step, abrupt", sr: "Polustepen, naglo"}
+    answer: 0
+    play: {mode: chords, tempo: 96, chords: [[C3, C4, E4, G4], [A2, C4, E4, A4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [A2, C#4, E4, G4], [D3, D4, F#4, A4], [B2, D4, F#4, B4], [G2, D4, G4, B4], [A2, C#4, E4, G4], [D3, D4, F#4, A4]], durations: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: D, is: V7, notes: [A2, C#4, E4, G4]}
+      - numeral: {key: D, is: I, notes: [D3, D4, F#4, A4]}
+      - numeral: {key: D, is: vi, notes: [B2, D4, F#4, B4]}
+      - numeral: {key: D, is: IV, notes: [G2, D4, G4, B4]}
+  - id: T-056-6
+    type: midi-play
+    prompt: {en: "Play the lift: C: V7 – I, then D: V7 – I (two beats each, any octave). Feel C♯ pull to D.", sr: "Odsviraj podizanje: C: V7 – I, pa D: V7 – I (po dve dobe, bilo koja oktava). Oseti kako Cis vuče ka D."}
+    mode: chords
+    octave: any
+    expectChords: [[G3, B3, D4, F4], [C4, E4, G4], [A3, C#4, E4, G4], [D4, F#4, A4]]
+    beats: [2, 2, 2, 2]
+    tempo: 72
+    checks:
+      - numeral: {key: C, is: V7, notes: [G3, B3, D4, F4]}
+      - numeral: {key: C, is: I, notes: [C4, E4, G4]}
+      - numeral: {key: D, is: V7, notes: [A3, C#4, E4, G4]}
+      - numeral: {key: D, is: I, notes: [D4, F#4, A4]}

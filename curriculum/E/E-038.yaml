@@ -1,0 +1,119 @@
+id: E-038
+track: E
+order: 38
+title: {en: "Secondary dominants in progressions (V/V, V/vi, V/ii)", sr: "Sporedne dominante u progresijama (V/V, V/vi, V/ii)"}
+prereqs: [E-034]
+minutes: 14
+tags: [ear, harmony, secondary-dominants]
+explain:
+  en: |
+    In E-029 and E-034 the secondary dominants were in root position and always resolved. In real
+    music two things change, and both change what you hear.
+
+    **1. Inversions make a chromatic bass line.** Put the secondary dominant in first inversion
+    (figure 65) and its **3rd**, the new leading tone, is in the bass. The bass then rises a half
+    step into the target: C – **C♯** – D – **F♯** – G. A bass that climbs by half steps is the
+    sound of V65/ii and V65/V. With the **7th** in the bass (figure 42) it goes the other way:
+    C – **B♭** – A, the V42/IV falling into IV6.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"[C,EGc] "^V65/ii"[^C,EGA] "^ii"[D,DFA] "^V65/V"[^F,CDA] | "^V"[G,B,DG]4 |]
+    ```
+
+    **2. In pop they often do not resolve.** A major II (D major in C) is V/V by spelling, but in
+    songs it very often goes to **IV** instead of V: I – II – IV – I. A major III (E major) may
+    resolve to vi as expected, or slide up to **IV**. The ear clue is still the same: *a major
+    chord where the key has a minor one*, with its sharp (F♯, G♯). Then follow the bass to see
+    where it goes.
+
+    Order of listening: (1) the bass: steps or leaps, chromatic or not; (2) which chord is major
+    when it should be minor; (3) where it goes next.
+  sr: |
+    U E-029 i E-034 sporedne dominante su bile u osnovnom položaju i uvek su se razrešavale. U
+    pravoj muzici menjaju se dve stvari, i obe menjaju ono što čuješ.
+
+    **1. Obrtaji prave hromatsku bas liniju.** Stavi sporednu dominantu u prvi obrtaj (kvintsekst
+    akord, oznaka 65) i njena **terca**, nova vođica, je u basu. Bas se onda penje polustepenom u
+    cilj: C – **Cis** – D – **Fis** – G. Bas koji se penje polustepenima je zvuk V65/ii i V65/V. Sa
+    **septimom** u basu (sekundakord, oznaka 42) ide na drugu stranu: C – **B** – A, V42/IV koji
+    pada u IV6.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"[C,EGc] "^V65/ii"[^C,EGA] "^ii"[D,DFA] "^V65/V"[^F,CDA] | "^V"[G,B,DG]4 |]
+    ```
+
+    **2. U popu se često ne razrešavaju.** Durski II (D-dur u C-duru) je po građi V/V, ali u pesmama
+    vrlo često ide na **IV** umesto na V: I – II – IV – I. Durski III (E-dur) može da se razreši na
+    vi kako se očekuje, ili da sklizne naviše na **IV**. Trag za sluh je i dalje isti: *durski akord
+    tamo gde tonalitet ima molski*, sa svojom povisilicom (Fis, Gis). Onda prati bas da vidiš kuda
+    ide.
+
+    Redosled slušanja: (1) bas: koraci ili skokovi, hromatski ili ne; (2) koji akord je durski, a
+    trebalo bi da je molski; (3) kuda ide posle.
+exercises:
+  - id: E-038-1
+    type: generated
+    prompt: {en: "Listen to the bass: chromatic half steps up into each target, root-position leaps, or no secondary dominants at all?", sr: "Slušaj bas: hromatski polustepeni naviše u svaki cilj, skokovi u osnovnom položaju, ili uopšte bez sporednih dominanti?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V65/ii, ii, V65/V, V], [I, V7/ii, ii, V7/V, V], [I, vi, ii, V7, I]], tempo: 63, smooth: true}
+    checks:
+      - numeral: {key: C, is: "V65/ii", notes: [C#3, E4, G4, A4]}
+      - numeral: {key: C, is: "ii", notes: [D3, D4, F4, A4]}
+      - numeral: {key: C, is: "V65/V", notes: [F#3, C4, D4, A4]}
+      - numeral: {key: C, is: "V", notes: [G3, B3, D4, G4]}
+      - chord: {notes: [C#3, E4, G4, A4], root: A, quality: "7", inversion: 1}
+      - chord: {notes: [F#3, C4, D4, A4], root: D, quality: "7", inversion: 1}
+      - interval: {from: C3, to: C#3, is: A1}
+      - interval: {from: C#3, to: D3, is: m2}
+      - interval: {from: F#3, to: G3, is: m2}
+  - id: E-038-2
+    type: generated
+    prompt: {en: "The ♭7 in the bass falling a step (V42/IV), the same chord in root position (V7/IV), or diatonic?", sr: "♭7 u basu koja pada za korak (V42/IV), isti akord u osnovnom položaju (V7/IV), ili dijatonski?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, V42/IV, IV6, V7, I], [I, V7/IV, IV, V7, I], [I, vi, IV, V7, I]], tempo: 63, smooth: true}
+    checks:
+      - numeral: {key: C, is: "V42/IV", notes: [Bb3, E4, G4, C5]}
+      - numeral: {key: C, is: "IV6", notes: [A3, F4, C5]}
+      - chord: {notes: [Bb3, E4, G4, C5], root: C, quality: "7", inversion: 3}
+      - interval: {from: Bb3, to: A3, is: m2}
+  - id: E-038-3
+    type: generated
+    prompt: {en: "Major II going to IV (the pop move), major II resolving to V, or minor ii?", sr: "Durski II koji ide na IV (pop potez), durski II koji se razrešava na V, ili molski ii?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, D, A, E], type: major, options: [[I, V/V, IV, I], [I, V/V, V, I], [I, ii, IV, I]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: C, is: "V/V", notes: [D3, D4, F#4, A4]}
+      - chord: {notes: [D3, D4, F#4, A4], root: D, quality: maj}
+  - id: E-038-4
+    type: generated
+    prompt: {en: "Major III resolving to vi, major III sliding to IV, or minor iii?", sr: "Durski III koji se razrešava na vi, durski III koji klizi na IV, ili molski iii?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, D, F], type: major, options: [[I, V/vi, vi, IV], [I, V/vi, IV, I], [I, iii, vi, IV]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: C, is: "V/vi", notes: [E3, E4, G#4, B4]}
+      - roman: {key: C, degree: 3, is: "iii"}
+      - interval: {from: G#4, to: A4, is: m2}
+  - id: E-038-5
+    type: generated
+    prompt: {en: "Echo the chromatic bass of I–V65/ii–ii–V65/V–V–I", sr: "Ponovi hromatski bas progresije I–V65/ii–ii–V65/V–V–I"}
+    count: 4
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, F, G, D, Bb], type: major, numerals: [I, V65/ii, ii, V65/V, V], line: [I, V65/ii, ii, V65/V, V, I], octave: 3, tempo: 72}
+  - id: E-038-6
+    type: generated
+    prompt: {en: "Hear it, then play it: I–V65/ii–ii–V65/V–V7–I (keep the bass line chromatic)", sr: "Čuj, pa odsviraj: I–V65/ii–ii–V65/V–V7–I (neka bas ostane hromatski)"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, G], type: major, numerals: [I, V65/ii, ii, V65/V, V7, I], echo: true, smooth: true}
+  - id: E-038-7
+    type: practice
+    prompt: {en: "Play I–II–IV–I in G (G, A, C, G) as a slow strummed pattern and hum a melody over it. Then replace A major with A minor. Describe the difference in one word each. Then try I–III–IV–I (G, B, C, G).", sr: "Odsviraj I–II–IV–I u G-duru (G, A, C, G) kao spor obrazac i pevušaj melodiju preko njega. Onda zameni A-dur sa a-molom. Opiši razliku jednom rečju za svaki. Onda probaj I–III–IV–I (G, H, C, G)."}
+    minutes: 3

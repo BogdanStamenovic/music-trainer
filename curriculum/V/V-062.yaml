@@ -1,0 +1,159 @@
+id: V-062
+track: V
+order: 62
+title: {en: "Song: verse in light voice, chorus in mix", sr: "Pesma: strofa laganim glasom, refren u miksu"}
+prereqs: [V-061, V-045, V-049]
+minutes: 13
+tags: [voice, song, mix]
+explain:
+  en: |
+    Most pop songs are built on a contrast: a **verse** that sits lower and tells the story close up, and a **chorus** that rises and opens out.
+    The voice follows that shape with **colour and register**, not with a jump in volume:
+
+    | | verse | chorus |
+    |---|---|---|
+    | range | lower middle | upper middle, up to the top note of the song |
+    | voice | **light**: soft, close, speech-like, almost confiding (lesson 49) | **light mix**: brighter, a little twang, more presence (lessons 46-48) |
+    | size | small | a little more, but still speech-sized; the top note no bigger than the rest of the chorus |
+    | delivery | straight tone, words first (lesson 60) | longer notes may bloom; peak on the long high note (lesson 56) |
+
+    The song is an original written for this course, **"Quiet Streets"** (*Tihe ulice*), in D major. Sing it in English or Serbian; both lines have the same number of syllables.
+
+    ```abc
+    X:1
+    T:Quiet Streets
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:D
+    D D E F | E2 D2 | D E F A | G F E2 |
+    w: All the streets are qui-et, all the lamps are on to-night,
+    A B A F | d2 A2 | B A F E | D4 |]
+    w: sing a lit-tle song with me, the night is young.
+    ```
+
+    Serbian: *U-li-ce su ti-he, svet-la go-re sva-ku noć, / pe-vaj sa mnom pe-smu, noć je mla-da još.*
+
+    The moment to practise is the **seam**: the verse ends on E (open, a half cadence) and the chorus leaps up a 4th to A. That leap is where people grab weight.
+    Breathe in the gap, think "brighter" rather than "bigger", and arrive on the A already in mix.
+
+    The range is one octave, D to D; the notes are fitted to the middle of your range, which puts the chorus top near (but below) your mix top from lesson 61.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Većina pop pesama gradi se na kontrastu: **strofa** leži niže i priča priču izbliza, a **refren** se penje i otvara.
+    Glas prati taj oblik **bojom i registrom**, ne skokom jačine:
+
+    | | strofa | refren |
+    |---|---|---|
+    | opseg | donja sredina | gornja sredina, do najvišeg tona pesme |
+    | glas | **lagan**: tih, blizak, kao govor, skoro poverljiv (49. lekcija) | **lagani miks**: svetliji, malo tvanga, više prisustva (46-48. lekcija) |
+    | veličina | mala | malo više, ali i dalje veličine govora; najviši ton ne veći od ostatka refrena |
+    | izvođenje | ravan ton, prvo reči (60. lekcija) | duži tonovi mogu da procvetaju; vrh na dugom visokom tonu (56. lekcija) |
+
+    Pesma je originalna, napisana za ovaj kurs, **„Tihe ulice”** (engl. *Quiet Streets*), u D-duru. Pevaj na engleskom ili srpskom; oba reda imaju isti broj slogova.
+
+    ```abc
+    X:1
+    T:Tihe ulice
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:D
+    D D E F | E2 D2 | D E F A | G F E2 |
+    w: U-li-ce su ti-he, svet-la go-re sva-ku noć,
+    A B A F | d2 A2 | B A F E | D4 |]
+    w: pe-vaj sa mnom pe-smu, noć je mla-da još.
+    ```
+
+    Engleski: *All the streets are qui-et, all the lamps are on to-night, / sing a lit-tle song with me, the night is young.*
+
+    Trenutak za vežbanje je **šav**: strofa se završava na E (otvoreno, polukadenca), a refren skače za kvartu naviše na A. Taj skok je mesto gde ljudi grabe težinu.
+    Udahni u pauzi, misli „svetlije”, a ne „veće”, i stigni na A već u miksu.
+
+    Opseg je jedna oktava, od D do D; tonovi su prilagođeni sredini tvog opsega, što stavlja vrh refrena blizu (ali ispod) vrha miksa iz 61. lekcije.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-062-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-062-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, spoken bratty 'nay' at three rising pitches, then speak the lyrics of the song once in rhythm."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, izgovoreno zadirkujuće „nej” na tri sve više visine, pa jednom izgovori tekst pesme u ritmu."
+    checks:
+      - syllables: {text: "Ulice su tihe svetla gore svaku noć", lang: sr, is: 13}
+      - syllables: {text: "Pevaj sa mnom pesmu noć je mlada još", lang: sr, is: 11}
+  - id: V-062-3
+    type: sing-phrase
+    prompt:
+      en: "The verse in light voice, with words: 'All the streets are quiet, all the lamps are on tonight' / 'Ulice su tihe, svetla gore svaku noć'. Soft, close, speech-like."
+      sr: "Strofa laganim glasom, sa rečima: „Ulice su tihe, svetla gore svaku noć” / „All the streets are quiet, all the lamps are on tonight”. Tiho, blisko, kao govor."
+    notes: [D4, D4, E4, F#4, E4, D4, D4, E4, F#4, A4, G4, F#4, E4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - syllables: {text: "Ulice su tihe svetla gore svaku noć", lang: sr, is: 13}
+  - id: V-062-4
+    type: sing-phrase
+    prompt:
+      en: "The chorus in light mix: 'Sing a little song with me, the night is young' / 'Pevaj sa mnom pesmu, noć je mlada još'. Brighter, a little twang, the high D no bigger than the A."
+      sr: "Refren u laganom miksu: „Pevaj sa mnom pesmu, noć je mlada još” / „Sing a little song with me, the night is young”. Svetlije, malo tvanga, visoko D ne veće od A."
+    notes: [A4, B4, A4, F#4, D5, A4, B4, A4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - syllables: {text: "Pevaj sa mnom pesmu noć je mlada još", lang: sr, is: 11}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-062-5
+    type: sing-phrase
+    prompt:
+      en: "The seam: the end of the verse (G-F#-E), a breath, then the leap of a 4th into the chorus (A-B-A-F#). Arrive on the A already bright, not heavier."
+      sr: "Šav: kraj strofe (G-Fis-E), udah, pa skok za kvartu u refren (A-H-A-Fis). Stigni na A već svetao, ne teži."
+    notes: [G4, F#4, E4, r, A4, B4, A4, F#4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: E4, to: A4, is: P4}
+  - id: V-062-6
+    type: sing-phrase
+    prompt:
+      en: "The whole song with words: verse light, chorus in mix, a breath at the seam. The difference should be colour, not volume."
+      sr: "Cela pesma sa rečima: strofa lagano, refren u miksu, udah na šavu. Razlika treba da bude u boji, ne u jačini."
+    abc: "X:1\nM:4/4\nL:1/4\nK:D\nD D E F | E2 D2 | D E F A | G F E2 |\nw: All the streets are qui-et, all the lamps are on to-night,\nA B A F | d2 A2 | B A F E | D4 |]\nw: sing a lit-tle song with me, the night is young."
+    notes: [D4, D4, E4, F#4, E4, D4, D4, E4, F#4, A4, G4, F#4, E4, A4, B4, A4, F#4, D5, A4, B4, A4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-062-7
+    type: mcq
+    prompt:
+      en: "Going from the verse into the chorus, what should change most?"
+      sr: "Pri prelasku iz strofe u refren, šta treba najviše da se promeni?"
+    options:
+      - {en: "Colour and register: from light and close to a brighter light mix", sr: "Boja i registar: od laganog i bliskog ka svetlijem laganom miksu"}
+      - {en: "Volume: the chorus should be much louder", sr: "Jačina: refren treba da bude mnogo glasniji"}
+      - {en: "Nothing: both should sound exactly the same", sr: "Ništa: oba treba da zvuče potpuno isto"}
+    answer: 0
+  - id: V-062-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: record the whole song with the piano playing D, G and A chords under it, and listen back. Rate: verse light and close, chorus brighter but not louder, a clean seam. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi celu pesmu dok klavir svira akorde D, G i A ispod nje i preslušaj. Oceni: strofa lagana i bliska, refren svetliji ali ne glasniji, čist šav. Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,146 @@
+id: V-057
+track: V
+order: 57
+title: {en: "Singing in 6/8", sr: "Pevanje u 6/8 taktu"}
+prereqs: [V-056]
+minutes: 11
+tags: [voice, rhythm, meter]
+explain:
+  en: |
+    **6/8** has six eighth notes per bar, but you do not feel six: you feel **two big beats**, each split into **three** (1-2-3 4-5-6, with the weight on 1 and 4).
+    That is *compound duple* metre (Serbian: *složeni dvodelni takt*). It is the rocking, rolling feel of lullabies, barcarolles, jigs and many ballads.
+
+    Compare 3/4: also six eighth notes per bar, but grouped **three by two** (1-2 3-4 5-6, three beats). Same notes on paper, a different swing in the body.
+
+    The patterns you will meet over and over (in eighths, one big beat each):
+
+    | pattern | sounds like | in the song below |
+    |---|---|---|
+    | dotted quarter | one long note per big beat | "Row, row" |
+    | quarter + eighth | **long-short**, the rocking figure | "row your", "gent-ly", "down the" |
+    | three eighths | an even triplet feel | "mer-ri-ly" |
+    | dotted half | a whole bar held | "stream", "dream" |
+
+    The song is **"Row, Row, Row Your Boat"** (words published 1852, melody 1881; public domain), a round you probably know by ear.
+    Use it to feel the two big beats: tap your hand on 1 and 4 while you sing, never on every eighth.
+
+    ```abc
+    X:1
+    T:Row, Row, Row Your Boat
+    M:6/8
+    L:1/8
+    Q:3/8=80
+    K:C
+    C3 C3 | C2 D E3 | E2 D E2 F | G6 | c c c G G G | E E E C C C | G2 F E2 D | C6 |]
+    w: Row, row, row your boat, gent-ly down the stream. Mer-ri-ly, mer-ri-ly, mer-ri-ly, mer-ri-ly, life is but a dream.
+    ```
+
+    The singing exercises are timed in the app with a quarter-note click, so the big beat (a dotted quarter) is one and a half clicks. Count "1-and-a 2-and-a" if it helps.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **6/8** ima šest osmina u taktu, ali ne osećaš šest: osećaš **dve velike dobe**, svaku podeljenu na **tri** (1-2-3 4-5-6, sa težinom na 1 i 4).
+    To je *složeni dvodelni takt*. To je ljuljajući, valoviti osećaj uspavanki, barkarola, džigova i mnogih balada.
+
+    Uporedi sa 3/4: takođe šest osmina u taktu, ali grupisanih **po dve, tri puta** (1-2 3-4 5-6, tri dobe). Isti tonovi na papiru, drugačije ljuljanje u telu.
+
+    Obrasci koje ćeš sretati stalno (u osminama, po jedna velika doba):
+
+    | obrazac | zvuči kao | u pesmi ispod |
+    |---|---|---|
+    | četvrtina sa tačkom | jedan dug ton po velikoj dobi | „Row, row” |
+    | četvrtina + osmina | **dugo-kratko**, ljuljajuća figura | „row your”, „gent-ly”, „down the” |
+    | tri osmine | ravnomeran trioletni osećaj | „mer-ri-ly” |
+    | polovina sa tačkom | ceo takt držan | „stream”, „dream” |
+
+    Pesma je **„Row, Row, Row Your Boat”** (reči objavljene 1852, melodija 1881; javno dobro), kanon koji verovatno znaš po sluhu.
+    Koristi je da osetiš dve velike dobe: lupkaj rukom na 1 i 4 dok pevaš, nikad na svaku osminu.
+
+    ```abc
+    X:1
+    T:Row, Row, Row Your Boat
+    M:6/8
+    L:1/8
+    Q:3/8=80
+    K:C
+    C3 C3 | C2 D E3 | E2 D E2 F | G6 | c c c G G G | E E E C C C | G2 F E2 D | C6 |]
+    w: Row, row, row your boat, gent-ly down the stream. Mer-ri-ly, mer-ri-ly, mer-ri-ly, mer-ri-ly, life is but a dream.
+    ```
+
+    Vežbe pevanja u aplikaciji idu uz klik na četvrtine, pa je velika doba (četvrtina sa tačkom) jedan i po klik. Broj „1-i-a 2-i-a” ako ti pomaže.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-057-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-057-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 lip-trill sirens, then hum 'Row, Row, Row Your Boat' while swaying side to side on the two big beats of each bar."
+      sr: "Zagrevanje: 3 sirene treperenjem usana, pa pevuši „Row, Row, Row Your Boat” dok se njišeš levo-desno na dve velike dobe svakog takta."
+    play: {notes: [C4, C4, C4, D4, E4, E4, D4, E4, F4, G4], mode: melodic, tempo: 120, durations: [1.5, 1.5, 1, 0.5, 1.5, 1, 0.5, 1, 0.5, 3]}
+  - id: V-057-3
+    type: generated
+    prompt:
+      en: "Tap back the 6/8 rhythm (one bar). Feel two big beats, not six small ones."
+      sr: "Otkucaj nazad ritam u 6/8 (jedan takt). Oseti dve velike dobe, ne šest malih."
+    count: 4
+    gen: {kind: rhythm-echo, meter: "6/8", bars: 1, cells: [[1.5], [1, 0.5], [0.5, 0.5, 0.5]], tempo: 100}
+  - id: V-057-4
+    type: sing-phrase
+    prompt:
+      en: "Bars 1-4 on the words: 'Row, row, row your boat, gently down the stream.' The long-short figures rock; the last note is held for the whole bar."
+      sr: "Taktovi 1-4 sa rečima: „Row, row, row your boat, gently down the stream.” Figure dugo-kratko se ljuljaju; poslednji ton traje ceo takt."
+    notes: [C4, C4, C4, D4, E4, E4, D4, E4, F4, G4]
+    beats: [1.5, 1.5, 1, 0.5, 1.5, 1, 0.5, 1, 0.5, 3]
+    tempo: 120
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: V-057-5
+    type: sing-phrase
+    prompt:
+      en: "Bars 5-8: 'Merrily, merrily, merrily, merrily, life is but a dream.' Three even eighths per big beat, coming down the C major triad; light, not punched."
+      sr: "Taktovi 5-8: „Merrily, merrily, merrily, merrily, life is but a dream.” Tri ravnomerne osmine po velikoj dobi, naniže kroz C-dur kvintakord; lagano, ne udarano."
+    notes: [C5, C5, C5, G4, G4, G4, E4, E4, E4, C4, C4, C4, G4, F4, E4, D4, C4]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 1, 0.5, 3]
+    tempo: 120
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [C4, E4, G4, C5], root: C, quality: maj, inversion: 0}
+  - id: V-057-6
+    type: sing-phrase
+    prompt:
+      en: "A new 6/8 tune (an original barcarolle phrase) on 'la': long-short, long-short, two long notes, long-short, long-short, and a bar held."
+      sr: "Nova melodija u 6/8 (originalna fraza barkarole) na „la”: dugo-kratko, dugo-kratko, dva duga tona, dugo-kratko, dugo-kratko, i jedan ceo takt."
+    abc: "X:1\nM:6/8\nL:1/8\nK:D\nD2 F A2 F | G3 E3 | A2 G F2 E | D6 |]"
+    notes: [D4, F#4, A4, F#4, G4, E4, A4, G4, F#4, E4, D4]
+    beats: [1, 0.5, 1, 0.5, 1.5, 1.5, 1, 0.5, 1, 0.5, 3]
+    tempo: 120
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-057-7
+    type: mcq
+    prompt:
+      en: "6/8 and 3/4 both have six eighth notes per bar. What is the difference?"
+      sr: "I 6/8 i 3/4 imaju šest osmina u taktu. Koja je razlika?"
+    options:
+      - {en: "6/8: two big beats of three eighths; 3/4: three beats of two eighths", sr: "6/8: dve velike dobe po tri osmine; 3/4: tri dobe po dve osmine"}
+      - {en: "6/8 is just 3/4 played twice as fast", sr: "6/8 je samo 3/4 odsviran dvostruko brže"}
+      - {en: "There is none; only the notation differs", sr: "Nema je; razlikuje se samo zapis"}
+    answer: 0
+  - id: V-057-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: play the barcarolle phrase on the piano with a left-hand D on beats 1 and 4, and sing along. Then sing 'Row, Row' as a round against the piano entering after 2 bars. Rate: did the two-beat sway stay steady? Then 3 quiet hums sliding down."
+      sr: "Samostalno: odsviraj frazu barkarole na klaviru sa levom rukom na D na dobama 1 i 4 i pevaj uz to. Pa otpevaj „Row, Row” kao kanon uz klavir koji ulazi posle 2 takta. Oceni: da li je ljuljanje na dve dobe ostalo mirno? Pa 3 tiha pevušenja uz klizanje naniže."

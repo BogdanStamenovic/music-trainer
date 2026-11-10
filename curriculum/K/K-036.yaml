@@ -1,0 +1,160 @@
+id: K-036
+track: K
+order: 36
+title: {en: "Modulating cadences in 4 keys", sr: "Modulirajuće kadence u 4 tonaliteta"}
+prereqs: [K-035]
+minutes: 14
+tags: [keys, harmony, modulation, transposition]
+explain:
+  en: |
+    The two modulations from K-035 are patterns, so they transpose like any cadence. Learn
+    them by **function**, not by note names:
+
+    | to the dominant | I | IV | vi = **ii** | **V7** | **I** |
+    |---|---|---|---|---|---|
+    | to the relative minor | I | IV | ii = **iv** | **V7** | **i** |
+
+    The bold numerals belong to the new key. Written in the *old* key, the same chords are
+    I – IV – vi – V7/V – V and I – IV – ii – V7/vi – vi: the new key's V7 is a secondary
+    dominant that does not go away. That is the difference between tonicization (one chord)
+    and modulation (a cadence, and then you stay).
+
+    **Where is the new note?**
+
+    - To the dominant: the **raised 4th degree** of the old key (F♯ in C, B♮ in F, G♯ in D,
+      E♮ in B♭). It is the leading tone of the new key, and it sits in the 3rd of V7.
+    - To the relative minor: the **raised 5th degree** of the old key (G♯ in C, D♯ in G,
+      C♯ in F). It is the leading tone of the minor key, the 3rd of its V7.
+
+    The hand shapes are exactly the K-035 ones moved up or down. F → C, for example:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:F
+    "F"[F,,CFA] "Bb"[B,,DFB] | "Dm"[D,DFA] "G7"[G,,DF=B] | "C"[C,G,CEc]2 |]
+    ```
+
+    In F the B is flat; B♮ in G7 is the first note outside F major, exactly where F♯ was in
+    C → G. Say the new note out loud before you play each key; after four keys you will see
+    it before you read it.
+  sr: |
+    Dve modulacije iz K-035 su obrasci, pa se transponuju kao svaka kadenca. Uči ih po
+    **funkciji**, ne po imenima tonova:
+
+    | u dominantu | I | IV | vi = **ii** | **V7** | **I** |
+    |---|---|---|---|---|---|
+    | u paralelni mol | I | IV | ii = **iv** | **V7** | **i** |
+
+    Podebljani brojevi pripadaju novom tonalitetu. Zapisani u *starom* tonalitetu, isti
+    akordi su I – IV – vi – V7/V – V i I – IV – ii – V7/vi – vi: V7 novog tonaliteta je
+    sporedna dominanta koja ne odlazi. To je razlika između tonikalizacije (jedan akord) i
+    modulacije (kadenca, i zatim ostaješ).
+
+    **Gde je novi ton?**
+
+    - U dominantu: **povišeni 4. stupanj** starog tonaliteta (Fis u C-duru, H u F-duru, Gis
+      u D-duru, E u B-duru). To je vođica novog tonaliteta, i nalazi se u terci od V7.
+    - U paralelni mol: **povišeni 5. stupanj** starog tonaliteta (Gis u C-duru, Dis u G-duru,
+      Cis u F-duru). To je vođica molskog tonaliteta, terca njegovog V7.
+
+    Oblici ruku su tačno oni iz K-035, pomereni naviše ili naniže. Na primer F → C:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:F
+    "F"[F,,CFA] "Bb"[B,,DFB] | "Dm"[D,DFA] "G7"[G,,DF=B] | "C"[C,G,CEc]2 |]
+    ```
+
+    U F-duru je B snižen; H u G7 je prvi ton van F-dura, tačno tamo gde je bio Fis u C → G.
+    Izgovori novi ton naglas pre nego što odsviraš svaki tonalitet; posle četiri tonaliteta
+    videćeš ga pre nego što ga pročitaš.
+exercises:
+  - id: K-036-1
+    type: mcq
+    prompt: {en: "Modulating from B♭ major to F major (its dominant). Which note is the first one outside B♭ major?", sr: "Modulacija iz B-dura u F-dur (njegovu dominantu). Koji ton je prvi van B-dura?"}
+    options: ["E", "Eb", "F#", "C#"]
+    answer: 0
+    checks:
+      - scale: {tonic: Bb, type: major, is: [Bb, C, D, Eb, F, G, A]}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - numeral: {key: F, is: "V7", notes: [C4, E4, G4, Bb4]}
+      - numeral: {key: Bb, is: "V7/V", notes: [C4, E4, G4, Bb4]}
+  - id: K-036-2
+    type: mcq
+    prompt: {en: "G major to E minor (relative minor): the chord that confirms E minor is…", sr: "G-dur u e-mol (paralelni mol): akord koji potvrđuje e-mol je…"}
+    options:
+      - {en: "B7 (B D♯ F♯ A), V7 in E minor", sr: "H7 (H Dis Fis A), V7 u e-molu"}
+      - {en: "D7 (D F♯ A C), V7 in G", sr: "D7 (D Fis A C), V7 u G-duru"}
+      - {en: "Bm (B D F♯), v in E minor", sr: "Hm (H D Fis), v u e-molu"}
+      - {en: "Am (A C E), iv in E minor", sr: "Am (A C E), iv u e-molu"}
+    answer: 0
+    checks:
+      - numeral: {key: E, type: harmonic-minor, is: "V7", notes: [B3, "D#4", "F#4", A4]}
+      - numeral: {key: G, is: "V7/vi", notes: [B3, "D#4", "F#4", A4]}
+      - numeral: {key: G, is: "V7", notes: [D4, "F#4", A4, C5]}
+      - numeral: {key: E, type: natural-minor, is: "v", notes: [B3, D4, "F#4"]}
+      - numeral: {key: E, type: harmonic-minor, is: "iv", notes: [A3, C4, E4]}
+  - id: K-036-3
+    type: midi-play
+    prompt: {en: "F → C as in the example: F – B♭ – Dm – G7 – C, ♩=66. The new note is B♮.", sr: "F → C kao u primeru: F – B – Dm – G7 – C, ♩=66. Novi ton je H."}
+    mode: chords
+    expectChords: [[F2, C4, F4, A4], [Bb2, D4, F4, Bb4], [D3, D4, F4, A4], [G2, D4, F4, B4], [C3, G3, C4, E4, C5]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: F, is: "I", notes: [F2, C4, F4, A4]}
+      - numeral: {key: F, is: "IV", notes: [Bb2, D4, F4, Bb4]}
+      - numeral: {key: F, is: "vi", notes: [D3, D4, F4, A4]}
+      - numeral: {key: C, is: "ii", notes: [D3, D4, F4, A4]}
+      - numeral: {key: C, is: "V7", notes: [G2, D4, F4, B4]}
+      - numeral: {key: C, is: "I", notes: [C3, G3, C4, E4, C5]}
+  - id: K-036-4
+    type: midi-play
+    prompt: {en: "D → A: D – G – Bm – E7 – A, ♩=66. The new note is G♯.", sr: "D → A: D – G – Hm – E7 – A, ♩=66. Novi ton je Gis."}
+    mode: chords
+    expectChords: [[D3, A3, D4, "F#4"], [G2, B3, D4, G4], [B2, B3, D4, "F#4"], [E3, B3, D4, "G#4"], [A2, E3, A3, "C#4", A4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: D, is: "I", notes: [D3, A3, D4, "F#4"]}
+      - numeral: {key: D, is: "IV", notes: [G2, B3, D4, G4]}
+      - numeral: {key: D, is: "vi", notes: [B2, B3, D4, "F#4"]}
+      - numeral: {key: A, is: "ii", notes: [B2, B3, D4, "F#4"]}
+      - numeral: {key: A, is: "V7", notes: [E3, B3, D4, "G#4"]}
+      - numeral: {key: A, is: "I", notes: [A2, E3, A3, "C#4", A4]}
+  - id: K-036-5
+    type: midi-play
+    prompt: {en: "G → E minor, notes hidden: G – C – Am – B7 – Em (the K-035 relative-minor shape), any octave, root in the bass, ♩=66.", sr: "G → e-mol, bez prikaza tonova: G – C – Am – H7 – Em (oblik iz K-035 za paralelni mol), bilo koja oktava, osnovni ton u basu, ♩=66."}
+    mode: chords
+    expectChords: [[G2, D4, G4, B4], [C3, E4, G4, C5], [A2, E4, A4, C5], [B2, "D#4", A4, B4], [E3, E4, G4, B4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - numeral: {key: G, is: "ii", notes: [A2, E4, A4, C5]}
+      - numeral: {key: E, type: harmonic-minor, is: "iv", notes: [A2, E4, A4, C5]}
+      - chord: {notes: [B2, "D#4", A4, B4], root: B, quality: "7", inversion: 0}
+      - numeral: {key: E, type: harmonic-minor, is: "V7", notes: [B2, "D#4", A4, B4], complete: false}
+      - numeral: {key: G, is: "V7/vi", notes: [B2, "D#4", A4, B4], complete: false}
+      - numeral: {key: E, type: harmonic-minor, is: "i", notes: [E3, E4, G4, B4]}
+      - semitones: {from: "D#4", to: E4, is: 1}
+  - id: K-036-6
+    type: generated
+    prompt: {en: "To the dominant in mixed keys, written in the old key: I – IV – vi – V7/V – V", sr: "U dominantu u mešanim tonalitetima, zapisano u starom tonalitetu: I – IV – vi – V7/V – V"}
+    count: 3
+    gen: {kind: progression, keys: [G, F, D, Bb, A, Eb], numerals: [I, IV, vi, V7/V, V], tempo: 66, smooth: true}
+  - id: K-036-7
+    type: generated
+    prompt: {en: "To the relative minor in mixed keys: I – IV – ii – V7/vi – vi", sr: "U paralelni mol u mešanim tonalitetima: I – IV – ii – V7/vi – vi"}
+    count: 3
+    gen: {kind: progression, keys: [G, F, D, Bb], numerals: [I, IV, ii, V7/vi, vi], tempo: 66, smooth: true}
+  - id: K-036-8
+    type: practice
+    prompt: {en: "A chain round the circle: C → G → D → A, each time using the new key's vi as the next pivot (C: Am–D7–G, then G: Em–A7–D, then D: Bm–E7–A). Keep one hand shape and let the voices slide. Stop when you can do it without pausing at the pivots.", sr: "Lanac po kvintnom krugu: C → G → D → A, svaki put vi novog tonaliteta je sledeći most (C: Am–D7–G, zatim G: Em–A7–D, zatim D: Hm–E7–A). Zadrži jedan oblik ruke i pusti glasove da klize. Završi kad uspeš bez zastajanja na mostovima."}
+    minutes: 4

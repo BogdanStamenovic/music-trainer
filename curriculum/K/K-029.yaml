@@ -1,7 +1,7 @@
 id: K-029
 track: K
 order: 29
-title: {en: "Secondary dominants at the keys: I–V7/V–V7–I in 4 keys", sr: "Sekundarne dominante za klavirom: I–V7/V–V7–I u 4 tonaliteta"}
+title: {en: "Secondary dominants at the keys: I–V7/V–V7–I in 4 keys", sr: "Sporedne dominante za klavirom: I–V7/V–V7–I u 4 tonaliteta"}
 prereqs: [T-043, K-023]
 minutes: 14
 tags: [keys, harmony, secondary-dominant, voice-leading]
@@ -66,7 +66,7 @@ explain:
     - C (septima od D7) pada na H, kao svaka septima.
     - **Fis klizi naniže na F.** Preko običnog V, Fis bi rastao na G. Ali sledeći akord je V7,
       a F je njegova septima, pa linija ide hromatski, Fis → F. To klizanje za polustepen u
-      unutrašnjem glasu je zvuk sekundarne dominante koja ide u V7.
+      unutrašnjem glasu je zvuk sporedne dominante koja ide u V7.
     - A pada na G, a D se dodaje da G7 bude potpun.
 
     Isti oblik u G, F i D-duru je u vežbama. U svakom tonalitetu prvo nađi hromatski ton: to

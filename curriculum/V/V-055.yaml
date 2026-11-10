@@ -1,0 +1,152 @@
+id: V-055
+track: V
+order: 55
+title: {en: "Intervals: tritone and 7ths sung in context", sr: "Intervali: tritonus i septime pevani u kontekstu"}
+prereqs: [V-054, V-037]
+minutes: 12
+tags: [voice, intervals, intonation]
+explain:
+  en: |
+    The **tritone** (6 semitones) and the **major 7th** (11) are the hardest intervals to sing cold: neither is a resting place, so the ear has nothing to hold on to.
+    Sung **in context** they become easy, because each one is a piece of a chord you know and each one **wants to resolve**.
+
+    | interval | where it lives | how to hear it |
+    |---|---|---|
+    | **tritone**, written as a **diminished 5th** (H up to F) | the 3rd and 7th of the dominant seventh G7 (G H D F) | sing up the G7 arpeggio; H and F then resolve **inward** to C and E |
+    | **tritone**, written as an **augmented 4th** (C up to Fis) | the raised 4th leaning into the 5th | C, Fis, then a half step up to G: Fis is a leading tone to G |
+    | **minor 7th** (G up to F) | root to 7th of G7 | "an octave minus a whole step"; or two 4ths stacked: G, C, F |
+    | **major 7th** (C up to H) | the tonic up to the leading tone | "an octave minus a half step": hear the C above, sing just under it, then resolve up |
+
+    Both tritone spellings sound the same on the piano (6 semitones). The name depends on the letters: H to F spans five letter names (H C D E F), so it is a 5th, diminished;
+    C to Fis spans four (C D E F), so it is a 4th, augmented. The spelling tells you **where it goes**: a diminished 5th closes inward, an augmented 4th opens outward.
+
+    Singing method: play the chord (or the arpeggio) first, sing the arpeggio up to the target note, and **only then** sing the interval alone. Always resolve: an unresolved
+    tritone is where the pitch drifts.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Tritonus** (6 polustepena) i **velika septima** (11) su najteži intervali za pevanje „iz ničega”: nijedan nije mesto odmora, pa uho nema za šta da se uhvati.
+    Otpevani **u kontekstu** postaju laki, jer je svaki deo akorda koji znaš i svaki **želi da se razreši**.
+
+    | interval | gde živi | kako da ga čuješ |
+    |---|---|---|
+    | **tritonus**, zapisan kao **smanjena kvinta** (H naviše do F) | terca i septima dominantnog septakorda G7 (G H D F) | otpevaj razloženi G7 naviše; H i F se zatim razrešavaju **ka unutra** na C i E |
+    | **tritonus**, zapisan kao **prekomerna kvarta** (C naviše do Fis) | povišeni 4. stupanj koji se naslanja na 5. | C, Fis, pa polustepen naviše do G: Fis je vođica ka G |
+    | **mala septima** (G naviše do F) | od osnovnog tona do septime G7 | „oktava manje celi stepen”; ili dve naslagane kvarte: G, C, F |
+    | **velika septima** (C naviše do H) | od tonike do vođice | „oktava manje polustepen”: čuj gornje C, otpevaj tik ispod njega, pa razreši naviše |
+
+    Oba zapisa tritonusa zvuče isto na klaviru (6 polustepena). Naziv zavisi od slova: H do F obuhvata pet imena tonova (H C D E F), pa je to kvinta, smanjena;
+    C do Fis obuhvata četiri (C D E F), pa je kvarta, prekomerna. Zapis ti govori **kuda ide**: smanjena kvinta se zatvara ka unutra, prekomerna kvarta otvara ka spolja.
+
+    Metoda pevanja: prvo odsviraj akord (ili razloženi akord), otpevaj razloženi akord do ciljnog tona i **tek onda** otpevaj interval sam. Uvek razreši: nerazrešen
+    tritonus je mesto gde visina odluta.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-055-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-055-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 lip-trill sirens, then hum along with the G7 arpeggio and its resolution to C, twice."
+      sr: "Zagrevanje: 3 sirene treperenjem usana, pa pevuši uz razloženi G7 i njegovo razrešenje na C, dva puta."
+    play: {notes: [G3, B3, D4, F4, E4, C4], mode: melodic, tempo: 80}
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7", inversion: 0}
+  - id: V-055-3
+    type: sing-phrase
+    prompt:
+      en: "The G7 arpeggio up on 'la': G-B-D-F, then F resolves down to E. The F is a minor 7th above G."
+      sr: "Razloženi G7 naviše na „la”: G-H-D-F, pa se F razrešava naniže na E. F je mala septima iznad G."
+    notes: [G3, B3, D4, F4, E4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7", inversion: 0}
+      - interval: {from: G3, to: F4, is: m7}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: V-055-4
+    type: sing-phrase
+    prompt:
+      en: "The tritone as a diminished 5th: B up to F (both from G7), then F down to E. Hear the D in between in your head if you need it."
+      sr: "Tritonus kao smanjena kvinta: H naviše do F (oba iz G7), pa F naniže do E. Ako treba, čuj D između u glavi."
+    notes: [B3, F4, E4]
+    beats: [1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: B3, to: F4, is: d5}
+      - semitones: {from: B3, to: F4, is: 6}
+  - id: V-055-5
+    type: sing-phrase
+    prompt:
+      en: "The tritone as an augmented 4th: C, up to F#, then a half step up to G. F# leans into G like a leading tone."
+      sr: "Tritonus kao prekomerna kvarta: C, naviše do Fis, pa polustepen naviše do G. Fis se naslanja na G kao vođica."
+    notes: [C4, F#4, G4]
+    beats: [1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: F#4, is: A4}
+      - interval: {from: F#4, to: G4, is: m2}
+      - semitones: {from: C4, to: F#4, is: 6}
+  - id: V-055-6
+    type: sing-phrase
+    prompt:
+      en: "The major 7th in context: C-E-G-B (the C major 7th chord), then B up to C. The B sits just under the octave; keep it high."
+      sr: "Velika septima u kontekstu: C-E-G-H (C-dur veliki septakord), pa H naviše do C. H stoji tik ispod oktave; drži ga visoko."
+    notes: [C4, E4, G4, B4, C5]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [C4, E4, G4, B4], root: C, quality: maj7, inversion: 0}
+      - interval: {from: C4, to: B4, is: M7}
+  - id: V-055-7
+    type: sing-phrase
+    prompt:
+      en: "Now leaping straight there: C up to B, then up to C; G up to F, then down to E. No arpeggio in between."
+      sr: "Sada skokom pravo do cilja: C naviše do H, pa do C; G naviše do F, pa naniže do E. Bez razloženog akorda između."
+    notes: [C4, B4, C5, r, G3, F4, E4]
+    beats: [1, 1, 2, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: B4, is: M7}
+      - interval: {from: G3, to: F4, is: m7}
+  - id: V-055-8
+    type: generated
+    prompt:
+      en: "Hear a root, then sing the interval above it. Think of the chord it belongs to before you sing."
+      sr: "Čuj osnovni ton, pa otpevaj interval iznad njega. Pre pevanja pomisli kom akordu pripada."
+    count: 4
+    gen: {kind: pitch-match, intervals: [A4, m7, M7], tolerance: 50}
+  - id: V-055-9
+    type: mcq
+    prompt:
+      en: "In G7, the notes B and F form a tritone. Spelled from B up to F, what is it called?"
+      sr: "U G7 tonovi H i F čine tritonus. Zapisan od H naviše do F, kako se zove?"
+    options:
+      - {en: "diminished 5th", sr: "smanjena kvinta"}
+      - {en: "augmented 4th", sr: "prekomerna kvarta"}
+      - {en: "perfect 5th", sr: "čista kvinta"}
+      - {en: "minor 7th", sr: "mala septima"}
+    answer: 0
+    checks:
+      - interval: {from: B3, to: F4, is: d5}
+  - id: V-055-10
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: play G7 and sing B-F-E, then play C and sing C-B-C. Rate whether you could find the B and the F without the arpeggio. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: odsviraj G7 i otpevaj H-F-E, pa odsviraj C i otpevaj C-H-C. Oceni da li si našao H i F bez razloženog akorda. Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,140 @@
+id: V-058
+track: V
+order: 58
+title: {en: "Song phrase IV: a folk song (public-domain)", sr: "Fraza iz pesme IV: narodna pesma (javno dobro)"}
+prereqs: [V-057, V-039]
+minutes: 12
+tags: [voice, song, phrases]
+explain:
+  en: |
+    **"Auld Lang Syne"**: a traditional Scottish tune, with words written down and extended by Robert Burns (1788). Both are public domain. It is sung at New Year
+    all over the world; Scots words: *auld* = old, *lang syne* = long since, "the old days". Below is the first verse in the usual sung form ("and days of auld lang syne"),
+    in F major, with the one-beat pickup.
+
+    ```abc
+    X:1
+    T:Auld Lang Syne
+    M:4/4
+    L:1/8
+    Q:1/4=80
+    K:F
+    C2 | F3 F F2 A2 | G3 F G2 A2 | F3 F A2 c2 | d6 d2 |
+    w: Should auld ac-quaint-ance be for-got, and nev-er brought to mind? Should
+    c3 A A2 F2 | G3 F G2 A2 | F3 D D2 C2 | F6 |]
+    w: auld ac-quaint-ance be for-got, and days of auld lang syne?
+    ```
+
+    What to notice before singing:
+
+    - **Only five pitch classes:** F G A C D. No B flat and no E: it is the **F major pentatonic** scale, the scale of countless folk songs. That is why it feels so easy
+      to sing and so hard to sing wrong.
+    - **The dotted rhythm** (dotted quarter + eighth) on every bar's first beat gives it its swing: long-short, with the short note light and quick, almost a pickup to the next.
+    - **Range: a 9th**, from the C below the tonic to the high D. The high D on "mind" comes after a rising line (F A C D), and the second half **starts on top** ("Should"
+      on D) and falls. Use lesson 46: light at the top, a little quieter, and no reaching.
+    - **Phrasing (lesson 56):** two 4-bar phrases. The first rises to its peak on "mind"; the second falls from that peak and lands on "syne".
+
+    Order: line 1 on "la", line 2 on "la", then the whole verse with words. Sing in any comfortable octave; the notes are fitted to your range.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **„Auld Lang Syne”**: tradicionalna škotska melodija, sa rečima koje je zapisao i proširio Robert Berns (1788). Obe su javno dobro. Peva se za Novu godinu
+    širom sveta; škotske reči: *auld* = staro, *lang syne* = davno, „stari dani”. Ispod je prva strofa u uobičajenom pevanom obliku („and days of auld lang syne”),
+    u F-duru, sa predtaktom od jedne dobe.
+
+    ```abc
+    X:1
+    T:Auld Lang Syne
+    M:4/4
+    L:1/8
+    Q:1/4=80
+    K:F
+    C2 | F3 F F2 A2 | G3 F G2 A2 | F3 F A2 c2 | d6 d2 |
+    w: Should auld ac-quaint-ance be for-got, and nev-er brought to mind? Should
+    c3 A A2 F2 | G3 F G2 A2 | F3 D D2 C2 | F6 |]
+    w: auld ac-quaint-ance be for-got, and days of auld lang syne?
+    ```
+
+    Šta da primetiš pre pevanja:
+
+    - **Samo pet tonova:** F G A C D. Nema B ni E: to je **F-dur pentatonika**, lestvica bezbroj narodnih pesama. Zato se peva tako lako,
+      a tako teško pogrešno.
+    - **Punktirani ritam** (četvrtina sa tačkom + osmina) na prvoj dobi svakog takta daje joj zamah: dugo-kratko, a kratki ton lagan i brz, skoro predudar za sledeći.
+    - **Opseg: nona**, od C ispod tonike do visokog D. Visoko D na „mind” dolazi posle linije naviše (F A C D), a druga polovina **počinje na vrhu** („Should”
+      na D) i pada. Koristi 46. lekciju: lagano na vrhu, malo tiše, bez dohvatanja.
+    - **Fraziranje (56. lekcija):** dve fraze od po 4 takta. Prva raste do vrha na „mind”; druga pada sa tog vrha i doskače na „syne”.
+
+    Redosled: prvi red na „la”, drugi red na „la”, pa cela strofa sa rečima. Pevaj u bilo kojoj udobnoj oktavi; tonovi su prilagođeni tvom opsegu.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-058-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-058-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then hum the F major pentatonic up and down with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa pevuši F-dur pentatoniku gore i dole uz klavir."
+    play: {notes: [F4, G4, A4, C5, D5, C5, A4, G4, F4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: F, type: major-pentatonic, is: [F, G, A, C, D]}
+  - id: V-058-3
+    type: mcq
+    prompt:
+      en: "The melody uses only F, G, A, C and D. Which scale is that?"
+      sr: "Melodija koristi samo F, G, A, C i D. Koja je to lestvica?"
+    options:
+      - {en: "F major pentatonic", sr: "F-dur pentatonika"}
+      - {en: "F major", sr: "F-dur"}
+      - {en: "B flat major", sr: "B-dur"}
+      - {en: "F minor", sr: "f-mol"}
+    answer: 0
+    checks:
+      - scale: {tonic: F, type: major-pentatonic, is: [F, G, A, C, D]}
+  - id: V-058-4
+    type: sing-phrase
+    prompt:
+      en: "Line 1 (pickup + bars 1-4) on 'la': long-short on each first beat, rising to the high D. Light on top."
+      sr: "Prvi red (predtakt + taktovi 1-4) na „la”: dugo-kratko na svakoj prvoj dobi, naviše do visokog D. Lagano na vrhu."
+    notes: [C4, F4, F4, F4, A4, G4, F4, G4, A4, F4, F4, A4, C5, D5]
+    beats: [1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 3]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: C4, to: D5, is: M9}
+  - id: V-058-5
+    type: sing-phrase
+    prompt:
+      en: "Line 2 on 'la': it starts on the high D ('Should') and falls to the tonic. Start the D small, then let the line come down."
+      sr: "Drugi red na „la”: počinje na visokom D („Should”) i pada do tonike. Počni D malim, pa pusti liniju da se spusti."
+    notes: [D5, C5, A4, A4, F4, G4, F4, G4, A4, F4, D4, D4, C4, F4]
+    beats: [1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 3]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: F, type: major-pentatonic, is: [F, G, A, C, D]}
+  - id: V-058-6
+    type: sing-phrase
+    prompt:
+      en: "The whole verse with words: 'Should auld acquaintance be forgot, and never brought to mind? Should auld acquaintance be forgot, and days of auld lang syne?' Peak on 'mind', land on 'syne'."
+      sr: "Cela strofa sa rečima: „Should auld acquaintance be forgot, and never brought to mind? Should auld acquaintance be forgot, and days of auld lang syne?” Vrh na „mind”, doskok na „syne”."
+    abc: "X:1\nM:4/4\nL:1/8\nK:F\nC2 | F3 F F2 A2 | G3 F G2 A2 | F3 F A2 c2 | d6 d2 |\nw: Should auld ac-quaint-ance be for-got, and nev-er brought to mind? Should\nc3 A A2 F2 | G3 F G2 A2 | F3 D D2 C2 | F6 |]\nw: auld ac-quaint-ance be for-got, and days of auld lang syne?"
+    notes: [C4, F4, F4, F4, A4, G4, F4, G4, A4, F4, F4, A4, C5, D5, D5, C5, A4, A4, F4, G4, F4, G4, A4, F4, D4, D4, C4, F4]
+    beats: [1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 3, 1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 1.5, 0.5, 1, 1, 3]
+    tempo: 80
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: F, type: major-pentatonic, is: [F, G, A, C, D]}
+  - id: V-058-7
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: play the melody with your right hand and F, C and B flat chords in your left, and sing along. Then sing it once without the piano and check the last note against F. Rate: in tune at the end? Then 3 quiet hums sliding down."
+      sr: "Samostalno: odsviraj melodiju desnom rukom i akorde F, C i B levom, i pevaj uz to. Pa je otpevaj jednom bez klavira i proveri poslednji ton prema F. Oceni: čisto na kraju? Pa 3 tiha pevušenja uz klizanje naniže."

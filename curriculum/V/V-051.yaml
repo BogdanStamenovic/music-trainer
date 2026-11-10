@@ -1,0 +1,146 @@
+id: V-051
+track: V
+order: 51
+title: {en: "Belt intro II: short calls on 3 notes, mid range", sr: "Uvod u belting II: kratki pozivi na 3 tona, srednji opseg"}
+prereqs: [V-050]
+minutes: 11
+tags: [voice, belt]
+explain:
+  en: |
+    Lesson 50 had one-word calls. Today a call becomes a tiny **sung phrase of three notes**: still short, still in the middle of your range, still capped at
+    **calling across a room**. The new skill is keeping the call quality **while the pitch moves**, without the second and third notes getting bigger.
+
+    What keeps a three-note call healthy:
+
+    - **Speech first.** Say the words as a call on one pitch, then sing them. The singing must not be louder than the spoken call (lesson 49).
+    - **Vowels that call.** "eh", "ay", "yeah", a short "ah" shaped like speech. Avoid a wide, yawning "ah" (it adds weight) and "oo" (it does not call).
+    - **Falling is easier than rising.** Real calls fall: "Come on home!" goes down. We start with 3-2-1 and only then 1-2-3. Rising calls are where the
+      push sneaks in: the top note wants to get louder. Keep it the same size, or make it smaller.
+    - **Finish clean.** Release the last note on time; do not hold it out. Long belted notes are not part of this course yet.
+    - **Twang, not volume.** If the call does not carry, add a little brightness (lesson 48), never more push.
+
+    **The rules (unchanged from lesson 50):** short (at most 3 notes), mid range only (the app places the calls in the middle of your range; no high belt),
+    volume no more than calling across a room, **20 seconds of quiet breathing after every call**, at most 10 calls today, no grit or distortion.
+
+    **Grading:** pitch only, plus your self-rating of ease. Louder never scores higher: the score cannot hear health, and the ease rating drops when you push.
+
+    **Stop protocol.** Stop the belt work at once, and end voice work for today, at any scratch or tickle, urge to clear the throat, strain, tight neck,
+    hoarseness, pain, or a voice that goes breathy or cracks afterwards. If hoarseness lasts more than two weeks, see an ENT doctor; if the voice suddenly goes or it hurts sharply during a call, see one promptly.
+  sr: |
+    U 50. lekciji pozivi su bili od jedne reči. Danas poziv postaje mala **pevana fraza od tri tona**: i dalje kratka, i dalje u sredini opsega, i dalje ograničena na
+    **poziv preko sobe**. Nova veština je da zadržiš kvalitet poziva **dok se visina menja**, a da drugi i treći ton ne postanu veći.
+
+    Šta drži poziv od tri tona zdravim:
+
+    - **Prvo govor.** Izgovori reči kao poziv na jednoj visini, pa ih otpevaj. Pevanje ne sme da bude glasnije od izgovorenog poziva (49. lekcija).
+    - **Samoglasnici koji zovu.** „e”, „ej”, „jea”, kratko „a” oblikovano kao u govoru. Izbegavaj široko „a” kao zevanje (dodaje težinu) i „u” (ono ne zove).
+    - **Naniže je lakše nego naviše.** Pravi pozivi padaju: „Hajde kući!” ide naniže. Počinjemo sa 3-2-1, a tek onda 1-2-3. Pozivi naviše su mesto gde se
+      guranje ušunja: gornji ton hoće da postane glasniji. Zadrži ga iste veličine ili ga smanji.
+    - **Čist završetak.** Pusti poslednji ton na vreme; ne drži ga. Dugi tonovi u beltingu još nisu deo ovog kursa.
+    - **Tvang, ne jačina.** Ako poziv ne nosi, dodaj malo svetline (48. lekcija), nikad više guranja.
+
+    **Pravila (ista kao u 50. lekciji):** kratko (najviše 3 tona), samo srednji opseg (aplikacija stavlja pozive u sredinu tvog opsega; bez visokog beltinga),
+    jačina najviše kao poziv preko sobe, **20 sekundi tihog disanja posle svakog poziva**, najviše 10 poziva danas, bez hrapavosti i distorzije.
+
+    **Ocenjivanje:** samo visina, plus tvoja samoprocena lakoće. Glasnije nikad ne donosi veću ocenu: ocena ne može da čuje zdravlje, a ocena lakoće pada kad guraš.
+
+    **Protokol za prekid.** Odmah prekini belting, i završi rad sa glasom za danas, na svako grebanje ili golicanje, potrebu da pročistiš grlo, naprezanje, stegnut vrat,
+    promuklost, bol, ili glas koji posle postane vazdušast ili puca. Ako promuklost traje duže od dve nedelje, idi kod lekara ORL; ako glas tokom poziva naglo nestane ili oštro zaboli, idi odmah.
+exercises:
+  - id: V-051-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel? (Belt work only on a 'fine' day.)"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Belting samo kad je glas „dobro”.)"
+  - id: V-051-2
+    type: practice
+    minutes: 3
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, bratty 'nay' 1-2-3-4-5-4-3-2-1, a tiny cackle for twang, then the spoken volume ladder once: 'Hey!' next to you, across a table, across a room (the cap)."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, zadirkujuće „nej” 1-2-3-4-5-4-3-2-1, sitan kikot za tvang, pa jednom izgovorena lestvica jačine: „Hej!” pored tebe, preko stola, preko sobe (granica)."
+  - id: V-051-3
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Falling call 3-2-1: 'Here I am!' / 'E-vo me!' as a call across a room. Say it as a call first, then sing it at the same size. Then rest 20 seconds."
+      sr: "Poziv naniže 3-2-1: „E-vo me!” / „Here I am!” kao poziv preko sobe. Prvo ga izgovori kao poziv, pa ga otpevaj iste veličine. Pa odmor 20 sekundi."
+    notes: [E4, D4, C4]
+    beats: [1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - syllables: {text: "Evo me", lang: sr, is: 3}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-051-4
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Falling call in minor, 3-2-1: 'Where are you?' / 'Gde si ti?' across a room. Then rest 20 seconds."
+      sr: "Poziv naniže u molu, 3-2-1: „Gde si ti?” / „Where are you?” preko sobe. Pa odmor 20 sekundi."
+    notes: [C4, B3, A3]
+    beats: [1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - syllables: {text: "Gde si ti", lang: sr, is: 3}
+      - interval: {from: A3, to: C4, is: m3}
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+  - id: V-051-5
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The call 5-3-1, a triad falling: 'Hey, hel-lo!' / 'Hej, ha-lo!'. The 5 is the top: start it at speaking size, not bigger. Then rest 20 seconds."
+      sr: "Poziv 5-3-1, kvintakord naniže: „Hej, ha-lo!” / „Hey, hel-lo!”. 5 je vrh: počni ga veličinom govora, ne veće. Pa odmor 20 sekundi."
+    notes: [G4, E4, C4]
+    beats: [1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - syllables: {text: "Hej halo", lang: sr, is: 3}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+  - id: V-051-6
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Now rising, 1-2-3: 'Yeah, yeah, yeah!' / 'Je, je, je!' The 3 the same size as the 1, released on time; if it grows, sing it at the 'across a table' level. Then rest 20 seconds."
+      sr: "Sada naviše, 1-2-3: „Je, je, je!” / „Yeah, yeah, yeah!”. 3 iste veličine kao 1, pušten na vreme; ako raste, otpevaj ga na nivou „preko stola”. Pa odmor 20 sekundi."
+    notes: [D4, E4, F#4]
+    beats: [1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - interval: {from: D4, to: F#4, is: M3}
+  - id: V-051-7
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Two calls with a rest between (a breath, not a push): 3-2-1, rest, 3-2-1 on 'Here I am! ... Here I am!' / 'Evo me! ... Evo me!'. Then rest 20 seconds."
+      sr: "Dva poziva sa pauzom između (udah, ne guranje): 3-2-1, pauza, 3-2-1 na „Evo me! ... Evo me!” / „Here I am! ... Here I am!”. Pa odmor 20 sekundi."
+    notes: [F4, E4, D4, r, F4, E4, D4]
+    beats: [1, 1, 2, 2, 1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - interval: {from: D4, to: F4, is: m3}
+  - id: V-051-8
+    type: mcq
+    prompt:
+      en: "On the rising call the top note keeps getting louder. Which fix fits the belt rules?"
+      sr: "Na pozivu naviše gornji ton postaje sve glasniji. Koje rešenje odgovara pravilima beltinga?"
+    options:
+      - {en: "Keep the top the same size or smaller, add a little twang for carry, or do it at table level", sr: "Zadrži vrh iste veličine ili manjim, dodaj malo tvanga za nošenje ili ga uradi na nivou stola"}
+      - {en: "Breathe in more so the top can be louder", sr: "Udahni više da vrh može da bude glasniji"}
+      - {en: "Hold the top note longer so it settles", sr: "Drži gornji ton duže da se smiri"}
+      - {en: "Add a little grit so it sounds like rock", sr: "Dodaj malo hrapavosti da zvuči kao rok"}
+    answer: 0
+  - id: V-051-9
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-rating and cool-down: count today's calls (no more than 10), rate ease (free / some effort / squeezed) and aftermath (no scratch, no hoarseness?). Then 3 quiet 'oo' sirens down and 3 soft hums. Talk little for the next 10 minutes."
+      sr: "Samoprocena i smirivanje: prebroj današnje pozive (ne više od 10), oceni lakoću (slobodno / malo napora / stisnuto) i posledice (bez grebanja, bez promuklosti?). Pa 3 tihe sirene na „u” naniže i 3 tiha pevušenja. Sledećih 10 minuta malo pričaj."

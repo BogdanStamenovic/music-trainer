@@ -1,0 +1,130 @@
+id: V-052
+track: V
+order: 52
+title: {en: "Breath for stronger sound (support, not push)", sr: "Dah za jači zvuk (oslonac, ne guranje)"}
+prereqs: [V-051, V-036]
+minutes: 11
+tags: [voice, breath, support]
+explain:
+  en: |
+    The calls of lessons 50-51 need a little more sound than the light mix. Where does "more" come from? Not from more air. A stronger sound is made of three things,
+    and breath is only one of them:
+
+    | ingredient | what it does | lesson |
+    |---|---|---|
+    | **fold closure** | the folds close firmly but without squeezing, so less air leaks and more of it becomes sound | 5, 29 |
+    | **resonance / twang** | the tract amplifies the sound where the ear is most sensitive | 41, 48 |
+    | **breath pressure, steadily held** | slightly more pressure under the folds, kept **even** by the balance of support | 2, 36 |
+
+    The trap is to treat the third ingredient as "push from the belly". A hard belly squeeze sends a burst of pressure up; the throat closes to resist it, and you get the
+    **pressed** sound: tight, loud, tiring. That is pushing. Support works the other way: the ribs stay **wide** and the breathing-in muscles keep resisting gently, so the
+    pressure under the folds is **steady**, not a blast. You need a little more of it for a call than for a hum, never a lot.
+
+    Today's tools:
+
+    - **Hiss** ("sss"): the most even outflow you can make, ribs wide. Then the same evenness under a sung note.
+    - **Pulses** ("ts-ts-ts", then "hey-hey-hey"): a small, quick move of the lower belly for each one, with the **throat doing nothing**. This is the energy a call needs: short and elastic.
+    - **A small swell** on one note, soft to medium and back (lesson 40), with the pitch steady: more pressure without pitch going sharp or the throat taking over.
+
+    Medium is the ceiling today. The app grades pitch only; whether it was supported or pushed is in the self-ratings, and pushing is always the wrong answer.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    Pozivi iz 50-51. lekcije traže malo više zvuka od laganog miksa. Odakle dolazi to „više”? Ne od više vazduha. Jači zvuk je sastavljen od tri stvari,
+    a dah je samo jedna od njih:
+
+    | sastojak | šta radi | lekcija |
+    |---|---|---|
+    | **zatvaranje glasnica** | glasnice se zatvaraju čvrsto, ali bez stezanja, pa manje vazduha curi, a više postaje zvuk | 5, 29 |
+    | **rezonancija / tvang** | prostor iznad glasnica pojačava zvuk tamo gde je uho najosetljivije | 41, 48 |
+    | **pritisak daha, mirno održan** | malo veći pritisak ispod glasnica, držan **ravnomerno** ravnotežom oslonca | 2, 36 |
+
+    Zamka je da treći sastojak shvatiš kao „guranje iz stomaka”. Snažno stiskanje stomaka šalje nalet pritiska naviše; grlo se zatvara da mu se odupre i dobiješ
+    **pritisnut** zvuk: stegnut, glasan, zamoran. To je guranje. Oslonac radi obrnuto: rebra ostaju **široka**, a mišići udaha nastavljaju nežno da se opiru, pa je
+    pritisak ispod glasnica **miran**, a ne nalet. Za poziv ti treba malo više toga nego za pevušenje, nikad mnogo.
+
+    Današnji alati:
+
+    - **Siktanje** („sss”): najravnomerniji izdah koji možeš, rebra široka. Pa ista ravnomernost ispod pevanog tona.
+    - **Impulsi** („c-c-c”, pa „hej-hej-hej”): mali, brz pokret donjeg stomaka za svaki, a **grlo ne radi ništa**. To je energija koja treba pozivu: kratka i elastična.
+    - **Malo bujanje** na jednom tonu, od tihog do srednjeg i nazad (40. lekcija), sa mirnom visinom: više pritiska, a da visina ne ode naviše i da grlo ne preuzme.
+
+    Srednja jačina je danas plafon. Aplikacija ocenjuje samo visinu; da li je bilo oslonca ili guranja, ide u samoprocenu, a guranje je uvek pogrešan odgovor.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-052-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-052-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: hands on the lower ribs, 4 low silent breaths; then 3 hisses ('sss') of 15-20 seconds, ribs staying wide as long as you can. Then 3 lip-trill sirens."
+      sr: "Zagrevanje: ruke na donjim rebrima, 4 niska tiha udaha; pa 3 siktanja („sss”) od 15-20 sekundi, rebra široka što duže. Pa 3 sirene treperenjem usana."
+  - id: V-052-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Pulses: 4 x 'ts-ts-ts-ts', one small move of the lower belly per 'ts', throat silent. Then the same on spoken 'hey-hey-hey-hey' at table level. Rate: did the belly do the work while the throat stayed free?"
+      sr: "Impulsi: 4 x „c-c-c-c”, jedan mali pokret donjeg stomaka za svako „c”, grlo mirno. Pa isto na izgovoreno „hej-hej-hej-hej” na nivou stola. Oceni: da li je stomak radio posao dok je grlo ostalo slobodno?"
+  - id: V-052-4
+    type: sing-phrase
+    prompt:
+      en: "Pulsed 5-3-1 on short 'hey' notes with a short silence between (no new breath needed): each note a small kick from the belly, not the throat. Speaking volume."
+      sr: "Impulsi 5-3-1 na kratkim „hej” tonovima, sa kratkom tišinom između (bez novog udaha): svaki ton mali impuls iz stomaka, ne iz grla. Jačina govora."
+    notes: [A4, r, F#4, r, D4]
+    beats: [0.5, 0.5, 0.5, 0.5, 1]
+    tempo: 72
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-052-5
+    type: sing-pitch
+    prompt:
+      en: "Hiss, then sing: 5 seconds of 'sss', a breath, then 'nay' on the note for 5 seconds with the same evenness as the hiss. Steady, medium-soft."
+      sr: "Sikni, pa pevaj: 5 sekundi „sss”, pa udahni i otpevaj „nej” na tonu 5 sekundi, ravnomerno kao siktanje. Mirno, srednje tiho."
+    notes: [C4]
+    sustain: 5
+    tolerance: 50
+    pass: 0.65
+  - id: V-052-6
+    type: sing-pitch
+    prompt:
+      en: "A small swell: 'ah' on the note for 6 seconds, soft, up to medium (no more), back to soft. The pitch must not rise as it gets stronger, and the throat must not tighten."
+      sr: "Malo bujanje: „a” na tonu 6 sekundi, tiho, do srednje jačine (ne više), pa nazad u tiho. Visina ne sme da poraste dok jača, a grlo ne sme da se stegne."
+    notes: [E4]
+    sustain: 6
+    tolerance: 50
+    pass: 0.65
+  - id: V-052-7
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-4-5-4-3-2-1 on 'hey', a little stronger than speech, legato, ribs wide to the end. The last note as steady as the first."
+      sr: "1-2-3-4-5-4-3-2-1 na „hej”, malo jače od govora, legato, rebra široka do kraja. Poslednji ton miran kao prvi."
+    notes: [D4, E4, F#4, G4, A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-052-8
+    type: mcq
+    prompt:
+      en: "You want a stronger sound for a call. Which is support rather than pushing?"
+      sr: "Želiš jači zvuk za poziv. Šta je oslonac, a ne guranje?"
+    options:
+      - {en: "Ribs wide, a small elastic move of the lower belly, throat free, a little twang", sr: "Široka rebra, mali elastičan pokret donjeg stomaka, slobodno grlo, malo tvanga"}
+      - {en: "A big breath and a hard squeeze of the belly on the note", sr: "Veliki udah i snažno stiskanje stomaka na tonu"}
+      - {en: "Hold the breath behind a closed throat, then let it burst", sr: "Zadrži dah iza zatvorenog grla, pa ga pusti naglo"}
+    answer: 0
+  - id: V-052-9
+    type: practice
+    minutes: 1
+    prompt:
+      en: "Self-check: rate the swell (did pitch and throat stay quiet as it grew?) and the pulses (belly or throat?). Then 3 quiet hums sliding down."
+      sr: "Samoprocena: oceni bujanje (da li su visina i grlo ostali mirni dok je raslo?) i impulse (stomak ili grlo?). Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,143 @@
+id: V-046
+track: V
+order: 46
+title: {en: "Mix development I: carrying light mix higher", sr: "Razvoj miksa I: lagani miks sve više"}
+prereqs: [V-045, V-030, V-031]
+minutes: 11
+tags: [voice, register, mix]
+explain:
+  en: |
+    In lesson 30 you moved the 5-note scale up by half steps and stopped at the first round that grew, flipped or tightened. In lesson 45 the light mix held through
+    a whole song. Today the goal is to carry that **same small, speech-like sound a little higher**: not new notes at any price, but the same coordination on notes
+    that used to need a change.
+
+    Why it gets harder going up: higher pitch means the vocal folds **stretch longer and thinner**. Two things can go wrong:
+
+    | what happens | how it sounds and feels | name |
+    |---|---|---|
+    | you keep the thick, speaking setting and add effort to reach the note | louder and louder, larynx climbs, neck tightens, it finally cracks | "pulling chest" |
+    | you let go of the closure completely | it flips into a hollow, airy sound | falsetto (lesson 28) |
+    | the folds thin out gradually but **keep closing** | the same size of sound, a little brighter, a little lighter | light mix |
+
+    The tools for the third path, in order of usefulness:
+
+    1. **Get a little quieter as you go up.** The instinct is the opposite. A light mix near the top of your range is often *softer* than at the bottom, and that is correct.
+    2. **Narrow vowels at the top.** "Nay", "nee" and "noo" stay light more easily than "ah"; if a word has "ah" at the top, round it slightly toward "uh" (lesson 31).
+    3. **Keep the bratty edge.** The "nay" pinch (a little twang) holds the folds together without weight. Without it the top note drifts into falsetto.
+    4. **Come from above.** Start the hardest pattern with its top note (5-4-3-2-1), so the light setting comes down with you instead of weight going up.
+
+    Today's phrases are placed toward the **top** of your stored comfortable range (some may reach 2 semitones above it, the same margin as in lesson 44).
+    If a top note grows, lighten it toward head voice or sing that phrase an octave lower; the app accepts any octave, and it grades **pitch only**.
+    Whether it was mix, chest or head is your call.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    U 30. lekciji pomerao si lestvicu od pet tonova naviše za polustepen i stao na prvoj rundi koja je porasla, preskočila ili se stegla. U 45. lekciji lagani miks je držao
+    kroz celu pesmu. Danas je cilj da **isti mali, govorni zvuk poneseš malo više**: ne nove tonove po svaku cenu, nego istu koordinaciju na tonovima
+    na kojima je ranije morala da se menja.
+
+    Zašto je naviše teže: viši ton znači da se glasnice **izdužuju i tanje**. Dve stvari mogu da pođu naopako:
+
+    | šta se dešava | kako zvuči i kakav je osećaj | naziv |
+    |---|---|---|
+    | zadržiš debelo, govorno podešavanje i dodaješ napor da dohvatiš ton | sve glasnije, grkljan se penje, vrat se steže, na kraju pukne | „vučenje grudnog” |
+    | potpuno pustiš zatvaranje | preskoči u šupalj, vazdušast zvuk | falset (28. lekcija) |
+    | glasnice se postepeno tanje, ali se **i dalje zatvaraju** | ista veličina zvuka, malo svetlije, malo lakše | lagani miks |
+
+    Alati za treći put, po korisnosti:
+
+    1. **Malo utišaj kako ideš naviše.** Instinkt kaže suprotno. Lagani miks pri vrhu opsega je često *tiši* nego dole, i to je ispravno.
+    2. **Uski samoglasnici na vrhu.** „Nej”, „ni” i „nu” lakše ostaju lagani od „a”; ako reč na vrhu ima „a”, malo ga zaobli ka „ə” (31. lekcija).
+    3. **Zadrži zadirkujuću ivicu.** Stisnuto „nej” (malo tvanga) drži glasnice zajedno bez težine. Bez nje gornji ton odluta u falset.
+    4. **Dođi odozgo.** Najteži obrazac počni gornjim tonom (5-4-3-2-1), da lako podešavanje siđe sa tobom umesto da težina ide naviše.
+
+    Današnje fraze su postavljene ka **vrhu** tvog sačuvanog udobnog opsega (neke mogu da dođu 2 polustepena iznad, ista margina kao u 44. lekciji).
+    Ako gornji ton poraste, olakšaj ga ka glavnom glasu ili otpevaj tu frazu oktavu niže; aplikacija prihvata svaku oktavu i ocenjuje **samo visinu**.
+    Da li je bio miks, grudni ili glavni glas, procenjuješ ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-046-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-046-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, spoken bratty 'nay-nay-nay' at three rising pitches, then 5-4-3-2-1 on 'nay' with the piano."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, izgovoreno zadirkujuće „nej-nej-nej” na tri sve više visine, pa 5-4-3-2-1 na „nej” uz klavir."
+    play: {notes: [A4, G4, F#4, E4, D4], mode: melodic, tempo: 90}
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-046-3
+    type: sing-phrase
+    prompt:
+      en: "From above: 5-4-3-2-1 on bratty 'nay', placed high in your range. Start the 5 small and keep that size all the way down."
+      sr: "Odozgo: 5-4-3-2-1 na zadirkujuće „nej”, visoko u tvom opsegu. Počni 5 malim i zadrži tu veličinu do dna."
+    notes: [A4, G4, F#4, E4, D4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: V-046-4
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'nee', high in your range. The 5 a little quieter than the 1, narrow 'ee', no chin lift."
+      sr: "1-3-5-3-1 na „ni”, visoko u opsegu. 5 malo tiše od 1, usko „i”, bez podizanja brade."
+    notes: [E4, G#4, B4, G#4, E4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj, inversion: 0}
+  - id: V-046-5
+    type: sing-phrase
+    prompt:
+      en: "1-2-3-4-5-4-3-2-1 on 'nay', high in your range. Think 'same', not 'higher'; on 4 and 5 keep the bratty shape instead of opening the mouth."
+      sr: "1-2-3-4-5-4-3-2-1 na „nej”, visoko u opsegu. Misli „isto”, ne „više”; na 4 i 5 zadrži zadirkujući oblik umesto da otvaraš usta."
+    notes: [F4, G4, A4, Bb4, C5, Bb4, A4, G4, F4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 76
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: F4, to: C5, is: P5}
+  - id: V-046-6
+    type: sing-phrase
+    prompt:
+      en: "The whole octave on 'nay': 1-3-5-8-5-3-1, the 8 the lightest note of the phrase. Touch it and come back."
+      sr: "Cela oktava na „nej”: 1-3-5-8-5-3-1, 8 je najlakši ton fraze. Dodirni ga i vrati se."
+    notes: [D4, F#4, A4, D5, A4, F#4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+      - interval: {from: D4, to: D5, is: P8}
+  - id: V-046-7
+    type: mcq
+    prompt:
+      en: "Carrying 'nay' higher, the top note starts to grow and the larynx climbs. Which change keeps it a light mix?"
+      sr: "Dok nosiš „nej” naviše, gornji ton počinje da raste i grkljan se penje. Koja promena ga zadržava kao lagani miks?"
+    options:
+      - {en: "A little quieter, a narrower vowel, keep the bratty edge", sr: "Malo tiše, uži samoglasnik, zadrži zadirkujuću ivicu"}
+      - {en: "More breath and more volume so it does not crack", sr: "Više daha i više jačine da ne pukne"}
+      - {en: "Open the mouth wide on 'ah' to make room", sr: "Široko otvori usta na „a” da napraviš prostor"}
+      - {en: "Lift the chin to reach the note", sr: "Podigni bradu da dohvatiš ton"}
+    answer: 0
+  - id: V-046-8
+    type: practice
+    minutes: 2
+    prompt:
+      en: "On your own: play 1-2-3-4-5-4-3-2-1 and sing it on 'nay', moving up a half step per round, as in lesson 30. Stop at the first round that grows, flips or tightens; finish one key lower. Rate: did you get further than in lesson 30 with the sound the same size? Then 3 quiet 'oo' sirens down."
+      sr: "Samostalno: odsviraj 1-2-3-4-5-4-3-2-1 i otpevaj na „nej”, za polustepen više u svakoj rundi, kao u 30. lekciji. Stani na prvoj rundi koja poraste, preskoči ili se stegne; završi tonalitet niže. Oceni: da li si stigao dalje nego u 30. lekciji, a da je zvuk ostao iste veličine? Pa 3 tihe sirene na „u” naniže."

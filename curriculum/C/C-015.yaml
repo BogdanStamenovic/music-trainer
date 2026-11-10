@@ -1,0 +1,176 @@
+id: C-015
+track: C
+order: 15
+prereqs: [C-014, T-044]
+title: {en: "Writing over a given progression with a secondary dominant", sr: "Pisanje nad zadatim nizom sa sporednom dominantom"}
+minutes: 15
+tags: [composition, melody, harmony, secondary-dominant]
+explain:
+  en: |
+    A secondary dominant (T-043, T-044) borrows the dominant of another chord: in C major,
+    **V7/V** is D7 (D F♯ A C) and leads to G; **V7/vi** is E7 (E G♯ B D) and leads to Am. Each
+    brings **one chromatic note**, and that note is the leading tone of its target.
+
+    | in C | chord | chromatic note | goes to | target |
+    |---|---|---|---|---|
+    | V7/V | D7 | F♯ | G | V (G) |
+    | V7/vi | E7 | G♯ | A | vi (Am) |
+    | V7/ii | A7 | C♯ | D | ii (Dm) |
+
+    When the progression is **given** (a co-writer's chords, a lead sheet), the melody has two
+    jobs over the secondary dominant:
+
+    1. **Do not fight it.** The natural version of the chromatic note (F over D7, G over E7) on
+       a strong beat is a clash a half step wide. Over D7, use D, F♯, A, C.
+    2. **Use it.** The chromatic note is the most colourful note in the bar. Putting it in the
+       melody and letting it rise a half step into the next chord makes the melody **lead** the
+       harmony instead of just sitting on it.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^C"c B G E | "^E7"B d B ^G | "^Am"A c e c | "^D7"d c A ^F | "^G7"G B d B | "^C"c4 |]
+    ```
+
+    G♯ ends bar 2 and rises to A on the downbeat of Am; F♯ ends bar 4 and rises to G. The
+    chromatic note sits **just before** its resolution, where the ear expects the step.
+
+    It is fine if the melody holds a common tone over the secondary dominant instead (A or C
+    over D7) and leaves F♯ to the accompaniment. What is not fine is F natural.
+
+    **About the grading:** in these exercises the "all notes in the key" check is off, because
+    the chromatic note is the point. The bass is given, and the parallels check still runs.
+
+    **At the keyboard:** play C – E7 – Am – D7 – G7 – C with the left hand. With the right,
+    find the chromatic note in each secondary dominant and play it into its resolution.
+  sr: |
+    Sporedna dominanta (T-043, T-044) pozajmljuje dominantu nekog drugog akorda: u C-duru je
+    **V7/V** D7 (D Fis A C) i vodi u G; **V7/vi** je E7 (E Gis H D) i vodi u a-mol. Svaka donosi
+    **jedan hromatski ton**, i taj ton je vođica akorda u koji ide.
+
+    | u C | akord | hromatski ton | ide na | cilj |
+    |---|---|---|---|---|
+    | V7/V | D7 | Fis | G | V (G) |
+    | V7/vi | E7 | Gis | A | vi (a-mol) |
+    | V7/ii | A7 | Cis | D | ii (d-mol) |
+
+    Kad je niz akorda **zadat** (akordi koautora, lead sheet), melodija nad sekundarnom
+    dominantom ima dva zadatka:
+
+    1. **Ne svađaj se sa njom.** Prirodna verzija hromatskog tona (F nad D7, G nad E7) na jakoj
+       dobi je sudar širok polustepen. Nad D7 koristi D, Fis, A, C.
+    2. **Iskoristi je.** Hromatski ton je najživopisniji ton u taktu. Kad ga staviš u melodiju i
+       pustiš da se popne za polustepen u sledeći akord, melodija **vodi** harmoniju, a ne samo
+       sedi na njoj.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^C"c B G E | "^E7"B d B ^G | "^a-mol"A c e c | "^D7"d c A ^F | "^G7"G B d B | "^C"c4 |]
+    ```
+
+    Gis završava takt 2 i penje se na A na prvoj dobi a-mola; Fis završava takt 4 i penje se na
+    G. Hromatski ton stoji **neposredno pre** razrešenja, gde uho očekuje korak.
+
+    U redu je i da melodija nad sporednom dominantom zadrži zajednički ton (A ili C nad D7), a
+    Fis prepusti pratnji. Nije u redu F.
+
+    **O ocenjivanju:** u ovim vežbama je provera „svi tonovi u tonalitetu“ isključena, jer je
+    hromatski ton poenta. Bas je zadat, a provera paralela i dalje radi.
+
+    **Za klavirom:** levom rukom sviraj C – E7 – a-mol – D7 – G7 – C. Desnom pronađi hromatski
+    ton u svakoj sporednoj dominanti i odsviraj ga u njegovo razrešenje.
+exercises:
+  - id: C-015-1
+    type: mcq
+    prompt: {en: "C major, the chord is V7/V (D7). Which melody note on beat 1 clashes with it?", sr: "C-dur, akord je V7/V (D7). Koji ton melodije na prvoj dobi se sudara sa njim?"}
+    options: ["F", "F#", "A", "C"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: "V7/V", notes: [D4, "F#4", A4, C5]}
+      - semitones: {from: F4, to: "F#4", is: 1}
+  - id: C-015-2
+    type: mcq
+    prompt: {en: "G major, V7/vi (B7: B D♯ F♯ A) goes to vi. The melody has D♯ at the end of the bar. Which note should come next?", sr: "G-dur, V7/vi (H7: H Dis Fis A) ide na vi. Melodija ima Dis na kraju takta. Koji ton treba da dođe sledeći?"}
+    options: ["E", "D", "C#", "F#"]
+    answer: 0
+    checks:
+      - numeral: {key: G, is: "V7/vi", notes: [B3, "D#4", "F#4", A4]}
+      - numeral: {key: G, is: "vi", notes: [E4, G4, B4]}
+      - semitones: {from: "D#4", to: E4, is: 1}
+  - id: C-015-3
+    type: mcq
+    prompt: {en: "F major. What is V7/ii, and which chromatic note does it bring?", sr: "F-dur. Šta je V7/ii i koji hromatski ton donosi?"}
+    options:
+      - {en: "D7 (D F♯ A C): F♯, rising to G", sr: "D7 (D Fis A C): Fis, koje ide naviše na G"}
+      - {en: "G7 (G B D F): B, rising to C", sr: "G7 (G H D F): H, koje ide naviše na C"}
+      - {en: "A7 (A C♯ E G): C♯, rising to D", sr: "A7 (A Cis E G): Cis, koje ide naviše na D"}
+      - {en: "C7 (C E G B♭): no chromatic note", sr: "C7 (C E G B): bez hromatskog tona"}
+    answer: 0
+    checks:
+      - numeral: {key: F, is: "V7/ii", notes: [D4, "F#4", A4, C5]}
+      - numeral: {key: F, is: "ii", notes: [G4, Bb4, D5]}
+      - numeral: {key: F, is: "V7/V", notes: [G3, B3, D4, F4]}
+      - numeral: {key: F, is: "V7/vi", notes: [A3, "C#4", E4, G4]}
+      - numeral: {key: F, is: "V7", notes: [C4, E4, G4, Bb4]}
+  - id: C-015-4
+    type: generated
+    prompt: {en: "Play I – V7/vi – vi – V7/V – V7 – I, smoothly voiced. Listen for the two chromatic notes and where they go.", sr: "Odsviraj I – V7/vi – vi – V7/V – V7 – I, sa glatkim vođenjem glasova. Osluškuj dva hromatska tona i kuda idu."}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, V7/vi, vi, V7/V, V7, I], smooth: true}
+  - id: C-015-5
+    type: compose
+    prompt:
+      en: "C major, 4 bars, two voices. Given: the bass C | D | G | C (I | V7/V | V | I) and melody bar 1. Write melody bars 2–4 in half and quarter notes: F♯ (not F) in bar 2, rising to G at the start of bar 3, and end on C. No parallel 5ths or octaves with the bass."
+      sr: "C-dur, 4 takta, dva glasa. Zadato: bas C | D | G | C (I | V7/V | V | I) i takt 1 melodije. Napiši taktove 2–4 melodije u polovinama i četvrtinama: Fis (ne F) u taktu 2, koje se penje na G na početku takta 3, i završi na C. Bez paralelnih kvinti i oktava sa basom."
+    given: "X:1\nM:4/4\nL:1/4\nK:C\nV:1\ne2 c2 |\nV:2 clef=bass\nC,4 | D,4 | G,,4 | C,4 |]\n"
+    key: C major
+    meter: 4/4
+    bars: 4
+    voices: 2
+    range: [C4, E5]
+    rules: [bars, rhythm, range, leaps, augmented, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      e2 c2 | A c A ^F | G2 B2 | c4 |]
+      V:2 clef=bass
+      C,4 | D,4 | G,,4 | C,4 |]
+    checks:
+      - numeral: {key: C, is: "V7/V", notes: [D3, "F#4", A4, C5]}
+      - numeral: {key: C, is: "V", notes: [G2, B4, D5]}
+      - semitones: {from: "F#4", to: G4, is: 1}
+  - id: C-015-6
+    type: compose
+    prompt:
+      en: "F major (B♭), 8 bars, two voices. The bass is given: F | A | D | C | F | G | C | F, that is I | V7/vi | vi | V | I | V7/V | V | I. Write the melody: C♯ in bar 2 rising to D, B♮ in bar 6 rising to C, a half cadence on G, C or E at the end of bar 4, and F at the end. No B♭ over G7, no C natural over A7."
+      sr: "F-dur (B), 8 taktova, dva glasa. Bas je zadat: F | A | D | C | F | G | C | F, to jest I | V7/vi | vi | V | I | V7/V | V | I. Napiši melodiju: Cis u taktu 2 koje se penje na D, H u taktu 6 koje se penje na C, polukadenca na G, C ili E na kraju takta 4, i F na kraju. Bez B nad G7, bez C nad A7."
+    given: "X:1\nM:4/4\nL:1/4\nK:F\nV:1\nc2 A2 |\nV:2 clef=bass\nF,4 | A,,4 | D,4 | C,4 | F,4 | G,4 | C,4 | F,4 |]\n"
+    key: F major
+    meter: 4/4
+    bars: 8
+    voices: 2
+    range: [C4, F5]
+    rules: [bars, rhythm, range, leaps, augmented, half-cadence, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:F
+      V:1
+      c2 A2 | E2 ^C2 | D2 F2 | E2 G2 | A2 c2 | =B2 d =B | c2 E2 | F4 |]
+      V:2 clef=bass
+      F,4 | A,,4 | D,4 | C,4 | F,4 | G,4 | C,4 | F,4 |]
+    checks:
+      - numeral: {key: F, is: "V7/vi", notes: [A2, "C#4", E4, G4]}
+      - numeral: {key: F, is: "vi", notes: [D3, F4, A4]}
+      - numeral: {key: F, is: "V7/V", notes: [G3, B4, D5, F5]}
+      - semitones: {from: "C#4", to: D4, is: 1}
+      - semitones: {from: B4, to: C5, is: 1}

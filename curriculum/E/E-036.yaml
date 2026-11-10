@@ -1,0 +1,168 @@
+id: E-036
+track: E
+order: 36
+title: {en: "Modulation to the dominant by ear", sr: "Modulacija u tonalitet dominante po sluhu"}
+prereqs: [E-035, T-054]
+minutes: 14
+tags: [ear, harmony, modulation]
+explain:
+  en: |
+    The most common modulation in major goes up a fifth, to the **dominant key** (C → G). It is
+    the smoothest move there is: the two scales differ by **one note**. C major has F, G major has
+    F♯. Everything else is shared, so four chords belong to both keys and any of them can be the
+    pivot:
+
+    | chord | in C | in G |
+    |---|---|---|
+    | C | I | IV |
+    | Em | iii | vi |
+    | G | V | I |
+    | Am | vi | ii |
+
+    What your ear gets:
+
+    - **♯4 rising to 5.** F♯ is the new leading tone. It shows up in the new V7 (D7) and in the
+      melody, and it goes up to G. In E-030 you heard ♯4 as a passing colour; here it keeps coming
+      and keeps resolving.
+    - **The music brightens and rises.** Going to the sharp side sounds like a lift.
+    - **The old tonic changes job.** After the move, C is degree **4** of G: it no longer sounds
+      like rest, it leans down to B. If you hum C over the final G chord, it feels unfinished.
+    - **Visit or move?** One D7 → G followed by G7 → C is a visit (tonicization). A cadence in G,
+      then *more* G (another ii–V–I in G), is a move.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c B | A c B A | G ^F A ^F | G4 |]
+    ```
+
+    The melody of exercise 4: bars 1–2 in C, then F♯ twice in bar 3 and an ending on G. Sing the
+    last note and then sing C: which one is home?
+
+    In minor keys the dominant key is minor (A minor → E minor) and the clue is the same: ♯4 of the
+    old key (D♯) becomes the new leading tone.
+  sr: |
+    Najčešća modulacija u duru ide kvintu naviše, u **tonalitet dominante** (C → G). To je
+    najglađi mogući prelaz: dve lestvice se razlikuju u **jednom tonu**. C-dur ima F, G-dur ima
+    Fis. Sve ostalo je zajedničko, pa četiri akorda pripadaju oba tonaliteta i svaki od njih može
+    biti zajednički akord (pivot):
+
+    | akord | u C | u G |
+    |---|---|---|
+    | C | I | IV |
+    | e | iii | vi |
+    | G | V | I |
+    | a | vi | ii |
+
+    Šta sluh dobija:
+
+    - **♯4 koja se penje na 5.** Fis je nova vođica. Pojavljuje se u novoj V7 (D7) i u melodiji, i ide
+      naviše na G. U E-030 si čuo ♯4 kao prolaznu boju; ovde se stalno vraća i stalno razrešava.
+    - **Muzika se razvedri i podigne.** Prelaz na stranu povisilica zvuči kao uzdizanje.
+    - **Stara tonika menja posao.** Posle prelaza C je **4.** stupanj G-dura: više ne zvuči kao
+      odmor, već se naginje naniže ka H. Ako otpevušiš C preko završnog G akorda, zvuči nedovršeno.
+    - **Poseta ili selidba?** Jedan D7 → G pa G7 → C je poseta (tonikalizacija). Kadenca u G, pa *još*
+      G (još jedan ii–V–I u G), je selidba.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c B | A c B A | G ^F A ^F | G4 |]
+    ```
+
+    Melodija iz 4. vežbe: taktovi 1–2 u C-duru, pa dvaput Fis u 3. taktu i završetak na G. Otpevaj
+    poslednji ton pa otpevaj C: koji je kuća?
+
+    U molu je tonalitet dominante molski (a-mol → e-mol), a trag je isti: ♯4 starog tonaliteta (Dis)
+    postaje nova vođica.
+exercises:
+  - id: E-036-1
+    type: generated
+    prompt: {en: "Which chord is the pivot, right before the new V7: vi, iii, or IV (no pivot: a chromatic step into the V7)?", sr: "Koji akord je pivot, neposredno pre nove V7: vi, iii ili IV (bez pivota: hromatski korak u V7)?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V7, I, vi, V7/V, V], [I, IV, V7, I, iii, V7/V, V], [I, IV, V7, I, IV, V7/V, V]], tempo: 66, smooth: true}
+    checks:
+      - roman: {key: C, degree: 1, is: "I"}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 3, is: "iii"}
+      - roman: {key: G, degree: 6, is: "vi"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: G, degree: 2, is: "ii"}
+      - roman: {key: G, degree: 1, is: "I"}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, F#3, A3, C4]}
+      - interval: {from: F4, to: F#4, is: A1}
+  - id: E-036-2
+    type: generated
+    prompt: {en: "A visit to V (it comes back home) or a move (a second cadence in the new key)?", sr: "Poseta na V (vraća se kući) ili selidba (druga kadenca u novom tonalitetu)?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, IV, V7/V, V, V7, I], [I, IV, V7/V, V, ii/V, V7/V, V]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: C, is: "ii/V", notes: [A3, C4, E4]}
+      - numeral: {key: G, is: "ii", notes: [A3, C4, E4]}
+  - id: E-036-3
+    type: mcq
+    prompt: {en: "C major moves to G major. Then you hear one note on its own: the old tonic, C. Which degree of the NEW key is it?", sr: "C-dur prelazi u G-dur. Zatim čuješ jedan ton sam: staru toniku, C. Koji je to stupanj NOVOG tonaliteta?"}
+    options:
+      - {en: "degree 1", sr: "1. stupanj"}
+      - {en: "degree 4", sr: "4. stupanj"}
+      - {en: "degree 5", sr: "5. stupanj"}
+      - {en: "degree 7", sr: "7. stupanj"}
+    answer: 1
+    play:
+      chords: [[C3, E4, G4, C5], [F3, F4, A4, C5], [G3, F4, B4, D5], [C3, E4, C5, G5], [A3, A4, C5, E5], [D3, A4, C5, F#5], [G3, G4, B4, D5], [C4]]
+      durations: [1, 1, 1, 2, 1, 1, 3, 2]
+      tempo: 66
+    checks:
+      - numeral: {key: C, is: "I", notes: [C3, E4, G4, C5]}
+      - numeral: {key: C, is: "IV", notes: [F3, F4, A4, C5]}
+      - numeral: {key: C, is: "V7", notes: [G3, F4, B4, D5]}
+      - numeral: {key: C, is: "vi", notes: [A3, A4, C5, E5]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, A4, C5, F#5]}
+      - numeral: {key: C, is: "V", notes: [G3, G4, B4, D5]}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, F#]}
+  - id: E-036-4
+    type: midi-echo
+    prompt: {en: "C major: first the tonic C4, then the melody (starts on E4). It ends in a new key. Play the melody back.", sr: "C-dur: prvo tonika C4, pa melodija (počinje na E4). Završava se u novom tonalitetu. Odsviraj melodiju."}
+    mode: sequence
+    expect: [E4, G4, C5, B4, A4, C5, B4, A4, G4, F#4, A4, F#4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    play: {notes: [C4, E4, G4, C5, B4, A4, C5, B4, A4, G4, F#4, A4, F#4, G4], durations: [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4], tempo: 80}
+    checks:
+      - interval: {from: F#4, to: G4, is: m2}
+      - interval: {from: F#4, to: A4, is: m3}
+      - interval: {from: C4, to: F#4, is: A4}
+      - chord: {notes: [F#4, A4, C5, D5], root: D, quality: "7", inversion: 1}
+  - id: E-036-5
+    type: midi-echo
+    prompt: {en: "F major: first the tonic F4, then the melody (starts on A4). Find the note that is not in F major.", sr: "F-dur: prvo tonika F4, pa melodija (počinje na A4). Nađi ton koji nije u F-duru."}
+    mode: sequence
+    expect: [A4, C5, F5, C5, D5, C5, B4, C5, D5, B4, G4, B4, C5]
+    beats: [1, 1, 1, 1, 1, 0.5, 0.5, 2, 1, 1, 1, 1, 4]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    play: {notes: [F4, A4, C5, F5, C5, D5, C5, B4, C5, D5, B4, G4, B4, C5], durations: [2, 1, 1, 1, 1, 1, 0.5, 0.5, 2, 1, 1, 1, 1, 4], tempo: 80}
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: B4, to: C5, is: m2}
+      - interval: {from: F4, to: B4, is: A4}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: E-036-6
+    type: generated
+    prompt: {en: "Hear it, then play it: the modulation to the dominant, I–IV–V7–I–vi–V7/V–V", sr: "Čuj, pa odsviraj: modulacija u tonalitet dominante, I–IV–V7–I–vi–V7/V–V"}
+    count: 3
+    pass: 0.7
+    gen: {kind: progression, keys: [C, F, G], type: major, numerals: [I, IV, V7, I, vi, V7/V, V], echo: true, smooth: true}
+  - id: E-036-7
+    type: practice
+    prompt: {en: "Improvise at the piano: 4 bars of right-hand melody over I–IV–V7–I in C, then 4 bars over vi–V7/V–V–V. Make the melody use F in the first half and F♯ in the second. Then do it in F (B♭ becomes B).", sr: "Improvizuj za klavirom: 4 takta melodije desnom rukom preko I–IV–V7–I u C-duru, pa 4 takta preko vi–V7/V–V–V. Neka melodija koristi F u prvoj polovini, a Fis u drugoj. Onda isto u F-duru (B postaje H)."}
+    minutes: 3

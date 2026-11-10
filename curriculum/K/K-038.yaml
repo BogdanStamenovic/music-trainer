@@ -1,0 +1,162 @@
+id: K-038
+track: K
+order: 38
+title: {en: "Diminished seventh chords: resolutions at the keys", sr: "Smanjeni septakordi: razrešenja za klavirom"}
+prereqs: [T-060]
+minutes: 15
+tags: [keys, harmony, diminished, minor, voice-leading]
+explain:
+  en: |
+    T-060 showed that a diminished seventh chord is built only of minor thirds, so it divides
+    the octave into four equal parts and **any of its four notes can act as the root**. At the
+    keyboard this means: one hand shape, four possible destinations.
+
+    **The basic resolution, vii°7 – i in A minor.** G♯°7 = G♯ B D F. Every note has a
+    tendency, and all four move by step:
+
+    | voice | G♯°7 | → | Am |
+    |---|---|---|---|
+    | bass (root = leading tone) | G♯2 | up a half step | A2 |
+    | 5th | D4 | down a step | C4 |
+    | 7th | F4 | down a half step | E4 |
+    | 3rd | B4 | up a step | C5 |
+
+    The result is Am with a doubled 3rd (C4, C5). That is the textbook result here: the
+    diminished 5th G♯–D **closes inwards** to a 3rd (A–C), the augmented 4th F–B **opens
+    outwards** to a 6th (E–C), and that leaves two Cs.
+
+    **Same keys, four keys.** Respell the same four piano keys with a different note as the
+    leading tone, and the same sound resolves somewhere else:
+
+    | bass note (leading tone) | spelled as | resolves to |
+    |---|---|---|
+    | G♯ | G♯ B D F | A minor |
+    | B | B D F A♭ | C minor |
+    | D | D F A♭ C♭ | E♭ minor |
+    | E♯ (= F) | E♯ G♯ B D | F♯ minor |
+
+    The four keys are a minor third apart (A, C, E♭, F♯): the same minor-third ladder the
+    chord itself is built from. This is why composers love the chord for sudden modulations:
+    the listener cannot know which of the four doors you will open.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "G#°7"[^G,,DF=B] "Am"[A,,CEc] | "B°7"[B,,F_Ad] "Cm"[C,_EG_e] |]
+    ```
+
+    **In major keys** the same chord appears as vii°7/V: in C, F♯°7 (F♯ A C E♭) leans into G.
+    Played between I and V, it makes the dominant arrive with extra weight.
+  sr: |
+    T-060 je pokazao da je smanjeni septakord sastavljen samo od malih terci, pa deli oktavu
+    na četiri jednaka dela i **bilo koji od njegova četiri tona može biti osnovni**. Za
+    klavirom to znači: jedan oblik ruke, četiri moguća cilja.
+
+    **Osnovno razrešenje, vii°7 – i u a-molu.** Gis°7 = Gis H D F. Svaki ton ima težnju, i
+    sva četiri se pomeraju korakom:
+
+    | glas | Gis°7 | → | Am |
+    |---|---|---|---|
+    | bas (osnovni ton = vođica) | Gis2 | polustepen naviše | A2 |
+    | kvinta | D4 | korak naniže | C4 |
+    | septima | F4 | polustepen naniže | E4 |
+    | terca | H4 | korak naviše | C5 |
+
+    Rezultat je Am sa udvojenom tercom (C4, C5). To je ovde rezultat po pravilu: smanjena
+    kvinta Gis–D se **zatvara ka unutra** u tercu (A–C), prekomerna kvarta F–H se **otvara ka
+    spolja** u sekstu (E–C), i ostaju dva C.
+
+    **Iste dirke, četiri tonaliteta.** Imenuj iste četiri dirke tako da je drugi ton vođica,
+    i isti zvuk se razrešava negde drugde:
+
+    | bas (vođica) | zapisano kao | razrešava se u |
+    |---|---|---|
+    | Gis | Gis H D F | a-mol |
+    | H | H D F As | c-mol |
+    | D | D F As Ces | es-mol |
+    | Eis (= F) | Eis Gis H D | fis-mol |
+
+    Četiri tonaliteta su udaljena malu tercu (A, C, Es, Fis): ista lestvica malih terci od
+    koje je sagrađen i sam akord. Zato ga kompozitori vole za iznenadne modulacije: slušalac
+    ne može znati koja od četiri vrata ćeš otvoriti.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "G#°7"[^G,,DF=B] "Am"[A,,CEc] | "B°7"[B,,F_Ad] "Cm"[C,_EG_e] |]
+    ```
+
+    **U durskim tonalitetima** isti akord se javlja kao vii°7/V: u C-duru Fis°7 (Fis A C Es)
+    se naslanja na G. Odsviran između I i V, čini da dominanta stigne sa dodatnom težinom.
+exercises:
+  - id: K-038-1
+    type: mcq
+    prompt: {en: "G♯°7 (G♯ B D F) respelled with B as the leading tone is B D F A♭. Where does it resolve?", sr: "Gis°7 (Gis H D F) zapisan sa H kao vođicom je H D F As. Gde se razrešava?"}
+    options:
+      - {en: "C minor", sr: "c-mol"}
+      - {en: "A minor", sr: "a-mol"}
+      - {en: "B♭ minor", sr: "b-mol"}
+      - {en: "E minor", sr: "e-mol"}
+    answer: 0
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "vii°7", notes: ["G#3", B3, D4, F4]}
+      - numeral: {key: C, type: harmonic-minor, is: "vii°7", notes: [B3, D4, F4, Ab4]}
+      - semitones: {from: "G#4", to: Ab4, is: 0}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-038-2
+    type: midi-play
+    prompt: {en: "G♯°7 → Am, then B°7 → Cm, as in the example: every voice moves by step. Two beats each, ♩=60.", sr: "Gis°7 → Am, zatim H°7 → Cm, kao u primeru: svaki glas se pomera korakom. Po dve dobe, ♩=60."}
+    mode: chords
+    expectChords: [["G#2", D4, F4, B4], [A2, C4, E4, C5], [B2, F4, Ab4, D5], [C3, Eb4, G4, Eb5]]
+    beats: [2, 2, 2, 2]
+    tempo: 60
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "vii°7", notes: ["G#2", D4, F4, B4]}
+      - numeral: {key: A, type: harmonic-minor, is: "i", notes: [A2, C4, E4, C5]}
+      - numeral: {key: C, type: harmonic-minor, is: "vii°7", notes: [B2, F4, Ab4, D5]}
+      - numeral: {key: C, type: harmonic-minor, is: "i", notes: [C3, Eb4, G4, Eb5]}
+  - id: K-038-3
+    type: midi-play
+    prompt: {en: "The other two doors: D°7 → E♭m (D2 · A♭3 C♭4 F4 → E♭2 · G♭3 B♭3 G♭4), then E♯°7 → F♯m (E♯2 · B3 D4 G♯4 → F♯2 · A3 C♯4 A4). ♩=60.", sr: "Druga dva vrata: D°7 → es-mol (D2 · As3 Ces4 F4 → Es2 · Ges3 B3 Ges4), zatim Eis°7 → fis-mol (Eis2 · H3 D4 Gis4 → Fis2 · A3 Cis4 A4). ♩=60."}
+    mode: chords
+    expectChords: [[D2, Ab3, Cb4, F4], [Eb2, Gb3, Bb3, Gb4], ["E#2", B3, D4, "G#4"], ["F#2", A3, "C#4", A4]]
+    beats: [2, 2, 2, 2]
+    tempo: 60
+    checks:
+      - numeral: {key: Eb, type: harmonic-minor, is: "vii°7", notes: [D2, Ab3, Cb4, F4]}
+      - numeral: {key: Eb, type: harmonic-minor, is: "i", notes: [Eb2, Gb3, Bb3, Gb4]}
+      - numeral: {key: "F#", type: harmonic-minor, is: "vii°7", notes: ["E#2", B3, D4, "G#4"]}
+      - numeral: {key: "F#", type: harmonic-minor, is: "i", notes: ["F#2", A3, "C#4", A4]}
+      - semitones: {from: Cb4, to: B3, is: 0}
+      - semitones: {from: "E#2", to: F2, is: 0}
+  - id: K-038-4
+    type: mcq
+    prompt: {en: "How many different diminished seventh chords (as sounds on the keyboard) are there?", sr: "Koliko različitih smanjenih septakorda (kao zvuka na klavijaturi) postoji?"}
+    options: ["3", "4", "12", "6"]
+    answer: 0
+    checks:
+      - chord: {notes: [C4, Eb4, Gb4, Bbb4], root: C, quality: dim7}
+      - chord: {notes: ["C#4", E4, G4, Bb4], root: "C#", quality: dim7}
+      - chord: {notes: [D4, F4, Ab4, Cb5], root: D, quality: dim7}
+      - semitones: {from: C4, to: Eb4, is: 3}
+  - id: K-038-5
+    type: generated
+    prompt: {en: "i – iv – vii°7 – i in minor keys round the circle, voice-led", sr: "i – iv – vii°7 – i u molskim tonalitetima po kvintnom krugu, glatko vođenje glasova"}
+    count: 4
+    gen: {kind: progression, keys: [A, D, G, C, E, B], type: harmonic-minor, numerals: [i, iv, vii°7, i], tempo: 60, smooth: true}
+  - id: K-038-6
+    type: generated
+    prompt: {en: "In major: I – vii°7/V – V – I (the diminished chord leaning into the dominant)", sr: "U duru: I – vii°7/V – V – I (smanjeni akord koji se naslanja na dominantu)"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, vii°7/V, V, I], tempo: 60, smooth: true}
+  - id: K-038-7
+    type: practice
+    prompt: {en: "Hold one diminished seventh shape in the right hand (B D F A♭) and change only the bass note: G♯, B, D, F. Each time resolve all four voices by step into the minor key that bass leads to (A, C, E♭, F♯ minor). Then try resolving each to the major tonic instead (A, C, E♭, F♯ major): the leading tone still works.", sr: "Drži jedan oblik smanjenog septakorda u desnoj ruci (H D F As) i menjaj samo bas: Gis, H, D, F. Svaki put razreši sva četiri glasa korakom u molski tonalitet u koji taj bas vodi (a, c, es, fis-mol). Zatim pokušaj da svaki razrešiš u durski tonički akord (A, C, Es, Fis-dur): vođica i dalje radi."}
+    minutes: 4
+    checks:
+      - numeral: {key: C, type: harmonic-minor, is: "vii°7", notes: [B3, D4, F4, Ab4]}
+      - numeral: {key: C, is: "vii°7/V", notes: ["F#3", A3, C4, Eb4]}

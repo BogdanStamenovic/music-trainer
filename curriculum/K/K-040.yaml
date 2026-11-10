@@ -1,0 +1,133 @@
+id: K-040
+track: K
+order: 40
+title: {en: "Improvising in D dorian over Dm7–G7", sr: "Improvizacija u D dorskom preko Dm7–G7"}
+prereqs: [K-039]
+minutes: 15
+tags: [keys, improvisation, modes, dorian]
+explain:
+  en: |
+    Over the vamp from K-039 every white key is "in the scale", so wrong notes are not the
+    problem. The problem is that seven safe notes with no direction sound like noodling. Three
+    things give a dorian line its shape:
+
+    **1. Land on the guide tones.** The two chords share F; they differ in one half step,
+    **C (7th of Dm7) → B (3rd of G7)**. Aim for C or F at the start of a Dm7 bar and for **B**
+    at the start of a G7 bar, and the line follows the harmony even with no left hand.
+
+    **2. Feature the 6th.** B over Dm7 is the dorian colour note (the 6th). Holding it over
+    Dm7 is what makes the line sound dorian rather than plain minor. Over G7, B is simply the
+    3rd.
+
+    **3. Treat C over G7 as a passing note.** C is a 4th above G and a half step above B, the
+    3rd. Held on a G7 downbeat it clashes with the chord's B; passing through it is fine.
+
+    | note | over Dm7 | over G7 |
+    |---|---|---|
+    | D | root | 5th |
+    | F | 3rd | 7th |
+    | A | 5th | 9th (colour) |
+    | C | 7th | 4th: pass through, do not land |
+    | **B** | **6th: the dorian colour** | **3rd: the landing note** |
+    | E, G | 9th, 11th (colour) | 13th, root |
+
+    A two-bar model phrase: up the Dm7 arpeggio, then B on the G7 downbeat.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Ddor
+    "Dm7"D E F A c2 A F | "G7"B2 A G F2 D2 |]
+    ```
+
+    Same plan as K-028: play two bars, leave two bars of rest, answer yourself.
+  sr: |
+    Preko vampa iz K-039 svaka bela dirka je "u lestvici", pa pogrešni tonovi nisu problem.
+    Problem je što sedam sigurnih tonova bez pravca zvuči kao bauljanje. Tri stvari daju
+    dorskoj liniji oblik:
+
+    **1. Sleti na ključne tonove.** Dva akorda dele F; razlikuju se u jednom polustepenu,
+    **C (septima od Dm7) → H (terca od G7)**. Ciljaj C ili F na početku takta sa Dm7 i **H**
+    na početku takta sa G7, i linija prati harmoniju i bez leve ruke.
+
+    **2. Istakni sekstu.** H preko Dm7 je dorski ton boje (seksta). Držanje tog tona preko
+    Dm7 čini da linija zvuči dorski, a ne kao običan mol. Preko G7, H je prosto terca.
+
+    **3. C preko G7 je prolaznica.** C je kvarta iznad G i polustepen iznad H, terce. Držano
+    na prvoj dobi G7 sudara se sa H u akordu; prolaziti kroz njega je u redu.
+
+    | ton | preko Dm7 | preko G7 |
+    |---|---|---|
+    | D | osnovni ton | kvinta |
+    | F | terca | septima |
+    | A | kvinta | nona (boja) |
+    | C | septima | kvarta: prođi, ne sleći |
+    | **H** | **seksta: dorska boja** | **terca: ton za sletanje** |
+    | E, G | nona, undecima (boja) | tercdecima, osnovni ton |
+
+    Model fraza od dva takta: naviše kroz arpeđo Dm7, pa H na prvu dobu G7.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Ddor
+    "Dm7"D E F A c2 A F | "G7"B2 A G F2 D2 |]
+    ```
+
+    Isti plan kao u K-028: dva takta sviraš, dva takta pauza, pa sam sebi odgovoriš.
+exercises:
+  - id: K-040-1
+    type: mcq
+    prompt: {en: "Which note is the strongest landing note on the first beat of G7?", sr: "Koji ton je najjači za sletanje na prvu dobu G7?"}
+    options: ["B", "C", "E", "A"]
+    answer: 0
+    checks:
+      - interval: {from: G3, to: B3, is: M3}
+      - interval: {from: B3, to: C4, is: m2}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+  - id: K-040-2
+    type: mcq
+    prompt: {en: "Over Dm7, which note gives the line its dorian colour?", sr: "Preko Dm7, koji ton daje liniji dorsku boju?"}
+    options:
+      - {en: "B, the major 6th", sr: "H, velika seksta"}
+      - {en: "F, the minor 3rd", sr: "F, mala terca"}
+      - {en: "C, the minor 7th", sr: "C, mala septima"}
+      - {en: "A, the 5th", sr: "A, kvinta"}
+    answer: 0
+    checks:
+      - interval: {from: D4, to: B4, is: M6}
+      - interval: {from: D4, to: F4, is: m3}
+      - scale: {tonic: D, type: dorian, is: [D, E, F, G, A, B, C]}
+  - id: K-040-3
+    type: midi-play
+    prompt: {en: "The model phrase, ♩=88: D E F A C (held) A F | B (held) A G F D.", sr: "Model fraza, ♩=88: D E F A C (držano) A F | H (držano) A G F D."}
+    mode: sequence
+    expect: [D4, E4, F4, A4, C5, A4, F4, B4, A4, G4, F4, D4]
+    beats: [0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 1, 1]
+    tempo: 88
+    checks:
+      - chord: {notes: [D4, F4, A4, C5], root: D, quality: min7}
+      - interval: {from: G4, to: B4, is: M3}
+      - scale: {tonic: D, type: dorian, is: [D, E, F, G, A, B, C]}
+  - id: K-040-4
+    type: generated
+    prompt: {en: "Take 1: D dorian over the vamp, a bar per chord. Two bars of phrase, two bars of rest; B on the G7 downbeats.", sr: "Pokušaj 1: D dorski preko vampa, takt po akordu. Dva takta fraza, dva takta pauza; H na prvim dobama G7."}
+    count: 1
+    gen: {kind: improv, keys: [D], type: dorian, scale: dorian, numerals: [i7, IV7], beatsPerChord: 4, loops: 4, tempo: 88}
+  - id: K-040-5
+    type: generated
+    prompt: {en: "Take 2: two beats per chord, faster. Use the guide tones C → B and F → F to follow the changes.", sr: "Pokušaj 2: dve dobe po akordu, brže. Koristi ključne tonove C → H i F → F da pratiš promene."}
+    count: 1
+    gen: {kind: improv, keys: [D], type: dorian, scale: dorian, numerals: [i7, IV7], beatsPerChord: 2, loops: 4, tempo: 96}
+  - id: K-040-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "Take 3: another dorian key. Before you start, find the raised 6th (the 3rd of the IV7) and the half step from the i7's 7th to it.", sr: "Pokušaj 3: drugi dorski tonalitet. Pre početka nađi povišeni 6. stupanj (terca od IV7) i polustepen od septime i7 do njega."}
+    count: 1
+    gen: {kind: improv, keys: [A, E, G], type: dorian, scale: dorian, numerals: [i7, IV7], beatsPerChord: 4, loops: 3, tempo: 88}
+  - id: K-040-7
+    type: practice
+    prompt: {en: "Left hand comps the Charleston rhythm (K-039) while the right hand improvises, 16 bars. Then record yourself (or just listen back in your head): did any phrase sound like plain natural minor? Replay it with B in it.", sr: "Leva ruka prati u čarlston ritmu (K-039) dok desna improvizuje, 16 taktova. Zatim se snimi (ili samo preslušaj u glavi): da li je neka fraza zvučala kao običan prirodni mol? Ponovi je sa H u njoj."}
+    minutes: 4

@@ -1,0 +1,174 @@
+id: E-037
+track: E
+order: 37
+title: {en: "Relative minor/major by ear", sr: "Paralelni mol i dur po sluhu"}
+prereqs: [E-035, T-055]
+minutes: 14
+tags: [ear, harmony, modulation, minor]
+explain:
+  en: |
+    C major and A minor share a key signature and all seven notes. So when music moves between
+    them, nothing new appears in the signature, and every diatonic chord is a possible pivot (ii in
+    C is iv in A minor, IV in C is VI in A minor). What tells you the key changed is **which note
+    acts as the leading tone** and **where the cadence lands**.
+
+    **Major → relative minor (C → A minor).** Listen for **G♯**: degree 5 of C, raised, rising to A.
+    It arrives in E7 (V7 of A minor) and in the melody. The colour darkens, and the last chord is
+    minor and sounds final.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c G | F A d c | B ^G E ^G | A4 |]
+    ```
+
+    **Minor → relative major (A minor → C).** The opposite: the G♯ that minor needs for its V7
+    **disappears**, G natural comes back inside G7, and G7 resolves to C. Nothing sharp, nothing
+    new: the music simply brightens and settles on the major chord built on degree 3.
+
+    **The trap: the deceptive cadence.** V7 → vi (E-024) also lands on A minor, but it is one chord:
+    the music keeps going in C and cadences there. A modulation brings **E7** (with G♯) and lands on
+    A minor *twice*, or stays there.
+
+    Method: lock the first tonic, listen for G♯ arriving (or leaving), hum the last root and name
+    it as a degree of the old key: 6 in major = the relative minor, 3 in minor = the relative major.
+  sr: |
+    C-dur i a-mol imaju isti predznak i svih sedam tonova. Zato, kad muzika prelazi između njih, u
+    predznaku se ne pojavljuje ništa novo, a svaki dijatonski akord može biti pivot (ii u C-duru je
+    iv u a-molu, IV u C-duru je VI u a-molu). Ono što otkriva promenu tonaliteta je **koji ton radi
+    kao vođica** i **gde pada kadenca**.
+
+    **Dur → paralelni mol (C → a-mol).** Slušaj **Gis**: 5. stupanj C-dura, povišen, penje se na A.
+    Stiže u E7 (V7 a-mola) i u melodiji. Boja potamni, a poslednji akord je molski i zvuči završno.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E G c G | F A d c | B ^G E ^G | A4 |]
+    ```
+
+    **Mol → paralelni dur (a-mol → C).** Obrnuto: Gis koji molu treba za V7 **nestaje**, G se vraća
+    u G7, a G7 se razrešava na C. Ništa povišeno, ništa novo: muzika se jednostavno razvedri i smiri
+    na durskom akordu na 3. stupnju.
+
+    **Zamka: varljiva kadenca.** V7 → vi (E-024) takođe stiže na a-mol, ali je to jedan akord:
+    muzika nastavlja u C-duru i tamo pravi kadencu. Modulacija donosi **E7** (sa Gis) i stiže na a-mol
+    *dvaput*, ili tamo ostaje.
+
+    Metod: zaključaj prvu toniku, slušaj kad Gis stiže (ili odlazi), otpevuši poslednji osnovni ton i
+    imenuj ga kao stupanj starog tonaliteta: 6 u duru = paralelni mol, 3 u molu = paralelni dur.
+exercises:
+  - id: E-037-1
+    type: generated
+    prompt: {en: "From major: to the relative minor, to the dominant key, or home again?", sr: "Iz dura: u paralelni mol, u tonalitet dominante ili opet kući?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V7, I, ii, V7/vi, vi], [I, IV, V7, I, vi, V7/V, V], [I, IV, V7, I, ii, V7, I]], tempo: 66, smooth: true}
+    checks:
+      - keysig: {key: C, mode: major, is: 0}
+      - keysig: {key: A, mode: minor, is: 0}
+      - numeral: {key: C, is: "ii", notes: [D3, F3, A3]}
+      - numeral: {key: A, type: harmonic-minor, is: "iv", notes: [D3, F3, A3]}
+      - numeral: {key: C, is: "IV", notes: [F3, A3, C4]}
+      - numeral: {key: A, type: harmonic-minor, is: "VI", notes: [F3, A3, C4]}
+      - numeral: {key: C, is: "V7/vi", notes: [E3, G#3, B3, D4]}
+      - numeral: {key: A, type: harmonic-minor, is: "V7", notes: [E3, G#3, B3, D4]}
+      - interval: {from: G#4, to: A4, is: m2}
+  - id: E-037-2
+    type: generated
+    prompt: {en: "A deceptive cadence that stays in the major key, or a real move to the relative minor?", sr: "Varljiva kadenca koja ostaje u duru, ili prava selidba u paralelni mol?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, ii, V7, vi, IV, V7, I], [I, ii, V7/vi, vi, iv/vi, V7/vi, vi]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: C, is: "iv/vi", notes: [D3, F3, A3]}
+  - id: E-037-3
+    type: generated
+    prompt: {en: "From minor: to the relative major, to the dominant (minor) key, or home again?", sr: "Iz mola: u paralelni dur, u tonalitet dominante (molski) ili opet kući?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [A, D, E, G], type: harmonic-minor, options: [[i, iv, V7, i, VI, V7/III, III], [i, iv, V7, i, III, V7/v, v], [i, iv, V7, i, VI, V7, i]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "V7/III", notes: [G3, B3, D4, F4]}
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - numeral: {key: A, type: harmonic-minor, is: "III", notes: [C3, E3, G3]}
+      - numeral: {key: A, type: harmonic-minor, is: "V7", notes: [E3, G#3, B3, D4]}
+  - id: E-037-4
+    type: mcq
+    prompt: {en: "E minor. Where is home at the end?", sr: "e-mol. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still E minor", sr: "I dalje e-mol"}
+      - {en: "The relative major (on degree 3)", sr: "Paralelni dur (na 3. stupnju)"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 1
+    play:
+      chords: [[E3, E4, G4, B4], [A3, E4, A4, C5], [B3, D#4, F#4, A4], [E3, E4, G4, B4], [C3, E4, G4, C5], [D3, F#4, A4, C5], [G3, D4, G4, B4]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: E, type: harmonic-minor, is: "i", notes: [E3, E4, G4, B4]}
+      - numeral: {key: E, type: harmonic-minor, is: "iv", notes: [A3, E4, A4, C5]}
+      - numeral: {key: E, type: harmonic-minor, is: "V7", notes: [B3, D#4, F#4, A4]}
+      - numeral: {key: E, type: harmonic-minor, is: "VI", notes: [C3, E4, G4, C5]}
+      - numeral: {key: G, is: "IV", notes: [C3, E4, G4, C5]}
+      - numeral: {key: E, type: harmonic-minor, is: "V7/III", notes: [D3, F#4, A4, C5]}
+      - numeral: {key: G, is: "V7", notes: [D3, F#4, A4, C5]}
+      - numeral: {key: G, is: "I", notes: [G3, D4, G4, B4]}
+      - keysig: {key: E, mode: minor, is: 1}
+      - keysig: {key: G, mode: major, is: 1}
+  - id: E-037-5
+    type: mcq
+    prompt: {en: "E♭ major. Where is home at the end?", sr: "Es-dur. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still E♭ major", sr: "I dalje Es-dur"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The relative minor (on degree 6)", sr: "Paralelni mol (na 6. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 2
+    play:
+      chords: [[Eb3, Eb4, G4, Bb4], [Ab3, Eb4, Ab4, C5], [Bb3, D4, Ab4, F5], [Eb3, Eb4, Bb4, G5], [F3, C4, Ab4, F5], [G3, B3, D4, F5], [C3, C4, Eb4, G5]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: Eb, is: "I", notes: [Eb3, Eb4, G4, Bb4]}
+      - numeral: {key: Eb, is: "IV", notes: [Ab3, Eb4, Ab4, C5]}
+      - numeral: {key: Eb, is: "V7", notes: [Bb3, D4, Ab4, F5]}
+      - numeral: {key: Eb, is: "ii", notes: [F3, C4, Ab4, F5]}
+      - numeral: {key: C, type: harmonic-minor, is: "iv", notes: [F3, C4, Ab4, F5]}
+      - numeral: {key: Eb, is: "V7/vi", notes: [G3, B3, D4, F5]}
+      - numeral: {key: C, type: harmonic-minor, is: "V7", notes: [G3, B3, D4, F5]}
+      - numeral: {key: C, type: harmonic-minor, is: "i", notes: [C3, C4, Eb4, G5]}
+  - id: E-037-6
+    type: midi-echo
+    prompt: {en: "D minor, then a modulation. Play the new tonic (one note, any octave).", sr: "d-mol, pa modulacija. Odsviraj novu toniku (jedan ton, bilo koja oktava)."}
+    mode: sequence
+    expect: [F3]
+    octave: any
+    play:
+      chords: [[D3, F4, A4, D5], [G3, G4, Bb4, D5], [A3, E4, G4, C#5], [D3, F4, A4, D5], [Bb3, F4, Bb4, D5], [C3, G4, Bb4, E5], [F3, F4, A4, C5]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: "i", notes: [D3, F4, A4, D5]}
+      - numeral: {key: D, type: harmonic-minor, is: "iv", notes: [G3, G4, Bb4, D5]}
+      - numeral: {key: D, type: harmonic-minor, is: "V7", notes: [A3, E4, G4, C#5]}
+      - numeral: {key: D, type: harmonic-minor, is: "VI", notes: [Bb3, F4, Bb4, D5]}
+      - numeral: {key: D, type: harmonic-minor, is: "V7/III", notes: [C3, G4, Bb4, E5]}
+      - numeral: {key: F, is: "I", notes: [F3, F4, A4, C5]}
+  - id: E-037-7
+    type: midi-echo
+    prompt: {en: "C major: first the tonic C4, then the melody (starts on E4). Where does it end up? Play it back.", sr: "C-dur: prvo tonika C4, pa melodija (počinje na E4). Gde stiže? Odsviraj je."}
+    mode: sequence
+    expect: [E4, G4, C5, G4, F4, A4, D5, C5, B4, G#4, E4, G#4, A4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    play: {notes: [C4, E4, G4, C5, G4, F4, A4, D5, C5, B4, G#4, E4, G#4, A4], durations: [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4], tempo: 80}
+    checks:
+      - chord: {notes: [E4, G#4, B4], root: E, quality: maj}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - interval: {from: G#4, to: A4, is: m2}
+      - interval: {from: C4, to: G#4, is: A5}

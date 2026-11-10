@@ -1,0 +1,128 @@
+id: E-045
+track: E
+order: 45
+title: {en: "Blues progression by ear (quick change, turnaround)", sr: "Bluz progresija po sluhu (brza promena, turnaround)"}
+prereqs: [E-044, T-066]
+minutes: 14
+tags: [ear, harmony, blues]
+explain:
+  en: |
+    The 12-bar blues uses three chords, all **dominant sevenths**: I7, IV7, V7. Even the tonic has
+    the ♭7 (C7 in C: C E G B♭). That is a large part of the blues sound: home itself is a little
+    restless.
+
+    | bars 1–4 | bars 5–8 | bars 9–12 |
+    |---|---|---|
+    | I7 – I7 – I7 – I7 | IV7 – IV7 – I7 – I7 | V7 – IV7 – I7 – V7 |
+
+    By ear, three places tell versions apart:
+
+    1. **The quick change.** Bar 2 jumps to IV7 and comes back in bar 3: I7 – **IV7** – I7 – I7.
+       If the music leaves home almost at once, it is a quick change.
+    2. **Bars 9–10.** Usually V7 – IV7 (the bass steps *down* from 5 to 4). Older and rock versions
+       stay on V7 for two bars; jazz versions use ii7 – V7.
+    3. **The turnaround (bars 11–12).** The last bar has V7 so the form can start again. Played
+       twice as fast it becomes I7 – IV7 – I7 – V7, or the jazz version I7 – VI7 – ii7 – V7, where
+       VI7 is V7/ii from E-034.
+
+    Above all: **count bars**. Say "1-2-3-4, 2-2-3-4, 3-2-3-4…" and note the bar number at each
+    change. The first IV7 in bar 5 means a standard 12-bar; in bar 2, a quick change; the form
+    might not be 12 bars at all (exercise 6).
+
+    In exercises 1–3 the progression is compressed: **one chord per bar, one beat each**. Count the
+    chords as bars.
+  sr: |
+    Bluz od 12 taktova koristi tri akorda, svi su **dominantni septakordi**: I7, IV7, V7. Čak i tonika
+    ima ♭7 (C7 u C-duru: C E G B). To je velik deo zvuka bluza: sama kuća je pomalo nemirna.
+
+    | taktovi 1–4 | taktovi 5–8 | taktovi 9–12 |
+    |---|---|---|
+    | I7 – I7 – I7 – I7 | IV7 – IV7 – I7 – I7 | V7 – IV7 – I7 – V7 |
+
+    Po sluhu, tri mesta razlikuju verzije:
+
+    1. **Brza promena** (quick change). Takt 2 skače na IV7 i vraća se u 3. taktu: I7 – **IV7** –
+       I7 – I7. Ako muzika napusti kuću skoro odmah, to je brza promena.
+    2. **Taktovi 9–10.** Obično V7 – IV7 (bas silazi *korakom* sa 5 na 4). Starije i rok verzije ostaju
+       na V7 dva takta; džez verzije koriste ii7 – V7.
+    3. **Turnaround (taktovi 11–12).** Poslednji takt ima V7 da bi forma mogla ponovo da počne.
+       Sviran dvostruko brže postaje I7 – IV7 – I7 – V7, ili džez verzija I7 – VI7 – ii7 – V7, gde je
+       VI7 zapravo V7/ii iz E-034.
+
+    Iznad svega: **broji taktove**. Govori „1-2-3-4, 2-2-3-4, 3-2-3-4…" i zapamti broj takta na
+    svakoj promeni. Prvi IV7 u 5. taktu znači standardni bluz od 12 taktova; u 2. taktu, brzu
+    promenu; a forma možda uopšte nema 12 taktova (vežba 6).
+
+    U vežbama 1–3 progresija je sažeta: **jedan akord po taktu, po jedna doba**. Broji akorde kao
+    taktove.
+exercises:
+  - id: E-045-1
+    type: generated
+    prompt: {en: "12 bars compressed (one chord per bar): quick change or not?", sr: "12 taktova sažeto (jedan akord po taktu): brza promena ili ne?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], [I7, I7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7]], tempo: 96, smooth: true}
+    checks:
+      - numeral: {key: C, is: "I7", notes: [C3, E3, G3, Bb3]}
+      - numeral: {key: C, is: "IV7", notes: [F3, A3, C4, Eb4]}
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - chord: {notes: [C3, E3, G3, Bb3], root: C, quality: "7"}
+      - interval: {from: C3, to: Bb3, is: m7}
+  - id: E-045-2
+    type: generated
+    prompt: {en: "Bars 9–12 only: which version?", sr: "Samo taktovi 9–12: koja verzija?"}
+    count: 8
+    pass: 0.7
+    gen: {kind: progression-ear, keys: [F, Bb, C, G], type: major, options: [[V7, IV7, I7, V7], [V7, IV7, I7, I7], [V7, V7, I7, I7], [ii7, V7, I7, V7]], tempo: 72, smooth: true}
+  - id: E-045-3
+    type: generated
+    prompt: {en: "The turnaround, two chords per bar: which one?", sr: "Turnaround, dva akorda po taktu: koji?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, F, G, Bb], type: major, options: [[I7, V7/ii, ii7, V7, I7], [I7, IV7, I7, V7, I7], [I7, vi7, ii7, V7, I7]], tempo: 80, smooth: true}
+    checks:
+      - numeral: {key: C, is: "V7/ii", notes: [A3, C#4, E4, G4]}
+      - numeral: {key: C, is: "vi7", notes: [A3, C4, E4, G4]}
+      - numeral: {key: C, is: "ii7", notes: [D3, F3, A3, C4]}
+  - id: E-045-4
+    type: generated
+    prompt: {en: "Echo the bass of a quick-change blues, one root per bar (12 notes).", sr: "Ponovi bas bluza sa brzom promenom, jedan osnovni ton po taktu (12 tonova)."}
+    count: 4
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, F, G, Bb, E, A], type: major, numerals: [I7, IV7, V7], line: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], octave: 2, tempo: 100}
+  - id: E-045-5
+    type: midi-echo
+    prompt: {en: "A quick-change blues in F at full length, one chord per bar. Listen, then play it back in time: any voicing, right bass.", sr: "Bluz sa brzom promenom u F-duru u punoj dužini, jedan akord po taktu. Slušaj, pa ga odsviraj u ritmu: bilo koji raspored, tačan bas."}
+    mode: chords
+    expectChords: [[F3, Eb4, A4, C5], [Bb3, D4, F4, Ab4], [F3, C4, Eb4, A4], [F3, C4, Eb4, A4], [Bb3, D4, F4, Ab4], [Bb3, D4, F4, Ab4], [F3, C4, Eb4, A4], [F3, C4, Eb4, A4], [C3, Bb3, E4, G4], [Bb3, D4, F4, Ab4], [F3, C4, Eb4, A4], [C3, Bb3, E4, G4]]
+    beats: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    tempo: 132
+    octave: any
+    bass: true
+    pass: 0.7
+    checks:
+      - numeral: {key: F, is: "I7", notes: [F3, Eb4, A4, C5]}
+      - numeral: {key: F, is: "I7", notes: [F3, C4, Eb4, A4]}
+      - numeral: {key: F, is: "IV7", notes: [Bb3, D4, F4, Ab4]}
+      - numeral: {key: F, is: "V7", notes: [C3, Bb3, E4, G4]}
+  - id: E-045-6
+    type: mcq
+    prompt: {en: "A blues in G, one chord per bar, played once (it ends on V7, ready to go round again). Count the bars: how long is the form?", sr: "Bluz u G-duru, jedan akord po taktu, odsviran jednom (završava se na V7, spreman za novi krug). Broji taktove: koliko je duga forma?"}
+    options:
+      - {en: "8 bars", sr: "8 taktova"}
+      - {en: "12 bars", sr: "12 taktova"}
+      - {en: "16 bars", sr: "16 taktova"}
+    answer: 0
+    keepOrder: true
+    play:
+      chords: [[G3, D4, F4, B4], [D3, C4, F#4, A4], [C3, Bb3, E4, G4], [C3, Bb3, E4, G4], [G3, B3, D4, F4], [D3, A3, C4, F#4], [G3, B3, D4, F4], [D3, A3, C4, F#4]]
+      durations: [4, 4, 4, 4, 4, 4, 4, 4]
+      tempo: 144
+    checks:
+      - numeral: {key: G, is: "I7", notes: [G3, D4, F4, B4]}
+      - numeral: {key: G, is: "I7", notes: [G3, B3, D4, F4]}
+      - numeral: {key: G, is: "V7", notes: [D3, C4, F#4, A4]}
+      - numeral: {key: G, is: "V7", notes: [D3, A3, C4, F#4]}
+      - numeral: {key: G, is: "IV7", notes: [C3, Bb3, E4, G4]}
+  - id: E-045-7
+    type: practice
+    prompt: {en: "Put on any 12-bar blues recording (search \"12 bar blues\" plus an artist you like). Count bars out loud through two choruses. Mark: quick change or not, what bars 9–10 do, and what the turnaround sounds like. Then play along in the record's key.", sr: "Pusti bilo koji snimak bluza od 12 taktova (potraži „12 bar blues” i izvođača koga voliš). Broji taktove naglas kroz dva kruga. Zabeleži: brza promena ili ne, šta rade taktovi 9–10 i kako zvuči turnaround. Onda sviraj uz snimak u njegovom tonalitetu."}
+    minutes: 5

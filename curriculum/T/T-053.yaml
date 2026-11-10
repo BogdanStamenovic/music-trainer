@@ -1,0 +1,123 @@
+id: T-053
+track: T
+order: 53
+prereqs: [T-052]
+title: {en: "Finding the pivot: chords common to two keys", sr: "Pronalaženje akorda-mosta: akordi zajednički za dva tonaliteta"}
+minutes: 12
+tags: [harmony, modulation, analysis]
+explain:
+  en: |
+    To find every possible pivot between two keys, write the diatonic triads of both keys side by side and keep the ones with **the same notes**. The numbers will differ; the notes must not.
+
+    C major and G major (they differ by one note, F/F♯):
+
+    | chord | in C | in G |
+    |---|---|---|
+    | C E G | I | IV |
+    | E G B | iii | vi |
+    | G B D | V | I |
+    | A C E | vi | ii |
+    | D F A / D F♯ A | ii | (V is D F♯ A: different chord) |
+    | F A C | IV | (not in G) |
+
+    Four common chords. Every chord that **contains the changed note** (F in C; F♯ in G) drops out; that is why closely related keys share four triads, and keys further apart share fewer.
+
+    Which one to choose? Prefer a pivot that is a **predominant in the new key**:
+    - C → G: **A minor** (C: vi = G: ii) or **C major** (C: I = G: IV).
+    - C → F: **D minor** (C: ii = F: vi) leads well to F's ii or IV; **F major** (C: IV = F: I) is also common but the new tonic arrives too early to feel like an arrival.
+    - Prefer not to use the new key's **V** as the pivot (it is common, e.g. C: I = F: V, but weaker): a chord that is already V of the new key leaves no room to set the cadence up.
+
+    At the keyboard: play the scale of the new key with your right hand and test each chord of the old key against it. If every note of the chord is under your fingers, it is a candidate.
+  sr: |
+    Da nađeš svaki mogući akord-most između dva tonaliteta, napiši trozvuke na stupnjevima oba tonaliteta jedan pored drugog i zadrži one sa **istim tonovima**. Brojevi će se razlikovati; tonovi ne smeju.
+
+    C-dur i G-dur (razlikuju se u jednom tonu, F/Fis):
+
+    | akord | u C-duru | u G-duru |
+    |---|---|---|
+    | C E G | I | IV |
+    | E G H | iii | vi |
+    | G H D | V | I |
+    | A C E | vi | ii |
+    | D F A / D Fis A | ii | (V je D Fis A: drugi akord) |
+    | F A C | IV | (nije u G-duru) |
+
+    Četiri zajednička akorda. Svaki akord koji **sadrži promenjeni ton** (F u C-duru; Fis u G-duru) otpada; zato srodni tonaliteti imaju četiri zajednička trozvuka, a udaljeniji manje.
+
+    Koji izabrati? Prednost ima most koji je **subdominantni akord u novom tonalitetu**:
+    - C → G: **a-mol akord** (C: vi = G: ii) ili **C-dur akord** (C: I = G: IV).
+    - C → F: **d-mol akord** (C: ii = F: vi) lepo vodi ka ii ili IV F-dura; **F-dur akord** (C: IV = F: I) je takođe čest, ali nova tonika stiže prerano da bi zvučala kao dolazak.
+    - Radije ne koristi **V novog tonaliteta** kao most (to je čest slučaj, npr. C: I = F: V, ali slabiji). Akord koji je već V novog tonaliteta ne ostavlja prostora da se on pripremi.
+
+    Na klavijaturi: desnom rukom odsviraj lestvicu novog tonaliteta i proveri svaki akord starog tonaliteta. Ako su svi tonovi akorda pod prstima, to je kandidat.
+exercises:
+  - id: T-053-1
+    type: mcq
+    prompt: {en: "How many diatonic triads do C major and G major share?", sr: "Koliko trozvuka na stupnjevima imaju zajedno C-dur i G-dur?"}
+    options: ["4", "3", "5", "7"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: I, notes: [C4, E4, G4]}
+      - numeral: {key: G, is: IV, notes: [C4, E4, G4]}
+      - numeral: {key: C, is: iii, notes: [E4, G4, B4]}
+      - numeral: {key: G, is: vi, notes: [E4, G4, B4]}
+      - numeral: {key: C, is: V, notes: [G4, B4, D5]}
+      - numeral: {key: G, is: I, notes: [G4, B4, D5]}
+      - numeral: {key: C, is: vi, notes: [A4, C5, E5]}
+      - numeral: {key: G, is: ii, notes: [A4, C5, E5]}
+  - id: T-053-2
+    type: mcq
+    prompt: {en: "F major to C major, pivot D minor. How is it labelled?", sr: "F-dur u C-dur, most je d-mol akord. Kako se označava?"}
+    options: ["F: vi = C: ii", "F: ii = C: vi", "F: iii = C: vi", "F: vi = C: iii"]
+    answer: 0
+    checks:
+      - numeral: {key: F, is: vi, notes: [D4, F4, A4]}
+      - numeral: {key: C, is: ii, notes: [D4, F4, A4]}
+  - id: T-053-3
+    type: notation-input
+    prompt: {en: "Spell the chord that is vi in G major and ii in D major (root, 3rd, 5th).", sr: "Napiši akord koji je vi u G-duru i ii u D-duru (osnovni ton, terca, kvinta)."}
+    derive: {roman: {key: D4, numerals: [ii]}}
+    expect: [E, G, B]
+    checks:
+      - numeral: {key: G, is: vi, notes: [E4, G4, B4]}
+      - numeral: {key: D, is: ii, notes: [E4, G4, B4]}
+  - id: T-053-4
+    type: mcq
+    prompt: {en: "G major to D major. Which chord of G major is NOT a possible pivot?", sr: "G-dur u D-dur. Koji akord G-dura NIJE mogući most?"}
+    options: ["C", "G", "Em", {en: "Bm", sr: "Hm"}]
+    answer: 0
+    checks:
+      - numeral: {key: G, is: IV, notes: [C4, E4, G4]}
+      - numeral: {key: D, is: IV, notes: [G4, B4, D5]}
+      - numeral: {key: D, is: ii, notes: [E4, G4, B4]}
+      - numeral: {key: D, is: vi, notes: [B4, D5, F#5]}
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: T-053-5
+    type: mcq
+    prompt: {en: "C major to G major: which pivot is a predominant in the new key?", sr: "C-dur u G-dur: koji most je subdominantni akord u novom tonalitetu?"}
+    options:
+      - {en: "C major (C: I = G: IV)", sr: "C-dur akord (C: I = G: IV)"}
+      - {en: "G major (C: V = G: I)", sr: "G-dur akord (C: V = G: I)"}
+      - {en: "E minor (C: iii = G: vi)", sr: "e-mol akord (C: iii = G: vi)"}
+      - {en: "D major (G: V)", sr: "D-dur akord (G: V)"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: I, notes: [C4, E4, G4]}
+      - numeral: {key: G, is: IV, notes: [C4, E4, G4]}
+      - numeral: {key: G, is: V, notes: [D4, F#4, A4]}
+  - id: T-053-6
+    type: mcq
+    prompt: {en: "A minor (harmonic) to C major. The E major chord of A minor cannot be a pivot. Why?", sr: "a-mol (harmonski) u C-dur. E-dur akord iz a-mola ne može biti most. Zašto?"}
+    options:
+      - {en: "It contains G♯, which is not in C major", sr: "Sadrži Gis, kojeg nema u C-duru"}
+      - {en: "Dominant chords can never be pivots", sr: "Dominantni akordi nikad ne mogu biti mostovi"}
+      - {en: "It is diminished", sr: "Smanjen je"}
+      - {en: "It contains F", sr: "Sadrži F"}
+    answer: 0
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: V, notes: [E4, G#4, B4]}
+  - id: T-053-7
+    type: generated
+    count: 5
+    prompt: {en: "Label chords in the NEW key: after a modulation you count from the new tonic.", sr: "Označi akorde u NOVOM tonalitetu: posle modulacije brojiš od nove tonike."}
+    gen: {kind: roman, keys: [G, D, F, A], degrees: [1, 2, 4, 5, 6], ask: numeral}

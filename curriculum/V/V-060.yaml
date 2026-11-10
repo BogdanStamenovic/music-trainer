@@ -1,0 +1,122 @@
+id: V-060
+track: V
+order: 60
+title: {en: "Pop style basics: straight tone vs gentle vibrato", sr: "Osnove pop stila: ravan ton ili blagi vibrato"}
+prereqs: [V-059, V-053]
+minutes: 10
+tags: [voice, style, vibrato]
+explain:
+  en: |
+    **Vibrato** is a small, regular wave in pitch, about **5 to 7 times a second**. In a free voice it appears by itself on sustained notes, when breath, folds and throat
+    are balanced; it is not something you add with the jaw or the belly. **Straight tone** is a held note without that wave.
+
+    Styles use them differently:
+
+    | style | typical use |
+    |---|---|
+    | classical | vibrato on almost every sustained note, fairly wide |
+    | pop, singer-songwriter | mostly **straight tone**, especially on short notes and in verses; a **gentle** vibrato may bloom at the **end** of a long note (*delayed vibrato*) |
+    | folk, early music, choirs | often straight, so the voices blend |
+
+    So the pop default is: **start straight, let it bloom late, if at all.** Two warnings:
+
+    - **Straight is not held.** A straight tone made by locking the throat or the breath sounds pressed and tires fast. It should feel like a free hum that simply does not wave.
+      If straight tone only works when you tighten something, sing it softer.
+    - **Do not manufacture vibrato.** A jaw that wobbles, a belly that pulses or a head that nods makes a fake, slow wobble (2-4 per second). If vibrato does not come yet,
+      that is fine: in untrained voices it often appears after months, once support (lesson 36) and a free throat are in place.
+
+    How the grade works: the app grades the **average pitch** of the held note. Straight-tone items use a tighter tolerance; the vibrato items allow more, because a vibrato swings
+    above and below the note. Vibrato itself is never graded, and is never worth points; whether it was there is for your ears.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Vibrato** je mali, pravilan talas u visini, oko **5 do 7 puta u sekundi**. U slobodnom glasu javlja se sam na držanim tonovima, kad su dah, glasnice i grlo
+    u ravnoteži; nije nešto što dodaješ vilicom ili stomakom. **Ravan ton** je držani ton bez tog talasa.
+
+    Stilovi ih koriste različito:
+
+    | stil | uobičajena upotreba |
+    |---|---|
+    | klasično pevanje | vibrato na skoro svakom držanom tonu, prilično širok |
+    | pop, kantautori | uglavnom **ravan ton**, posebno na kratkim tonovima i u strofama; **blagi** vibrato može da procveta na **kraju** dugog tona (*odloženi vibrato*) |
+    | narodna i rana muzika, horovi | često ravno, da se glasovi stope |
+
+    Dakle pop podrazumevano: **počni ravno, pusti da procveta kasno, ako uopšte.** Dva upozorenja:
+
+    - **Ravno nije ukočeno.** Ravan ton napravljen zaključavanjem grla ili daha zvuči pritisnuto i brzo zamara. Treba da se oseća kao slobodno pevušenje koje se jednostavno ne talasa.
+      Ako ravan ton ide samo kad nešto stegneš, pevaj ga tiše.
+    - **Ne proizvodi vibrato.** Vilica koja se klati, stomak koji pulsira ili glava koja klima daju lažno, sporo drmanje (2-4 puta u sekundi). Ako vibrato još ne dolazi,
+      to je u redu: kod neškolovanih glasova često se javi posle nekoliko meseci, kad su oslonac (36. lekcija) i slobodno grlo na mestu.
+
+    Kako radi ocena: aplikacija ocenjuje **prosečnu visinu** držanog tona. Vežbe sa ravnim tonom imaju užu toleranciju; vežbe sa vibratom dozvoljavaju više, jer vibrato ide
+    iznad i ispod tona. Sam vibrato se nikad ne ocenjuje i nikad ne donosi poene; da li ga je bilo, čuješ ti.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-060-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-060-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then 3 hums of 5 seconds each on a comfortable note: free and steady, jaw loose."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa 3 pevušenja od po 5 sekundi na udobnom tonu: slobodno i mirno, opuštena vilica."
+  - id: V-060-3
+    type: sing-pitch
+    prompt:
+      en: "Straight tone: 'oo' on the note for 4 seconds, no wave, nothing held. If it only stays straight when something tightens, sing it softer."
+      sr: "Ravan ton: „u” na tonu 4 sekunde, bez talasa, ništa stegnuto. Ako ostaje ravan samo kad nešto stegneš, pevaj tiše."
+    notes: [D4]
+    sustain: 4
+    tolerance: 35
+    pass: 0.65
+  - id: V-060-4
+    type: sing-pitch
+    prompt:
+      en: "Delayed vibrato: 'ah' on the note for 6 seconds. Straight for the first 3, then just let go (do not make it): if a gentle wave appears, let it; if not, stay free and straight."
+      sr: "Odloženi vibrato: „a” na tonu 6 sekundi. Ravno prve 3, pa samo pusti (ne pravi ga): ako se javi blagi talas, pusti ga; ako ne, ostani slobodan i ravan."
+    notes: [E4]
+    sustain: 6
+    tolerance: 75
+    pass: 0.6
+  - id: V-060-5
+    type: sing-phrase
+    prompt:
+      en: "A pop line on 'la' or 'yeah': short notes straight and speech-like, the last long note straight first, then free to bloom."
+      sr: "Pop red na „la” ili „jea”: kratki tonovi ravno i kao govor, poslednji dugi ton prvo ravno, pa slobodno da procveta."
+    notes: [E4, E4, G4, E4, D4, C4, D4, E4]
+    beats: [0.5, 0.5, 1, 0.5, 0.5, 1, 1, 4]
+    tempo: 84
+    tolerance: 60
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-060-6
+    type: mcq
+    prompt:
+      en: "Your 'vibrato' is slow (about 3 waves a second) and you can see your jaw moving. What is it?"
+      sr: "Tvoj „vibrato” je spor (oko 3 talasa u sekundi) i vidiš kako ti se vilica pomera. Šta je to?"
+    options:
+      - {en: "A manufactured wobble: drop it and sing straight and free", sr: "Napravljeno drmanje: ostavi ga i pevaj ravno i slobodno"}
+      - {en: "A healthy classical vibrato", sr: "Zdrav klasični vibrato"}
+      - {en: "Pop-style delayed vibrato", sr: "Odloženi vibrato u pop stilu"}
+    answer: 0
+  - id: V-060-7
+    type: mcq
+    prompt:
+      en: "In most pop singing, what is the usual default on short notes in a verse?"
+      sr: "U većini pop pevanja, šta je uobičajeno na kratkim tonovima u strofi?"
+    options:
+      - {en: "Straight tone, speech-like", sr: "Ravan ton, kao govor"}
+      - {en: "Wide vibrato on every note", sr: "Širok vibrato na svakom tonu"}
+      - {en: "Vibrato added with the jaw for expression", sr: "Vibrato dodat vilicom radi izraza"}
+    answer: 0
+  - id: V-060-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: record the pop line twice: once all straight, once with the last note allowed to bloom. Listen. Rate: was the straight version free (not pressed), and did a wave appear by itself? Either answer is fine. Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi pop red dva puta: jednom sve ravno, jednom sa poslednjim tonom koji sme da procveta. Preslušaj. Oceni: da li je ravna verzija bila slobodna (ne pritisnuta) i da li se talas javio sam? Oba odgovora su u redu. Pa 3 tiha pevušenja uz klizanje naniže."

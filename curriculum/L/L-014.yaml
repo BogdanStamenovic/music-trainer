@@ -1,0 +1,175 @@
+id: L-014
+track: L
+order: 14
+prereqs: [L-013, L-008]
+title: {en: "Folk/story song: characters, a turn, a last verse that lands", sr: "Narodna pesma i pesma-priča: likovi, preokret, poslednja strofa koja pogađa"}
+minutes: 15
+tags: [lyrics, genre, folk, story]
+explain:
+  en: |
+    L-008 gave every song a small story: situation, complication, turn. A **story song** (folk
+    ballad, country story, the Serbian *balada* and the long narrative songs) makes that story
+    the whole point. It is usually **strophic**: same music each verse, the plot moves verse to
+    verse, and a short **refrain** line comes back.
+
+    ### Characters: a name and a job
+    *A girl* is nobody. *Mara, who sells bread at the Šabac station* is a person you can see.
+    Give the main character a **name**, a **place**, and **something they do with their hands**.
+    One line of what they say (dialogue) is worth three lines of description.
+
+    ### One scene per verse
+    Each verse is one place and one moment, in order. Do not summarise ("years went by and
+    things got hard"); show the next scene.
+
+    ### The turn
+    One **event** changes everything: a letter, a flood, a closed railway line, someone who
+    does not come back. It belongs about two-thirds of the way through, so there is still a
+    verse left to feel it.
+
+    ### A last verse that lands
+    The ending is where folk songs earn their place. Three reliable ways:
+
+    | way | what it does |
+    |---|---|
+    | **bookend** | an image from verse 1 returns, **changed** |
+    | **reveal** | the last verse tells us who the narrator is, and the story means something else |
+    | **time jump** | years later, one small detail shows the cost |
+
+    What does not land: a **moral** ("and so we learn that love is all"), a new character, or
+    verse 1 repeated unchanged.
+
+    > An outline (original):
+    > 1. Mara sells bread at the station; every morning she saves one roll for the driver of the 6:10.
+    > 2. Winter: the 6:10 is late, she waits with the roll in her coat.
+    > 3. **Turn:** the line is closed; the station becomes a warehouse.
+    > 4. **Lands (bookend + time jump):** Mara, old, still wraps one roll each morning, and eats it herself.
+    > Refrain after every verse: *the six-ten is on time*. True in verse 1, hope in verse 2, a lie in verse 4.
+
+    ### The Serbian tradition
+    The epic **deseterac** (L-002: 10 syllables, cut after the 4th) is the old meter of sung
+    stories, and folk ballads (the *Hasanaginica* is the famous one) use exactly these tools:
+    named people, dialogue, a turn, an ending without a moral. A modern story song does not need
+    the deseterac, but trying one line in it teaches compression.
+
+    ### At the piano
+    Story songs live on a simple, repeating accompaniment (I – IV – I – V) so the words lead.
+    Play it slowly and speak your verses over it; if a verse needs more music than the others,
+    it has too many words.
+  sr: |
+    U L-008 je svaka pesma dobila malu priču: situacija, zaplet, preokret. **Pesma-priča**
+    (narodna balada, kantri priča, srpska *balada* i duge pripovedne pesme) od te priče pravi
+    celu poentu. Obično je **strofična**: ista muzika u svakoj strofi, radnja ide od strofe do
+    strofe, a vraća se kratak **pripev**.
+
+    ### Likovi: ime i posao
+    *Devojka* je niko. *Mara, koja prodaje hleb na stanici u Šapcu* je osoba koju vidiš. Daj
+    glavnom liku **ime**, **mesto** i **nešto što radi rukama**. Jedan stih onoga što kaže
+    (dijalog) vredi kao tri stiha opisa.
+
+    ### Jedna scena po strofi
+    Svaka strofa je jedno mesto i jedan trenutak, redom. Ne prepričavaj („prošle su godine i
+    bilo je teško“); pokaži sledeću scenu.
+
+    ### Preokret
+    Jedan **događaj** menja sve: pismo, poplava, ukinuta pruga, neko ko se ne vrati. Pripada
+    otprilike na dve trećine pesme, da bi ostala još jedna strofa da se oseti.
+
+    ### Poslednja strofa koja pogađa
+    Završetak je mesto gde narodne pesme zaslužuju svoje mesto. Tri pouzdana načina:
+
+    | način | šta radi |
+    |---|---|
+    | **okvir** | slika iz prve strofe se vraća, **promenjena** |
+    | **otkriće** | poslednja strofa kaže ko je pripovedač, i priča znači nešto drugo |
+    | **skok u vremenu** | godinama kasnije, jedan mali detalj pokazuje cenu |
+
+    Šta ne pogađa: **pouka** („i tako naučismo da je ljubav sve“), nov lik, ili prva strofa
+    ponovljena bez promene.
+
+    > Skica (originalna):
+    > 1. Mara prodaje hleb na stanici; svakog jutra čuva jedno pecivo za mašinovođu voza u 6:10.
+    > 2. Zima: voz u 6:10 kasni, ona čeka sa pecivom u kaputu.
+    > 3. **Preokret:** pruga je ukinuta; stanica postaje magacin.
+    > 4. **Pogađa (okvir + skok u vremenu):** Mara, stara, i dalje svako jutro uvije jedno pecivo, i pojede ga sama.
+    > Pripev posle svake strofe: *voz u šest i deset stiže na vreme*. Istina u 1. strofi, nada u 2, laž u 4.
+
+    ### Srpska tradicija
+    Epski **deseterac** (L-002: 10 slogova, cezura posle četvrtog) je stari metar pevanih priča,
+    a narodne balade (najpoznatija je *Hasanaginica*) koriste baš ove alate: likove sa imenom,
+    dijalog, preokret, kraj bez pouke. Savremenoj pesmi-priči deseterac nije potreban, ali jedan
+    stih u njemu uči sažimanju.
+
+    ### Za klavirom
+    Pesme-priče žive na jednostavnoj pratnji koja se ponavlja (I – IV – I – V), da bi reči vodile.
+    Sviraj je polako i izgovaraj strofe preko nje; ako jednoj strofi treba više muzike nego
+    ostalima, ima previše reči.
+exercises:
+  - id: L-014-1
+    type: mcq
+    prompt: {en: "Which opening line sets up a story song best?", sr: "Koji početni stih najbolje postavlja pesmu-priču?"}
+    options:
+      - {en: "Mara sells bread at the station in Šabac", sr: "Mara prodaje hleb na stanici u Šapcu"}
+      - {en: "There once was a girl who was very sad", sr: "Bila jednom jedna tužna devojka"}
+      - {en: "Life is hard for those who wait", sr: "Život je težak za one koji čekaju"}
+      - {en: "This is a story about love and loss", sr: "Ovo je priča o ljubavi i gubitku"}
+    answer: 0
+  - id: L-014-2
+    type: mcq
+    prompt: {en: "In a four-verse story song, what is the turn, and where does it usually go?", sr: "U pesmi-priči od četiri strofe, šta je preokret i gde obično stoji?"}
+    options:
+      - {en: "One event that changes everything, around verse 3", sr: "Jedan događaj koji menja sve, oko treće strofe"}
+      - {en: "The moral of the story, in the last line", sr: "Pouka priče, u poslednjem stihu"}
+      - {en: "A description of the main character, in verse 1", sr: "Opis glavnog lika, u prvoj strofi"}
+      - {en: "A key change in the music, in the refrain", sr: "Promena tonaliteta u muzici, u pripevu"}
+    answer: 0
+  - id: L-014-3
+    type: mcq
+    prompt: {en: "Verse 1: a boy carves his name into the bridge railing. Which last verse lands?", sr: "Prva strofa: dečak urezuje svoje ime u ogradu mosta. Koja poslednja strofa pogađa?"}
+    options:
+      - {en: "Fifty years on, his grandson runs a finger over the name, half grown over with paint", sr: "Pedeset godina kasnije, unuk prelazi prstom preko imena, napola zatrpanog farbom"}
+      - {en: "And so we learn that time takes everything away", sr: "I tako naučismo da vreme sve odnese"}
+      - {en: "A new girl moves to town and opens a café", sr: "Nova devojka se doseli u grad i otvori kafić"}
+      - {en: "The boy carves his name into the bridge railing", sr: "Dečak urezuje svoje ime u ogradu mosta"}
+    answer: 0
+  - id: L-014-4
+    type: mcq
+    prompt: {en: "The refrain “the six-ten is on time” comes back after every verse, unchanged. Why does it still work?", sr: "Pripev „voz u šest i deset stiže na vreme“ vraća se posle svake strofe, nepromenjen. Zašto i dalje radi?"}
+    options:
+      - {en: "The verses change what it means: true, then a hope, finally a lie", sr: "Strofe menjaju njegovo značenje: istina, pa nada, na kraju laž"}
+      - {en: "Repetition is always good in folk songs, whatever it says", sr: "Ponavljanje je u narodnoj pesmi uvek dobro, šta god da kaže"}
+      - {en: "It gives the singer a rest", sr: "Daje pevaču odmor"}
+      - {en: "It does not: a refrain should change its words every time", sr: "Ne radi: pripev treba svaki put da menja reči"}
+    answer: 0
+  - id: L-014-5
+    type: mcq
+    prompt: {en: "Which line is an epic deseterac (10 syllables, cut after the 4th)?", sr: "Koji stih je epski deseterac (10 slogova, cezura posle četvrtog)?"}
+    options: ["Rano rani Mara pekarica", "Mara ustaje, peče hleb za voz", "Mara rano ustaje", "Rano rani pekarica Mara iz Šapca"]
+    answer: 0
+    checks:
+      - syllables: {text: "Rano rani Mara pekarica", lang: sr, is: 10}
+      - syllables: {text: "Rano rani", lang: sr, is: 4}
+      - syllables: {text: "Mara pekarica", lang: sr, is: 6}
+      - syllables: {text: "Mara ustaje, peče hleb za voz", lang: sr, is: 10}
+      - syllables: {text: "Mara ustaje,", lang: sr, is: 5}
+      - syllables: {text: "Mara rano ustaje", lang: sr, is: 7}
+      - syllables: {text: "Rano rani pekarica Mara iz Šapca", lang: sr, is: 13}
+  - id: L-014-6
+    type: write
+    prompt:
+      en: "Outline a 4-verse story song in English or Serbian, one line per verse: who (name, place, what they do), the next scene, the turn, the landing (bookend, reveal or time jump). Add the refrain line and say what it means after verse 1 and after verse 4. Then write the full last verse (4 lines)."
+      sr: "Napravi skicu pesme-priče od 4 strofe, na engleskom ili srpskom, po jedan red za strofu: ko (ime, mesto, šta radi), sledeća scena, preokret, završetak (okvir, otkriće ili skok u vremenu). Dodaj stih pripeva i reci šta znači posle prve i posle četvrte strofe. Zatim napiši celu poslednju strofu (4 stiha)."
+    language: either
+    lines: [9, 14]
+    rubric:
+      - id: character
+        label: {en: "A real character", sr: "Pravi lik"}
+        top: {en: "The main character has a name, a place and something they do with their hands; at least one line of what someone says.", sr: "Glavni lik ima ime, mesto i nešto što radi rukama; bar jedan stih onoga što neko kaže."}
+      - id: scenes
+        label: {en: "Scenes in order", sr: "Scene redom"}
+        top: {en: "Each verse is one place and moment, in time order; no verse summarises (“years went by”).", sr: "Svaka strofa je jedno mesto i trenutak, vremenskim redom; nijedna strofa ne prepričava („prošle su godine“)."}
+      - id: turn
+        label: {en: "A turn", sr: "Preokret"}
+        top: {en: "One concrete event changes the situation, and it comes before the last verse.", sr: "Jedan konkretan događaj menja situaciju, i dolazi pre poslednje strofe."}
+      - id: lands
+        label: {en: "The ending lands", sr: "Završetak pogađa"}
+        top: {en: "The last verse uses a bookend, reveal or time jump, ends on an image, states no moral, and the refrain means something different after it than after verse 1.", sr: "Poslednja strofa koristi okvir, otkriće ili skok u vremenu, završava se slikom, ne izriče pouku, a pripev posle nje znači nešto drugo nego posle prve strofe."}

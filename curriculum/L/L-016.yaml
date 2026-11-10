@@ -1,0 +1,164 @@
+id: L-016
+track: L
+order: 16
+prereqs: [L-015, L-003]
+title: {en: "Rhyme schemes in practice (ABAB, AABB, internal rhyme)", sr: "Šeme rime u praksi (ABAB, AABB, unutrašnja rima)"}
+minutes: 15
+tags: [lyrics, rhyme]
+explain:
+  en: |
+    L-003 named the schemes. In practice the question is **what each one does to the listener**,
+    and so which section it suits. Rhyme is a promise: when a line ends, the ear waits for its
+    partner. How long it waits sets the pace.
+
+    | scheme | the ear waits | feels | typical place |
+    |---|---|---|---|
+    | **AABB** (couplets) | one line | quick, closed, punchy; sing-song if it runs long | chorus, rock and rap verses, children's songs |
+    | **ABAB** (alternating) | two lines, two threads at once | balanced, literary, "composed" | starogradska, ballads, verses with time to breathe |
+    | **XAXA** (only 2 and 4) | two lines, half of them free | loose, conversational | story verses, folk, most pop verses |
+    | **AAAA** | never: it keeps landing | hammering | short choruses, chants |
+
+    **Change the scheme between sections.** A verse in XAXA and a chorus in AABB tell the
+    listener that the section has changed even before the melody does. The tighter scheme in
+    the chorus also makes it feel more final.
+
+    ABAB in Serbian (osmerac, original):
+
+    > *Ništa ne čujem sem kiše,* (A)
+    > *na stolu je ostao čaj,* (B)
+    > *a ti ne zoveš me više,* (A)
+    > *i sad znam da je ovo kraj.* (B)
+
+    *kiše / više* is a feminine rhyme (KI-še, VI-še), *čaj / kraj* a masculine one: the
+    alternation of the two endings is part of what makes ABAB sound composed.
+
+    ### Internal rhyme
+    A rhyme **inside** the line, usually on two stressed syllables: *I take the **train** in the
+    **rain** again*; *Noć je **duga**, **tuga** gluva*. It speeds a line up and makes it
+    memorable, which is why rap and rock use it constantly. One per line is plenty.
+
+    ### Two rules
+    1. **Never bend the sentence to reach the rhyme.** *Down to the river slowly I did go* is
+       there only for *snow*. Find another rhyme word or rebuild both lines.
+    2. **Rhyme on the sound you hold.** The rhyme word usually gets the last, longest note
+       (L-003), so a weak rhyme there is the most audible kind.
+
+    ### At the piano
+    Take a four-chord loop (C – Am – F – G). Speak an AABB stanza over it, one line per bar, and
+    then an ABAB one. Notice how the AABB version wants to stop after every second bar, and the
+    ABAB one carries you through all four.
+  sr: |
+    U L-003 si naučio imena šema. U praksi je pitanje **šta svaka radi slušaocu**, pa samim tim
+    kom delu pesme odgovara. Rima je obećanje: kad se stih završi, uho čeka njegov par. Koliko
+    dugo čeka, određuje tempo.
+
+    | šema | uho čeka | zvuči | tipično mesto |
+    |---|---|---|---|
+    | **AABB** (parna) | jedan stih | brzo, zatvoreno, udarno; kao brojalica ako traje dugo | refren, rok i rep strofe, dečje pesme |
+    | **ABAB** (ukrštena) | dva stiha, dve niti odjednom | uravnoteženo, književno, „komponovano“ | starogradska, balade, strofe koje imaju vremena |
+    | **XAXA** (samo 2. i 4.) | dva stiha, pola slobodnih | opušteno, razgovorno | strofe sa pričom, narodna, većina pop strofa |
+    | **AAAA** | nikad: stalno sleće | kao čekić | kratki refreni, skandiranja |
+
+    **Menjaj šemu između delova.** Strofa u XAXA i refren u AABB kažu slušaocu da se deo
+    promenio i pre nego što to kaže melodija. Gušća šema u refrenu ga čini i završnijim.
+
+    ABAB na srpskom (osmerac, originalno):
+
+    > *Ništa ne čujem sem kiše,* (A)
+    > *na stolu je ostao čaj,* (B)
+    > *a ti ne zoveš me više,* (A)
+    > *i sad znam da je ovo kraj.* (B)
+
+    *kiše / više* je ženska rima (KI-še, VI-še), *čaj / kraj* muška: smenjivanje dva završetka je
+    deo onoga što ABAB čini „komponovanim“.
+
+    ### Unutrašnja rima
+    Rima **unutar** stiha, obično na dva naglašena sloga: *Noć je **duga**, **tuga** gluva*;
+    *I take the **train** in the **rain** again*. Ubrzava stih i čini ga pamtljivim, zato je rep i
+    rok stalno koriste. Jedna po stihu je sasvim dovoljno.
+
+    ### Dva pravila
+    1. **Nikad ne krivi rečenicu da bi stigao do rime.** *Do reke polako ja sam išao* stoji tako
+       samo zbog rime. Nađi drugu reč za rimu ili prepravi oba stiha.
+    2. **Rimuj na zvuku koji držiš.** Reč u rimi obično dobija poslednju, najdužu notu (L-003),
+       pa je slaba rima tu najčujnija.
+
+    ### Za klavirom
+    Uzmi petlju od četiri akorda (C – a-mol – F – G). Izgovori AABB strofu preko nje, jedan stih
+    po taktu, pa ABAB strofu. Primeti kako AABB verzija hoće da stane posle svakog drugog takta, a
+    ABAB te nosi kroz sva četiri.
+exercises:
+  - id: L-016-1
+    type: mcq
+    prompt:
+      en: "Which scheme? “The kettle clicks, the kitchen's cold, / the bread is stale, the news is old, / your boots are gone from by the door, / I don't set out two plates anymore.”"
+      sr: "Koja šema? „Ništa ne čujem sem kiše, / na stolu je ostao čaj, / a ti ne zoveš me više, / i sad znam da je ovo kraj.“"
+    options:
+      - {en: "AABB", sr: "ABAB"}
+      - {en: "ABAB", sr: "AABB"}
+      - {en: "XAXA", sr: "XAXA"}
+      - {en: "ABBA", sr: "ABBA"}
+    answer: 0
+    checks:
+      - syllables: {text: "Ništa ne čujem sem kiše,", lang: sr, is: 8}
+      - syllables: {text: "na stolu je ostao čaj,", lang: sr, is: 8}
+      - syllables: {text: "a ti ne zoveš me više,", lang: sr, is: 8}
+      - syllables: {text: "i sad znam da je ovo kraj.", lang: sr, is: 8}
+  - id: L-016-2
+    type: mcq
+    prompt: {en: "A story verse and a short, final-sounding chorus. Which pairing of schemes suits them?", sr: "Strofa koja priča priču i kratak refren koji zvuči završno. Koji par šema im odgovara?"}
+    options:
+      - {en: "verse XAXA, chorus AABB", sr: "strofa XAXA, refren AABB"}
+      - {en: "verse AABB, chorus XAXA", sr: "strofa AABB, refren XAXA"}
+      - {en: "both XAXA, so they match", sr: "oboje XAXA, da se slažu"}
+      - {en: "no rhyme in the chorus at all, to stand out", sr: "bez ikakve rime u refrenu, da se izdvoji"}
+    answer: 0
+  - id: L-016-3
+    type: mcq
+    prompt:
+      en: "XAXA: “I drove past your street at nine, / the porch light was on, / somebody's car in the drive, / ___” Which line completes it?"
+      sr: "XAXA: „Prošao sam kraj tvoje kuće, / svetlo je gorelo do zore, / na prilazu tuđa kola, / ___“ Koji stih je završava?"
+    options:
+      - {en: "and the old swing was gone", sr: "a ja sam produžio gore"}
+      - {en: "and I kept on driving by", sr: "pa sam stao kraj tih kola"}
+      - {en: "the curtains were drawn tight", sr: "i nisam se zaustavio"}
+      - {en: "somebody's car, somebody's car", sr: "tuđa kola, tuđa kola"}
+    answer: 0
+  - id: L-016-4
+    type: mcq
+    prompt: {en: "Which line has an internal rhyme?", sr: "Koji stih ima unutrašnju rimu?"}
+    options:
+      - {en: "I take the train in the rain again", sr: "Noć je duga, tuga gluva"}
+      - {en: "The city sleeps, and no one knows", sr: "Grad je siv i niko ne zna"}
+      - {en: "It's raining on the roofs tonight", sr: "Pada kiša na sve krovove"}
+      - {en: "I drive alone through empty streets", sr: "Vozim sam kroz pustu noć"}
+    answer: 0
+  - id: L-016-5
+    type: mcq
+    prompt: {en: "“Down to the river slowly I did go, / to watch the ice and the first falling snow.” What is the best fix?", sr: "„Do reke polako ja sam išao, / da gledam led i sneg što je pao.“ Koja popravka je najbolja?"}
+    options:
+      - {en: "Rebuild the lines in normal word order and find a rhyme that fits it", sr: "Preslozi stihove u prirodan red reči i nađi rimu koja mu odgovara"}
+      - {en: "Keep it: inversion is normal in songs", sr: "Ostavi tako: obrnut red reči je u pesmama normalan"}
+      - {en: "Add “oh” to fill the line", sr: "Dodaj „oj“ da popuniš stih"}
+      - {en: "Drop the rhyme in line 2 only", sr: "Izbaci rimu samo u drugom stihu"}
+    answer: 0
+  - id: L-016-6
+    type: write
+    prompt:
+      en: "Write a 4-line verse in XAXA and a 4-line chorus in AABB (or AAAA), same song, English or Serbian. Put at least one internal rhyme in the chorus. Mark the scheme letters after each line and underline or capitalise the internal rhyme."
+      sr: "Napiši strofu od 4 stiha u XAXA i refren od 4 stiha u AABB (ili AAAA), ista pesma, na engleskom ili srpskom. U refrenu neka bude bar jedna unutrašnja rima. Posle svakog stiha označi slovo šeme, a unutrašnju rimu podvuci ili napiši velikim slovima."
+    language: either
+    lines: [8, 10]
+    rubric:
+      - id: schemes
+        label: {en: "Schemes as marked", sr: "Šeme kako su označene"}
+        top: {en: "The verse rhymes only lines 2 and 4; the chorus rhymes in couplets (or all four); every marked rhyme matches from the last stressed vowel to the end.", sr: "Strofa rimuje samo 2. i 4. stih; refren rimuje u parovima (ili sva četiri); svaka označena rima se poklapa od poslednjeg naglašenog samoglasnika do kraja."}
+      - id: internal
+        label: {en: "Internal rhyme", sr: "Unutrašnja rima"}
+        top: {en: "At least one chorus line rhymes two stressed syllables inside the line, and it sounds natural spoken aloud.", sr: "Bar jedan stih refrena rimuje dva naglašena sloga unutar stiha, i to zvuči prirodno kad se izgovori."}
+      - id: syntax
+        label: {en: "No bent sentences", sr: "Bez iskrivljenih rečenica"}
+        top: {en: "Every line keeps normal spoken word order; no word is there only to reach the rhyme.", sr: "Svaki stih zadržava prirodan govorni red reči; nijedna reč nije tu samo zbog rime."}
+      - id: contrast
+        label: {en: "The chorus feels different", sr: "Refren zvuči drugačije"}
+        top: {en: "Read aloud over a four-chord loop, the chorus feels tighter and more final than the verse.", sr: "Izgovoren preko petlje od četiri akorda, refren zvuči zbijenije i završnije od strofe."}

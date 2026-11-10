@@ -1,0 +1,170 @@
+id: E-044
+track: E
+order: 44
+title: {en: "Third song by ear (public-domain), with chords", sr: "Treća pesma po sluhu (javni domen), sa akordima"}
+prereqs: [E-043, E-033]
+minutes: 15
+tags: [ear, melody, song, harmony]
+# Tune: "Jingle Bells", chorus. James Lord Pierpont, published 1857; the chorus melody sung today
+# settled in the late 19th century. Public domain. Common C major version, 4/4, no pickup.
+explain:
+  en: |
+    *Versions differ:* some songbooks dot "fun" in bar 5 (F F F. F). The app grades the plain
+    quarter-note version below; if you learned the other, play the version written here.
+
+    Third song: the chorus of **Jingle Bells** (James Lord Pierpont, 1857). Same method as E-021 and
+    E-033 for the melody; new today is finding the **chords by ear**, one per bar.
+
+    Landmarks for the melody:
+
+    - **Key**: C major; it ends on **C4**. **First note**: E4, degree 3, repeated: "Jin-gle bells"
+      is three E's.
+    - **Form**: four 4-bar phrases, **A B A C**. Phrase 3 is phrase 1 again; phrases 2 and 4 start
+      the same (F F F F | F E E E E) and end differently: phrase 2 stops on **G** (open, a half
+      cadence), phrase 4 falls G G F D to **C** (closed).
+    - **The big leap**: from "jin-gle" to "all", G4 falls to C4, a fifth down, and climbs back by step.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E E E2 | E E E2 | E G C3/2 D/ | E4 | F F F F | F E E E/E/ | E D D E | D2 G2 |]
+    ```
+
+    **Chords by ear**, one per bar, using what you already know:
+
+    1. **Long notes and the first beat decide.** Bar 4 is a whole E: C major (C E G) holds it, and
+       the tonic is right for the end of a phrase.
+    2. **Try I, IV, V first.** Bar 5 repeats F: of I, IV and V, only **IV** (F A C) has F as a
+       chord tone *and* sounds stable under it.
+    3. **The end of a phrase tells you the cadence.** Phrase 2 ends on D and G: that is V, a half
+       cadence. Phrase 4 ends on C: V7 → I.
+    4. **Then look for colour.** In bar 7, D7 (V7/V, from E-034) leads strongly into G7; many
+       arrangements use it. The plain G7 works too, just less pull.
+  sr: |
+    *Verzije se razlikuju:* neke pesmarice stavljaju tačku na „fun" u 5. taktu (F F F. F). Aplikacija
+    ocenjuje jednostavnu verziju u četvrtinama ispod; ako znaš drugu, odsviraj verziju napisanu
+    ovde.
+
+    Treća pesma: refren pesme **Jingle Bells** (Džejms Lord Pirpont, 1857). Isti metod kao u E-021 i
+    E-033 za melodiju; novo je pronalaženje **akorda po sluhu**, jedan po taktu.
+
+    Orijentiri za melodiju:
+
+    - **Tonalitet**: C-dur; završava se na **C4**. **Prvi ton**: E4, 3. stupanj, ponovljen: „Jin-gle
+      bells" su tri E.
+    - **Forma**: četiri rečenice od po 4 takta, **A B A C**. Treća rečenica je opet prva; druga i
+      četvrta počinju isto (F F F F | F E E E E) i završavaju se različito: druga staje na **G**
+      (otvoreno, polukadenca), četvrta silazi G G F D na **C** (zatvoreno).
+    - **Veliki skok**: od „jin-gle" do „all" melodija pada sa G4 na C4, kvintu naniže, pa se vraća korakom.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    E E E2 | E E E2 | E G C3/2 D/ | E4 | F F F F | F E E E/E/ | E D D E | D2 G2 |]
+    ```
+
+    **Akordi po sluhu**, jedan po taktu, sa onim što već znaš:
+
+    1. **Dugi tonovi i prva doba odlučuju.** Takt 4 je celo E: C-dur (C E G) ga drži, a tonika
+       odgovara kraju rečenice.
+    2. **Prvo probaj I, IV, V.** Takt 5 ponavlja F: od I, IV i V samo **IV** (F A C) ima F kao ton
+       akorda *i* zvuči stabilno ispod njega.
+    3. **Kraj rečenice otkriva kadencu.** Druga rečenica se završava na D i G: to je V, polukadenca.
+       Četvrta se završava na C: V7 → I.
+    4. **Onda traži boju.** U 7. taktu D7 (V7/V, iz E-034) snažno vodi u G7; mnogi aranžmani ga
+       koriste. Obično G7 takođe radi, samo sa manje privlačenja.
+exercises:
+  - id: E-044-1
+    type: midi-echo
+    prompt: {en: "Phrase 1, \"Jingle bells, jingle bells, jingle all the way\" (C major, starts on E4). Sing it, then play it back.", sr: "Rečenica 1, „Jingle bells, jingle bells, jingle all the way” (C-dur, počinje na E4). Otpevaj je, pa odsviraj."}
+    mode: sequence
+    expect: [E4, E4, E4, E4, E4, E4, E4, G4, C4, D4, E4]
+    beats: [1, 1, 2, 1, 1, 2, 1, 1, 1.5, 0.5, 4]
+    tempo: 100
+    octave: exact
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: E-044-2
+    type: midi-echo
+    prompt: {en: "Phrase 2, \"Oh what fun it is to ride in a one-horse open sleigh, hey!\" It starts on F4 and stops open, on G4.", sr: "Rečenica 2, „Oh what fun it is to ride in a one-horse open sleigh, hey!” Počinje na F4 i staje otvoreno, na G4."}
+    mode: sequence
+    expect: [F4, F4, F4, F4, F4, E4, E4, E4, E4, E4, D4, D4, E4, D4, G4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 2, 2]
+    tempo: 100
+    octave: exact
+    checks:
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: E-044-3
+    type: midi-echo
+    prompt: {en: "Phrase 4: the same start as phrase 2, then it falls to the tonic.", sr: "Rečenica 4: isti početak kao druga, pa silazi na toniku."}
+    mode: sequence
+    expect: [F4, F4, F4, F4, F4, E4, E4, E4, E4, G4, G4, F4, D4, C4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 4]
+    tempo: 100
+    octave: exact
+    checks:
+      - interval: {from: F4, to: D4, is: m3}
+      - interval: {from: D4, to: C4, is: M2}
+  - id: E-044-4
+    type: mcq
+    prompt: {en: "Phrase 2 again (melody only). Play each option under it, one chord per bar. Which fits?", sr: "Ponovo rečenica 2 (samo melodija). Odsviraj svaku opciju ispod nje, jedan akord po taktu. Koja odgovara?"}
+    options:
+      - {en: "F – C – D7 – G7", sr: "F – C – D7 – G7"}
+      - {en: "C – C – G7 – C", sr: "C – C – G7 – C"}
+      - {en: "F – Am – Dm – C", sr: "F – Am – Dm – C"}
+      - {en: "C – F – C – G7", sr: "C – F – C – G7"}
+    answer: 0
+    play: {notes: [F4, F4, F4, F4, F4, E4, E4, E4, E4, E4, D4, D4, E4, D4, G4], durations: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 2, 2], tempo: 100}
+    checks:
+      - numeral: {key: C, is: "IV", notes: [F3, A3, C4]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, F#3, A3, C4]}
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - chord: {notes: [D3, F#3, A3, C4], root: D, quality: "7"}
+  - id: E-044-5
+    type: mcq
+    prompt: {en: "Phrase 4 (melody only). Which chords, one per bar?", sr: "Rečenica 4 (samo melodija). Koji akordi, jedan po taktu?"}
+    options:
+      - {en: "F – C – G7 – C", sr: "F – C – G7 – C"}
+      - {en: "F – C – D7 – G7", sr: "F – C – D7 – G7"}
+      - {en: "C – F – C – G7", sr: "C – F – C – G7"}
+      - {en: "F – G7 – Am – C", sr: "F – G7 – Am – C"}
+    answer: 0
+    play: {notes: [F4, F4, F4, F4, F4, E4, E4, E4, E4, G4, G4, F4, D4, C4], durations: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 4], tempo: 100}
+    checks:
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+  - id: E-044-6
+    type: midi-echo
+    prompt: {en: "The chords of phrases 1 and 2, one per bar (C C C C | F C D7 G7). Listen, then play them back in time: any voicing, right bass.", sr: "Akordi rečenica 1 i 2, jedan po taktu (C C C C | F C D7 G7). Slušaj, pa ih odsviraj u ritmu: bilo koji raspored, tačan bas."}
+    mode: chords
+    expectChords: [[C3, E4, G4, C5], [C3, E4, G4, C5], [C3, E4, G4, C5], [C3, E4, G4, C5], [F3, F4, A4, C5], [C3, E4, G4, C5], [D3, F#4, A4, C5], [G3, F4, B4, D5]]
+    beats: [4, 4, 4, 4, 4, 4, 4, 4]
+    tempo: 100
+    octave: any
+    bass: true
+    pass: 0.7
+    checks:
+      - numeral: {key: C, is: "I", notes: [C3, E4, G4, C5]}
+      - numeral: {key: C, is: "IV", notes: [F3, F4, A4, C5]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, F#4, A4, C5]}
+      - numeral: {key: C, is: "V7", notes: [G3, F4, B4, D5]}
+  - id: E-044-7
+    type: midi-echo
+    prompt: {en: "Transfer: phrase 4 in F major. It starts on B♭4 (degree 4 again) and ends on F4.", sr: "Prenos: rečenica 4 u F-duru. Počinje na B4 (opet 4. stupanj) i završava se na F4."}
+    mode: sequence
+    expect: [Bb4, Bb4, Bb4, Bb4, Bb4, A4, A4, A4, A4, C5, C5, Bb4, G4, F4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 4]
+    tempo: 100
+    octave: exact
+    pass: 0.7
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: F4, to: Bb4, is: P4}
+      - interval: {from: Bb4, to: G4, is: m3}
+      - interval: {from: G4, to: F4, is: M2}

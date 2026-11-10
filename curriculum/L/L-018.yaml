@@ -1,0 +1,197 @@
+id: L-018
+track: L
+order: 18
+prereqs: [L-017, L-007]
+title: {en: "Writing to a given melody (prosody in practice)", sr: "Pisanje na zadatu melodiju (prozodija u praksi)"}
+minutes: 15
+tags: [lyrics, prosody, melody]
+explain:
+  en: |
+    Often the melody comes first: yours, a co-writer's, a folk tune. L-007 gave the rule
+    (stressed syllables on strong beats). This lesson is the **method** for filling a melody
+    with words without fighting it.
+
+    ### 1. Map the melody before you write a word
+    Under every note write **DUM** (strong: beat 1 or 3, a long note, a high note) or **da**
+    (weak: other beats, short notes, pickups). Count the notes per phrase.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: da DUM da DUM da DUM
+    ```
+
+    Six notes: a pickup, then DUM on beats 1 and 3 and on the long final note.
+
+    ### 2. Find the hook spot
+    The **longest or highest** note of the chorus is where the title wants to sit (L-005). Put
+    the title there first, then build the rest of the line around it.
+
+    ### 3. Fill the map
+    - **DUM** gets a stressed syllable; **da** gets an unstressed one: articles, prepositions,
+      *and*, *i*, *a*, *je*, or the weak syllable of a word.
+    - A **pickup** wants an unstressed word: *the*, *and*, *I*; in Serbian *i*, *a*, *da*.
+    - In Serbian the last syllable of a longer word is never stressed (L-007), so a **DUM on the
+      final note** wants a one-syllable word.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: I know the way back home
+    ```
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: a grad je pra-zan sav
+    ```
+
+    Both lines match the map exactly: *I KNOW the WAY back HOME*, *a GRAD je PRA-zan SAV*.
+
+    ### 4. Vowels for long and high notes
+    A held note needs a vowel you can hold: **open** ones (*a*, *o*, *ah*, *go*, *home*, *dan*,
+    *sam*). Closed, short vowels (*it*, *is*, *kiss*, *ti*, *mi*) pinch on a long high note.
+    Consonant clusters (*strengths*, *prst*) are hard on fast notes.
+
+    ### 5. Then sing it
+    Speak the words in rhythm first, then sing them. Wherever you hear yourself say a word
+    the way nobody speaks, go back to step 3: change the words, not the stress.
+  sr: |
+    Melodija često dolazi prva: tvoja, koautorova, narodna. U L-007 si dobio pravilo (naglašeni
+    slogovi na jake dobe). Ova lekcija je **metod** kako da melodiju popuniš rečima, a da se ne
+    boriš sa njom.
+
+    ### 1. Mapiraj melodiju pre prve reči
+    Ispod svake note napiši **DUM** (jako: 1. ili 3. doba, duga nota, visoka nota) ili **da**
+    (slabo: ostale dobe, kratke note, predtakt). Prebroj note u svakoj frazi.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: da DUM da DUM da DUM
+    ```
+
+    Šest nota: predtakt, pa DUM na 1. i 3. dobi i na dugoj poslednjoj noti.
+
+    ### 2. Nađi mesto za udicu
+    **Najduža ili najviša** nota refrena je mesto gde naslov hoće da sedi (L-005). Prvo tamo
+    stavi naslov, pa oko njega izgradi ostatak stiha.
+
+    ### 3. Popuni mapu
+    - **DUM** dobija naglašen slog; **da** nenaglašen: predlozi, veznici, *i*, *a*, *je*, ili
+      slab slog neke reči.
+    - **Predtakt** traži nenaglašenu reč: *i*, *a*, *da*; na engleskom *the*, *and*, *I*.
+    - Na srpskom poslednji slog duže reči nikad nije naglašen (L-007), pa **DUM na poslednjoj
+      noti** traži jednosložnu reč.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: a grad je pra-zan sav
+    ```
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    G2 | c3 B A2 G2 | E6 z2 |]
+    w: I know the way back home
+    ```
+
+    Oba stiha tačno prate mapu: *a GRAD je PRA-zan SAV*, *I KNOW the WAY back HOME*.
+
+    ### 4. Samoglasnici za duge i visoke note
+    Zadržana nota traži samoglasnik koji može da se drži: **otvorene** (*a*, *o*, *dan*, *sam*,
+    *go*, *home*). Zatvoreni, kratki samoglasnici (*ti*, *mi*, *it*, *kiss*) se stežu na dugoj
+    visokoj noti. Grupe suglasnika (*prst*, *strengths*) su teške na brzim notama.
+
+    ### 5. Onda otpevaj
+    Prvo izgovori reči u ritmu, pa ih otpevaj. Gde god čuješ da reč izgovaraš onako kako niko ne
+    govori, vrati se na korak 3: menjaj reči, ne naglasak.
+exercises:
+  - id: L-018-1
+    type: mcq
+    abc: "X:1\nM:3/4\nL:1/4\nK:F\nA2 G | F2 C | D E F | G3 |]"
+    prompt: {en: "Which stress map fits this 3/4 melody (DUM = strong beat or long note)?", sr: "Koja mapa naglasaka odgovara ovoj melodiji u 3/4 (DUM = jaka doba ili duga nota)?"}
+    options:
+      - {en: "DUM da DUM da DUM da da DUM", sr: "DUM da DUM da DUM da da DUM"}
+      - {en: "da DUM da DUM da DUM da DUM", sr: "da DUM da DUM da DUM da DUM"}
+      - {en: "DUM DUM da da DUM DUM da da", sr: "DUM DUM da da DUM DUM da da"}
+      - {en: "da da DUM da da DUM da DUM", sr: "da da DUM da da DUM da DUM"}
+    answer: 0
+  - id: L-018-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nD2 | G3 A B2 A2 | G6 z2 |]\nw: da DUM da DUM da DUM"
+    prompt: {en: "Which line fits this map with every stress on a DUM?", sr: "Koji stih odgovara ovoj mapi tako da je svaki naglasak na DUM?"}
+    options:
+      - {en: "The night is cold and long", sr: "i sneg je pao svud"}
+      - {en: "Holding the photograph", sr: "Sneg je pao svuda"}
+      - {en: "Under the yellow moon", sr: "Pada sneg na grad"}
+      - {en: "Cold is the night", sr: "i ulice su bele"}
+    answer: 0
+    checks:
+      - syllables: {text: "i sneg je pao svud", lang: sr, is: 6}
+      - syllables: {text: "Sneg je pao svuda", lang: sr, is: 6}
+      - syllables: {text: "Pada sneg na grad", lang: sr, is: 5}
+      - syllables: {text: "i ulice su bele", lang: sr, is: 7}
+  - id: L-018-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:C\nG2 | c3 B A2 G2 | E6 z2 |]\nw: the ho-tel's emp-ty now"
+    prompt: {en: "In this English setting, which word has its stress on a weak note?", sr: "U ovoj engleskoj postavci, kojoj reči naglasak pada na slabu notu?"}
+    options: ["hotel", "empty", "now", "the"]
+    answer: 0
+  - id: L-018-4
+    type: mcq
+    prompt: {en: "The title sits on a long, high note. Which word suits that note best?", sr: "Naslov stoji na dugoj, visokoj noti. Koja reč joj najviše odgovara?"}
+    options:
+      - {en: "“go” (an open vowel you can hold)", sr: "„dan“ (otvoren samoglasnik koji može da se drži)"}
+      - {en: "“kiss” (a short, closed vowel)", sr: "„mi“ (kratak, zatvoren samoglasnik)"}
+      - {en: "“strengths” (a cluster of consonants)", sr: "„prst“ (grupa suglasnika)"}
+      - {en: "“the” (an unstressed word)", sr: "„i“ (nenaglašena reč)"}
+    answer: 0
+  - id: L-018-5
+    type: mcq
+    prompt: {en: "The melody starts with a one-note pickup. What kind of word belongs on it?", sr: "Melodija počinje predtaktom od jedne note. Kakva reč pripada tu?"}
+    options:
+      - {en: "an unstressed word: the, and, I (Serbian: i, a, da)", sr: "nenaglašena reč: i, a, da (engleski: the, and, I)"}
+      - {en: "the title", sr: "naslov"}
+      - {en: "the stressed syllable of a long word", sr: "naglašen slog duge reči"}
+      - {en: "the rhyme word", sr: "reč u rimi"}
+    answer: 0
+  - id: L-018-6
+    type: write
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nD2 | G3 A B2 A2 | G6 z2 | d3 c B2 A2 | G8 |]\nw: da DUM da DUM da DUM DUM da DUM da DUM"
+    prompt:
+      en: "Replace the da/DUM map with your own words, English or Serbian: phrase 1 has 6 notes (pickup, da DUM da DUM da DUM), phrase 2 has 5 (DUM da DUM da DUM), one syllable per note. Put the title on the long G of bar 4. Write the stressed syllables in CAPITALS, play the melody, then sing your words over it."
+      sr: "Zameni mapu da/DUM svojim rečima, na engleskom ili srpskom: prva fraza ima 6 nota (predtakt, da DUM da DUM da DUM), druga 5 (DUM da DUM da DUM), jedan slog po noti. Naslov stavi na dugo G u taktu 4. Naglašene slogove napiši VELIKIM SLOVIMA, odsviraj melodiju, pa otpevaj svoje reči preko nje."
+    language: either
+    lines: [2, 2]
+    rubric:
+      - id: count
+        label: {en: "One syllable per note", sr: "Jedan slog po noti"}
+        top: {en: "Exactly 6 syllables in line 1 and 5 in line 2, checked by singing, not by counting on paper.", sr: "Tačno 6 slogova u prvom stihu i 5 u drugom, provereno pevanjem, ne brojanjem na papiru."}
+      - id: stress
+        label: {en: "Stresses on the DUMs", sr: "Naglasci na DUM"}
+        top: {en: "Every capitalised syllable sits on a DUM and every da carries an unstressed syllable; in Serbian the final DUM of each line is a one-syllable word.", sr: "Svaki slog napisan velikim slovima stoji na DUM, a svako da nosi nenaglašen slog; na srpskom je poslednji DUM svakog stiha jednosložna reč."}
+      - id: vowel
+        label: {en: "Singable long notes", sr: "Duge note mogu da se pevaju"}
+        top: {en: "The long notes (G in bar 2, G in bar 4) carry open vowels, and the title is on the last one.", sr: "Duge note (G u taktu 2, G u taktu 4) nose otvorene samoglasnike, a naslov je na poslednjoj."}
+      - id: natural
+        label: {en: "Sounds like speech", sr: "Zvuči kao govor"}
+        top: {en: "Spoken in rhythm, the lines sound like something a person would say, with no word bent or padded to fit.", sr: "Izgovoreni u ritmu, stihovi zvuče kao nešto što bi neko rekao, bez iskrivljene reči ili punjenja."}

@@ -1,0 +1,190 @@
+id: C-016
+track: C
+order: 16
+prereqs: [C-015, T-064]
+title: {en: "AABA: writing the bridge", sr: "AABA: pisanje mosta"}
+minutes: 15
+tags: [composition, melody, form]
+explain:
+  en: |
+    **AABA** (T-064) states a tune, repeats it, leaves for something different, and comes back.
+    The **B** section is the **bridge** (also "middle eight", the *most* in Serbian). In jazz
+    standards each section is 8 bars (32 in all); in folk tunes and children's songs each is
+    often 4 (16 in all). The jobs are the same.
+
+    The bridge has to do two opposite things: **sound new**, and **make the return of A feel
+    inevitable**. The tools for "new":
+
+    | tool | in A | in the bridge |
+    |---|---|---|
+    | harmony | starts on I | starts **away** from I: on IV, or on vi, or tonicizes a chord (C-015) |
+    | register | its own range | moves **higher** (most often) or clearly lower |
+    | rhythm | e.g. busy quarters | e.g. longer notes, or the reverse |
+    | material | the main motif | a **fragment** of the motif, sequenced (C-011) |
+
+    Use two of these, not all four: a bridge that changes everything sounds like a different
+    song. And keep the **title** out of the bridge; it lives in A.
+
+    For "inevitable": **the bridge ends open, on V**, with the melody on 2, 5 or 7. The ear
+    then waits for I, and A gives it. A bridge that ends on the tonic has nothing left to
+    resolve, and the last A sounds like an encore.
+
+    A 16-bar example everyone knows: the simplified *Ode to Joy* (Beethoven, public domain).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^A"E E F G | G F E D | C C D E | E3/2 D/ D2 |
+    "^A"E E F G | G F E D | C C D E | D3/2 C/ C2 |
+    "^B"D D E C | D E/F/ E C | D E/F/ E D | C D G,2 |
+    "^A"E E F G | G F E D | C C D E | D3/2 C/ C2 |]
+    ```
+
+    The first A pauses on D, the second closes on C. The bridge **starts on D** instead of E,
+    changes the rhythm (the eighth-note turn E F), and **ends on the low G**: the dominant,
+    a held breath before A returns. Same length as A, small changes, and the ending does the
+    real work.
+
+    **Working method:** write the bridge's **last bar first** (on V), then its first bar
+    (away from I), then connect them.
+
+    **At the keyboard:** play the bridge of *Ode to Joy* with a G chord under the last bar, and
+    hold it. Then play an A section. Feel how the G chord asks for it.
+  sr: |
+    **AABA** (T-064) iznese melodiju, ponovi je, ode u nešto drugačije i vrati se. Deo **B** je
+    **most** (engl. *bridge*, „middle eight“). U džez standardima svaki deo ima 8 taktova
+    (ukupno 32); u narodnim i dečjim pesmama često 4 (ukupno 16). Zadaci su isti.
+
+    Most mora da uradi dve suprotne stvari: da **zvuči novo** i da **povratak A učini
+    neizbežnim**. Alati za „novo“:
+
+    | alat | u A | u mostu |
+    |---|---|---|
+    | harmonija | počinje na I | počinje **dalje** od I: na IV, na vi, ili tonikalizuje neki akord (C-015) |
+    | registar | svoj opseg | ide **više** (najčešće) ili jasno niže |
+    | ritam | npr. gusto, četvrtine | npr. duže note, ili obrnuto |
+    | materijal | glavni motiv | **fragment** motiva, u sekvenci (C-011) |
+
+    Koristi dva od ovih alata, ne sva četiri: most koji menja sve zvuči kao druga pesma. I drži
+    **naslov** van mosta; on živi u A.
+
+    Za „neizbežno“: **most se završava otvoreno, na V**, sa melodijom na 2, 5 ili 7. Uho onda
+    čeka I, i A mu ga daje. Most koji se završi na tonici nema više šta da razreši, i poslednje
+    A zvuči kao dodatak posle kraja.
+
+    Primer od 16 taktova koji svi znaju: pojednostavljena *Oda radosti* (Betoven, javno dobro).
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^A"E E F G | G F E D | C C D E | E3/2 D/ D2 |
+    "^A"E E F G | G F E D | C C D E | D3/2 C/ C2 |
+    "^B"D D E C | D E/F/ E C | D E/F/ E D | C D G,2 |
+    "^A"E E F G | G F E D | C C D E | D3/2 C/ C2 |]
+    ```
+
+    Prvo A staje na D, drugo se zatvara na C. Most **počinje na D** umesto na E, menja ritam
+    (osminski obrt E F) i **završava se na niskom G**: dominanta, zadržan dah pre nego što se A
+    vrati. Ista dužina kao A, male promene, a pravi posao radi završetak.
+
+    **Način rada:** prvo napiši **poslednji takt** mosta (na V), pa njegov prvi takt (dalje od I),
+    pa ih poveži.
+
+    **Za klavirom:** odsviraj most *Ode radosti* sa G-dur akordom ispod poslednjeg takta i
+    zadrži ga. Pa odsviraj deo A. Oseti kako G-dur akord traži baš to.
+exercises:
+  - id: C-016-1
+    type: mcq
+    keepOrder: true
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nE G c G | A G E2 | F D E C | D4 | E G c G | A G E2 | F D B, D | C4 |\nA2 A2 | G2 E2 | F2 F2 | E2 D2 | E G c G | A G E2 | F D B, D | C4 |]"
+    prompt: {en: "This 16-bar tune is AABA. Which bars are the bridge?", sr: "Ova melodija od 16 taktova je AABA. Koji taktovi su most?"}
+    options:
+      - {en: "bars 1–4", sr: "taktovi 1–4"}
+      - {en: "bars 5–8", sr: "taktovi 5–8"}
+      - {en: "bars 9–12", sr: "taktovi 9–12"}
+      - {en: "bars 13–16", sr: "taktovi 13–16"}
+    answer: 2
+  - id: C-016-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nA2 A2 | G2 E2 | F2 F2 | E2 D2 |]"
+    prompt: {en: "The bridge from the previous tune, alone. Which two contrast tools does it use?", sr: "Most iz prethodne melodije, sam. Koja dva alata kontrasta koristi?"}
+    options:
+      - {en: "longer notes (half notes) and a start away from the tonic (A, over IV or vi)", sr: "duže note (polovine) i početak dalje od tonike (A, nad IV ili vi)"}
+      - {en: "a much higher register and a new key", sr: "mnogo viši registar i novi tonalitet"}
+      - {en: "faster notes and the title line", sr: "brže note i stih sa naslovom"}
+      - {en: "none: it is a copy of A", sr: "nijedan: to je kopija dela A"}
+    answer: 0
+    checks:
+      - roman: {key: C, degree: 4, is: "IV"}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - roman: {key: C, degree: 6, is: "vi"}
+  - id: C-016-3
+    type: mcq
+    prompt: {en: "G major. Which last note suits the end of a bridge best?", sr: "G-dur. Koji poslednji ton najbolje odgovara kraju mosta?"}
+    options:
+      - {en: "A, over a D chord (V): the ear waits for the return", sr: "A, nad D-dur akordom (V): uho čeka povratak"}
+      - {en: "G, over a G chord (I): a full stop", sr: "G, nad G-dur akordom (I): tačka"}
+      - {en: "C, over a C chord (IV): the start of the bridge again", sr: "C, nad C-dur akordom (IV): ponovo početak mosta"}
+      - {en: "B, over an E minor chord (vi)", sr: "H, nad e-mol akordom (vi)"}
+    answer: 0
+    checks:
+      - roman: {key: G, degree: 5, is: "V"}
+      - chord: {notes: [D4, "F#4", A4], root: D, quality: maj}
+      - interval: {from: D4, to: A4, is: P5}
+  - id: C-016-4
+    type: generated
+    prompt: {en: "A typical bridge progression: IV – I – vi – V7, smoothly voiced. End on V7 and hold it: that is where A comes back.", sr: "Tipičan niz za most: IV – I – vi – V7, sa glatkim vođenjem glasova. Završi na V7 i zadrži ga: tu se vraća A."}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F], numerals: [IV, I, vi, V7], smooth: true}
+  - id: C-016-5
+    type: compose
+    prompt:
+      en: "G major, 4/4, AABA with 4-bar sections. Bars 1–8 (A, pausing on A; A again, closing on G) are given. Write the bridge (bars 9–12) and the last A (13–16). Bridge: start on C or E, use longer notes or a higher register than A, end bar 12 on A, D or F♯. Then A again, ending on G."
+      sr: "G-dur, 4/4, AABA sa delovima od 4 takta. Taktovi 1–8 (A, sa zastojem na A; ponovo A, sa završetkom na G) su zadati. Napiši most (taktovi 9–12) i poslednje A (13–16). Most: počni na C ili E, koristi duže note ili viši registar od A, završi takt 12 na A, D ili Fis. Zatim ponovo A, sa završetkom na G."
+    given: "X:1\nM:4/4\nL:1/4\nK:G\nB B c d | B G A2 | B d c A | A4 |\nB B c d | B G A2 | B G A F | G4 |\n"
+    key: G major
+    meter: 4/4
+    bars: 16
+    range: [D4, G5]
+    rules: [bars, rhythm, key, range, leaps, augmented, stepwise, half-cadence, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:G
+      B B c d | B G A2 | B d c A | A4 |
+      B B c d | B G A2 | B G A F | G4 |
+      c2 e2 | g2 f2 | e2 c2 | B2 A2 |
+      B B c d | B G A2 | B G A F | G4 |]
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, "F#"]}
+  - id: C-016-6
+    type: compose
+    prompt:
+      en: "F major (B♭), 3/4, AABA with 4-bar sections. Only the first A (bars 1–4, pausing on G) is given. Write the rest: A again closing on F (bar 8), a bridge that starts on B♭ or D with longer notes and ends bar 12 on G, C or E, and the last A ending on F."
+      sr: "F-dur (B), 3/4, AABA sa delovima od 4 takta. Zadato je samo prvo A (taktovi 1–4, sa zastojem na G). Napiši ostatak: ponovo A sa završetkom na F (takt 8), most koji počinje na B ili D, sa dužim notama, i završava takt 12 na G, C ili E, i poslednje A sa završetkom na F."
+    given: "X:1\nM:3/4\nL:1/4\nK:F\nF A c | d2 c | B A G | G3 |\n"
+    key: F major
+    meter: 3/4
+    bars: 16
+    range: [C4, F5]
+    rules: [bars, rhythm, key, range, leaps, augmented, stepwise, half-cadence, cadence]
+    example: |
+      X:1
+      M:3/4
+      L:1/4
+      K:F
+      F A c | d2 c | B A G | G3 |
+      F A c | d2 c | B G E | F3 |
+      d3 | c2 B | A3 | G2 E |
+      F A c | d2 c | B G E | F3 |]
+    checks:
+      - roman: {key: F, degree: 4, is: "IV"}
+      - chord: {notes: [Bb3, D4, F4], root: Bb, quality: maj}
+      - roman: {key: F, degree: 5, is: "V"}

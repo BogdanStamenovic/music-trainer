@@ -1,0 +1,161 @@
+id: C-017
+track: C
+order: 17
+prereqs: [C-016, T-065]
+title: {en: "Verse vs chorus melodies: range and rhythm contrast", sr: "Melodije strofe i refrena: kontrast opsega i ritma"}
+minutes: 15
+tags: [composition, melody, form, song]
+explain:
+  en: |
+    In a verse–chorus song (T-065) the chorus must sound like **arrival**: the moment the song
+    has been heading for. Lyrics do part of that (L-006: the verse tells the story, the chorus
+    sums it up). The melody does the rest with two contrasts you can measure.
+
+    | | verse | chorus |
+    |---|---|---|
+    | **range** | lower, narrower (about a 5th or 6th) | higher: the centre moves up a 3rd to a 5th; the song's **highest note** is here |
+    | **rhythm** | many short notes, speech-like, often starts **after** beat 1 (a rest or pickup) | fewer, **longer** notes, lands **on** beat 1, a repeated rhythm (the hook) |
+    | **words per bar** | many | few, held |
+
+    The jump between them is called the **lift**. If the chorus starts in the same register with
+    the same rhythm as the verse, the listener does not notice that the chorus has begun.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^verse"z G G A G2 E2 | z G G A G E C2 | z A A B A2 F2 | z G G F E D D2 |
+    "^chorus"c4 c2 d2 | e6 d2 | c4 A4 | G8 |]
+    ```
+
+    Verse: C to B, eighth notes after a rest on every downbeat, like talking. Chorus: G to the
+    E above c, centred about a 4th higher, mostly half notes and a dotted half, every bar
+    starting on beat 1. The
+    chorus ends on G, open, so it can repeat or lead back into verse 2.
+
+    **Why the verse is low:** it leaves room. A singer who spends the verse at the top has
+    nowhere to go when the chorus needs to be bigger, and so does the listener's ear.
+
+    **A check for your own songs:** write down the lowest and highest note of each section and
+    count the notes per bar. If the chorus numbers are not higher and fewer, change the melody
+    before you change anything else.
+
+    **At the keyboard:** play the verse above with a soft C – Am – F – G in the left hand, low.
+    Then the chorus with the same chords an octave higher, held. Sing along on "la".
+  sr: |
+    U pesmi sa strofom i refrenom (T-065) refren mora da zvuči kao **dolazak**: trenutak ka kom
+    je pesma išla. Tekst radi deo toga (L-006: strofa priča priču, refren je sažima). Melodija
+    radi ostatak sa dva kontrasta koja mogu da se izmere.
+
+    | | strofa | refren |
+    |---|---|---|
+    | **opseg** | niži, uži (oko kvinte ili sekste) | viši: središte se pomera naviše za tercu do kvinte; **najviši ton** pesme je ovde |
+    | **ritam** | mnogo kratkih nota, kao govor, često počinje **posle** prve dobe (pauza ili predtakt) | manje, **dužih** nota, pada **na** prvu dobu, ponovljen ritam (udica, hook) |
+    | **reči po taktu** | mnogo | malo, zadržanih |
+
+    Skok između njih zove se **podizanje** (engl. *lift*). Ako refren počne u istom registru i
+    sa istim ritmom kao strofa, slušalac ne primeti da je refren počeo.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^strofa"z G G A G2 E2 | z G G A G E C2 | z A A B A2 F2 | z G G F E D D2 |
+    "^refren"c4 c2 d2 | e6 d2 | c4 A4 | G8 |]
+    ```
+
+    Strofa: od C do H, osmine posle pauze na svakoj prvoj dobi, kao govor. Refren: od G do E
+    iznad c, središte oko kvarte više, uglavnom polovine i polovina sa tačkom, svaki takt
+    počinje na prvoj dobi.
+    Refren se završava na G, otvoreno, da bi mogao da se ponovi ili da vrati u drugu strofu.
+
+    **Zašto je strofa niska:** ostavlja prostor. Pevač koji celu strofu provede na vrhu nema kuda
+    kad refren treba da bude veći, a nema ni uho slušaoca.
+
+    **Provera za tvoje pesme:** zapiši najniži i najviši ton svakog dela i prebroj note po taktu.
+    Ako brojevi refrena nisu viši i manji, menjaj melodiju pre svega drugog.
+
+    **Za klavirom:** odsviraj strofu odozgo uz tiho C – a-mol – F – G u levoj ruci, nisko. Zatim
+    refren sa istim akordima oktavu više, zadržano. Pevaj uz to na „la“.
+exercises:
+  - id: C-017-1
+    type: mcq
+    prompt: {en: "Which description fits a chorus melody, compared with its verse?", sr: "Koji opis odgovara melodiji refrena, u poređenju sa strofom?"}
+    options:
+      - {en: "higher, fewer and longer notes, landing on beat 1", sr: "viša, manje i dužih nota, pada na prvu dobu"}
+      - {en: "lower, more and shorter notes, starting after beat 1", sr: "niža, više i kraćih nota, počinje posle prve dobe"}
+      - {en: "the same register and rhythm, only new words", sr: "isti registar i ritam, samo nove reči"}
+      - {en: "higher and busier, with the most words per bar", sr: "viša i gušća, sa najviše reči po taktu"}
+    answer: 0
+  - id: C-017-2
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:G\nd4 d2 e2 | g6 f2 | e4 d4 | B8 |\nz G, G, A, B,2 G,2 | z A, A, B, C B, A,2 | z B, B, C D2 B,2 | z A, A, B, G,4 |]"
+    prompt: {en: "Bars 1–4 are meant to be the verse and bars 5–8 the chorus. Why does the chorus fall flat?", sr: "Taktovi 1–4 treba da budu strofa, a taktovi 5–8 refren. Zašto refren pada?"}
+    options:
+      - {en: "The two are swapped: the chorus is lower and busier than the verse, so there is no lift", sr: "Zamenjeni su: refren je niži i gušći od strofe, pa nema podizanja"}
+      - {en: "The chorus ends on the tonic", sr: "Refren se završava na tonici"}
+      - {en: "The verse uses half notes, which is not allowed", sr: "Strofa koristi polovine, što nije dozvoljeno"}
+      - {en: "Nothing: a chorus should be lower than the verse", sr: "Ništa: refren treba da bude niži od strofe"}
+    answer: 0
+    checks:
+      - interval: {from: G3, to: G5, is: P15}
+  - id: C-017-3
+    type: mcq
+    prompt: {en: "Where does the highest note of a verse–chorus song usually belong?", sr: "Gde obično pripada najviši ton pesme sa strofom i refrenom?"}
+    options:
+      - {en: "in the chorus, often on the hook or the title", sr: "u refrenu, često na udici ili naslovu"}
+      - {en: "in the first bar of verse 1", sr: "u prvom taktu prve strofe"}
+      - {en: "in the last note of the song", sr: "na poslednjem tonu pesme"}
+      - {en: "anywhere: register does not shape the form", sr: "bilo gde: registar ne oblikuje formu"}
+    answer: 0
+  - id: C-017-4
+    type: mcq
+    prompt: {en: "Why does a verse line often start after beat 1 (with a rest or a pickup), while the chorus lands on beat 1?", sr: "Zašto stih strofe često počinje posle prve dobe (sa pauzom ili predtaktom), a refren pada na prvu dobu?"}
+    options:
+      - {en: "Starting off the beat sounds like talking; landing on the beat sounds like a statement", sr: "Početak van dobe zvuči kao govor; pad na dobu zvuči kao izjava"}
+      - {en: "The verse is always in a different meter", sr: "Strofa je uvek u drugom taktu"}
+      - {en: "The singer needs the rest to breathe only in verses", sr: "Pevaču pauza za dah treba samo u strofama"}
+      - {en: "Beat 1 is reserved for the drums in verses", sr: "Prva doba je u strofi rezervisana za bubnjeve"}
+    answer: 0
+  - id: C-017-5
+    type: compose
+    abc: "X:1\nM:4/4\nL:1/8\nK:D\nz D D E F2 D2 | z D D E F E D2 | z E E F G2 E2 | z F F E D C C2 |]"
+    prompt:
+      en: "This is a verse in D major (low, busy, starting after the beat). Write its 4-bar chorus: every note between A4 and G5, mostly half and quarter notes, each bar starting on beat 1, ending on D."
+      sr: "Ovo je strofa u D-duru (niska, gusta, počinje posle dobe). Napiši njen refren od 4 takta: svi tonovi između A4 i G5, uglavnom polovine i četvrtine, svaki takt počinje na prvoj dobi, završetak na D."
+    key: D major
+    meter: 4/4
+    bars: 4
+    range: [A4, G5]
+    rules: [bars, rhythm, key, range, leaps, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:D
+      d4 f2 e2 | d4 A4 | B2 d2 f2 e2 | d8 |]
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, "F#", G, A, B, "C#"]}
+      - interval: {from: A4, to: G5, is: m7}
+  - id: C-017-6
+    type: compose
+    abc: "X:1\nM:4/4\nL:1/8\nK:F\nc4 c2 d2 | c4 A4 | B2 B2 A2 G2 | F8 |]"
+    prompt:
+      en: "This is a chorus in F major (B♭). Write the 4-bar verse that comes before it: every note between C4 and A4, mostly eighth notes, each bar starting with a rest or off the beat, and end bar 4 open (on G, C or E) so the chorus can arrive."
+      sr: "Ovo je refren u F-duru (B). Napiši strofu od 4 takta koja dolazi pre njega: svi tonovi između C4 i A4, uglavnom osmine, svaki takt počinje pauzom ili van dobe, a takt 4 završi otvoreno (na G, C ili E) da bi refren mogao da stigne."
+    key: F major
+    meter: 4/4
+    bars: 4
+    range: [C4, A4]
+    rules: [bars, rhythm, key, range, leaps, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/8
+      K:F
+      z C C D F2 F2 | z F F G A G F2 | z G G A G2 E2 | z D E F G2 G2 |]
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: C4, to: A4, is: M6}

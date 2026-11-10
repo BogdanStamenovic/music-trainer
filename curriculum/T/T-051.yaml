@@ -1,0 +1,123 @@
+id: T-051
+track: T
+order: 51
+prereqs: [T-050]
+title: {en: "Closely related keys", sr: "Srodni tonaliteti"}
+minutes: 11
+tags: [keys, modulation]
+explain:
+  en: |
+    Until now a piece stayed in one key, with short tonicizations (T-043 to T-046). From here on the key itself will change. That is **modulation**: the tonal centre moves, and a cadence confirms the new home.
+
+    Most modulations go to a **closely related key**: a key whose signature differs from the home key by **at most one accidental**. Every key has exactly five of them:
+
+    | from C major | signature | how it relates |
+    |---|---|---|
+    | A minor | none | relative minor (vi) |
+    | G major | 1♯ | dominant (V) |
+    | E minor | 1♯ | relative of the dominant (iii) |
+    | F major | 1♭ | subdominant (IV) |
+    | D minor | 1♭ | relative of the subdominant (ii) |
+
+    A shortcut you can check at the keyboard: the closely related keys are the keys whose **tonic triads are the major and minor triads of the home key**: ii, iii, IV, V, vi. (vii° is diminished, so it cannot be a tonic.) In C: Dm, Em, F, G, Am.
+
+    Why these keys? Six of their seven notes are the home key's notes. Moving to G major changes only F to F♯; moving to D minor changes only B to B♭ (natural minor). The ear barely notices the door opening, which is why classical pieces and most songs travel to these keys and not to remote ones.
+
+    For a minor home key the same rule applies. A minor: C major (III, relative), D minor (iv), E minor (v), F major (VI), G major (VII). Note that the dominant **key** of A minor is E **minor** (natural minor), even though the dominant **chord** in A minor is E major.
+  sr: |
+    Do sada je komad ostajao u jednom tonalitetu, uz kratke tonikalizacije (T-043 do T-046). Od sada se menja sam tonalitet. To je **modulacija**: tonalni centar se pomera, a kadenca potvrđuje novi dom.
+
+    Većina modulacija ide u **srodni tonalitet**: tonalitet čiji se predznak razlikuje od polaznog za **najviše jedan predznak**. Svaki tonalitet ima tačno pet srodnih:
+
+    | od C-dura | predznak | odnos |
+    |---|---|---|
+    | a-mol | bez predznaka | paralelni mol (vi) |
+    | G-dur | 1♯ | dominantni tonalitet (V) |
+    | e-mol | 1♯ | paralelni mol dominante (iii) |
+    | F-dur | 1♭ | subdominantni tonalitet (IV) |
+    | d-mol | 1♭ | paralelni mol subdominante (ii) |
+
+    Prečica koju možeš proveriti na klavijaturi: srodni tonaliteti su oni čiji su **tonički trozvuci durski i molski trozvuci polaznog tonaliteta**: ii, iii, IV, V, vi. (vii° je smanjen, pa ne može biti tonika.) U C-duru: d, e, F, G, a.
+
+    Zašto baš oni? Šest od njihovih sedam tonova su tonovi polaznog tonaliteta. Prelaz u G-dur menja samo F u Fis; prelaz u d-mol menja samo H u B (prirodni mol). Uho jedva primeti da su se vrata otvorila, pa zato klasični komadi i većina pesama putuju u ove tonalitete, a ne u udaljene.
+
+    Za molski polazni tonalitet važi isto pravilo. a-mol: C-dur (III, paralelni dur), d-mol (iv), e-mol (v), F-dur (VI), G-dur (VII). Obrati pažnju: dominantni **tonalitet** a-mola je e-**mol** (prirodni mol), iako je dominantni **akord** u a-molu E-dur.
+exercises:
+  - id: T-051-1
+    type: mcq
+    prompt: {en: "Which list gives the five closely related keys of G major?", sr: "Koja lista daje pet srodnih tonaliteta G-dura?"}
+    options:
+      - {en: "E minor, D major, B minor, C major, A minor", sr: "e-mol, D-dur, h-mol, C-dur, a-mol"}
+      - {en: "E minor, D major, A major, C major, F major", sr: "e-mol, D-dur, A-dur, C-dur, F-dur"}
+      - {en: "G minor, D major, B minor, C major, A minor", sr: "g-mol, D-dur, h-mol, C-dur, a-mol"}
+      - {en: "E minor, D minor, B minor, C minor, A minor", sr: "e-mol, d-mol, h-mol, c-mol, a-mol"}
+    answer: 0
+    checks:
+      - keysig: {key: G, is: 1}
+      - keysig: {key: E, mode: minor, is: 1}
+      - keysig: {key: D, is: 2}
+      - keysig: {key: B, mode: minor, is: 2}
+      - keysig: {key: C, is: 0}
+      - keysig: {key: A, mode: minor, is: 0}
+      - keysig: {key: A, is: 3}
+      - keysig: {key: F, is: -1}
+      - keysig: {key: G, mode: minor, is: -2}
+  - id: T-051-2
+    type: mcq
+    prompt: {en: "Which key is NOT closely related to F major?", sr: "Koji tonalitet NIJE srodan F-duru?"}
+    options:
+      - {en: "D major", sr: "D-dur"}
+      - {en: "B♭ major", sr: "B-dur"}
+      - {en: "G minor", sr: "g-mol"}
+      - {en: "A minor", sr: "a-mol"}
+    answer: 0
+    checks:
+      - keysig: {key: F, is: -1}
+      - keysig: {key: D, is: 2}
+      - keysig: {key: Bb, is: -2}
+      - keysig: {key: G, mode: minor, is: -2}
+      - keysig: {key: A, mode: minor, is: 0}
+  - id: T-051-3
+    type: mcq
+    prompt: {en: "C major moves to D minor (natural). Which single note changes?", sr: "C-dur prelazi u d-mol (prirodni). Koji jedini ton se menja?"}
+    options:
+      - {en: "B becomes B♭", sr: "H postaje B"}
+      - {en: "F becomes F♯", sr: "F postaje Fis"}
+      - {en: "C becomes C♯", sr: "C postaje Cis"}
+      - {en: "E becomes E♭", sr: "E postaje Es"}
+    answer: 0
+    checks:
+      - scale: {tonic: D, type: natural-minor, is: [D, E, F, G, A, Bb, C]}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: T-051-4
+    type: mcq
+    prompt: {en: "What is the dominant KEY of A minor (the key a minor piece moves to when it 'goes to v')?", sr: "Koji je dominantni TONALITET a-mola (tonalitet u koji molski komad ide kad 'ide na v')?"}
+    options:
+      - {en: "E minor", sr: "e-mol"}
+      - {en: "E major", sr: "E-dur"}
+      - {en: "D minor", sr: "d-mol"}
+      - {en: "C major", sr: "C-dur"}
+    answer: 0
+    checks:
+      - keysig: {key: E, mode: minor, is: 1}
+      - keysig: {key: E, is: 4}
+      - roman: {key: A, type: natural-minor, degree: 5, is: v}
+  - id: T-051-5
+    type: notation-input
+    prompt: {en: "E♭ major: type the tonics of its two closely related MAJOR keys other than itself (dominant first, then subdominant).", sr: "Es-dur: napiši tonike njegova dva srodna DURSKA tonaliteta (prvo dominantni, pa subdominantni)."}
+    expect: [Bb, Ab]
+    checks:
+      - interval: {from: Eb4, to: Bb4, is: P5}
+      - interval: {from: Eb4, to: Ab4, is: P4}
+      - keysig: {key: Bb, is: -2}
+      - keysig: {key: Ab, is: -4}
+  - id: T-051-6
+    type: generated
+    count: 4
+    prompt: {en: "Relative keys are the closest relatives of all: same signature.", sr: "Paralelni tonaliteti su najbliži srodnici: isti predznak."}
+    gen: {kind: keysig, keys: [D, Bb, A, Eb, E, Ab], ask: relative}
+  - id: T-051-7
+    type: generated
+    count: 4
+    prompt: {en: "The closely related keys are the keys of ii, iii, IV, V, vi. Name the numeral.", sr: "Srodni tonaliteti su tonaliteti na ii, iii, IV, V, vi. Imenuj stupanj."}
+    gen: {kind: roman, keys: [G, D, F, Bb], degrees: [2, 3, 4, 5, 6], ask: numeral}

@@ -1,0 +1,134 @@
+id: T-054
+track: T
+order: 54
+prereqs: [T-053]
+title: {en: "Modulation to the dominant", sr: "Modulacija u dominantni tonalitet"}
+minutes: 12
+tags: [harmony, modulation, four-part]
+explain:
+  en: |
+    The most common modulation in major keys goes **up a 5th, to the dominant key**. The first half of almost every Baroque dance, the second theme of a Classical sonata in major, and many hymn tunes do exactly this.
+
+    **The clue is the raised 4th degree.** The dominant key differs from the home key by one note: degree 4 is raised a half step and becomes the **new leading tone**. In F major that is B♮ (leading tone of C); in C major, F♯ (leading tone of G).
+
+    F major to C major, keyboard style (bass in the left hand, three voices in the right):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:F
+    V:1
+    "^F: I"[CFA] "^vi"[DFA] [FG=B] [EGc] |]
+    V:2 clef=bass
+    F,, "_C: ii"D, "_V7"G,, "_I"C, |]
+    ```
+
+    - D minor is F: vi = C: ii: the pivot, and a predominant in C.
+    - G7 brings **B♮**, the new leading tone, and the B rises to C.
+    - The F in the right hand is held across three chords: it is the root of I, the 3rd of vi, and then the 7th of G7, which falls to E. (G7 is voiced without its 5th, D, and with the root doubled: the usual trade for a complete tonic chord.) Common tones like this make the change feel inevitable.
+
+    Why the dominant? It is the nearest key on the sharp side: one new note, and it **raises** the tension (the home tonic becomes IV of the new key). Going back home later feels like relaxing. In minor keys the dominant key is the minor v (A minor → E minor) and is less common than the move to the relative major (next lesson).
+  sr: |
+    Najčešća modulacija u duru ide **kvintu naviše, u dominantni tonalitet**. Prvi deo gotovo svake barokne igre, druga tema klasične sonate u duru i mnoge crkvene pesme rade baš ovo.
+
+    **Trag je povišeni 4. stupanj.** Dominantni tonalitet se od polaznog razlikuje u jednom tonu: 4. stupanj se povisi za polustepen i postaje **nova vođica**. U F-duru to je H (vođica za C); u C-duru Fis (vođica za G).
+
+    F-dur u C-dur, klavirski slog (bas u levoj ruci, tri glasa u desnoj):
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:F
+    V:1
+    "^F: I"[CFA] "^vi"[DFA] [FG=B] [EGc] |]
+    V:2 clef=bass
+    F,, "_C: ii"D, "_V7"G,, "_I"C, |]
+    ```
+
+    - d-mol akord je F: vi = C: ii: akord-most, i subdominantni akord u C-duru.
+    - G7 donosi **H**, novu vođicu, i H ide naviše na C.
+    - F u desnoj ruci drži se kroz tri akorda: osnovni ton I, terca vi, pa septima G7, koja silazi na E. (G7 je bez kvinte D, sa udvojenim osnovnim tonom: uobičajena cena za potpun tonički akord.) Ovakvi zajednički tonovi čine da promena zvuči neizbežno.
+
+    Zašto baš dominanta? To je najbliži tonalitet na strani povisilica: jedan nov ton, i **podiže** napetost (polazna tonika postaje IV novog tonaliteta). Kasniji povratak kući zvuči kao opuštanje. U molu je dominantni tonalitet molska v (a-mol → e-mol) i ređa je od prelaska u paralelni dur (sledeća lekcija).
+exercises:
+  - id: T-054-1
+    type: mcq
+    prompt: {en: "D major modulates to its dominant. Which accidental appears, and what is it in the new key?", sr: "D-dur modulira u dominantni tonalitet. Koji predznak se pojavljuje i šta je on u novom tonalitetu?"}
+    options:
+      - {en: "G♯, the leading tone of A major", sr: "Gis, vođica A-dura"}
+      - {en: "C♮, the 7th of D7", sr: "C, septima D7"}
+      - {en: "D♯, the leading tone of E", sr: "Dis, vođica za E"}
+      - {en: "B♭, the 4th of F", sr: "B, kvarta F-dura"}
+    answer: 0
+    checks:
+      - keysig: {key: D, is: 2}
+      - keysig: {key: A, is: 3}
+      - interval: {from: G#4, to: A4, is: m2}
+      - scale: {tonic: A, type: major, is: [A, B, C#, D, E, F#, G#]}
+  - id: T-054-2
+    type: notation-input
+    prompt: {en: "E♭ major modulates to the dominant. Type the new leading tone.", sr: "Es-dur modulira u dominantni tonalitet. Napiši novu vođicu."}
+    expect: [A]
+    checks:
+      - scale: {tonic: Bb, type: major, is: [Bb, C, D, Eb, F, G, A]}
+      - scale: {tonic: Eb, type: major, is: [Eb, F, G, Ab, Bb, C, D]}
+  - id: T-054-3
+    type: mcq
+    prompt: {en: "In the F → C example, the right hand's F is held. What is it in each of the three chords?", sr: "U primeru F → C desna ruka drži F. Šta je F u svakom od tri akorda?"}
+    options:
+      - {en: "Root of I, 3rd of vi, 7th of G7", sr: "Osnovni ton I, terca vi, septima G7"}
+      - {en: "Root of I, root of vi, 3rd of G7", sr: "Osnovni ton I, osnovni ton vi, terca G7"}
+      - {en: "3rd of I, 5th of vi, root of G7", sr: "Terca I, kvinta vi, osnovni ton G7"}
+    answer: 0
+    checks:
+      - numeral: {key: F, is: I, notes: [F2, C4, F4, A4]}
+      - numeral: {key: C, is: ii, notes: [D3, D4, F4, A4]}
+      - chord: {notes: [G2, F4, G4, B4], root: G, quality: "7"}
+      - numeral: {key: F, is: V7/V, notes: [G2, F4, G4, B4], complete: false}
+      - numeral: {key: C, is: V7, notes: [G2, F4, G4, B4], complete: false}
+  - id: T-054-4
+    type: midi-play
+    prompt: {en: "Play F: I – vi (= C: ii) – C: V7 – I, as in the example.", sr: "Odsviraj F: I – vi (= C: ii) – C: V7 – I, kao u primeru."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:F
+      V:1
+      [CFA] [DFA] [FG=B] [EGc] |]
+      V:2 clef=bass
+      F,, D, G,, C, |]
+    mode: chords
+    octave: exact
+    expectChords: [[F2, C4, F4, A4], [D3, D4, F4, A4], [G2, F4, G4, B4], [C3, E4, G4, C5]]
+    beats: [1, 1, 1, 1]
+    tempo: 66
+    checks:
+      - numeral: {key: F, is: I, notes: [F2, C4, F4, A4]}
+      - numeral: {key: F, is: vi, notes: [D3, D4, F4, A4]}
+      - numeral: {key: C, is: ii, notes: [D3, D4, F4, A4]}
+      - chord: {notes: [G2, F4, G4, B4], root: G, quality: "7"}
+      - numeral: {key: C, is: V7, notes: [G2, F4, G4, B4], complete: false}
+      - numeral: {key: C, is: I, notes: [C3, E4, G4, C5]}
+  - id: T-054-5
+    type: mcq
+    prompt: {en: "A piece in G major has modulated to D major. What happens to the C major chord of G major?", sr: "Komad u G-duru je modulirao u D-dur. Šta se dešava sa C-dur akordom iz G-dura?"}
+    options:
+      - {en: "is no longer diatonic: D major has C♯", sr: "više nije na stupnjevima: D-dur ima Cis"}
+      - {en: "is IV in D major", sr: "je IV u D-duru"}
+      - {en: "is the pivot", sr: "je akord-most"}
+    answer: 0
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+  - id: T-054-6
+    type: generated
+    count: 4
+    prompt: {en: "Does the phrase end on V of the home key with its own leading tone (a move toward the dominant key), or does it stay home?", sr: "Da li fraza završava na V polaznog tonaliteta sa sopstvenom vođicom (pomak ka dominantnom tonalitetu) ili ostaje kod kuće?"}
+    gen: {kind: progression-ear, keys: [F, C, G], options: [[I, vi, V65/V, V], [I, vi, ii6, V], [I, IV, V7, I]], tempo: 60, smooth: true}
+  - id: T-054-7
+    type: generated
+    count: 3
+    prompt: {en: "Play the modulation with smooth voice leading, in numerals of the home key: I – vi – V7/V – V.", sr: "Odsviraj modulaciju sa glatkim vođenjem glasova, u brojevima polaznog tonaliteta: I – vi – V7/V – V."}
+    gen: {kind: progression, keys: [C, F, G, D], numerals: [I, vi, V7/V, V], smooth: true}

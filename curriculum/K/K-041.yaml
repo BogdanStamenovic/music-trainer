@@ -1,0 +1,151 @@
+id: K-041
+track: K
+order: 41
+title: {en: "Comping a 12-bar blues (left hand + right-hand shells)", sr: "Pratnja bluza od 12 taktova (leva ruka + školjke u desnoj)"}
+prereqs: [K-020, T-066]
+minutes: 14
+tags: [keys, blues, comping, accompaniment, seventh-chords]
+explain:
+  en: |
+    In K-020 the left hand carried the blues alone with a shuffle. A band pianist usually
+    plays less: **the root in the left hand, the 3rd and 7th in the right hand**. Those two
+    notes, the shell, are what make a chord a dominant 7th (major 3rd + minor 7th, a tritone
+    apart). The 5th adds almost nothing, and leaving it out keeps the sound clear.
+
+    The F blues (the most common jazz blues key):
+
+    | | F7 | B♭7 | C7 |
+    |---|---|---|---|
+    | left hand | F2 | B♭2 | C3 |
+    | right hand | A3 E♭4 (3rd, 7th) | A♭3 D4 (7th, 3rd) | B♭3 E4 (7th, 3rd) |
+
+    Look at how the shells move: **F7 → B♭7: both notes down a half step** (A → A♭,
+    E♭ → D). **F7 → C7: both notes up a half step** (A → B♭, E♭ → E). The 3rd of one chord
+    becomes the 7th of the next and the other way round. That is why the voicings above
+    alternate "3rd below 7th" and "7th below 3rd": it is the same hand position, sliding.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/1
+    K:F
+    "F7"[F,,A,_E] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "F7"[F,,A,_E] |
+    "Bb7"[B,,_A,D] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "F7"[F,,A,_E] |
+    "C7"[C,B,=E] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "C7"[C,B,=E] |]
+    ```
+
+    The form is the one from T-066, with the "quick change" (IV7 in bar 2) and V7 in bar 12
+    as the turnaround back to the top.
+
+    **Rhythm.** Whole notes are for learning the shapes. In a band you **comp**: short
+    chords that leave room. Start with the Charleston (beat 1 and the "and" of 2) from K-039.
+    In swing the "and" comes a little late (the long-short eighths of K-020); in the graded
+    exercises play it straight, then swing it in the practice.
+  sr: |
+    U K-020 leva ruka je sama nosila bluz šaflom. Pijanista u bendu obično svira manje:
+    **osnovni ton u levoj ruci, tercu i septimu u desnoj**. Ta dva tona, školjka, čine akord
+    dominantnim septakordom (velika terca + mala septima, na rastojanju tritona). Kvinta ne
+    dodaje skoro ništa, a bez nje zvuk ostaje čist.
+
+    F bluz (najčešći tonalitet džez bluza):
+
+    | | F7 | B7 | C7 |
+    |---|---|---|---|
+    | leva ruka | F2 | B2 | C3 |
+    | desna ruka | A3 Es4 (terca, septima) | As3 D4 (septima, terca) | B3 E4 (septima, terca) |
+
+    Pogledaj kako se školjke pomeraju: **F7 → B7: oba tona polustepen naniže** (A → As,
+    Es → D). **F7 → C7: oba tona polustepen naviše** (A → B, Es → E). Terca jednog akorda
+    postaje septima sledećeg i obrnuto. Zato se rasporedi iznad smenjuju "terca ispod
+    septime" i "septima ispod terce": to je isti položaj ruke, koji klizi.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/1
+    K:F
+    "F7"[F,,A,_E] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "F7"[F,,A,_E] |
+    "Bb7"[B,,_A,D] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "F7"[F,,A,_E] |
+    "C7"[C,B,=E] | "Bb7"[B,,_A,D] | "F7"[F,,A,_E] | "C7"[C,B,=E] |]
+    ```
+
+    Forma je ona iz T-066, sa "brzom promenom" (IV7 u 2. taktu) i V7 u 12. taktu kao
+    obrtom nazad na početak.
+
+    **Ritam.** Cele note služe za učenje oblika. U bendu se **prati** (comping): kratki
+    akordi koji ostavljaju prostor. Počni sa čarlstonom (prva doba i "i" posle druge) iz
+    K-039. U svingu to "i" dolazi malo kasnije (duga-kratka osmina iz K-020); u ocenjivanim
+    vežbama sviraj ga ravno, a sa svingom u vežbanju.
+exercises:
+  - id: K-041-1
+    type: mcq
+    prompt: {en: "Why can the right hand leave out the root and 5th of F7?", sr: "Zašto desna ruka može da izostavi osnovni ton i kvintu od F7?"}
+    options:
+      - {en: "The bass has the root, and the 3rd + 7th (A, E♭) alone define a dominant 7th", sr: "Bas ima osnovni ton, a terca + septima (A, Es) same određuju dominantni septakord"}
+      - {en: "The 5th of F7 is not in the blues scale", sr: "Kvinta od F7 nije u bluz lestvici"}
+      - {en: "Shells are only for the left hand", sr: "Školjke su samo za levu ruku"}
+      - {en: "The 3rd and 7th are the same note", sr: "Terca i septima su isti ton"}
+    answer: 0
+    checks:
+      - chord: {notes: [F2, A3, Eb4], root: F, quality: "7"}
+      - interval: {from: A3, to: Eb4, is: d5}
+  - id: K-041-2
+    type: mcq
+    prompt: {en: "F7 shell A–E♭ moves to the B♭7 shell. How do the two notes move?", sr: "Školjka F7 A–Es prelazi u školjku B7. Kako se pomeraju dva tona?"}
+    options:
+      - {en: "Both down a half step: A → A♭, E♭ → D", sr: "Oba polustepen naniže: A → As, Es → D"}
+      - {en: "Both up a fourth, like the root", sr: "Oba kvartu naviše, kao osnovni ton"}
+      - {en: "A stays, E♭ goes up to F", sr: "A ostaje, Es ide naviše na F"}
+      - {en: "Both up a half step", sr: "Oba polustepen naviše"}
+    answer: 0
+    checks:
+      - chord: {notes: [Bb2, Ab3, D4], root: Bb, quality: "7"}
+      - semitones: {from: Ab3, to: A3, is: 1}
+      - semitones: {from: D4, to: Eb4, is: 1}
+  - id: K-041-3
+    type: midi-play
+    prompt: {en: "The F blues in shells, one chord per bar (whole notes), ♩=100: F7 B♭7 F7 F7 | B♭7 B♭7 F7 F7 | C7 B♭7 F7 C7.", sr: "F bluz u školjkama, jedan akord po taktu (cele note), ♩=100: F7 B7 F7 F7 | B7 B7 F7 F7 | C7 B7 F7 C7."}
+    mode: chords
+    expectChords: [[F2, A3, Eb4], [Bb2, Ab3, D4], [F2, A3, Eb4], [F2, A3, Eb4], [Bb2, Ab3, D4], [Bb2, Ab3, D4], [F2, A3, Eb4], [F2, A3, Eb4], [C3, Bb3, E4], [Bb2, Ab3, D4], [F2, A3, Eb4], [C3, Bb3, E4]]
+    beats: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    tempo: 100
+    checks:
+      - chord: {notes: [F2, A3, Eb4], root: F, quality: "7", inversion: 0}
+      - chord: {notes: [Bb2, Ab3, D4], root: Bb, quality: "7", inversion: 0}
+      - chord: {notes: [C3, Bb3, E4], root: C, quality: "7", inversion: 0}
+      - numeral: {key: F, is: "I7", notes: [F2, A3, C4, Eb4]}
+      - numeral: {key: F, is: "IV7", notes: [Bb2, D3, F3, Ab3]}
+      - numeral: {key: F, is: "V7", notes: [C3, E3, G3, Bb3]}
+  - id: K-041-4
+    type: midi-play
+    prompt: {en: "Comp the first four bars in the Charleston rhythm (beat 1, \"and\" of 2; straight eighths): F7 | B♭7 | F7 | F7. ♩=112.", sr: "Prati prva četiri takta u čarlston ritmu (prva doba, \"i\" posle druge; ravne osmine): F7 | B7 | F7 | F7. ♩=112."}
+    mode: chords
+    expectChords: [[F2, A3, Eb4], [F2, A3, Eb4], [Bb2, Ab3, D4], [Bb2, Ab3, D4], [F2, A3, Eb4], [F2, A3, Eb4], [F2, A3, Eb4], [F2, A3, Eb4]]
+    beats: [1.5, 2.5, 1.5, 2.5, 1.5, 2.5, 1.5, 2.5]
+    tempo: 112
+    checks:
+      - chord: {notes: [F2, A3, Eb4], root: F, quality: "7", inversion: 0}
+      - chord: {notes: [Bb2, Ab3, D4], root: Bb, quality: "7", inversion: 0}
+  - id: K-041-5
+    type: midi-play
+    prompt: {en: "C blues, notes hidden: root in the left hand, 3rd–7th shells in the right (C7: E–B♭, F7: E♭–A, G7: F–B), one chord per bar, any octave, ♩=100.", sr: "C bluz, bez prikaza tonova: osnovni ton u levoj, školjke terca–septima u desnoj (C7: E–B, F7: Es–A, G7: F–H), jedan akord po taktu, bilo koja oktava, ♩=100."}
+    mode: chords
+    expectChords: [[C3, E4, Bb4], [F2, Eb4, A4], [C3, E4, Bb4], [C3, E4, Bb4], [F2, Eb4, A4], [F2, Eb4, A4], [C3, E4, Bb4], [C3, E4, Bb4], [G2, F4, B4], [F2, Eb4, A4], [C3, E4, Bb4], [G2, F4, B4]]
+    beats: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    tempo: 100
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - chord: {notes: [C3, E4, Bb4], root: C, quality: "7", inversion: 0}
+      - chord: {notes: [F2, Eb4, A4], root: F, quality: "7", inversion: 0}
+      - chord: {notes: [G2, F4, B4], root: G, quality: "7", inversion: 0}
+  - id: K-041-6
+    type: generated
+    prompt: {en: "The blues as full voice-led 7th chords in another key, one chord per beat (a quick check that you know the form in any key)", sr: "Bluz kao puni septakordi sa glatkim vođenjem glasova u drugom tonalitetu, jedan akord po dobi (brza provera da znaš formu u svakom tonalitetu)"}
+    count: 1
+    gen: {kind: progression, keys: [Bb, G, Eb, D], numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], tempo: 72, smooth: true}
+  - id: K-041-7
+    type: practice
+    prompt: {en: "Comp the whole F blues three times with swung eighths, ♩ about 120: first time Charleston, second time beat 2 and 4 only (like a hi-hat), third time mix them and add a hit on the \"and\" of 4 that anticipates the next bar's chord. Keep the left-hand root on beat 1 throughout.", sr: "Prati ceo F bluz tri puta sa svingovanim osminama, ♩ oko 120: prvi put čarlston, drugi put samo druga i četvrta doba (kao hi-hat), treći put ih kombinuj i dodaj udarac na \"i\" posle četvrte dobe koji unapred donosi akord sledećeg takta. Osnovni ton u levoj ruci sve vreme na prvu dobu."}
+    minutes: 5

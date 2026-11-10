@@ -1,0 +1,132 @@
+id: V-047
+track: V
+order: 47
+title: {en: "Mix development II: evening out the break", sr: "Razvoj miksa II: izravnavanje loma"}
+prereqs: [V-046, V-016]
+minutes: 11
+tags: [voice, register, mix]
+explain:
+  en: |
+    The **break** (*passaggio*; Serbian *lom* or *prelaz*) is the place where your voice changes how the folds vibrate, from the thicker speaking setting toward the thinner head setting.
+    Every voice has one. Where it sits differs: for many men it is somewhere around D4 to F4, for many women around E4 to G4, but yours is where **your** voice says, not a chart.
+
+    You cannot remove the break; you can make the change **gradual** instead of sudden. Compare two pianists crossing from the left-hand register to the right:
+    one with a bump in volume and touch exactly at the hand change, one so even that you cannot hear where the hands swapped. That evenness is the goal.
+
+    What an uneven break sounds like, and today's tool for each:
+
+    | you hear | what happens | tool |
+    |---|---|---|
+    | a crack or yodel | the thick setting holds too long, then lets go at once | slow "ng" sirens and lip trills through the break: they keep the pressure low so the change can be gradual |
+    | a sudden jump in volume or colour | the weight is not being reduced on the way up | octave slides on "gee" and "nay": the same size from bottom to top |
+    | the voice gets airy above the break | the folds stopped closing (falsetto) | a little more edge: "n", "g", a whimper (lesson 28) |
+
+    The method: **slow first, then in tempo**. A slide (*glissando*) lets you hear the exact spot; then the same notes as separate pitches; then a melody that crosses the break.
+    The notes below are fitted to the middle of your range, which for most voices puts the break inside the phrase.
+
+    The app grades the **pitches**; it cannot hear whether the change was smooth. Record the octave slide and listen for the bump: that is your real score today.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Lom** (*passaggio*, *prelaz*) je mesto gde glas menja način titranja glasnica, iz debljeg, govornog podešavanja ka tanjem, glavnom.
+    Svaki glas ga ima. Gde je, razlikuje se: kod mnogih muškaraca negde oko D4 do F4, kod mnogih žena oko E4 do G4, ali tvoj je tamo gde **tvoj** glas kaže, ne tabela.
+
+    Lom ne možeš da ukloniš; možeš da promenu učiniš **postepenom** umesto nagle. Uporedi dva pijanista koji prelaze iz registra leve ruke u registar desne:
+    jedan sa skokom u jačini i dodiru baš na promeni ruku, drugi toliko ravnomerno da ne čuješ gde su ruke zamenile mesta. Ta ravnomernost je cilj.
+
+    Kako zvuči neravan lom i današnji alat za svaki slučaj:
+
+    | čuješ | šta se dešava | alat |
+    |---|---|---|
+    | pucanje ili jodlovanje | debelo podešavanje drži predugo, pa odjednom popusti | spore sirene na „ng” i treperenje usana kroz lom: drže pritisak niskim, pa promena može da bude postepena |
+    | nagli skok u jačini ili boji | težina se ne smanjuje na putu naviše | klizanje kroz oktavu na „gi” i „nej”: ista veličina od dna do vrha |
+    | glas postane vazdušast iznad loma | glasnice su prestale da se zatvaraju (falset) | malo više ivice: „n”, „g”, cviljenje (28. lekcija) |
+
+    Metoda: **prvo polako, pa u tempu**. Klizanje (*glisando*) ti pokaže tačno mesto; zatim isti tonovi kao zasebne visine; zatim melodija koja prelazi lom.
+    Tonovi ispod su prilagođeni sredini tvog opsega, što kod većine glasova stavlja lom unutar fraze.
+
+    Aplikacija ocenjuje **visine**; ne može da čuje da li je promena bila glatka. Snimi klizanje kroz oktavu i slušaj gde je grba: to je tvoja prava ocena danas.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-047-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-047-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, then 4 very slow lip-trill sirens from low to high and back. Notice the spot where it wants to bump; do not fix it yet, just find it."
+      sr: "Zagrevanje: 4 niska udaha, pa 4 veoma spore sirene treperenjem usana odozdo naviše i nazad. Primeti mesto gde hoće da napravi grbu; još ga ne popravljaj, samo ga nađi."
+  - id: V-047-3
+    type: sing-phrase
+    prompt:
+      en: "Slide on 'ng' (a hum with the tongue up, as in 'sing'): 1 up to 5 and back, connecting the notes like a siren. Slow and quiet; the hum keeps the pressure low."
+      sr: "Klizanje na „ng” (pevušenje sa jezikom gore, kao u engl. „sing”): od 1 do 5 i nazad, poveži tonove kao sirena. Polako i tiho; pevušenje drži pritisak niskim."
+    notes: [D4, A4, D4]
+    beats: [2, 2, 3]
+    tempo: 60
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: D4, to: A4, is: P5}
+  - id: V-047-4
+    type: sing-phrase
+    prompt:
+      en: "Octave slide on 'gee': 1-5-8-5-1, sliding between the notes. Same size of sound at the 8 as at the 1; if it bumps, lighten before the bump, not at it."
+      sr: "Klizanje kroz oktavu na „gi”: 1-5-8-5-1, klizeći između tonova. Ista veličina zvuka na 8 kao na 1; ako napravi grbu, olakšaj pre grbe, ne na njoj."
+    notes: [C4, G4, C5, G4, C4]
+    beats: [1, 1, 2, 1, 2]
+    tempo: 60
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-047-5
+    type: sing-phrase
+    prompt:
+      en: "The same notes without sliding, on 'nay': 1-3-5-8-5-3-1 legato. Listen for one note in the middle that suddenly changes colour."
+      sr: "Isti tonovi bez klizanja, na „nej”: 1-3-5-8-5-3-1 legato. Slušaj da li jedan ton u sredini naglo promeni boju."
+    notes: [Eb4, G4, Bb4, Eb5, Bb4, G4, Eb4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [Eb4, G4, Bb4], root: Eb, quality: maj, inversion: 0}
+      - interval: {from: Eb4, to: Eb5, is: P8}
+  - id: V-047-6
+    type: sing-pitch
+    prompt:
+      en: "One note near the middle of your range, 4 seconds on one breath: 'nay' that slowly opens into 'nah'. Keep the 'nah' as small as the 'nay'."
+      sr: "Jedan ton blizu sredine opsega, 4 sekunde u jednom dahu: „nej” koje se polako otvara u „na”. Neka „na” bude malo kao „nej”."
+    notes: [E4]
+    sustain: 4
+    tolerance: 50
+    pass: 0.65
+  - id: V-047-7
+    type: generated
+    prompt:
+      en: "Short phrases across the middle of your range on 'nay'. Keep every note the same size."
+      sr: "Kratke fraze kroz sredinu opsega na „nej”. Svaki ton iste veličine."
+    count: 3
+    gen: {kind: phrase-sing, tonics: [C, D, Eb], type: major, length: [5, 7], maxLeap: 3, tempo: 72, tolerance: 50}
+  - id: V-047-8
+    type: mcq
+    prompt:
+      en: "Your voice yodels at the same note every time on the way up. What is the best first step?"
+      sr: "Glas ti svaki put na putu naviše jodluje na istom tonu. Koji je najbolji prvi korak?"
+    options:
+      - {en: "Slow 'ng' or lip-trill sirens through that spot, lightening just before it", sr: "Spore sirene na „ng” ili treperenjem usana kroz to mesto, olakšavajući tik pre njega"}
+      - {en: "Sing that note louder until it stops cracking", sr: "Pevaj taj ton glasnije dok ne prestane da puca"}
+      - {en: "Avoid songs that cross that note", sr: "Izbegavaj pesme koje prelaze preko tog tona"}
+    answer: 0
+  - id: V-047-9
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: record one slow octave slide on 'gee' and listen back. Rate how audible the bump was (none / small / a clear crack). Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi jedno sporo klizanje kroz oktavu na „gi” i preslušaj. Oceni koliko se čula grba (nimalo / malo / jasno pucanje). Pa 3 tiha pevušenja uz klizanje naniže."

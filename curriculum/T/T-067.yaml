@@ -1,0 +1,121 @@
+id: T-067
+track: T
+order: 67
+prereqs: [T-066]
+title: {en: "Reading a lead sheet: form, repeats, codas, endings", sr: "Čitanje lead sheeta: oblik, ponavljanja, kode, volte"}
+minutes: 13
+tags: [form, notation, lead-sheet]
+explain:
+  en: |
+    A lead sheet (T-031) fits a whole song on one page by **not writing repeated music twice**. The road signs:
+
+    | sign | sr | meaning |
+    |---|---|---|
+    | **‖: … :‖** | znak za ponavljanje | play the passage twice (a lone :‖ means back to the start) |
+    | **1. / 2.** endings | prima volta / sekunda volta | first time play ending 1, then repeat; second time skip ending 1 and play ending 2 |
+    | **D.C.** (da capo) | | go back to the very beginning |
+    | **D.S.** (dal segno) | | go back to the sign 𝄋 (segno) |
+    | **al Fine** | | ... and stop at **Fine** |
+    | **al Coda** | koda | ... and at **To Coda** (⊕) jump to the **Coda** (koda) |
+
+    **Convention:** after a D.C. or D.S. jump, repeats are **not** taken again: you play straight through, and where there are endings you go directly to the last one. "To Coda" is ignored the first time through; it is a jump only after the D.S.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    |: "G""^1" G2 B2 | "Em""^2" E2 G2 |1 "D7""^3" A2 c2 :|2 "D7""^4" A2 F2 || !segno! "C""^5" c2 e2 | "Am""^6" c2 "^To Coda" A2 | "D7""^7" d2 "^D.S. al Coda" c2 || !coda! "C""^8" c2 "D7" A2 | "G""^9" G4 |]
+    ```
+
+    Bars are numbered above. The order:
+    - 1 2 3 (first ending), repeat: 1 2 4 (second ending),
+    - 5 6 7, then D.S.: back to the sign at bar 5,
+    - 5 6, "To Coda": jump to the coda, 8 9.
+
+    **1 2 3 1 2 4 5 6 7 5 6 8 9**: 13 bars played from 9 written. Map a song like this before you play it; a wrong turn on stage is far more audible than a wrong note. In song terms this is a form plan too: bars 1–4 could be the verse (twice), 5–7 the chorus, and the coda the tag ending.
+  sr: |
+    Lead sheet (T-031) staje celu pesmu na jednu stranu tako što **ne ispisuje ponovljenu muziku dvaput**. Putokazi:
+
+    | znak | en | značenje |
+    |---|---|---|
+    | **‖: … :‖** | repeat | odsviraj odlomak dvaput (sam :‖ znači nazad na početak) |
+    | **1. / 2.** | 1st / 2nd ending | prima volta / sekunda volta: prvi put sviraj primu voltu, pa ponovi; drugi put preskoči primu i sviraj sekundu voltu |
+    | **D.C.** (da capo) | | vrati se na sam početak |
+    | **D.S.** (dal segno) | | vrati se na znak 𝄋 (segno) |
+    | **al Fine** | | ... i stani kod **Fine** |
+    | **al Coda** | coda | ... i kod **To Coda** (⊕) skoči na **kodu** |
+
+    **Konvencija:** posle skoka D.C. ili D.S. ponavljanja se **ne** sviraju ponovo: sviraš pravo, a gde postoje volte ideš direktno na poslednju. "To Coda" se prvi put ne uzima u obzir; skok je tek posle D.S.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:G
+    |: "G""^1" G2 B2 | "Em""^2" E2 G2 |1 "D7""^3" A2 c2 :|2 "D7""^4" A2 F2 || !segno! "C""^5" c2 e2 | "Am""^6" c2 "^To Coda" A2 | "D7""^7" d2 "^D.S. al Coda" c2 || !coda! "C""^8" c2 "D7" A2 | "G""^9" G4 |]
+    ```
+
+    Taktovi su numerisani iznad. Redosled:
+    - 1 2 3 (prima volta), ponavljanje: 1 2 4 (sekunda volta),
+    - 5 6 7, pa D.S.: nazad na znak kod 5. takta,
+    - 5 6, "To Coda": skok na kodu, 8 9.
+
+    **1 2 3 1 2 4 5 6 7 5 6 8 9**: 13 odsviranih taktova od 9 napisanih. Ovako mapiraj pesmu pre nego što je sviraš; pogrešno skretanje na sceni čuje se mnogo više od pogrešne note. U smislu pesme i ovo je plan oblika: taktovi 1–4 mogu biti strofa (dvaput), 5–7 refren, a koda završni dodatak.
+exercises:
+  - id: T-067-1
+    type: mcq
+    prompt: {en: "In the example, in which order are the bars played?", sr: "U primeru, kojim redom se sviraju taktovi?"}
+    options: ["1 2 3 1 2 4 5 6 7 5 6 8 9", "1 2 3 1 2 4 5 6 7 5 6 7 8 9", "1 2 3 4 5 6 7 5 6 8 9", "1 2 3 1 2 3 4 5 6 7 8 9"]
+    answer: 0
+  - id: T-067-2
+    type: mcq
+    prompt: {en: "Second time through a repeat with 1st and 2nd endings (prima and sekunda volta), you…", sr: "Drugi put kroz ponavljanje sa primom i sekundom voltom…"}
+    options:
+      - {en: "skip the 1st ending and play the 2nd", sr: "preskočiš primu voltu i sviraš sekundu"}
+      - {en: "play both endings", sr: "sviraš obe volte"}
+      - {en: "play the 1st ending again", sr: "ponovo sviraš primu voltu"}
+      - {en: "stop before the endings", sr: "staneš pre volti"}
+    answer: 0
+  - id: T-067-3
+    type: mcq
+    prompt: {en: "When do you obey \"To Coda\"?", sr: "Kada poštuješ \"To Coda\"?"}
+    options:
+      - {en: "Only after the D.S. (or D.C.) jump", sr: "Tek posle skoka D.S. (ili D.C.)"}
+      - {en: "Every time you reach it", sr: "Svaki put kad stigneš do njega"}
+      - {en: "Only the first time", sr: "Samo prvi put"}
+    answer: 0
+  - id: T-067-4
+    type: mcq
+    prompt: {en: "Bars are numbered above. In which order are they played?", sr: "Taktovi su numerisani iznad. Kojim redom se sviraju?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      |: "C""^1" C2 E2 | "F""^2" F2 A2 |1 "G7""^3" G2 B2 :|2 "C""^4" c2 "^Fine" c2 || "Am""^5" A2 c2 | "G7""^6" B2 "^D.C. al Fine" d2 |]
+    options: ["1 2 3 1 2 4 5 6 1 2 4", "1 2 3 1 2 4 5 6", "1 2 3 1 2 4 5 6 1 2 3 1 2 4", "1 2 3 4 5 6 1 2 3 4"]
+    answer: 0
+  - id: T-067-5
+    type: mcq
+    prompt: {en: "Listen: one bar per chord, the lead sheet of the previous question. Which road map did the player follow?", sr: "Slušaj: jedan takt po akordu, lead sheet iz prethodnog pitanja. Koju mapu je svirač pratio?"}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      |: "C""^1" C2 E2 | "F""^2" F2 A2 |1 "G7""^3" G2 B2 :|2 "C""^4" c2 "^Fine" c2 || "Am""^5" A2 c2 | "G7""^6" B2 "^D.C. al Fine" d2 |]
+    options:
+      - {en: "Correct: 1 2 3 1 2 4 5 6 1 2 4", sr: "Ispravnu: 1 2 3 1 2 4 5 6 1 2 4"}
+      - {en: "Took the repeat again after D.C.: … 1 2 3 1 2 4", sr: "Ponovo uzeo ponavljanje posle D.C.: … 1 2 3 1 2 4"}
+      - {en: "Ignored the D.C.: stopped after bar 6", sr: "Ignorisao D.C.: stao posle 6. takta"}
+    answer: 1
+    play: {mode: chords, tempo: 132, chords: [[C3, C4, E4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [F2, C4, F4, A4], [C3, C4, E4, G4], [A2, C4, E4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [F2, C4, F4, A4], [G2, B3, D4, F4], [C3, C4, E4, G4], [F2, C4, F4, A4], [C3, C4, E4, G4]], durations: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]}
+    checks:
+      - numeral: {key: C, is: V7, notes: [G2, B3, D4, F4]}
+      - numeral: {key: C, is: vi, notes: [A2, C4, E4, A4]}
+  - id: T-067-6
+    type: mcq
+    prompt: {en: "How many bars are played in the D.C. al Fine example?", sr: "Koliko taktova se svira u primeru sa D.C. al Fine?"}
+    options: ["11", "6", "8", "14"]
+    answer: 0

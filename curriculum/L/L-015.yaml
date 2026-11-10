@@ -1,0 +1,145 @@
+id: L-015
+track: L
+order: 15
+prereqs: [L-014, L-006]
+title: {en: "The bridge: a new angle", sr: "Most: nov ugao"}
+minutes: 14
+tags: [lyrics, form, bridge]
+explain:
+  en: |
+    L-006 gave the bridge one line in a table: *once, a new angle*. This lesson is about
+    finding that angle. By the time the bridge comes (usually **after the second chorus**), the
+    listener knows the situation and has heard the chorus twice. One more verse would be more
+    of the same; a third chorus would be too early. The bridge **changes how we see** the
+    song, so that the last chorus hits harder.
+
+    ### Five angles
+    | angle | the bridge says | example (chorus: *Last bus out*) |
+    |---|---|---|
+    | **time shift** | later, or long before | *Ten years on I'll pass this stop / and not remember why* |
+    | **the other side** | what the other person would say | *You'd say I never asked you once / to stay* |
+    | **confession** | what the narrator has been hiding | *I never bought the ticket, / I just like to watch it go* |
+    | **zoom out** | the same thing, much bigger | *Every town has one last bus / and someone on the bench* |
+    | **decision** | what happens now | *So I'm walking. / Twelve kilometres. / Home.* |
+
+    Take the confession. Before it, *Last bus out* is about leaving. After it, the same chorus
+    is about someone who never will. **The chorus words did not change; their meaning did.**
+    That is the test of a bridge.
+
+    ### What makes it sound like a bridge
+    - **No title, no chorus words.** Save them for the chorus that follows.
+    - **Different line length**: much shorter (fragments) or longer than the verses.
+    - **New rhyme sounds**, or none: two to four lines are enough.
+    - Musically it ends open, on V (C-016), so the words should end **leaning forward** too: a
+      question, an unfinished thought, a decision about to happen.
+
+    ### Serbian
+    If the verses are in osmerac (8 syllables), a bridge of short fragments stands out at once:
+    *Idem peške.* (4) after lines like *Čekam bus do bele zore* (8). The shift in length is
+    audible before the meaning sinks in.
+
+    ### At the piano
+    Play the chorus chords, then something that avoids I (IV – V, or vi – IV – V) for the bridge,
+    and stop on V. Speak your bridge over it; the last word should feel like a held breath.
+  sr: |
+    U L-006 je most dobio jedan red u tabeli: *jednom, nov ugao*. Ova lekcija je o tome kako se
+    taj ugao pronalazi. Kad most dođe (obično **posle drugog refrena**), slušalac zna situaciju i
+    dvaput je čuo refren. Još jedna strofa bila bi više istog; treći refren bi došao prerano. Most
+    **menja kako vidimo** pesmu, da bi poslednji refren jače pogodio.
+
+    ### Pet uglova
+    | ugao | most kaže | primer (refren: *Poslednji bus*) |
+    |---|---|---|
+    | **pomak u vremenu** | kasnije, ili mnogo ranije | *Za deset godina proći ću ovuda / i neću znati zašto* |
+    | **druga strana** | šta bi rekla druga osoba | *Rekla bi da te nijednom nisam / zamolio da ostaneš* |
+    | **ispovest** | šta je pripovedač krio | *Kartu nikad nisam kupio, / samo volim da gledam kako odlazi* |
+    | **odzumiranje** | ista stvar, mnogo veća | *Svaki grad ima poslednji bus / i nekoga na klupi* |
+    | **odluka** | šta se dešava sad | *Idem peške. / Dvanaest kilometara. / Kući.* |
+
+    Uzmi ispovest. Pre nje, *Poslednji bus* je pesma o odlasku. Posle nje, isti refren je o nekome
+    ko nikad neće otići. **Reči refrena se nisu promenile; promenilo se značenje.** To je test
+    mosta.
+
+    ### Šta ga čini mostom
+    - **Bez naslova, bez reči refrena.** Sačuvaj ih za refren koji sledi.
+    - **Drugačija dužina stiha**: mnogo kraći (fragmenti) ili duži od strofa.
+    - **Novi zvuci rime**, ili bez rime: dva do četiri stiha su dovoljna.
+    - Muzički se završava otvoreno, na V (C-016), pa i reči treba da se završe **nagnute
+      napred**: pitanje, nedovršena misao, odluka koja samo što nije pala.
+
+    ### Srpski
+    Ako su strofe u osmercu (8 slogova), most od kratkih fragmenata odmah se izdvaja: *Idem
+    peške.* (4) posle stihova kao *Čekam bus do bele zore* (8). Promena dužine se čuje pre nego
+    što značenje stigne.
+
+    ### Za klavirom
+    Odsviraj akorde refrena, pa za most nešto što izbegava I (IV – V, ili vi – IV – V) i stani na
+    V. Izgovori svoj most preko toga; poslednja reč treba da se oseti kao zadržan dah.
+exercises:
+  - id: L-015-1
+    type: mcq
+    prompt: {en: "Verses: a woman waits at the window for her son's car. Chorus: “Headlights on the hill”. Which bridge gives a new angle?", sr: "Strofe: žena čeka na prozoru kola svog sina. Refren: „Farovi na brdu“. Koji most daje nov ugao?"}
+    options:
+      - {en: "He'd say he called on Sunday, / and she never picks up", sr: "On bi rekao da je zvao u nedelju, / a ona se nikad ne javlja"}
+      - {en: "She waits at the window, / headlights on the hill", sr: "Ona čeka na prozoru, / farovi na brdu"}
+      - {en: "The night is dark, the window cold, / she waits and waits for him", sr: "Noć je tamna, prozor hladan, / ona čeka, čeka njega"}
+      - {en: "Headlights, headlights, / headlights on the hill", sr: "Farovi, farovi, / farovi na brdu"}
+    answer: 0
+  - id: L-015-2
+    type: mcq
+    prompt: {en: "“I never bought the ticket, / I just like to watch it go.” Which angle is this?", sr: "„Kartu nikad nisam kupio, / samo volim da gledam kako odlazi.“ Koji je ovo ugao?"}
+    options:
+      - {en: "confession", sr: "ispovest"}
+      - {en: "time shift", sr: "pomak u vremenu"}
+      - {en: "the other side", sr: "druga strana"}
+      - {en: "zoom out", sr: "odzumiranje"}
+    answer: 0
+  - id: L-015-3
+    type: mcq
+    keepOrder: true
+    prompt: {en: "Song form V – C – V – C – ? – C. Where does the bridge go?", sr: "Oblik pesme S – R – S – R – ? – R. Gde ide most?"}
+    options:
+      - {en: "before the first verse", sr: "pre prve strofe"}
+      - {en: "between verse 1 and the first chorus", sr: "između prve strofe i prvog refrena"}
+      - {en: "after the second chorus, before the last one", sr: "posle drugog refrena, pre poslednjeg"}
+      - {en: "after the last chorus", sr: "posle poslednjeg refrena"}
+    answer: 2
+  - id: L-015-4
+    type: mcq
+    prompt: {en: "A draft bridge: “Last bus out, last bus out, / I'm on the last bus out tonight.” What is wrong?", sr: "Nacrt mosta: „Poslednji bus, poslednji bus, / noćas sam u poslednjem busu.“ Šta ne valja?"}
+    options:
+      - {en: "It repeats the title and chorus words, so nothing new is said", sr: "Ponavlja naslov i reči refrena, pa ništa novo nije rečeno"}
+      - {en: "It is too short to be a bridge", sr: "Prekratak je da bi bio most"}
+      - {en: "It does not rhyme with verse 1", sr: "Ne rimuje se sa prvom strofom"}
+      - {en: "Nothing: a bridge should repeat the hook", sr: "Ništa: most treba da ponovi udicu"}
+    answer: 0
+  - id: L-015-5
+    type: mcq
+    prompt: {en: "The verses are in osmerac (8 syllables). Which Serbian bridge line contrasts most in length?", sr: "Strofe su u osmercu (8 slogova). Koji srpski stih mosta se najviše razlikuje po dužini?"}
+    options: ["Idem peške.", "Idem peške do kuće sad", "Ostajem na stanici sam", "Čekam bus do bele zore"]
+    answer: 0
+    checks:
+      - syllables: {text: "Idem peške.", lang: sr, is: 4}
+      - syllables: {text: "Idem peške do kuće sad", lang: sr, is: 8}
+      - syllables: {text: "Ostajem na stanici sam", lang: sr, is: 8}
+      - syllables: {text: "Čekam bus do bele zore", lang: sr, is: 8}
+  - id: L-015-6
+    type: write
+    prompt:
+      en: "Song: verses about two friends who rented a rehearsal room above a butcher's shop, chorus “Turn it up”. Write two different bridges (2–4 lines each), English or Serbian, from two of the five angles, and name the angle of each. Then say in one sentence what “Turn it up” means after each bridge."
+      sr: "Pesma: strofe o dva druga koja su iznajmila prostoriju za probe iznad mesare, refren „Pojačaj“. Napiši dva različita mosta (po 2–4 stiha), na engleskom ili srpskom, iz dva od pet uglova, i imenuj ugao svakog. Zatim u jednoj rečenici reci šta „Pojačaj“ znači posle svakog mosta."
+    language: either
+    lines: [6, 12]
+    rubric:
+      - id: angle
+        label: {en: "A real new angle", sr: "Pravi nov ugao"}
+        top: {en: "Each bridge adds information the verses did not have (a time, the other side, a hidden fact, a wider view, a decision), and the two use different angles.", sr: "Svaki most donosi informaciju koje u strofama nije bilo (vreme, druga strana, skrivena činjenica, širi pogled, odluka), a dva mosta koriste različite uglove."}
+      - id: reframe
+        label: {en: "The chorus changes meaning", sr: "Refren menja značenje"}
+        top: {en: "The one-sentence notes show that “Turn it up” means something different after each bridge than before it.", sr: "Rečenice pokazuju da „Pojačaj“ posle svakog mosta znači nešto drugo nego pre njega."}
+      - id: sound
+        label: {en: "Sounds like a bridge", sr: "Zvuči kao most"}
+        top: {en: "No title or chorus words; line length clearly differs from a typical verse line; new rhyme sounds or none.", sr: "Bez naslova i reči refrena; dužina stiha se jasno razlikuje od stiha strofe; novi zvuci rime ili bez rime."}
+      - id: forward
+        label: {en: "Leans forward", sr: "Nagnut napred"}
+        top: {en: "Each bridge ends on a question, an unfinished thought or a decision about to happen, not on a full stop.", sr: "Svaki most se završava pitanjem, nedovršenom mišlju ili odlukom koja samo što nije pala, a ne tačkom."}

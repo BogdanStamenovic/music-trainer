@@ -1,0 +1,143 @@
+id: K-044
+track: K
+order: 44
+title: {en: "Accompanying a verse–chorus song: changing the texture", sr: "Pratnja pesme sa strofom i refrenom: promena fakture"}
+prereqs: [K-032, T-065]
+minutes: 14
+tags: [keys, accompaniment, form, texture, comping]
+explain:
+  en: |
+    In a verse–chorus song (T-065) the chorus has to *arrive*. Melody and lyrics do part of
+    the work; the accompaniment does the rest by changing its **texture**: how many notes,
+    how often, and in which register. The chords can even stay the same.
+
+    | | verse | chorus |
+    |---|---|---|
+    | job | leave room for the words (the story) | lift, carry the hook |
+    | rhythm | flowing, few attacks | a clear pulse on every beat |
+    | register | low and middle; right hand quiet or silent | wider: low bass octaves, right hand higher |
+    | dynamics | mp | mf–f |
+
+    A song in G. Verse: **G – Em – C – D** (I – vi – IV – V). Chorus: **C – G – D – Em**
+    (IV – I – V – vi): starting the chorus on IV is a common way to make it sound like a new
+    section, not a repeat.
+
+    **Verse texture:** the left hand alone, broken chords in eighths, root–5th–10th–5th
+    (G2 D3 B3 D3), twice per bar. The right hand stays silent; the singer is the top line.
+
+    **Chorus texture:** left hand **octaves** on beats 1 and 3, right hand **block chords on
+    every beat** around E4–C5.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    V:1
+    "G (verse)"z8 | "C (chorus)"[EGc]2 [EGc]2 [EGc]2 [EGc]2 |]
+    V:2 clef=bass
+    G,,D,B,D, G,,D,B,D, | [C,,C,]4 [C,,C,]4 |]
+    ```
+
+    **The switch.** The moment the texture changes is the moment the listener hears "here is
+    the chorus", so make it clean: finish the last verse bar exactly in time, then hit
+    beat 1 of the chorus with both hands together. Two common tricks for the bar before:
+    a **build** (the left hand moves from eighths to steady quarter notes, getting louder) or
+    a **break** (stop on beat 3 or 4, a moment of silence, then the chorus).
+  sr: |
+    U pesmi sa strofom i refrenom (T-065) refren mora da *stigne*. Melodija i tekst rade deo
+    posla; pratnja radi ostatak tako što menja **fakturu**: koliko tonova, koliko često i u
+    kom registru. Akordi čak mogu ostati isti.
+
+    | | strofa | refren |
+    |---|---|---|
+    | zadatak | ostavi mesta za reči (priču) | podigni, ponesi glavni motiv (hook) |
+    | ritam | tečan, malo udara | jasan puls na svaku dobu |
+    | registar | nizak i srednji; desna ruka tiha ili ćuti | širi: niske oktave u basu, desna ruka više |
+    | dinamika | mp | mf–f |
+
+    Pesma u G-duru. Strofa: **G – Em – C – D** (I – vi – IV – V). Refren: **C – G – D – Em**
+    (IV – I – V – vi): početak refrena na IV je čest način da zvuči kao novi deo, a ne kao
+    ponavljanje.
+
+    **Faktura strofe:** samo leva ruka, razloženi akordi u osminama, osnovni ton–kvinta–
+    decima–kvinta (G2 D3 H3 D3), dva puta po taktu. Desna ruka ćuti; pevač je gornja linija.
+
+    **Faktura refrena:** leva ruka **oktave** na prvu i treću dobu, desna ruka **akordi na
+    svaku dobu** oko E4–C5.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:G
+    V:1
+    "G (verse)"z8 | "C (chorus)"[EGc]2 [EGc]2 [EGc]2 [EGc]2 |]
+    V:2 clef=bass
+    G,,D,B,D, G,,D,B,D, | [C,,C,]4 [C,,C,]4 |]
+    ```
+
+    **Prelaz.** Trenutak kad se faktura promeni je trenutak kad slušalac čuje "evo refrena",
+    zato ga odradi čisto: završi poslednji takt strofe tačno u tempu, pa udari prvu dobu
+    refrena obema rukama zajedno. Dva česta trika za takt pre toga: **pojačavanje** (leva
+    ruka prelazi sa osmina na ujednačene četvrtine, sve glasnije) ili **prekid** (stani na
+    treću ili četvrtu dobu, trenutak tišine, pa refren).
+exercises:
+  - id: K-044-1
+    type: mcq
+    prompt: {en: "The chorus should sound bigger than the verse, but the chords are almost the same. What does the pianist change first?", sr: "Refren treba da zvuči veće od strofe, a akordi su skoro isti. Šta pijanista prvo menja?"}
+    options:
+      - {en: "The texture: more attacks, a wider register, both hands", sr: "Fakturu: više udara, širi registar, obe ruke"}
+      - {en: "The tempo: play the chorus faster", sr: "Tempo: refren svira brže"}
+      - {en: "The key: move the chorus up a whole step every time", sr: "Tonalitet: refren svaki put pomeri za ceo stepen naviše"}
+      - {en: "Nothing; the singer does the work", sr: "Ništa; pevač radi posao"}
+    answer: 0
+  - id: K-044-2
+    type: midi-play
+    prompt: {en: "Verse texture, left hand alone: G – Em – C – D, root–5th–10th–5th in eighths, twice per bar, ♩=84.", sr: "Faktura strofe, samo leva ruka: G – Em – C – D, osnovni ton–kvinta–decima–kvinta u osminama, dva puta po taktu, ♩=84."}
+    mode: sequence
+    expect: [G2, D3, B3, D3, G2, D3, B3, D3, E2, B2, G3, B2, E2, B2, G3, B2, C3, G3, E4, G3, C3, G3, E4, G3, D2, A2, "F#3", A2, D2, A2, "F#3", A2]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+    tempo: 84
+    checks:
+      - chord: {notes: [G2, D3, B3], root: G, quality: maj}
+      - chord: {notes: [E2, B2, G3], root: E, quality: min}
+      - chord: {notes: [C3, G3, E4], root: C, quality: maj}
+      - chord: {notes: [D2, A2, "F#3"], root: D, quality: maj}
+      - semitones: {from: G2, to: B3, is: 16}
+      - numeral: {key: G, is: "vi", notes: [E2, B2, G3]}
+  - id: K-044-3
+    type: midi-play
+    prompt: {en: "Chorus texture: C – G – D – Em, left-hand octaves on beats 1 and 3, right-hand chords on every beat (E4 G4 C5 → D4 G4 B4 → D4 F♯4 A4 → E4 G4 B4), ♩=84.", sr: "Faktura refrena: C – G – D – Em, oktave u levoj ruci na prvu i treću dobu, akordi desne ruke na svaku dobu (E4 G4 C5 → D4 G4 H4 → D4 Fis4 A4 → E4 G4 H4), ♩=84."}
+    mode: chords
+    expectChords: [[C2, C3, E4, G4, C5], [E4, G4, C5], [C2, C3, E4, G4, C5], [E4, G4, C5], [G1, G2, D4, G4, B4], [D4, G4, B4], [G1, G2, D4, G4, B4], [D4, G4, B4], [D2, D3, D4, "F#4", A4], [D4, "F#4", A4], [D2, D3, D4, "F#4", A4], [D4, "F#4", A4], [E2, E3, E4, G4, B4], [E4, G4, B4], [E2, E3, E4, G4, B4], [E4, G4, B4]]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    tempo: 84
+    checks:
+      - numeral: {key: G, is: "IV", notes: [C2, C3, E4, G4, C5]}
+      - numeral: {key: G, is: "I", notes: [G1, G2, D4, G4, B4]}
+      - numeral: {key: G, is: "V", notes: [D2, D3, D4, "F#4", A4]}
+      - numeral: {key: G, is: "vi", notes: [E2, E3, E4, G4, B4]}
+  - id: K-044-4
+    type: midi-play
+    prompt: {en: "The switch: the last verse bar (D, broken chords) straight into the first chorus bar (C, octaves + pulsed chords). Land beat 1 of the chorus with both hands exactly together. ♩=84.", sr: "Prelaz: poslednji takt strofe (D, razloženo) pravo u prvi takt refrena (C, oktave + akordi u pulsu). Prvu dobu refrena udari obema rukama tačno zajedno. ♩=84."}
+    mode: chords
+    expectChords: [[D2], [A2], ["F#3"], [A2], [D2], [A2], ["F#3"], [A2], [C2, C3, E4, G4, C5], [E4, G4, C5], [C2, C3, E4, G4, C5], [E4, G4, C5]]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
+    tempo: 84
+    checks:
+      - numeral: {key: G, is: "V", notes: [D2, A2, "F#3"]}
+      - numeral: {key: G, is: "IV", notes: [C2, C3, E4, G4, C5]}
+  - id: K-044-5
+    type: mcq
+    prompt: {en: "A \"break\" before the chorus means…", sr: "\"Prekid\" pred refren znači…"}
+    options:
+      - {en: "stopping on beat 3 or 4 of the bar before, leaving a moment of silence", sr: "zaustavljanje na treću ili četvrtu dobu takta pre, uz trenutak tišine"}
+      - {en: "slowing down for the whole last verse bar", sr: "usporavanje kroz ceo poslednji takt strofe"}
+      - {en: "changing key for the chorus", sr: "promenu tonaliteta za refren"}
+      - {en: "playing the chorus without the left hand", sr: "sviranje refrena bez leve ruke"}
+    answer: 0
+  - id: K-044-6
+    type: practice
+    prompt: {en: "The whole song form at ♩=84: verse (4 bars) twice, chorus (4 bars) twice, verse once, chorus twice. Use a build before the first chorus and a break before the last one. If you sing (V-062 works on verse in light voice, chorus in mix), hum or sing the top note of each right-hand chord in the chorus; otherwise invent a simple melody in the right hand for the verse.", sr: "Cela forma pesme, ♩=84: strofa (4 takta) dva puta, refren (4 takta) dva puta, strofa jednom, refren dva puta. Pred prvi refren upotrebi pojačavanje, a pred poslednji prekid. Ako pevaš (V-062 radi strofu lakim glasom, refren u miksu), pevuši ili pevaj gornji ton svakog akorda desne ruke u refrenu; inače izmisli jednostavnu melodiju za desnu ruku u strofi."}
+    minutes: 5

@@ -1,0 +1,172 @@
+id: K-035
+track: K
+order: 35
+title: {en: "Pivot-chord modulation at the keys (C→G, C→Am)", sr: "Modulacija preko akorda-mosta za klavirom (C→G, C→a)"}
+prereqs: [T-052]
+minutes: 14
+tags: [keys, harmony, modulation, voice-leading]
+explain:
+  en: |
+    T-052 showed the idea on paper: a **pivot chord** belongs to both keys, so you hear it in
+    the old key and only afterwards realise it was the start of the new one. Here you put it
+    in your hands, with voicings that move as little as possible. The less the hand moves, the
+    more the change of key sounds like it happened *by itself*.
+
+    **C major → G major**, pivot Am (C: vi = G: ii):
+
+    | | C | F | **Am** | D7 | G |
+    |---|---|---|---|---|---|
+    | in C | I | IV | **vi** | | |
+    | in G | | | **ii** | V7 | I |
+    | left hand | C3 | F2 | A2 | D3 | G2 + D3 |
+    | right hand | G3 C4 E4 | A3 C4 F4 | A3 C4 E4 | A3 C4 F♯4 | G3 B3 G4 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[C,G,CE] "F"[F,,A,CF] | "Am"[A,,A,CE] "D7"[D,A,C^F] | "G"[G,,D,G,B,G]2 |]
+    ```
+
+    Watch the right hand: A and C do not move from F to D7. Only the top voice walks
+    F → E → **F♯** → G. One note, **F♯**, is the whole modulation: it is the leading tone of G,
+    and the first note in the piece that C major does not have. Then D7 resolves the textbook
+    way: F♯ up to G, the 7th (C) down to B, A down to G.
+
+    **C major → A minor**, pivot Dm (C: ii = a: iv):
+
+    | | C | F | **Dm** | E7 | Am |
+    |---|---|---|---|---|---|
+    | in C | I | IV | **ii** | | |
+    | in A minor | | | **iv** | V7 | i |
+    | left hand | C3 | F2 | D3 | E3 | A2 |
+    | right hand | G3 C4 E4 | A3 C4 F4 | A3 D4 F4 | G♯3 D4 E4 | A3 C4 E4 |
+
+    Here the new note is **G♯** (leading tone of A minor), in E7 voiced without its 5th so
+    every voice can move by step into Am. Keyboard habit: in each modulation, **find the
+    first new accidental** and know which hand plays it. That note is where the ear changes
+    key.
+  sr: |
+    T-052 je pokazao ideju na papiru: **akord-most** (zajednički akord) pripada oba
+    tonaliteta, pa ga čuješ u starom tonalitetu i tek naknadno shvatiš da je bio početak
+    novog. Ovde ga stavljaš u ruke, sa rasporedima koji se pomeraju što manje. Što se ruka
+    manje pomera, to više promena tonaliteta zvuči kao da se desila *sama od sebe*.
+
+    **C-dur → G-dur**, most a-mol akord (C: vi = G: ii):
+
+    | | C | F | **Am** | D7 | G |
+    |---|---|---|---|---|---|
+    | u C-duru | I | IV | **vi** | | |
+    | u G-duru | | | **ii** | V7 | I |
+    | leva ruka | C3 | F2 | A2 | D3 | G2 + D3 |
+    | desna ruka | G3 C4 E4 | A3 C4 F4 | A3 C4 E4 | A3 C4 Fis4 | G3 H3 G4 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "C"[C,G,CE] "F"[F,,A,CF] | "Am"[A,,A,CE] "D7"[D,A,C^F] | "G"[G,,D,G,B,G]2 |]
+    ```
+
+    Prati desnu ruku: A i C se ne pomeraju od F do D7. Samo gornji glas ide
+    F → E → **Fis** → G. Jedan ton, **Fis**, je cela modulacija: to je vođica G-dura i prvi
+    ton u komadu koji C-dur nema. Zatim se D7 razrešava po pravilu: Fis naviše u G, septima
+    (C) naniže u H, A naniže u G.
+
+    **C-dur → a-mol**, most d-mol akord (C: ii = a: iv):
+
+    | | C | F | **Dm** | E7 | Am |
+    |---|---|---|---|---|---|
+    | u C-duru | I | IV | **ii** | | |
+    | u a-molu | | | **iv** | V7 | i |
+    | leva ruka | C3 | F2 | D3 | E3 | A2 |
+    | desna ruka | G3 C4 E4 | A3 C4 F4 | A3 D4 F4 | Gis3 D4 E4 | A3 C4 E4 |
+
+    Ovde je novi ton **Gis** (vođica a-mola), u E7 bez kvinte, da bi svaki glas stigao u Am
+    korakom. Navika za klavijaturom: u svakoj modulaciji **nađi prvi novi predznak** i znaj
+    koja ruka ga svira. Na tom tonu uho menja tonalitet.
+exercises:
+  - id: K-035-1
+    type: mcq
+    prompt: {en: "Which chord belongs to both C major and G major, so it can be the pivot?", sr: "Koji akord pripada i C-duru i G-duru, pa može biti most?"}
+    options: ["Am", "F", "D", "Bm"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: "vi", notes: [A3, C4, E4]}
+      - numeral: {key: G, is: "ii", notes: [A3, C4, E4]}
+      - numeral: {key: C, is: "IV", notes: [F3, A3, C4]}
+      - numeral: {key: G, is: "V", notes: [D4, "F#4", A4]}
+      - numeral: {key: G, is: "iii", notes: [B3, D4, "F#4"]}
+  - id: K-035-2
+    type: mcq
+    prompt: {en: "C → A minor with Dm as the pivot. Dm is ii in C. What is it in A minor?", sr: "C → a-mol sa d-mol akordom kao mostom. Dm je ii u C-duru. Šta je u a-molu?"}
+    options: ["iv", "ii", "VI", "v"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: "ii", notes: [D4, F4, A4]}
+      - numeral: {key: A, type: harmonic-minor, is: "iv", notes: [D4, F4, A4]}
+  - id: K-035-3
+    type: midi-play
+    prompt: {en: "C → G as in the first table: C – F – Am – D7 – G. Two beats each, the G held for a bar, ♩=66. Only the top voice of the right hand moves until D7.", sr: "C → G kao u prvoj tabeli: C – F – Am – D7 – G. Po dve dobe, G se drži ceo takt, ♩=66. Do D7 se pomera samo gornji glas desne ruke."}
+    mode: chords
+    expectChords: [[C3, G3, C4, E4], [F2, A3, C4, F4], [A2, A3, C4, E4], [D3, A3, C4, "F#4"], [G2, D3, G3, B3, G4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: "I", notes: [C3, G3, C4, E4]}
+      - numeral: {key: C, is: "IV", notes: [F2, A3, C4, F4]}
+      - numeral: {key: C, is: "vi", notes: [A2, A3, C4, E4]}
+      - numeral: {key: G, is: "ii", notes: [A2, A3, C4, E4]}
+      - numeral: {key: G, is: "V7", notes: [D3, A3, C4, "F#4"]}
+      - numeral: {key: G, is: "I", notes: [G2, D3, G3, B3, G4]}
+      - semitones: {from: "F#4", to: G4, is: 1}
+      - semitones: {from: B3, to: C4, is: 1}
+  - id: K-035-4
+    type: midi-play
+    prompt: {en: "C → A minor as in the second table: C – F – Dm – E7 – Am, ♩=66. The G♯ in E7 is the new note.", sr: "C → a-mol kao u drugoj tabeli: C – F – Dm – E7 – Am, ♩=66. Gis u E7 je novi ton."}
+    mode: chords
+    expectChords: [[C3, G3, C4, E4], [F2, A3, C4, F4], [D3, A3, D4, F4], [E3, "G#3", D4, E4], [A2, A3, C4, E4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: "ii", notes: [D3, A3, D4, F4]}
+      - numeral: {key: A, type: harmonic-minor, is: "iv", notes: [D3, A3, D4, F4]}
+      - chord: {notes: [E3, "G#3", D4, E4], root: E, quality: "7", inversion: 0}
+      - numeral: {key: A, type: harmonic-minor, is: "V7", notes: [E3, "G#3", D4, E4], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: "i", notes: [A2, A3, C4, E4]}
+      - semitones: {from: "G#3", to: A3, is: 1}
+  - id: K-035-5
+    type: mcq
+    prompt: {en: "Listen. Where does the progression end up: which chord sounds like home at the end?", sr: "Slušaj. Gde progresija završava: koji akord na kraju zvuči kao kuća?"}
+    options:
+      - {en: "G major: the music modulated to the dominant", sr: "G-dur: muzika je modulirala u dominantu"}
+      - {en: "C major: it never left", sr: "C-dur: nikad nije otišla"}
+      - {en: "A minor: it modulated to the relative minor", sr: "a-mol: modulirala je u paralelni mol"}
+      - {en: "F major", sr: "F-dur"}
+    answer: 0
+    play: {chords: [[C3, G3, C4, E4], [F2, A3, C4, F4], [C3, G3, C4, E4], [A2, A3, C4, E4], [D3, A3, C4, "F#4"], [G2, D3, G3, B3, G4], [D3, A3, C4, "F#4"], [G2, D3, G3, B3, G4]], mode: chords, tempo: 66, durations: [2, 2, 2, 2, 2, 2, 2, 4]}
+    checks:
+      - numeral: {key: G, is: "V7", notes: [D3, A3, C4, "F#4"]}
+      - numeral: {key: G, is: "I", notes: [G2, D3, G3, B3, G4]}
+  - id: K-035-6
+    type: midi-play
+    prompt: {en: "Another pivot, notes hidden: C → G through Em (C: iii = G: vi): C – Em – Am – D7 – G, any octave, root in the bass, ♩=66. Find your own smooth voicings; F♯ is still the turning point.", sr: "Drugi most, bez prikaza tonova: C → G preko e-mol akorda (C: iii = G: vi): C – Em – Am – D7 – G, bilo koja oktava, osnovni ton u basu, ♩=66. Nađi sopstvene glatke rasporede; Fis je i dalje prelomna tačka."}
+    mode: chords
+    expectChords: [[C3, C4, E4, G4], [E3, B3, E4, G4], [A2, A3, C4, E4], [D3, A3, C4, "F#4"], [G2, G3, B3, D4]]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - numeral: {key: C, is: "iii", notes: [E3, B3, E4, G4]}
+      - numeral: {key: G, is: "vi", notes: [E3, B3, E4, G4]}
+      - numeral: {key: G, is: "ii", notes: [A2, A3, C4, E4]}
+      - numeral: {key: G, is: "V7", notes: [D3, A3, C4, "F#4"]}
+      - numeral: {key: G, is: "I", notes: [G2, G3, B3, D4]}
+  - id: K-035-7
+    type: practice
+    prompt: {en: "Play both modulations back to back, then improvise four bars in the new key after each (G major pentatonic after G, A natural minor after Am). If your improvisation keeps falling back to C, the new key is not yet confirmed: add one more V7–I in the new key before you start.", sr: "Odsviraj obe modulacije jednu za drugom, pa posle svake improvizuj četiri takta u novom tonalitetu (G-dur pentatonika posle G, prirodni a-mol posle Am). Ako ti improvizacija stalno pada nazad u C, novi tonalitet još nije potvrđen: dodaj još jedno V7–I u novom tonalitetu pre nego što počneš."}
+    minutes: 4

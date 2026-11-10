@@ -1,0 +1,182 @@
+id: C-014
+track: C
+order: 14
+prereqs: [C-013, T-054]
+title: {en: "Modulating to the dominant in a melody", sr: "Modulacija u dominantu u melodiji"}
+minutes: 15
+tags: [composition, melody, modulation]
+explain:
+  en: |
+    Many 8-bar themes do not come home at the end: they **travel to the dominant key** and make
+    their full stop there. C major → G major, F major → C major. It is the nearest key there is:
+    the two scales differ by **one note**.
+
+    | | C major | G major |
+    |---|---|---|
+    | scale | C D E F G A B | G A B C D E **F♯** |
+    | the difference | F | F♯ |
+
+    So the melody needs three things, in this order:
+
+    1. **A pivot**: a chord that belongs to both keys, so the ear does not notice the door.
+       From C to G: **Am** (vi in C = ii in G), **C** (I = IV), **Em** (iii = vi).
+    2. **The new note**: F♯, the leading tone of G. It is always the old key's **4th degree,
+       raised**. One F♯ is the signal; avoid F naturals after it.
+    3. **A cadence in the new key**: F♯ → G over D(7) → G. Without the cadence, F♯ is only a
+       passing colour (a tonicization, T-058), not a new key.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"E2 G2 | "^IV"A G F D | "^I"E C D E | "^V"D4 | "^I"E G c B | "^Am = vi = ii"A2 c2 | "^D7"d c A ^F | "^G"G4 |]
+    ```
+
+    Bars 1–4 stay in C and pause on D (a half cadence: D is the 5th of the V chord in C and the
+    5th degree of G, so it suits both). Bar 6 is the pivot. Bar 7 brings F♯ over D7, and bar 8 lands on G: an authentic
+    cadence **in G**. The theme opened a door; a second period would walk back through it with
+    F natural (the "undo" note) and end in C.
+
+    **Plan it backwards:** decide the final cadence (F♯ → G), place the pivot one or two bars
+    earlier, and keep the first half clearly in the home key, with no F♯ yet.
+
+    **About the grading:** the rule checker judges one key. In these exercises it is told the
+    **new** key (that is where the cadence must be), and the "all notes in the key" check is
+    switched off, because a melody that starts in C is supposed to use F natural.
+
+    **At the keyboard:** play C – F – Am – D7 – G, slowly, and stop on G. Then play C – F – Am –
+    G – C. The same four chords lead to two different homes; D7 with its F♯ decides.
+  sr: |
+    Mnoge teme od 8 taktova se ne vraćaju kući na kraju: **odlaze u tonalitet dominante** i tamo
+    stavljaju tačku. C-dur → G-dur, F-dur → C-dur. To je najbliži tonalitet koji postoji: dve
+    lestvice se razlikuju u **jednom tonu**.
+
+    | | C-dur | G-dur |
+    |---|---|---|
+    | lestvica | C D E F G A H | G A H C D E **Fis** |
+    | razlika | F | Fis |
+
+    Melodiji zato trebaju tri stvari, ovim redom:
+
+    1. **Zajednički (pivot) akord**: akord koji pripada oba tonaliteta, da uho ne primeti
+       vrata. Iz C u G: **a-mol** (vi u C = ii u G), **C-dur** (I = IV), **e-mol** (iii = vi).
+    2. **Novi ton**: Fis, vođica G-dura. To je uvek **povišeni 4. stupanj** starog tonaliteta.
+       Jedno Fis je signal; posle njega izbegavaj F.
+    3. **Kadenca u novom tonalitetu**: Fis → G nad D(7) → G. Bez kadence je Fis samo prolazna
+       boja (tonikalizacija, T-058), a ne novi tonalitet.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"E2 G2 | "^IV"A G F D | "^I"E C D E | "^V"D4 | "^I"E G c B | "^a-mol = vi = ii"A2 c2 | "^D7"d c A ^F | "^G"G4 |]
+    ```
+
+    Taktovi 1–4 ostaju u C i staju na D (polukadenca: D je kvinta akorda V u C-duru i 5. stupanj
+    G-dura, pa odgovara obema). Takt 6 je pivot. Takt 7 donosi Fis nad D7, a takt 8 sleće na G: autentična
+    kadenca **u G-duru**. Tema je otvorila vrata; drugi period bi se kroz njih vratio sa F
+    (ton koji „poništava“) i završio u C.
+
+    **Planiraj unazad:** odluči završnu kadencu (Fis → G), stavi pivot takt ili dva ranije, a
+    prvu polovinu drži jasno u osnovnom tonalitetu, još bez Fis.
+
+    **O ocenjivanju:** provera pravila ocenjuje jedan tonalitet. U ovim vežbama joj je zadat
+    **novi** tonalitet (tamo mora da bude kadenca), a provera „svi tonovi u tonalitetu“ je
+    isključena, jer melodija koja počinje u C treba da koristi F.
+
+    **Za klavirom:** sviraj C – F – a-mol – D7 – G, polako, i stani na G. Pa C – F – a-mol – G –
+    C. Ista četiri akorda vode u dve različite kuće; odlučuje D7 sa svojim Fis.
+exercises:
+  - id: C-014-1
+    type: mcq
+    keepOrder: true
+    prompt: {en: "Modulating from a major key to its dominant, which degree of the old key gets raised?", sr: "Pri modulaciji iz dura u njegovu dominantu, koji stupanj starog tonaliteta se povisuje?"}
+    options:
+      - {en: "the 1st", sr: "1."}
+      - {en: "the 4th", sr: "4."}
+      - {en: "the 5th", sr: "5."}
+      - {en: "the 7th", sr: "7."}
+    answer: 1
+    checks:
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, "F#"]}
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - keysig: {key: G, mode: major, is: 1}
+  - id: C-014-2
+    type: mcq
+    prompt: {en: "Which chord can be the pivot from C major to G major?", sr: "Koji akord može da bude pivot iz C-dura u G-dur?"}
+    options:
+      - {en: "A minor (A C E)", sr: "a-mol (A C E)"}
+      - {en: "F major (F A C)", sr: "F-dur (F A C)"}
+      - {en: "D major (D F♯ A)", sr: "D-dur (D Fis A)"}
+      - {en: "B diminished (B D F)", sr: "h-smanjeni (H D F)"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: "vi", notes: [A3, C4, E4]}
+      - numeral: {key: G, is: "ii", notes: [A3, C4, E4]}
+      - numeral: {key: G, is: "V", notes: [D4, "F#4", A4]}
+      - numeral: {key: C, is: "vii°", notes: [B3, D4, F4]}
+  - id: C-014-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nc2 B2 | A G E C | D E F D | E4 | E G B d | c2 A2 | B c A ^F | G4 |]"
+    prompt: {en: "This melody starts in C major and ends on G. How does it end?", sr: "Ova melodija počinje u C-duru i završava se na G. Kako se završava?"}
+    options:
+      - {en: "An authentic cadence in G major: F♯ leads into G, and F natural is gone", sr: "Autentičnom kadencom u G-duru: Fis vodi u G, a F je nestalo"}
+      - {en: "A half cadence in C major: G is the dominant", sr: "Polukadencom u C-duru: G je dominanta"}
+      - {en: "An authentic cadence in C major", sr: "Autentičnom kadencom u C-duru"}
+      - {en: "It ends in E minor", sr: "Završava se u e-molu"}
+    answer: 0
+    checks:
+      - semitones: {from: "F#4", to: G4, is: 1}
+      - numeral: {key: G, is: "V7", notes: [D4, "F#4", A4, C5]}
+  - id: C-014-4
+    type: generated
+    prompt: {en: "Play the modulating progression I – IV – vi – V7/V – V (in C: C – F – Am – D7 – G). Stop on the last chord and hear it as the new home.", sr: "Odsviraj modulacioni niz I – IV – vi – V7/V – V (u C: C – F – a-mol – D7 – G). Stani na poslednjem akordu i čuj ga kao novu kuću."}
+    count: 3
+    gen: {kind: progression, keys: [C, F, D], numerals: [I, IV, vi, V7/V, V], smooth: true}
+  - id: C-014-5
+    type: compose
+    prompt:
+      en: "F major → C major, 4/4, 8 bars. Bars 1–4 (in F, pausing on G) are given. Write bars 5–8: a pivot (Dm or F) in bar 5 or 6, B♮ in bar 7, and end on C reached from B♮ or D. Graded in C major; the key check is off because bars 1–4 use B♭."
+      sr: "F-dur → C-dur, 4/4, 8 taktova. Taktovi 1–4 (u F, sa zastojem na G) su zadati. Napiši taktove 5–8: pivot (d-mol ili F) u taktu 5 ili 6, H u taktu 7, a završi na C do kog stižeš sa H ili D. Ocenjuje se u C-duru; provera tonaliteta je isključena jer taktovi 1–4 koriste B."
+    given: "X:1\nM:4/4\nL:1/4\nK:F\nA2 c2 | B A G F | G E F A | G4 |\n"
+    key: C major
+    meter: 4/4
+    bars: 8
+    range: [C4, F5]
+    rules: [bars, rhythm, range, leaps, augmented, half-cadence, cadence, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:F
+      A2 c2 | B A G F | G E F A | G4 | A c f e | d2 A2 | G =B d =B | c4 |]
+    checks:
+      - numeral: {key: F, is: "vi", notes: [D4, F4, A4]}
+      - numeral: {key: C, is: "ii", notes: [D4, F4, A4]}
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - semitones: {from: B4, to: C5, is: 1}
+  - id: C-014-6
+    type: compose
+    prompt:
+      en: "Your own modulating period: D major → A major, 4/4, 8 bars. Bar 1 is given. Bars 1–4 stay in D and pause on E or A in bar 4; a pivot (Bm or D) in bar 5 or 6; G♯ in bar 7; end on A from G♯ or B. Graded in A major, key check off."
+      sr: "Tvoj modulacioni period: D-dur → A-dur, 4/4, 8 taktova. Takt 1 je zadat. Taktovi 1–4 ostaju u D i zastaju na E ili A u taktu 4; pivot (h-mol ili D) u taktu 5 ili 6; Gis u taktu 7; završi na A sa Gis ili H. Ocenjuje se u A-duru, provera tonaliteta isključena."
+    given: "X:1\nM:4/4\nL:1/4\nK:D\nF2 A2 |\n"
+    key: A major
+    meter: 4/4
+    bars: 8
+    range: [D4, E5]
+    rules: [bars, rhythm, range, leaps, augmented, half-cadence, cadence, stepwise]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:D
+      F2 A2 | B A G E | F D E F | E4 | F A d c | B2 d2 | e d B ^G | A4 |]
+    checks:
+      - numeral: {key: D, is: "vi", notes: [B3, D4, "F#4"]}
+      - numeral: {key: A, is: "ii", notes: [B3, D4, "F#4"]}
+      - numeral: {key: A, is: "V7", notes: [E4, "G#4", B4, D5]}
+      - keysig: {key: A, mode: major, is: 3}

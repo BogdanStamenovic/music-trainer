@@ -1,0 +1,145 @@
+id: E-039
+track: E
+order: 39
+title: {en: "The diminished seventh by ear", sr: "Smanjeni septakord po sluhu"}
+prereqs: [E-038, T-060]
+minutes: 13
+tags: [ear, harmony, seventh-chords]
+explain:
+  en: |
+    The **diminished seventh chord** (°7) is three minor thirds stacked: B – D – F – A♭. From A♭
+    back up to B is *also* three semitones. So every neighbour is the same distance apart, and the
+    chord divides the octave into four equal parts.
+
+    What that does to your ear:
+
+    - **No note sounds like the root.** In a dominant seventh you can hear the bottom; in a °7
+      every note is equally tense. It contains **two tritones** (B–F and D–A♭), where V7 has one.
+      That is the "suspense" sound of silent films and dramatic Romantic piano music.
+    - **Inversions sound alike.** Move any note to the top and you get the same stack of minor
+      thirds. That is why there are only **three** different °7 sounds on the whole keyboard.
+    - **It wants to resolve, but in four directions.** Any of its four notes can be heard as a
+      leading tone. Rise a half step from B and you land on C; from D on E♭; from F on F♯ (spelled
+      as E♯); from A♭ (spelled G♯) on A. Same keys, four new tonics.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "^vii°7 of C"[B,DF_A] [C,CEG] | "^vii°7 of a"[B,DF^G] [A,CEA] | "^vii°7 of E♭"[_CDF_A] [_E,_EG_B] |]
+    ```
+
+    Where you meet it: **vii°7 → i** in minor (G♯°7 → A minor, the raised 7 of harmonic minor at the
+    bottom), and as a **secondary** chord, **vii°7/V** (F♯°7 → G in C), which does the job of V7/V
+    with one more half step pulling.
+
+    By ear: compare it with V7 (one tritone, a clear root), with the half-diminished ø7 (B–D–F–A,
+    softer: its top note is a half step higher, A instead of A♭) and with the plain diminished triad (three notes,
+    thinner).
+  sr: |
+    **Smanjeni septakord** (°7) su tri male terce naslagane jedna na drugu: H – D – F – As. Od As
+    nagore do H je *takođe* tri polustepena. Zato su svi susedni tonovi na istom rastojanju, a
+    akord deli oktavu na četiri jednaka dela.
+
+    Šta to radi sluhu:
+
+    - **Nijedan ton ne zvuči kao osnovni.** U dominantnom septakordu čuješ dno; u °7 je svaki ton
+      podjednako napet. Sadrži **dva tritonusa** (H–F i D–As), a V7 ima jedan. To je zvuk „napetosti"
+      iz nemih filmova i dramatične romantičarske klavirske muzike.
+    - **Obrtaji zvuče isto.** Premesti bilo koji ton na vrh i dobiješ isti niz malih terci. Zato na
+      celoj klavijaturi postoje samo **tri** različita zvuka °7.
+    - **Hoće da se razreši, ali u četiri pravca.** Svaki od četiri tona može da se čuje kao vođica.
+      Popni se polustepenom od H i stižeš na C; od D na Es; od F na Fis (napisano kao Eis); od As
+      (napisano kao Gis) na A. Iste dirke, četiri nove tonike.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "^vii°7 od C"[B,DF_A] [C,CEG] | "^vii°7 od a"[B,DF^G] [A,CEA] | "^vii°7 od Es"[_CDF_A] [_E,_EG_B] |]
+    ```
+
+    Gde ga srećeš: **vii°7 → i** u molu (Gis°7 → a-mol, povišeni 7. stupanj harmonskog mola na dnu), i
+    kao **sekundarni** akord, **vii°7/V** (Fis°7 → G u C-duru), koji radi posao V7/V sa još jednim
+    polustepenom koji vuče.
+
+    Po sluhu: uporedi ga sa V7 (jedan tritonus, jasan osnovni ton), sa polusmanjenim ø7 (H–D–F–A,
+    mekši: gornji ton mu je za polustepen viši, A umesto As) i sa običnim smanjenim kvintakordom (tri tona, tanji).
+exercises:
+  - id: E-039-1
+    type: generated
+    prompt: {en: "Diminished seventh, dominant seventh, half-diminished or minor seventh?", sr: "Smanjeni, dominantni, polusmanjeni ili mali molski septakord?"}
+    count: 8
+    gen: {kind: chord-ear, qualities: [dim7, "7", m7b5, min7], inversions: [0]}
+    checks:
+      - chord: {notes: [B3, D4, F4, Ab4], root: B, quality: dim7}
+      - chord: {notes: [B3, D4, F4, A4], root: B, quality: m7b5}
+      - chord: {notes: [G3, B3, D4, F4], root: G, quality: "7"}
+      - interval: {from: B3, to: D4, is: m3}
+      - interval: {from: D4, to: F4, is: m3}
+      - interval: {from: F4, to: Ab4, is: m3}
+      - interval: {from: Ab4, to: B4, is: A2}
+      - interval: {from: B3, to: Ab4, is: d7}
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: D4, to: Ab4, is: d5}
+      - semitones: {from: Ab4, to: B4, is: 3}
+  - id: E-039-2
+    type: generated
+    prompt: {en: "Diminished triad, diminished seventh or half-diminished seventh? Listen to the top note.", sr: "Smanjeni kvintakord, smanjeni ili polusmanjeni septakord? Slušaj gornji ton."}
+    count: 6
+    gen: {kind: chord-ear, qualities: [dim, dim7, m7b5], inversions: [0]}
+  - id: E-039-3
+    type: generated
+    prompt: {en: "In minor: vii°7 or V7 before the tonic, or ii° and V7?", sr: "U molu: vii°7 ili V7 pre tonike, ili ii° pa V7?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [A, D, E, C], type: harmonic-minor, options: [[i, iv, vii°7, i], [i, iv, V7, i], [i, ii°, V7, i]], tempo: 63, smooth: true}
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "vii°7", notes: [G#3, B3, D4, F4]}
+      - roman: {key: A, type: harmonic-minor, degree: 7, is: "vii°7", seventh: true}
+      - interval: {from: G#3, to: A3, is: m2}
+  - id: E-039-4
+    type: generated
+    prompt: {en: "What leads into V: vii°7/V, V7/V, or plain IV?", sr: "Šta vodi u V: vii°7/V, V7/V ili obična IV?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, vii°7/V, V, I], [I, V7/V, V, I], [I, IV, V, I]], tempo: 63, smooth: true}
+    checks:
+      - numeral: {key: C, is: "vii°7/V", notes: [F#3, A3, C4, Eb4]}
+      - chord: {notes: [F#3, A3, C4, Eb4], root: F#, quality: dim7}
+      - interval: {from: F#3, to: G3, is: m2}
+      - interval: {from: Eb4, to: D4, is: m2}
+  - id: E-039-5
+    type: mcq
+    prompt: {en: "You hear the diminished seventh B–D–F–A♭ (B3 at the bottom), then its resolution. Which note is the root of the chord it lands on? (Find the voice that rose a half step.)", sr: "Čuješ smanjeni septakord H–D–F–As (H3 na dnu), pa njegovo razrešenje. Koji je osnovni ton akorda na koji stiže? (Nađi glas koji se popeo za polustepen.)"}
+    options: ["C", "Eb", "F#", "A"]
+    answer: 3
+    keepOrder: true
+    play:
+      chords: [[B3, D4, F4, G#4], [A3, C4, E4, A4]]
+      durations: [2, 3]
+      tempo: 60
+    checks:
+      - chord: {notes: [B3, D4, F4, G#4], root: G#, quality: dim7, inversion: 1}
+      - chord: {notes: [A3, C4, E4, A4], root: A, quality: min}
+      - semitones: {from: Ab4, to: G#4, is: 0}
+      - interval: {from: G#4, to: A4, is: m2}
+  - id: E-039-6
+    type: mcq
+    prompt: {en: "The same sound, B–D–F–A♭ (B3 at the bottom), resolves somewhere else. Which note is the new root?", sr: "Isti zvuk, H–D–F–As (H3 na dnu), razrešava se negde drugde. Koji je novi osnovni ton?"}
+    options: ["C", "Eb", "F#", "A"]
+    answer: 1
+    keepOrder: true
+    play:
+      chords: [[Cb4, D4, F4, Ab4], [Eb3, Eb4, G4, Bb4]]
+      durations: [2, 3]
+      tempo: 60
+    checks:
+      - chord: {notes: [Cb4, D4, F4, Ab4], root: D, quality: dim7, inversion: 3}
+      - chord: {notes: [Eb3, Eb4, G4, Bb4], root: Eb, quality: maj}
+      - semitones: {from: B3, to: Cb4, is: 0}
+      - interval: {from: D4, to: Eb4, is: m2}
+  - id: E-039-7
+    type: practice
+    prompt: {en: "Hold B–D–F–A♭ in the right hand and play its four resolutions: to C major (B up), E♭ major (D up), F♯ major (F up, as E♯), A minor (A♭ up, as G♯). Play each pair twice and sing the note that rises.", sr: "Drži H–D–F–As desnom rukom i odsviraj četiri razrešenja: na C-dur (H naviše), Es-dur (D naviše), Fis-dur (F naviše, kao Eis), a-mol (As naviše, kao Gis). Svaki par odsviraj dvaput i otpevaj ton koji se penje."}
+    minutes: 3

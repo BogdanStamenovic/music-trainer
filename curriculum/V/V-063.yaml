@@ -1,0 +1,181 @@
+id: V-063
+track: V
+order: 63
+title: {en: "Review: a song with one short low-intensity belted line", sr: "Ponavljanje: pesma sa jednim kratkim beltovanim redom niskog intenziteta"}
+prereqs: [V-062, V-051, V-052]
+minutes: 13
+tags: [voice, song, review, belt]
+explain:
+  en: |
+    The review of this block is a whole song in three colours: a **light** verse, a **light-mix** chorus, and **one short belted call** at the end, the low-intensity call
+    of lessons 50-51. The song is an original written for this course, **"Come On Home"** (*Vrati se*), in C major.
+
+    ```abc
+    X:1
+    T:Come On Home
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:C
+    C E G E | D2 C2 | E G A G | E F D2 |
+    w: Far a-way the ri-ver runs a-long the val-ley floor,
+    G A c A | G2 E2 | F A G E | D3 z | E D C2 |]
+    w: ev-ery road I trav-el leads me back to you. Come on home!
+    ```
+
+    Serbian: *Re-ka te-če da-lje pre-ko po-lja do-mu svom, / sva-ki put što pre-đem vra-ća me na prag. Vra-ti se!*
+
+    | part | bars | voice | from |
+    |---|---|---|---|
+    | verse | 1-4 | light, close, speech-like | 49, 62 |
+    | chorus | 5-8 | light mix: brighter, a little twang, the high C no bigger than the A | 46-48, 62 |
+    | the call | 9 | **belt at low intensity**: "Come on home!" falling 3-2-1 | 50-51 |
+
+    The call is the **lowest** part of the chorus range on purpose: E-D-C sits in the **middle** of your voice, not at the top. It is three notes, and
+    it resolves the song (the chorus ends open on D; the call lands on the tonic C).
+
+    **The belt rules, unchanged:** the call only, nothing else in the song is belted; short (3 notes), mid range (no high belt), volume no more than **calling across a room**,
+    a clean onset from support, no grit or distortion, and **20 seconds of quiet breathing** after every attempt that includes the call. At most 6 calls today in total.
+
+    **If today is not a belt day** (the voice feels tired after the chorus), sing the call in **light mix**. It counts the same: the app grades
+    **pitch only**, plus your self-rating. A louder call never scores higher; pushing lowers the ease rating.
+
+    **Stop protocol.** Stop the belt work at once, and end voice work for today, at any scratch or tickle, urge to clear the throat, strain, tight neck,
+    hoarseness, pain, or a voice that goes breathy or cracks afterwards. Rest, drink water, talk little. If hoarseness lasts more than two weeks, see an ENT doctor; if the voice suddenly goes or it hurts sharply during a call, see one promptly.
+  sr: |
+    Ponavljanje ovog bloka je cela pesma u tri boje: **lagana** strofa, refren u **laganom miksu** i **jedan kratak beltovan poziv** na kraju, poziv niskog intenziteta
+    iz 50-51. lekcije. Pesma je originalna, napisana za ovaj kurs, **„Vrati se”** (engl. *Come On Home*), u C-duru.
+
+    ```abc
+    X:1
+    T:Vrati se
+    M:4/4
+    L:1/4
+    Q:1/4=84
+    K:C
+    C E G E | D2 C2 | E G A G | E F D2 |
+    w: Re-ka te-če da-lje pre-ko po-lja do-mu svom,
+    G A c A | G2 E2 | F A G E | D3 z | E D C2 |]
+    w: sva-ki put što pre-đem vra-ća me na prag. Vra-ti se!
+    ```
+
+    Engleski: *Far a-way the ri-ver runs a-long the val-ley floor, / ev-ery road I trav-el leads me back to you. Come on home!*
+
+    | deo | taktovi | glas | iz |
+    |---|---|---|---|
+    | strofa | 1-4 | lagan, blizak, kao govor | 49, 62 |
+    | refren | 5-8 | lagani miks: svetlije, malo tvanga, visoko C ne veće od A | 46-48, 62 |
+    | poziv | 9 | **belting niskog intenziteta**: „Vrati se!” naniže 3-2-1 | 50-51 |
+
+    Poziv je namerno u **najnižem** delu opsega refrena: E-D-C leži u **sredini** tvog glasa, ne na vrhu. Ima tri tona i
+    razrešava pesmu (refren se završava otvoreno na D; poziv doskače na toniku C).
+
+    **Pravila beltinga, ista kao ranije:** beltuje se samo poziv, ništa drugo u pesmi; kratko (3 tona), srednji opseg (bez visokog beltinga), jačina najviše kao **poziv preko sobe**,
+    čista ataka iz oslonca, bez hrapavosti i distorzije, i **20 sekundi tihog disanja** posle svakog pokušaja koji sadrži poziv. Danas najviše 6 poziva ukupno.
+
+    **Ako danas nije dan za belting** (glas je umoran posle refrena), otpevaj poziv u **laganom miksu**. Računa se isto: aplikacija ocenjuje
+    **samo visinu**, plus tvoju samoprocenu. Glasniji poziv nikad ne donosi veću ocenu; guranje smanjuje ocenu lakoće.
+
+    **Protokol za prekid.** Odmah prekini belting, i završi rad sa glasom za danas, na svako grebanje ili golicanje, potrebu da pročistiš grlo, naprezanje, stegnut vrat,
+    promuklost, bol, ili glas koji posle postane vazdušast ili puca. Odmori, pij vodu, malo pričaj. Ako promuklost traje duže od dve nedelje, idi kod lekara ORL; ako glas tokom poziva naglo nestane ili oštro zaboli, idi odmah.
+exercises:
+  - id: V-063-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel? (Belt the call only on a 'fine' day.)"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Poziv beltuj samo kad je glas „dobro”.)"
+  - id: V-063-2
+    type: practice
+    minutes: 3
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, bratty 'nay' 1-2-3-4-5-4-3-2-1, a tiny cackle for twang, the spoken volume ladder once ('Hey!' next to you, across a table, across a room), then speak the lyrics in rhythm."
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana kroz lom, zadirkujuće „nej” 1-2-3-4-5-4-3-2-1, sitan kikot za tvang, jednom izgovorena lestvica jačine („Hej!” pored tebe, preko stola, preko sobe), pa izgovori tekst u ritmu."
+    checks:
+      - syllables: {text: "Reka teče dalje preko polja domu svom", lang: sr, is: 13}
+      - syllables: {text: "Svaki put što pređem vraća me na prag", lang: sr, is: 11}
+      - syllables: {text: "Vrati se", lang: sr, is: 3}
+  - id: V-063-3
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The verse, light: 'Far away the river runs along the valley floor' / 'Reka teče dalje preko polja domu svom'. Close and speech-like."
+      sr: "Strofa, lagano: „Reka teče dalje preko polja domu svom” / „Far away the river runs along the valley floor”. Blisko i kao govor."
+    notes: [C4, E4, G4, E4, D4, C4, E4, G4, A4, G4, E4, F4, D4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-063-4
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The chorus in light mix: 'Every road I travel leads me back to you' / 'Svaki put što pređem vraća me na prag'. Brighter, the high C no bigger than the A."
+      sr: "Refren u laganom miksu: „Svaki put što pređem vraća me na prag” / „Every road I travel leads me back to you”. Svetlije, visoko C ne veće od A."
+    notes: [G4, A4, C5, A4, G4, E4, F4, A4, G4, E4, D4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 4]
+    tempo: 84
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: A4, to: C5, is: m3}
+  - id: V-063-5
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The call alone, belted at low intensity: 'Come on home!' / 'Vrati se!' on 3-2-1, across a room, released on time. (Not a belt day: light mix.) Then rest 20 seconds."
+      sr: "Samo poziv, beltovan u niskom intenzitetu: „Vrati se!” / „Come on home!” na 3-2-1, preko sobe, pušten na vreme. (Nije dan za belting: lagani miks.) Pa odmor 20 sekundi."
+    notes: [E4, D4, C4]
+    beats: [1, 1, 2]
+    tempo: 84
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - syllables: {text: "Vrati se", lang: sr, is: 3}
+      - interval: {from: C4, to: E4, is: M3}
+  - id: V-063-6
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The end of the chorus into the call: 'leads me back to you. Come on home!'. A breath in the rest; the chorus stays mix, only the call is belted. Then rest 20 seconds."
+      sr: "Kraj refrena u poziv: „vraća me na prag. Vrati se!”. Udah u pauzi; refren ostaje miks, beltuje se samo poziv. Pa odmor 20 sekundi."
+    notes: [F4, A4, G4, E4, D4, r, E4, D4, C4]
+    beats: [1, 1, 1, 1, 3, 1, 1, 1, 2]
+    tempo: 84
+    tolerance: 60
+    pass: 0.6
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-063-7
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "The whole song with words: verse light, chorus in light mix, the call belted at low intensity (or in mix). Then rest 20 seconds."
+      sr: "Cela pesma sa rečima: strofa lagano, refren u laganom miksu, poziv beltovan u niskom intenzitetu (ili u miksu). Pa odmor 20 sekundi."
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\nC E G E | D2 C2 | E G A G | E F D2 |\nw: Far a-way the ri-ver runs a-long the val-ley floor,\nG A c A | G2 E2 | F A G E | D3 z | E D C2 |]\nw: ev-ery road I trav-el leads me back to you. Come on home!"
+    notes: [C4, E4, G4, E4, D4, C4, E4, G4, A4, G4, E4, F4, D4, G4, A4, C5, A4, G4, E4, F4, A4, G4, E4, D4, r, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 3, 1, 1, 1, 2]
+    tempo: 84
+    tolerance: 60
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - interval: {from: C4, to: C5, is: P8}
+  - id: V-063-8
+    type: mcq
+    prompt:
+      en: "Which part of this song is belted?"
+      sr: "Koji deo ove pesme se beltuje?"
+    options:
+      - {en: "Only the 3-note call at the end, in the middle of the range", sr: "Samo poziv od 3 tona na kraju, u sredini opsega"}
+      - {en: "The chorus, especially the high C", sr: "Refren, naročito visoko C"}
+      - {en: "The whole song, so it sounds strong", sr: "Cela pesma, da zvuči snažno"}
+    answer: 0
+  - id: V-063-9
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Review: record the whole song once more and listen back. Rate: verse light, chorus bright but not louder, the call clear and free under the 'across a room' cap, and the aftermath (no scratch, no hoarseness). Count today's calls (6 at most). Then 3 quiet 'oo' sirens down and 3 soft hums."
+      sr: "Ponavljanje: snimi celu pesmu još jednom i preslušaj. Oceni: strofa lagana, refren svetao ali ne glasniji, poziv jasan i slobodan ispod granice „preko sobe”, i posledice (bez grebanja, bez promuklosti). Prebroj današnje pozive (najviše 6). Pa 3 tihe sirene na „u” naniže i 3 tiha pevušenja."

@@ -1,0 +1,113 @@
+id: T-066
+track: T
+order: 66
+prereqs: [T-065]
+title: {en: "The 12-bar blues as form", sr: "Bluz od 12 taktova kao oblik"}
+minutes: 12
+tags: [form, blues, song]
+explain:
+  en: |
+    The **12-bar blues** is a form: a fixed 12-bar chord plan, repeated as many times as the song needs. One time through is a **chorus** (the jazz meaning, T-064): a blues "takes three choruses" of vocals and four of solo.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C7" z4 | "C7" z4 | "C7" z4 | "C7" z4 |
+    "F7" z4 | "F7" z4 | "C7" z4 | "C7" z4 |
+    "G7" z4 | "F7" z4 | "C7" z4 | "G7" z4 |]
+    ```
+
+    | bars | chords | function |
+    |---|---|---|
+    | 1–4 | I7 I7 I7 I7 | statement |
+    | 5–8 | IV7 IV7 I7 I7 | the same statement over IV |
+    | 9–12 | V7 IV7 I7 V7 | the answer, then the **turnaround** (bar 12) back to the top |
+
+    Three blues-specific facts:
+    - **Every chord is a dominant 7th**, including I7 and IV7. Here they are not secondary dominants (C7 does not need to go to F); the flat 7th is simply part of the blues colour. So in C, I7 is C E G B♭ and IV7 is F A C E♭.
+    - The **quick change**: bar 2 goes to IV7 and back (I7 – IV7 – I7 – I7). Very common; listen for it in bar 2.
+    - **V7 – IV7** in bars 9–10 is a "backwards" move (T-024): dominant to predominant. It is normal here, and part of what makes a blues sound like a blues.
+
+    The 12 bars fall into **three 4-bar lines**, and the lyrics follow: a line, the same line again (over IV), and an answering line (over V – IV – I): the **AAB** blues stanza (L-009). The turnaround in bar 12 (V7, or a short figure ending on V7) is the signal: another chorus is coming.
+  sr: |
+    **Bluz od 12 taktova** je oblik: utvrđen plan akorada od 12 taktova, koji se ponavlja koliko god pesmi treba. Jedan prolaz je **chorus** (džez značenje, T-064): bluz ima, recimo, tri chorusa pevanja i četiri sola.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C7" z4 | "C7" z4 | "C7" z4 | "C7" z4 |
+    "F7" z4 | "F7" z4 | "C7" z4 | "C7" z4 |
+    "G7" z4 | "F7" z4 | "C7" z4 | "G7" z4 |]
+    ```
+
+    | taktovi | akordi | funkcija |
+    |---|---|---|
+    | 1–4 | I7 I7 I7 I7 | izlaganje |
+    | 5–8 | IV7 IV7 I7 I7 | isto izlaganje preko IV |
+    | 9–12 | V7 IV7 I7 V7 | odgovor, pa **turnaround** (12. takt) nazad na početak |
+
+    Tri činjenice specifične za bluz:
+    - **Svaki akord je dominantni septakord**, i I7 i IV7. Ovde to nisu sporedne dominante (C7 ne mora da ide u F); mala septima je jednostavno deo boje bluza. U C-duru I7 je C E G B, a IV7 je F A C Es.
+    - **Brza promena** (quick change): 2. takt ide na IV7 i nazad (I7 – IV7 – I7 – I7). Vrlo je česta; slušaj je u 2. taktu.
+    - **V7 – IV7** u taktovima 9–10 je "unazadni" pomak (T-024): dominanta pa subdominanta. Ovde je normalan, i deo je onoga po čemu bluz zvuči kao bluz.
+
+    12 taktova se deli na **tri reda od po 4 takta**, i tekst ih prati: stih, isti stih ponovo (preko IV) i stih-odgovor (preko V – IV – I): bluz strofa **AAB** (L-009). Turnaround u 12. taktu (V7, ili kratka figura koja se završava na V7) je signal: dolazi još jedan chorus.
+exercises:
+  - id: T-066-1
+    type: mcq
+    prompt: {en: "In a standard 12-bar blues, which chord is in bar 9?", sr: "U standardnom bluzu od 12 taktova, koji akord je u 9. taktu?"}
+    options: ["V7", "IV7", "I7", "ii7"]
+    answer: 0
+  - id: T-066-2
+    type: notation-input
+    prompt: {en: "Blues in F: spell IV7 (root, 3rd, 5th, 7th).", sr: "Bluz u F: napiši IV7 (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: F4, numerals: [IV7]}}
+    expect: [Bb, D, F, Ab]
+    checks:
+      - chord: {notes: [Bb4, D5, F5, Ab5], root: Bb, quality: "7"}
+  - id: T-066-3
+    type: notation-input
+    prompt: {en: "Blues in G: spell I7 (root, 3rd, 5th, 7th).", sr: "Bluz u G: napiši I7 (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: G4, numerals: [I7]}}
+    expect: [G, B, D, F]
+    checks:
+      - chord: {notes: [G4, B4, D5, F5], root: G, quality: "7"}
+  - id: T-066-4
+    type: mcq
+    prompt: {en: "Listen to one chorus of a blues in C. Quick change or not?", sr: "Slušaj jedan chorus bluza u C. Sa brzom promenom ili bez nje?"}
+    options:
+      - {en: "Quick change: IV7 in bar 2", sr: "Sa brzom promenom: IV7 u 2. taktu"}
+      - {en: "No quick change: I7 for the first four bars", sr: "Bez brze promene: I7 prva četiri takta"}
+    answer: 0
+    keepOrder: true
+    play: {mode: chords, tempo: 132, chords: [[C3, Bb3, E4], [F2, A3, Eb4], [C3, Bb3, E4], [C3, Bb3, E4], [F2, A3, Eb4], [F2, A3, Eb4], [C3, Bb3, E4], [C3, Bb3, E4], [G2, F3, B3], [F2, A3, Eb4], [C3, Bb3, E4], [G2, F3, B3]], durations: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]}
+    checks:
+      - chord: {notes: [C3, Bb3, E4], root: C, quality: "7"}
+      - chord: {notes: [F2, A3, Eb4], root: F, quality: "7"}
+      - chord: {notes: [G2, F3, B3], root: G, quality: "7"}
+  - id: T-066-5
+    type: mcq
+    prompt: {en: "Listen to another chorus. Quick change or not?", sr: "Slušaj još jedan chorus. Sa brzom promenom ili bez nje?"}
+    options:
+      - {en: "Quick change: IV7 in bar 2", sr: "Sa brzom promenom: IV7 u 2. taktu"}
+      - {en: "No quick change: I7 for the first four bars", sr: "Bez brze promene: I7 prva četiri takta"}
+    answer: 1
+    keepOrder: true
+    play: {mode: chords, tempo: 132, chords: [[C3, Bb3, E4], [C3, Bb3, E4], [C3, Bb3, E4], [C3, Bb3, E4], [F2, A3, Eb4], [F2, A3, Eb4], [C3, Bb3, E4], [C3, Bb3, E4], [G2, F3, B3], [F2, A3, Eb4], [C3, Bb3, E4], [G2, F3, B3]], durations: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]}
+  - id: T-066-6
+    type: mcq
+    prompt: {en: "How do the lyrics of a classic blues stanza fit the 12 bars?", sr: "Kako se tekst klasične bluz strofe uklapa u 12 taktova?"}
+    options:
+      - {en: "AAB: a line (bars 1–4), the same line (5–8), an answer (9–12)", sr: "AAB: stih (taktovi 1–4), isti stih (5–8), odgovor (9–12)"}
+      - {en: "ABAB: four lines of three bars", sr: "ABAB: četiri stiha po tri takta"}
+      - {en: "One long line over all 12 bars", sr: "Jedan dug stih preko svih 12 taktova"}
+    answer: 0
+  - id: T-066-7
+    type: generated
+    count: 4
+    prompt: {en: "The last line of the blues (bars 9–12): which version?", sr: "Poslednji red bluza (taktovi 9–12): koja verzija?"}
+    gen: {kind: progression-ear, keys: [C, F, G], options: [[V7, IV7, I7, V7], [V7, V7, I7, I7], [IV7, V7, I7, I7]], tempo: 72}

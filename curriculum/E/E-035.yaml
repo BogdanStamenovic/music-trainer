@@ -1,0 +1,198 @@
+id: E-035
+track: E
+order: 35
+title: {en: "Hearing a modulation: where is home now?", sr: "Čuti modulaciju: gde je sada kuća?"}
+prereqs: [E-034, T-052]
+minutes: 14
+tags: [ear, harmony, modulation]
+explain:
+  en: |
+    "Home" (the tonic) is not a note the music announces. You decide it by ear: it is the chord the
+    music comes back to and rests on, and a **cadence** (V7 → I) is what nails it down. That is
+    why a key can change: if the music cadences somewhere else and *stays there*, your ear accepts
+    a new home. That is a **modulation**.
+
+    E-034 was the short version: a secondary dominant points at a chord (V7/V → V) and the music
+    then goes straight back home. That is **tonicization**, a visit. A modulation is a move: a new
+    accidental appears, a cadence lands on the new tonic, and the old key does not come back right
+    away.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"[C,EGc] "^IV"[F,FAc] "^V7"[G,FBd] "^I"[C,Ecg] | "^vi = ii in G"[A,Ace] "^V7 in G"[D,Ac^f] "^I in G"[G,GBd]2 |]
+    ```
+
+    Play it. Bar 1 makes C home. Then A minor, a chord that belongs to *both* C major and G major
+    (vi in C, ii in G): the **pivot**. D7 brings in **F♯** and resolves to G. Hold the last chord:
+    G no longer sounds like V waiting to go to C; it sounds finished. Home moved up a fifth.
+
+    The method, for every exercise:
+
+    1. **Lock the first tonic.** After the opening cadence, hum the tonic and keep it in your head.
+    2. **Listen for the new accidental.** F♯ in C (towards G), G♯ in C (towards A minor), B♭ in C
+       (towards F). A sharp that keeps resolving *up* is a new leading tone.
+    3. **At the end, hum the root of the last chord.** Same pitch as your first tonic? You are home.
+       Different? Name it as a degree of the old key: **5** = the dominant key, **6** = the relative
+       minor, **4** = the subdominant key.
+    4. **Visit or move?** If the old key's V7 → I comes back afterwards, it was a visit.
+  sr: |
+    „Kuća" (tonika) nije ton koji muzika najavljuje. Određuješ je sluhom: to je akord na koji se
+    muzika vraća i na kome se odmara, a **kadenca** (V7 → I) je ono što je učvrsti. Zato tonalitet
+    može da se promeni: ako muzika napravi kadencu negde drugde i *tamo ostane*, sluh prihvata novu
+    kuću. To je **modulacija**.
+
+    E-034 je bila kratka verzija: sporedna dominanta pokazuje na akord (V7/V → V) i muzika se
+    odmah vraća kući. To je **tonikalizacija**, poseta. Modulacija je selidba: pojavi se novi
+    predznak, kadenca padne na novu toniku, a stari tonalitet se ne vraća odmah.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "^I"[C,EGc] "^IV"[F,FAc] "^V7"[G,FBd] "^I"[C,Ecg] | "^vi = ii u G"[A,Ace] "^V7 u G"[D,Ac^f] "^I u G"[G,GBd]2 |]
+    ```
+
+    Odsviraj. Prvi takt čini C kućom. Zatim a-mol, akord koji pripada *i* C-duru *i* G-duru (vi u C,
+    ii u G): to je **zajednički akord (pivot)**. D7 donosi **Fis** i razrešava se na G. Zadrži
+    poslednji akord: G više ne zvuči kao V koja čeka da ode na C; zvuči završeno. Kuća se pomerila
+    kvintu naviše.
+
+    Metod, za svaku vežbu:
+
+    1. **Zaključaj prvu toniku.** Posle početne kadence otpevuši toniku i zadrži je u glavi.
+    2. **Slušaj novi predznak.** Fis u C-duru (ka G), Gis u C-duru (ka a-molu), B u C-duru (ka F).
+       Povisilica koja se stalno razrešava *naviše* je nova vođica.
+    3. **Na kraju otpevuši osnovni ton poslednjeg akorda.** Ista visina kao prva tonika? Kod kuće si.
+       Drugačija? Imenuj je kao stupanj starog tonaliteta: **5** = tonalitet dominante, **6** =
+       paralelni mol, **4** = tonalitet subdominante.
+    4. **Poseta ili selidba?** Ako se posle toga vrati V7 → I starog tonaliteta, bila je poseta.
+exercises:
+  - id: E-035-1
+    type: generated
+    prompt: {en: "Stays home, visits V and comes back, or settles on V as the new home?", sr: "Ostaje kod kuće, posećuje V pa se vraća, ili se nastanjuje na V kao novoj kući?"}
+    count: 6
+    gen: {kind: progression-ear, keys: [C, G, F, D], type: major, options: [[I, IV, V7, I, vi, ii, V7, I], [I, IV, V7/V, V, V7, I], [I, IV, V7, I, vi, V7/V, V]], tempo: 66, smooth: true}
+    checks:
+      - numeral: {key: C, is: "vi", notes: [A3, A4, C5, E5]}
+      - numeral: {key: G, is: "ii", notes: [A3, A4, C5, E5]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, A4, C5, F#5]}
+      - numeral: {key: G, is: "V7", notes: [D3, A4, C5, F#5]}
+      - numeral: {key: C, is: "V", notes: [G3, G4, B4, D5]}
+      - numeral: {key: G, is: "I", notes: [G3, G4, B4, D5]}
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: F#4, to: G4, is: m2}
+  - id: E-035-2
+    type: mcq
+    prompt: {en: "G major. Where is home at the end?", sr: "G-dur. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still G: it returns to the opening key", sr: "I dalje G: vraća se u početni tonalitet"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The relative minor (on degree 6)", sr: "Paralelni mol (na 6. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 1
+    play:
+      chords: [[G3, D4, G4, B4], [C3, E4, G4, C5], [D3, F#4, A4, C5], [G3, G4, B4, D5], [E3, G4, B4, E5], [A3, G4, C#5, E5], [D3, F#4, A4, D5]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: G, is: "I", notes: [G3, D4, G4, B4]}
+      - numeral: {key: G, is: "IV", notes: [C3, E4, G4, C5]}
+      - numeral: {key: G, is: "V7", notes: [D3, F#4, A4, C5]}
+      - numeral: {key: G, is: "vi", notes: [E3, G4, B4, E5]}
+      - numeral: {key: D, is: "ii", notes: [E3, G4, B4, E5]}
+      - numeral: {key: G, is: "V7/V", notes: [A3, G4, C#5, E5]}
+      - numeral: {key: D, is: "V7", notes: [A3, G4, C#5, E5]}
+      - numeral: {key: D, is: "I", notes: [D3, F#4, A4, D5]}
+  - id: E-035-3
+    type: mcq
+    prompt: {en: "F major. Where is home at the end?", sr: "F-dur. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still F: it returns to the opening key", sr: "I dalje F: vraća se u početni tonalitet"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The relative minor (on degree 6)", sr: "Paralelni mol (na 6. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 2
+    play:
+      chords: [[F3, F4, A4, C5], [Bb3, F4, Bb4, D5], [C3, G4, Bb4, E5], [F3, F4, A4, C5], [G3, D4, G4, Bb4], [A3, C#4, E4, G4], [D3, D4, F4, A4]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: F, is: "I", notes: [F3, F4, A4, C5]}
+      - numeral: {key: F, is: "IV", notes: [Bb3, F4, Bb4, D5]}
+      - numeral: {key: F, is: "V7", notes: [C3, G4, Bb4, E5]}
+      - numeral: {key: F, is: "ii", notes: [G3, D4, G4, Bb4]}
+      - numeral: {key: D, type: harmonic-minor, is: "iv", notes: [G3, D4, G4, Bb4]}
+      - numeral: {key: F, is: "V7/vi", notes: [A3, C#4, E4, G4]}
+      - numeral: {key: D, type: harmonic-minor, is: "V7", notes: [A3, C#4, E4, G4]}
+      - numeral: {key: D, type: harmonic-minor, is: "i", notes: [D3, D4, F4, A4]}
+      - keysig: {key: D, mode: minor, is: -1}
+  - id: E-035-4
+    type: mcq
+    prompt: {en: "D major. Where is home at the end?", sr: "D-dur. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still D: it returns to the opening key", sr: "I dalje D: vraća se u početni tonalitet"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The relative minor (on degree 6)", sr: "Paralelni mol (na 6. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 3
+    play:
+      chords: [[D3, D4, F#4, A4], [G3, D4, G4, B4], [A3, C#4, G4, E5], [D3, D4, A4, F#5], [E3, B3, G4, E5], [A3, C4, A4, E5], [D3, C4, A4, F#5], [G3, B3, G4, D5]]
+      durations: [1, 1, 1, 2, 1, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: D, is: "I", notes: [D3, D4, F#4, A4]}
+      - numeral: {key: D, is: "IV", notes: [G3, D4, G4, B4]}
+      - numeral: {key: D, is: "V7", notes: [A3, C#4, G4, E5]}
+      - numeral: {key: D, is: "ii", notes: [E3, B3, G4, E5]}
+      - numeral: {key: G, is: "vi", notes: [E3, B3, G4, E5]}
+      - numeral: {key: D, is: "ii/IV", notes: [A3, C4, A4, E5]}
+      - numeral: {key: G, is: "ii", notes: [A3, C4, A4, E5]}
+      - numeral: {key: D, is: "V7/IV", notes: [D3, C4, A4, F#5]}
+      - numeral: {key: G, is: "V7", notes: [D3, C4, A4, F#5]}
+      - numeral: {key: G, is: "I", notes: [G3, B3, G4, D5]}
+  - id: E-035-5
+    type: mcq
+    prompt: {en: "A major. Where is home at the end?", sr: "A-dur. Gde je kuća na kraju?"}
+    options:
+      - {en: "Still A: it returns to the opening key", sr: "I dalje A: vraća se u početni tonalitet"}
+      - {en: "The dominant key (on degree 5)", sr: "Tonalitet dominante (na 5. stupnju)"}
+      - {en: "The relative minor (on degree 6)", sr: "Paralelni mol (na 6. stupnju)"}
+      - {en: "The subdominant key (on degree 4)", sr: "Tonalitet subdominante (na 4. stupnju)"}
+    answer: 0
+    play:
+      chords: [[A3, E4, A4, C#5], [D3, F#4, A4, D5], [B3, F#4, A4, D#5], [E3, E4, G#4, B4], [E3, D4, G#4, B4], [A3, C#4, E4, A4]]
+      durations: [1, 1, 1, 2, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: A, is: "I", notes: [A3, E4, A4, C#5]}
+      - numeral: {key: A, is: "IV", notes: [D3, F#4, A4, D5]}
+      - numeral: {key: A, is: "V7/V", notes: [B3, F#4, A4, D#5]}
+      - numeral: {key: A, is: "V", notes: [E3, E4, G#4, B4]}
+      - numeral: {key: A, is: "V7", notes: [E3, D4, G#4, B4]}
+      - numeral: {key: A, is: "I", notes: [A3, C#4, E4, A4]}
+  - id: E-035-6
+    type: midi-echo
+    prompt: {en: "E major, then a modulation. Play the new tonic (one note, any octave). Hum it first.", sr: "E-dur, pa modulacija. Odsviraj novu toniku (jedan ton, bilo koja oktava). Prvo je otpevuši."}
+    mode: sequence
+    expect: [C#3]
+    octave: any
+    play:
+      chords: [[E3, E4, G#4, B4], [A3, E4, A4, C#5], [B3, D#4, A4, F#5], [E3, B3, G#4, E5], [F#3, A3, F#4, C#5], [G#3, D#4, F#4, B#4], [C#3, E4, G#4, C#5]]
+      durations: [1, 1, 1, 2, 1, 1, 3]
+      tempo: 66
+    checks:
+      - numeral: {key: E, is: "I", notes: [E3, E4, G#4, B4]}
+      - numeral: {key: E, is: "IV", notes: [A3, E4, A4, C#5]}
+      - numeral: {key: E, is: "V7", notes: [B3, D#4, A4, F#5]}
+      - numeral: {key: E, is: "ii", notes: [F#3, A3, F#4, C#5]}
+      - numeral: {key: E, is: "V7/vi", notes: [G#3, D#4, F#4, B#4]}
+      - numeral: {key: C#, type: harmonic-minor, is: "V7", notes: [G#3, D#4, F#4, B#4]}
+      - numeral: {key: C#, type: harmonic-minor, is: "i", notes: [C#3, E4, G#4, C#5]}
+  - id: E-035-7
+    type: practice
+    prompt: {en: "At the piano, in C: play I–IV–V7–I, then vi–V7/V–V and hold it. Hum C over the last chord, then hum G. Which one feels like home now? Repeat with ii–V7/vi–vi (towards A minor) and hum C, then A.", sr: "Za klavirom, u C-duru: odsviraj I–IV–V7–I, pa vi–V7/V–V i zadrži. Otpevuši C preko poslednjeg akorda, pa G. Koji sada deluje kao kuća? Ponovi sa ii–V7/vi–vi (ka a-molu) i otpevuši C, pa A."}
+    minutes: 3

@@ -1,7 +1,7 @@
 id: E-034
 track: E
 order: 34
-title: {en: "Review: progressions with secondary dominants", sr: "Ponavljanje: progresije sa sekundarnim dominantama"}
+title: {en: "Review: progressions with secondary dominants", sr: "Ponavljanje: progresije sa sporednim dominantama"}
 prereqs: [E-033, E-029, T-044]
 minutes: 15
 tags: [ear, harmony, secondary-dominants, review]
@@ -42,7 +42,7 @@ explain:
     For each exercise: bass first, then "which chord is major that should be minor?", then name the
     target.
   sr: |
-    V/V je bila prva **sekundarna dominanta**. Svaki durski ili molski akord u tonalitetu može da
+    V/V je bila prva **sporedna dominanta**. Svaki durski ili molski akord u tonalitetu može da
     dobije svoju: uzmi akord na koji hoćeš da stigneš, sagradi durski kvintakord (ili dominantni
     septakord) kvintu iznad njega i odsviraj ga neposredno pre. U C-duru:
 
@@ -96,7 +96,7 @@ exercises:
       - roman: {key: C, degree: 3, is: "iii"}
   - id: E-034-2
     type: generated
-    prompt: {en: "Which secondary dominant leads into the predominant?", sr: "Koja sekundarna dominanta vodi u predominantu?"}
+    prompt: {en: "Which secondary dominant leads into the predominant?", sr: "Koja sporedna dominanta vodi u predominantu?"}
     count: 8
     pass: 0.7
     gen: {kind: progression-ear, keys: [C, G, F, Bb], type: major, options: [[I, V7/IV, IV, V7], [I, V7/ii, ii, V7], [I, vi, ii, V7], [I, vi, IV, V7]], tempo: 60}

@@ -1,0 +1,128 @@
+id: T-055
+track: T
+order: 55
+prereqs: [T-054]
+title: {en: "Modulation to the relative minor/major", sr: "Modulacija u paralelni mol/dur"}
+minutes: 12
+tags: [harmony, modulation, four-part, minor]
+explain:
+  en: |
+    Relative keys share a key signature (T-010), so **every** diatonic chord of C major is also a chord of A natural minor. Almost any chord can be the pivot. What changes is only **where the gravity is**, and one note announces it.
+
+    **Major → relative minor.** The clue is the **raised 7th of the minor key**: G♯ in A minor, an accidental that C major never uses. You hear it in E or E7 (V of A minor) resolving to A minor.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[EGc] "^IV"[FAc] [D^Ge] [CAe] |]
+    V:2 clef=bass
+    C, "_a: VI"F,, "_V7"E,, "_i"A,, |]
+    ```
+
+    F major is **C: IV = a: VI**. Then E7 (E G♯ D, the 5th left out) and A minor confirm the new key. The pivot that pulls hardest toward A minor is **D minor** (C: ii = a: iv), because it is a predominant there.
+
+    **Minor → relative major** is the most natural move in minor music, and it needs **no accidental at all**. In A minor the 7th degree of the natural minor scale, G, is the root of **G7**, which is V7 of C. In other words VII in minor already *is* V of III. All a piece in A minor has to do is stop raising G to G♯ and cadence G7 – C. That is why minor-key folk songs, Baroque pieces and pop ballads drift to the relative major so easily.
+
+    Compare with the deceptive cadence (T-042): V7 – vi in C *sounds* like A minor for a moment, but there is no G♯ and C returns. A real modulation to vi brings **E major** (with G♯) and a cadence in A minor.
+  sr: |
+    Paralelni tonaliteti imaju isti predznak (T-010), pa je **svaki** akord na stupnjevima C-dura ujedno akord prirodnog a-mola. Gotovo svaki akord može biti most. Menja se samo **gde je težište**, a jedan ton to najavljuje.
+
+    **Dur → paralelni mol.** Trag je **povišeni 7. stupanj mola**: Gis u a-molu, predznak koji C-dur nikad ne koristi. Čuješ ga u E ili E7 (V a-mola) koji se razrešava u a-mol akord.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[EGc] "^IV"[FAc] [D^Ge] [CAe] |]
+    V:2 clef=bass
+    C, "_a: VI"F,, "_V7"E,, "_i"A,, |]
+    ```
+
+    F-dur akord je **C: IV = a: VI**. Zatim E7 (E Gis D, bez kvinte) i a-mol akord potvrđuju novi tonalitet. Most koji najjače vuče ka a-molu je **d-mol akord** (C: ii = a: iv), jer je tamo subdominantni akord.
+
+    **Mol → paralelni dur** je najprirodniji pomak u molskoj muzici, i ne traži **nijedan predznak**. U a-molu je G, 7. stupanj prirodnog mola, osnovni ton akorda **G7**, a to je V7 C-dura. Drugim rečima, VII u molu već *jeste* V od III. Komad u a-molu samo treba da prestane da povisuje G u Gis i da kadencira G7 – C. Zato molske narodne pesme, barokni komadi i pop balade tako lako skliznu u paralelni dur.
+
+    Uporedi sa prekinutom kadencom (T-042): V7 – vi u C-duru na trenutak *zvuči* kao a-mol, ali nema Gis i C se vraća. Prava modulacija na vi donosi **E-dur akord** (sa Gis) i kadencu u a-molu.
+exercises:
+  - id: T-055-1
+    type: mcq
+    prompt: {en: "G major modulates to its relative minor. Which accidental is the clue?", sr: "G-dur modulira u paralelni mol. Koji predznak je trag?"}
+    options: ["D♯", "C♯", "F♮", "G♯"]
+    answer: 0
+    checks:
+      - keysig: {key: E, mode: minor, is: 1}
+      - scale: {tonic: E, type: harmonic-minor, is: [E, F#, G, A, B, C, D#]}
+      - numeral: {key: E, type: harmonic-minor, is: V, notes: [B3, D#4, F#4]}
+  - id: T-055-2
+    type: mcq
+    prompt: {en: "In the example, the F major chord is the pivot. Its two labels?", sr: "U primeru je F-dur akord most. Njegove dve oznake?"}
+    options: ["C: IV = a: VI", "C: IV = a: iv", "C: VI = a: IV", "C: ii = a: iv"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: IV, notes: [F2, F4, A4, C5]}
+      - numeral: {key: A, type: harmonic-minor, is: VI, notes: [F2, F4, A4, C5]}
+  - id: T-055-3
+    type: mcq
+    prompt: {en: "C major to A minor: which pivot is a predominant in A minor?", sr: "C-dur u a-mol: koji most je subdominantni akord u a-molu?"}
+    options:
+      - {en: "D minor (C: ii = a: iv)", sr: "d-mol akord (C: ii = a: iv)"}
+      - {en: "G major (C: V)", sr: "G-dur akord (C: V)"}
+      - {en: "E major (a: V)", sr: "E-dur akord (a: V)"}
+      - {en: "C major (C: I = a: III)", sr: "C-dur akord (C: I = a: III)"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: ii, notes: [D4, F4, A4]}
+      - numeral: {key: A, type: harmonic-minor, is: iv, notes: [D4, F4, A4]}
+      - numeral: {key: A, type: harmonic-minor, is: V, notes: [E4, G#4, B4]}
+      - numeral: {key: A, type: harmonic-minor, is: III, notes: [C4, E4, G4]}
+  - id: T-055-4
+    type: midi-play
+    prompt: {en: "Play C: I – IV (= a: VI) – a: V7 – i, as in the example.", sr: "Odsviraj C: I – IV (= a: VI) – a: V7 – i, kao u primeru."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [EGc] [FAc] [D^Ge] [CAe] |]
+      V:2 clef=bass
+      C, F,, E,, A,, |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [F2, F4, A4, C5], [E2, D4, G#4, E5], [A2, C4, A4, E5]]
+    beats: [1, 1, 1, 1]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: I, notes: [C3, E4, G4, C5]}
+      - numeral: {key: A, type: harmonic-minor, is: VI, notes: [F2, F4, A4, C5]}
+      - chord: {notes: [E2, D4, G#4, E5], root: E, quality: "7"}
+      - numeral: {key: A, type: harmonic-minor, is: V7, notes: [E2, D4, G#4, E5], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: i, notes: [A2, C4, A4, E5]}
+  - id: T-055-5
+    type: mcq
+    prompt: {en: "A piece in A minor moves to C major. Which accidental announces it?", sr: "Komad u a-molu prelazi u C-dur. Koji predznak to najavljuje?"}
+    options:
+      - {en: "None: G♮ instead of G♯, and a G7 – C cadence", sr: "Nijedan: G umesto Gis, i kadenca G7 – C"}
+      - {en: "F♯", sr: "Fis"}
+      - {en: "B♭", sr: "B"}
+      - {en: "C♯", sr: "Cis"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: V7, notes: [G3, B3, D4, F4]}
+      - numeral: {key: A, type: natural-minor, is: VII7, notes: [G3, B3, D4, F4]}
+      - numeral: {key: A, type: natural-minor, is: V7/III, notes: [G3, B3, D4, F4]}
+  - id: T-055-6
+    type: generated
+    count: 4
+    prompt: {en: "Deceptive cadence, or a real move to vi (with its own V7)? Numerals in the home key.", sr: "Prekinuta kadenca ili pravi prelazak na vi (sa sopstvenim V7)? Brojevi u polaznom tonalitetu."}
+    gen: {kind: progression-ear, keys: [C, G, F], options: [[I, IV, V7/vi, vi], [I, IV, V7, vi], [I, IV, V7, I]], tempo: 60, smooth: true}
+  - id: T-055-7
+    type: generated
+    count: 3
+    prompt: {en: "Minor to its relative major: i – iv – V7/III – III (V7/III is VII7 of the natural minor).", sr: "Mol u paralelni dur: i – iv – V7/III – III (V7/III je VII7 prirodnog mola)."}
+    gen: {kind: progression, keys: [A, D, E], type: harmonic-minor, numerals: [i, iv, V7/III, III], smooth: true}

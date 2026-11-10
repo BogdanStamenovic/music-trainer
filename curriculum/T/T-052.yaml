@@ -1,0 +1,132 @@
+id: T-052
+track: T
+order: 52
+prereqs: [T-051]
+title: {en: "Modulation by pivot chord", sr: "Modulacija preko akorda-mosta"}
+minutes: 13
+tags: [harmony, modulation, four-part]
+explain:
+  en: |
+    The smoothest way to change key is a **pivot chord** (common chord): a chord that belongs to **both** keys. You hear it as part of the old key, and in hindsight it turns out to be the first chord of the new one.
+
+    C major to G major:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[CEG] "^IV"[CFA] "^vi"[CEA] [C^FA] | [B,DG]4 |]
+    V:2 clef=bass
+    C, F,, "_G: ii"A,, "_V7"D, | "_I"G,,4 |]
+    ```
+
+    - **I, IV**: plainly C major.
+    - **A minor** is vi in C *and* ii in G. Labelled with both numerals, **C: vi = G: ii**. This is the pivot.
+    - **D7** contains **F♯**, which is not in C. From here the music is in G: D7 is **V7 in G**, and it resolves to **I in G**.
+
+    How to pick a good pivot: the ideal one is a **predominant in the new key** (ii or IV there), because then the new key's ii (or IV) – V – I runs naturally from it. A minor works perfectly as G: ii.
+
+    Two things separate a modulation from the tonicizations you know:
+    1. the new key is **confirmed by a cadence** (V–I in G), and
+    2. the music **stays there** for a while (T-058 is about how long).
+
+    In analysis you write the pivot with both labels, one above the other or as "vi = ii", and switch to the new key's numerals from the pivot onwards. D7 here is "G: V7", not "C: V7/V", because we are no longer in C.
+  sr: |
+    Najglatkiji način da se promeni tonalitet je **akord-most** (zajednički akord): akord koji pripada **oba** tonaliteta. Čuješ ga kao deo starog tonaliteta, a naknadno se ispostavi da je to prvi akord novog.
+
+    C-dur u G-dur:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[CEG] "^IV"[CFA] "^vi"[CEA] [C^FA] | [B,DG]4 |]
+    V:2 clef=bass
+    C, F,, "_G: ii"A,, "_V7"D, | "_I"G,,4 |]
+    ```
+
+    - **I, IV**: jasno C-dur.
+    - **a-mol akord** je vi u C-duru *i* ii u G-duru. Sa obe oznake: **C: vi = G: ii**. To je akord-most.
+    - **D7** sadrži **Fis**, kojeg nema u C-duru. Odavde muzika je u G-duru: D7 je **V7 u G-duru** i razrešava se u **I u G-duru**.
+
+    Kako izabrati dobar most: idealan je **subdominantni akord u novom tonalitetu** (tamo ii ili IV), jer se onda ii (ili IV) – V – I novog tonaliteta prirodno nastavlja iz njega. a-mol akord savršeno radi kao G: ii.
+
+    Dve stvari razlikuju modulaciju od tonikalizacija koje već znaš:
+    1. novi tonalitet je **potvrđen kadencom** (V–I u G-duru), i
+    2. muzika tu **ostaje** neko vreme (T-058 govori o tome koliko).
+
+    U analizi akord-most pišeš sa obe oznake, jednu ispod druge ili kao "vi = ii", i od mosta nadalje koristiš brojeve novog tonaliteta. D7 je ovde "G: V7", a ne "C: V7/V", jer više nismo u C-duru.
+exercises:
+  - id: T-052-1
+    type: mcq
+    prompt: {en: "In the example, the A minor chord is vi in C. What is it in G?", sr: "U primeru, a-mol akord je vi u C-duru. Šta je u G-duru?"}
+    options: ["ii", "vi", "iii", "IV"]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: vi, notes: [A2, C4, E4, A4]}
+      - numeral: {key: G, is: ii, notes: [A2, C4, E4, A4]}
+  - id: T-052-2
+    type: mcq
+    prompt: {en: "Which is the first chord that does NOT belong to C major, and how is it labelled after the modulation?", sr: "Koji je prvi akord koji NE pripada C-duru i kako se označava posle modulacije?"}
+    options:
+      - {en: "D7, as G: V7", sr: "D7, kao G: V7"}
+      - {en: "A minor, as G: ii", sr: "a-mol akord, kao G: ii"}
+      - {en: "D7, as C: V7", sr: "D7, kao C: V7"}
+      - {en: "G, as C: V", sr: "G, kao C: V"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: V7, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: C, is: V7/V, notes: [D3, C4, F#4, A4]}
+      - chord: {notes: [D3, C4, F#4, A4], root: D, quality: "7"}
+  - id: T-052-3
+    type: mcq
+    prompt: {en: "Which of these chords could serve as a pivot between C major and G major?", sr: "Koji od ovih akorda može biti akord-most između C-dura i G-dura?"}
+    options: ["Em", "Dm", "F", {en: "B°", sr: "H°"}]
+    answer: 0
+    checks:
+      - numeral: {key: C, is: iii, notes: [E4, G4, B4]}
+      - numeral: {key: G, is: vi, notes: [E4, G4, B4]}
+      - numeral: {key: C, is: ii, notes: [D4, F4, A4]}
+      - numeral: {key: C, is: IV, notes: [F4, A4, C5]}
+      - numeral: {key: C, is: "vii°", notes: [B4, D5, F5]}
+  - id: T-052-4
+    type: mcq
+    prompt: {en: "What makes this a modulation and not just a chromatic chord?", sr: "Šta ovo čini modulacijom, a ne samo hromatskim akordom?"}
+    options:
+      - {en: "A cadence (V–I) confirms the new key, and the music stays there", sr: "Kadenca (V–I) potvrđuje novi tonalitet, i muzika tu ostaje"}
+      - {en: "There is an F♯ somewhere in the passage", sr: "Negde u odlomku ima Fis"}
+      - {en: "The pivot chord is minor", sr: "Akord-most je molski"}
+      - {en: "The bass moves by a 5th", sr: "Bas se kreće za kvintu"}
+    answer: 0
+  - id: T-052-5
+    type: midi-play
+    prompt: {en: "Play the example: C: I – IV – vi (= G: ii) – G: V7 – I, as written. Keep the C in the right hand's thumb through the first four chords.", sr: "Odsviraj primer: C: I – IV – vi (= G: ii) – G: V7 – I, kako je napisano. Drži C palcem desne ruke kroz prva četiri akorda."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [CEG] [CFA] [CEA] [C^FA] | [B,DG]4 |]
+      V:2 clef=bass
+      C, F,, A,, D, | G,,4 |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, C4, E4, G4], [F2, C4, F4, A4], [A2, C4, E4, A4], [D3, C4, F#4, A4], [G2, B3, D4, G4]]
+    beats: [1, 1, 1, 1, 4]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: I, notes: [C3, C4, E4, G4]}
+      - numeral: {key: C, is: IV, notes: [F2, C4, F4, A4]}
+      - numeral: {key: G, is: ii, notes: [A2, C4, E4, A4]}
+      - numeral: {key: G, is: V7, notes: [D3, C4, F#4, A4]}
+      - numeral: {key: G, is: I, notes: [G2, B3, D4, G4]}
+  - id: T-052-6
+    type: generated
+    count: 4
+    prompt: {en: "Stay home, or move to the dominant key? (Numerals in the home key: V7/V – V is the new key's V7 – I.)", sr: "Ostaje kod kuće ili prelazi u dominantni tonalitet? (Brojevi u polaznom tonalitetu: V7/V – V je V7 – I novog tonaliteta.)"}
+    gen: {kind: progression-ear, keys: [C, F, D], options: [[I, IV, vi, V7/V, V], [I, IV, vi, V7, I], [I, IV, ii, V7, I]], tempo: 60, smooth: true}

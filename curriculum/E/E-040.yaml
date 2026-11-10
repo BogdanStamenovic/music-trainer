@@ -1,0 +1,168 @@
+id: E-040
+track: E
+order: 40
+title: {en: "Longer melodic dictation (2 phrases)", sr: "Duži melodijski diktat (2 rečenice)"}
+prereqs: [E-039, E-030]
+minutes: 15
+tags: [ear, melody, dictation]
+explain:
+  en: |
+    Up to now dictations were one phrase, 6–8 notes: short enough to hold in your head whole.
+    Two phrases (14–20 notes) are not. The way through is the one composers use to build them:
+    the **period**.
+
+    - **Antecedent phrase** (prednja rečenica): ends *open*, on a half cadence: the melody stops on
+      degree **5, 2 or 7**, over V.
+    - **Consequent phrase** (zadnja rečenica): ends *closed*, on **1**.
+    - In a **parallel** period the second phrase *starts like the first*. Then you only need to learn
+      phrase 1 plus a new ending. In a **contrasting** period phrase 2 starts somewhere else.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:D
+    D2 F2 A2 F2 | G2 B2 A4 | D2 F2 A2 F2 | G2 E C D4 |]
+    ```
+
+    Exercise 1: phrase 1 stops on A (5, open); phrase 2 starts the same and turns at bar 4 to land
+    on D (1, closed).
+
+    The order of work, for every item:
+
+    1. **Listen once without playing.** Sing back what you can.
+    2. **Map the structure:** where phrase 1 ends (which degree), and whether phrase 2 starts the
+       same way.
+    3. **Landmarks first:** first note, highest note, and the two cadence notes.
+    4. **Fill in** between landmarks as degrees, with the rhythm. Long notes are at phrase ends.
+    5. **Play it all**, compare, fix one bar at a time.
+
+    The exercises play the tonic first, then the melody. Timing is graded after pitches.
+  sr: |
+    Do sada su diktati bili jedna rečenica, 6–8 tonova: dovoljno kratko da se zapamti u celini. Dve
+    rečenice (14–20 tonova) nisu. Rešenje je isto ono čime ih kompozitori grade: **period**.
+
+    - **Prednja rečenica** (antecedent): završava se *otvoreno*, na polukadenci: melodija stane na
+      **5., 2. ili 7.** stupnju, preko V.
+    - **Zadnja rečenica** (konsekvent): završava se *zatvoreno*, na **1**.
+    - U **paralelnom** periodu druga rečenica *počinje kao prva*. Onda treba da naučiš samo prvu
+      rečenicu i novi završetak. U **kontrastnom** periodu druga rečenica počinje drugačije.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:D
+    D2 F2 A2 F2 | G2 B2 A4 | D2 F2 A2 F2 | G2 E C D4 |]
+    ```
+
+    Vežba 1: prva rečenica staje na A (5, otvoreno); druga počinje isto i u 4. taktu skreće da
+    stigne na D (1, zatvoreno).
+
+    Redosled rada, za svaki primer:
+
+    1. **Slušaj jednom bez sviranja.** Otpevaj šta možeš.
+    2. **Mapiraj strukturu:** gde se završava prva rečenica (koji stupanj) i da li druga počinje isto.
+    3. **Prvo orijentiri:** prvi ton, najviši ton i dva kadencirajuća tona.
+    4. **Popuni** između orijentira, kao stupnjeve, sa ritmom. Dugi tonovi su na krajevima rečenica.
+    5. **Odsviraj sve**, uporedi, ispravljaj takt po takt.
+
+    Vežbe prvo sviraju toniku, pa melodiju. Ritam se ocenjuje posle visina.
+exercises:
+  - id: E-040-1
+    type: midi-echo
+    prompt: {en: "D major, 4/4: the tonic D4, then two phrases (starts on D4). Parallel period: phrase 2 starts like phrase 1.", sr: "D-dur, 4/4: tonika D4, pa dve rečenice (počinje na D4). Paralelni period: druga rečenica počinje kao prva."}
+    mode: sequence
+    expect: [D4, F#4, A4, F#4, G4, B4, A4, D4, F#4, A4, F#4, G4, E4, C#4, D4]
+    beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 2]
+    tempo: 76
+    octave: exact
+    pass: 0.7
+    play: {notes: [D4, D4, F#4, A4, F#4, G4, B4, A4, D4, F#4, A4, F#4, G4, E4, C#4, D4], durations: [2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 2], tempo: 76}
+    checks:
+      - scale: {tonic: D, type: major, is: [D, E, F#, G, A, B, C#]}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: C#4, to: D4, is: m2}
+      - interval: {from: G4, to: E4, is: m3}
+  - id: E-040-2
+    type: mcq
+    prompt: {en: "C major: the tonic C4, then two phrases. Does phrase 2 start like phrase 1 (parallel period) or differently (contrasting period)?", sr: "C-dur: tonika C4, pa dve rečenice. Da li druga rečenica počinje kao prva (paralelni period) ili drugačije (kontrastni period)?"}
+    options:
+      - {en: "Parallel: same start", sr: "Paralelni: isti početak"}
+      - {en: "Contrasting: a different start", sr: "Kontrastni: drugačiji početak"}
+    answer: 1
+    keepOrder: true
+    play: {notes: [C4, C5, B4, A4, G4, E4, F4, A4, G4, E4, G4, C5, B4, A4, F4, D4, C4], durations: [2, 1, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 1.5, 0.5, 0.5, 0.5, 1, 2], tempo: 76}
+  - id: E-040-3
+    type: midi-echo
+    prompt: {en: "The same C major melody: play it back (starts on C5). Phrase 1 falls and stops on 5; phrase 2 climbs from E4 and falls to the tonic.", sr: "Ista melodija u C-duru: odsviraj je (počinje na C5). Prva rečenica silazi i staje na 5; druga se penje od E4 i silazi do tonike."}
+    mode: sequence
+    expect: [C5, B4, A4, G4, E4, F4, A4, G4, E4, G4, C5, B4, A4, F4, D4, C4]
+    beats: [1, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 1.5, 0.5, 0.5, 0.5, 1, 2]
+    tempo: 76
+    octave: exact
+    pass: 0.7
+    play: {notes: [C4, C5, B4, A4, G4, E4, F4, A4, G4, E4, G4, C5, B4, A4, F4, D4, C4], durations: [2, 1, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 1.5, 0.5, 0.5, 0.5, 1, 2], tempo: 76}
+    checks:
+      - interval: {from: E4, to: C5, is: m6}
+      - interval: {from: A4, to: F4, is: M3}
+      - interval: {from: D4, to: C4, is: M2}
+  - id: E-040-4
+    type: mcq
+    prompt: {en: "A minor, 3/4: the tonic A4, then two phrases. On which degree does phrase 1 stop?", sr: "a-mol, 3/4: tonika A4, pa dve rečenice. Na kom stupnju staje prva rečenica?"}
+    options:
+      - {en: "degree 1", sr: "1. stupanj"}
+      - {en: "degree 3", sr: "3. stupanj"}
+      - {en: "degree 5", sr: "5. stupanj"}
+      - {en: "degree 7", sr: "7. stupanj"}
+    answer: 2
+    keepOrder: true
+    play: {notes: [A4, A4, B4, C5, B4, G#4, E4, F4, E4, D4, E4, A4, B4, C5, D5, C5, B4, C5, B4, G#4, A4], durations: [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3], tempo: 88}
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: A4, to: E4, is: P4}
+  - id: E-040-5
+    type: midi-echo
+    prompt: {en: "The same A minor melody: play it back (starts on A4). Phrase 2 starts the same, then climbs higher.", sr: "Ista melodija u a-molu: odsviraj je (počinje na A4). Druga rečenica počinje isto, pa se penje više."}
+    mode: sequence
+    expect: [A4, B4, C5, B4, G#4, E4, F4, E4, D4, E4, A4, B4, C5, D5, C5, B4, C5, B4, G#4, A4]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]
+    tempo: 88
+    octave: exact
+    pass: 0.7
+    play: {notes: [A4, A4, B4, C5, B4, G#4, E4, F4, E4, D4, E4, A4, B4, C5, D5, C5, B4, C5, B4, G#4, A4], durations: [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3], tempo: 88}
+    checks:
+      - interval: {from: G#4, to: E4, is: M3}
+      - interval: {from: G#4, to: A4, is: m2}
+      - interval: {from: F4, to: E4, is: m2}
+      - interval: {from: C5, to: D5, is: M2}
+  - id: E-040-6
+    type: midi-echo
+    prompt: {en: "F major, 4/4, dotted rhythm: the tonic F4, then two phrases (starts on F4).", sr: "F-dur, 4/4, punktirani ritam: tonika F4, pa dve rečenice (počinje na F4)."}
+    mode: sequence
+    expect: [F4, G4, A4, F4, Bb4, A4, G4, F4, G4, A4, C5, Bb4, G4, E4, F4]
+    beats: [1.5, 0.5, 1, 1, 1, 1, 2, 1.5, 0.5, 1, 1, 1, 0.5, 0.5, 2]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    play: {notes: [F4, F4, G4, A4, F4, Bb4, A4, G4, F4, G4, A4, C5, Bb4, G4, E4, F4], durations: [2, 1.5, 0.5, 1, 1, 1, 1, 2, 1.5, 0.5, 1, 1, 1, 0.5, 0.5, 2], tempo: 80}
+    checks:
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - interval: {from: F4, to: Bb4, is: P4}
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: E-040-7
+    type: midi-echo
+    prompt: {en: "G major: the tonic G4, then two phrases (starts on D4). Phrase 1 reaches its open ending through a chromatic note.", sr: "G-dur: tonika G4, pa dve rečenice (počinje na D4). Prva rečenica stiže do otvorenog završetka preko hromatskog tona."}
+    mode: sequence
+    expect: [D4, G4, B4, G4, A4, B4, C#5, D5, D4, G4, B4, G4, C5, A4, F#4, G4]
+    beats: [1, 1, 1, 1, 1, 0.5, 0.5, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 2]
+    tempo: 80
+    octave: exact
+    pass: 0.7
+    play: {notes: [G4, D4, G4, B4, G4, A4, B4, C#5, D5, D4, G4, B4, G4, C5, A4, F#4, G4], durations: [2, 1, 1, 1, 1, 1, 0.5, 0.5, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 2], tempo: 80}
+    checks:
+      - interval: {from: C#5, to: D5, is: m2}
+      - interval: {from: G4, to: C#5, is: A4}
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: F#4, to: G4, is: m2}

@@ -1,0 +1,116 @@
+id: V-053
+track: V
+order: 53
+title: {en: "Sustain and steadiness in mix", sr: "Trajanje i mirnoća u miksu"}
+prereqs: [V-052, V-047, V-008]
+minutes: 10
+tags: [voice, mix, sustain]
+explain:
+  en: |
+    In lesson 8 you held steady tones in the easy part of your voice. Now the same, in the **light mix** and near the break, where holding is hardest:
+    the coordination is a balance, and balances drift. A long note in mix tends to do one of three things as the seconds pass:
+
+    | drift | you hear | the fix |
+    |---|---|---|
+    | **toward chest** | it gets heavier and louder, pitch creeps sharp, then strains | lighten a little and keep the "nay" edge, not more weight |
+    | **toward falsetto** | it gets airy, breath runs out early, pitch sags | a touch more edge (an "n" feeling, a little twang) |
+    | **support fades** | the end goes flat or wobbly | ribs wide to the end (lesson 36); stop before the air is gone |
+
+    Steady does **not** mean held rigid. A held jaw or a fixed belly makes the tone shake. Steady comes from **even pressure and a free throat**:
+    the same thing as a smooth, slow key release on the piano, done by the breath.
+
+    How the grade works: during the hold the app measures your pitch against the target; drifting sharp or flat lowers it. Small natural movement is fine; the tolerance is
+    set for that. The register itself is not graded.
+
+    The notes are placed near the middle and the upper middle of your range (where the mix lives). Sing on "nay", "nee" or "noo"; avoid wide "ah" today.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    U 8. lekciji držao si mirne tonove u lakom delu glasa. Sada isto, u **laganom miksu** i blizu loma, gde je držanje najteže:
+    koordinacija je ravnoteža, a ravnoteže klize. Dugačak ton u miksu, kako sekunde prolaze, obično uradi jedno od tri:
+
+    | klizanje | čuješ | rešenje |
+    |---|---|---|
+    | **ka grudnom** | postaje teži i glasniji, visina se penje, pa naprezanje | malo olakšaj i zadrži ivicu „nej”, ne više težine |
+    | **ka falsetu** | postaje vazdušast, dah se ranije potroši, visina pada | malo više ivice (osećaj „n”, malo tvanga) |
+    | **oslonac slabi** | kraj ode nisko ili se trese | rebra široka do kraja (36. lekcija); stani pre nego što vazduh nestane |
+
+    Mirno **ne znači** ukočeno. Stegnuta vilica ili ukočen stomak tresu ton. Mirnoća dolazi od **ravnomernog pritiska i slobodnog grla**:
+    isto kao gladak, spor otpust dirke na klaviru, samo dahom.
+
+    Kako radi ocena: tokom držanja aplikacija meri tvoju visinu prema cilju; odlazak naviše ili naniže smanjuje ocenu. Mali prirodni pokret je u redu; tolerancija je
+    podešena za to. Sam registar se ne ocenjuje.
+
+    Tonovi su postavljeni blizu sredine i gornje sredine opsega (gde miks živi). Pevaj na „nej”, „ni” ili „nu”; danas izbegavaj široko „a”.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-053-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-053-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 2 hisses of 15 seconds with ribs wide, 3 lip-trill sirens through the break, then 5-4-3-2-1 on bratty 'nay'."
+      sr: "Zagrevanje: 4 niska udaha, 2 siktanja od 15 sekundi sa širokim rebrima, 3 sirene treperenjem usana kroz lom, pa 5-4-3-2-1 na zadirkujuće „nej”."
+  - id: V-053-3
+    type: sing-pitch
+    prompt:
+      en: "'Nay' in the middle of your range, 4 seconds. Same size from start to finish."
+      sr: "„Nej” u sredini opsega, 4 sekunde. Ista veličina od početka do kraja."
+    notes: [E4]
+    sustain: 4
+    tolerance: 40
+    pass: 0.65
+  - id: V-053-4
+    type: sing-pitch
+    prompt:
+      en: "'Nee' higher in your range, 4 seconds. If it drifts heavy, lighten; if it goes airy, add a little edge."
+      sr: "„Ni” više u opsegu, 4 sekunde. Ako klizi u težinu, olakšaj; ako postaje vazdušast, dodaj malo ivice."
+    notes: [A4]
+    sustain: 4
+    fitRange: high
+    tolerance: 50
+    pass: 0.65
+  - id: V-053-5
+    type: sing-pitch
+    prompt:
+      en: "Walk up and hold: 1-3-5 on 'noo', then hold the 5 for 5 seconds. Ribs wide; stop before the air runs out."
+      sr: "Popni se i drži: 1-3-5 na „nu”, pa drži 5 pet sekundi. Rebra široka; stani pre nego što nestane vazduha."
+    notes: [D4, F#4, A4]
+    sustain: 5
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-053-6
+    type: sing-phrase
+    prompt:
+      en: "Long notes in a line: 5-4-3-2-1 on 'nay', each note 2 beats, legato. Every note as steady as the first."
+      sr: "Dugi tonovi u liniji: 5-4-3-2-1 na „nej”, svaki ton 2 dobe, legato. Svaki ton miran kao prvi."
+    notes: [Bb4, A4, G4, F4, Eb4]
+    beats: [2, 2, 2, 2, 4]
+    tempo: 66
+    tolerance: 40
+    pass: 0.65
+    checks:
+      - scale: {tonic: Eb, type: major, is: [Eb, F, G, Ab, Bb, C, D]}
+  - id: V-053-7
+    type: mcq
+    prompt:
+      en: "Holding a mix note, it gets louder and goes sharp after 3 seconds. Which way is it drifting, and what do you do?"
+      sr: "Dok držiš ton u miksu, posle 3 sekunde postaje glasniji i odlazi naviše. Na koju stranu klizi i šta radiš?"
+    options:
+      - {en: "Toward chest: lighten a little and keep the 'nay' edge", sr: "Ka grudnom: malo olakšaj i zadrži ivicu „nej”"}
+      - {en: "Toward falsetto: add more air", sr: "Ka falsetu: dodaj više vazduha"}
+      - {en: "Support is fading: push harder from the belly", sr: "Oslonac slabi: guraj jače iz stomaka"}
+    answer: 0
+  - id: V-053-8
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: pick 3 notes around your break on the piano and hold each for 5 seconds on 'nay'. Record and listen. Rate: steady pitch, same size, free throat. Then 3 quiet hums sliding down."
+      sr: "Samostalno: izaberi na klaviru 3 tona oko svog loma i drži svaki 5 sekundi na „nej”. Snimi i preslušaj. Oceni: mirna visina, ista veličina, slobodno grlo. Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,124 @@
+id: T-062
+track: T
+order: 62
+prereqs: [T-061]
+title: {en: "Binary form", sr: "Dvodelni oblik"}
+minutes: 12
+tags: [form, analysis, modulation]
+explain:
+  en: |
+    Form is the large-scale plan of a piece: which sections there are, which repeat, and which keys they visit. Letters name the sections: the same letter means the same music, a new letter means new music, a prime (A′) means a varied return.
+
+    **Binary form** (dvodelni oblik) has two parts, each usually repeated: **||: A :||: B :||**. It is the form of most Baroque dances (minuets, gavottes, the movements of Bach's suites) and of many folk tunes.
+
+    The key plan is what holds it together:
+    - **A** starts in the tonic and **ends in a new key**: the dominant (V) in a major piece, the relative major (III) or v in a minor piece. The end of A is therefore open: it is not home.
+    - **B** starts in (or near) that new key, often wanders, and **returns to the tonic** for the final cadence.
+
+    If B brings back the **opening of A** before the final cadence, the form is **rounded binary** (||: A :||: B A′ :||). If not, it is **simple binary**. Rounded binary is the bridge between binary and ternary (next lesson).
+
+    A short rounded binary in C (compressed: a real dance spends several bars in the new key):
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:C
+    |: "C" c e g | "F" a2 f | "D7" ^f d a | "G" g3 :|
+    |: "G7" g f d | "C" e2 c | "Dm" f e d | "G" d3 | "C" c e g | "F" a2 f | "G7" g B d | "C" c3 :|
+    ```
+
+    - A (bars 1–4) moves to G: the F♯ in bar 3 is G's leading tone, and A stops on G.
+    - B (bars 5–12) begins on G7, which pulls back toward C, reaches a half cadence (bar 8), then **bars 9–10 repeat the opening**: rounded binary.
+
+    Reading the repeats: play bars 1–4 twice, then bars 5–12 twice.
+  sr: |
+    Oblik je plan komada u velikom: koji delovi postoje, koji se ponavljaju i u koje tonalitete idu. Slova imenuju delove: isto slovo znači istu muziku, novo slovo novu muziku, a oznaka prim (A′) varirani povratak.
+
+    **Dvodelni oblik** ima dva dela, obično sa ponavljanjem svakog: **||: A :||: B :||**. To je oblik većine baroknih igara (menueti, gavote, stavovi Bahovih svita) i mnogih narodnih melodija.
+
+    Na okupu ga drži plan tonaliteta:
+    - **A** počinje u tonici i **završava se u novom tonalitetu**: u dominantnom (V) u durskom komadu, u paralelnom duru (III) ili v u molskom. Kraj A dela je zato otvoren: to nije dom.
+    - **B** počinje u tom novom tonalitetu (ili blizu njega), često luta, i **vraća se u toniku** za završnu kadencu.
+
+    Ako B pre završne kadence vrati **početak A dela**, oblik je **zaokruženi dvodelni** (||: A :||: B A′ :||). Ako ne, to je **prosti dvodelni**. Zaokruženi dvodelni oblik je most između dvodelnog i trodelnog (sledeća lekcija).
+
+    Kratak zaokruženi dvodelni oblik u C-duru (sažet: prava igra provede nekoliko taktova u novom tonalitetu):
+
+    ```abc
+    X:1
+    M:3/4
+    L:1/4
+    K:C
+    |: "C" c e g | "F" a2 f | "D7" ^f d a | "G" g3 :|
+    |: "G7" g f d | "C" e2 c | "Dm" f e d | "G" d3 | "C" c e g | "F" a2 f | "G7" g B d | "C" c3 :|
+    ```
+
+    - A (taktovi 1–4) ide ka G: Fis u 3. taktu je vođica za G, i A staje na G.
+    - B (taktovi 5–12) počinje akordom G7, koji vuče nazad ka C, stiže do polukadence (8. takt), a zatim **taktovi 9–10 ponavljaju početak**: zaokruženi dvodelni oblik.
+
+    Čitanje ponavljanja: taktovi 1–4 dvaput, pa taktovi 5–12 dvaput.
+exercises:
+  - id: T-062-1
+    type: mcq
+    prompt: {en: "Where does the A section of the example end, and what shows it?", sr: "Gde se završava A deo primera i šta to pokazuje?"}
+    options:
+      - {en: "On G, the dominant: F♯ (G's leading tone) in bar 3", sr: "Na G, dominanti: Fis (vođica za G) u 3. taktu"}
+      - {en: "On C, the tonic: a perfect cadence", sr: "Na C, tonici: savršena kadenca"}
+      - {en: "On A minor, the relative minor", sr: "Na a-molu, paralelnom molu"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: V7, notes: [D4, F#4, A4, C5]}
+      - numeral: {key: C, is: V7/V, notes: [D4, F#4, A4, C5]}
+  - id: T-062-2
+    type: mcq
+    prompt: {en: "Simple binary or rounded binary? Why?", sr: "Prosti ili zaokruženi dvodelni oblik? Zašto?"}
+    options:
+      - {en: "Rounded: the opening of A returns inside B (bars 9–10)", sr: "Zaokruženi: početak A dela se vraća unutar B dela (taktovi 9–10)"}
+      - {en: "Simple: B has new music", sr: "Prosti: B ima novu muziku"}
+      - {en: "Rounded: both halves are repeated", sr: "Zaokruženi: obe polovine se ponavljaju"}
+    answer: 0
+  - id: T-062-3
+    type: mcq
+    prompt: {en: "With all repeats, how many bars do you play?", sr: "Sa svim ponavljanjima, koliko taktova sviraš?"}
+    abc: |
+      X:1
+      M:3/4
+      L:1/4
+      K:C
+      |: "C" c e g | "F" a2 f | "D7" ^f d a | "G" g3 :|
+      |: "G7" g f d | "C" e2 c | "Dm" f e d | "G" d3 | "C" c e g | "F" a2 f | "G7" g B d | "C" c3 :|
+    options: ["24", "12", "16", "20"]
+    answer: 0
+  - id: T-062-4
+    type: mcq
+    prompt: {en: "A binary dance in D minor. Where does its first half most likely end?", sr: "Igra u dvodelnom obliku u d-molu. Gde se njen prvi deo najverovatnije završava?"}
+    options:
+      - {en: "In F major (III), or in A minor (v)", sr: "U F-duru (III) ili u a-molu (v)"}
+      - {en: "In D minor, with a perfect cadence", sr: "U d-molu, savršenom kadencom"}
+      - {en: "In E♭ major", sr: "U Es-duru"}
+      - {en: "In D major", sr: "U D-duru"}
+    answer: 0
+    checks:
+      - keysig: {key: D, mode: minor, is: -1}
+      - keysig: {key: F, is: -1}
+      - keysig: {key: A, mode: minor, is: 0}
+      - roman: {key: D, type: natural-minor, degree: 3, is: III}
+  - id: T-062-5
+    type: mcq
+    prompt: {en: "Listen to the A section. How does it end?", sr: "Slušaj A deo. Kako se završava?"}
+    options:
+      - {en: "Open: on G, led in by F♯", sr: "Otvoreno: na G, do kojeg vodi Fis"}
+      - {en: "Closed: on C, the tonic", sr: "Zatvoreno: na C, tonici"}
+      - {en: "On A, the 6th degree", sr: "Na A, 6. stupnju"}
+    answer: 0
+    play: {notes: [C5, E5, G5, A5, F5, F#5, D5, A5, G5], durations: [1, 1, 1, 2, 1, 1, 1, 1, 3], tempo: 100}
+  - id: T-062-6
+    type: mcq
+    prompt: {en: "Which scheme is rounded binary?", sr: "Koja shema je zaokruženi dvodelni oblik?"}
+    options:
+      - {en: "||: A :||: B A′ :||", sr: "||: A :||: B A′ :||"}
+      - {en: "||: A :||: B :||", sr: "||: A :||: B :||"}
+      - {en: "A B A (three parts)", sr: "A B A (tri dela)"}
+      - {en: "A A B A (four sections)", sr: "A A B A (četiri odseka)"}
+    answer: 0

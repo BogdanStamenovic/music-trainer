@@ -1,0 +1,143 @@
+id: V-048
+track: V
+order: 48
+title: {en: "Twang: bright, efficient, not louder", sr: "Tvang: svetlo, efikasno, ne glasnije"}
+prereqs: [V-047, V-041]
+minutes: 10
+tags: [voice, resonance, twang]
+explain:
+  en: |
+    **Twang** (Serbian: *tvang*) is a narrowing of the small tube **just above the vocal folds** (the *epilaryngeal tube*, closed down a little by the aryepiglottic folds).
+    You have already used it: the bratty "nay" of lesson 29 and the bright colour of lesson 41 both contain some.
+
+    Why it matters: that narrowed tube boosts the sound around **2 to 4 kHz**, the region where the human ear is most sensitive. The result **carries** and sounds
+    stronger to a listener **at the same effort**. That is the whole point: twang is the efficient way to be heard, the opposite of pushing.
+    It is also the ingredient that later makes a safe, speech-like "call" possible (the next lessons).
+
+    How to find it (keep each one tiny and quiet):
+
+    - a **witch's cackle**: "nyeh-heh-heh";
+    - a **whiny child**: "nyaaa", like asking for one more cookie;
+    - a **duck quack**, or a toy trumpet.
+
+    Two things twang is **not**:
+
+    | not | test |
+    |---|---|
+    | **louder** | sing "nyah" without and with twang at the same volume. The twanged one should only sound brighter and closer, not bigger. If your effort went up, it was volume. |
+    | **nasal** | hold the note on "ah" or "ee" and pinch your nose. Oral twang does not change. If the sound stops or gets stuffy, air was going through the nose: lift the soft palate a little (a small inner yawn). |
+
+    Dose: a **little** twang (think 20%) gives a clear, speech-like ring; full twang is shrill and tiring to listen to. Use it like spice. If the throat feels squeezed,
+    the narrowing is happening at the folds instead of above them: go back to the cackle, smaller.
+
+    The app grades pitch only; brightness is for your ears. Record the with/without pairs and listen.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Tvang** (engl. *twang*) je suženje male cevi **tik iznad glasnica** (*epilaringealna cev*, koju malo sužavaju arieepiglotični nabori).
+    Već si ga koristio: zadirkujuće „nej” iz 29. lekcije i svetla boja iz 41. lekcije oba ga sadrže.
+
+    Zašto je važan: ta sužena cev pojačava zvuk oko **2 do 4 kHz**, u oblasti gde je ljudsko uho najosetljivije. Zvuk zato **nosi** i slušaocu zvuči
+    jače **uz isti napor**. To je cela poenta: tvang je efikasan način da se čuješ, suprotno od guranja.
+    On je i sastojak koji kasnije omogućava bezbedan, govorni „poziv” (sledeće lekcije).
+
+    Kako da ga nađeš (svaki neka bude sitan i tih):
+
+    - **veštičji kikot**: „nje-he-he”;
+    - **dete koje cmizdri**: „njaaa”, kao kad traži još jedan keks;
+    - **pačje kvakanje** ili trubica igračka.
+
+    Dve stvari koje tvang **nije**:
+
+    | nije | provera |
+    |---|---|
+    | **glasnije** | otpevaj „nja” bez i sa tvangom iste jačine. Ono sa tvangom treba samo da zvuči svetlije i bliže, ne veće. Ako ti je napor porastao, to je bila jačina. |
+    | **nazalno** | drži ton na „a” ili „i” i stisni nos. Oralni tvang se ne menja. Ako zvuk prestane ili postane zapušen, vazduh je išao kroz nos: malo podigni meko nepce (malo unutrašnjeg zevanja). |
+
+    Doza: **malo** tvanga (zamisli 20%) daje jasno, govorno zvonjenje; pun tvang je resak i zamoran za slušanje. Koristi ga kao začin. Ako se grlo oseća stisnuto,
+    suženje se dešava na glasnicama umesto iznad njih: vrati se na kikot, manji.
+
+    Aplikacija ocenjuje samo visinu; svetlina je za tvoje uši. Snimi parove bez/sa tvangom i preslušaj.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-048-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-048-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then speak, tiny and quiet: a witch's cackle 'nyeh-heh-heh', a whiny 'nyaaa', a duck quack. Then the nose-pinch test on 'ee': does the sound stay the same?"
+      sr: "Zagrevanje: 4 niska udaha, 3 sirene treperenjem usana, pa izgovori, sitno i tiho: veštičji kikot „nje-he-he”, cmizdravo „njaaa”, pačje kvakanje. Pa proba sa stisnutim nosom na „i”: da li zvuk ostaje isti?"
+  - id: V-048-3
+    type: sing-pitch
+    prompt:
+      en: "Without twang: 'ah' on the note, 3 seconds, a plain speaking volume. Remember the volume."
+      sr: "Bez tvanga: „a” na tonu, 3 sekunde, obična jačina govora. Zapamti tu jačinu."
+    notes: [D4]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-048-4
+    type: sing-pitch
+    prompt:
+      en: "With twang: the same note on 'nyah', 3 seconds, a little of the cackle in it. Same volume as before; only brighter and closer."
+      sr: "Sa tvangom: isti ton na „nja”, 3 sekunde, sa malo kikota u njemu. Ista jačina kao malopre; samo svetlije i bliže."
+    notes: [D4]
+    sustain: 3
+    tolerance: 50
+    pass: 0.65
+  - id: V-048-5
+    type: sing-phrase
+    prompt:
+      en: "5-4-3-2-1 on 'nyeh' with a little twang. If the top note gets louder instead of brighter, start again quieter."
+      sr: "5-4-3-2-1 na „nje” sa malo tvanga. Ako gornji ton postane glasniji umesto svetliji, počni ponovo tiše."
+    notes: [G4, F4, E4, D4, C4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+  - id: V-048-6
+    type: sing-phrase
+    prompt:
+      en: "1-3-5-3-1 on 'mee', twang dialled up and down: plain on 1, twanged on 3 and 5, plain again on the way down. Volume flat the whole time."
+      sr: "1-3-5-3-1 na „mi”, tvang gore pa dole: obično na 1, sa tvangom na 3 i 5, opet obično na putu naniže. Jačina ista sve vreme."
+    notes: [D4, F#4, A4, F#4, D4]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - chord: {notes: [D4, F#4, A4], root: D, quality: maj, inversion: 0}
+  - id: V-048-7
+    type: mcq
+    prompt:
+      en: "Why does a twanged sound carry further without more effort?"
+      sr: "Zašto zvuk sa tvangom nosi dalje bez više napora?"
+    options:
+      - {en: "It boosts the 2-4 kHz region, where the ear is most sensitive", sr: "Pojačava oblast 2-4 kHz, gde je uho najosetljivije"}
+      - {en: "It uses more air", sr: "Koristi više vazduha"}
+      - {en: "It sends the sound through the nose", sr: "Šalje zvuk kroz nos"}
+      - {en: "It makes the vocal folds press harder", sr: "Tera glasnice da jače pritiskaju"}
+    answer: 0
+  - id: V-048-8
+    type: mcq
+    prompt:
+      en: "You hold 'ee' with twang and pinch your nose; the sound goes stuffy and nearly stops. What does that tell you?"
+      sr: "Držiš „i” sa tvangom i stisneš nos; zvuk postane zapušen i skoro prestane. Šta ti to govori?"
+    options:
+      - {en: "It was nasal, not oral twang: lift the soft palate a little", sr: "Bilo je nazalno, ne oralni tvang: malo podigni meko nepce"}
+      - {en: "It was perfect twang", sr: "Bio je savršen tvang"}
+      - {en: "You need to sing louder", sr: "Treba da pevaš glasnije"}
+    answer: 0
+  - id: V-048-9
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-check: record the first line of 'Ode to Joy' twice, plain and with a little twang, at the same volume. Listen back. Rate: was the twanged one brighter without being louder, and did the pinch test stay clean? Then 3 quiet hums sliding down."
+      sr: "Samoprocena: snimi prvi red „Ode radosti” dva puta, obično i sa malo tvanga, iste jačine. Preslušaj. Oceni: da li je verzija sa tvangom bila svetlija, a ne glasnija, i da li je proba sa stisnutim nosom prošla čisto? Pa 3 tiha pevušenja uz klizanje naniže."

@@ -1,0 +1,154 @@
+id: V-050
+track: V
+order: 50
+title: {en: "Belt intro I: what belt is, and the safe \"call\" (low intensity)", sr: "Uvod u belting I: šta je belting i bezbedan „poziv” (nizak intenzitet)"}
+prereqs: [V-049, V-046, V-036, V-035]
+minutes: 12
+tags: [voice, belt]
+explain:
+  en: |
+    **Belt** (Serbian: *belting*) is the strong, bright, speech-like sound of musical theatre, pop, gospel and rock in the middle and upper-middle range.
+    Compared with the light mix it has **more vocal-fold contact** (the speaking, chest-like setting carried a little higher), a **slightly higher larynx**, **twang**
+    (lesson 48) and a more open, speech-shaped mouth. Its everyday ancestor is the **call**: "Hey! Over here!" to a friend across a room.
+
+    A call is **not a shout**. A shout is pressure without coordination: the throat squeezes, the sound gets harsh and you are hoarse after a few. A good call is efficient:
+    the voice is clear, the throat is free, and you could do it again in a minute without any trace.
+
+    Done well, belting is a normal use of the voice; done pushed, it is the fastest way to get hoarse. That is why this course introduces it **at low intensity** and only now,
+    after the pieces it is made of:
+
+    | piece | from |
+    |---|---|
+    | support: steady breath, not a push | lessons 2, 36 |
+    | a balanced, clean onset (no glottal "hit") | lessons 5, 35 |
+    | light mix: the coordination a call sits on | lessons 29-30, 46 |
+    | twang: carrying without volume | lesson 48 |
+    | speech level: singing = talking | lesson 49 |
+
+    **The rules for every belt exercise in this course:**
+
+    1. **Short.** One word or a short phrase, at most 3 notes. No long belted holds.
+    2. **Mid range only.** The app places every call in the **middle** of your comfortable range. No high belt; if a call feels high today, skip it.
+    3. **Volume cap: calling across a room.** Never across a street, never "as loud as I can".
+    4. **Rest between reps:** about 20 seconds of quiet breathing after every call. At most 10 calls today.
+    5. **No grit, rasp or distortion**, no "rock" scratch. Clean sound only.
+
+    **Why louder is never better here:** the app grades **pitch only**, plus your own self-rating of ease. A louder call does not score higher, and the self-ratings ask
+    whether it was easy, so pushing *lowers* your result. The microphone cannot measure whether a sound is healthy; that is why the score does not try to reward size.
+
+    **Stop protocol.** Stop the belt work at once, and end voice work for today, if you notice any of: a scratch or tickle, the urge to cough or clear the throat,
+    strain or a tight neck, hoarseness, pain, or the voice going breathy or cracking afterwards. Rest, drink water, talk little. If hoarseness lasts more than
+    **two weeks**, see an ENT doctor (laryngologist). Do not wait two weeks if the voice suddenly goes hoarse or drops out during a call, or if it hurts sharply: see a doctor promptly.
+  sr: |
+    **Belting** (engl. *belt*) je jak, svetao, govorni zvuk mjuzikla, popa, gospela i roka u srednjem i višem srednjem opsegu.
+    U poređenju sa laganim miksom ima **više dodira glasnica** (govorno, grudno podešavanje poneseno malo više), **malo viši grkljan**, **tvang**
+    (48. lekcija) i otvorenija usta oblikovana kao u govoru. Njegov svakodnevni predak je **poziv**: „Hej! Ovamo!” prijatelju na drugom kraju sobe.
+
+    Poziv **nije vika**. Vika je pritisak bez koordinacije: grlo se steže, zvuk postaje grub i posle nekoliko si promukao. Dobar poziv je efikasan:
+    glas je jasan, grlo slobodno, i mogao bi da ga ponoviš za minut bez ikakvog traga.
+
+    Kad se radi dobro, belting je normalna upotreba glasa; kad se gura, to je najbrži put do promuklosti. Zato ga ovaj kurs uvodi **u niskom intenzitetu** i tek sada,
+    posle delova od kojih je sastavljen:
+
+    | deo | iz |
+    |---|---|
+    | oslonac: miran dah, ne guranje | 2. i 36. lekcija |
+    | uravnotežena, čista ataka (bez „udarca” grlom) | 5. i 35. lekcija |
+    | lagani miks: koordinacija na kojoj poziv stoji | 29-30. i 46. lekcija |
+    | tvang: nošenje bez jačine | 48. lekcija |
+    | nivo govora: pevanje = pričanje | 49. lekcija |
+
+    **Pravila za svaku belting vežbu u ovom kursu:**
+
+    1. **Kratko.** Jedna reč ili kratka fraza, najviše 3 tona. Bez dugih držanih tonova u beltingu.
+    2. **Samo srednji opseg.** Aplikacija svaki poziv stavlja u **sredinu** tvog udobnog opsega. Bez visokog beltinga; ako ti poziv danas deluje visoko, preskoči ga.
+    3. **Granica jačine: poziv preko sobe.** Nikad preko ulice, nikad „koliko god mogu”.
+    4. **Odmor između ponavljanja:** oko 20 sekundi tihog disanja posle svakog poziva. Najviše 10 poziva danas.
+    5. **Bez hrapavosti, šuštanja i distorzije**, bez „rok” grebanja. Samo čist zvuk.
+
+    **Zašto glasnije ovde nikad nije bolje:** aplikacija ocenjuje **samo visinu**, plus tvoju samoprocenu lakoće. Glasniji poziv ne donosi veću ocenu, a samoprocene pitaju
+    da li je bilo lako, pa guranje *smanjuje* tvoj rezultat. Mikrofon ne može da izmeri da li je zvuk zdrav; zato ocena ni ne pokušava da nagradi veličinu.
+
+    **Protokol za prekid.** Odmah prekini belting, i završi rad sa glasom za danas, ako primetiš bilo šta od ovoga: grebanje ili golicanje, potrebu da kašlješ ili pročistiš grlo,
+    naprezanje ili stegnut vrat, promuklost, bol, ili da glas posle postane vazdušast ili puca. Odmori, pij vodu, malo pričaj. Ako promuklost traje duže od
+    **dve nedelje**, idi kod lekara ORL (laringologa). Ne čekaj dve nedelje ako glas tokom poziva naglo promukne ili nestane, ili ako oštro zaboli: odmah idi kod lekara.
+exercises:
+  - id: V-050-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel? (Belt work only on a 'fine' day.)"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Belting samo kad je glas „dobro”.)"
+  - id: V-050-2
+    type: practice
+    minutes: 3
+    prompt:
+      en: "Warm-up (longer today): 4 low breaths, 3 lip-trill sirens through the break, bratty 'nay' 5-4-3-2-1 twice, a tiny witch's cackle, then talk a few lines aloud in a lively voice."
+      sr: "Zagrevanje (danas duže): 4 niska udaha, 3 sirene treperenjem usana kroz lom, zadirkujuće „nej” 5-4-3-2-1 dva puta, sitan veštičji kikot, pa naglas izgovori nekoliko redova živim glasom."
+  - id: V-050-3
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "The volume ladder, spoken: say 'Hey!' (1) to someone next to you, (2) across a table, (3) across a room. Stop at 3: that is the cap for all belt work. Rest 20 seconds between rungs. Rate: did 3 stay clear and free, with no squeeze?"
+      sr: "Lestvica jačine, izgovoreno: reci „Hej!” (1) nekome pored sebe, (2) preko stola, (3) preko sobe. Stani na 3: to je granica za sav belting. Odmor 20 sekundi između prečki. Oceni: da li je 3 ostalo jasno i slobodno, bez stezanja?"
+  - id: V-050-4
+    type: sing-pitch
+    fitRange: lowmid
+    prompt:
+      en: "Call 1: 'Hey!' on the note, a short call across a room, about one second. Bright, speech-shaped 'eh', a clean start from support (no glottal hit). Then rest 20 seconds."
+      sr: "Poziv 1: „Hej!” na tonu, kratak poziv preko sobe, oko jedne sekunde. Svetlo, govorno „e”, čist početak iz oslonca (bez udarca grlom). Pa odmor 20 sekundi."
+    notes: [E4]
+    sustain: 1
+    tolerance: 75
+    pass: 0.6
+  - id: V-050-5
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Call 2: the playground call, a falling minor 3rd (5 to 3): 'Hel-lo!' across a room. The second note no louder than the first. Then rest 20 seconds."
+      sr: "Poziv 2: dečji poziv, mala terca naniže (5 pa 3): „Ha-lo!” preko sobe. Drugi ton ne glasniji od prvog. Pa odmor 20 sekundi."
+    notes: [G4, E4]
+    beats: [1, 2]
+    tempo: 80
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - interval: {from: E4, to: G4, is: m3}
+  - id: V-050-6
+    type: sing-phrase
+    fitRange: lowmid
+    prompt:
+      en: "Call 3: the same call a whole step lower, 'Hey, you!'. If either call felt like shouting, do this one at the 'across a table' level instead. Then rest 20 seconds."
+      sr: "Poziv 3: isti poziv celi stepen niže, „Hej, ti!”. Ako je neki poziv delovao kao vika, ovaj uradi na nivou „preko stola”. Pa odmor 20 sekundi."
+    notes: [F4, D4]
+    beats: [1, 2]
+    tempo: 80
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - interval: {from: D4, to: F4, is: m3}
+  - id: V-050-7
+    type: mcq
+    prompt:
+      en: "After your third call there is a tickle in your throat and you want to clear it. What now?"
+      sr: "Posle trećeg poziva golica te u grlu i želiš da ga pročistiš. Šta sad?"
+    options:
+      - {en: "Stop belt work and voice work for today; rest and drink water", sr: "Prekini belting i rad sa glasom za danas; odmori i pij vodu"}
+      - {en: "Clear the throat hard and continue", sr: "Snažno pročisti grlo i nastavi"}
+      - {en: "Do the remaining calls quieter but finish the lesson", sr: "Ostale pozive uradi tiše, ali završi lekciju"}
+    answer: 0
+  - id: V-050-8
+    type: mcq
+    prompt:
+      en: "You sing call 2 much louder and the score is the same as before. Why?"
+      sr: "Otpevaš drugi poziv mnogo glasnije i ocena je ista kao pre. Zašto?"
+    options:
+      - {en: "Only pitch is graded; size never earns points, and the ease rating goes down when you push", sr: "Ocenjuje se samo visina; veličina nikad ne donosi poene, a ocena lakoće pada kad guraš"}
+      - {en: "The microphone was too far away", sr: "Mikrofon je bio predaleko"}
+      - {en: "It was not loud enough yet", sr: "Još nije bilo dovoljno glasno"}
+    answer: 0
+  - id: V-050-9
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "Self-rating and cool-down: rate ease (free / some effort / squeezed), volume (stayed under the cap?) and aftermath (no scratch, no hoarseness?). Then 3 quiet 'oo' sirens down and 3 soft hums. Talk little for the next 10 minutes."
+      sr: "Samoprocena i smirivanje: oceni lakoću (slobodno / malo napora / stisnuto), jačinu (ispod granice?) i posledice (bez grebanja, bez promuklosti?). Pa 3 tihe sirene na „u” naniže i 3 tiha pevušenja. Sledećih 10 minuta malo pričaj."

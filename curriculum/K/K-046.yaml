@@ -1,0 +1,149 @@
+id: K-046
+track: K
+order: 46
+title: {en: "Review: a lead sheet with a modulation", sr: "Ponavljanje: lead sheet sa modulacijom"}
+prereqs: [K-043, K-036]
+minutes: 15
+tags: [keys, lead-sheet, modulation, review]
+explain:
+  en: |
+    This review puts K-035/K-036 (pivot-chord modulation) into a lead sheet like K-043. An
+    original 8-bar tune in C that ends in G:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"E G c2 | "F"A G "G7"F D | "C"E2 C2 | "Am"C E A c |
+    "D7"c B A ^F | "G"G2 B2 | "Am7"c2 "D7"A ^F | "G"G4 |]
+    ```
+
+    Read it the way you would at a rehearsal, before playing a note:
+
+    1. **Key signature and first bars:** C major, confirmed by I – IV – V7 – I (bars 1–3).
+    2. **First foreign accidental:** F♯ in bar 5, inside **D7**. That is where the key
+       changes.
+    3. **Pivot:** the chord just before it, **Am** in bar 4: vi in C, ii in G.
+    4. **Confirmation:** ii7 – V7 – I in G in bars 7–8 (Am7 – D7 – G). The tune does not go
+       back: it **ends in G**. Like the first half of many songs, it finishes in the dominant
+       key, and the second half (not written here) would bring it home.
+
+    Left-hand voicings, the K-043 way (root-position triads; 7th chords as root, 3rd and 7th):
+
+    | C | F | G7 | Am | D7 | G | Am7 |
+    |---|---|---|---|---|---|---|
+    | C3 E3 G3 | F2 A2 C3 | G2 F3 B3 | A2 C3 E3 | D3 F♯3 C4 | G2 B2 D3 | A2 C3 G3 |
+
+    Write the numerals above the chords in pencil (C: I IV V7 I vi = G: ii, then G: V7 I
+    ii7 V7 I). Playing from analysed chords is faster than reading every note, and it is
+    what lets you transpose the whole thing in the last exercise.
+  sr: |
+    Ovo ponavljanje stavlja K-035/K-036 (modulaciju preko akorda-mosta) u lead sheet kao u
+    K-043. Originalna tema od 8 taktova u C-duru koja se završava u G-duru:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    "C"E G c2 | "F"A G "G7"F D | "C"E2 C2 | "Am"C E A c |
+    "D7"c B A ^F | "G"G2 B2 | "Am7"c2 "D7"A ^F | "G"G4 |]
+    ```
+
+    Pročitaj je kao na probi, pre nego što odsviraš i jedan ton:
+
+    1. **Predznak i prvi taktovi:** C-dur, potvrđen sa I – IV – V7 – I (taktovi 1–3).
+    2. **Prvi strani predznak:** Fis u 5. taktu, u **D7**. Tu se menja tonalitet.
+    3. **Most:** akord neposredno pre toga, **Am** u 4. taktu: vi u C-duru, ii u G-duru.
+    4. **Potvrda:** ii7 – V7 – I u G-duru u taktovima 7–8 (Am7 – D7 – G). Tema se ne vraća:
+       **završava se u G-duru**. Kao prva polovina mnogih pesama, završava u tonalitetu
+       dominante, a druga polovina (ovde nije zapisana) bi je vratila kući.
+
+    Rasporedi leve ruke, kao u K-043 (kvintakordi u osnovnom položaju; septakordi kao osnovni
+    ton, terca i septima):
+
+    | C | F | G7 | Am | D7 | G | Am7 |
+    |---|---|---|---|---|---|---|
+    | C3 E3 G3 | F2 A2 C3 | G2 F3 H3 | A2 C3 E3 | D3 Fis3 C4 | G2 H2 D3 | A2 C3 G3 |
+
+    Upiši olovkom stupnjeve iznad akorda (C: I IV V7 I vi = G: ii, zatim G: V7 I ii7 V7 I).
+    Sviranje iz analiziranih akorda je brže od čitanja svakog tona, i baš to ti omogućava da
+    celu stvar transponuješ u poslednjoj vežbi.
+exercises:
+  - id: K-046-1
+    type: mcq
+    prompt: {en: "Which chord is the pivot in this lead sheet?", sr: "Koji akord je most u ovom lead sheet-u?"}
+    options:
+      - {en: "Am in bar 4 (C: vi = G: ii)", sr: "Am u 4. taktu (C: vi = G: ii)"}
+      - {en: "D7 in bar 5", sr: "D7 u 5. taktu"}
+      - {en: "G7 in bar 2", sr: "G7 u 2. taktu"}
+      - {en: "F in bar 2", sr: "F u 2. taktu"}
+    answer: 0
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n\"C\"E G c2 | \"F\"A G \"G7\"F D | \"C\"E2 C2 | \"Am\"C E A c |\n\"D7\"c B A ^F | \"G\"G2 B2 | \"Am7\"c2 \"D7\"A ^F | \"G\"G4 |]"
+    checks:
+      - numeral: {key: C, is: "vi", notes: [A2, C3, E3]}
+      - numeral: {key: G, is: "ii", notes: [A2, C3, E3]}
+      - numeral: {key: G, is: "V7", notes: [D3, "F#3", A3, C4]}
+  - id: K-046-2
+    type: mcq
+    prompt: {en: "In bars 7–8 (Am7 – D7 – G), the numerals in G are…", sr: "U taktovima 7–8 (Am7 – D7 – G), stupnjevi u G-duru su…"}
+    options: ["ii7 – V7 – I", "vi7 – V7/V – V", "ii7 – V7/V – I", "iv7 – V7 – i"]
+    answer: 0
+    checks:
+      - numeral: {key: G, is: "ii7", notes: [A2, C3, E3, G3]}
+      - numeral: {key: G, is: "V7", notes: [D3, "F#3", A3, C4]}
+      - numeral: {key: G, is: "I", notes: [G2, B2, D3]}
+      - numeral: {key: C, is: "vi7", notes: [A2, C3, E3, G3]}
+      - numeral: {key: C, is: "V7/V", notes: [D3, "F#3", A3, C4]}
+  - id: K-046-3
+    type: midi-play
+    prompt: {en: "Bars 4–8, hands together (from the pivot to the end), each left-hand chord with the melody note above it, ♩=80.", sr: "Taktovi 4–8, obe ruke (od mosta do kraja), svaki akord leve ruke sa tonom melodije iznad njega, ♩=80."}
+    mode: chords
+    expectChords: [[A2, C3, E3, C4], [E4], [A4], [C5], [D3, "F#3", C4, C5], [B4], [A4], ["F#4"], [G2, B2, D3, G4], [B4], [A2, C3, G3, C5], [D3, "F#3", C4, A4], ["F#4"], [G2, B2, D3, G4]]
+    beats: [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 4]
+    tempo: 80
+    checks:
+      - numeral: {key: G, is: "ii", notes: [A2, C3, E3, C4]}
+      - chord: {notes: [D3, "F#3", C4, C5], root: D, quality: "7", inversion: 0}
+      - numeral: {key: G, is: "I", notes: [G2, B2, D3, G4]}
+      - chord: {notes: [A2, C3, G3, C5], root: A, quality: min7, inversion: 0}
+      - chord: {notes: [D3, "F#3", C4, A4], root: D, quality: "7", inversion: 0}
+  - id: K-046-4
+    type: midi-play
+    prompt: {en: "Left hand alone, all 8 bars from the lead sheet, notes hidden: chords where the symbols stand, ♩=88.", sr: "Samo leva ruka, svih 8 taktova iz lead sheet-a, bez prikaza tonova: akordi tamo gde stoje oznake, ♩=88."}
+    abc: "X:1\nM:4/4\nL:1/4\nK:C\n\"C\"E G c2 | \"F\"A G \"G7\"F D | \"C\"E2 C2 | \"Am\"C E A c |\n\"D7\"c B A ^F | \"G\"G2 B2 | \"Am7\"c2 \"D7\"A ^F | \"G\"G4 |]"
+    mode: chords
+    expectChords: [[C3, E3, G3], [F2, A2, C3], [G2, F3, B3], [C3, E3, G3], [A2, C3, E3], [D3, "F#3", C4], [G2, B2, D3], [A2, C3, G3], [D3, "F#3", C4], [G2, B2, D3]]
+    beats: [4, 2, 2, 4, 4, 4, 4, 2, 2, 4]
+    tempo: 88
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - numeral: {key: C, is: "I", notes: [C3, E3, G3]}
+      - numeral: {key: C, is: "IV", notes: [F2, A2, C3]}
+      - chord: {notes: [G2, F3, B3], root: G, quality: "7", inversion: 0}
+      - chord: {notes: [D3, "F#3", C4], root: D, quality: "7", inversion: 0}
+  - id: K-046-5
+    type: generated
+    prompt: {en: "The tune's harmony in other keys, written in the starting key: I – IV – V7 – I – vi – V7/V – V", sr: "Harmonija teme u drugim tonalitetima, zapisana u polaznom tonalitetu: I – IV – V7 – I – vi – V7/V – V"}
+    count: 3
+    gen: {kind: progression, keys: [F, D, Bb, A], numerals: [I, IV, V7, I, vi, V7/V, V], tempo: 72, smooth: true}
+  - id: K-046-6
+    type: mcq
+    prompt: {en: "You transpose the lead sheet to F major. Where does it end, and what is the first foreign note?", sr: "Transponuješ lead sheet u F-dur. Gde se završava, i koji je prvi strani ton?"}
+    options:
+      - {en: "In C major; B♮ in G7 (bar 5)", sr: "U C-duru; H u G7 (5. takt)"}
+      - {en: "In B♭ major; E♭ in F7", sr: "U B-duru; Es u F7"}
+      - {en: "In D minor; C♯ in A7", sr: "U d-molu; Cis u A7"}
+      - {en: "In F major; it does not modulate", sr: "U F-duru; ne modulira"}
+    answer: 0
+    checks:
+      - numeral: {key: F, is: "V7/V", notes: [G3, B3, D4, F4]}
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - numeral: {key: F, is: "vi", notes: [D3, F3, A3]}
+  - id: K-046-7
+    type: practice
+    prompt: {en: "Play the whole lead sheet hands together in C, then in F (pivot Dm, new note B♮ in G7, ending in C), reading from your pencilled numerals rather than the notes. Then add a second half of your own (8 bars) that goes back from G to C: G7 is the easiest way home.", sr: "Odsviraj ceo lead sheet obema rukama u C-duru, pa u F-duru (most Dm, novi ton H u G7, završetak u C-duru), čitajući sa olovkom upisanih stupnjeva umesto tonova. Zatim dodaj sopstvenu drugu polovinu (8 taktova) koja se vraća iz G u C: G7 je najlakši put kući."}
+    minutes: 5

@@ -1,0 +1,133 @@
+id: T-060
+track: T
+order: 60
+prereqs: [T-059]
+title: {en: "The diminished seventh chord: four resolutions", sr: "Smanjeni septakord: četiri razrešenja"}
+minutes: 14
+tags: [harmony, chromatic, modulation, minor]
+explain:
+  en: |
+    The diminished seventh chord (vii°7, T-040) is built of **minor 3rds only**: B D F A♭ in C minor. The interval from A♭ back up to B is an augmented 2nd, which *sounds* like another minor 3rd (3 semitones). So the chord divides the octave into four equal parts, and **no note sounds like the root**. Turn it upside down and it sounds the same.
+
+    Consequences you can check on the keyboard:
+    - There are only **three** different-sounding diminished 7ths (12 notes ÷ 4). Play C–E♭–G♭–A, then C♯–E–G–B♭, then D–F–A♭–B: the next one, E♭–G♭–A–C, is the first again.
+    - Any of the four notes can act as the **leading tone**. Respell the chord so that note is the root, and it resolves a half step up to a different tonic.
+
+    One sound, four spellings, four keys (minor 3rds apart):
+
+    | spelling | vii°7 of | leading tone → tonic |
+    |---|---|---|
+    | B D F A♭ | C minor | B → C |
+    | D F A♭ C♭ | E♭ minor | D → E♭ |
+    | E♯ G♯ B D | F♯ minor | E♯ → F♯ |
+    | G♯ B D F | A minor | G♯ → A |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "^c: vii°7"[=B,DF_A] "^i"[C_EG] | "^e♭: vii°7"[DF_A_c] "^i"[_E_G_B] | "^f♯: vii°7"[^E^G=Bd] "^i"[^FA^c] | "^a: vii°7"[^G=B=d=f] "^i"[Ace] |]
+    ```
+
+    (The resolutions are minor; they can also be major.) This is **enharmonic modulation** (enharmonska modulacija): the pivot is a chord whose *spelling* changes between the keys. A composer arrives on vii°7 of C minor, the listener expects C, and the same sound resolves to A minor instead. Beethoven and every film score use it for sudden, dramatic turns.
+
+    Voice-leading reminder for every resolution: the root (leading tone) rises a half step, the 7th falls a step.
+  sr: |
+    Smanjeni septakord (vii°7, T-040) sastoji se **samo od malih terci**: H D F As u c-molu. Interval od As naviše do H je prekomerna sekunda, koja *zvuči* kao još jedna mala terca (3 polustepena). Zato akord deli oktavu na četiri jednaka dela, i **nijedan ton ne zvuči kao osnovni**. Obrni ga i zvuči isto.
+
+    Posledice koje možeš proveriti na klavijaturi:
+    - Postoje samo **tri** smanjena septakorda različitog zvuka (12 tonova ÷ 4). Odsviraj C–Es–Ges–A, pa Cis–E–G–B, pa D–F–As–H: sledeći, Es–Ges–A–C, je ponovo prvi.
+    - Svaki od četiri tona može biti **vođica**. Enharmonski preimenuj akord tako da taj ton bude osnovni, i on se razrešava polustepen naviše u drugu toniku.
+
+    Jedan zvuk, četiri zapisa, četiri tonaliteta (na razmaku male terce):
+
+    | zapis | vii°7 od | vođica → tonika |
+    |---|---|---|
+    | H D F As | c-mol | H → C |
+    | D F As Ces | es-mol | D → Es |
+    | Eis Gis H D | fis-mol | Eis → Fis |
+    | Gis H D F | a-mol | Gis → A |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    "^c: vii°7"[=B,DF_A] "^i"[C_EG] | "^es: vii°7"[DF_A_c] "^i"[_E_G_B] | "^fis: vii°7"[^E^G=Bd] "^i"[^FA^c] | "^a: vii°7"[^G=B=d=f] "^i"[Ace] |]
+    ```
+
+    (Razrešenja su molska; mogu biti i durska.) Ovo je **enharmonska modulacija**: most je akord čiji se *zapis* menja između tonaliteta. Kompozitor stigne na vii°7 c-mola, slušalac očekuje C, a isti zvuk se razreši u a-mol. Betoven i svaka filmska muzika koriste to za iznenadne, dramatične obrte.
+
+    Podsetnik za vođenje glasova kod svakog razrešenja: osnovni ton (vođica) ide polustepen naviše, septima silazi za stupanj.
+exercises:
+  - id: T-060-1
+    type: notation-input
+    prompt: {en: "Spell vii°7 of C minor (root, 3rd, 5th, 7th).", sr: "Napiši vii°7 c-mola (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: C4, type: harmonic-minor, numerals: ["vii°7"]}}
+    expect: [B, D, F, Ab]
+    checks:
+      - chord: {notes: [B3, D4, F4, Ab4], root: B, quality: dim7}
+  - id: T-060-2
+    type: notation-input
+    prompt: {en: "Respell the same sound as vii°7 of A minor (root, 3rd, 5th, 7th).", sr: "Zapiši isti zvuk kao vii°7 a-mola (osnovni ton, terca, kvinta, septima)."}
+    derive: {roman: {key: A4, type: harmonic-minor, numerals: ["vii°7"]}}
+    expect: [G#, B, D, F]
+    checks:
+      - semitones: {from: Ab4, to: G#4, is: 0}
+      - chord: {notes: [G#4, B4, D5, F5], root: G#, quality: dim7}
+  - id: T-060-3
+    type: mcq
+    prompt: {en: "D F A♭ C♭ is vii°7 of which key?", sr: "D F As Ces je vii°7 kog tonaliteta?"}
+    options:
+      - {en: "E♭ minor", sr: "es-mol"}
+      - {en: "D minor", sr: "d-mol"}
+      - {en: "C minor", sr: "c-mol"}
+      - {en: "B♭ minor", sr: "b-mol"}
+    answer: 0
+    checks:
+      - numeral: {key: Eb, type: harmonic-minor, is: "vii°7", notes: [D4, F4, Ab4, Cb5]}
+      - numeral: {key: F#, type: harmonic-minor, is: "vii°7", notes: [E#4, G#4, B4, D5]}
+      - numeral: {key: C, type: harmonic-minor, is: "vii°7", notes: [B3, D4, F4, Ab4]}
+  - id: T-060-4
+    type: mcq
+    prompt: {en: "How many diminished seventh chords with different sounds exist?", sr: "Koliko postoji smanjenih septakorda različitog zvuka?"}
+    options: ["3", "4", "12", "7"]
+    answer: 0
+    checks:
+      - chord: {notes: [C4, Eb4, Gb4, Bbb4], root: C, quality: dim7}
+      - semitones: {from: C4, to: Eb4, is: 3}
+      - semitones: {from: Bbb4, to: C5, is: 3}
+  - id: T-060-5
+    type: midi-play
+    prompt: {en: "Play the four resolutions from the example (any octave). Your hand plays the same diminished 7th four times; only where it goes changes.", sr: "Odsviraj četiri razrešenja iz primera (bilo koja oktava). Ruka svira isti smanjeni septakord četiri puta; menja se samo kuda ide."}
+    mode: chords
+    octave: any
+    expectChords: [[B3, D4, F4, Ab4], [C4, Eb4, G4], [D4, F4, Ab4, Cb5], [Eb4, Gb4, Bb4], [E#4, G#4, B4, D5], [F#4, A4, C#5], [G#4, B4, D5, F5], [A4, C5, E5]]
+    beats: [2, 2, 2, 2, 2, 2, 2, 2]
+    tempo: 72
+    checks:
+      - numeral: {key: C, type: harmonic-minor, is: "vii°7", notes: [B3, D4, F4, Ab4]}
+      - numeral: {key: C, type: harmonic-minor, is: i, notes: [C4, Eb4, G4]}
+      - numeral: {key: Eb, type: harmonic-minor, is: "vii°7", notes: [D4, F4, Ab4, Cb5]}
+      - numeral: {key: Eb, type: harmonic-minor, is: i, notes: [Eb4, Gb4, Bb4]}
+      - numeral: {key: F#, type: harmonic-minor, is: "vii°7", notes: [E#4, G#4, B4, D5]}
+      - numeral: {key: F#, type: harmonic-minor, is: i, notes: [F#4, A4, C#5]}
+      - numeral: {key: A, type: harmonic-minor, is: "vii°7", notes: [G#4, B4, D5, F5]}
+      - numeral: {key: A, type: harmonic-minor, is: i, notes: [A4, C5, E5]}
+      - semitones: {from: Cb5, to: B4, is: 0}
+      - semitones: {from: E#4, to: F4, is: 0}
+  - id: T-060-6
+    type: mcq
+    prompt: {en: "The music reaches B D F A♭ in C minor, then the same sound, written G♯ B D F, resolves to A minor. What is this?", sr: "Muzika stigne na H D F As u c-molu, a zatim se isti zvuk, zapisan kao Gis H D F, razreši u a-mol. Šta je ovo?"}
+    options:
+      - {en: "Enharmonic modulation (enharmonska modulacija)", sr: "Enharmonska modulacija"}
+      - {en: "Chromatic modulation (hromatska)", sr: "Hromatska modulacija"}
+      - {en: "Diatonic pivot modulation (dijatonska)", sr: "Dijatonska modulacija"}
+      - {en: "A deceptive cadence", sr: "Prekinuta kadenca"}
+    answer: 0
+  - id: T-060-7
+    type: generated
+    count: 4
+    prompt: {en: "Diminished 7th, dominant 7th, or the diminished 7th of V?", sr: "Smanjeni septakord, dominantni septakord ili smanjeni septakord dominante?"}
+    gen: {kind: progression-ear, keys: [C, A, D], type: harmonic-minor, options: [["i", "iv", "vii°7", "i"], [i, iv, V7, i], ["i", "iv", "vii°7/V", V]], tempo: 60, smooth: true}

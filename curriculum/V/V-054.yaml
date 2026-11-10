@@ -1,0 +1,136 @@
+id: V-054
+track: V
+order: 54
+title: {en: "Agility III: runs in minor", sr: "Okretnost III: pasaži u molu"}
+prereqs: [V-053, V-038, V-034]
+minutes: 11
+tags: [voice, agility, minor]
+explain:
+  en: |
+    A **run** (Serbian: *pasaž*, in pop also *ran* or *rif*) is a quick group of notes sung on one vowel. Lessons 33-34 built slow runs in major; today the same in **minor**,
+    where most pop, soul and folk runs live. Three scale shapes, all in a-mol here (the app moves them into your range):
+
+    | shape | notes (a-mol) | where you hear it |
+    |---|---|---|
+    | **natural minor**, 5 down to 1 | E D C B A | the plain minor run, folk and ballads |
+    | **harmonic minor** top: 5-6-7-8 | E F G# A | the leading tone G#; between F and G# is an **augmented 2nd** (3 semitones), the "eastern" sound |
+    | **minor pentatonic**, 8 down to 1 | A G E D C A | the pop/soul/blues run: no half steps, so it is the easiest to sing fast |
+
+    Why the pentatonic is easiest: with no half steps, each note is a clear target. In the harmonic shape, the augmented 2nd **F to G#** is a trap: the ear expects a whole step
+    and sings G instead. On the piano you can see it: F and G# have a black key and a white key between them.
+
+    Method, as in lesson 33: **slow and exact first** (each note placed, quarter notes), then eighth notes, and only then a little faster. A run is a
+    sequence of **precise pitches**, not a slide; a sloppy fast run is worse than a clean slow one. Keep it **light** (light mix, small sound): weight makes runs
+    slow and smeared.
+
+    **Stop if anything hurts, scratches or you get hoarse.**
+  sr: |
+    **Pasaž** (u popu i *ran* ili *rif*, engl. *run*) je brza grupa tonova otpevana na jednom samoglasniku. U 33-34. lekciji gradili smo spore pasaže u duru; danas isto u **molu**,
+    gde živi većina pop, soul i narodnih pasaža. Tri oblika lestvice, svi ovde u a-molu (aplikacija ih premešta u tvoj opseg):
+
+    | oblik | tonovi (a-mol) | gde se čuje |
+    |---|---|---|
+    | **prirodni mol**, od 5 do 1 | E D C H A | običan molski pasaž, narodne pesme i balade |
+    | **harmonski mol** gore: 5-6-7-8 | E F Gis A | vođica Gis; između F i Gis je **prekomerna sekunda** (3 polustepena), „istočni” zvuk |
+    | **molska pentatonika**, od 8 do 1 | A G E D C A | pop/soul/bluz pasaž: bez polustepena, pa ga je najlakše pevati brzo |
+
+    Zašto je pentatonika najlakša: bez polustepena svaki ton je jasna meta. U harmonskom obliku prekomerna sekunda **F do Gis** je zamka: uho očekuje celi stepen
+    i otpeva G. Na klaviru se vidi: između F i Gis su jedna crna i jedna bela dirka.
+
+    Metoda, kao u 33. lekciji: **prvo polako i tačno** (svaki ton postavljen, četvrtine), pa osmine, pa tek onda malo brže. Pasaž je niz
+    **preciznih visina**, ne klizanje; neuredan brz pasaž je gori od čistog sporog. Drži ga **lakim** (lagani miks, mali zvuk): težina čini pasaže
+    sporim i razmazanim.
+
+    **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+exercises:
+  - id: V-054-1
+    type: checkin
+    prompt:
+      en: "Check-in: hum softly for 10 seconds. How does your voice feel?"
+      sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
+  - id: V-054-2
+    type: practice
+    minutes: 2
+    prompt:
+      en: "Warm-up: 3 lip-trill sirens, then lip trills along with the A minor pentatonic from the top down, twice."
+      sr: "Zagrevanje: 3 sirene treperenjem usana, pa treperenje usnama uz molsku pentatoniku od A odozgo naniže, dva puta."
+    play: {notes: [A4, G4, E4, D4, C4, A3], mode: melodic, tempo: 80}
+    checks:
+      - scale: {tonic: A, type: minor-pentatonic, is: [A, C, D, E, G]}
+  - id: V-054-3
+    type: sing-phrase
+    prompt:
+      en: "Natural minor, 5 down to 1, on 'ah': first slow, each note placed."
+      sr: "Prirodni mol, od 5 do 1, na „a”: prvo polako, svaki ton postavljen."
+    notes: [E4, D4, C4, B3, A3]
+    beats: [1, 1, 1, 1, 2]
+    tempo: 72
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - interval: {from: A3, to: E4, is: P5}
+  - id: V-054-4
+    type: sing-phrase
+    prompt:
+      en: "The same run in eighth notes, then back up and down: 5-4-3-2-1-2-3-2-1 on 'ah', light."
+      sr: "Isti pasaž u osminama, pa nazad gore i dole: 5-4-3-2-1-2-3-2-1 na „a”, lagano."
+    notes: [E4, D4, C4, B3, A3, B3, C4, B3, A3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 72
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+  - id: V-054-5
+    type: sing-phrase
+    prompt:
+      en: "Harmonic minor top, 5-6-7-8 and back: E F G# A G# F E on 'ee'. Make the jump F to G# a real augmented 2nd (3 semitones), not a whole step."
+      sr: "Vrh harmonskog mola, 5-6-7-8 i nazad: E F Gis A Gis F E na „i”. Skok F do Gis neka bude prava prekomerna sekunda (3 polustepena), ne celi stepen."
+    notes: [E4, F4, G#4, A4, G#4, F4, E4]
+    beats: [1, 1, 1, 1, 1, 1, 2]
+    tempo: 66
+    tolerance: 50
+    pass: 0.65
+    checks:
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - interval: {from: F4, to: G#4, is: A2}
+      - semitones: {from: F4, to: G#4, is: 3}
+  - id: V-054-6
+    type: sing-phrase
+    prompt:
+      en: "The pentatonic run, 8 down to 1: A G E D C A on 'ah' in eighth notes, last note held. The classic pop/soul shape: quick, light, every note hit."
+      sr: "Pentatonski pasaž, od 8 do 1: A G E D C A na „a” u osminama, poslednji ton zadržan. Klasičan pop/soul oblik: brzo, lagano, svaki ton pogođen."
+    notes: [A4, G4, E4, D4, C4, A3]
+    beats: [0.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 72
+    tolerance: 75
+    pass: 0.6
+    checks:
+      - scale: {tonic: A, type: minor-pentatonic, is: [A, C, D, E, G]}
+      - interval: {from: A3, to: A4, is: P8}
+  - id: V-054-7
+    type: generated
+    prompt:
+      en: "Short harmonic-minor phrases to sing back on 'ah'. Mind the leading tone: keep it high."
+      sr: "Kratke fraze u harmonskom molu, otpevaj ih na „a”. Pazi na vođicu: drži je visoko."
+    count: 3
+    gen: {kind: phrase-sing, tonics: [A, D, E], type: harmonic-minor, length: [5, 7], maxLeap: 2, tempo: 80, tolerance: 50}
+  - id: V-054-8
+    type: mcq
+    prompt:
+      en: "Which run has no half steps at all, which is why it is the easiest to sing fast?"
+      sr: "Koji pasaž uopšte nema polustepene, zbog čega ga je najlakše pevati brzo?"
+    options:
+      - {en: "Minor pentatonic: A G E D C A", sr: "Molska pentatonika: A G E D C A"}
+      - {en: "Natural minor: E D C B A", sr: "Prirodni mol: E D C H A"}
+      - {en: "Harmonic minor: E F G# A", sr: "Harmonski mol: E F Gis A"}
+    answer: 0
+  - id: V-054-9
+    type: practice
+    minutes: 1.5
+    prompt:
+      en: "On your own: play the pentatonic run A G E D C A, sing it slow, then in eighths, then a little faster; then the same from D (D C A G F D). Rate: every note clear at the fastest tempo? Then 3 quiet hums sliding down."
+      sr: "Samostalno: odsviraj pentatonski pasaž A G E D C A, otpevaj ga polako, pa u osminama, pa malo brže; pa isto od D (D C A G F D). Oceni: da li je svaki ton bio jasan u najbržem tempu? Pa 3 tiha pevušenja uz klizanje naniže."
+    checks:
+      - scale: {tonic: D, type: minor-pentatonic, is: [D, F, G, A, C]}

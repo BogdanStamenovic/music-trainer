@@ -1,0 +1,130 @@
+id: K-042
+track: K
+order: 42
+title: {en: "Blues improvisation: call and response over the changes", sr: "Bluz improvizacija: pitanje i odgovor preko promena"}
+prereqs: [K-041]
+minutes: 15
+tags: [keys, improvisation, blues, call-and-response]
+explain:
+  en: |
+    A blues verse is a conversation: a line is sung, repeated over the IV chord, and
+    answered (the AAB lyric form of T-066). Each line lasts about two bars and leaves two
+    bars of space, which the band (or your other hand) fills. Improvise the same way:
+    **2 bars call, 2 bars response**, three times per chorus.
+
+    | bars | 1–2 | 3–4 | 5–6 | 7–8 | 9–10 | 11–12 |
+    |---|---|---|---|---|---|---|
+    | chords (F) | F7 B♭7 | F7 F7 | B♭7 B♭7 | F7 F7 | C7 B♭7 | F7 C7 |
+    | role | **call A** | response | **call A again** | response | **call B** | response |
+
+    **A riff that fits all three chords.** The notes C, E♭ and F belong to the F blues scale.
+    Over F7, E♭ is the 7th; over B♭7, F is the 5th and C the 9th. So one riff can be played
+    unchanged over both chords, and it sounds like it means something different each time.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:F
+    "F7"c _e f2 _e c3 | "Bb7"z8 | "F7"_e c _A =A F4 | z8 |]
+    ```
+
+    The response (bar 3) has the **blue note slide** A♭ → A: the minor 3rd bending to the
+    major 3rd of F7. On a piano you cannot bend, so you play the two keys quickly one after
+    the other, a crushed grace note. This half-step clash is the blues on a keyboard.
+
+    **Responses with the left hand.** In a solo situation, the "band" answer is your left
+    hand: during the right hand's rest bars, play a short shell comp from K-041 (A–E♭ over
+    F7, A♭–D over B♭7).
+  sr: |
+    Strofa bluza je razgovor: stih se otpeva, ponovi preko IV akorda i dobije odgovor (AAB
+    forma teksta iz T-066). Svaki stih traje oko dva takta i ostavlja dva takta prostora, koji
+    popunjava bend (ili tvoja druga ruka). Improvizuj na isti način: **2 takta pitanje, 2
+    takta odgovor**, tri puta po krugu.
+
+    | taktovi | 1–2 | 3–4 | 5–6 | 7–8 | 9–10 | 11–12 |
+    |---|---|---|---|---|---|---|
+    | akordi (F) | F7 B7 | F7 F7 | B7 B7 | F7 F7 | C7 B7 | F7 C7 |
+    | uloga | **pitanje A** | odgovor | **ponovo pitanje A** | odgovor | **pitanje B** | odgovor |
+
+    **Rif koji odgovara sva tri akorda.** Tonovi C, Es i F pripadaju F bluz lestvici. Preko
+    F7, Es je septima; preko B7, F je kvinta, a C nona. Zato se jedan rif može svirati
+    nepromenjen preko oba akorda, i zvuči kao da svaki put znači nešto drugo.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:F
+    "F7"c _e f2 _e c3 | "Bb7"z8 | "F7"_e c _A =A F4 | z8 |]
+    ```
+
+    Odgovor (3. takt) ima **bluz klizanje** As → A: mala terca koja se savija u veliku tercu
+    od F7. Na klaviru ne možeš savijati ton, pa dve dirke sviraš brzo jednu za drugom, kao
+    kratki predudar. Ovaj sudar u polustepenu je bluz na klavijaturi.
+
+    **Odgovori levom rukom.** Kad sviraš sam, "bend" koji odgovara je tvoja leva ruka: dok
+    desna pauzira, odsviraj kratku pratnju školjkama iz K-041 (A–Es preko F7, As–D preko B7).
+exercises:
+  - id: K-042-1
+    type: mcq
+    prompt: {en: "The riff C–E♭–F is played over B♭7. What is E♭ there?", sr: "Rif C–Es–F se svira preko B7. Šta je tu Es?"}
+    options:
+      - {en: "The 4th (11th): a colour note, best not held as the last note", sr: "Kvarta (undecima): ton boje, bolje ga ne držati kao poslednji ton"}
+      - {en: "The 3rd", sr: "Terca"}
+      - {en: "The 7th", sr: "Septima"}
+      - {en: "The root", sr: "Osnovni ton"}
+    answer: 0
+    checks:
+      - interval: {from: Bb3, to: Eb4, is: P4}
+      - chord: {notes: [Bb3, D4, F4, Ab4], root: Bb, quality: "7"}
+      - scale: {tonic: F, type: blues, is: [F, Ab, Bb, Cb, C, Eb]}
+  - id: K-042-2
+    type: mcq
+    prompt: {en: "Over F7, the slide A♭ → A goes from…", sr: "Preko F7, klizanje As → A ide od…"}
+    options:
+      - {en: "the minor 3rd (blue note) to the chord's major 3rd", sr: "male terce (bluz ton) do velike terce akorda"}
+      - {en: "the 7th to the root", sr: "septime do osnovnog tona"}
+      - {en: "the 5th to the 6th", sr: "kvinte do sekste"}
+      - {en: "the root to the 9th", sr: "osnovnog tona do none"}
+    answer: 0
+    checks:
+      - interval: {from: F4, to: Ab4, is: m3}
+      - interval: {from: F4, to: A4, is: M3}
+      - chord: {notes: [F3, A3, C4, Eb4], root: F, quality: "7"}
+  - id: K-042-3
+    type: midi-play
+    prompt: {en: "Call and response from the example, with the rests counted (4 bars, ♩=96, straight eighths).", sr: "Pitanje i odgovor iz primera, sa odbrojanim pauzama (4 takta, ♩=96, ravne osmine)."}
+    abc: "X:1\nM:4/4\nL:1/8\nK:F\n\"F7\"c _e f2 _e c3 | \"Bb7\"z8 | \"F7\"_e c _A =A F4 | z8 |]"
+    mode: sequence
+    expect: [C5, Eb5, F5, Eb5, C5, Eb5, C5, Ab4, A4, F4]
+    beats: [0.5, 0.5, 1, 0.5, 5.5, 0.5, 0.5, 0.5, 0.5, 2]
+    tempo: 96
+    checks:
+      - interval: {from: C5, to: Eb5, is: m3}
+      - semitones: {from: Ab4, to: A4, is: 1}
+  - id: K-042-4
+    type: generated
+    pass: 0.7
+    prompt: {en: "One chorus of F blues with the blues scale: the riff as call A (bars 1 and 5), your own responses, a new idea for call B (bar 9).", sr: "Jedan krug F bluza sa bluz lestvicom: rif kao pitanje A (taktovi 1 i 5), tvoji odgovori, nova ideja za pitanje B (9. takt)."}
+    count: 1
+    gen: {kind: improv, keys: [F], scale: blues, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 1, tempo: 96}
+  - id: K-042-5
+    type: generated
+    pass: 0.7
+    prompt: {en: "Two choruses in B♭ with the minor pentatonic. Second chorus: answer each of your calls with the same rhythm but different notes.", sr: "Dva kruga u B-duru sa molskom pentatonikom. Drugi krug: odgovori na svako svoje pitanje istim ritmom, ali drugim tonovima."}
+    count: 1
+    gen: {kind: improv, keys: [Bb], scale: minor-pentatonic, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 2, tempo: 104}
+  - id: K-042-6
+    type: generated
+    pass: 0.7
+    prompt: {en: "A sweeter blues in G: the mixolydian scale (major with a ♭7), aiming for the 3rd at the changes to G7 (B) and C7 (E). Over D7 land on D or A: its 3rd, F♯, is not in G mixolydian.", sr: "Slađi bluz u G-duru: miksolidijska lestvica (dur sa malom septimom), ciljaj tercu na promenama u G7 (H) i C7 (E). Preko D7 sleti na D ili A: njegova terca, Fis, nije u G miksolidijskoj."}
+    count: 1
+    gen: {kind: improv, keys: [G], scale: mixolydian, numerals: [I7, IV7, I7, I7, IV7, IV7, I7, I7, V7, IV7, I7, V7], beatsPerChord: 4, loops: 1, tempo: 100}
+  - id: K-042-7
+    type: practice
+    prompt: {en: "Both hands, F blues, swung, three choruses: right hand plays the calls, left hand answers with shell comping in the rest bars (and holds just the root under the calls). Then swap: left hand plays the full Charleston comp throughout while the right hand trades 2-bar calls with silence.", sr: "Obe ruke, F bluz, sa svingom, tri kruga: desna ruka svira pitanja, leva odgovara pratnjom u školjkama u taktovima pauze (a ispod pitanja drži samo osnovni ton). Zatim obrnuto: leva svira punu čarlston pratnju sve vreme, a desna smenjuje pitanja od 2 takta sa tišinom."}
+    minutes: 5
+    checks:
+      - chord: {notes: [F2, A3, Eb4], root: F, quality: "7"}
+      - chord: {notes: [Bb2, Ab3, D4], root: Bb, quality: "7"}

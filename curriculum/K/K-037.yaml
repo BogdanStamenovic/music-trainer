@@ -1,0 +1,168 @@
+id: K-037
+track: K
+order: 37
+title: {en: "Minor ii–V–i (iiø7–V7–i) in 4 keys", sr: "Molski ii–V–i (iiø7–V7–i) u 4 tonaliteta"}
+prereqs: [T-059]
+minutes: 14
+tags: [keys, harmony, minor, seventh-chords, voice-leading]
+explain:
+  en: |
+    The major ii–V–I (K-013) has a minor cousin, and it is just as common in jazz, pop
+    ballads and film music. Stack the 2nd degree of A minor in thirds: **B D F A**. Because
+    F is the lowered 6th of the minor scale, the chord is **half-diminished**, Bø7 (also
+    written Bm7♭5). V is borrowed from harmonic minor as usual: **E7** with G♯.
+
+    | A minor | iiø7 | V7 | i |
+    |---|---|---|---|
+    | chord | Bø7 = B D F A | E7 = E G♯ B D | Am = A C E |
+    | left hand | B2 | E2 | A2 |
+    | right hand | A3 D4 F4 | G♯3 D4 E4 | A3 C4 E4 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:Am
+    "Bø7"[B,,A,DF] "E7"[E,,^G,DE] | "Am"[A,,A,CE]2 |]
+    ```
+
+    Follow the voices: **A → G♯ → A** (the 7th of Bø7 becomes the 3rd of E7, then the root
+    of Am), **D stays, then falls to C** (3rd of Bø7, 7th of E7, 3rd of Am), and F falls to E
+    and stays. These are the guide tones of K-013 again: the 3rds and 7ths move by half step
+    or not at all. What is new is the colour: Bø7 sounds darker and more unstable than
+    Bm7, and the half step F–E on top is the sound of minor.
+
+    **Four keys round the circle of fourths**: A minor → D minor → G minor → C minor. Each
+    key's i is the next key's v, so you can feel the shapes move up a fourth (or down a
+    fifth) every time.
+
+    | key | iiø7 | V7 | i |
+    |---|---|---|---|
+    | D minor | Eø7 (E G B♭ D) | A7 (A C♯ E G) | Dm |
+    | G minor | Aø7 (A C E♭ G) | D7 (D F♯ A C) | Gm |
+    | C minor | Dø7 (D F A♭ C) | G7 (G B D F) | Cm |
+  sr: |
+    Durski ii–V–I (K-013) ima molskog rođaka, jednako čestog u džezu, pop baladama i filmskoj
+    muzici. Složi 2. stupanj a-mola u terce: **H D F A**. Pošto je F sniženi 6. stupanj
+    molske lestvice, akord je **polusmanjeni septakord**, Hø7 (piše se i Hm7♭5). V se kao i
+    obično uzima iz harmonskog mola: **E7** sa Gis.
+
+    | a-mol | iiø7 | V7 | i |
+    |---|---|---|---|
+    | akord | Hø7 = H D F A | E7 = E Gis H D | Am = A C E |
+    | leva ruka | H2 | E2 | A2 |
+    | desna ruka | A3 D4 F4 | Gis3 D4 E4 | A3 C4 E4 |
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:Am
+    "Bø7"[B,,A,DF] "E7"[E,,^G,DE] | "Am"[A,,A,CE]2 |]
+    ```
+
+    Prati glasove: **A → Gis → A** (septima od Hø7 postaje terca od E7, pa osnovni ton od
+    Am), **D ostaje, pa pada na C** (terca od Hø7, septima od E7, terca od Am), a F pada na E i
+    ostaje. To su ponovo ključni tonovi iz K-013: terce i septime se pomeraju za polustepen
+    ili nikako. Nova je boja: Hø7 zvuči tamnije i nestabilnije od Hm7, a polustepen F–E na
+    vrhu je zvuk mola.
+
+    **Četiri tonaliteta po kvartnom krugu**: a-mol → d-mol → g-mol → c-mol. i svakog
+    tonaliteta je v sledećeg, pa osećaš kako se oblici svaki put pomeraju za kvartu naviše (ili
+    kvintu naniže).
+
+    | tonalitet | iiø7 | V7 | i |
+    |---|---|---|---|
+    | d-mol | Eø7 (E G B D) | A7 (A Cis E G) | Dm |
+    | g-mol | Aø7 (A C Es G) | D7 (D Fis A C) | Gm |
+    | c-mol | Dø7 (D F As C) | G7 (G H D F) | Cm |
+exercises:
+  - id: K-037-1
+    type: mcq
+    prompt: {en: "Why is ii in A minor half-diminished (B D F A) and not B minor 7 (B D F♯ A)?", sr: "Zašto je ii u a-molu polusmanjen (H D F A), a ne Hm7 (H D Fis A)?"}
+    options:
+      - {en: "Its 5th is F, the minor key's 6th degree, a tritone above B", sr: "Njegova kvinta je F, 6. stupanj mola, triton iznad H"}
+      - {en: "Its 3rd is lowered by harmonic minor", sr: "Terca mu je snižena zbog harmonskog mola"}
+      - {en: "Half-diminished chords are always used before V7 in any key", sr: "Polusmanjeni akordi se uvek koriste pre V7 u svakom tonalitetu"}
+      - {en: "Its 7th is the leading tone", sr: "Septima mu je vođica"}
+    answer: 0
+    checks:
+      - roman: {key: A, type: natural-minor, degree: 2, is: "iiø7", seventh: true}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V7", seventh: true}
+      - interval: {from: B3, to: F4, is: d5}
+      - chord: {notes: [B3, D4, F4, A4], root: B, quality: m7b5}
+  - id: K-037-2
+    type: midi-play
+    prompt: {en: "A minor, voicing from the table: Bø7 – E7 (two beats each) – Am (a bar), ♩=72.", sr: "a-mol, raspored iz tabele: Hø7 – E7 (po dve dobe) – Am (ceo takt), ♩=72."}
+    mode: chords
+    expectChords: [[B2, A3, D4, F4], [E2, "G#3", D4, E4], [A2, A3, C4, E4]]
+    beats: [2, 2, 4]
+    tempo: 72
+    checks:
+      - numeral: {key: A, type: harmonic-minor, is: "iiø7", notes: [B2, A3, D4, F4]}
+      - chord: {notes: [E2, "G#3", D4, E4], root: E, quality: "7", inversion: 0}
+      - numeral: {key: A, type: harmonic-minor, is: "V7", notes: [E2, "G#3", D4, E4], complete: false}
+      - numeral: {key: A, type: harmonic-minor, is: "i", notes: [A2, A3, C4, E4]}
+      - semitones: {from: "G#3", to: A3, is: 1}
+      - semitones: {from: E4, to: F4, is: 1}
+  - id: K-037-3
+    type: midi-play
+    prompt: {en: "D minor, the same shape a fourth higher: Eø7 – A7 – Dm, ♩=72.", sr: "d-mol, isti oblik kvartu više: Eø7 – A7 – Dm, ♩=72."}
+    mode: chords
+    expectChords: [[E3, D4, G4, Bb4], [A2, "C#4", G4, A4], [D3, D4, F4, A4]]
+    beats: [2, 2, 4]
+    tempo: 72
+    checks:
+      - numeral: {key: D, type: harmonic-minor, is: "iiø7", notes: [E3, D4, G4, Bb4]}
+      - chord: {notes: [A2, "C#4", G4, A4], root: A, quality: "7", inversion: 0}
+      - numeral: {key: D, type: harmonic-minor, is: "V7", notes: [A2, "C#4", E4, G4]}
+      - numeral: {key: D, type: harmonic-minor, is: "i", notes: [D3, D4, F4, A4]}
+  - id: K-037-4
+    type: midi-play
+    prompt: {en: "G minor: Aø7 – D7 – Gm, ♩=72. Bass A2 – D2 – G2; right hand G3 C4 E♭4 → F♯3 C4 D4 → G3 B♭3 D4.", sr: "g-mol: Aø7 – D7 – Gm, ♩=72. Bas A2 – D2 – G2; desna ruka G3 C4 Es4 → Fis3 C4 D4 → G3 B3 D4."}
+    mode: chords
+    expectChords: [[A2, G3, C4, Eb4], [D2, "F#3", C4, D4], [G2, G3, Bb3, D4]]
+    beats: [2, 2, 4]
+    tempo: 72
+    checks:
+      - numeral: {key: G, type: harmonic-minor, is: "iiø7", notes: [A2, G3, C4, Eb4]}
+      - chord: {notes: [D2, "F#3", C4, D4], root: D, quality: "7", inversion: 0}
+      - numeral: {key: G, type: harmonic-minor, is: "V7", notes: [D2, "F#3", C4, D4], complete: false}
+      - numeral: {key: G, type: harmonic-minor, is: "i", notes: [G2, G3, Bb3, D4]}
+  - id: K-037-5
+    type: midi-play
+    prompt: {en: "C minor, notes hidden: Dø7 – G7 – Cm, the same guide-tone shape, any octave, root in the bass, ♩=72.", sr: "c-mol, bez prikaza tonova: Dø7 – G7 – Cm, isti oblik ključnih tonova, bilo koja oktava, osnovni ton u basu, ♩=72."}
+    mode: chords
+    expectChords: [[D3, C4, F4, Ab4], [G2, B3, F4, G4], [C3, C4, Eb4, G4]]
+    beats: [2, 2, 4]
+    tempo: 72
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - numeral: {key: C, type: harmonic-minor, is: "iiø7", notes: [D3, C4, F4, Ab4]}
+      - chord: {notes: [G2, B3, F4, G4], root: G, quality: "7", inversion: 0}
+      - numeral: {key: C, type: harmonic-minor, is: "V7", notes: [G2, B3, F4, G4], complete: false}
+      - numeral: {key: C, type: harmonic-minor, is: "i", notes: [C3, C4, Eb4, G4]}
+  - id: K-037-6
+    type: generated
+    prompt: {en: "Minor ii–V–i in mixed keys, voice-led", sr: "Molski ii–V–i u mešanim tonalitetima, glatko vođenje glasova"}
+    count: 4
+    gen: {kind: progression, keys: [A, D, G, C, E, F], type: harmonic-minor, numerals: [iiø7, V7, i], tempo: 72, smooth: true}
+  - id: K-037-7
+    type: mcq
+    prompt: {en: "Listen: major ii–V–I or minor iiø7–V7–i?", sr: "Slušaj: durski ii–V–I ili molski iiø7–V7–i?"}
+    options:
+      - {en: "Minor: iiø7 – V7 – i", sr: "Molski: iiø7 – V7 – i"}
+      - {en: "Major: ii7 – V7 – I", sr: "Durski: ii7 – V7 – I"}
+    answer: 0
+    play: {chords: [[D3, C4, F4, Ab4], [G2, B3, F4, G4], [C3, C4, Eb4, G4]], mode: chords, tempo: 60, durations: [2, 2, 4]}
+    checks:
+      - numeral: {key: C, type: harmonic-minor, is: "iiø7", notes: [D3, C4, F4, Ab4]}
+      - numeral: {key: C, type: harmonic-minor, is: "i", notes: [C3, C4, Eb4, G4]}
+  - id: K-037-8
+    type: practice
+    prompt: {en: "Play the four keys in a row without stopping (Am → Dm → Gm → Cm), two bars per key at ♩=72. Then swap the i triad for i6 (add the major 6th: A C E F♯ in A minor) for the jazz-ballad ending, and compare.", sr: "Odsviraj četiri tonaliteta zaredom bez zaustavljanja (a → d → g → c), po dva takta, ♩=72. Zatim zameni i trozvuk sa i6 (dodaj veliku sekstu: A C E Fis u a-molu) za završetak džez balade, i uporedi."}
+    minutes: 3
+    checks:
+      - interval: {from: A3, to: "F#4", is: M6}

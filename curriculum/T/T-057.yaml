@@ -1,0 +1,187 @@
+id: T-057
+track: T
+order: 57
+prereqs: [T-056]
+title: {en: "Chromatic modulation (a common tone, a chromatic step)", sr: "Hromatska modulacija (zajednički ton, hromatski korak)"}
+minutes: 13
+tags: [harmony, modulation, chromatic]
+explain:
+  en: |
+    Three ways to get from one key to another, by what the pivot is:
+
+    | type | sr | what connects the keys |
+    |---|---|---|
+    | diatonic | dijatonska modulacija | a chord diatonic in both keys (T-052 to T-055) |
+    | chromatic | hromatska modulacija | one voice moves by a **chromatic half step** (same letter: C → C♯), or a single held note |
+    | enharmonic | enharmonska modulacija | a chord is **respelled** and resolves in a far key (T-060) |
+
+    **1. The chromatic step.** A chord of the old key turns into a chord of the new key when one note is raised or lowered **on the same letter**. In C, A C E (vi) becomes A C♯ E, which is **V of D**:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[EGc] "^vi"[EAc] [EA^c] [^FAd] |]
+    V:2 clef=bass
+    C, A,, "_D: V"A,, "_I"D, |]
+    ```
+
+    Listen to the top: C – C – C♯ – D. The chromatic line C → C♯ is what the ear follows; it is the leading tone of the new key appearing *out of* a note of the old one. A chromatic half step (augmented unison, A1) keeps the letter; a diatonic half step (minor 2nd, m2) changes it (C♯ → D).
+
+    **2. The common tone.** Hold one note and let the chord change around it. C E G → A♭ C E♭: the **C** stays (root of C, then 3rd of A♭) while E falls to E♭ and G rises to A♭.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    V:1
+    "^C: I"[CEG] "^A♭: I"[C_E_A] |]
+    V:2 clef=bass
+    C, _A,, |]
+    ```
+
+    This reaches a key with four flats in one move. Film music, Schubert and power ballads love it: a single note keeps the listener oriented while the floor changes underneath. Like direct modulation, it usually happens at a phrase boundary, and the new key must then be confirmed by its own cadence.
+  sr: |
+    Tri načina da se pređe iz jednog tonaliteta u drugi, prema tome šta je most:
+
+    | vrsta | en | šta povezuje tonalitete |
+    |---|---|---|
+    | dijatonska modulacija | diatonic | akord koji je na stupnjevima oba tonaliteta (T-052 do T-055) |
+    | hromatska modulacija | chromatic | jedan glas ide za **hromatski polustepen** (isto slovo: C → Cis), ili se drži jedan zajednički ton |
+    | enharmonska modulacija | enharmonic | akord se **enharmonski preimenuje** i razrešava u daleki tonalitet (T-060) |
+
+    **1. Hromatski korak.** Akord starog tonaliteta postaje akord novog kad se jedan ton povisi ili snizi **na istom slovu**. U C-duru A C E (vi) postaje A Cis E, a to je **V D-dura**:
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/4
+    K:C
+    V:1
+    "^C: I"[EGc] "^vi"[EAc] [EA^c] [^FAd] |]
+    V:2 clef=bass
+    C, A,, "_D: V"A,, "_I"D, |]
+    ```
+
+    Slušaj gornji glas: C – C – Cis – D. Hromatska linija C → Cis je ono što uho prati; to je vođica novog tonaliteta koja nastaje *iz* tona starog. Hromatski polustepen (prekomerna prima, A1) zadržava slovo; dijatonski polustepen (mala sekunda, m2) ga menja (Cis → D).
+
+    **2. Zajednički ton.** Drži jedan ton, a akord neka se promeni oko njega. C E G → As C Es: **C** ostaje (osnovni ton C-dura, pa terca As-dura), E silazi na Es, a G se penje na As.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/2
+    K:C
+    V:1
+    "^C: I"[CEG] "^A♭: I"[C_E_A] |]
+    V:2 clef=bass
+    C, _A,, |]
+    ```
+
+    Ovako se jednim potezom stiže u tonalitet sa četiri snizilice. Filmska muzika, Šubert i pop balade to vole: jedan ton drži slušaoca orijentisanim dok se pod menja ispod njega. Kao i direktna modulacija, obično se dešava na granici fraza, a novi tonalitet zatim mora da se potvrdi sopstvenom kadencom.
+exercises:
+  - id: T-057-1
+    type: mcq
+    prompt: {en: "C → C♯ in the top voice is which interval?", sr: "C → Cis u gornjem glasu je koji interval?"}
+    options:
+      - {en: "Augmented unison (chromatic half step)", sr: "Prekomerna prima (hromatski polustepen)"}
+      - {en: "Minor 2nd (diatonic half step)", sr: "Mala sekunda (dijatonski polustepen)"}
+      - {en: "Major 2nd", sr: "Velika sekunda"}
+      - {en: "Diminished 2nd", sr: "Smanjena sekunda"}
+    answer: 0
+    checks:
+      - interval: {from: C5, to: C#5, is: A1}
+      - interval: {from: C#5, to: D5, is: m2}
+  - id: T-057-2
+    type: mcq
+    prompt: {en: "Label the two A chords of the example: A C E, then A C♯ E.", sr: "Označi dva A akorda iz primera: A C E, pa A Cis E."}
+    options:
+      - {en: "C: vi, then D: V", sr: "C: vi, pa D: V"}
+      - {en: "C: vi, then C: VI", sr: "C: vi, pa C: VI"}
+      - {en: "C: iv, then D: I", sr: "C: iv, pa D: I"}
+      - {en: "D: v, then D: V", sr: "D: v, pa D: V"}
+    answer: 0
+    checks:
+      - numeral: {key: C, is: vi, notes: [A2, E4, A4, C5]}
+      - numeral: {key: D, is: V, notes: [A2, E4, A4, C#5]}
+      - numeral: {key: D, is: I, notes: [D3, F#4, A4, D5]}
+  - id: T-057-3
+    type: mcq
+    prompt: {en: "C major → A♭ major by common tone. Which note is held, and what does it become?", sr: "C-dur → As-dur preko zajedničkog tona. Koji ton se drži i šta postaje?"}
+    options:
+      - {en: "C: root of C, then 3rd of A♭", sr: "C: osnovni ton C-dura, pa terca As-dura"}
+      - {en: "G: 5th of C, then root of A♭", sr: "G: kvinta C-dura, pa osnovni ton As-dura"}
+      - {en: "E: 3rd of C, then 5th of A♭", sr: "E: terca C-dura, pa kvinta As-dura"}
+    answer: 0
+    checks:
+      - chord: {notes: [Ab2, C4, Eb4, Ab4], root: Ab, quality: maj}
+      - interval: {from: Ab4, to: C5, is: M3}
+      - keysig: {key: Ab, is: -4}
+  - id: T-057-4
+    type: midi-play
+    prompt: {en: "Play C: I – vi – D: V – I as in the first example. Let the top voice sing C – C – C♯ – D.", sr: "Odsviraj C: I – vi – D: V – I kao u prvom primeru. Neka gornji glas peva C – C – Cis – D."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/4
+      K:C
+      V:1
+      [EGc] [EAc] [EA^c] [^FAd] |]
+      V:2 clef=bass
+      C, A,, A,, D, |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, E4, G4, C5], [A2, E4, A4, C5], [A2, E4, A4, C#5], [D3, F#4, A4, D5]]
+    beats: [1, 1, 1, 1]
+    tempo: 66
+    checks:
+      - numeral: {key: C, is: I, notes: [C3, E4, G4, C5]}
+      - numeral: {key: C, is: vi, notes: [A2, E4, A4, C5]}
+      - numeral: {key: D, is: V, notes: [A2, E4, A4, C#5]}
+      - numeral: {key: D, is: I, notes: [D3, F#4, A4, D5]}
+  - id: T-057-5
+    type: midi-play
+    prompt: {en: "Common-tone move: C major, then A♭ major, holding C in the right hand.", sr: "Pomak preko zajedničkog tona: C-dur, pa As-dur, sa C koje se drži u desnoj ruci."}
+    abc: |
+      X:1
+      M:4/4
+      L:1/2
+      K:C
+      V:1
+      [CEG] [C_E_A] |]
+      V:2 clef=bass
+      C, _A,, |]
+    mode: chords
+    octave: exact
+    expectChords: [[C3, C4, E4, G4], [Ab2, C4, Eb4, Ab4]]
+    beats: [2, 2]
+    tempo: 60
+    checks:
+      - numeral: {key: C, is: I, notes: [C3, C4, E4, G4]}
+      - numeral: {key: Ab, is: I, notes: [Ab2, C4, Eb4, Ab4]}
+  - id: T-057-6
+    type: mcq
+    prompt: {en: "A piece in G major reaches D major through the E minor chord: G: vi = D: ii. Which type of modulation is that?", sr: "Komad u G-duru stiže u D-dur preko e-mol akorda, G: vi = D: ii. Koja je to vrsta modulacije?"}
+    options:
+      - {en: "Diatonic (dijatonska): the pivot is diatonic in both keys", sr: "Dijatonska: most je na stupnjevima oba tonaliteta"}
+      - {en: "Chromatic (hromatska)", sr: "Hromatska"}
+      - {en: "Enharmonic (enharmonska)", sr: "Enharmonska"}
+      - {en: "Direct (frazna)", sr: "Direktna (frazna)"}
+    answer: 0
+    checks:
+      - numeral: {key: G, is: vi, notes: [E4, G4, B4]}
+      - numeral: {key: D, is: ii, notes: [E4, G4, B4]}
+  - id: T-057-7
+    type: mcq
+    prompt: {en: "F major chord (F A C) becomes F A♭ C, then the music cadences in C minor. What type of modulation?", sr: "F-dur akord (F A C) postaje F As C, a zatim muzika kadencira u c-molu. Koja vrsta modulacije?"}
+    options:
+      - {en: "Chromatic: A → A♭ on the same letter", sr: "Hromatska: A → As na istom slovu"}
+      - {en: "Diatonic", sr: "Dijatonska"}
+      - {en: "Enharmonic", sr: "Enharmonska"}
+    answer: 0
+    checks:
+      - interval: {from: Ab4, to: A4, is: A1}
+      - numeral: {key: C, type: harmonic-minor, is: iv, notes: [F4, Ab4, C5]}

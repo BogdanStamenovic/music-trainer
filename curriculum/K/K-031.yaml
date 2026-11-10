@@ -1,7 +1,7 @@
 id: K-031
 track: K
 order: 31
-title: {en: "Harmonizing a melody with secondary dominants", sr: "Harmonizacija melodije sekundarnim dominantama"}
+title: {en: "Harmonizing a melody with secondary dominants", sr: "Harmonizacija melodije sporednim dominantama"}
 prereqs: [K-017, T-044]
 minutes: 15
 tags: [keys, harmony, harmonization, secondary-dominant, reharmonization]
@@ -46,13 +46,13 @@ explain:
     and the remaining chord tones in between, moved as little as possible. The chromatic
     note (B♭, C♯) should **resolve by a half step** in the next chord: B♭ down to A, C♯ up to D.
   sr: |
-    U K-017 si harmonizovao melodije sa I, IV i V. Sekundarne dominante (T-043, T-044) daju više
+    U K-017 si harmonizovao melodije sa I, IV i V. Sporedne dominante (T-043, T-044) daju više
     boja za isti ton melodije, i **pokazuju** na sledeći akord. Dva načina da je nađeš:
 
     **1. Melodija ima hromatski ton.** Ton van tonaliteta je obično terca sekundarne
     dominante, vođica ka akordu koji sledi (B je izuzetak: to je septima od C7 i pada):
 
-    | ton melodije u C-duru | sekundarna dominanta | ide u |
+    | ton melodije u C-duru | sporedna dominanta | ide u |
     |---|---|---|
     | Fis | D7 = V7/V | G (V) |
     | Cis | A7 = V7/ii | Dm (ii) |
@@ -64,7 +64,7 @@ explain:
     njegovim hromatskim tonom. Ispod melodijskog G ne možeš da staviš E7 (ima Gis naspram
     tvog G), ali možeš C7 (G je kvinta) ili A7 (G je septima).
 
-    "Sjaj, sjaj, zvezdice", melodija oktavu više, sa dve sekundarne dominante:
+    "Sjaj, sjaj, zvezdice", melodija oktavu više, sa dve sporedne dominante:
 
     ```abc
     X:1

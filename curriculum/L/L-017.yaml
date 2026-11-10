@@ -1,0 +1,153 @@
+id: L-017
+track: L
+order: 17
+prereqs: [L-016, L-012]
+title: {en: "Rewriting: from first draft to second", sr: "Prepravljanje: od prve verzije do druge"}
+minutes: 15
+tags: [lyrics, editing, rewriting]
+explain:
+  en: |
+    L-012 edited **lines**: cut, sharpen, replace clichés. A second draft works one level up, on
+    the **song**. Do it before polishing lines; there is no point sharpening a verse you are
+    about to delete.
+
+    ### Five questions, in this order
+    | # | question | if the answer is no |
+    |---|---|---|
+    | 1 | Can I say what the song is about in **one sentence**: *"someone who ___"*? | The draft holds two songs. Keep one, save the other for later. |
+    | 2 | Is the **title** in the chorus, on its first or last line, on a strong note? | Move it there, or retitle the song after what the chorus actually says. |
+    | 3 | Does **verse 2 move** (later in time, new fact, higher stakes)? | Rewrite verse 2 from the next scene (L-006, L-014). |
+    | 4 | Are **point of view and tense** steady (L-008)? Is it clear who "you" is? | Pick one and convert every line. Switch only at a section boundary, on purpose. |
+    | 5 | Where is the **best line**? | It is often buried in verse 2. Move it to where it is heard most, or build the chorus around it. |
+
+    Only then return to line editing (L-012) and prosody (L-007).
+
+    ### A draft, diagnosed (original)
+    > V1: *I wake up late, the room is grey, I miss you every day*
+    > C: *Can't go on like this, I need a change*
+    > V2: *I go to work, I hate my boss, he yelled at me on Monday*
+    > V2, last line: *your toothbrush in the cup has gone dry*
+    > C: *Can't go on like this, I need a change*
+
+    1. Two songs: a breakup and a bad job. 2. No title in sight. 3. Verse 2 changes subject
+    instead of moving. 4. Tense slides (*yelled*). 5. The best line is the toothbrush, buried
+    at the end of verse 2.
+
+    Second-draft plan: keep the breakup; the toothbrush opens verse 1; verse 2 moves to the
+    weekend she would have come back; the chorus becomes *Dry toothbrush*, or another title
+    built on that image. The boss goes to a different song.
+
+    ### Method
+    Write the one-sentence summary at the top of the page. Then make a **reverse outline**: one
+    line per section saying what it does now. Compare the outline to the summary; every section
+    that does not serve it gets rewritten or cut. Keep the first draft: some of its lines will
+    come back.
+
+    ### At the piano
+    Sing the whole second draft once, start to finish, over the chords, without stopping to fix
+    anything. Mark where your attention drifted. That is where the next rewrite starts.
+  sr: |
+    U L-012 si uređivao **stihove**: skrati, izoštri, zameni klišee. Druga verzija radi nivo više,
+    na **pesmi**. Uradi to pre poliranja stihova; nema smisla oštriti strofu koju ćeš izbrisati.
+
+    ### Pet pitanja, ovim redom
+    | # | pitanje | ako je odgovor ne |
+    |---|---|---|
+    | 1 | Mogu li da kažem o čemu je pesma u **jednoj rečenici**: *„neko ko ___“*? | U nacrtu su dve pesme. Zadrži jednu, drugu sačuvaj za kasnije. |
+    | 2 | Da li je **naslov** u refrenu, u prvom ili poslednjem stihu, na jakoj noti? | Premesti ga tamo, ili preimenuj pesmu po onome što refren zaista kaže. |
+    | 3 | Da li se **druga strofa pomera** (kasnije u vremenu, nova činjenica, veći ulog)? | Napiši drugu strofu ispočetka, od sledeće scene (L-006, L-014). |
+    | 4 | Da li su **tačka gledišta i vreme** stalni (L-008)? Je li jasno ko je „ti“? | Izaberi jedno i prepravi svaki stih. Menjaj samo na granici delova, namerno. |
+    | 5 | Gde je **najbolji stih**? | Često je zakopan u drugoj strofi. Premesti ga tamo gde se najviše čuje, ili izgradi refren oko njega. |
+
+    Tek onda se vrati uređivanju stihova (L-012) i prozodiji (L-007).
+
+    ### Nacrt, sa dijagnozom (originalno)
+    > S1: *Budim se kasno, soba je siva, svaki dan mi nedostaješ*
+    > R: *Ne mogu više ovako, treba mi promena*
+    > S2: *Idem na posao, mrzim šefa, vikao je na mene u ponedeljak*
+    > S2, poslednji stih: *tvoja četkica u čaši se osušila*
+    > R: *Ne mogu više ovako, treba mi promena*
+
+    1. Dve pesme: raskid i loš posao. 2. Naslova nema. 3. Druga strofa menja temu umesto da se
+    pomeri. 4. Vreme klizi (*vikao je*). 5. Najbolji stih je četkica, zakopan na kraju druge
+    strofe.
+
+    Plan druge verzije: zadrži raskid; četkica otvara prvu strofu; druga strofa prelazi na vikend
+    kad je trebalo da se vrati; refren postaje *Suva četkica*, ili drugi naslov izgrađen na toj
+    slici. Šef ide u neku drugu pesmu.
+
+    ### Metod
+    Napiši rečenicu-sažetak na vrhu stranice. Onda napravi **obrnutu skicu**: po jedan red za
+    svaki deo, šta on sada radi. Uporedi skicu sa sažetkom; svaki deo koji mu ne služi
+    prepravljaš ili izbacuješ. Sačuvaj prvu verziju: neki njeni stihovi će se vratiti.
+
+    ### Za klavirom
+    Otpevaj celu drugu verziju jednom, od početka do kraja, preko akorda, bez zaustavljanja da
+    nešto popraviš. Obeleži gde ti je pažnja odlutala. Tu počinje sledeće prepravljanje.
+exercises:
+  - id: L-017-1
+    type: mcq
+    keepOrder: true
+    prompt: {en: "In what order should a rewrite go?", sr: "Kojim redom ide prepravljanje?"}
+    options:
+      - {en: "polish lines → check prosody → decide what the song is about", sr: "poliraj stihove → proveri prozodiju → odluči o čemu je pesma"}
+      - {en: "decide what the song is about → fix structure → polish lines → check prosody", sr: "odluči o čemu je pesma → popravi strukturu → poliraj stihove → proveri prozodiju"}
+      - {en: "check prosody → polish lines → fix structure", sr: "proveri prozodiju → poliraj stihove → popravi strukturu"}
+      - {en: "any order: they are independent", sr: "bilo kojim redom: nezavisni su"}
+    answer: 1
+  - id: L-017-2
+    type: mcq
+    prompt: {en: "A draft is about a breakup in verse 1 and a terrible boss in verse 2. What does the second draft do?", sr: "Nacrt je o raskidu u prvoj strofi i o groznom šefu u drugoj. Šta radi druga verzija?"}
+    options:
+      - {en: "Keep one subject; save the other for a different song", sr: "Zadržava jednu temu; drugu čuva za neku drugu pesmu"}
+      - {en: "Add a bridge that connects the boss to the breakup", sr: "Dodaje most koji povezuje šefa sa raskidom"}
+      - {en: "Put both in the chorus so the song is about everything", sr: "Stavlja obe u refren, da pesma bude o svemu"}
+      - {en: "Keep both: more topics make a richer song", sr: "Zadržava obe: više tema daje bogatiju pesmu"}
+    answer: 0
+  - id: L-017-3
+    type: mcq
+    prompt: {en: "Verse 1: rain, an empty flat, missing her. Verse 2: rain, an empty flat, still missing her. What is the fix?", sr: "Prva strofa: kiša, prazan stan, nedostaje mi. Druga strofa: kiša, prazan stan, i dalje mi nedostaje. Kako se popravlja?"}
+    options:
+      - {en: "Rewrite verse 2 from the next scene: later in time, a new fact, higher stakes", sr: "Napisati drugu strofu ispočetka, od sledeće scene: kasnije u vremenu, nova činjenica, veći ulog"}
+      - {en: "Use stronger synonyms for rain and empty", sr: "Upotrebiti jače sinonime za kišu i prazno"}
+      - {en: "Swap the order of the two verses", sr: "Zameniti redosled dve strofe"}
+      - {en: "Cut the chorus so the verses stand out", sr: "Izbaciti refren da se strofe istaknu"}
+    answer: 0
+  - id: L-017-4
+    type: mcq
+    prompt: {en: "The best line of a draft, “your toothbrush in the cup has gone dry”, sits at the end of verse 2. What should the rewrite consider?", sr: "Najbolji stih nacrta, „tvoja četkica u čaši se osušila“, stoji na kraju druge strofe. Šta prepravljanje treba da razmotri?"}
+    options:
+      - {en: "Moving it where it is heard most, or building the chorus and title on it", sr: "Da ga premesti tamo gde se najviše čuje, ili da na njemu izgradi refren i naslov"}
+      - {en: "Cutting it: it does not rhyme with anything", sr: "Da ga izbaci: ne rimuje se ni sa čim"}
+      - {en: "Explaining it in the next line so nobody misses it", sr: "Da ga objasni u sledećem stihu da ga niko ne propusti"}
+      - {en: "Leaving it: the best line belongs at the end of verse 2", sr: "Da ga ostavi: najbolji stih pripada kraju druge strofe"}
+    answer: 0
+  - id: L-017-5
+    type: mcq
+    prompt: {en: "“I walk into the bar. She looked at me. I order a drink.” What is wrong?", sr: "„Ulazim u kafanu. Pogledala me je. Naručujem piće.“ Šta ne valja?"}
+    options:
+      - {en: "The tense slides from present to past and back for no reason", sr: "Vreme bez razloga klizi iz sadašnjeg u prošlo i nazad"}
+      - {en: "The point of view switches from I to she", sr: "Tačka gledišta prelazi sa „ja“ na „ona“"}
+      - {en: "There is no rhyme", sr: "Nema rime"}
+      - {en: "The lines are too concrete", sr: "Stihovi su previše konkretni"}
+    answer: 0
+  - id: L-017-6
+    type: write
+    prompt:
+      en: "Rewrite this first draft into a second draft (verse – chorus – verse – chorus, English or Serbian). EN draft: “V1: I wake up late, the room is grey, I miss you every day / C: Can't go on like this, I need a change / V2: I go to work, I hate my boss, he yelled at me on Monday; your toothbrush in the cup has gone dry.” SR draft: “S1: Budim se kasno, soba je siva, svaki dan mi nedostaješ / R: Ne mogu više ovako, treba mi promena / S2: Idem na posao, mrzim šefa, vikao je na mene u ponedeljak; tvoja četkica u čaši se osušila.” First write the one-sentence summary, then the new lyric, then a reverse outline (one line per section)."
+      sr: "Prepravi ovaj prvi nacrt u drugu verziju (strofa – refren – strofa – refren, na engleskom ili srpskom). EN nacrt: „V1: I wake up late, the room is grey, I miss you every day / C: Can't go on like this, I need a change / V2: I go to work, I hate my boss, he yelled at me on Monday; your toothbrush in the cup has gone dry.” SR nacrt: „S1: Budim se kasno, soba je siva, svaki dan mi nedostaješ / R: Ne mogu više ovako, treba mi promena / S2: Idem na posao, mrzim šefa, vikao je na mene u ponedeljak; tvoja četkica u čaši se osušila.“ Prvo napiši rečenicu-sažetak, pa novi tekst, pa obrnutu skicu (po jedan red za svaki deo)."
+    language: either
+    lines: [12, 24]
+    rubric:
+      - id: one-song
+        label: {en: "One song", sr: "Jedna pesma"}
+        top: {en: "The summary names one subject, and every section serves it; the boss (or the breakup) is gone.", sr: "Sažetak imenuje jednu temu i svaki deo joj služi; šef (ili raskid) je nestao."}
+      - id: title
+        label: {en: "Title in place", sr: "Naslov na mestu"}
+        top: {en: "The chorus carries a title in its first or last line, and the title comes from the song's strongest image.", sr: "Refren nosi naslov u prvom ili poslednjem stihu, a naslov dolazi iz najjače slike pesme."}
+      - id: moves
+        label: {en: "Verse 2 moves", sr: "Druga strofa se pomera"}
+        top: {en: "Verse 2 is a later scene with new information; the reverse outline shows a different job for each section.", sr: "Druga strofa je kasnija scena sa novom informacijom; obrnuta skica pokazuje drugačiji zadatak za svaki deo."}
+      - id: steady
+        label: {en: "Steady POV and tense", sr: "Stalna tačka gledišta i vreme"}
+        top: {en: "One point of view and one tense per section, and any change happens at a section boundary for a reason.", sr: "Jedna tačka gledišta i jedno vreme po delu, a svaka promena se dešava na granici delova, sa razlogom."}

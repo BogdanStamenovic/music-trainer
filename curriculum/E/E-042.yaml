@@ -1,0 +1,110 @@
+id: E-042
+track: E
+order: 42
+title: {en: "Bass + chords of a pop song, phrase by phrase", sr: "Bas i akordi pop pesme, fraza po frazu"}
+prereqs: [E-041, E-032]
+minutes: 15
+tags: [ear, harmony, bass, song]
+explain:
+  en: |
+    Taking the chords off a record is the same job as dictation, with the bass as your guide. The
+    method a session player uses:
+
+    1. **Find the key.** Hum the note the chorus ends on. That is usually the tonic.
+    2. **Bass first, one section at a time.** Sing the bass of the verse (low, slow, one note per
+       chord) and find it on the keyboard. In pop the bass mostly plays chord roots.
+    3. **Quality from the key.** Over a root that is degree 1, 4 or 5, try major; over 2, 3 or 6,
+       try minor (E-032). Then check by ear: if it clashes, it is something else (E-038).
+    4. **Watch for a bass note that is not a root.** A bass that walks by step (G – F♯ – E) often
+       means an inversion: the F♯ is the 3rd of D, so the chord is **V6** (D/F♯).
+    5. **Rhythm last.** Where does each chord change? On beat 1, or an eighth early (a **push**,
+       anticipating the bar line)?
+
+    Today's song is an original in G major, ♩=88, written in the common pop shape:
+
+    | section | chords | numerals |
+    |---|---|---|
+    | verse | Em – C – G – D | vi – IV – I – V |
+    | chorus | G – D/F♯ – Em – C | I – V6 – vi – IV |
+    | bridge | C – D – Bm – Em – C – D | IV – V – iii – vi – IV – V |
+
+    The exercises go section by section: bass, then chords, then the rhythm of the changes. Play
+    chords in any voicing, but keep the bass note right: it is graded.
+  sr: |
+    Skidanje akorda sa snimka je isti posao kao diktat, a bas je vodič. Metod studijskog muzičara:
+
+    1. **Nađi tonalitet.** Otpevuši ton na kome se završava refren. To je obično tonika.
+    2. **Prvo bas, deo po deo.** Otpevaj bas strofe (nisko, sporo, jedan ton po akordu) i nađi ga na
+       klavijaturi. U popu bas uglavnom svira osnovne tonove akorada.
+    3. **Kvalitet iz tonaliteta.** Nad osnovnim tonom koji je 1., 4. ili 5. stupanj probaj dur; nad
+       2., 3. ili 6. probaj mol (E-032). Onda proveri sluhom: ako se tuče, u pitanju je nešto drugo
+       (E-038).
+    4. **Pazi na bas ton koji nije osnovni.** Bas koji hoda korakom (G – Fis – E) često znači obrtaj:
+       Fis je terca D-dura, pa je akord **V6** (D/Fis).
+    5. **Ritam na kraju.** Gde se akord menja? Na prvu dobu, ili osminu ranije (**pomeranje**, „push",
+       ispred taktne crte)?
+
+    Današnja pesma je originalna, u G-duru, ♩=88, napisana u uobičajenom pop obliku:
+
+    | deo | akordi | rimski brojevi |
+    |---|---|---|
+    | strofa | Em – C – G – D | vi – IV – I – V |
+    | refren | G – D/Fis – Em – C | I – V6 – vi – IV |
+    | bridž | C – D – Hm – Em – C – D | IV – V – iii – vi – IV – V |
+
+    Vežbe idu deo po deo: bas, pa akordi, pa ritam promena. Sviraj akorde u bilo kom rasporedu, ali
+    bas mora biti tačan: ocenjuje se.
+exercises:
+  - id: E-042-1
+    type: generated
+    prompt: {en: "Verse: echo the bass (one note per chord).", sr: "Strofa: ponovi bas (jedan ton po akordu)."}
+    count: 1
+    gen: {kind: bass-echo, keys: [G], type: major, numerals: [vi, IV, I, V], line: [vi, IV, I, V], octave: 2, tempo: 80}
+    checks:
+      - numeral: {key: G, is: "vi", notes: [E3, E4, G4, B4]}
+      - numeral: {key: G, is: "IV", notes: [C3, E4, G4, C5]}
+      - numeral: {key: G, is: "I", notes: [G3, D4, G4, B4]}
+      - numeral: {key: G, is: "V", notes: [D3, D4, F#4, A4]}
+      - numeral: {key: G, is: "V6", notes: [F#3, D4, A4, D5]}
+      - numeral: {key: G, is: "iii", notes: [B3, D4, F#4, B4]}
+  - id: E-042-2
+    type: midi-echo
+    prompt: {en: "Verse chords, one per bar (4 beats each). Listen, then play them back in time: any voicing, right bass.", sr: "Akordi strofe, jedan po taktu (po 4 dobe). Slušaj, pa ih odsviraj u ritmu: bilo koji raspored, tačan bas."}
+    mode: chords
+    expectChords: [[E3, E4, G4, B4], [C3, E4, G4, C5], [G3, D4, G4, B4], [D3, D4, F#4, A4]]
+    beats: [4, 4, 4, 4]
+    tempo: 88
+    octave: any
+    bass: true
+    pass: 0.7
+  - id: E-042-3
+    type: generated
+    prompt: {en: "Chorus: echo the bass. It walks down by step from the tonic.", sr: "Refren: ponovi bas. Silazi korakom od tonike."}
+    count: 1
+    gen: {kind: bass-echo, keys: [G], type: major, numerals: [I, V6, vi, IV], line: [I, V6, vi, IV], octave: 2, tempo: 80}
+  - id: E-042-4
+    type: generated
+    prompt: {en: "Chorus: which chords? (V6 = the V chord with its 3rd in the bass)", sr: "Refren: koji akordi? (V6 = akord V sa tercom u basu)"}
+    count: 4
+    gen: {kind: progression-ear, keys: [G], type: major, options: [[I, V6, vi, IV], [I, V, vi, IV], [I, iii, vi, IV], [I, V6, IV, I]], tempo: 72, smooth: true}
+  - id: E-042-5
+    type: midi-echo
+    prompt: {en: "Chorus with the real rhythm: from the second chord on, each change comes an eighth early (a push). Listen, then play it back in time.", sr: "Refren sa pravim ritmom: od drugog akorda, svaka promena dolazi osminu ranije (pomeranje). Slušaj, pa odsviraj u ritmu."}
+    mode: chords
+    expectChords: [[G3, D4, G4, B4], [F#3, D4, A4, D5], [E3, E4, G4, B4], [C3, E4, G4, C5]]
+    beats: [3.5, 4, 4, 4.5]
+    tempo: 88
+    octave: any
+    bass: true
+    pass: 0.7
+    checks:
+      - chord: {notes: [F#3, D4, A4, D5], root: D, quality: maj, inversion: 1}
+  - id: E-042-6
+    type: generated
+    prompt: {en: "Bridge: which chords? It starts away from the tonic and ends on V, ready for the last chorus.", sr: "Bridž: koji akordi? Počinje daleko od tonike i završava se na V, spreman za poslednji refren."}
+    count: 4
+    gen: {kind: progression-ear, keys: [G], type: major, options: [[IV, V, iii, vi, IV, V], [IV, V, I, vi, IV, V], [IV, V, iii, vi, ii, V], [IV, I, iii, vi, IV, V]], tempo: 72, smooth: true}
+  - id: E-042-7
+    type: practice
+    prompt: {en: "Play the whole song from memory: verse, chorus, verse, chorus, bridge, chorus, chorus. Left hand plays the bass in half notes, right hand the chords with the pushes. Hum a melody of your own over the chorus.", sr: "Odsviraj celu pesmu napamet: strofa, refren, strofa, refren, bridž, refren, refren. Leva ruka svira bas u polovinama, desna akorde sa pomeranjima. Pevušaj sopstvenu melodiju preko refrena."}
+    minutes: 4

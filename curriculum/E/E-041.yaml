@@ -1,0 +1,125 @@
+id: E-041
+track: E
+order: 41
+title: {en: "Song form by ear: verse, chorus, bridge", sr: "Forma pesme po sluhu: strofa, refren, bridž"}
+prereqs: [E-040, T-065]
+minutes: 13
+tags: [ear, form, song]
+explain:
+  en: |
+    Form by ear is a memory game with one rule: **notice what comes back**. A section that returns
+    with the same melody *and* the same words is a chorus; same melody with new words is a verse;
+    something heard once, late, that sounds like "somewhere else" is the bridge.
+
+    | | verse | chorus | bridge |
+    |---|---|---|---|
+    | words | new each time | the same each time | new, heard once |
+    | melody | lower, more notes, speech rhythm | higher, longer notes, the hook | new material, often starting on IV or vi |
+    | ending | often open (leads into the chorus) | closed, on the tonic | open, on V: it sets up the last chorus |
+    | where | before each chorus | after each verse and at the end | after the second chorus |
+
+    The two big shapes:
+
+    - **Verse–chorus** (most pop and rock): verse – chorus – verse – chorus – bridge – chorus.
+    - **AABA** (older pop, jazz standards, 32 bars): a tune A heard twice, a contrasting B (the
+      "bridge" or *middle eight*), then A again. There is no separate chorus: the A section carries
+      the title.
+
+    In the exercises each section is shortened to two bars so a whole form fits in half a minute.
+    Write letters as you listen: a new idea gets a new letter, a return gets the old one.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^verse" C D E G E2 D2 | "^chorus" G2 c2 c3 B | A2 B2 c4 | "^bridge" F4 A2 c2 | B4 G4 |]
+    ```
+  sr: |
+    Forma po sluhu je igra pamćenja sa jednim pravilom: **primeti šta se vraća**. Deo koji se vraća
+    sa istom melodijom *i* istim rečima je refren; ista melodija sa novim rečima je strofa; nešto što
+    se čuje jednom, kasno, i zvuči kao „negde drugde" je bridž (most).
+
+    | | strofa | refren | bridž |
+    |---|---|---|---|
+    | reči | nove svaki put | iste svaki put | nove, čuju se jednom |
+    | melodija | niža, više tonova, ritam govora | viša, duži tonovi, „udica" (hook) | nov materijal, često počinje na IV ili vi |
+    | završetak | često otvoren (vodi u refren) | zatvoren, na tonici | otvoren, na V: priprema poslednji refren |
+    | gde | pre svakog refrena | posle svake strofe i na kraju | posle drugog refrena |
+
+    Dva velika oblika:
+
+    - **Strofa–refren** (većina popa i roka): strofa – refren – strofa – refren – bridž – refren.
+    - **AABA** (stariji pop, džez standardi, 32 takta): melodija A dvaput, kontrastni deo B („bridž"
+      ili *middle eight*), pa opet A. Nema posebnog refrena: deo A nosi naslov.
+
+    U vežbama je svaki deo skraćen na dva takta, da cela forma stane u pola minuta. Piši slova dok
+    slušaš: nova ideja dobija novo slovo, povratak dobija staro.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:C
+    "^strofa" C D E G E2 D2 | "^refren" G2 c2 c3 B | A2 B2 c4 | "^bridž" F4 A2 c2 | B4 G4 |]
+    ```
+exercises:
+  - id: E-041-1
+    type: mcq
+    prompt: {en: "Two sections of a song in C major. Which one is the chorus?", sr: "Dva dela pesme u C-duru. Koji je refren?"}
+    options:
+      - {en: "The first", sr: "Prvi"}
+      - {en: "The second", sr: "Drugi"}
+    answer: 1
+    keepOrder: true
+    play: {notes: [C4, C4, D4, E4, E4, D4, C4, D4, E4, G4, E4, D4, G4, C5, C5, B4, A4, B4, C5], durations: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 2], tempo: 104}
+    checks:
+      - interval: {from: G4, to: C5, is: P4}
+      - interval: {from: C4, to: G4, is: P5}
+  - id: E-041-2
+    type: mcq
+    prompt: {en: "A tune in C major (each section two bars). What is the form?", sr: "Melodija u C-duru (svaki deo dva takta). Koja je forma?"}
+    options:
+      - {en: "AABA", sr: "AABA"}
+      - {en: "ABAB", sr: "ABAB"}
+      - {en: "AABB", sr: "AABB"}
+      - {en: "ABCA", sr: "ABCA"}
+    answer: 0
+    play: {notes: [E4, G4, A4, G4, E4, D4, C4, E4, G4, A4, G4, E4, D4, C4, F4, A4, C5, B4, G4, E4, G4, A4, G4, E4, D4, C4], durations: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2], tempo: 108}
+    checks:
+      - numeral: {key: C, is: "IV", notes: [F4, A4, C5]}
+  - id: E-041-3
+    type: mcq
+    prompt: {en: "A whole song in miniature (each section two bars). What is the form?", sr: "Cela pesma u malom (svaki deo dva takta). Koja je forma?"}
+    options:
+      - {en: "verse – chorus – verse – chorus – bridge – chorus", sr: "strofa – refren – strofa – refren – bridž – refren"}
+      - {en: "verse – chorus – verse – chorus – chorus", sr: "strofa – refren – strofa – refren – refren"}
+      - {en: "verse – verse – chorus – bridge – chorus", sr: "strofa – strofa – refren – bridž – refren"}
+      - {en: "AABA", sr: "AABA"}
+    answer: 0
+    play: {notes: [C4, C4, D4, E4, E4, D4, C4, D4, E4, G4, E4, D4, G4, C5, C5, B4, A4, B4, C5, C4, C4, D4, E4, E4, D4, C4, D4, E4, G4, E4, D4, G4, C5, C5, B4, A4, B4, C5, F4, A4, C5, B4, G4, G4, C5, C5, B4, A4, B4, C5], durations: [0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1.5, 0.5, 1, 1, 2, 2, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 1, 1, 2], tempo: 112}
+  - id: E-041-4
+    type: mcq
+    prompt: {en: "The bridge, then the chorus. How does the bridge end?", sr: "Bridž, pa refren. Kako se bridž završava?"}
+    options:
+      - {en: "Open: it stops on 5 (over V) and needs the chorus", sr: "Otvoreno: staje na 5 (preko V) i traži refren"}
+      - {en: "Closed: it ends on the tonic", sr: "Zatvoreno: završava se na tonici"}
+    answer: 0
+    keepOrder: true
+    play: {notes: [F4, A4, C5, B4, G4, G4, C5, C5, B4, A4, B4, C5], durations: [2, 1, 1, 2, 2, 1, 1, 1.5, 0.5, 1, 1, 2], tempo: 104}
+    checks:
+      - numeral: {key: C, is: "V", notes: [G3, B3, D4]}
+      - roman: {key: C, degree: 4, is: "IV"}
+  - id: E-041-5
+    type: midi-echo
+    prompt: {en: "Play back the chorus hook (C major, starts on G4).", sr: "Odsviraj „udicu” refrena (C-dur, počinje na G4)."}
+    mode: sequence
+    expect: [G4, C5, C5, B4, A4, B4, C5]
+    beats: [1, 1, 1.5, 0.5, 1, 1, 2]
+    tempo: 104
+    octave: exact
+    pass: 0.7
+  - id: E-041-6
+    type: practice
+    prompt: {en: "Pick a song you know well and listen to all of it. Write the form as a timeline (V C V C B C, or A A B A), with the number of bars in each section (count 1-2-3-4 per bar). Which section has the highest notes? Where is the title sung?", sr: "Izaberi pesmu koju dobro znaš i preslušaj je celu. Zapiši formu kao vremensku liniju (S R S R B R, ili A A B A), sa brojem taktova u svakom delu (broji 1-2-3-4 po taktu). Koji deo ima najviše tonove? Gde se peva naslov?"}
+    minutes: 5

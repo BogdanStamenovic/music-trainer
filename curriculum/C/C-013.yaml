@@ -1,0 +1,174 @@
+id: C-013
+track: C
+order: 13
+prereqs: [C-012, C-010]
+title: {en: "A melody in minor over i–iv–V", sr: "Melodija u molu nad i–iv–V"}
+minutes: 15
+tags: [composition, melody, minor, harmony]
+explain:
+  en: |
+    C-010 gave you the minor scale with its leading tone. Now the melody gets a chord under it.
+    In minor the three main chords are:
+
+    | numeral | A minor | D minor | what it adds |
+    |---|---|---|---|
+    | **i** | A C E | D F A | home |
+    | **iv** | D F A | G B♭ D | the **6th degree** (F, B♭): dark, heavy |
+    | **V** | E G♯ B | A C♯ E | the **leading tone** (G♯, C♯): pull to the tonic |
+
+    **Rule of thumb: chord tones on the strong beats** (1 and 3 in 4/4), anything stepwise in
+    between. The listener hears the harmony through the notes that land on the beat.
+
+    **The danger spot is the change iv → V.** The 6th degree belongs to iv, the raised 7th to V,
+    and they are an augmented 2nd apart (F → G♯). A melody that jumps from the top of iv straight
+    to the leading tone stumbles exactly at the chord change. Better moves:
+
+    - **6 → 5**: F → E. The 6th sinks a half step into the 5th of V. This "sigh" is the most
+      typical minor-key gesture there is.
+    - **1 → 7** or **3 → 2**: A → G♯, C → B. A step into a chord tone of V.
+    - Let V carry the leading tone in a later beat, after a chord tone.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    "^i"A2 B2 c2 e2 | "^iv"f2 e2 d2 c2 | "^V"B2 ^G2 E2 ^G2 | "^i"A8 |]
+    ```
+
+    Beats 1 and 3: A, c (i), f, d (iv), B, E (V), A. In between: passing notes (B in bar 1,
+    e and c in bar 2) or other chord tones (e in bar 1, G♯ in bar 3). Bar 2 → 3 goes c → B: no augmented 2nd at the chord change.
+
+    **Why V and not v:** a minor v (E G B) has no leading tone, so the final i does not sound
+    like an arrival. In a minor melody, V is where G♯ belongs; elsewhere the natural G is
+    usually smoother (C-010).
+
+    **At the keyboard:** left hand i – iv – V – i in A minor, one chord per bar. Right hand:
+    improvise, but play only chord tones on beats 1 and 3. Then the same in D minor.
+  sr: |
+    U C-010 si dobio molsku lestvicu sa vođicom. Sada melodija dobija akord ispod sebe. U molu
+    su tri glavna akorda:
+
+    | stupanj | a-mol | d-mol | šta donosi |
+    |---|---|---|---|
+    | **i** | A C E | D F A | kuća |
+    | **iv** | D F A | G B D | **šesti stupanj** (F, B): tamno, teško |
+    | **V** | E Gis H | A Cis E | **vođicu** (Gis, Cis): vuče ka tonici |
+
+    **Pravilo: akordski tonovi na jakim dobama** (1 i 3 u 4/4), između njih bilo šta postupno.
+    Slušalac čuje harmoniju kroz tonove koji padaju na dobu.
+
+    **Opasno mesto je promena iv → V.** Šesti stupanj pripada iv, povišeni sedmi pripada V, a
+    između njih je prekomerna sekunda (F → Gis). Melodija koja sa vrha iv skoči pravo na vođicu
+    posrne baš na promeni akorda. Bolji potezi:
+
+    - **6 → 5**: F → E. Šesti stupanj tone za polustepen na kvintu akorda V. Ovaj „uzdah“ je
+      najtipičniji molski gest koji postoji.
+    - **1 → 7** ili **3 → 2**: A → Gis, C → H. Korak na akordski ton dominante.
+    - Neka V donese vođicu na kasnijoj dobi, posle akordskog tona.
+
+    ```abc
+    X:1
+    M:4/4
+    L:1/8
+    K:Am
+    "^i"A2 B2 c2 e2 | "^iv"f2 e2 d2 c2 | "^V"B2 ^G2 E2 ^G2 | "^i"A8 |]
+    ```
+
+    Dobe 1 i 3: A, c (i), f, d (iv), H, E (V), A. Između njih: prolaznice (H u taktu 1, e i c
+    u taktu 2) ili drugi akordski tonovi (e u taktu 1, Gis u taktu 3). Prelaz iz
+    takta 2 u takt 3 ide c → H: nema prekomerne sekunde na promeni akorda.
+
+    **Zašto V, a ne v:** molski v (E G H) nema vođicu, pa završno i ne zvuči kao dolazak. U
+    molskoj melodiji Gis pripada akordu V; drugde je prirodno G obično glatkije (C-010).
+
+    **Za klavirom:** leva ruka i – iv – V – i u a-molu, jedan akord po taktu. Desna ruka
+    improvizuje, ali na 1. i 3. dobi svira samo akordske tonove. Zatim isto u d-molu.
+exercises:
+  - id: C-013-1
+    type: mcq
+    prompt: {en: "A minor, i – iv – V – i. Which notes make the V chord?", sr: "a-mol, i – iv – V – i. Koji tonovi čine akord V?"}
+    options:
+      - {en: "E G♯ B", sr: "E Gis H"}
+      - {en: "E G B", sr: "E G H"}
+      - {en: "D F A", sr: "D F A"}
+      - {en: "G B D", sr: "G H D"}
+    answer: 0
+    checks:
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+      - chord: {notes: [E4, "G#4", B4], root: E, quality: maj}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+  - id: C-013-2
+    type: mcq
+    prompt: {en: "D minor, the chord is iv. Which melody note on beat 1 is a chord tone?", sr: "d-mol, akord je iv. Koji ton melodije na prvoj dobi je akordski ton?"}
+    options: ["Bb", "A", "E", "C#"]
+    answer: 0
+    checks:
+      - roman: {key: D, type: harmonic-minor, degree: 4, is: "iv"}
+      - chord: {notes: [G4, Bb4, D5], root: G, quality: min}
+  - id: C-013-3
+    type: mcq
+    abc: "X:1\nM:4/4\nL:1/8\nK:Am\n\"^i\"A2 c2 e2 c2 | \"^iv\"d2 f2 a2 f2 | \"^V\"G4 B4 | \"^i\"A8 |]"
+    prompt: {en: "Something clashes with the harmony. What?", sr: "Nešto se sudara sa harmonijom. Šta?"}
+    options:
+      - {en: "The natural G in bar 3 against the G♯ of V", sr: "Prirodno G u taktu 3 protiv Gis u akordu V"}
+      - {en: "The F in bar 2: F does not belong to iv", sr: "F u taktu 2: F ne pripada akordu iv"}
+      - {en: "The final A: a minor melody should end on E", sr: "Završno A: molska melodija treba da se završi na E"}
+      - {en: "Nothing: every strong beat is a chord tone", sr: "Ništa: svaka jaka doba je akordski ton"}
+    answer: 0
+    checks:
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [E4, "G#4", B4], root: E, quality: maj}
+      - semitones: {from: G4, to: "G#4", is: 1}
+  - id: C-013-4
+    type: generated
+    prompt: {en: "Play i – iv – V – i in the key shown, smoothly voiced: the left hand of every exercise below.", sr: "Odsviraj i – iv – V – i u zadatom tonalitetu, sa glatkim vođenjem glasova: leva ruka za sve vežbe ispod."}
+    count: 3
+    gen: {kind: progression, keys: [A, D, E], type: harmonic-minor, numerals: [i, iv, V, i], smooth: true}
+  - id: C-013-5
+    type: compose
+    prompt:
+      en: "D minor (B♭), 4/4, 4 bars over i | iv | V | i, one chord per bar. Bar 1 is given. Chord tones on beats 1 and 3 (in between: steps or other chord tones), C♯ over V, and end on D reached from C♯ or E."
+      sr: "d-mol (B), 4/4, 4 takta nad i | iv | V | i, jedan akord po taktu. Takt 1 je zadat. Akordski tonovi na 1. i 3. dobi (između njih: koraci ili drugi akordski tonovi), Cis nad V, a završi na D do kog stižeš sa Cis ili E."
+    given: "X:1\nM:4/4\nL:1/4\nK:Dm\nD F A F |\n"
+    key: D minor
+    meter: 4/4
+    bars: 4
+    range: [C4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, cadence]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Dm
+      D F A F | G B d B | A G E ^C | D4 |]
+    checks:
+      - chord: {notes: [G4, Bb4, D5], root: G, quality: min}
+      - chord: {notes: [A4, "C#5", E5], root: A, quality: maj}
+      - semitones: {from: "C#4", to: D4, is: 1}
+  - id: C-013-6
+    type: compose
+    prompt:
+      en: "E minor (F♯), 8 bars, two voices. The bass is given: i | iv | i | V | i | iv | V | i (E A E B E A B E). Write the melody in half and quarter notes: chord tones on beats 1 and 3, a half cadence on F♯ or D♯ in bar 4, E in bar 8, no parallel 5ths or octaves with the bass. The 6th degree C goes to B, not to D♯."
+      sr: "e-mol (Fis), 8 taktova, dva glasa. Bas je zadat: i | iv | i | V | i | iv | V | i (E A E H E A H E). Napiši melodiju u polovinama i četvrtinama: akordski tonovi na 1. i 3. dobi, polukadenca na Fis ili Dis u taktu 4, E u taktu 8, bez paralelnih kvinti i oktava sa basom. Šesti stupanj C ide na H, ne na Dis."
+    given: "X:1\nM:4/4\nL:1/4\nK:Em\nV:1\nB2 G2 |\nV:2 clef=bass\nE,4 | A,4 | E,4 | B,,4 | E,4 | A,4 | B,,4 | E,4 |]\n"
+    key: E minor
+    meter: 4/4
+    bars: 8
+    voices: 2
+    range: [D4, E5]
+    rules: [bars, rhythm, key, range, leaps, augmented, half-cadence, cadence, parallels]
+    example: |
+      X:1
+      M:4/4
+      L:1/4
+      K:Em
+      V:1
+      B2 G2 | A2 c2 | B G E B | ^d4 | B2 G2 | c2 e2 | ^d B A F | E4 |]
+      V:2 clef=bass
+      E,4 | A,4 | E,4 | B,,4 | E,4 | A,4 | B,,4 | E,4 |]
+    checks:
+      - roman: {key: E, type: harmonic-minor, degree: 5, is: "V"}
+      - chord: {notes: [B3, "D#4", "F#4"], root: B, quality: maj}
+      - chord: {notes: [A3, C4, E4], root: A, quality: min}
+      - interval: {from: C4, to: "D#4", is: A2}
