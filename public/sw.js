@@ -2,7 +2,7 @@
 // - navigations and /_next/static: stale-while-revalidate (pages work offline)
 // - GET /api/today, /api/lesson/*: network-first, cached copy when offline
 // - POST /api/submit is never cached: the page queues it in IndexedDB instead
-const VERSION = "mt-v2";
+const VERSION = "mt-v3";
 const SHELL = ["/", "/review", "/test", "/placement", "/progress", "/settings", "/voice", "/manifest.webmanifest", "/icon-192.png"];
 
 self.addEventListener("install", (e) => {

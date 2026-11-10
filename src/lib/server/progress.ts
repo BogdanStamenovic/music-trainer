@@ -2,7 +2,7 @@ import { getDb, now } from "./db";
 import { getCurriculum } from "../curriculum/loader";
 import { generateItems, Item, GenCtx } from "../curriculum/items";
 import { getRecording, bestAnalysis, setVoiceDay } from "./recordings";
-import { setVoiceRange } from "./settings";
+import { setVoiceRange, getSettings, setPlacementPending } from "./settings";
 import { grade, exerciseScore, Response, Grade } from "../grading";
 import type { Exercise, Lesson } from "../curriculum/schema";
 
@@ -194,8 +194,24 @@ export function submit(sub: Submission): SubmissionResult {
   return result;
 }
 
-/** Placement: apply skip mappings for every placement exercise that passed. */
-export function finishPlacement(results: { exerciseId: string; score: number; pass: boolean }[]) {
+/**
+ * Latest placement result per exercise, rebuilt from stored submissions. Placement
+ * answers are graded and saved as they happen, so nothing depends on the client
+ * keeping state (a reload, or finishing a section another day, loses nothing).
+ */
+export function placementResultsFromDb(): Map<string, { exerciseId: string; score: number; pass: boolean }> {
+  const rows = getDb()
+    .prepare("SELECT s.result FROM submissions s WHERE s.uuid IN (SELECT DISTINCT uuid FROM attempts WHERE context = 'placement') ORDER BY s.received_at")
+    .all() as { result: string }[];
+  const out = new Map<string, { exerciseId: string; score: number; pass: boolean }>();
+  for (const r of rows) {
+    const j = JSON.parse(r.result) as SubmissionResult;
+    out.set(j.exerciseId, { exerciseId: j.exerciseId, score: j.score, pass: j.pass }); // later overrides earlier
+  }
+  return out;
+}
+
+function applySkips(results: { exerciseId: string; score: number; pass: boolean }[]) {
   const skip = new Set<string>();
   for (const r of results) {
     const f = findExercise(r.exerciseId);
@@ -207,8 +223,55 @@ export function finishPlacement(results: { exerciseId: string; score: number; pa
   const ok = (id: string) => skip.has(id) || ["passed", "skipped"].includes(status.get(id)?.status ?? "");
   const final = [...skip].filter((id) => (c.byId.get(id)?.prereqs ?? []).every(ok));
   markLessons(final, "skipped", "placement");
-  getDb().prepare("INSERT INTO placement_results(taken_at, result) VALUES (?, ?)").run(now(), JSON.stringify({ results, skipped: final }));
-  return { skipped: final };
+  return final;
+}
+
+function sectionExerciseIds(sectionIds: string[]): string[] {
+  const secs = getCurriculum().placement?.sections ?? [];
+  return secs.filter((s) => sectionIds.includes(s.id)).flatMap((s) => s.exercises.map((e) => e.id));
+}
+
+/**
+ * Finish placement for every section except `deferred`, from the stored results.
+ * Deferred sections are recorded as pending: they place nothing (their track starts
+ * at lesson 1) until completed with completePlacementSection.
+ */
+export function finalizePlacement(deferred: string[]) {
+  const secs = (getCurriculum().placement?.sections ?? []).map((s) => s.id);
+  const valid = deferred.filter((d) => secs.includes(d));
+  const doneSections = secs.filter((s) => !valid.includes(s));
+  const ids = new Set(sectionExerciseIds(doneSections));
+  const results = [...placementResultsFromDb().values()].filter((r) => ids.has(r.exerciseId));
+  const skipped = applySkips(results);
+  setPlacementPending(valid);
+  getDb().prepare("INSERT INTO placement_results(taken_at, result) VALUES (?, ?)").run(now(), JSON.stringify({ results, skipped, sections: doneSections, deferred: valid }));
+  return { skipped, deferred: valid };
+}
+
+/** A section deferred earlier has now been done: apply its results and clear it from pending. */
+export function completePlacementSection(section: string) {
+  const ids = new Set(sectionExerciseIds([section]));
+  const results = [...placementResultsFromDb().values()].filter((r) => ids.has(r.exerciseId));
+  const skipped = applySkips(results);
+  const pending = getSettings().placementPending.filter((s) => s !== section);
+  setPlacementPending(pending);
+  getDb().prepare("INSERT INTO placement_results(taken_at, result) VALUES (?, ?)").run(now(), JSON.stringify({ results, skipped, sections: [section], deferred: pending }));
+  return { skipped, deferred: pending };
+}
+
+/** Old clients POST their own results list; the stored results are authoritative either way. */
+export function finishPlacement(_results: { exerciseId: string; score: number; pass: boolean }[]) {
+  return finalizePlacement([]);
+}
+
+export function placementStatus() {
+  const done = placementResultsFromDb();
+  const secs = getCurriculum().placement?.sections ?? [];
+  return {
+    finished: placementDone(),
+    pending: getSettings().placementPending,
+    sections: secs.map((s) => ({ id: s.id, total: s.exercises.length, done: s.exercises.filter((e) => done.has(e.id)).map((e) => e.id) })),
+  };
 }
 
 export function placementDone(): boolean {

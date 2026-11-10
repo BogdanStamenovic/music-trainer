@@ -7,6 +7,7 @@ import type { DayPlan } from "@/lib/server/planner";
 
 interface Today {
   plan: DayPlan;
+  settings?: { placementPending?: string[] };
   titles: Record<string, { en: string; sr: string }>;
   placementDone: boolean;
 }
@@ -51,6 +52,20 @@ export default function TodayPage() {
       </h1>
       {stale ? <p className="pill warn">{t("offline")}</p> : null}
       {p.note ? <p className="note">{l(p.note)}</p> : null}
+
+      {d.settings?.placementPending?.length ? (
+        <section className="card note" data-testid="placement-pending-banner">
+          <h2>{t("placementPendingBanner")}</h2>
+          <p className="small">{t("placementPendingHint")}</p>
+          <div className="row">
+            {d.settings.placementPending.map((id) => (
+              <Link key={id} className="button primary" href={`/placement?section=${id}`}>
+                {t("start")}: {id === "ear" ? t("E") : id === "theory" ? t("T") : id === "notation" ? "Notation" : id}
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {p.kind === "placement" ? (
         <section className="card">

@@ -18,6 +18,7 @@ export interface Settings {
   voiceRange: null | { low: number; high: number; comfortLow: number; comfortHigh: number; measuredAt: number }; // MIDI
   shareRecordings: boolean; // consent: voice-score's developer agent may use early recordings for validation
   shareConsentAt: number | null;
+  placementPending: string[]; // placement sections deferred with "do this later"; not settable from the client
 }
 
 // Default weekly schedule from Bogdan (2026-11-10, relayed by manager-15).
@@ -34,6 +35,7 @@ export const DEFAULTS: Settings = {
   voiceRange: null,
   shareRecordings: false,
   shareConsentAt: null,
+  placementPending: [],
 };
 
 export function getSettings(): Settings {
@@ -79,4 +81,8 @@ export function setVoiceRange(low: number, high: number) {
   const v = { low, high, comfortLow: Math.min(low + 2, high), comfortHigh: Math.max(high - 2, low), measuredAt: Date.now() };
   getDb().prepare("INSERT INTO settings(key, value) VALUES ('voiceRange', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(JSON.stringify(v));
   return v;
+}
+
+export function setPlacementPending(sections: string[]) {
+  getDb().prepare("INSERT INTO settings(key, value) VALUES ('placementPending', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(JSON.stringify([...new Set(sections)]));
 }
