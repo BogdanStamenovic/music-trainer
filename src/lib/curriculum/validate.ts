@@ -89,6 +89,10 @@ function checkExercise(ex: Exercise, where: string): string[] {
       errs.push(`${where}: check threw ${(e as Error).message}`);
     }
   }
+  if ((ex.type === "midi-play" || ex.type === "midi-echo") && ex.beats) {
+    const n = ex.mode === "chords" ? (ex.expectChords?.length ?? (ex.derive ? derive(ex.derive).length : 0)) : (ex.expect?.length ?? (ex.derive ? derive(ex.derive)[0].length : 0));
+    if (n && ex.beats.length !== n) errs.push(`${where}: ${ex.beats.length} beats for ${n} ${ex.mode === "chords" ? "chords" : "notes"}`);
+  }
   if (ex.type === "compose" && !ex.example) errs.push(`${where}: compose exercises need an \`example\` model answer (tests run it through the music21 worker)`);
   if (ex.type === "mcq" && ex.play?.durations && ex.play.notes && ex.play.durations.length !== ex.play.notes.length) errs.push(`${where}: play.durations length != notes length`);
   if (ex.type === "sing-phrase" && !ex.notes && !ex.derive) errs.push(`${where}: sing-phrase needs notes or derive`);

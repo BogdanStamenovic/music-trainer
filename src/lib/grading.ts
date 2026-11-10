@@ -230,7 +230,7 @@ export function gradeMidi(item: MidiItem, events: MidiEvent[]) {
     let pitch = clamp((sum - 0.5 * extra) / exp.length);
     let timing: ReturnType<typeof timingScore> | null = null;
     if (item.tempo && pairs.length >= 3) {
-      timing = timingScore(pairs.map(([i]) => i), pairs.map(([, j]) => got[j].t), item.tempo);
+      timing = timingScore(pairs.map(([i]) => item.rhythm?.[i] ?? i), pairs.map(([, j]) => got[j].t), item.tempo);
       pitch = 0.75 * pitch + 0.25 * timing.score;
     }
     return { score: pitch, detail: { played: got.map((g) => g.notes), expect: exp, timing } };

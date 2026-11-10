@@ -40,12 +40,16 @@ describe("curriculum content", () => {
               }
             r = { kind: "midi" as const, events: evs };
           }
-          else if (it.kind === "sing") r = { kind: "sing" as const, recordingId: "x", analysis: { tracker: "test", notes: it.targets.map((t, i) => ({ index: i, target_midi: t, cents_error: 3, sustain_s: (it.sustain ?? 0) + 0.5 })) } };
+          else if (it.kind === "sing") {
+            // answer like voice-score does: note indexes count rests in the layout
+            const idx = it.layout ? it.layout.map((e, k) => (e.midi != null ? k : -1)).filter((k) => k >= 0) : it.targets.map((_, i) => i);
+            r = { kind: "sing" as const, recordingId: "x", analysis: { tracker: "test", notes: it.targets.map((t, i) => ({ index: idx[i], target_midi: t, cents_error: 3, sustain_s: (it.sustain ?? 0) + 0.5 })) } };
+          }
           else {
             const evs: { t: number; type: "on" | "off"; note: number }[] = [];
             const beat = it.tempo ? 60000 / it.tempo : 500;
             if (it.mode === "chord") it.expect.forEach((n, i) => evs.push({ t: i * 10, type: "on", note: n }));
-            else if (it.mode === "chords") it.expectChords!.forEach((ch, k) => ch.forEach((n, i) => { evs.push({ t: k * beat + i * 5, type: "on", note: n }); evs.push({ t: k * beat + beat * 0.9, type: "off", note: n }); }));
+            else if (it.mode === "chords") it.expectChords!.forEach((ch, k) => ch.forEach((n, i) => { const t0 = (it.rhythm?.[k] ?? k) * beat; evs.push({ t: t0 + i * 5, type: "on", note: n }); evs.push({ t: t0 + beat * 0.4, type: "off", note: n }); }));
             else it.expect.forEach((n, i) => { const t = (it.rhythm?.[i] ?? i) * beat; evs.push({ t, type: "on", note: n }); evs.push({ t: t + beat * 0.4, type: "off", note: n }); });
             r = { kind: "midi" as const, events: evs };
           }

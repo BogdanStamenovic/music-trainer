@@ -293,10 +293,11 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
         expect = ns.map(toMidi);
         labels = join(ns.map(nno));
       }
-      const rhythm = ex.beats && ex.mode === "sequence" ? ex.beats.reduce<number[]>((acc, b, i) => (acc.push(i === 0 ? 0 : acc[i - 1] + ex.beats![i - 1]), acc), []) : undefined;
+      // written rhythm (onsets in beats) for sequences AND chord progressions
+      const rhythm = ex.beats && ex.mode !== "chord" ? ex.beats.reduce<number[]>((acc, b, i) => (acc.push(i === 0 ? 0 : acc[i - 1] + ex.beats![i - 1]), acc), []) : undefined;
       let play: PlaySpec | undefined = ex.type === "midi-echo" ? playSpec(ex.play) : undefined;
       if (ex.type === "midi-echo" && !play)
-        play = expectChords ? { mode: "chords", chords: expectChords, tempo: ex.tempo ?? 60 } : { mode: ex.mode === "chord" ? "harmonic" : "melodic", notes: expect, tempo: ex.tempo ?? 80, durations: ex.beats };
+        play = expectChords ? { mode: "chords", chords: expectChords, tempo: ex.tempo ?? 60, durations: ex.beats } : { mode: ex.mode === "chord" ? "harmonic" : "melodic", notes: expect, tempo: ex.tempo ?? 80, durations: ex.beats };
       return { ...base, kind: "midi", mode: ex.mode, expect, expectChords, octave: ex.octave, bass: ex.bass, tempo: ex.tempo, showNotes: ex.showNotes, noteLabels: labels, play, rhythm };
     }
     case "practice":
