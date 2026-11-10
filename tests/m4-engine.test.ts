@@ -106,3 +106,28 @@ describe("mcq shuffle + syllable check", () => {
     expect(runCheck({ syllables: { text: "prst", lang: "sr", is: 2 } })).toMatch(/has 1/);
   });
 });
+
+describe("rhythm cells, triplets, written rhythm timing", () => {
+  it("cells keep groups whole and triplets are written as triplets", () => {
+    const ex = Exercise.parse({ id: "E-097-1", type: "generated", prompt: { en: "r", sr: "r" }, count: 6, gen: { kind: "rhythm-echo", meter: "4/4", bars: 2, cells: [[1 / 3, 1 / 3, 1 / 3], [0.5, 0.5], [1]] } });
+    for (const x of generateItems(ex, "s")) {
+      const m = x as MidiItem;
+      expect((m.play!.durations ?? []).reduce((a, b) => a + b, 0)).toBeCloseTo(8);
+      if ((m.play!.durations ?? []).some((d) => Math.abs(d - 1 / 3) < 1e-6)) expect(m.abc).toContain("(3B2B2B2");
+    }
+    const hidden = Exercise.parse({ id: "E-097-2", type: "generated", prompt: { en: "r", sr: "r" }, count: 1, gen: { kind: "rhythm-echo", values: [1], showAbc: false } });
+    expect(generateItems(hidden, "s")[0].abc).toBeUndefined();
+  });
+  it("static echo with beats: plays the rhythm and grades timing against it", async () => {
+    const { grade } = await import("@/lib/grading");
+    const ex = Exercise.parse({ id: "E-097-3", type: "midi-echo", prompt: { en: "p", sr: "p" }, mode: "sequence", expect: ["E4", "E4", "F4", "G4", "G4"], beats: [1.5, 0.5, 1, 1, 2], tempo: 90 });
+    const it0 = generateItems(ex, "s")[0] as MidiItem;
+    expect(it0.play!.durations).toEqual([1.5, 0.5, 1, 1, 2]);
+    expect(it0.rhythm).toEqual([0, 1.5, 2, 3, 4]);
+    const beat = 600;
+    const ok = it0.rhythm!.flatMap((b, i) => [{ t: b * beat, type: "on" as const, note: it0.expect[i] }]);
+    const even = it0.expect.map((n, i) => ({ t: i * beat, type: "on" as const, note: n }));
+    expect(grade(it0, { kind: "midi", events: ok }).score).toBe(1);
+    expect(grade(it0, { kind: "midi", events: even }).score).toBeLessThan(0.95);
+  });
+});

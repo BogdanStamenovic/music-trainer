@@ -281,10 +281,11 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
         expect = ns.map(toMidi);
         labels = join(ns.map(nno));
       }
+      const rhythm = ex.beats && ex.mode === "sequence" ? ex.beats.reduce<number[]>((acc, b, i) => (acc.push(i === 0 ? 0 : acc[i - 1] + ex.beats![i - 1]), acc), []) : undefined;
       let play: PlaySpec | undefined = ex.type === "midi-echo" ? playSpec(ex.play) : undefined;
       if (ex.type === "midi-echo" && !play)
-        play = expectChords ? { mode: "chords", chords: expectChords, tempo: ex.tempo ?? 60 } : { mode: ex.mode === "chord" ? "harmonic" : "melodic", notes: expect, tempo: ex.tempo ?? 80 };
-      return { ...base, kind: "midi", mode: ex.mode, expect, expectChords, octave: ex.octave, bass: ex.bass, tempo: ex.tempo, showNotes: ex.showNotes, noteLabels: labels, play };
+        play = expectChords ? { mode: "chords", chords: expectChords, tempo: ex.tempo ?? 60 } : { mode: ex.mode === "chord" ? "harmonic" : "melodic", notes: expect, tempo: ex.tempo ?? 80, durations: ex.beats };
+      return { ...base, kind: "midi", mode: ex.mode, expect, expectChords, octave: ex.octave, bass: ex.bass, tempo: ex.tempo, showNotes: ex.showNotes, noteLabels: labels, play, rhythm };
     }
     case "practice":
       return { ...base, kind: "practice", minutes: ex.minutes, play: playSpec(ex.play) };
@@ -681,6 +682,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const ctx = cadence.map((c) => c.map((n) => toMidi(n) - 12));
       const play: PlaySpec = { mode: "chords", chords: [...ctx, [toMidi(target)]], tempo: 72 };
       const keyLoc = keyName(tonic, g.type, g.type !== "natural-minor").nom;
+      const cad = g.type === "major" ? "I–IV–V–I" : "i–iv–V–i";
       if (g.answer === "play")
         return {
           ...base,
@@ -691,7 +693,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
           bass: false,
           showNotes: false,
           play,
-          prompt: L(`Key: ${keyLoc.en} (you hear I–IV–V–I). Play the last note.`, `Tonalitet: ${keyLoc.sr} (čuješ I–IV–V–I). Odsviraj poslednji ton.`),
+          prompt: L(`Key: ${keyLoc.en} (you hear ${cad}). Play the last note.`, `Tonalitet: ${keyLoc.sr} (čuješ ${cad}). Odsviraj poslednji ton.`),
           noteLabels: nn(target),
         };
       const { options, answer } = mcq(rng, String(deg), g.degrees.map(String), Math.min(4, g.degrees.length));
@@ -699,7 +701,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         ...base,
         kind: "mcq",
         play,
-        prompt: L(`Key: ${keyLoc.en} (you hear I–IV–V–I). Which scale degree is the last note?`, `Tonalitet: ${keyLoc.sr} (čuješ I–IV–V–I). Koji je stupanj lestvice poslednji ton?`),
+        prompt: L(`Key: ${keyLoc.en} (you hear ${cad}). Which scale degree is the last note?`, `Tonalitet: ${keyLoc.sr} (čuješ ${cad}). Koji je stupanj lestvice poslednji ton?`),
         options: options.map((o) => (o === "8" ? L("8 (tonic, octave up)", "8. (tonika, oktavu više)") : L(`degree ${o}`, `${o}. stupanj`))),
         answer,
       };
@@ -707,14 +709,15 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
     case "rhythm-echo": {
       const [num, den] = g.meter.split("/").map(Number);
       const barBeats = num * (4 / den);
+      const units: number[][] = g.cells?.length ? g.cells : g.values.map((v) => [v]);
       const durs: number[] = [];
       for (let b = 0; b < g.bars; b++) {
         let left = barBeats;
         for (let guard = 0; left > 1e-9 && guard < 64; guard++) {
-          const fit = g.values.filter((v) => v <= left + 1e-9);
-          const v = fit.length ? rng.pick(fit) : left;
-          durs.push(v);
-          left -= v;
+          const fit = units.filter((u) => u.reduce((a, x) => a + x, 0) <= left + 1e-9);
+          const u = fit.length ? rng.pick(fit) : [left];
+          durs.push(...u);
+          left -= u.reduce((a, x) => a + x, 0);
         }
       }
       const onsets: number[] = [];
@@ -735,13 +738,15 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         tempo: g.tempo,
         showNotes: false,
         play: { mode: "melodic", notes: durs.map(() => pitch), durations: durs, tempo: g.tempo },
-        abc: abcRhythm(durs, g.meter),
+        abc: g.showAbc ? abcRhythm(durs, g.meter) : undefined,
         prompt: L(`Listen, then tap the rhythm back on any key (♩=${g.tempo}).`, `Slušaj, pa otkucaj ritam na bilo kojoj dirki (♩=${g.tempo}).`),
         noteLabels: L(durs.join(" "), durs.join(" ")),
       };
     }
     case "progression-ear": {
-      const key = parseNote(rng.pick(g.keys), 4);
+      // keep the voicing in a comfortable register: tonics above G4 move down an octave
+      const keyName0 = rng.pick(g.keys);
+      const key = parseNote(keyName0, toMidi(parseNote(keyName0, 4)) > 67 ? 3 : 4);
       const k = rng.int(0, g.options.length - 1);
       const opts = g.options.map((o) => o.join(" – "));
       const chords = g.options[k].map((r) => romanChord(key, g.type, r).map(toMidi));
@@ -868,7 +873,12 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const key = parseNote(rng.pick(g.keys), g.octave);
       const roots: Note[] = [];
       const names: string[] = [];
-      for (let i = 0; i < g.length; i++) {
+      for (let i = 0; i < (g.line ? g.line.length : g.length); i++) {
+        if (g.line) {
+          names.push(g.line[i]);
+          roots.push(romanChord(key, g.type, g.line[i].replace(/[0-9]+$/, ""))[0]);
+          continue;
+        }
         // start and (from 3 notes on) end on the first numeral; no immediate repeats
         const prev = names[i - 1];
         const r = i === 0 || (i === g.length - 1 && g.length >= 3 && prev !== g.numerals[0]) ? g.numerals[0] : rng.pick(g.numerals.filter((x) => x !== prev).length ? g.numerals.filter((x) => x !== prev) : g.numerals);
@@ -904,11 +914,21 @@ function abcRhythm(durs: number[], meter: string): string {
   const bar = num * (4 / den);
   let out = "";
   let inBar = 0;
-  for (const d of durs) {
-    const sixteenths = Math.round(d * 4);
-    out += `B${sixteenths === 1 ? "" : sixteenths} `;
-    inBar += d;
-    if (inBar >= bar - 1e-9) {
+  const third = (x: number) => Math.abs(x - 1 / 3) < 1e-6;
+  const sixth = (x: number) => Math.abs(x - 1 / 6) < 1e-6;
+  for (let i = 0; i < durs.length; i++) {
+    const d = durs[i];
+    // triplets: three 1/3-beat notes = eighth-note triplet (3B2B2B2; three 1/6 = sixteenth triplet
+    if ((third(d) || sixth(d)) && i + 2 < durs.length && durs[i + 1] === d && durs[i + 2] === d) {
+      out += third(d) ? "(3B2B2B2 " : "(3BBB ";
+      inBar += 3 * d;
+      i += 2;
+    } else {
+      const sixteenths = Math.round(d * 4);
+      out += `B${sixteenths === 1 ? "" : sixteenths} `;
+      inBar += d;
+    }
+    if (inBar >= bar - 1e-6) {
       out += "| ";
       inBar = 0;
     }

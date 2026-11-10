@@ -46,7 +46,7 @@ describe("curriculum content", () => {
             const beat = it.tempo ? 60000 / it.tempo : 500;
             if (it.mode === "chord") it.expect.forEach((n, i) => evs.push({ t: i * 10, type: "on", note: n }));
             else if (it.mode === "chords") it.expectChords!.forEach((ch, k) => ch.forEach((n, i) => { evs.push({ t: k * beat + i * 5, type: "on", note: n }); evs.push({ t: k * beat + beat * 0.9, type: "off", note: n }); }));
-            else it.expect.forEach((n, i) => { evs.push({ t: i * beat, type: "on", note: n }); evs.push({ t: i * beat + beat * 0.8, type: "off", note: n }); });
+            else it.expect.forEach((n, i) => { const t = (it.rhythm?.[i] ?? i) * beat; evs.push({ t, type: "on", note: n }); evs.push({ t: t + beat * 0.4, type: "off", note: n }); });
             r = { kind: "midi" as const, events: evs };
           }
           const g = grade(it, r!);

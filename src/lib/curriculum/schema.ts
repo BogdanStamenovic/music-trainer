@@ -77,6 +77,7 @@ const MidiCommon = {
   octave: z.enum(["exact", "any"]).default("exact"),
   bass: z.boolean().default(false), // in octave:any chord mode, also require the right bass note
   tempo: z.number().min(20).max(240).optional(), // if set, timing is graded
+  beats: z.array(z.number().positive()).optional(), // sequence: duration of each note in beats (real rhythm for playback + timing)
   showNotes: z.boolean().default(true),
 };
 export const MidiPlay = z.object({ ...Base, type: z.literal("midi-play"), ...MidiCommon });
@@ -142,7 +143,8 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("keysig"), keys: z.array(PcS).min(2), mode: Mode.default("major"), ask: z.enum(["count", "key", "relative"]).default("count") }),
   z.object({ kind: z.literal("roman"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(7)).optional(), ask: z.enum(["numeral", "play", "name"]).default("numeral"), seventh: z.boolean().default(false) }),
   // tap back a rhythm heard on one pitch; pitch is ignored, timing is graded
-  z.object({ kind: z.literal("rhythm-echo"), meter: z.string().regex(/^\d+\/\d+$/).default("4/4"), bars: z.number().int().min(1).max(4).default(1), values: z.array(z.number().positive()).min(1), tempo: z.number().min(40).max(160).default(80) }),
+  // values: single durations placed freely; cells: groups placed whole (keeps eighth pairs together, allows triplets [1/3,1/3,1/3])
+  z.object({ kind: z.literal("rhythm-echo"), meter: z.string().regex(/^\d+\/\d+$/).default("4/4"), bars: z.number().int().min(1).max(4).default(1), values: z.array(z.number().positive()).default([]), cells: z.array(z.array(z.number().positive()).min(1)).optional(), tempo: z.number().min(40).max(160).default(80), showAbc: z.boolean().default(true) }),
   // hear a progression, pick which one it was
   z.object({ kind: z.literal("progression-ear"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), options: z.array(z.array(z.string()).min(2)).min(2), tempo: z.number().default(60) }),
   // improvise over a looping backing progression; graded on scale use, chord tones on downbeats, activity
@@ -152,7 +154,7 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("degree-ear"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(8)).min(2), answer: z.enum(["choose", "play"]).default("choose"), octave: z.number().int().default(4) }),
   z.object({ kind: z.literal("pitch-match"), range: Range.optional(), sustain: z.number().min(0).max(10).default(2), tolerance: z.number().min(10).max(200).default(50), intervals: z.array(IvS).optional() }),
   z.object({ kind: z.literal("phrase-sing"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(2), z.number().int().min(2)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), tempo: z.number().default(72), tolerance: z.number().min(10).max(200).default(50) }),
-  z.object({ kind: z.literal("bass-echo"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), length: z.number().int().min(2).max(8).default(4), octave: z.number().int().default(2), tempo: z.number().default(70) }),
+  z.object({ kind: z.literal("bass-echo"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), length: z.number().int().min(2).max(8).default(4), octave: z.number().int().default(2), tempo: z.number().default(70), line: z.array(z.string()).optional() }),
 ]);
 export type Gen = z.infer<typeof Gen>;
 

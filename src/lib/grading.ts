@@ -243,7 +243,8 @@ export function gradeMidi(item: MidiItem, events: MidiEvent[]) {
   let score = pitch;
   let timing: ReturnType<typeof timingScore> | null = null;
   if (item.tempo && pairs.length >= 3) {
-    timing = timingScore(pairs.map(([i]) => i), pairs.map(([, j]) => on[j].t), item.tempo);
+    // with a written rhythm, time against its onsets; otherwise one note per beat
+    timing = timingScore(pairs.map(([i]) => item.rhythm?.[i] ?? i), pairs.map(([, j]) => on[j].t), item.tempo);
     score = 0.7 * pitch + 0.3 * timing.score;
   }
   return { score, detail: { played: on.map((o) => o.note), expect: item.expect, pitch, timing } };

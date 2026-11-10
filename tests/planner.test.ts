@@ -8,7 +8,7 @@ import Database from "better-sqlite3";
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "mt-cur-"));
 const lesson = (id: string, track: string, order: number, prereqs: string[], tags: string[] = [], minutes = 10) =>
   JSON.stringify({ id, track, order, title: { en: id, sr: id + " sr" }, prereqs, minutes, tags, explain: { en: "x", sr: "x" },
-    exercises: [{ id: `${id}-1`, type: "mcq", prompt: { en: "q", sr: "q" }, options: ["a", "b"], answer: 0 }] });
+    exercises: [{ id: `${id}-1`, type: "mcq", prompt: { en: "q", sr: "q" }, options: ["a", "b"], answer: 0, keepOrder: true }] });
 fs.writeFileSync(path.join(dir, "T1.json"), lesson("T-001", "T", 1, []));
 fs.writeFileSync(path.join(dir, "T2.json"), lesson("T-002", "T", 2, ["T-001"]));
 fs.writeFileSync(path.join(dir, "T3.json"), lesson("T-003", "T", 3, ["T-002"]));
