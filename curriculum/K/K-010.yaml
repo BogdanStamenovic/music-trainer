@@ -1,0 +1,106 @@
+id: K-010
+track: K
+order: 10
+title: {en: "Minor scales and i–iv–V–i in A minor", sr: "Molske lestvice i i–iv–V–i u a-molu"}
+prereqs: [K-009, T-010]
+minutes: 14
+tags: [keys, scales, harmony, minor]
+explain:
+  en: |
+    Every major key has a **relative minor** with the same key signature, a minor 3rd lower:
+    C major → A minor, G major → E minor, F major → D minor.
+
+    - **Natural minor** uses exactly the key signature: A minor = the white keys from A.
+    - **Harmonic minor** raises the 7th degree by a half step: A minor gets **G♯**. That creates a
+      leading tone (half a step under the tonic) and makes the V chord **major** (E–G♯–B), which
+      pulls home much harder than a minor v (E–G–B).
+
+    | key | natural minor | harmonic minor (raised 7th) |
+    |---|---|---|
+    | A minor | A B C D E F G | … G♯ |
+    | E minor | E F♯ G A B C D | … D♯ |
+    | D minor | D E F G A B♭ C | … C♯ |
+
+    Fingering for all three: right hand 1 2 3 1 2 3 4 5, left hand 5 4 3 2 1 3 2 1 (same as C major).
+
+    Then the minor cadence: **i – iv – V – i** = Am – Dm – **E** – Am. The E major chord uses the
+    G♯ from the harmonic minor. The last exercise is the K-009 smooth version, in minor:
+    A–C–E, A–D–F, A–C–E, G♯–B–E, A–C–E.
+  sr: |
+    Svaki dur ima **paralelni mol** sa istim predznacima, malu tercu niže:
+    C-dur → a-mol, G-dur → e-mol, F-dur → d-mol.
+
+    - **Prirodni mol** koristi tačno predznake: a-mol = bele dirke od A.
+    - **Harmonski mol** povisuje 7. stupanj za polustepen: a-mol dobija **Gis**. Tako nastaje
+      vođica (polustepen ispod tonike), a akord V postaje **durski** (E–Gis–H), koji vuče kući
+      mnogo jače od molskog v (E–G–H).
+
+    | tonalitet | prirodni mol | harmonski mol (povišen 7. stupanj) |
+    |---|---|---|
+    | a-mol | A H C D E F G | … Gis |
+    | e-mol | E Fis G A H C D | … Dis |
+    | d-mol | D E F G A B C | … Cis |
+
+    Prstored za sva tri: desna ruka 1 2 3 1 2 3 4 5, leva 5 4 3 2 1 3 2 1 (kao C-dur).
+
+    Zatim molska kadenca: **i – iv – V – i** = a – d – **E** – a. Durski akord na E koristi Gis iz
+    harmonskog mola. Poslednja vežba je glatka verzija iz K-009, u molu:
+    A–C–E, A–D–F, A–C–E, Gis–H–E, A–C–E.
+exercises:
+  - id: K-010-1
+    type: generated
+    prompt: {en: "Natural minor: A, E, D (right hand)", sr: "Prirodni mol: a, e, d (desna ruka)"}
+    count: 3
+    gen: {kind: scale-build, types: [natural-minor], tonics: [A, E, D], answer: play}
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - scale: {tonic: E, type: natural-minor, is: [E, "F#", G, A, B, C, D]}
+      - scale: {tonic: D, type: natural-minor, is: [D, E, F, G, A, Bb, C]}
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, "G#"]}
+      - scale: {tonic: E, type: harmonic-minor, is: [E, "F#", G, A, B, C, "D#"]}
+      - scale: {tonic: D, type: harmonic-minor, is: [D, E, F, G, A, Bb, "C#"]}
+      - keysig: {key: A, mode: minor, is: 0}
+      - keysig: {key: E, mode: minor, is: 1}
+      - keysig: {key: D, mode: minor, is: -1}
+      - interval: {from: A3, to: C4, is: m3}
+      - interval: {from: E3, to: G3, is: m3}
+      - interval: {from: D3, to: F3, is: m3}
+      - roman: {key: A, type: harmonic-minor, degree: 1, is: "i"}
+      - roman: {key: A, type: harmonic-minor, degree: 4, is: "iv"}
+      - roman: {key: A, type: harmonic-minor, degree: 5, is: "V"}
+      - roman: {key: A, type: natural-minor, degree: 5, is: "v"}
+      - chord: {notes: [E4, "G#4", B4], root: E, quality: maj}
+      - chord: {notes: [E4, G4, B4], root: E, quality: min}
+  - id: K-010-2
+    type: generated
+    prompt: {en: "Harmonic minor: A, E, D (right hand)", sr: "Harmonski mol: a, e, d (desna ruka)"}
+    count: 3
+    gen: {kind: scale-build, types: [harmonic-minor], tonics: [A, E, D], answer: play}
+  - id: K-010-3
+    type: midi-play
+    prompt: {en: "Left hand: A harmonic minor from A2.", sr: "Leva ruka: a-mol harmonski od A2."}
+    mode: sequence
+    derive: {scale: {tonic: A2, type: harmonic-minor}}
+    showNotes: false
+  - id: K-010-4
+    type: generated
+    prompt: {en: "Both kinds, with tempo", sr: "Obe vrste, u tempu"}
+    count: 4
+    gen: {kind: scale-build, types: [natural-minor, harmonic-minor], tonics: [A, E, D], answer: play, tempo: 72}
+  - id: K-010-5
+    type: generated
+    prompt: {en: "i–iv–V–i in A minor, root position", sr: "i–iv–V–i u a-molu, osnovni položaj"}
+    count: 1
+    gen: {kind: progression, keys: [A], type: harmonic-minor, numerals: [i, iv, V, i]}
+  - id: K-010-6
+    type: midi-play
+    prompt: {en: "Smooth version at ♩=60: i – iv64 – i – V6 – i in A minor, starting A3–C4–E4.", sr: "Glatka verzija, ♩=60: i – iv64 – i – V6 – i u a-molu, od A3–C4–E4."}
+    mode: chords
+    expectChords: [[A3, C4, E4], [A3, D4, F4], [A3, C4, E4], ["G#3", B3, E4], [A3, C4, E4]]
+    tempo: 60
+    showNotes: false
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min, inversion: 0}
+      - chord: {notes: [A3, D4, F4], root: D, quality: min, inversion: 2}
+      - chord: {notes: ["G#3", B3, E4], root: E, quality: maj, inversion: 1}
+      - interval: {from: "G#3", to: A3, is: m2}

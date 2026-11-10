@@ -1,0 +1,84 @@
+id: K-004
+track: K
+order: 4
+title: {en: "Major scales with flats: B♭, E♭, A♭", sr: "Durske lestvice sa snizilicama: B, Es, As"}
+prereqs: [K-003, T-009]
+minutes: 13
+tags: [keys, scales, technique]
+explain:
+  en: |
+    Each new flat key adds one flat: F has B♭, **B♭ adds E♭**, **E♭ adds A♭**, **A♭ adds D♭**.
+    The added flat is always the 4th degree of the new key.
+
+    The flat keys share one simple fingering rule. **Right hand: thumb on C and F, finger 4 on
+    B♭.** **Left hand: 3 2 1 4 3 2 1 3** in all three, finger 4 on the 4th degree.
+
+    | key | flats | right hand | left hand (going up) |
+    |---|---|---|---|
+    | B♭ | B♭ E♭ | 2 1 2 3 1 2 3 4 | 3 2 1 4 3 2 1 3 |
+    | E♭ | B♭ E♭ A♭ | 3 1 2 3 4 1 2 3 | 3 2 1 4 3 2 1 3 |
+    | A♭ | B♭ E♭ A♭ D♭ | 3 4 1 2 3 1 2 3 | 3 2 1 4 3 2 1 3 |
+
+    - Notice the hand never starts with the thumb: the thumb on a black key is awkward, so the
+      fingering starts mid-pattern.
+    - In Serbian, B♭ is simply **B**, E♭ is **Es**, A♭ is **As**, D♭ is **Des**.
+  sr: |
+    Svaki novi tonalitet sa snizilicama dodaje jednu: F-dur ima B, **B-dur dodaje Es**,
+    **Es-dur dodaje As**, **As-dur dodaje Des**. Dodata snizilica je uvek 4. stupanj novog
+    tonaliteta.
+
+    Ovi tonaliteti dele jedno jednostavno pravilo prstoreda. **Desna ruka: palac na C i F,
+    četvrti prst na B.** **Leva ruka: 3 2 1 4 3 2 1 3** u sva tri, četvrti prst na 4. stupnju.
+
+    | tonalitet | snizilice | desna ruka | leva ruka (naviše) |
+    |---|---|---|---|
+    | B-dur | B Es | 2 1 2 3 1 2 3 4 | 3 2 1 4 3 2 1 3 |
+    | Es-dur | B Es As | 3 1 2 3 4 1 2 3 | 3 2 1 4 3 2 1 3 |
+    | As-dur | B Es As Des | 3 4 1 2 3 1 2 3 | 3 2 1 4 3 2 1 3 |
+
+    - Ruka nikad ne počinje palcem: palac na crnoj dirki je nezgodan, pa prstored počinje
+      iz sredine obrasca.
+    - Podsetnik: u srpskom je B♭ prosto **B**, E♭ je **Es**, A♭ je **As**, D♭ je **Des**.
+exercises:
+  - id: K-004-1
+    type: generated
+    prompt: {en: "Right hand: B♭, E♭, A♭ major", sr: "Desna ruka: B, Es, As-dur"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [Bb, Eb, Ab], answer: play}
+    checks:
+      - scale: {tonic: Bb, type: major, is: [Bb, C, D, Eb, F, G, A]}
+      - scale: {tonic: Eb, type: major, is: [Eb, F, G, Ab, Bb, C, D]}
+      - scale: {tonic: Ab, type: major, is: [Ab, Bb, C, Db, Eb, F, G]}
+      - keysig: {key: F, is: -1}
+      - keysig: {key: Bb, is: -2}
+      - keysig: {key: Eb, is: -3}
+      - keysig: {key: Ab, is: -4}
+  - id: K-004-2
+    type: midi-play
+    prompt: {en: "Left hand: B♭ major from B♭2 (3 2 1 4 3 2 1 3).", sr: "Leva ruka: B-dur od B2 (3 2 1 4 3 2 1 3)."}
+    mode: sequence
+    derive: {scale: {tonic: Bb2, type: major}}
+    showNotes: false
+  - id: K-004-3
+    type: midi-play
+    prompt: {en: "Left hand: A♭ major from A♭2 (3 2 1 4 3 2 1 3).", sr: "Leva ruka: As-dur od As2 (3 2 1 4 3 2 1 3)."}
+    mode: sequence
+    derive: {scale: {tonic: Ab2, type: major}}
+    showNotes: false
+  - id: K-004-4
+    type: midi-play
+    prompt: {en: "Left hand: E♭ major from E♭3 at ♩=72, one note per beat.", sr: "Leva ruka: Es-dur od Es3, ♩=72, jedan ton na dobu."}
+    mode: sequence
+    derive: {scale: {tonic: Eb3, type: major}}
+    tempo: 72
+    showNotes: false
+  - id: K-004-5
+    type: generated
+    prompt: {en: "Right hand with tempo", sr: "Desna ruka u tempu"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [Bb, Eb, Ab], answer: play, tempo: 80}
+  - id: K-004-6
+    type: generated
+    prompt: {en: "Right hand descending, with tempo", sr: "Desna ruka silazno, u tempu"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [Bb, Eb, Ab], answer: play, tempo: 80, descending: true}

@@ -1,0 +1,91 @@
+id: K-007
+track: K
+order: 7
+title: {en: "Triad inversions", sr: "Obrtaji kvintakorda"}
+prereqs: [K-006, T-013]
+minutes: 12
+tags: [keys, chords]
+explain:
+  en: |
+    Same three notes, different note at the bottom. The bass note decides the name:
+
+    | position | bass | C major | figure | why the figure |
+    |---|---|---|---|---|
+    | root position | root | C–E–G | (5/3) | 3rd and 5th above the bass |
+    | 1st inversion | 3rd | E–G–C | **6** | the root is a 6th above the bass (E up to C) |
+    | 2nd inversion | 5th | G–C–E | **6/4** | the root is a 4th above, the 3rd a 6th above (G–C, G–E) |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [EGc] [Gce] [ceg] |]
+    ```
+
+    To find an inversion fast: play the root-position chord, then **move the bottom note up an
+    octave** (1st inversion), and again (2nd inversion). On the keys, the root of an inversion
+    is always the **upper note of the 4th** (E–G–**C**: the 4th is G–C; G–**C**–E: the 4th is G–C).
+
+    For inversions the grading checks the bass note: C major with C on the bottom is not a 6/4.
+  sr: |
+    Ista tri tona, drugi ton na dnu. Ton u basu određuje ime:
+
+    | položaj | bas | C-dur | oznaka | zašto |
+    |---|---|---|---|---|
+    | osnovni položaj | osnovni ton | C–E–G | (5/3) | terca i kvinta iznad basa |
+    | 1. obrtaj, sekstakord | terca | E–G–C | **6** | osnovni ton je seksta iznad basa (od E do C) |
+    | 2. obrtaj, kvartsekstakord | kvinta | G–C–E | **6/4** | osnovni ton je kvarta iznad, terca seksta iznad (G–C, G–E) |
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [EGc] [Gce] [ceg] |]
+    ```
+
+    Kako brzo naći obrtaj: odsviraj akord u osnovnom položaju, pa **donji ton prebaci oktavu
+    više** (1. obrtaj), i još jednom (2. obrtaj). Na dirkama, osnovni ton obrtaja je uvek
+    **gornji ton kvarte** (E–G–**C**: kvarta je G–C; G–**C**–E: kvarta je G–C).
+
+    Kod obrtaja ocenjivanje proverava bas: C-dur sa C na dnu nije kvartsekstakord.
+exercises:
+  - id: K-007-1
+    type: midi-play
+    prompt: {en: "Climb C major through its inversions: root, 6, 6/4, root (octave up).", sr: "Popni se kroz obrtaje C-dura: osnovni, 6, 6/4, osnovni (oktavu više)."}
+    mode: chords
+    expectChords: [[C4, E4, G4], [E4, G4, C5], [G4, C5, E5], [C5, E5, G5]]
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [G4, C5, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: [C5, E5, G5], root: C, quality: maj, inversion: 0}
+      - interval: {from: E4, to: C5, is: m6}
+      - interval: {from: G4, to: C5, is: P4}
+      - interval: {from: G4, to: E5, is: M6}
+  - id: K-007-2
+    type: midi-play
+    prompt: {en: "The same for A minor, from A3.", sr: "Isto za a-mol, od A3."}
+    mode: chords
+    expectChords: [[A3, C4, E4], [C4, E4, A4], [E4, A4, C5], [A4, C5, E5]]
+    showNotes: false
+    checks:
+      - chord: {notes: [A3, C4, E4], root: A, quality: min, inversion: 0}
+      - chord: {notes: [C4, E4, A4], root: A, quality: min, inversion: 1}
+      - chord: {notes: [E4, A4, C5], root: A, quality: min, inversion: 2}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min, inversion: 0}
+  - id: K-007-3
+    type: generated
+    prompt: {en: "First inversions (6) of major chords", sr: "Sekstakordi (1. obrtaj) durskih akorada"}
+    count: 5
+    gen: {kind: chord-build, qualities: [maj], roots: [C, D, E, F, G, A, Bb, Eb], inversions: [1], answer: play}
+  - id: K-007-4
+    type: generated
+    prompt: {en: "Second inversions (6/4) of major chords", sr: "Kvartsekstakordi (2. obrtaj) durskih akorada"}
+    count: 5
+    gen: {kind: chord-build, qualities: [maj], roots: [C, D, E, F, G, A, Bb, Eb], inversions: [2], answer: play}
+  - id: K-007-5
+    type: generated
+    prompt: {en: "Major or minor, any position", sr: "Dur ili mol, bilo koji položaj"}
+    count: 8
+    pass: 0.7
+    gen: {kind: chord-build, qualities: [maj, min], roots: [C, D, E, F, G, A, Bb, Eb], inversions: [0, 1, 2], answer: play}

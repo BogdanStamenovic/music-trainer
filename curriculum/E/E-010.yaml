@@ -1,0 +1,81 @@
+id: E-010
+track: E
+order: 10
+title: {en: "Melodic dictation with leaps", sr: "Melodijski diktat sa skokovima"}
+prereqs: [E-009]
+minutes: 14
+tags: [ear, melody, echo]
+explain:
+  en: |
+    Real melodies do not only step: they **leap**, and most leaps land on notes of the **tonic
+    chord** (degrees 1, 3, 5 and the octave 8). In C major that is C, E, G, C.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C E G c | G E C2 |]
+    ```
+
+    The melodies here are 5 or 6 notes long. That is too long to hold note by note, so:
+
+    1. **Sing the whole melody** back first. Replay it as often as you need.
+    2. Find the **first note** against the tonic (degree, E-005).
+    3. Hear the **shape**: steps vs leaps. A leap here is always between tonic-chord notes, so a
+       leap up from 1 lands on 3 or 5, and a leap up from 5 lands on 8.
+    4. Then play it in one go, in the given octave.
+
+    The second and third exercises use degrees 1-2-3-5-6 (the major pentatonic): every leap is
+    1↔3 or 3↔5, everything else is a step.
+  sr: |
+    Prave melodije ne idu samo u koracima: one **skaču**, a većina skokova pada na tonove
+    **toničnog akorda** (stupnjeve 1, 3, 5 i oktavu 8). U C-duru to su C, E, G, C.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C E G c | G E C2 |]
+    ```
+
+    Ovde su melodije duge 5 ili 6 tonova. To je predugo da se pamti ton po ton, zato:
+
+    1. Prvo **otpevaj celu melodiju**. Puštaj je koliko god treba.
+    2. Nađi **prvi ton** u odnosu na toniku (stupanj, E-005).
+    3. Čuj **oblik**: koraci ili skokovi. Skok je ovde uvek između tonova toničnog akorda, pa skok
+       naviše sa 1 pada na 3 ili 5, a skok naviše sa 5 pada na 8.
+    4. Onda je odsviraj u jednom dahu, u zadatoj oktavi.
+
+    Druga i treća vežba koriste stupnjeve 1-2-3-5-6 (durska pentatonika): svaki skok je 1↔3 ili
+    3↔5, sve ostalo su koraci.
+exercises:
+  - id: E-010-1
+    type: generated
+    prompt: {en: "Warm-up: tonic-chord melodies in C (4–5 notes)", sr: "Zagrevanje: melodije po toničnom akordu u C-duru (4–5 tonova)"}
+    count: 5
+    gen: {kind: melody-echo, tonics: [C], degrees: [1, 3, 5, 8], length: [4, 5], maxLeap: 4, startOnTonic: true, tempo: 72}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - scale: {tonic: C, type: major-pentatonic, is: [C, D, E, G, A]}
+  - id: E-010-2
+    type: generated
+    prompt: {en: "Steps and tonic-chord leaps in C (5–6 notes)", sr: "Koraci i skokovi po toničnom akordu u C-duru (5–6 tonova)"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C], degrees: [1, 2, 3, 5, 6], length: [5, 6], maxLeap: 2, startOnTonic: true, tempo: 72}
+  - id: E-010-3
+    type: generated
+    prompt: {en: "Same, in C, G, F and D major", sr: "Isto, u C, G, F i D-duru"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F, D], degrees: [1, 2, 3, 5, 6], length: [5, 6], maxLeap: 2, startOnTonic: true, tempo: 76}
+  - id: E-010-4
+    type: generated
+    prompt: {en: "Tonic-chord melodies starting anywhere (5–6 notes)", sr: "Melodije po toničnom akordu, početak bilo gde (5–6 tonova)"}
+    count: 5
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F, D], degrees: [1, 3, 5, 8], length: [5, 6], maxLeap: 4, startOnTonic: false, tempo: 76}
+  - id: E-010-5
+    type: practice
+    prompt: {en: "Pick a song you know well and play its melody by ear in C, then in G.", sr: "Izaberi pesmu koju dobro znaš i odsviraj njenu melodiju po sluhu u C-duru, pa u G-duru."}
+    minutes: 4

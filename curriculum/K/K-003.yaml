@@ -1,0 +1,82 @@
+id: K-003
+track: K
+order: 3
+title: {en: "Major scales with sharps: A, E, B", sr: "Durske lestvice sa povisilicama: A, E, H"}
+prereqs: [K-002, T-008]
+minutes: 13
+tags: [keys, scales, technique]
+explain:
+  en: |
+    Each new sharp key adds one sharp: G has F♯, D adds C♯, **A adds G♯**, **E adds D♯**,
+    **B adds A♯**. The added sharp is always the 7th degree, the note just below the tonic.
+
+    | key | sharps | right hand | left hand (going up) |
+    |---|---|---|---|
+    | A | F♯ C♯ G♯ | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | E | F♯ C♯ G♯ D♯ | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | B | F♯ C♯ G♯ D♯ A♯ | 1 2 3 1 2 3 4 5 | **4 3 2 1 4 3 2 1** |
+
+    - A and E use the C-major fingering in both hands. The thumb always lands on a white key.
+    - **B major, left hand** is different: start with finger 4 on B, thumb on E, then 4 on F♯.
+      The thumb stays off the black keys.
+    - Before playing, say the sharps to yourself. If you know which keys are black, the hand
+      shape follows.
+  sr: |
+    Svaki novi tonalitet sa povisilicama dodaje jednu: G-dur ima Fis, D-dur dodaje Cis,
+    **A-dur dodaje Gis**, **E-dur dodaje Dis**, **H-dur dodaje Ais**. Dodata povisilica je uvek
+    7. stupanj (vođica), ton odmah ispod tonike.
+
+    | tonalitet | povisilice | desna ruka | leva ruka (naviše) |
+    |---|---|---|---|
+    | A-dur | Fis Cis Gis | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | E-dur | Fis Cis Gis Dis | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | H-dur | Fis Cis Gis Dis Ais | 1 2 3 1 2 3 4 5 | **4 3 2 1 4 3 2 1** |
+
+    - A-dur i E-dur imaju prstored kao C-dur u obe ruke. Palac uvek pada na belu dirku.
+    - **H-dur, leva ruka** je drugačija: počni četvrtim prstom na H, palac na E, pa opet 4 na Fis.
+      Palac ostaje van crnih dirki.
+    - Pre sviranja izgovori povisilice u sebi. Kad znaš koje su dirke crne, oblik ruke sledi.
+exercises:
+  - id: K-003-1
+    type: generated
+    prompt: {en: "Right hand: A, E, B major", sr: "Desna ruka: A, E, H-dur"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [A, E, B], answer: play}
+    checks:
+      - scale: {tonic: A, type: major, is: [A, B, "C#", D, E, "F#", "G#"]}
+      - scale: {tonic: E, type: major, is: [E, "F#", "G#", A, B, "C#", "D#"]}
+      - scale: {tonic: B, type: major, is: [B, "C#", "D#", E, "F#", "G#", "A#"]}
+      - keysig: {key: G, is: 1}
+      - keysig: {key: D, is: 2}
+      - keysig: {key: A, is: 3}
+      - keysig: {key: E, is: 4}
+      - keysig: {key: B, is: 5}
+  - id: K-003-2
+    type: midi-play
+    prompt: {en: "Left hand: A major from A2, one octave up.", sr: "Leva ruka: A-dur od A2, jednu oktavu naviše."}
+    mode: sequence
+    derive: {scale: {tonic: A2, type: major}}
+    showNotes: false
+  - id: K-003-3
+    type: midi-play
+    prompt: {en: "Left hand: B major from B2 (4 3 2 1 4 3 2 1).", sr: "Leva ruka: H-dur od H2 (4 3 2 1 4 3 2 1)."}
+    mode: sequence
+    derive: {scale: {tonic: B2, type: major}}
+    showNotes: false
+  - id: K-003-4
+    type: midi-play
+    prompt: {en: "Left hand: E major from E3 at ♩=72, one note per beat.", sr: "Leva ruka: E-dur od E3, ♩=72, jedan ton na dobu."}
+    mode: sequence
+    derive: {scale: {tonic: E3, type: major}}
+    tempo: 72
+    showNotes: false
+  - id: K-003-5
+    type: generated
+    prompt: {en: "Right hand with tempo", sr: "Desna ruka u tempu"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [A, E, B], answer: play, tempo: 80}
+  - id: K-003-6
+    type: generated
+    prompt: {en: "Right hand descending, with tempo", sr: "Desna ruka silazno, u tempu"}
+    count: 3
+    gen: {kind: scale-build, types: [major], tonics: [A, E, B], answer: play, tempo: 80, descending: true}

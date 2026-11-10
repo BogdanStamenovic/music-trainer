@@ -1,0 +1,67 @@
+id: E-006
+track: E
+order: 6
+title: {en: "Echo stepwise melodies", sr: "Ponovi melodije u koracima"}
+prereqs: [E-005]
+minutes: 12
+tags: [ear, melody, echo]
+explain:
+  en: |
+    Now whole phrases. You hear the **tonic** first, then a short melody that only moves by
+    **step** (to the neighbouring scale note), and you play it back in the same octave.
+
+    Keys: **C major** (white keys), **G major** (one sharp: F♯), **F major** (one flat: B♭).
+
+    Method, in this order:
+
+    1. **Sing it back** before touching the keys. If you cannot sing it, replay it.
+    2. **Find the first note** relative to the tonic (E-005: which degree is it?).
+    3. Then you only need the **direction** of each step: up or down. In a stepwise melody, the
+       next note is always the neighbouring note of the key.
+    4. In G, every F is F♯; in F, every B is B♭. Put your hand in the key's position first.
+
+    Bonus, away from the app: play *Ode to Joy* by ear in C, then in G and F. Find the first note
+    yourself; it is almost entirely steps.
+  sr: |
+    Sada cele fraze. Prvo čuješ **toniku**, pa kratku melodiju koja ide samo **korakom** (na
+    susedni ton lestvice), i odsviraš je u istoj oktavi.
+
+    Tonaliteti: **C-dur** (bele dirke), **G-dur** (jedna povisilica: Fis), **F-dur** (jedna
+    snizilica: B).
+
+    Postupak, ovim redom:
+
+    1. **Otpevaj** pre nego što dodirneš dirke. Ako ne možeš da otpevaš, pusti ponovo.
+    2. **Nađi prvi ton** u odnosu na toniku (E-005: koji je to stupanj?).
+    3. Posle toga ti treba samo **smer** svakog koraka: gore ili dole. U melodiji u koracima
+       sledeći ton je uvek susedni ton tonaliteta.
+    4. U G-duru svako F je Fis; u F-duru svako H je B. Prvo postavi ruku u položaj tonaliteta.
+
+    Dodatak, van aplikacije: odsviraj *Odu radosti* po sluhu u C-duru, pa u G i F-duru. Prvi ton
+    nađi sam; skoro cela ide u koracima.
+exercises:
+  - id: E-006-1
+    type: generated
+    prompt: {en: "Three notes in C major, from the tonic", sr: "Tri tona u C-duru, od tonike"}
+    count: 5
+    gen: {kind: melody-echo, tonics: [C], length: [3, 3], maxLeap: 1, startOnTonic: true, tempo: 72}
+    checks:
+      - keysig: {key: G, is: 1}
+      - keysig: {key: F, is: -1}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, "F#"]}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+  - id: E-006-2
+    type: generated
+    prompt: {en: "Three or four notes in C, G or F major", sr: "Tri ili četiri tona u C, G ili F-duru"}
+    count: 6
+    gen: {kind: melody-echo, tonics: [C, G, F], length: [3, 4], maxLeap: 1, startOnTonic: true, tempo: 76}
+  - id: E-006-3
+    type: generated
+    prompt: {en: "Four or five notes, starting on any degree", sr: "Četiri ili pet tonova, početak na bilo kom stupnju"}
+    count: 6
+    pass: 0.7
+    gen: {kind: melody-echo, tonics: [C, G, F], length: [4, 5], maxLeap: 1, startOnTonic: false, tempo: 80}
+  - id: E-006-4
+    type: practice
+    prompt: {en: "Play Ode to Joy by ear in C, G and F major (no sheet music).", sr: "Odsviraj Odu radosti po sluhu u C, G i F-duru (bez nota)."}
+    minutes: 3

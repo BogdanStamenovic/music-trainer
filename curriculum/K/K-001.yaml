@@ -1,0 +1,90 @@
+id: K-001
+track: K
+order: 1
+title: {en: "Play intervals above and below a note", sr: "Sviraj intervale iznad i ispod tona"}
+prereqs: [T-006]
+minutes: 11
+tags: [keys, intervals]
+explain:
+  en: |
+    Theory says "a perfect 5th above D"; your hand should answer before you finish counting.
+    Each exercise names a starting note and an interval: play the start note, then the target.
+
+    Fast routes on the keyboard (counting half steps is the slow fallback):
+
+    | interval | shortcut |
+    |---|---|
+    | m2 / M2 | next key / skip one key |
+    | m3 / M3 | 3 / 4 half steps; or: is the third of the minor / major chord on that note |
+    | P4 / P5 | 5 / 7 half steps; on white keys always a P4 / P5 except **F–B** (tritone) and **B–F** |
+    | m6 / M6 | an octave minus a M3 / minus a m3 |
+    | m7 / M7 | an octave minus a whole step / minus a half step |
+    | P8 | same letter, next octave |
+
+    Below works the same way, mirrored. A 5th below G is C; a 4th below C is G.
+  sr: |
+    Teorija kaže „čista kvinta iznad D"; ruka treba da odgovori pre nego što završiš brojanje.
+    Svaka vežba zada početni ton i interval: odsviraj početni ton, pa ciljni.
+
+    Brzi putevi na klavijaturi (brojanje polustepena je spora rezerva):
+
+    | interval | prečica |
+    |---|---|
+    | m2 / M2 | susedna dirka / preskoči jednu |
+    | m3 / M3 | 3 / 4 polustepena; ili: terca molskog / durskog akorda na tom tonu |
+    | P4 / P5 | 5 / 7 polustepena; na belim dirkama uvek čista kvarta / kvinta osim **F–H** (tritonus) i **H–F** |
+    | m6 / M6 | oktava manje M3 / manje m3 |
+    | m7 / M7 | oktava manje ceo stepen / manje polustepen |
+    | P8 | isto ime, sledeća oktava |
+
+    Naniže je isto, u ogledalu. Kvinta ispod G je C; kvarta ispod C je G.
+exercises:
+  - id: K-001-1
+    type: generated
+    prompt: {en: "Seconds and thirds above white-key notes", sr: "Sekunde i terce iznad belih dirki"}
+    count: 6
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3], roots: [C4, D4, E4, F4, G4, A4], answer: play}
+    checks:
+      - interval: {from: F4, to: B4, is: A4}
+      - interval: {from: B3, to: F4, is: d5}
+      - interval: {from: C4, to: F4, is: P4}
+      - interval: {from: D4, to: G4, is: P4}
+      - interval: {from: E4, to: A4, is: P4}
+      - interval: {from: G4, to: C5, is: P4}
+      - interval: {from: A4, to: D5, is: P4}
+      - interval: {from: B4, to: E5, is: P4}
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: E4, to: B4, is: P5}
+      - interval: {from: F4, to: C5, is: P5}
+      - interval: {from: G4, to: D5, is: P5}
+      - interval: {from: A4, to: E5, is: P5}
+      - interval: {from: C4, to: Ab4, is: m6}
+      - semitones: {from: Ab4, to: C5, is: 4}
+      - interval: {from: C4, to: A4, is: M6}
+      - semitones: {from: A4, to: C5, is: 3}
+      - semitones: {from: Bb4, to: C5, is: 2}
+      - semitones: {from: B4, to: C5, is: 1}
+      - interval: {from: C4, to: G4, is: P5}
+      - interval: {from: G3, to: C4, is: P4}
+  - id: K-001-2
+    type: generated
+    prompt: {en: "4ths, 5ths and octaves above any note", sr: "Kvarte, kvinte i oktave iznad bilo kog tona"}
+    count: 6
+    gen: {kind: interval-build, intervals: [P4, P5, P8], answer: play}
+  - id: K-001-3
+    type: generated
+    prompt: {en: "Seconds to fifths below", sr: "Od sekunde do kvinte, naniže"}
+    count: 6
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3, P4, P5], down: true, answer: play}
+  - id: K-001-4
+    type: generated
+    prompt: {en: "Everything up to the octave, above", sr: "Sve do oktave, naviše"}
+    count: 8
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3, P4, A4, P5, m6, M6, m7, M7, P8], answer: play}
+  - id: K-001-5
+    type: generated
+    prompt: {en: "Everything up to the octave, below", sr: "Sve do oktave, naniže"}
+    count: 6
+    pass: 0.7
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3, P4, P5, m6, M6, m7, M7, P8], down: true, answer: play}

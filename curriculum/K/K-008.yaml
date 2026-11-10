@@ -1,0 +1,85 @@
+id: K-008
+track: K
+order: 8
+title: {en: "I–IV–V–I in C, G, F and D", sr: "I–IV–V–I u C, G, F i D-duru"}
+prereqs: [K-007, T-014]
+minutes: 12
+tags: [keys, harmony, progressions]
+explain:
+  en: |
+    I–IV–V–I is the **authentic cadence** in its simplest form: home, away, tension, home.
+    Thousands of songs are this, or this with vi added (E-009).
+
+    | key | I | IV | V |
+    |---|---|---|---|
+    | C | C–E–G | F–A–C | G–B–D |
+    | G | G–B–D | C–E–G | D–F♯–A |
+    | F | F–A–C | B♭–D–F | C–E–G |
+    | D | D–F♯–A | G–B–D | A–C♯–E |
+
+    Today: **root-position block chords** in the right hand (any octave). The grading checks
+    that the lowest note is the root.
+
+    - Notice how the hand **jumps** between chords: every chord is the same shape moved to a new
+      root. That works, but it is clumsy and sounds disconnected. K-009 fixes it.
+    - With tempo: one chord per beat. Look ahead to the next chord while the current one sounds.
+  sr: |
+    I–IV–V–I je **autentična kadenca** u najjednostavnijem obliku: kuća, odlazak, napetost, kuća.
+    Hiljade pesama su baš ovo, ili ovo sa dodatim vi (E-009).
+
+    | tonalitet | I | IV | V |
+    |---|---|---|---|
+    | C-dur | C–E–G | F–A–C | G–H–D |
+    | G-dur | G–H–D | C–E–G | D–Fis–A |
+    | F-dur | F–A–C | B–D–F | C–E–G |
+    | D-dur | D–Fis–A | G–H–D | A–Cis–E |
+
+    Danas: **akordi u osnovnom položaju** u desnoj ruci (bilo koja oktava). Ocenjivanje proverava
+    da je najniži ton osnovni ton akorda.
+
+    - Primeti kako ruka **skače** između akorada: svaki akord je isti oblik premešten na novi
+      osnovni ton. To radi, ali je nespretno i zvuči nepovezano. K-009 to rešava.
+    - U tempu: jedan akord na dobu. Gledaj unapred na sledeći akord dok trenutni zvuči.
+exercises:
+  - id: K-008-1
+    type: generated
+    prompt: {en: "I–IV–V–I in C major", sr: "I–IV–V–I u C-duru"}
+    count: 1
+    gen: {kind: progression, keys: [C], numerals: [I, IV, V, I]}
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [D4, "F#4", A4], root: D, quality: maj}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [Bb4, D5, F5], root: Bb, quality: maj}
+      - chord: {notes: [D4, "F#4", A4], root: D, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [A4, "C#5", E5], root: A, quality: maj}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - roman: {key: G, degree: 5, is: "V"}
+      - roman: {key: F, degree: 4, is: "IV"}
+      - roman: {key: F, degree: 5, is: "V"}
+      - roman: {key: D, degree: 4, is: "IV"}
+      - roman: {key: D, degree: 5, is: "V"}
+  - id: K-008-2
+    type: generated
+    prompt: {en: "I–IV–V–I in G and F major", sr: "I–IV–V–I u G i F-duru"}
+    count: 2
+    gen: {kind: progression, keys: [G, F], numerals: [I, IV, V, I]}
+  - id: K-008-3
+    type: generated
+    prompt: {en: "I–IV–V–I in D major", sr: "I–IV–V–I u D-duru"}
+    count: 1
+    gen: {kind: progression, keys: [D], numerals: [I, IV, V, I]}
+  - id: K-008-4
+    type: generated
+    prompt: {en: "With tempo: one chord per beat", sr: "U tempu: jedan akord na dobu"}
+    count: 4
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, V, I], tempo: 60}
+  - id: K-008-5
+    type: generated
+    prompt: {en: "I–IV–I–V–I with tempo", sr: "I–IV–I–V–I u tempu"}
+    count: 4
+    pass: 0.7
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, I, V, I], tempo: 72}

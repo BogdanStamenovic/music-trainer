@@ -1,0 +1,97 @@
+id: K-002
+track: K
+order: 2
+title: {en: "Major scales: C, G, D, F", sr: "Durske lestvice: C, G, D, F"}
+prereqs: [K-001, T-007]
+minutes: 14
+tags: [keys, scales, technique]
+explain:
+  en: |
+    You have probably played these for years. This time, connect the **sound** to the **rule**:
+    whole – whole – half – whole – whole – whole – half (T-007).
+
+    | key | sharps/flats | right hand | left hand (going up) |
+    |---|---|---|---|
+    | C | – | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | G | F♯ | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | D | F♯ C♯ | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | F | B♭ | 1 2 3 **4** 1 2 3 4 | 5 4 3 2 1 3 2 1 |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    !1!C !2!D !3!E !1!F !2!G !3!A !4!B !5!c |]
+    ```
+
+    - F major is the exception in the right hand: the thumb would land on B♭, a black key, so
+      the hand plays four fingers first and the thumb passes under on C.
+    - **Hands separately** first: right hand in the generated exercises, left hand one octave lower.
+    - Then **with tempo**: one note per beat. The grade includes evenness, not just the notes.
+      Aim for even, not fast.
+  sr: |
+    Ove lestvice verovatno sviraš godinama. Ovaj put poveži **zvuk** sa **pravilom**:
+    stepen – stepen – polustepen – stepen – stepen – stepen – polustepen (T-007).
+
+    | tonalitet | predznaci | desna ruka | leva ruka (naviše) |
+    |---|---|---|---|
+    | C-dur | – | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | G-dur | Fis | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | D-dur | Fis Cis | 1 2 3 1 2 3 4 5 | 5 4 3 2 1 3 2 1 |
+    | F-dur | B | 1 2 3 **4** 1 2 3 4 | 5 4 3 2 1 3 2 1 |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    !1!C !2!D !3!E !1!F !2!G !3!A !4!B !5!c |]
+    ```
+
+    - F-dur je izuzetak u desnoj ruci: palac bi pao na B, crnu dirku, pa ruka prvo odsvira četiri
+      prsta, a palac se podmeće na C.
+    - Prvo **svaka ruka posebno**: desna u generisanim vežbama, leva oktavu niže.
+    - Zatim **u tempu**: jedan ton na dobu. Ocena uključuje ravnomernost, ne samo tonove.
+      Cilj je ravnomerno, ne brzo.
+exercises:
+  - id: K-002-1
+    type: generated
+    prompt: {en: "Right hand: C, G, D, F major", sr: "Desna ruka: C, G, D, F-dur"}
+    count: 4
+    gen: {kind: scale-build, types: [major], tonics: [C, G, D, F], answer: play}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - scale: {tonic: G, type: major, is: [G, A, B, C, D, E, "F#"]}
+      - scale: {tonic: D, type: major, is: [D, E, "F#", G, A, B, "C#"]}
+      - scale: {tonic: F, type: major, is: [F, G, A, Bb, C, D, E]}
+      - keysig: {key: G, is: 1}
+      - keysig: {key: D, is: 2}
+      - keysig: {key: F, is: -1}
+  - id: K-002-2
+    type: midi-play
+    prompt: {en: "Left hand: C major from C3, one octave up (5 4 3 2 1 3 2 1).", sr: "Leva ruka: C-dur od C3, jednu oktavu naviše (5 4 3 2 1 3 2 1)."}
+    mode: sequence
+    derive: {scale: {tonic: C3, type: major}}
+    showNotes: false
+  - id: K-002-3
+    type: midi-play
+    prompt: {en: "Left hand: F major from F3, one octave up (5 4 3 2 1 3 2 1).", sr: "Leva ruka: F-dur od F3, jednu oktavu naviše (5 4 3 2 1 3 2 1)."}
+    mode: sequence
+    derive: {scale: {tonic: F3, type: major}}
+    showNotes: false
+  - id: K-002-4
+    type: generated
+    prompt: {en: "Right hand with tempo, one note per beat", sr: "Desna ruka u tempu, jedan ton na dobu"}
+    count: 4
+    gen: {kind: scale-build, types: [major], tonics: [C, G, D, F], answer: play, tempo: 72}
+  - id: K-002-5
+    type: generated
+    prompt: {en: "Right hand descending, with tempo", sr: "Desna ruka silazno, u tempu"}
+    count: 4
+    gen: {kind: scale-build, types: [major], tonics: [C, G, D, F], answer: play, tempo: 72, descending: true}
+  - id: K-002-6
+    type: midi-play
+    prompt: {en: "Left hand: D major from D3 at ♩=72, one note per beat.", sr: "Leva ruka: D-dur od D3, ♩=72, jedan ton na dobu."}
+    mode: sequence
+    derive: {scale: {tonic: D3, type: major}}
+    tempo: 72
+    showNotes: false

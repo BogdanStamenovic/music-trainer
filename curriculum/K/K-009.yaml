@@ -1,0 +1,113 @@
+id: K-009
+track: K
+order: 9
+title: {en: "Smooth voice leading: I – IV64 – I – V6 – I", sr: "Glatko vođenje glasova: I – IV64 – I – V6 – I"}
+prereqs: [K-008]
+minutes: 13
+tags: [keys, harmony, voice-leading]
+explain:
+  en: |
+    In K-008 the hand jumped. Pianists, accompanists and choirs do not: they pick the
+    **inversion that is closest** to the chord they are on. Same chords, different voicing:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [CFA] [CEG] [B,DG] [CEG] |]
+    ```
+
+    | chord | notes | what moved from C–E–G |
+    |---|---|---|
+    | I | C–E–G | – |
+    | IV64 (F major, 2nd inversion) | C–F–A | C stays, E→F and G→A move one step up |
+    | I | C–E–G | back |
+    | V6 (G major, 1st inversion) | B–D–G | G stays, C→B and E→D move one step down |
+    | I | C–E–G | back |
+
+    Why this works:
+
+    - I and IV share a note (C); I and V share a note (G). **Keep the shared note** and move the
+      other two by the smallest step. The hand stays in one place, so you can play faster and look
+      at the singer instead of the keys.
+    - It sounds connected because each finger draws a little melody: E–F–E–D–E, G–A–G–G–G.
+    - Rule of thumb: **IV is played as 6/4 above the tonic, V as 6** (B is the leading tone,
+      half a step under C).
+
+    The first three exercises check the exact keys; the last accepts any octave.
+  sr: |
+    U K-008 ruka je skakala. Pijanisti, pratioci i horovi to ne rade: oni biraju **obrtaj koji
+    je najbliži** akordu na kom su. Isti akordi, drugi raspored:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [CFA] [CEG] [B,DG] [CEG] |]
+    ```
+
+    | akord | tonovi | šta se pomerilo od C–E–G |
+    |---|---|---|
+    | I | C–E–G | – |
+    | IV64 (F-dur, kvartsekstakord) | C–F–A | C ostaje, E→F i G→A idu korak naviše |
+    | I | C–E–G | nazad |
+    | V6 (G-dur, sekstakord) | H–D–G | G ostaje, C→H i E→D idu korak naniže |
+    | I | C–E–G | nazad |
+
+    Zašto ovo radi:
+
+    - I i IV imaju zajednički ton (C); I i V imaju zajednički ton (G). **Zadrži zajednički ton**,
+      a druga dva pomeri najmanjim korakom. Ruka ostaje na mestu, pa možeš brže i možeš da gledaš
+      pevača umesto dirki.
+    - Zvuči povezano jer svaki prst crta malu melodiju: E–F–E–D–E, G–A–G–G–G.
+    - Pravilo: **IV se svira kao kvartsekstakord iznad tonike, V kao sekstakord** (H je vođica,
+      polustepen ispod C).
+
+    Prve tri vežbe proveravaju tačne dirke; poslednja prihvata bilo koju oktavu.
+exercises:
+  - id: K-009-1
+    type: midi-play
+    prompt: {en: "C major: I – IV64 – I – V6 – I, right hand, starting C4–E4–G4.", sr: "C-dur: I – IV64 – I – V6 – I, desna ruka, od C4–E4–G4."}
+    mode: chords
+    expectChords: [[C4, E4, G4], [C4, F4, A4], [C4, E4, G4], [B3, D4, G4], [C4, E4, G4]]
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - chord: {notes: [C4, F4, A4], root: F, quality: maj, inversion: 2}
+      - chord: {notes: [B3, D4, G4], root: G, quality: maj, inversion: 1}
+      - interval: {from: B3, to: C4, is: m2}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+  - id: K-009-2
+    type: midi-play
+    prompt: {en: "G major: the same pattern, starting G4–B4–D5.", sr: "G-dur: isti obrazac, od G4–H4–D5."}
+    mode: chords
+    expectChords: [[G4, B4, D5], [G4, C5, E5], [G4, B4, D5], ["F#4", A4, D5], [G4, B4, D5]]
+    showNotes: false
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj, inversion: 0}
+      - chord: {notes: [G4, C5, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: ["F#4", A4, D5], root: D, quality: maj, inversion: 1}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - roman: {key: G, degree: 5, is: "V"}
+  - id: K-009-3
+    type: midi-play
+    prompt: {en: "F major: the same pattern, starting F4–A4–C5.", sr: "F-dur: isti obrazac, od F4–A4–C5."}
+    mode: chords
+    expectChords: [[F4, A4, C5], [F4, Bb4, D5], [F4, A4, C5], [E4, G4, C5], [F4, A4, C5]]
+    showNotes: false
+    tempo: 60
+    checks:
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj, inversion: 0}
+      - chord: {notes: [F4, Bb4, D5], root: Bb, quality: maj, inversion: 2}
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - roman: {key: F, degree: 4, is: "IV"}
+      - roman: {key: F, degree: 5, is: "V"}
+  - id: K-009-4
+    type: generated
+    prompt: {en: "Any of the three keys, with tempo (any octave)", sr: "Bilo koji od tri tonaliteta, u tempu (bilo koja oktava)"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, IV64, I, V6, I], tempo: 72}
+  - id: K-009-5
+    type: practice
+    prompt: {en: "Add the left hand: roots C–F–C–G–C (one octave down) under the right-hand voicing, then try it in G and F.", sr: "Dodaj levu ruku: osnovni tonovi C–F–C–G–C (oktavu niže) ispod desne ruke, pa probaj u G i F-duru."}
+    minutes: 3

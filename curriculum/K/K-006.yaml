@@ -1,0 +1,103 @@
+id: K-006
+track: K
+order: 6
+title: {en: "Diatonic triads in C, G and F", sr: "Diatonski kvintakordi u C, G i F-duru"}
+prereqs: [K-005, T-012]
+minutes: 13
+tags: [keys, chords, harmony]
+explain:
+  en: |
+    Stack a third and a fifth on every note of a major scale, using only notes of that scale,
+    and you get the seven chords of the key. In every major key the pattern is the same:
+
+    | degree | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+    |---|---|---|---|---|---|---|---|
+    | numeral | I | ii | iii | IV | V | vi | vii° |
+    | quality | major | minor | minor | major | major | minor | diminished |
+    | in C | C | Dm | Em | F | G | Am | B° |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    [CEG] [DFA] [EGB] [FAc] [GBd] [Ace] [Bdf] [ceg] |]
+    ```
+
+    On the keyboard this is easy: keep the **same hand shape** (fingers 1-3-5) and walk it up the
+    scale, playing only the key's notes. In G every F is F♯; in F every B is B♭.
+
+    Upper case = major, lower case = minor, ° = diminished. When you see "vi in F", think: 6th
+    note of F major (D), minor chord: D–F–A.
+  sr: |
+    Na svaki ton durske lestvice složi tercu i kvintu, samo od tonova te lestvice, i dobiješ
+    sedam akorada tonaliteta. U svakom duru obrazac je isti:
+
+    | stupanj | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+    |---|---|---|---|---|---|---|---|
+    | oznaka | I | ii | iii | IV | V | vi | vii° |
+    | vrsta | durski | molski | molski | durski | durski | molski | smanjeni |
+    | u C-duru | C | d | e | F | G | a | h° |
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    [CEG] [DFA] [EGB] [FAc] [GBd] [Ace] [Bdf] [ceg] |]
+    ```
+
+    Na klavijaturi je lako: drži **isti oblik ruke** (prsti 1-3-5) i pomeraj ga naviše po
+    lestvici, samo po tonovima tonaliteta. U G-duru svako F je Fis; u F-duru svako H je B.
+
+    Veliko slovo = durski, malo = molski, ° = smanjeni. Kad vidiš „vi u F-duru", misli: 6. ton
+    F-dura (D), molski akord: D–F–A.
+exercises:
+  - id: K-006-1
+    type: midi-play
+    prompt: {en: "Walk the triads up C major: I ii iii IV V vi vii° I (block chords, 1-3-5).", sr: "Prođi kvintakorde naviše kroz C-dur: I ii iii IV V vi vii° I (akordi, prsti 1-3-5)."}
+    mode: chords
+    derive: {roman: {key: C4, numerals: [I, ii, iii, IV, V, vi, "vii°", I]}}
+    octave: any
+    bass: true
+    checks:
+      - roman: {key: C, degree: 1, is: "I"}
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 3, is: "iii"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: C, degree: 7, is: "vii°"}
+      - roman: {key: F, degree: 6, is: "vi"}
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [B4, D5, F5], root: B, quality: dim}
+  - id: K-006-2
+    type: midi-play
+    prompt: {en: "The same in G major (F♯!).", sr: "Isto u G-duru (Fis!)."}
+    mode: chords
+    derive: {roman: {key: G3, numerals: [I, ii, iii, IV, V, vi, "vii°", I]}}
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - roman: {key: G, degree: 7, is: "vii°"}
+      - chord: {notes: ["F#4", A4, C5], root: "F#", quality: dim}
+  - id: K-006-3
+    type: midi-play
+    prompt: {en: "The same in F major (B♭!).", sr: "Isto u F-duru (B!)."}
+    mode: chords
+    derive: {roman: {key: F4, numerals: [I, ii, iii, IV, V, vi, "vii°", I]}}
+    octave: any
+    bass: true
+    showNotes: false
+    checks:
+      - roman: {key: F, degree: 4, is: "IV"}
+      - chord: {notes: [Bb4, D5, F5], root: Bb, quality: maj}
+  - id: K-006-4
+    type: generated
+    prompt: {en: "Numeral → chord", sr: "Oznaka → akord"}
+    count: 8
+    gen: {kind: roman, keys: [C, G, F], ask: play}
+  - id: K-006-5
+    type: generated
+    prompt: {en: "Walk up the scale in time, one chord per beat", sr: "Naviše po lestvici u tempu, jedan akord na dobu"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, ii, iii, IV, V, vi, "vii°", I], tempo: 72}

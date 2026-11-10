@@ -106,6 +106,7 @@ const ivLoc = (s: string): Loc => {
 };
 const qLoc = (q: ChordQuality): Loc => L(qualityName(q, "en"), qualityName(q, "sr"));
 const isMinor = (t: ScaleType) => t.includes("minor");
+const SR_VARIANT_LOC: Record<ScaleType, string> = { major: "", "natural-minor": "prirodnom", "harmonic-minor": "harmonskom", "melodic-minor": "melodijskom", "major-pentatonic": "(pentatonika)", "minor-pentatonic": "(pentatonika)" };
 const SR_VARIANT: Record<ScaleType, string> = { major: "", "natural-minor": "prirodni", "harmonic-minor": "harmonski", "melodic-minor": "melodijski", "major-pentatonic": "pentatonika", "minor-pentatonic": "pentatonika" };
 /**
  * Key/scale names. Serbian: "C-dur", "a-mol" (minor keys lower case), locative
@@ -118,7 +119,7 @@ function keyName(tonic: Note, type: ScaleType, variant = true): { nom: Loc; loc:
   const showVar = variant && type !== "major" && (type !== "natural-minor" || variant);
   const v = showVar && SR_VARIANT[type] ? " " + SR_VARIANT[type] : "";
   const en = `${pcName(tonic)} ${type === "major" || (type === "natural-minor" && !variant) ? (minor ? "minor" : "major") : SCALE_NAMES[type].en}`;
-  return { nom: L(en, base + v), loc: L(en, base + "u" + (v ? ` (${v.trim()})` : "")) };
+  return { nom: L(en, base + v), loc: L(en, base + "u" + (v ? " " + SR_VARIANT_LOC[type] : "")) };
 }
 /** Serbian count + noun in accusative after a verb: 1 povisilicu, 2-4 povisilice, 5+ povisilica. */
 function accCount(n: number, sharp: boolean): string {
@@ -343,6 +344,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         } catch {
           continue;
         }
+        if (notes.some((n) => Math.abs(n.acc) > 1)) continue;
         const ms = notes.map(toMidi);
         const play: PlaySpec = { mode: "harmonic", notes: ms, tempo: 60 };
         if (g.answer === "play")
@@ -385,7 +387,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             kind: "names",
             ordered: true,
             expect: notes.map(pcName),
-            prompt: L(`Spell ${sym} (${qualityName(q, "en")})${invTxt ? ", " + invTxt.en : ""}, lowest note first.`, `Napiši akord ${symSr}${invTxt ? ", " + invTxt.sr : ""}, od najniže note.`),
+            prompt: L(`Spell ${sym} (${qualityName(q, "en")})${invTxt ? ", " + invTxt.en : ""}, lowest note first.`, `Napiši ${symSr}${invTxt ? ", " + invTxt.sr : ""}, od najniže note.`),
           };
         return {
           ...base,
@@ -487,7 +489,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         const pool = g.keys.map((k) => pcName(g.mode === "major" ? relativeMinor(parseNote(k)) : transpose(parseNote(k), "m3")));
         const { options, answer } = mcq(rng, correct, [...new Set(pool)]);
         const other = g.mode === "major" ? L("minor", "mol") : L("major", "dur");
-        return { ...base, kind: "mcq", prompt: L(`Relative ${other.en} of ${keyLoc.en}?`, `Paralelni ${other.sr} za ${keyLoc.sr}?`), options: options.map((o) => nn(parseNote(o))), answer };
+        const relName = (o: string): Loc => keyName(parseNote(o), g.mode === "major" ? "natural-minor" : "major", false).nom;
+        return { ...base, kind: "mcq", prompt: L(`Relative ${other.en} of ${keyLoc.en}?`, `Paralelni ${other.sr} za ${keyLoc.sr}?`), options: options.map(relName), answer };
       }
       const pool = [...new Set(g.keys.map((k) => pcName(parseNote(k))))];
       const { options, answer } = mcq(rng, pcName(tonic), pool);
@@ -568,7 +571,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         bass: false,
         showNotes: false,
         play: { mode: "melodic", notes: [toMidi(tonic), ...ms], tempo: g.tempo },
-        prompt: L(`Key: ${keyLoc.en}. First you hear the tonic ${noteStr(tonic)}, then a ${len}-note melody. Play the melody back.`, `Tonalitet: ${keyLoc.sr}. Prvo čuješ toniku ${noteNameSr(tonic, true)}, pa melodiju od ${len} tonova. Odsviraj melodiju.`),
+        prompt: L(`Key: ${keyLoc.en}. First you hear the tonic ${noteStr(tonic)}, then a ${len}-note melody. Play the melody back.`, `Tonalitet: ${keyLoc.sr}. Prvo čuješ toniku ${noteNameSr(tonic, true)}, pa melodiju od ${len} ${len >= 2 && len <= 4 ? "tona" : len === 1 ? "tona" : "tonova"}. Odsviraj melodiju.`),
         noteLabels: join(notes.map(nno)),
       };
     }
@@ -610,7 +613,9 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const roots: Note[] = [];
       const names: string[] = [];
       for (let i = 0; i < g.length; i++) {
-        const r = i === 0 ? g.numerals[0] : rng.pick(g.numerals);
+        // start and (from 3 notes on) end on the first numeral; no immediate repeats
+        const prev = names[i - 1];
+        const r = i === 0 || (i === g.length - 1 && g.length >= 3 && prev !== g.numerals[0]) ? g.numerals[0] : rng.pick(g.numerals.filter((x) => x !== prev).length ? g.numerals.filter((x) => x !== prev) : g.numerals);
         names.push(r);
         roots.push(romanChord(key, g.type, r.replace(/[0-9]+$/, ""))[0]);
       }

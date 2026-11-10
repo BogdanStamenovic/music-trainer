@@ -1,0 +1,83 @@
+id: E-001
+track: E
+order: 1
+title: {en: "Find the note", sr: "Nađi ton"}
+prereqs: [T-001]
+minutes: 10
+tags: [ear, echo]
+explain:
+  en: |
+    Playing by ear starts with one skill: **hear a note, find it on the keys**. You do not need
+    perfect pitch. You need a reference (a note or chord you already know) and the habit of
+    measuring from it.
+
+    How to practise it:
+
+    - **Sing or hum the note first**, quietly. If you can sing it, you can find it; if you cannot,
+      replay it before touching the keys.
+    - **Guess, then correct.** Is it higher or lower than the reference? Close or far? Then press.
+      Every key you press counts, so search in your head, not on the keyboard.
+    - Everything today stays between **C4 (middle C) and C5**, white keys for the first exercises.
+
+    The first exercises play a short chord pattern in C major (C – F – G – C) before the note.
+    It sets "home" in your ear, so the note sounds like a position *in the key*, not a random pitch.
+    That is the real trick of playing by ear, and lesson E-005 builds on it.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C D E F G A B c |]
+    ```
+  sr: |
+    Sviranje po sluhu počinje jednom veštinom: **čuješ ton, nađeš ga na klavijaturi**. Ne treba ti
+    apsolutni sluh. Treba ti oslonac (ton ili akord koji već znaš) i navika da meriš od njega.
+
+    Kako da vežbaš:
+
+    - **Prvo otpevaj ili otpevuši ton**, tiho. Ako možeš da ga otpevaš, možeš i da ga nađeš; ako ne
+      možeš, pusti ga ponovo pre nego što dodirneš dirke.
+    - **Pogodi, pa ispravi.** Da li je viši ili niži od oslonca? Blizu ili daleko? Tek onda pritisni.
+      Svaka pritisnuta dirka se računa, zato traži u glavi, ne po klavijaturi.
+    - Danas je sve između **C4 (srednje C) i C5**, u prvim vežbama samo bele dirke.
+
+    Prve vežbe pre tona puste kratak niz akorada u C-duru (C – F – G – C). On u uhu postavi
+    „kuću", pa ton čuješ kao mesto *u tonalitetu*, a ne kao nasumičnu visinu. To je pravi trik
+    sviranja po sluhu, i lekcija E-005 se nadovezuje na njega.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C
+    C D E F G A B c |]
+    ```
+exercises:
+  - id: E-001-1
+    type: generated
+    prompt: {en: "After the C major cadence, find the note: only C, E, G or high C", sr: "Posle kadence u C-duru nađi ton: samo C, E, G ili gornje C"}
+    count: 6
+    gen: {kind: degree-ear, tonics: [C], degrees: [1, 3, 5, 8], answer: play}
+    checks:
+      - semitones: {from: C4, to: C5, is: 12}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+  - id: E-001-2
+    type: generated
+    prompt: {en: "Find the note: any white key from C4 to C5", sr: "Nađi ton: bilo koja bela dirka od C4 do C5"}
+    count: 8
+    gen: {kind: degree-ear, tonics: [C], degrees: [1, 2, 3, 4, 5, 6, 7, 8], answer: play}
+  - id: E-001-3
+    type: generated
+    prompt: {en: "Two-note figures starting on C: echo them", sr: "Figure od dva tona, počinju od C: odsviraj ih"}
+    count: 5
+    gen: {kind: melody-echo, tonics: [C], length: [2, 2], maxLeap: 4, startOnTonic: true, octave: 4, tempo: 72}
+  - id: E-001-4
+    type: generated
+    prompt: {en: "Two-note figures starting anywhere: echo them", sr: "Figure od dva tona, počinju bilo gde: odsviraj ih"}
+    count: 6
+    gen: {kind: melody-echo, tonics: [C], length: [2, 2], maxLeap: 4, startOnTonic: false, octave: 4, tempo: 72}
+  - id: E-001-5
+    type: generated
+    prompt: {en: "No reference now, black keys allowed: echo two notes", sr: "Sada bez oslonca, i crne dirke: odsviraj dva tona"}
+    count: 5
+    pass: 0.6
+    gen: {kind: interval-ear, intervals: [M2, M3, P4, P5], range: [C4, G4], direction: up, answer: play}

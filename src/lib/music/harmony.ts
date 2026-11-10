@@ -168,17 +168,21 @@ export function parseRoman(s: string): { degree: number; inversion: number; seve
 }
 
 /**
- * Notes of a roman-numeral chord in a key, voiced in close position with the
- * requested inversion, root placed at or above `bassFloor` octave of the tonic.
+ * Notes of a roman-numeral chord in a key, close position, requested inversion.
+ * The bass is placed nearest the tonic (within -6..+5 semitones), which gives the
+ * "hand stays still" voicings: in C, IV64 = C4 F4 A4 and V6 = B3 D4 G4.
  */
 export function romanChord(tonic: Note | string, type: ScaleType, roman: string): Note[] {
+  const t = typeof tonic === "string" ? parseNote(tonic) : tonic;
   const { degree, inversion, seventh } = parseRoman(roman);
-  const notes = diatonicChord(tonic, type, degree, seventh);
+  const notes = diatonicChord(t, type, degree, seventh);
   for (let i = 0; i < inversion; i++) {
     const n = notes.shift()!;
     notes.push({ ...n, octave: n.octave + 1 });
   }
-  return notes;
+  const d = toMidi(notes[0]) - toMidi(t);
+  const shift = Math.floor((d + 6) / 12); // octaves to move down so that d lands in -6..+5
+  return notes.map((n) => ({ ...n, octave: n.octave - shift }));
 }
 
 export function midis(notes: Note[]): number[] {

@@ -130,8 +130,11 @@ describe("chords", () => {
     expect([1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral("A3", "natural-minor", d))).toEqual(["i", "ii°", "III", "iv", "v", "VI", "VII"]);
     expect([1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral("A3", "harmonic-minor", d))).toEqual(["i", "ii°", "III+", "iv", "V", "VI", "vii°"]);
     expect(names(diatonicChord("D4", "major", 5), false)).toEqual(["A", "C#", "E"]);
-    expect(names(romanChord("G4", "major", "IV64"))).toEqual(["G5", "C6", "E6"]);
-    expect(names(romanChord("C4", "major", "V7"))).toEqual(["G4", "B4", "D5", "F5"]);
+    expect(names(romanChord("G4", "major", "IV64"))).toEqual(["G4", "C5", "E5"]);
+    expect(names(romanChord("C4", "major", "IV64"))).toEqual(["C4", "F4", "A4"]);
+    expect(names(romanChord("C4", "major", "V6"))).toEqual(["B3", "D4", "G4"]);
+    expect(names(romanChord("C4", "major", "IV"))).toEqual(["F4", "A4", "C5"]);
+    expect(names(romanChord("C4", "major", "V7"))).toEqual(["G3", "B3", "D4", "F4"]);
     expect(triadQualityOf(diatonicChord("F4", "major", 7))).toBe("dim");
   });
   it("identify any voicing", () => {

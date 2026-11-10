@@ -1,0 +1,70 @@
+id: E-004
+track: E
+order: 4
+title: {en: "Major or minor chord?", sr: "Durski ili molski akord?"}
+prereqs: [E-003, T-011]
+minutes: 11
+tags: [ear, chords]
+explain:
+  en: |
+    A major and a minor triad on the same root differ by **one note, one half step**: the
+    middle one (the third). C major is C–E–G, C minor is C–E♭–G.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [C_EG] |]
+    ```
+
+    - Major sounds **bright, settled**; minor sounds **darker, more inward**. That is a cliché,
+      and it works.
+    - Do not listen to the whole chord as one blob. **Sing the middle note.** Then sing the root
+      under it: four half steps (major third) means major, three (minor third) means minor.
+      That is E-002 again.
+    - Inversions move the notes around but do not change the quality. In the second exercise the
+      lowest note is not always the root: listen for the overall colour.
+  sr: |
+    Durski i molski kvintakord na istom osnovnom tonu razlikuju se u **jednom tonu, za jedan
+    polustepen**: srednjem (terci). C-dur je C–E–G, c-mol je C–Es–G.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [C_EG] |]
+    ```
+
+    - Dur zvuči **svetlo, smireno**; mol **tamnije, zatvorenije**. To je kliše, ali radi.
+    - Ne slušaj ceo akord kao jednu mrlju. **Otpevaj srednji ton.** Pa ispod njega osnovni ton:
+      četiri polustepena (velika terca) znači dur, tri (mala terca) znači mol. To je opet E-002.
+    - Obrtaji premeštaju tonove, ali ne menjaju vrstu akorda. U drugoj vežbi najniži ton nije
+      uvek osnovni: slušaj ukupnu boju.
+exercises:
+  - id: E-004-1
+    type: mcq
+    prompt: {en: "Two chords on C. Which one is minor?", sr: "Dva akorda na C. Koji je molski?"}
+    play: {chords: [[C4, E4, G4], [C4, Eb4, G4]], mode: chords, tempo: 50}
+    options:
+      - {en: "the first", sr: "prvi"}
+      - {en: "the second", sr: "drugi"}
+    answer: 1
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [C4, Eb4, G4], root: C, quality: min}
+  - id: E-004-2
+    type: generated
+    prompt: {en: "Major or minor? (root position)", sr: "Dur ili mol? (osnovni položaj)"}
+    count: 8
+    gen: {kind: chord-ear, qualities: [maj, min]}
+  - id: E-004-3
+    type: generated
+    prompt: {en: "Major or minor? (any inversion)", sr: "Dur ili mol? (bilo koji obrtaj)"}
+    count: 6
+    gen: {kind: chord-ear, qualities: [maj, min], inversions: [0, 1, 2]}
+  - id: E-004-4
+    type: generated
+    prompt: {en: "Hear it, then play it back", sr: "Čuj akord, pa ga odsviraj"}
+    count: 5
+    pass: 0.7
+    gen: {kind: chord-ear, qualities: [maj, min], range: [C4, G4], answer: play}

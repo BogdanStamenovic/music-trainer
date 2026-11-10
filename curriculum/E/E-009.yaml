@@ -1,0 +1,74 @@
+id: E-009
+track: E
+order: 9
+title: {en: "Bass lines: I, IV, V and vi", sr: "Bas linije: I, IV, V i vi"}
+prereqs: [E-008, T-012]
+minutes: 13
+tags: [ear, bass, harmony]
+explain:
+  en: |
+    To accompany a song by ear you mostly need its **bass line**: the roots of the chords. Most
+    pop and folk songs use the chords on degrees **1, 4 and 5** (I, IV, V), and very often **6** (vi).
+
+    In C major the roots are **C, F, G** and **A**: I = C major, IV = F major, V = G major,
+    vi = A minor.
+
+    How to hear them:
+
+    - The first bass note is always **I** here. Lock it in as home.
+    - **V** is the strongest pull back home; **IV** feels like moving *away*, softer.
+    - From I, **up a 4th** gets you to IV and **up a 5th** to V (E-003). Bass lines also often go
+      **down**: C down to G is a 4th down, and it is still V.
+    - **vi** is a minor 3rd below I (C down to A). It sounds like a darker relative of I.
+    - The grading accepts any octave, so play where it feels comfortable (left hand, low).
+  sr: |
+    Za pratnju pesme po sluhu uglavnom ti treba njena **bas linija**: osnovni tonovi akorada.
+    Većina pop i narodnih pesama koristi akorde na stupnjevima **1, 4 i 5** (I, IV, V), a vrlo
+    često i **6** (vi).
+
+    U C-duru osnovni tonovi su **C, F, G** i **A**: I = C-dur, IV = F-dur, V = G-dur, vi = a-mol.
+
+    Kako da ih čuješ:
+
+    - Prvi ton u basu je ovde uvek **I**. Utvrdi ga kao kuću.
+    - **V** (dominanta) najjače vuče nazad kući; **IV** (subdominanta) zvuči kao *odlazak*, mekše.
+    - Od I, **kvarta naviše** dovodi do IV, a **kvinta naviše** do V (E-003). Bas linije često idu i
+      **naniže**: od C kvartu naniže do G je i dalje V.
+    - **vi** je mala terca ispod I (od C naniže do A). Zvuči kao tamniji rođak od I.
+    - Ocenjivanje prihvata bilo koju oktavu, pa sviraj gde ti je udobno (levom rukom, nisko).
+exercises:
+  - id: E-009-1
+    type: generated
+    prompt: {en: "Roots of I, IV, V in C major", sr: "Osnovni tonovi I, IV, V u C-duru"}
+    count: 5
+    gen: {kind: bass-echo, keys: [C], numerals: [I, IV, V], length: 4, octave: 3, tempo: 66}
+    checks:
+      - roman: {key: C, degree: 1, is: "I"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - interval: {from: C3, to: F3, is: P4}
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: G2, to: C3, is: P4}
+      - interval: {from: A2, to: C3, is: m3}
+  - id: E-009-2
+    type: generated
+    prompt: {en: "I, IV, V in C, G and F major", sr: "I, IV, V u C, G i F-duru"}
+    count: 6
+    gen: {kind: bass-echo, keys: [C, G, F], numerals: [I, IV, V], length: 4, octave: 2, tempo: 70}
+  - id: E-009-3
+    type: generated
+    prompt: {en: "Now with vi, in C major", sr: "Sada i sa vi, u C-duru"}
+    count: 5
+    gen: {kind: bass-echo, keys: [C], numerals: [I, IV, V, vi], length: 4, octave: 3, tempo: 70}
+  - id: E-009-4
+    type: generated
+    prompt: {en: "Longer lines with vi, in C, G, F and D major", sr: "Duže linije sa vi, u C, G, F i D-duru"}
+    count: 5
+    pass: 0.7
+    gen: {kind: bass-echo, keys: [C, G, F, D], numerals: [I, IV, V, vi], length: 6, octave: 2, tempo: 72}
+  - id: E-009-5
+    type: generated
+    prompt: {en: "The whole chords: echo I–vi–IV–V", sr: "Celi akordi: ponovi I–vi–IV–V"}
+    count: 3
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, vi, IV, V], echo: true}

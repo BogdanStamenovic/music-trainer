@@ -1,0 +1,85 @@
+id: E-007
+track: E
+order: 7
+title: {en: "Sixths, sevenths and the tritone", sr: "Sekste, septime i tritonus"}
+prereqs: [E-006, T-006]
+minutes: 13
+tags: [ear, intervals]
+explain:
+  en: |
+    The wide intervals. A trick that helps: compare each to something you already know.
+
+    | interval | half steps | example | hint |
+    |---|---|---|---|
+    | tritone (A4) | 6 | C–F♯ | unstable, "evil"; *Maria* (West Side Story, "Ma-ri-") |
+    | minor 6th (m6) | 8 | C–A♭ | a minor-sounding, yearning leap; the upside-down major 3rd |
+    | major 6th (M6) | 9 | C–A | warm and open; *My Bonnie Lies Over the Ocean* ("My Bon-") |
+    | minor 7th (m7) | 10 | C–B♭ | an octave minus a whole step; *Somewhere* (West Side Story, "There's a") |
+    | major 7th (M7) | 11 | C–B | an octave minus a half step: sharp, it wants to slide up to the octave |
+
+    Tips:
+
+    - For 7ths, **imagine the octave** above the lower note. Is the top note a whole step short of
+      it (m7) or a half step short (M7)? Thinking down from the octave is easier than up from the root.
+    - For 6ths, **flip them**: an m6 is an M3 upside down, an M6 is an m3 upside down.
+    - The tritone sits exactly between the 4th and the 5th, and sounds like neither.
+  sr: |
+    Široki intervali. Pomaže trik: uporedi svaki sa nečim što već znaš.
+
+    | interval | polustepeni | primer | pomoć |
+    |---|---|---|---|
+    | tritonus (povećana kvarta, A4) | 6 | C–Fis | nestabilan, „đavolji"; *Maria* (*Priča sa zapadne strane*, „Ma-ri-") |
+    | mala seksta (m6) | 8 | C–As | molski, čeznutljiv skok; obrnuta velika terca |
+    | velika seksta (M6) | 9 | C–A | toplo i otvoreno; *My Bonnie Lies Over the Ocean* („My Bon-") |
+    | mala septima (m7) | 10 | C–B | oktava manje ceo stepen; *Somewhere* (*Priča sa zapadne strane*, „There's a") |
+    | velika septima (M7) | 11 | C–H | oktava manje polustepen: oštro, hoće da sklizne gore na oktavu |
+
+    Saveti:
+
+    - Kod septima **zamisli oktavu** iznad donjeg tona. Da li gornjem tonu fali ceo stepen do nje
+      (m7) ili polustepen (M7)? Lakše je misliti naniže od oktave nego naviše od osnove.
+    - Kod seksti **okreni ih**: m6 je obrnuta M3, a M6 je obrnuta m3.
+    - Tritonus je tačno između kvarte i kvinte, i ne zvuči ni kao jedna ni kao druga.
+exercises:
+  - id: E-007-1
+    type: generated
+    prompt: {en: "Minor or major sixth?", sr: "Mala ili velika seksta?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m6, M6], direction: up}
+    checks:
+      - interval: {from: C4, to: "F#4", is: A4}
+      - semitones: {from: C4, to: "F#4", is: 6}
+      - interval: {from: C4, to: Ab4, is: m6}
+      - semitones: {from: C4, to: Ab4, is: 8}
+      - interval: {from: C4, to: A4, is: M6}
+      - semitones: {from: C4, to: A4, is: 9}
+      - interval: {from: C4, to: Bb4, is: m7}
+      - semitones: {from: C4, to: Bb4, is: 10}
+      - interval: {from: C4, to: B4, is: M7}
+      - semitones: {from: C4, to: B4, is: 11}
+      - interval: {from: E4, to: C5, is: m6}
+      - interval: {from: A4, to: C5, is: m3}
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: C4, to: A4, is: M6}
+  - id: E-007-2
+    type: generated
+    prompt: {en: "Minor 7th, major 7th or octave?", sr: "Mala septima, velika septima ili oktava?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m7, M7, P8], direction: up}
+  - id: E-007-3
+    type: generated
+    prompt: {en: "4th, tritone or 5th?", sr: "Kvarta, tritonus ili kvinta?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, A4, P5], direction: up}
+  - id: E-007-4
+    type: generated
+    prompt: {en: "All wide intervals, any direction", sr: "Svi široki intervali, bilo koji smer"}
+    count: 8
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [A4, m6, M6, m7, M7], direction: mixed}
+  - id: E-007-5
+    type: generated
+    prompt: {en: "Echo the leap on the keys", sr: "Odsviraj skok na klavijaturi"}
+    count: 5
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [A4, m6, M6, m7, M7], range: [C4, F4], direction: up, answer: play}

@@ -1,0 +1,81 @@
+id: E-002
+track: E
+order: 2
+title: {en: "Hear steps: seconds and thirds", sr: "Čuj korake: sekunde i terce"}
+prereqs: [E-001, T-004]
+minutes: 12
+tags: [ear, intervals]
+explain:
+  en: |
+    Seconds and thirds are what most melodies are made of. Count them in **half steps**:
+
+    | interval | half steps | example | sounds like |
+    |---|---|---|---|
+    | minor 2nd (m2) | 1 | E–F | tense, "rubbing", the Jaws shark |
+    | major 2nd (M2) | 2 | C–D | an ordinary step of a scale |
+    | minor 3rd (m3) | 3 | A–C | darker, the bottom of a minor chord |
+    | major 3rd (M3) | 4 | C–E | bright, the bottom of a major chord |
+
+    Listening tips:
+
+    - **Step or skip?** Seconds feel like walking to the next key; thirds feel like skipping one.
+      Decide that first, then decide small or large.
+    - For m3 vs M3 imagine the third as the start of a chord: M3 wants to become **major**, m3 **minor**.
+    - When you echo, **sing the two notes back** before you play. The ear decides; the hand follows.
+  sr: |
+    Sekunde i terce su građa većine melodija. Broj ih u **polustepenima**:
+
+    | interval | polustepeni | primer | zvuči kao |
+    |---|---|---|---|
+    | mala sekunda (m2) | 1 | E–F | napeto, „trlja se", ajkula iz filma *Ajkula* |
+    | velika sekunda (M2) | 2 | C–D | običan korak lestvice |
+    | mala terca (m3) | 3 | A–C | tamnije, donji deo molskog akorda |
+    | velika terca (M3) | 4 | C–E | svetlo, donji deo durskog akorda |
+
+    Saveti za slušanje:
+
+    - **Korak ili skok?** Sekunda je kao da ideš na susednu dirku; terca kao da jednu preskočiš.
+      Prvo to odluči, pa onda da li je mala ili velika.
+    - Za m3 i M3 zamisli tercu kao početak akorda: velika terca vuče ka **duru**, mala ka **molu**.
+    - Pre nego što odsviraš, **otpevaj oba tona**. Uho odlučuje, ruka prati.
+exercises:
+  - id: E-002-1
+    type: generated
+    prompt: {en: "Minor or major second?", sr: "Mala ili velika sekunda?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m2, M2], direction: up}
+    checks:
+      - interval: {from: E4, to: F4, is: m2}
+      - semitones: {from: E4, to: F4, is: 1}
+      - interval: {from: C4, to: D4, is: M2}
+      - semitones: {from: C4, to: D4, is: 2}
+      - interval: {from: A4, to: C5, is: m3}
+      - semitones: {from: A4, to: C5, is: 3}
+      - interval: {from: C4, to: E4, is: M3}
+      - semitones: {from: C4, to: E4, is: 4}
+  - id: E-002-2
+    type: generated
+    prompt: {en: "Minor or major third?", sr: "Mala ili velika terca?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m3, M3], direction: up}
+  - id: E-002-3
+    type: generated
+    prompt: {en: "Seconds and thirds, ascending", sr: "Sekunde i terce, naviše"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: up}
+  - id: E-002-4
+    type: generated
+    prompt: {en: "Seconds and thirds, descending", sr: "Sekunde i terce, naniže"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: down}
+  - id: E-002-5
+    type: generated
+    prompt: {en: "Seconds and thirds, both notes together", sr: "Sekunde i terce, oba tona zajedno"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: harmonic}
+  - id: E-002-6
+    type: generated
+    prompt: {en: "Echo the two notes on the keys", sr: "Odsviraj oba tona na klavijaturi"}
+    count: 5
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], range: [C4, C5], direction: up, answer: play}

@@ -1,0 +1,107 @@
+id: K-005
+track: K
+order: 5
+title: {en: "Major and minor triads on all 12 roots", sr: "Durski i molski kvintakordi na svih 12 tonova"}
+prereqs: [K-004, T-011]
+minutes: 12
+tags: [keys, chords]
+explain:
+  en: |
+    Goal: any major or minor triad under your fingers **without spelling it first**. The fastest
+    way is to know the **black/white shape** of each chord, bottom to top (● = black key, ○ = white key):
+
+    | shape | major | minor |
+    |---|---|---|
+    | ○ ○ ○ | C, F, G | D, E, A |
+    | ○ ● ○ | D, E, A | C, F, G |
+    | ● ○ ● | D♭, E♭, A♭ | C♯, F♯, G♯ |
+    | ● ● ● | F♯ | E♭ |
+    | ● ○ ○ | B♭ | – |
+    | ○ ● ● | B | – |
+    | ● ● ○ | – | B♭ |
+    | ○ ○ ● | – | B |
+
+    The pairs are mirror images: C, F, G major are all white, and their minor chords put a black
+    key in the middle; D, E, A work the other way round.
+
+    Spelling note: a minor triad on C♯ (C♯–E–G♯) and on G♯ (G♯–B–D♯) is normally written with
+    sharps, while the major triads on the same keys are written D♭ and A♭.
+  sr: |
+    Cilj: bilo koji durski ili molski kvintakord pod prstima **bez nabrajanja tonova**. Najbrži put je da
+    znaš **raspored crnih i belih dirki** svakog akorda, odozdo naviše (● = crna dirka, ○ = bela):
+
+    | oblik | dur | mol |
+    |---|---|---|
+    | ○ ○ ○ | C, F, G | d, e, a |
+    | ○ ● ○ | D, E, A | c, f, g |
+    | ● ○ ● | Des, Es, As | cis, fis, gis |
+    | ● ● ● | Fis | es |
+    | ● ○ ○ | B | – |
+    | ○ ● ● | H | – |
+    | ● ● ○ | – | b |
+    | ○ ○ ● | – | h |
+
+    (Mala slova za molske akorde, kao kod tonaliteta: d = d-mol, b = b-mol, h = h-mol.)
+
+    Parovi su kao u ogledalu: C, F, G-dur su sve bele dirke, a njihovi molski akordi imaju crnu
+    dirku u sredini; D, E, A obrnuto.
+
+    Pravopis: molski kvintakord na Cis (Cis–E–Gis) i na Gis (Gis–H–Dis) piše se sa povisilicama,
+    a durski na istim dirkama kao Des i As.
+exercises:
+  - id: K-005-1
+    type: generated
+    prompt: {en: "Major triads on white-key roots", sr: "Durski kvintakordi na belim dirkama"}
+    count: 6
+    gen: {kind: chord-build, qualities: [maj], roots: [C, D, E, F, G, A, B], answer: play}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [D4, "F#4", A4], root: D, quality: maj}
+      - chord: {notes: [E4, "G#4", B4], root: E, quality: maj}
+      - chord: {notes: [A4, "C#5", E5], root: A, quality: maj}
+      - chord: {notes: [Db4, F4, Ab4], root: Db, quality: maj}
+      - chord: {notes: [Eb4, G4, Bb4], root: Eb, quality: maj}
+      - chord: {notes: [Ab4, C5, Eb5], root: Ab, quality: maj}
+      - chord: {notes: ["F#4", "A#4", "C#5"], root: "F#", quality: maj}
+      - chord: {notes: [Bb4, D5, F5], root: Bb, quality: maj}
+      - chord: {notes: [B4, "D#5", "F#5"], root: B, quality: maj}
+  - id: K-005-2
+    type: generated
+    prompt: {en: "Minor triads on white-key roots", sr: "Molski kvintakordi na belim dirkama"}
+    count: 6
+    gen: {kind: chord-build, qualities: [min], roots: [C, D, E, F, G, A, B], answer: play}
+    checks:
+      - chord: {notes: [D4, F4, A4], root: D, quality: min}
+      - chord: {notes: [E4, G4, B4], root: E, quality: min}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}
+      - chord: {notes: [C4, Eb4, G4], root: C, quality: min}
+      - chord: {notes: [F4, Ab4, C5], root: F, quality: min}
+      - chord: {notes: [G4, Bb4, D5], root: G, quality: min}
+      - chord: {notes: ["C#4", E4, "G#4"], root: "C#", quality: min}
+      - chord: {notes: ["G#4", B4, "D#5"], root: "G#", quality: min}
+      - chord: {notes: ["F#4", A4, "C#5"], root: "F#", quality: min}
+      - chord: {notes: [Eb4, Gb4, Bb4], root: Eb, quality: min}
+      - chord: {notes: [Bb4, Db5, F5], root: Bb, quality: min}
+      - chord: {notes: [B4, D5, "F#5"], root: B, quality: min}
+  - id: K-005-3
+    type: generated
+    prompt: {en: "Major triads on black-key roots", sr: "Durski kvintakordi na crnim dirkama"}
+    count: 5
+    gen: {kind: chord-build, qualities: [maj], roots: [Db, Eb, "F#", Ab, Bb], answer: play}
+  - id: K-005-4
+    type: generated
+    prompt: {en: "Minor triads on black-key roots", sr: "Molski kvintakordi na crnim dirkama"}
+    count: 5
+    gen: {kind: chord-build, qualities: [min], roots: ["C#", Eb, "F#", "G#", Bb], answer: play}
+  - id: K-005-5
+    type: generated
+    prompt: {en: "Mixed: major or minor, any root", sr: "Pomešano: dur ili mol, bilo koji ton"}
+    count: 8
+    pass: 0.7
+    gen: {kind: chord-build, qualities: [maj, min], roots: [C, D, E, F, G, A, B, Eb, "F#", Bb], answer: play}
+  - id: K-005-6
+    type: practice
+    prompt: {en: "Chromatic walk: on each root from C up to B, play major then minor, hands together.", sr: "Hromatska šetnja: na svakom tonu od C do H odsviraj dur pa mol, obema rukama."}
+    minutes: 3

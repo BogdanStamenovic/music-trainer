@@ -1,0 +1,80 @@
+id: E-003
+track: E
+order: 3
+title: {en: "Perfect intervals: 4th, 5th, octave", sr: "Čisti intervali: kvarta, kvinta, oktava"}
+prereqs: [E-002, T-005]
+minutes: 12
+tags: [ear, intervals]
+explain:
+  en: |
+    The perfect intervals sound **open and hollow**, with no major/minor colour. They are the
+    skeleton of harmony, and the easiest larger leaps to hear.
+
+    | interval | half steps | example | song that starts with it (going up) |
+    |---|---|---|---|
+    | perfect 4th (P4) | 5 | C–F | *Here Comes the Bride* (Wagner), *O Tannenbaum* |
+    | perfect 5th (P5) | 7 | C–G | *Twinkle, Twinkle, Little Star* (from the first "twinkle" to the second) |
+    | octave (P8) | 12 | C–C | *Somewhere Over the Rainbow* ("Some-where") |
+
+    Tips:
+
+    - **4th vs 5th:** the 4th sounds like it is *going somewhere* (a "call"), the 5th like it
+      *arrived* (stable, like a power chord). Sing the song in your head on the two notes you hear.
+    - **5th vs octave:** the octave sounds like *the same note* again, only higher.
+    - Going down, the songs do not help. Instead, flip it: sing the lower note, then up to the
+      upper one, and recognise that.
+  sr: |
+    Čisti intervali zvuče **otvoreno i šuplje**, bez durske ili molske boje. Oni su kostur
+    harmonije i najlakši veći skokovi za prepoznavanje.
+
+    | interval | polustepeni | primer | pesma koja počinje njime (naviše) |
+    |---|---|---|---|
+    | čista kvarta (P4) | 5 | C–F | Svadbeni hor iz *Loengrina* (Vagner), *O Tannenbaum* |
+    | čista kvinta (P5) | 7 | C–G | *Blistaj, blistaj, zvezdo mala* (sa prvog „blistaj" na drugi) |
+    | čista oktava (P8) | 12 | C–C | *Iza duge* (*Somewhere Over the Rainbow*, „Some-where") |
+
+    Saveti:
+
+    - **Kvarta ili kvinta:** kvarta zvuči kao da *nekud ide* („poziv"), kvinta kao da je *stigla*
+      (stabilno, kao „power" akord). U glavi otpevaj pesmu na dva tona koja čuješ.
+    - **Kvinta ili oktava:** oktava zvuči kao *isti ton* ponovo, samo viši.
+    - Naniže pesme ne pomažu. Okreni ga: otpevaj donji ton, pa gore do gornjeg, i prepoznaj.
+exercises:
+  - id: E-003-1
+    type: generated
+    prompt: {en: "Perfect 4th or perfect 5th?", sr: "Čista kvarta ili čista kvinta?"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, P5], direction: up}
+    checks:
+      - interval: {from: C4, to: F4, is: P4}
+      - semitones: {from: C4, to: F4, is: 5}
+      - interval: {from: C4, to: G4, is: P5}
+      - semitones: {from: C4, to: G4, is: 7}
+      - interval: {from: C4, to: C5, is: P8}
+      - semitones: {from: C4, to: C5, is: 12}
+  - id: E-003-2
+    type: generated
+    prompt: {en: "4th, 5th or octave, ascending", sr: "Kvarta, kvinta ili oktava, naviše"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: up}
+  - id: E-003-3
+    type: generated
+    prompt: {en: "4th, 5th or octave, descending", sr: "Kvarta, kvinta ili oktava, naniže"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: down}
+  - id: E-003-4
+    type: generated
+    prompt: {en: "Played together", sr: "Odsvirani zajedno"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: harmonic}
+  - id: E-003-5
+    type: generated
+    prompt: {en: "Mixed with thirds, any direction", sr: "Pomešano sa tercama, bilo koji smer"}
+    count: 8
+    gen: {kind: interval-ear, intervals: [m3, M3, P4, P5, P8], direction: mixed}
+  - id: E-003-6
+    type: generated
+    prompt: {en: "Echo the leap on the keys", sr: "Odsviraj skok na klavijaturi"}
+    count: 5
+    pass: 0.7
+    gen: {kind: interval-ear, intervals: [P4, P5, P8], range: [C4, G4], direction: up, answer: play}

@@ -1,0 +1,92 @@
+id: E-008
+track: E
+order: 8
+title: {en: "Diminished and augmented triads", sr: "Smanjeni i povećani kvintakord"}
+prereqs: [E-007, T-011]
+minutes: 12
+tags: [ear, chords]
+explain:
+  en: |
+    Two more triad qualities complete the set of four. Built on C:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [C_EG] [C_E_G] [CE^G] |]
+    ```
+
+    | quality | notes on C | thirds (bottom, top) | sound |
+    |---|---|---|---|
+    | major | C–E–G | M3 + m3 | bright, stable |
+    | minor | C–E♭–G | m3 + M3 | dark, stable |
+    | diminished | C–E♭–G♭ | m3 + m3 | tense, squeezed, wants to resolve (horror-film suspense) |
+    | augmented | C–E–G♯ | M3 + M3 | floating, dreamy, unresolved ("dream sequence") |
+
+    Tips:
+
+    - First ask: **stable or unstable?** Major and minor are at rest; diminished and augmented are not.
+    - Then: **squeezed or stretched?** Diminished is minor with the top pulled *down*; augmented is
+      major with the top pushed *up*. Listen to the top note.
+    - In this app and in most music, diminished triads are far more common than augmented ones
+      (the vii° chord of every major key is diminished).
+  sr: |
+    Još dve vrste kvintakorda dopunjuju skup od četiri. Na C:
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    [CEG] [C_EG] [C_E_G] [CE^G] |]
+    ```
+
+    | vrsta | tonovi na C | terce (donja, gornja) | zvuk |
+    |---|---|---|---|
+    | durski | C–E–G | M3 + m3 | svetlo, stabilno |
+    | molski | C–Es–G | m3 + M3 | tamno, stabilno |
+    | smanjeni | C–Es–Ges | m3 + m3 | napeto, stisnuto, traži razrešenje (napetost iz horor filma) |
+    | povećani | C–E–Gis | M3 + M3 | lebdeće, sanjivo, nerazrešeno („scena sna") |
+
+    Saveti:
+
+    - Prvo pitanje: **stabilno ili nestabilno?** Dur i mol miruju; smanjeni i povećani ne.
+    - Zatim: **stisnuto ili razvučeno?** Smanjeni je mol kome je gornji ton spušten; povećani je
+      dur kome je gornji ton podignut. Slušaj gornji ton.
+    - I ovde i u većini muzike smanjeni kvintakord je mnogo češći od povećanog (akord vii° u
+      svakom duru je smanjeni).
+exercises:
+  - id: E-008-1
+    type: generated
+    prompt: {en: "Diminished or augmented?", sr: "Smanjeni ili povećani?"}
+    count: 6
+    gen: {kind: chord-ear, qualities: [dim, aug]}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [C4, Eb4, G4], root: C, quality: min}
+      - chord: {notes: [C4, Eb4, Gb4], root: C, quality: dim}
+      - chord: {notes: [C4, E4, "G#4"], root: C, quality: aug}
+      - interval: {from: Eb4, to: Gb4, is: m3}
+      - interval: {from: E4, to: "G#4", is: M3}
+      - roman: {key: C, degree: 7, is: "vii°"}
+  - id: E-008-2
+    type: generated
+    prompt: {en: "Major or augmented?", sr: "Durski ili povećani?"}
+    count: 6
+    gen: {kind: chord-ear, qualities: [maj, aug]}
+  - id: E-008-3
+    type: generated
+    prompt: {en: "Minor or diminished?", sr: "Molski ili smanjeni?"}
+    count: 6
+    gen: {kind: chord-ear, qualities: [min, dim]}
+  - id: E-008-4
+    type: generated
+    prompt: {en: "All four qualities", sr: "Sve četiri vrste"}
+    count: 8
+    pass: 0.7
+    gen: {kind: chord-ear, qualities: [maj, min, dim, aug]}
+  - id: E-008-5
+    type: generated
+    prompt: {en: "Hear it, then play it back", sr: "Čuj akord, pa ga odsviraj"}
+    count: 4
+    pass: 0.7
+    gen: {kind: chord-ear, qualities: [maj, min, dim, aug], range: [C4, G4], answer: play}
