@@ -829,12 +829,13 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const opts = g.options.map((o) => o.join(" – "));
       const raw = g.options[k].map((r) => romanChord(key, g.type, r));
       const chords = (g.smooth ? smoothVoicing(raw, key) : raw).map((c) => c.map(toMidi));
+      const durations = g.beats ? g.options[k].map((_, i) => g.beats![i % g.beats!.length]) : undefined;
       const { options, answer } = mcq(rng, opts[k], opts, Math.min(4, opts.length));
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       return {
         ...base,
         kind: "mcq",
-        play: { mode: "chords", chords, tempo: g.tempo },
+        play: { mode: "chords", chords, tempo: g.tempo, durations },
         prompt: L(`Which progression do you hear (in ${keyLoc.en})?`, `Koju progresiju čuješ (u ${keyLoc.sr})?`),
         options: options.map((o) => L(o, o)),
         answer,
@@ -1105,7 +1106,13 @@ function abcRhythm(durs: number[], meter: string): string {
   for (let i = 0; i < durs.length; i++) {
     const d = durs[i];
     // triplets: three 1/3-beat notes = eighth-note triplet (3B2B2B2; three 1/6 = sixteenth triplet
-    if ((third(d) || sixth(d)) && i + 2 < durs.length && durs[i + 1] === d && durs[i + 2] === d) {
+    const twoThirds = (x: number) => Math.abs(x - 2 / 3) < 1e-6;
+    // swing pair (2/3 + 1/3 or 1/3 + 2/3 of a beat) = quarter + eighth under a triplet bracket
+    if (i + 1 < durs.length && ((twoThirds(d) && third(durs[i + 1])) || (third(d) && twoThirds(durs[i + 1])))) {
+      out += twoThirds(d) ? "(3B4B2 " : "(3B2B4 ";
+      inBar += 1;
+      i += 1;
+    } else if ((third(d) || sixth(d)) && i + 2 < durs.length && durs[i + 1] === d && durs[i + 2] === d) {
       out += third(d) ? "(3B2B2B2 " : "(3BBB ";
       inBar += 3 * d;
       i += 2;

@@ -250,3 +250,14 @@ describe("smooth voicing: leading tone, vii°, soprano range", () => {
     for (const ch of smoothVoicing(["I", "IV", "V", "vi", "ii", "V", "I", "IV", "V", "I"].map((r) => romanChord("G4", "major", r)), c4)) expect(Math.max(...ch.map(toM))).toBeLessThanOrEqual(79);
   });
 });
+
+describe("swing notation + progression-ear beats", () => {
+  it("swing pairs render as triplets", () => {
+    const ex = Exercise.parse({ id: "E-094-1", type: "generated", prompt: { en: "r", sr: "r" }, count: 1, gen: { kind: "rhythm-echo", cells: [[2 / 3, 1 / 3]], bars: 1 } });
+    expect(generateItems(ex, "s")[0].abc).toContain("(3B4B2");
+  });
+  it("progression-ear plays chords with the given lengths", () => {
+    const ex = Exercise.parse({ id: "E-094-2", type: "generated", prompt: { en: "p", sr: "p" }, count: 1, gen: { kind: "progression-ear", keys: ["C"], options: [["I", "IV", "I", "V"], ["I", "V", "I", "IV"]], beats: [4] } });
+    expect((generateItems(ex, "s")[0].play as { durations: number[] }).durations).toEqual([4, 4, 4, 4]);
+  });
+});

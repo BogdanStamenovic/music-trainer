@@ -109,6 +109,8 @@ and figures for inversions.
 | `composition.key` only major/minor (modes via the parallel minor) | projects | |
 | `play` from roman numerals (`play: {roman: {key, numerals}, durations}`) | T, E | listening chords are typed + checked by hand |
 | progression-ear options in a second key ("G: V7") for modulation | T, E | written in home-key numerals (V7/V – V) |
+| Melody + chords together in one playback | E, K | no "find the chords to this melody" with both sounding |
+| progression-ear option labels in words ("relative minor") with a key per seed | E | static mcqs fixed to one key |
 | Vibrato shown as feedback (voice-score computes rate/extent) | V | V-060 uses a wider tolerance only |
 | Belt-call counter / rest timer between reps | V | instruction + self-count; the planner caps belt lessons at 1/day |
 | Rests in static midi exercises | K | folded into the previous note's `beats`; ABC shows them |
