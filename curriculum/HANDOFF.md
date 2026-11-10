@@ -99,7 +99,10 @@ and figures for inversions.
 | Improv that plays a fixed call (call and response) | K | self-directed now |
 | Simultaneous notes in sequence mode (two hands with rhythm) | K | |
 | Rhythm ties across bar lines in rhythm-echo | E, K | use one long bar (e.g. 8/4) as a workaround |
-| Harmony checks in compose (does the bass fit the melody?) | C | worker checks single lines plus parallels only |
+| Harmony checks in compose (does the bass fit the melody? chord tones on strong beats given a `chords` field) | C | worker checks single lines plus parallels only |
+| `key` rule per section (modulating melodies) and with chromatic/blue-note allowances | C | `key` rule is dropped in C-014/015/018 and the prompt says why |
+| "this bar ends on 2/5/7" for short pieces; range/density contrast between sections | C | C-017 uses `range` per section |
+| Syllables-per-note check on the learner's own lyrics for a given melody | L | L-018 is self-rated |
 | Motif/phrase-shape rules (inversion, climax placement) | C | AI critique covers projects only |
 | Stress check (Serbian accent list), English syllables | L | stress claims are reviewed, not checked |
 | Check that shown ABC matches the graded notes | all | reviewer by eye |
