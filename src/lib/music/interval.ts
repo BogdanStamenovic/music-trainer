@@ -92,7 +92,8 @@ export function invert(iv: Interval): Interval {
 const EN_Q: Record<Quality, string> = { dd: "doubly diminished", d: "diminished", m: "minor", M: "major", P: "perfect", A: "augmented", AA: "doubly augmented" };
 const EN_N = ["", "unison", "second", "third", "fourth", "fifth", "sixth", "seventh", "octave", "ninth", "tenth", "eleventh", "twelfth", "thirteenth"];
 // Serbian interval names are all feminine nouns, so adjectives agree in feminine.
-const SR_Q: Record<Quality, string> = { dd: "dvostruko smanjena", d: "smanjena", m: "mala", M: "velika", P: "čista", A: "povećana", AA: "dvostruko povećana" };
+// Serbian theory: "prekomerna" for intervals (povećani is used for chords: povećani kvintakord)
+const SR_Q: Record<Quality, string> = { dd: "dvostruko smanjena", d: "smanjena", m: "mala", M: "velika", P: "čista", A: "prekomerna", AA: "dvostruko prekomerna" };
 const SR_N = ["", "prima", "sekunda", "terca", "kvarta", "kvinta", "seksta", "septima", "oktava", "nona", "decima", "undecima", "duodecima", "tercdecima"];
 
 export function intervalName(iv: Interval, locale: Locale): string {

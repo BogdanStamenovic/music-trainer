@@ -157,6 +157,8 @@ export class Rng {
 
 // ---------- helpers ----------
 const L = (en: string, sr: string): Loc => ({ en, sr });
+/** "a minor third" / "an augmented fourth" */
+const aan = (phrase: string) => `${/^[aeiou]/i.test(phrase) ? "an" : "a"} ${phrase}`;
 const nn = (n: Note): Loc => L(pcName(n), noteNameSr(n));
 const nno = (n: Note): Loc => L(noteStr(n), noteNameSr(n, true));
 const join = (ls: Loc[], sep = " "): Loc => L(ls.map((l) => l.en).join(sep), ls.map((l) => l.sr).join(sep));
@@ -446,7 +448,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             octave: "exact",
             bass: false,
             showNotes: false,
-            prompt: L(`Play ${noteStr(root)}, then the note a ${ivl.en} ${dir.en} it.`, `Odsviraj ${noteNameSr(root, true)}, pa notu koja je ${ivl.sr} ${dir.sr} nje.`),
+            prompt: L(`Play ${noteStr(root)}, then the note ${aan(ivl.en)} ${dir.en} it.`, `Odsviraj ${noteNameSr(root, true)}, pa notu koja je ${ivl.sr} ${dir.sr} nje.`),
             noteLabels: join([nno(root), nno(top)]),
           };
         return {
@@ -454,7 +456,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
           kind: "names",
           ordered: true,
           expect: [pcName(top)],
-          prompt: L(`Which note is a ${ivl.en} ${dir.en} ${pcName(root)}? Spell it correctly.`, `Koja nota je ${ivl.sr} ${dir.sr} ${noteNameSr(root)}? Napiši je ispravno.`),
+          prompt: L(`Which note is ${aan(ivl.en)} ${dir.en} ${pcName(root)}? Spell it correctly.`, `Koja nota je ${ivl.sr} ${dir.sr} ${noteNameSr(root)}? Napiši je ispravno.`),
         };
       }
       throw new Error(`interval-build: could not generate for ${ex.id}`);
@@ -858,7 +860,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").nom;
       const scLoc = keyName(scaleTonic, g.scale, true).nom;
       // a blues (dominant 7ths on I/IV/V) is not "in C major": name only the tonal centre
-      const dominantBlues = g.numerals.some((n) => /^[b#]?(I|IV)7$/.test(n));
+      const dominantBlues = g.numerals.includes("I7") && (g.type === "major" || g.type === "mixolydian");
       return {
         ...base,
         kind: "midi",
@@ -883,7 +885,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       if (g.intervals) {
         for (let t = 0; t < 200; t++) {
           const iv = rng.pick(g.intervals);
-          const root = midiToNote(rng.int(lo, hi), rng.next() < 0.5);
+          const m0 = rng.int(lo, hi);
+          const root = parseNote(COMMON[((m0 % 12) + 12) % 12], Math.floor(m0 / 12) - 1);
           let top: Note;
           try {
             top = transpose(root, iv);
@@ -904,7 +907,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             octaveAgnostic: true,
             noteLabels: join([nno(root), nno(top)]), // spelled like the prompt (Bb3, not A#3)
             play: { mode: "melodic", notes: [ms[0]], tempo: 40 },
-            prompt: L(`You hear ${noteStr(root)}. Sing it, then the note a ${ivl.en} above (two beats each).`, `Čuješ ${noteNameSr(root, true)}. Otpevaj ga, pa ton koji je ${ivl.sr} iznad (po dve dobe).`),
+            prompt: L(`You hear ${noteStr(root)}. Sing it, then the note ${aan(ivl.en)} above (two beats each).`, `Čuješ ${noteNameSr(root, true)}. Otpevaj ga, pa ton koji je ${ivl.sr} iznad (po dve dobe).`),
           };
         }
         throw new Error(`pitch-match: could not generate for ${ex.id}`);
@@ -979,7 +982,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         bass: false,
         showNotes: false,
         play: { mode: "melodic", notes: ms, tempo: g.tempo },
-        prompt: L(`Key: ${keyLoc.en}. Listen to the bass line (roots of ${g.numerals.join(", ")}) and play it back.`, `Tonalitet: ${keyLoc.sr}. Slušaj bas liniju (osnovni tonovi ${g.numerals.join(", ")}) i odsviraj je.`),
+        // "bass notes", not "roots": inversion figures put other chord tones in the bass
+        prompt: L(`Key: ${keyLoc.en}. Listen to the bass line (bass notes of ${(g.line ?? g.numerals).join(", ")}) and play it back.`, `Tonalitet: ${keyLoc.sr}. Slušaj bas liniju (bas tonovi akorada ${(g.line ?? g.numerals).join(", ")}) i odsviraj je.`),
         noteLabels: L(names.join(" "), names.join(" ")),
       };
     }

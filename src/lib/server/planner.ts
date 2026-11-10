@@ -294,7 +294,7 @@ export function practiceFill(tracks: Track[], minutesLeft: number, date: string)
   );
   const pool: { exerciseId: string; lessonId: string; last: string }[] = [];
   for (const l of c.lessons) {
-    if (!tracks.includes(l.track) || !done(st.get(l.id)?.status) || l.tags.includes("maintenance") || l.tags.includes("distortion")) continue;
+    if (!tracks.includes(l.track) || !done(st.get(l.id)?.status) || l.tags.includes("maintenance") || l.tags.includes("distortion") || l.tags.includes("belt")) continue;
     for (const e of l.exercises) if (e.type === "generated") pool.push({ exerciseId: e.id, lessonId: l.id, last: last.get(e.id) ?? "" });
   }
   pool.sort((a, b) => a.last.localeCompare(b.last));

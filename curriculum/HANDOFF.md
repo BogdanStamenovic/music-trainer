@@ -57,7 +57,8 @@ Tell authors about these up front:
   converted automatically; words must be `{en, sr}`.
 - **Serbian terminology drifts between authors.** The canonical terms: ključni tonovi,
   jaka/slaba doba, prolaznica, prednja/zadnja rečenica, pobočno kretanje,
-  "Sjaj, sjaj, zvezdice". Contested stress positions (gitara) are avoided.
+  sporedna dominanta (not sekundarna), prekomerna for intervals vs povećani for chords
+  (prekomerna kvarta, povećani kvintakord), "Sjaj, sjaj, zvezdice". Contested stress positions (gitara) are avoided.
 - **Generators can't do what the lesson claims**, e.g. rhythms tied across a bar line.
   Authors must sample generated items (`generateItems` + seeds) and read them in both languages.
 
