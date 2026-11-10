@@ -48,13 +48,15 @@ export function SingInput({ item, meta, onSubmit, disabled }: { item: SingItem; 
   const rec = useRecorder();
   const [url, setUrl] = useState<string | null>(null);
   const beatS = item.tempo ? 60 / item.tempo : 1;
-  const expected = item.beats ? item.beats.reduce((a, b) => a + b, 0) * beatS : item.sustain ?? 2;
+  const expected = item.layout ? item.layout.reduce((a, e) => a + e.beats, 0) * beatS : item.beats ? item.beats.reduce((a, b) => a + b, 0) * beatS : item.sustain ?? 2;
   const go = async () => {
     const blob = await rec.start(Math.min(30, expected + 4));
     if (!blob) return;
     setUrl(URL.createObjectURL(blob));
     const params = {
-      targets: item.targets.map((m, i) => (item.beats ? { midi: m, beats: item.beats[i] } : { midi: m })),
+      targets: item.layout
+        ? item.layout.map((e) => (e.midi != null ? { midi: e.midi, beats: e.beats } : { rest: true as const, beats: e.beats }))
+        : item.targets.map((m, i) => (item.beats ? { midi: m, beats: item.beats[i] } : { midi: m })),
       tempo_bpm: item.beats ? item.tempo : undefined,
       pass_cents: item.tolerance,
       octave_agnostic: item.octaveAgnostic,

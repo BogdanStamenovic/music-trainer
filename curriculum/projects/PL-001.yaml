@@ -1,0 +1,143 @@
+id: PL-001
+kind: lyrics
+order: 2
+title: {en: "Lyrics: a 12-bar blues", sr: "Tekst: bluz od 12 taktova"}
+minutes: 60
+prereqs: [T-014]
+lyrics:
+  genre: {en: "12-bar blues", sr: "bluz od 12 taktova"}
+  language: either
+  lines: [6, 12]
+  structure:
+    en: "2–4 stanzas of 3 lines, A A B (one stanza = one 12-bar chorus)"
+    sr: "2–4 strofe od po 3 stiha, A A B (jedna strofa = jedan krug od 12 taktova)"
+brief:
+  en: |
+    Write the words for a **12-bar blues**: 2 to 4 stanzas. English is the natural language of
+    the genre, but Serbian is allowed.
+
+    ### How a blues stanza works
+
+    The 12-bar blues uses only the three primary chords from T-014, I, IV and V, in a fixed
+    12-bar order (I I I I | IV IV I I | V IV I I). Each **stanza** fills those 12 bars with **three lines**,
+    one line per 4 bars, in the pattern **A A B**:
+
+    | bars | chords | line | job |
+    |---|---|---|---|
+    | 1–4 | I I I I | **A** | state the situation |
+    | 5–8 | IV IV I I | **A** again | repeat it (word-for-word, or with a small twist like "Yes," or "I said") |
+    | 9–12 | V IV I I | **B** | the answer: the reason, the punchline, the consequence. **Rhymes with A.** |
+
+    A made-up example of the shape:
+
+    > Woke up this morning, coffee cold as January rain
+    > Woke up this morning, coffee cold as January rain
+    > Then I saw your note says you ain't coming home again
+
+    ### Conventions that make it sound like blues
+
+    - **Each line is sung in the first half of its 4 bars**; the second half is left for the
+      guitar or piano to answer (*call and response*). So a line is not long: roughly
+      **8–14 syllables with 4 strong stresses**, often with a natural break in the middle.
+    - **The B line is the payoff.** The repeat of A makes the listener wait; B must reward
+      them: a twist, a joke, a hard truth.
+    - **First person, plain speech, concrete things.** Blues says "the rent is due and my
+      shoes are thin", not "I feel economic hardship". Trains, rain, morning, money, a door,
+      a phone, a bus: objects carry the feeling.
+    - **Rhyme A with B**, ideally a full rhyme on the last stressed word (rain / again).
+    - **Humour and double meaning** are part of the tradition: blues is not only sad.
+    - A **hook**: a short phrase (often the end of line A) that could be the title and that
+      returns in the last stanza.
+
+    ### Practical tips
+
+    - Speak each line in rhythm over a slow count of 4 (tap the beat). Stressed syllables
+      should land on the beats. If you have to rush, cut words.
+    - Write the B lines first: they are the hard part, and A can be built to set them up.
+    - If you write in Serbian: Serbian words almost never stress the last syllable, so lines
+      fall naturally into a *strong-weak* swing. Use that, and keep the AAB form and the rhyme.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below from 0 to 4 and comments line by line. There are
+    no automatic rule checks for lyrics.
+  sr: |
+    Napiši tekst za **bluz od 12 taktova**: 2 do 4 strofe. Prirodni jezik žanra je engleski,
+    ali može i srpski.
+
+    ### Kako radi bluz strofa
+
+    Bluz od 12 taktova koristi samo tri glavna akorda iz T-014, I, IV i V, u stalnom
+    redosledu od 12 taktova (I I I I | IV IV I I | V IV I I). Svaka **strofa** popunjava tih 12 taktova sa **tri
+    stiha**, po jedan na 4 takta, po šemi **A A B**:
+
+    | taktovi | akordi | stih | zadatak |
+    |---|---|---|---|
+    | 1–4 | I I I I | **A** | iznesi situaciju |
+    | 5–8 | IV IV I I | ponovo **A** | ponovi je (doslovno, ili sa malom izmenom poput „Da," ili „Kažem") |
+    | 9–12 | V IV I I | **B** | odgovor: razlog, poenta, posledica. **Rimuje se sa A.** |
+
+    Izmišljen primer oblika (na engleskom, jer je tako najčešće):
+
+    > Woke up this morning, coffee cold as January rain
+    > Woke up this morning, coffee cold as January rain
+    > Then I saw your note says you ain't coming home again
+
+    ### Konvencije zbog kojih zvuči kao bluz
+
+    - **Svaki stih se peva u prvoj polovini svoja 4 takta**; druga polovina ostaje gitari ili
+      klaviru da odgovore (*pitanje i odgovor*, „call and response”). Zato stih nije dug:
+      otprilike **8–14 slogova sa 4 naglaska**, često sa prirodnom pauzom u sredini.
+    - **Stih B je isplata.** Ponovljeni A tera slušaoca da čeka; B mora da ga nagradi:
+      obrt, šala, gorka istina.
+    - **Prvo lice, običan govor, konkretne stvari.** Bluz kaže „kirija stiže, a đonovi tanki”,
+      a ne „osećam ekonomske teškoće”. Vozovi, kiša, jutro, novac, vrata, telefon, autobus:
+      predmeti nose osećanje.
+    - **A se rimuje sa B**, najbolje punom rimom na poslednjoj naglašenoj reči (rain / again).
+    - **Humor i dvosmislenost** su deo tradicije: bluz nije samo tužan.
+    - **Hook** (udica): kratka fraza (često kraj stiha A) koja bi mogla da bude naslov i koja
+      se vraća u poslednjoj strofi.
+
+    ### Praktični saveti
+
+    - Izgovori svaki stih ritmično uz sporo brojanje do 4 (tapkaj dobu). Naglašeni slogovi treba
+      da padnu na dobe. Ako moraš da žuriš, izbaci reči.
+    - Prvo napiši stihove B: oni su teži deo, a A možeš da izgradiš tako da ih najavi.
+    - Ako pišeš na srpskom: u srpskom naglasak skoro nikad nije na poslednjem slogu, pa stihovi
+      prirodno padaju u ritam *jako-slabo* (trohej). Iskoristi to, a zadrži oblik AAB i rimu.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih. Za tekst
+    nema automatske provere pravila.
+rubric:
+  - id: form
+    weight: 2
+    label: {en: "Blues form (A A B)", sr: "Bluz oblik (A A B)"}
+    top:
+      en: "Every stanza is three lines, A A B; the repeated A is exact or varied only by a sung interjection; B answers A with a twist or consequence, never just more of the same."
+      sr: "Svaka strofa ima tri stiha, A A B; ponovljeni A je doslovan ili izmenjen samo uzvikom; B odgovara na A obrtom ili posledicom, nikad samo „još istog”."
+  - id: meter
+    weight: 1
+    label: {en: "Meter and singability", sr: "Metrika i pevljivost"}
+    top:
+      en: "Each line has about four strong stresses and fits in two bars of a slow 4 with room left for the instrumental answer; lines in one stanza have similar length."
+      sr: "Svaki stih ima oko četiri jaka naglaska i staje u dva takta sporog četvoročetvrtinskog takta, uz mesta za odgovor instrumenta; stihovi u strofi su slične dužine."
+  - id: prosody
+    weight: 1
+    label: {en: "Prosody", sr: "Prozodija"}
+    top:
+      en: "Spoken over a steady beat, every stressed syllable falls on a beat and no word has to be bent to fit (no stress on a weak syllable)."
+      sr: "Izgovoren uz ravnomernu dobu, svaki naglašeni slog pada na dobu i nijedna reč ne mora da se krivi da bi stala (nema naglaska na slabom slogu)."
+  - id: rhyme
+    weight: 1
+    label: {en: "Rhyme", sr: "Rima"}
+    top:
+      en: "Each B line rhymes with its A line on the last stressed word, with full or convincing near rhymes, and the rhyme word carries meaning rather than being picked for sound only."
+      sr: "Svaki stih B se rimuje sa A na poslednjoj naglašenoj reči, punom ili uverljivom približnom rimom, i rima nosi smisao, a nije izabrana samo zbog zvuka."
+  - id: imagery
+    weight: 2
+    label: {en: "Imagery, voice and hook", sr: "Slike, glas i hook"}
+    top:
+      en: "Concrete, specific images in plain first-person speech; at least one line that is funny, surprising or painfully true; a short hook phrase that could be the title and returns at the end."
+      sr: "Konkretne, određene slike u običnom govoru u prvom licu; bar jedan stih koji je duhovit, iznenađujući ili bolno istinit; kratka fraza-hook koja bi mogla da bude naslov i vraća se na kraju."

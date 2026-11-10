@@ -28,7 +28,7 @@ export interface DayPlan {
   lessons: PlanLesson[];
   focusMinutes: number;
   maintenance: null | { reviews: { exerciseId: string; lessonId: string }[]; warmup: string | null; minutes: number };
-  test: null | { exercises: { exerciseId: string; lessonId: string }[] };
+  test: null | { exercises: { exerciseId: string; lessonId: string; source: "week" | "review" }[] };
   noPiano?: boolean; // "no piano today": non-piano focus, no piano-only reviews (this day only)
   createdAt: number;
 }
@@ -159,21 +159,9 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   }
 
   if (focus.includes("test")) {
-    // Weekly test (M1 version): one exercise from each lesson passed in the last 7 days.
-    const since = Date.now() - 7 * 86400_000;
-    const rows = getDb().prepare("SELECT lesson_id FROM lesson_progress WHERE status = 'passed' AND source = 'lesson' AND updated_at >= ?").all(since) as { lesson_id: string }[];
-    const exercises: { exerciseId: string; lessonId: string }[] = [];
-    for (const r of rows) {
-      const l = c.byId.get(r.lesson_id);
-      // voice is assessed by recorded projects (M3), not in the quick weekly test
-      if (!l || l.track === "V") continue;
-      const graded = l.exercises.filter((e) => e.type !== "practice" && e.type !== "checkin");
-      // prefer generated exercises: fresh items test the skill, not memory of the item
-      const pick = graded.find((e) => e.type === "generated") ?? graded[0];
-      if (pick) exercises.push({ exerciseId: pick.id, lessonId: l.id });
-    }
-    if (exercises.length) return { ...base, kind: "test", test: { exercises }, maintenance: maintenance() };
-    base.note = { en: "Nothing passed this week yet, so no weekly test: regular lessons instead.", sr: "Ove nedelje još ništa nije položeno, pa nema testa: danas obične lekcije." };
+    const test = weeklyTest(date);
+    if (test.exercises.length) return { ...base, kind: "test", test, maintenance: maintenance() };
+    base.note = { en: "Nothing practised this week yet, so no weekly test: regular lessons instead.", sr: "Ove nedelje još ništa nije vežbano, pa nema testa: danas obične lekcije." };
   }
 
   // Focus tracks with content; otherwise walk the week forward to the next day that has some.
@@ -230,3 +218,55 @@ export function resetPlan(date: string) {
 }
 
 export { addDays };
+
+/** ISO week id and its Monday/Sunday for a date. */
+export function isoWeek(date: string): { week: string; monday: string; sunday: string } {
+  const d = new Date(date + "T12:00:00Z");
+  const day = (d.getUTCDay() + 6) % 7; // 0 = Monday
+  const monday = addDays(date, -day);
+  const sunday = addDays(monday, 6);
+  const thursday = new Date(addDays(monday, 3) + "T12:00:00Z");
+  const yearStart = Date.UTC(thursday.getUTCFullYear(), 0, 1);
+  const wk = Math.ceil(((thursday.getTime() - yearStart) / 86400000 + 1) / 7);
+  return { week: `${thursday.getUTCFullYear()}-W${String(wk).padStart(2, "0")}`, monday, sunday };
+}
+
+export const WEEK_TEST_MAX = 8;
+export const REVIEW_TEST_MAX = 4;
+
+/**
+ * Sunday test. Weighted to the week's material: up to 2 exercises from each lesson
+ * practised this week (generated ones first: fresh items test the skill, not memory
+ * of an item), capped at 8, most-practised lessons first; plus up to 4 items the
+ * learner keeps failing (SRS lapses or a last score under the pass mark), worst first.
+ * Voice is assessed by recorded projects, not here; piano-free alternatives are not
+ * substituted (the test is meant for the piano day).
+ */
+export function weeklyTest(date: string): { exercises: { exerciseId: string; lessonId: string; source: "week" | "review" }[] } {
+  const c = getCurriculum();
+  const { monday, sunday } = isoWeek(date);
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT lesson_id, count(*) n FROM attempts WHERE context IN ('lesson','review') AND date BETWEEN ? AND ? AND lesson_id IS NOT NULL GROUP BY lesson_id ORDER BY n DESC")
+    .all(monday, sunday) as { lesson_id: string; n: number }[];
+  const out: { exerciseId: string; lessonId: string; source: "week" | "review" }[] = [];
+  for (const r of rows) {
+    const l = c.byId.get(r.lesson_id);
+    if (!l || l.track === "V" || l.tags.includes("maintenance")) continue;
+    const graded = l.exercises.filter((e) => e.type !== "practice" && e.type !== "checkin");
+    const picks = [...graded.filter((e) => e.type === "generated"), ...graded.filter((e) => e.type !== "generated")].slice(0, 2);
+    for (const e of picks) if (out.length < WEEK_TEST_MAX) out.push({ exerciseId: e.id, lessonId: l.id, source: "week" });
+  }
+  const weak = db
+    .prepare("SELECT exercise_id, lesson_id FROM srs WHERE lapses > 0 OR last_score < 0.8 ORDER BY last_score ASC, lapses DESC")
+    .all() as { exercise_id: string; lesson_id: string }[];
+  let n = 0;
+  for (const w of weak) {
+    if (n >= REVIEW_TEST_MAX) break;
+    const l = c.byId.get(w.lesson_id);
+    if (!l || l.track === "V" || !l.exercises.some((e) => e.id === w.exercise_id) || out.some((o) => o.exerciseId === w.exercise_id)) continue;
+    out.push({ exerciseId: w.exercise_id, lessonId: w.lesson_id, source: "review" });
+    n++;
+  }
+  return { exercises: out };
+}

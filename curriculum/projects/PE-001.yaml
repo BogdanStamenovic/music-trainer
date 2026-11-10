@@ -1,0 +1,85 @@
+id: PE-001
+kind: byear
+order: 4
+title: {en: "By ear: Twinkle, Twinkle, Little Star", sr: "Po sluhu: Twinkle, Twinkle, Little Star"}
+minutes: 30
+prereqs: [E-006, E-010]
+melody:
+  title: {en: "Twinkle, Twinkle, Little Star", sr: "Twinkle, Twinkle, Little Star (Ah! vous dirai-je, maman)"}
+  source: "French melody 'Ah! vous dirai-je, maman', printed 1761 (Mozart's variations K. 265 use it); English words Jane Taylor, 1806. Public domain."
+  key: D major
+  meter: 4/4
+  tempo: 90
+  notes: [D4, D4, A4, A4, B4, B4, A4, G4, G4, F#4, F#4, E4, E4, D4, A4, A4, G4, G4, F#4, F#4, E4, A4, A4, G4, G4, F#4, F#4, E4, D4, D4, A4, A4, B4, B4, A4, G4, G4, F#4, F#4, E4, E4, D4]
+  beats: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+brief:
+  en: |
+    The app plays a **12-bar melody** you very likely know. **Play it back on the piano, right
+    hand, in any key you like.** No notation is shown. Replay it as often as you want.
+
+    ### Strategies
+
+    1. **Sing it first.** Hum along with the playback until you can sing the whole tune without
+       it. If you can sing it, your hands only have to find what you already hear.
+    2. **Find the first note.** Pick any key on the piano as the first note. Grading ignores the
+       key, so starting on C and playing the tune in C is perfectly fine and probably easiest.
+    3. **Steps or leaps?** Listen to each move: same note again, a step (next scale note), or a
+       leap. This tune opens with a **leap of a fifth** (1 → 5, the first two notes of
+       *"Twinkle, twinkle"* against the next two) and then walks **down the scale by steps**.
+    4. **Phrase by phrase.** The tune is three 4-bar phrases, and the third is the same as the
+       first. Get bars 1–4 right, then 5–8 (they come back, so you get bars 5–8 twice for free),
+       then put it together.
+    5. **Rhythm counts too:** most notes are one beat, every second bar ends on a two-beat note.
+       Play along with a steady pulse; the app checks both the intervals and the rhythm.
+
+    ### How it is graded
+
+    - **Pitch (60%):** the intervals between your notes against the melody's intervals, so any
+      key counts.
+    - **Rhythm (20%):** the relative note lengths, at any steady tempo.
+    - **Rubric (20%):** the criteria below, scored by the reviewer or by you.
+  sr: |
+    Aplikacija pušta **melodiju od 12 taktova** koju verovatno dobro znaš. **Odsviraj je na
+    klaviru, desnom rukom, u bilo kom tonalitetu.** Note se ne prikazuju. Pusti je koliko god
+    puta želiš.
+
+    ### Strategije
+
+    1. **Prvo je otpevaj.** Pevušite zajedno ti i reprodukcija dok ne budeš mogao da otpevaš celu
+       melodiju bez nje. Ako možeš da je otpevaš, ruke samo treba da nađu ono što već čuješ.
+    2. **Nađi prvi ton.** Uzmi bilo koju dirku kao prvi ton. Ocena ne zavisi od tonaliteta, pa
+       je sasvim u redu da počneš na C i sviraš u C-duru; verovatno je i najlakše.
+    3. **Korak ili skok?** Slušaj svaki pomak: isti ton ponovo, korak (susedni ton lestvice) ili
+       skok. Melodija počinje **skokom za kvintu** (1 → 5, prva dva tona *„Twinkle, twinkle”*
+       prema sledeća dva), a zatim **silazi niz lestvicu u koracima**.
+    4. **Fraza po fraza.** Melodija ima tri fraze od 4 takta, a treća je ista kao prva. Prvo
+       savladaj taktove 1–4, pa 5–8 (oni se ponavljaju, pa taktove 5–8 dobijaš dvaput), pa sve
+       spoji.
+    5. **I ritam se računa:** većina tonova traje jednu dobu, svaki drugi takt se završava tonom
+       od dve dobe. Sviraj uz ravnomeran puls; aplikacija proverava i intervale i ritam.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%):** intervali između tvojih tonova prema intervalima melodije, pa svaki
+      tonalitet važi.
+    - **Ritam (20%):** odnosi trajanja tonova, u bilo kom ravnomernom tempu.
+    - **Rubrika (20%):** kriterijumi ispod, ocenjuje recenzent ili ti sam.
+rubric:
+  - id: flow
+    weight: 1
+    label: {en: "Musical flow", sr: "Muzički tok"}
+    top:
+      en: "The final take runs from first to last note without stopping, at a steady tempo, sounding like a song rather than a search."
+      sr: "Završni snimak teče od prvog do poslednjeg tona bez zastajanja, u ravnomernom tempu, i zvuči kao pesma, a ne kao traženje."
+  - id: phrasing
+    weight: 1
+    label: {en: "Phrasing", sr: "Fraziranje"}
+    top:
+      en: "The three 4-bar phrases are audible: a slight lift at each phrase end, the long notes held for their full two beats."
+      sr: "Tri fraze od 4 takta se čuju: blago predahnuće na kraju svake fraze, dugi tonovi zadržani pune dve dobe."
+  - id: process
+    weight: 1
+    label: {en: "Method and self-correction", sr: "Postupak i samoispravljanje"}
+    top:
+      en: "Your notes say how you found it (first note, steps vs leaps, phrase by phrase), where you went wrong and how you heard and fixed it."
+      sr: "U beleškama piše kako si je pronašao (prvi ton, koraci i skokovi, fraza po fraza), gde si pogrešio i kako si to čuo i ispravio."

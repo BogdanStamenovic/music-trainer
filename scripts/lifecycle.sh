@@ -20,6 +20,9 @@ ENV_FILE="$CONF_DIR/env"
 UNIT="$HOME/.config/systemd/user/$NAME.service"
 PORT=3310
 TS_PORT=8448
+# music21 worker venv (~270 MB): on the ext4 loop image on the big disk, never on the
+# nearly full root by default.
+OFFLOAD=/mnt/offload/music-trainer
 
 log() { printf '[%s] %s\n' "$NAME" "$*"; }
 die() { printf '[%s] ERROR: %s\n' "$NAME" "$*" >&2; exit 1; }
@@ -56,6 +59,15 @@ write_config() {
   add MT_VOICE_SCORE_URL http://127.0.0.1:3311
   add MT_TZ Europe/Belgrade
   add MT_CURRICULUM_DIR "$APP/curriculum"
+  add MT_WORKER_DIR "$APP/worker"
+  if mountpoint -q /mnt/offload; then
+    add MT_WORKER_VENV "$OFFLOAD/venv"
+  elif [ -n "$(env_get MT_WORKER_VENV)" ]; then :
+  elif ask "/mnt/offload is not mounted. Put the music21 worker venv (~270 MB) on the root disk?" n; then
+    add MT_WORKER_VENV "$HOME/.local/share/$NAME/worker-venv"
+  else
+    log "music21 worker skipped (no /mnt/offload): composition rule checks will show as unavailable"
+  fi
   data=$(env_get MT_DATA_DIR)
   case "$data" in
     /mnt/windows/*) mountpoint -q /mnt/windows || die "/mnt/windows is not mounted; refusing to create $data on the root disk" ;;
@@ -92,10 +104,29 @@ deploy() {
   mkdir -p "$LIB"
   rm -rf "$APP.new"
   cp -a "$SRC/.next/standalone" "$APP.new"
+  mkdir -p "$APP.new/worker"
+  cp -a "$SRC/worker/pyproject.toml" "$SRC/worker/uv.lock" "$SRC/worker/src" "$APP.new/worker/"
   rm -rf "$APP.old"
   [ -d "$APP" ] && mv "$APP" "$APP.old"
   mv "$APP.new" "$APP"
   log "deployed to $APP"
+}
+
+# Sync the worker venv against the deployed worker copy (non-editable, no dev deps).
+# A failure here only disables rule checks; it never blocks the app.
+sync_worker() {
+  local venv; venv=$(env_get MT_WORKER_VENV)
+  [ -n "$venv" ] || return 0
+  case "$venv" in /mnt/offload/*) mountpoint -q /mnt/offload || { log "WARNING: /mnt/offload not mounted; worker not synced"; return 0; } ;; esac
+  command -v uv >/dev/null || { log "WARNING: uv not found; worker not synced"; return 0; }
+  mkdir -p "$(dirname "$venv")"
+  local cache=/tmp/$NAME-uv-cache
+  mountpoint -q /mnt/offload && cache="$OFFLOAD/uv-cache"
+  if UV_PROJECT_ENVIRONMENT="$venv" UV_CACHE_DIR="$cache" uv sync --project "$APP/worker" --frozen --no-dev --no-editable --quiet; then
+    log "music21 worker synced ($venv, $(du -sh "$venv" | cut -f1))"
+  else
+    log "WARNING: worker sync failed; composition rule checks will show as unavailable"
+  fi
 }
 
 write_unit() {
@@ -169,6 +200,7 @@ cmd_setup() {
   write_config
   build
   deploy
+  sync_worker
   write_unit
   restart_checked || die "service did not become healthy"
   tailscale_serve
@@ -181,6 +213,7 @@ cmd_update() {
   build
   backup_db
   deploy
+  sync_worker
   write_unit
   if ! restart_checked; then
     if [ -d "$APP.old" ]; then
@@ -205,6 +238,8 @@ cmd_remove() {
     if [ "$cur" -gt 0 ]; then tailscale serve --https="$TS_PORT" off >/dev/null 2>&1 && log "tailscale serve :$TS_PORT removed"; fi
   fi
   rm -rf "$LIB"
+  local venv; venv=$(env_get MT_WORKER_VENV)
+  if [ -n "$venv" ] && [ -d "$venv" ]; then rm -rf "$venv" && log "removed worker venv $venv"; fi
   local data; data=$(env_get MT_DATA_DIR)
   if [ -n "$data" ] && [ -d "$data" ]; then
     if ask "Delete ALL music-trainer data (progress DB, backups) in $data?" n; then

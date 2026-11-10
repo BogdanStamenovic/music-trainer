@@ -1,0 +1,147 @@
+id: PC-001
+kind: composition
+order: 1
+title: {en: "An 8-bar melody: question and answer", sr: "Melodija od 8 taktova: pitanje i odgovor"}
+minutes: 60
+prereqs: [T-007, T-014]
+composition:
+  key: C major
+  meter: 4/4
+  bars: 8
+  range: [C4, E5]
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody in C major, 4/4**, built as a **question and an answer** (a *period*:
+    antecedent + consequent). No chords, no accompaniment: one line you could sing.
+
+    ### The idea
+
+    - **Bars 1–4 ask the question.** Start with a short **motif** (2–4 notes, one or two beats
+      long) and use it again, changed a little. End bar 4 on a note of the **V chord**
+      (G, B or D), best on G, held longer. That is a **half cadence**: a comma, the music
+      plainly is not finished.
+    - **Bars 5–8 answer.** Begin like bars 1–2 again (the listener recognises the question), then
+      turn the line toward home and end bar 8 on **C**, the tonic, on a strong beat and held.
+      Approaching it from D (2 → 1) or from B (7 → 1, the leading tone) makes the ending feel
+      final: that is the melodic side of the **authentic cadence V → I**.
+    - **Mostly steps, a few leaps.** Singable melodies move mainly to the next scale note. A leap
+      (a 3rd or more) is a little event: after a leap of a 4th or more, turn back the other way
+      by step. Leaps along the tonic chord (C–E–G–C) are the easiest to sing.
+    - **One high point.** Let the line climb to its highest note once, somewhere in bars 5–7,
+      not at the very end.
+    - **Range:** stay between **C4 and E5** (middle C up to the E a tenth above). Avoid the
+      leap **F–B** (a tritone, an augmented 4th): hard to sing in tune.
+    - **Rhythm:** quarters, halves and some eighths are plenty. Reusing one rhythm for bars 1
+      and 5 ties the halves together. Fill every bar exactly (4 beats).
+
+    A motif and two ways to vary it (repeat it a step higher; keep the rhythm, change the notes):
+
+    ```abc
+    X:1
+    L:1/8
+    K:C
+    E2 F G A4 | F2 G A B4 | E2 F G c4 |]
+    ```
+
+    ### Practical tips
+
+    - Improvise first. Play the question a few times at the piano until one version sticks, then
+      sing it. If you cannot sing it, simplify it.
+    - Write the ending first if you are stuck: you already know bar 4 ends on G and bar 8 on C.
+    - **Enter it** by recording on the piano (play it in time with the metronome; the app
+      quantizes it to notation, check the result and fix wrong rhythms) or type it in ABC.
+      One note at a time, right hand only.
+
+    ### How it is graded
+
+    - **Rule checks (half the grade):** 8 full bars of 4/4, only notes of C major, range C4–E5,
+      bar 4 ends on a V-chord note, the last note is C, no augmented leaps, leaps not too big or
+      too frequent, sensible rhythm.
+    - **Critique (the other half):** a reviewer (AI) scores the criteria below from 0 to 4 and
+      writes what to try next. A melody that passes every rule but is boring will not get top
+      marks; one that breaks a rule on purpose and sounds great can still score well here.
+  sr: |
+    Napiši **melodiju od 8 taktova u C-duru, 4/4**, sastavljenu kao **pitanje i odgovor**
+    (*period*: prednja rečenica + zadnja rečenica). Bez akorda i pratnje: jedna linija koju
+    možeš da otpevaš.
+
+    ### Ideja
+
+    - **Taktovi 1–4 postavljaju pitanje.** Počni kratkim **motivom** (2–4 tona, jedna ili dve
+      dobe) i ponovi ga, malo izmenjenog. Završi 4. takt na tonu **dominantnog akorda (V)**
+      (G, H ili D), najbolje na G, i zadrži ga duže. To je **polukadenca**: zarez, muzika
+      očigledno nije gotova.
+    - **Taktovi 5–8 odgovaraju.** Počni kao u taktovima 1–2 (slušalac prepozna pitanje), pa
+      okreni liniju ka kući i završi 8. takt na **C**, tonici, na jakoj dobi i zadržano.
+      Dolazak sa D (2 → 1) ili sa H (7 → 1, **vođica**) daje osećaj kraja: to je melodijska
+      strana **autentične kadence V → I**.
+    - **Uglavnom koraci, poneki skok.** Pevljive melodije se uglavnom kreću na susedni ton
+      lestvice (**postupno kretanje**). Skok (terca ili više) je mali događaj: posle skoka od
+      kvarte ili većeg, vrati se u suprotnom smeru, korakom. Skokovi po toničnom akordu
+      (C–E–G–C) se najlakše pevaju.
+    - **Jedan vrhunac.** Neka linija samo jednom dosegne najviši ton, negde u taktovima 5–7,
+      ne na samom kraju.
+    - **Opseg:** ostani između **C4 i E5** (od prvog C do E za decimu više). Izbegavaj skok
+      **F–H** (tritonus, povećana kvarta): teško se peva čisto.
+    - **Ritam:** četvrtine, polovine i nešto osmina su sasvim dovoljni. Isti ritam u taktovima
+      1 i 5 povezuje dve polovine. Svaki takt popuni tačno (4 dobe).
+
+    Motiv i dva načina da se varira (ponovi ga za stepen više; zadrži ritam, promeni tonove):
+
+    ```abc
+    X:1
+    L:1/8
+    K:C
+    E2 F G A4 | F2 G A B4 | E2 F G c4 |]
+    ```
+
+    ### Praktični saveti
+
+    - Prvo improvizuj. Sviraj pitanje na klaviru nekoliko puta dok se jedna verzija ne zadrži,
+      pa je otpevaj. Ako ne možeš da je otpevaš, pojednostavi je.
+    - Ako zapneš, napiši prvo kraj: već znaš da se 4. takt završava na G, a 8. na C.
+    - **Unos:** snimi melodiju na klaviru (sviraj u tempu uz metronom; aplikacija je kvantizuje
+      u notni zapis, proveri rezultat i ispravi pogrešan ritam) ili je ukucaj u ABC zapisu.
+      Jedan po jedan ton, samo desna ruka.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola ocene):** 8 punih taktova 4/4, samo tonovi C-dura, opseg C4–E5,
+      4. takt se završava tonom V akorda, poslednji ton je C, bez povećanih skokova, skokovi
+      ne preveliki ni prečesti, smislen ritam.
+    - **Kritika (druga polovina):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i piše
+      šta da probaš sledeće. Melodija koja poštuje sva pravila, a dosadna je, neće dobiti
+      najvišu ocenu; ona koja namerno prekrši pravilo i zvuči odlično ovde i dalje može dobro
+      da prođe.
+rubric:
+  - id: phrase-structure
+    weight: 2
+    label: {en: "Question and answer", sr: "Pitanje i odgovor"}
+    top:
+      en: "Bars 1–4 clearly sound unfinished (ending on G or another V-chord note), bars 5–8 audibly begin like the question and then close on C; you could point to the comma and the full stop without looking at the score."
+      sr: "Taktovi 1–4 jasno zvuče nedovršeno (kraj na G ili drugom tonu V akorda), taktovi 5–8 čujno počinju kao pitanje i zatvaraju se na C; zarez i tačku možeš da pokažeš i bez gledanja u note."
+  - id: motif
+    weight: 2
+    label: {en: "Motif, repetition and variation", sr: "Motiv, ponavljanje i varijacija"}
+    top:
+      en: "One short, recognisable motif is stated, repeated and varied (moved to another step, rhythm kept with new notes, or inverted), so the melody sounds unified but not like a loop."
+      sr: "Jedan kratak, prepoznatljiv motiv se izloži, ponovi i varira (pomeren na drugi stupanj, isti ritam sa drugim tonovima ili obrnut), pa melodija zvuči celovito, ali ne kao petlja."
+  - id: contour
+    weight: 1
+    label: {en: "Melodic shape", sr: "Melodijska linija"}
+    top:
+      en: "Mostly steps; the few leaps are recovered by step in the opposite direction; the line has one clear high point placed in the second half, and does not hover on the same three notes."
+      sr: "Uglavnom koraci; posle retkih skokova linija se korakom vraća u suprotnom smeru; postoji jedan jasan vrhunac u drugoj polovini, i melodija se ne vrti oko ista tri tona."
+  - id: singability
+    weight: 1
+    label: {en: "Singability", sr: "Pevljivost"}
+    top:
+      en: "Someone without training could sing it after hearing it twice: comfortable range, no awkward leaps, natural places to breathe at the end of bars 2, 4 and 6."
+      sr: "Neko bez obuke bi mogao da je otpeva posle dva slušanja: udoban opseg, bez nezgodnih skokova, prirodna mesta za udah na kraju 2, 4. i 6. takta."
+  - id: character
+    weight: 1
+    label: {en: "Character", sr: "Karakter"}
+    top:
+      en: "The melody has a mood of its own (playful, calm, proud...) that its rhythm and shape support, and at least one moment worth remembering."
+      sr: "Melodija ima sopstveno raspoloženje (razigrano, mirno, ponosno...) koje ritam i oblik podržavaju, i bar jedan trenutak koji se pamti."

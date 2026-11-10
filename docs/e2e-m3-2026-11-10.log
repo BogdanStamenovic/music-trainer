@@ -1,0 +1,20 @@
+home project card: Weekly project Composition · due 2026-11-15 |  | PC-001 An 8-bar melody: question and answer New
+PC-001 composition (recorded):
+  quantized ABC: X:1 / T:Composition / M:4/4 / L:1/8 / K:C / C2 E2 G2 E2 | F2 E2 D4 | C2 E2 G2 c2 | B4 G4 |  / A2 G2 F2 E2 | D4 E4 | F2 E2 D2 B,2 | C8 |]
+  submitted: Score: 75% provisional | AI review: queued, usually ready within a minute
+  after 30s: Score: 77% final | AI review: done
+  result block: Score: 77% final |  | rules: 100% · rubric: 54% |  | AI review: done |  | Rule checks (music21) | ✓ bars 100% 8 complete bars as asked | ✓ key 100% all 24 melody notes are in C major; detected C major | ✕ range 98% span B3-C5 = 13 semitones (a 9th); 1 note(s) outside C4-E5: B3 (bar 7) | ✓ half-cadence 100% bar 4 ends on G (degree 5, dominant): half cadence on V | ✓ cadence 100% ends 7-1 on the tonic C (bar 8) | ✓ leaps 100% 8 leap(s), none over an octave, every 6th or larger recovered by a step back | ✓ augmented 100% no augmented or diminished melodic intervals (a d5 that resolves inward is allowed) | ✓ rhythm 100% every bar fills 4/4 |  | This is a clean, correct and singable draft with both cadences in the right places, and the opening triad idea with its extension in bar 3 shows good instinct. The main weakness is the answer: it does not begin like the question, it abandons the motif
+PC-001 composition (typed ABC, ends on B):
+  after 33s: Score: 62% final | AI review: done
+  cadence line: ['✓ half-cadence 100% bar 4 ends on G (degree 5, dominant): half cadence on V', '✕ cadence 0% ends on B (degree 7, leading tone), not the tonic C (bar 8)']
+PL-002 lyrics (sr):
+  live stats: 8 stihova · slogova: 8 7 8 7 8 7 8 7 · rima: ABACADAD (približno, po pisanju)
+  submitted: Rezultat: 75% privremeno | AI recenzija: u redu, obično gotovo za minut
+  after 42s: Rezultat: 50% konačno | AI recenzija: gotovo
+  review: Rezultat: 50% konačno |  | rubrika: 50% |  | AI recenzija: gotovo |  | {"lines":8,"sections":2,"syllablesPerLine":[8,7,8,7,8,7,8,7],"rhymeScheme":"ABACADAD","words":34} |  | Predato je samo pola pesme: jedna strofa i refren (8 stihova) umesto tri strofe sa refrenom (najmanje 12), i to je najveći problem ovog rada. Ono što postoji pokazuje da imaš sluh za slogove: obrazac 8/7 je čist, cezura prirodna, a „noć / doć'“ je lepo zatvaranje strofe. Slike su ipak pozajmljene iz primera u zadatku, a refren ima dva slaba mesta, „zaspi / ti“ i „suza ti“. Temelj je zdrav, sada treba napisati pesmu do kraja i uneti u nju nešto svoje. |  | Broj slogova i cezura: 3/4 · Brojanje je tačno i dosledno: neparni
+PE-001 by ear:
+  result: Score: 95% final |  | pitch: 100% · rhythm: 100% · rubric: 75% |  | AI review: not used for this kind of project |  | pitch: 100% · rhythm: 100% · played -2 semitones from the original key
+PV-001 vocal (fake mic):
+  result: Score: 80% final |  | pitch: 100% · rubric: 50% |  | AI review: not used for this kind of project
+history rows: 2026-W46	Vocal piece	Sing: Frère Jacques	80%	final pitch 100 · rubric 50
+page errors: []

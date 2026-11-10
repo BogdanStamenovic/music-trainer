@@ -1,0 +1,135 @@
+id: PL-002
+kind: lyrics
+order: 6
+title: {en: "Lyrics: a Serbian starogradska song", sr: "Tekst: starogradska pesma"}
+minutes: 60
+prereqs: []
+lyrics:
+  genre: {en: "starogradska pesma (Serbian old-town song)", sr: "starogradska pesma"}
+  language: sr
+  lines: [12, 20]
+  structure:
+    en: "3 stanzas of 4 lines + a refrain of 2–4 lines (after each stanza, or after the 2nd and 3rd)"
+    sr: "3 strofe po 4 stiha + refren od 2–4 stiha (posle svake strofe, ili posle 2. i 3.)"
+brief:
+  en: |
+    Write the words for a **starogradska pesma**, the urban Serbian love song of the 19th and early
+    20th century (sung in town courtyards and in the *kafana*, often to a slow waltz in 3/4 or a
+    slow 4/4). Write it **in Serbian**: the genre lives in the sound of the language.
+
+    ### Conventions
+
+    - **Form:** strophic. **Three 4-line stanzas**, plus a **refrain** (2–4 lines) that returns
+      unchanged and carries the title. Singers often repeat the last two lines of a stanza, so
+      those lines should be strong.
+    - **Meter: count syllables, not stresses.** Pick one line length and keep it. The classic
+      lyric line is the **osmerac**: 8 syllables, split 4 + 4 by a small pause (*cezura*).
+      Syllabic **r** counts as a vowel (*srce* = sr-ce, 2 syllables).
+    - **Rhyme:** **ABAB** (*ukrštena rima*) or **AABB** (*parna rima*), on the last word of each
+      line. Feminine (two-syllable) rhymes are natural in Serbian: *cveta / leta*,
+      *kapije / bije*.
+    - **Stress:** Serbian words almost never stress the last syllable, so lines lean towards a
+      *strong-weak* pattern. Put the important words at the start of each half-line, where the
+      melody's strong beat falls.
+    - **Imagery:** concrete, of the old town and the garden: *avlija* (courtyard), *kapija*,
+      *pendžer* (window), *bagrem*, *jorgovan*, *mesečina*, *kaldrma*, the river, the *kafana*
+      and its wine, a *đerdan* or a handkerchief as a keepsake. Turkish loanwords (*pendžer,
+      sevdah, avlija*) give the old-town colour, especially in songs from the south.
+    - **Feeling:** longing (*sevdah*), lost youth, an unanswered love, a parting. Direct address
+      to the beloved (*dušo, draga, dragi*) and the interjection *oj* are typical. Sentimental is
+      allowed; vague is not: one concrete scene beats three abstract complaints.
+
+    A made-up stanza (osmerac, ABAB, 4 + 4):
+
+    > Pod pendžerom | bagrem cveta,
+    > čekam tebe | kraj kapije,
+    > ti mi ćutiš | celog leta,
+    > a ja pijem, | srce bije.
+
+    ### Practical tips
+
+    - Clap the syllables of each line. Every line in the poem should count the same (or every
+      line in the same position of each stanza).
+    - Hum a slow waltz (*ONE two three*) and speak the lines over it; the half-line pause should
+      fall at a natural breath.
+    - Write the refrain first. It is the hook: the line people would sing along with.
+
+    ### How it is graded
+
+    A reviewer (AI) scores the criteria below 0–4 and comments line by line, including syllable
+    counts. There are no automatic rule checks for lyrics.
+  sr: |
+    Napiši tekst za **starogradsku pesmu**, gradsku ljubavnu pesmu 19. i ranog 20. veka (pevanu
+    po avlijama i u kafani, često kao spori valcer u 3/4 ili u sporom 4/4 taktu). Piši **na
+    srpskom**: žanr živi u zvuku jezika.
+
+    ### Konvencije
+
+    - **Oblik:** strofični. **Tri strofe od po 4 stiha** i **refren** (2–4 stiha) koji se vraća
+      neizmenjen i nosi naslov. Pevači često ponavljaju poslednja dva stiha strofe, pa ti stihovi
+      treba da budu jaki.
+    - **Metrika: broje se slogovi, ne naglasci.** Izaberi jednu dužinu stiha i drži je se.
+      Klasičan lirski stih je **osmerac**: 8 slogova, podeljenih 4 + 4 malom pauzom (**cezura**).
+      Slogotvorno **r** se računa kao samoglasnik (*srce* = sr-ce, 2 sloga).
+    - **Rima:** **ABAB** (*ukrštena rima*) ili **AABB** (*parna rima*), na poslednjoj reči
+      stiha. Ženske (dvosložne) rime su u srpskom prirodne: *cveta / leta*, *kapije / bije*.
+    - **Naglasak:** u srpskom naglasak skoro nikad nije na poslednjem slogu reči, pa stihovi
+      naginju ritmu *jako-slabo*. Važne reči stavi na početak svake polovine stiha, gde pada
+      jaka doba melodije.
+    - **Slike:** konkretne, iz starog grada i bašte: avlija, kapija, pendžer, bagrem, jorgovan,
+      mesečina, kaldrma, reka, kafana i vino, đerdan ili maramica kao uspomena. Turcizmi
+      (*pendžer, sevdah, avlija*) daju starogradski kolorit, naročito u pesmama s juga.
+    - **Osećanje:** čežnja (*sevdah*), prošla mladost, neuzvraćena ljubav, rastanak. Tipično je
+      direktno obraćanje voljenoj osobi (*dušo, draga, dragi*) i uzvik *oj*. Sentimentalno sme;
+      neodređeno ne sme: jedna konkretna scena vredi više od tri apstraktne žalbe.
+
+    Izmišljena strofa (osmerac, ABAB, 4 + 4):
+
+    > Pod pendžerom | bagrem cveta,
+    > čekam tebe | kraj kapije,
+    > ti mi ćutiš | celog leta,
+    > a ja pijem, | srce bije.
+
+    ### Praktični saveti
+
+    - Otkucaj slogove svakog stiha. Svi stihovi treba da imaju isti broj slogova (ili bar svi
+      stihovi na istom mestu u strofi).
+    - Pevuši spori valcer (*JED-na dva tri*) i izgovaraj stihove preko njega; pauza na sredini
+      stiha treba da padne na prirodan udah.
+    - Prvo napiši refren. On je hook: stih koji bi ljudi pevali zajedno s tobom.
+
+    ### Kako se ocenjuje
+
+    Recenzent (AI) ocenjuje kriterijume ispod od 0 do 4 i komentariše stih po stih, uključujući
+    broj slogova. Za tekst nema automatske provere pravila.
+rubric:
+  - id: meter
+    weight: 2
+    label: {en: "Syllable count and caesura", sr: "Broj slogova i cezura"}
+    top:
+      en: "Every line has the chosen syllable count (e.g. 8) with a natural 4 + 4 break; nothing has to be squeezed or stretched to fit a slow waltz."
+      sr: "Svaki stih ima izabrani broj slogova (npr. 8) sa prirodnom podelom 4 + 4; ništa ne mora da se sabija ili razvlači da bi stalo u spori valcer."
+  - id: rhyme
+    weight: 1
+    label: {en: "Rhyme", sr: "Rima"}
+    top:
+      en: "A consistent ABAB or AABB scheme with full rhymes on meaningful words, no rhymes that are only verb endings repeated (-ao / -ao)."
+      sr: "Dosledna šema ABAB ili AABB sa punim rimama na rečima koje nose smisao, bez rima koje su samo ponovljeni glagolski nastavci (-ao / -ao)."
+  - id: prosody
+    weight: 1
+    label: {en: "Prosody", sr: "Prozodija"}
+    top:
+      en: "Read aloud, stressed syllables fall at the start of the half-lines and on the strong beats; word order sounds like natural, if poetic, Serbian."
+      sr: "Pročitano naglas, naglašeni slogovi padaju na početak polustihova i na jake dobe; red reči zvuči kao prirodan, makar pesnički, srpski."
+  - id: imagery
+    weight: 2
+    label: {en: "Imagery and feeling", sr: "Slike i osećanje"}
+    top:
+      en: "Concrete old-town images (a gate, a window, a tree in bloom, a keepsake) carry a specific story of longing; at least one image is fresh rather than a stock phrase."
+      sr: "Konkretne starogradske slike (kapija, pendžer, procvetalo drvo, uspomena) nose određenu priču o čežnji; bar jedna slika je sveža, a ne gotova fraza."
+  - id: refrain
+    weight: 1
+    label: {en: "Refrain (hook)", sr: "Refren (hook)"}
+    top:
+      en: "A short, singable refrain that sums up the song, returns unchanged and reads differently after each stanza."
+      sr: "Kratak, pevljiv refren koji sažima pesmu, vraća se neizmenjen i posle svake strofe dobija novo značenje."

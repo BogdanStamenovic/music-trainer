@@ -147,3 +147,83 @@ export const PlacementSection = z.object({
 });
 export const Placement = z.object({ sections: z.array(PlacementSection).min(1) });
 export type Placement = z.infer<typeof Placement>;
+
+// ---------- weekly projects (M3) ----------
+// One project per week, rotating composition / lyrics / vocal piece / play a song by ear.
+// Rubric criteria are scored 0..4 (by the claude -p reviewer, or by the learner when the
+// reviewer is unavailable); deterministic parts (music21 rules, MIDI/voice metrics) are
+// graded separately and combined with the rubric by `weights`.
+
+export const Criterion = z.object({
+  id: z.string().regex(/^[a-z][a-z0-9-]*$/),
+  label: Loc,
+  weight: z.number().positive(),
+  top: Loc, // what a 4/4 looks like, concretely
+});
+export type Criterion = z.infer<typeof Criterion>;
+
+const ProjectBase = {
+  id: z.string().regex(/^P[CLVE]-\d{3}$/),
+  order: z.number().int(),
+  title: Loc,
+  brief: Loc, // markdown, may embed ```abc
+  minutes: z.number().int().min(10).max(240),
+  prereqs: z.array(z.string()).default([]), // soft: lessons that should come first
+  rubric: z.array(Criterion).min(2),
+};
+
+/** A melody given as data (vocal piece, by-ear song). Public-domain tunes only. */
+export const Melody = z.object({
+  title: Loc,
+  source: z.string(), // provenance / public-domain note
+  key: z.string(), // e.g. "D major"
+  meter: z.string().regex(/^\d+\/\d+$/),
+  tempo: z.number().min(30).max(200),
+  notes: z.array(z.union([NoteS, z.literal("r")])).min(4), // "r" = rest
+  beats: z.array(z.number().positive()), // one per entry in notes
+  pickup: z.number().min(0).default(0), // beats before the first bar line
+});
+export type Melody = z.infer<typeof Melody>;
+
+export const RULE_IDS = ["bars", "range", "key", "cadence", "half-cadence", "leaps", "stepwise", "augmented", "parallels", "rhythm"] as const;
+
+export const Project = z.discriminatedUnion("kind", [
+  z.object({
+    ...ProjectBase,
+    kind: z.literal("composition"),
+    composition: z.object({
+      key: z.string(), // "C major" | "A minor"
+      meter: z.string().regex(/^\d+\/\d+$/),
+      bars: z.number().int().min(2).max(64),
+      rules: z.array(z.enum(RULE_IDS)).min(1),
+      range: z.tuple([NoteS, NoteS]).optional(), // singable range for the melody
+      chords: z.array(z.string()).optional(), // given progression (roman numerals), one per bar
+      voices: z.number().int().min(1).max(2).default(1),
+    }),
+    weights: z.object({ rules: z.number().min(0), rubric: z.number().min(0) }).default({ rules: 0.5, rubric: 0.5 }),
+  }),
+  z.object({
+    ...ProjectBase,
+    kind: z.literal("lyrics"),
+    lyrics: z.object({
+      genre: Loc,
+      language: z.enum(["en", "sr", "either"]).default("either"),
+      lines: z.tuple([z.number().int().min(2), z.number().int().min(2)]),
+      structure: Loc, // e.g. "verse (8) - chorus (4) - verse (8) - chorus (4)"
+    }),
+  }),
+  z.object({
+    ...ProjectBase,
+    kind: z.literal("vocal"),
+    melody: Melody,
+    tolerance: z.number().min(10).max(200).default(75),
+    weights: z.object({ pitch: z.number().min(0), rubric: z.number().min(0) }).default({ pitch: 0.6, rubric: 0.4 }),
+  }),
+  z.object({
+    ...ProjectBase,
+    kind: z.literal("byear"),
+    melody: Melody,
+    weights: z.object({ pitch: z.number().min(0), rhythm: z.number().min(0), rubric: z.number().min(0) }).default({ pitch: 0.6, rhythm: 0.2, rubric: 0.2 }),
+  }),
+]);
+export type Project = z.infer<typeof Project>;

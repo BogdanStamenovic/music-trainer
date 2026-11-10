@@ -5,8 +5,8 @@ grades the work, from multiple-choice answers to what you play on a MIDI piano, 
 schedules what to learn and review next. Built for one learner: a fluent pianist
 with almost no theory, in English and Serbian.
 
-Spec: [SPEC.md](SPEC.md). This repo covers milestone M1 (trainer skeleton + seed
-content) and the trainer side of M2 (voice track). Singing analysis is a separate
+Spec: [SPEC.md](SPEC.md). This repo covers milestones M1 (trainer skeleton + seed
+content), the trainer side of M2 (voice track) and M3 (weekly test + projects). Singing analysis is a separate
 service, [voice-score](https://github.com/BogdanStamenovic/voice-score); its browser
 fallback is vendored here.
 
@@ -26,6 +26,22 @@ fallback is vendored here.
 | Voice | Records in the browser (mic processing off), stores the take on the data disk, analyzes it on voice-score. When voice-score is down, the vendored voice-score-lite analyzes in the browser; offline, the take is queued in IndexedDB. Takes made while it was down get a server analysis later | `src/lib/client/voice.ts`, `src/lib/server/recordings.ts` |
 | Voice grading | Per target note: full credit within the tolerance (cents), linear down to 0 at 3x; a short sustain scales the score down. Octave-agnostic, and items are moved by octaves into the stored comfortable range | `gradeSing` in `src/lib/grading.ts` |
 | Voice safety | Validation forces every V lesson to open with a fatigue/hoarseness check-in and then a warm-up. "Tired" or "hoarse" makes the day a voice-rest day: every voice lesson is blocked until tomorrow. Voice stays out of SRS | `src/lib/curriculum/validate.ts`, `ExerciseQueue` |
+
+| Weekly test | Sunday. Up to 2 exercises from each lesson practised that week (most practised first, max 8), plus up to 4 items SRS shows are failing. Voice is excluded (it is assessed by recorded projects) | `weeklyTest` in `src/lib/server/planner.ts` |
+| Weekly projects | One per ISO week, rotating composition → lyrics → vocal piece → play a song by ear; content in `curriculum/projects/` with explicit rubrics | `src/lib/server/projects.ts` |
+| Rule checks | music21 worker (Python, uv; venv on `/mnt/offload`): bars, rhythm, range, key, cadence, half cadence, leaps/gap fill, stepwise motion, augmented intervals, parallel 5ths/8ves. JSON over stdin/stdout | `worker/` |
+| AI review | `claude -p` (keyless, no tools/MCP/settings/hooks, empty cwd) scores each rubric criterion 0-4 with comments, from a SQLite job queue in the server: one at a time, 3 attempts with backoff, 4 min timeout, hourly retry while the CLI is unavailable, superseded by resubmission | `src/lib/server/claude.ts`, `jobs.ts` |
+| Composition input | Record on the MIDI piano against a metronome (one-bar count-in), quantize (♩/♪/16th grid, optional bass split at G3), spell in the key and write ABC (ties across bar lines, accidentals relative to the signature and the bar). The ABC is editable and can be typed instead | `quantize`/`toAbc` in `src/lib/projects.ts`, `Composer` |
+| Grade history | Weekly averages per track, weekly test scores, project grades with their parts | `/history` |
+
+Project grades combine a measured part with a rubric part:
+
+| Kind | Measured | Rubric |
+|---|---|---|
+| composition | music21 rules (50%) | claude review (50%); the learner's self-assessment is the provisional grade until it arrives, and stands if the review cannot run |
+| lyrics | — (line/syllable/rhyme stats are shown, not graded) | claude review (100%), same fallback |
+| vocal piece | voice-score pitch per note (60%) | self-assessment (40%): an LLM reading text cannot judge a performance it did not hear |
+| by ear | interval accuracy, key-independent (60%) + rhythm ratios (20%) | self-assessment (20%) |
 
 Correctness of content is enforced, not assumed:
 
@@ -122,6 +138,19 @@ Config (`~/.config/music-trainer/env`):
     offline, a take was analyzed locally, queued, and uploaded on reconnect; once
     voice-score was back, all 7 takes were re-analyzed. Browser vs server on the
     same takes: within 2 cents per note.
+- M3 E2E on 2026-11-10 (real Chrome, real music21 worker, real `claude -p`; log in
+  `docs/e2e-m3-2026-11-10.log`):
+  - composition played on the on-screen keyboard: quantized exactly as played; rules 100%
+    except range (B3 below the asked C4-E5); review back in 30 s; 77% final
+  - typed ABC ending on the leading tone: cadence 0% ("ends on B (degree 7)"), 62%
+  - Serbian lyrics: reviewed in Serbian in 42 s; the review caught that 1 of the 3
+    asked stanzas was written and graded 50% against a self-assessed 75%
+  - by-ear tune played a whole tone low: transposition -2 detected, pitch 100%
+  - vocal piece (faked mic): pitch 100%
+  - reviewer cost reported by the CLI: ~$0.02-0.05 per review at list price; it runs
+    on the subscription, keyless
+- music21 worker: 66 pytest tests; ~0.24 s per check as a subprocess; venv 268 MB on
+  `/mnt/offload`.
 - Added size of the browser fallback: 14.9 MB (onnxruntime-web WASM build only:
   14.85 MB WASM + 78 KB loaders, + the vendored lite module and 135 KB model). It
   is loaded only when voice-score is down, then cached by the service worker.
@@ -154,8 +183,15 @@ What does not exist yet:
   applies to the (not yet built) distortion module.
 - **No mic fallback for piano exercises.** Without Web MIDI (e.g. iPhone Safari)
   the on-screen keyboard is the only input.
-- **The weekly test is basic.** It takes one exercise from each lesson passed in
-  the last 7 days. Projects, C/L tracks and `claude -p` grading are M3.
+- **The AI review is a second opinion, not ground truth.** It reads ABC and text;
+  it never hears anything. Rubric scores from one run can differ from the next by a
+  point. Rule checks are deterministic but only cover what is listed.
+- **Rule checks are single-line.** No harmonic analysis, hidden 5ths/8ves or voice
+  crossing; repeats are not expanded; rests do not break the melodic line (see
+  `worker/README.md`).
+- **Lyric stats are spelling-based** (rhyme and syllables), shown as approximate.
+- **Only 8 projects exist** (2 per kind); after 8 weeks they repeat. No Serbian
+  traditional tune yet for the vocal/by-ear projects (no checked transcription).
 - **Web Audio playback is a synthesized tone**, not piano samples. It is small
   and works offline; the real piano sound comes from MIDI out.
 - **Not tested with the real piano yet.** All MIDI tests used snd-virmidi.

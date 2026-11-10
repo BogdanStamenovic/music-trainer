@@ -8,7 +8,7 @@
 import type { VoiceAnalysis } from "../grading";
 
 export interface VoiceParams {
-  targets?: { midi: number; beats?: number }[];
+  targets?: ({ midi: number; beats?: number } | { rest: true; beats: number })[];
   tempo_bpm?: number;
   pass_cents?: number;
   octave_agnostic?: boolean;

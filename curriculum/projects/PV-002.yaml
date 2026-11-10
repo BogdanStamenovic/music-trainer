@@ -1,0 +1,132 @@
+id: PV-002
+kind: vocal
+order: 7
+title: {en: "Sing: Ode to Joy", sr: "Pevaj: Oda radosti"}
+minutes: 35
+prereqs: [V-008, V-009]
+melody:
+  title: {en: "Ode to Joy (Beethoven, Symphony No. 9)", sr: "Oda radosti (Betoven, 9. simfonija)"}
+  source: "Beethoven, Symphony No. 9 in D minor, Op. 125, finale (1824); words Friedrich Schiller, An die Freude (1785, rev. 1803). Public domain. Common simplified form: bar 12 holds the low note instead of Beethoven's syncopated early entry into the last phrase."
+  key: F major
+  meter: 4/4
+  tempo: 92
+  notes: [A4, A4, Bb4, C5, C5, Bb4, A4, G4, F4, F4, G4, A4, A4, G4, G4, A4, A4, Bb4, C5, C5, Bb4, A4, G4, F4, F4, G4, A4, G4, F4, F4, G4, G4, A4, F4, G4, A4, Bb4, A4, F4, G4, A4, Bb4, A4, G4, F4, G4, C4, A4, A4, Bb4, C5, C5, Bb4, A4, G4, F4, F4, G4, A4, G4, F4, F4]
+  beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+brief:
+  en: |
+    Record yourself singing the **"Ode to Joy" theme** from Beethoven's Ninth Symphony:
+    16 bars in F major, on **"la"** (or, if you like, Schiller's German words). Twice as long
+    as Frère Jacques, with longer phrases: this week is about **planning breath over 4-bar
+    phrases**.
+
+    ```abc
+    X:1
+    T:Ode to Joy
+    M:4/4
+    L:1/8
+    Q:1/4=92
+    K:F
+    A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | A3 G G4 !breath!| A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | G3 F F4 !breath!|
+    G2 G2 A2 F2 | G2 A B A2 F2 | G2 A B A2 G2 | F2 G2 C4 !breath!| A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | G3 F F4 |]
+    ```
+
+    The form is **A A' B A'**: phrase 1 ends on G (a half close, like a comma), phrase 2 is the
+    same tune ending on F (full stop), phrase 3 is new and ends on the low C, phrase 4 repeats
+    phrase 2. Recognising that cuts the memory work in half.
+
+    ### Before you sing
+
+    - **Warm up first** (V-001), at least 3 minutes, including a few slow five-note scales.
+    - **Stop if anything hurts, scratches or you get hoarse.**
+    - Written range C4–C5, one octave. Sing it an octave lower if that suits your voice better.
+
+    ### How to sing it
+
+    - **One breath per 4-bar phrase** (the comma-shaped breath marks after bars 4, 8 and 12), about 10 seconds of
+      singing each. Take the breath low and early, during the last half note, so the next
+      phrase starts on time. If 4 bars is too long for now, add a quick breath after bar 2,
+      and say so in your notes.
+    - **Spend air slowly** at the start of each phrase; the phrase ends are where it runs out.
+    - **Bar 4 and bar 8:** the dotted rhythm (dotted quarter + eighth) should be crisp, then the
+      half note held to its full length.
+    - **Bars 10–11:** the two eighth notes are a small turn; keep them light.
+    - **Bar 12:** the drop of a fifth to low C, then the jump of a sixth back up to A in bar 13:
+      hear the A before you sing it.
+    - With German words: the two eighths in bars 10 and 11 share one syllable.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording against the melody (tolerance three
+      quarters of a semitone).
+    - **The rubric (40%)** below is scored by a reviewer, or by you from the recording.
+  sr: |
+    Snimi sebe kako pevaš **temu „Ode radosti”** iz Betovenove Devete simfonije: 16 taktova u
+    F-duru, na **„la”** (ili, ako želiš, sa Šilerovim nemačkim tekstom). Dvostruko je duža od
+    Frère Jacques i fraze su duže: ove nedelje je tema **planiranje daha kroz fraze od 4
+    takta**.
+
+    ```abc
+    X:1
+    T:Ode to Joy
+    M:4/4
+    L:1/8
+    Q:1/4=92
+    K:F
+    A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | A3 G G4 !breath!| A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | G3 F F4 !breath!|
+    G2 G2 A2 F2 | G2 A B A2 F2 | G2 A B A2 G2 | F2 G2 C4 !breath!| A2 A2 B2 c2 | c2 B2 A2 G2 | F2 F2 G2 A2 | G3 F F4 |]
+    ```
+
+    Oblik je **A A' B A'**: prva fraza se završava na G (polukadenca, kao zarez), druga je ista
+    melodija sa završetkom na F (tačka), treća je nova i završava se na donjem C, četvrta
+    ponavlja drugu. Kad to prepoznaš, upola je manje pamćenja.
+
+    ### Pre pevanja
+
+    - **Prvo se zagrej** (V-001), najmanje 3 minuta, uz nekoliko sporih lestvica od pet tonova.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.**
+    - Zapisani opseg je C4–C5, jedna oktava. Pevaj oktavu niže ako ti to bolje leži.
+
+    ### Kako se peva
+
+    - **Jedan udah po frazi od 4 takta** (znaci za udah, nalik zarezu, posle 4, 8. i 12. takta), oko 10 sekundi
+      pevanja po frazi. Udahni nisko i na vreme, tokom poslednje polovine, da sledeća fraza
+      počne u tempu. Ako su ti 4 takta zasad predugo, dodaj kratak udah posle 2. takta i
+      zapiši to u beleškama.
+    - **Troši vazduh polako** na početku fraze; na kraju fraze ga ponestaje.
+    - **Taktovi 4 i 8:** punktirani ritam (četvrtina s tačkom + osmina) neka bude oštar, a
+      polovina zadržana punu vrednost.
+    - **Taktovi 10–11:** dve osmine su mali ukras; neka budu lake.
+    - **Takt 12:** pad za kvintu na donje C, pa skok za sekstu nazad na A u 13. taktu: čuj A u
+      glavi pre nego što ga otpevaš.
+    - Sa nemačkim tekstom: dve osmine u taktovima 10 i 11 dele jedan slog.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka prema melodiji (tolerancija tri četvrtine
+      polustepena).
+    - **Rubriku (40%)** ispod ocenjuje recenzent, ili ti sam sa snimka.
+rubric:
+  - id: breath
+    weight: 2
+    label: {en: "Breath and phrasing", sr: "Dah i fraziranje"}
+    top:
+      en: "Four phrases, four breaths, all at the marks; each phrase is one connected line (legato) that still has support at its last note; next phrase starts on time."
+      sr: "Četiri fraze, četiri udaha, svi na znacima; svaka fraza je jedna povezana linija (legato) koja i na poslednjem tonu ima oslonac; sledeća fraza počinje u tempu."
+  - id: ease
+    weight: 2
+    label: {en: "Ease of tone", sr: "Lakoća tona"}
+    top:
+      en: "An even, unforced tone across the whole octave; the top C5 is not pushed, the low C4 is not growled, the leap back up in bar 13 lands cleanly."
+      sr: "Ujednačen, neforsiran ton kroz celu oktavu; gornje C5 nije gurano, donje C4 nije krkljavo, skok naviše u 13. taktu čisto pada."
+  - id: rhythm-flow
+    weight: 1
+    label: {en: "Rhythm", sr: "Ritam"}
+    top:
+      en: "Steady pulse throughout, dotted rhythms in bars 4, 8 and 16 crisp and distinct from even quarters, half notes held full value."
+      sr: "Stalan puls kroz celu pesmu, punktirani ritmovi u 4, 8. i 16. taktu oštri i jasno drugačiji od ravnih četvrtina, polovine zadržane punu vrednost."
+  - id: expression
+    weight: 1
+    label: {en: "Shape and confidence", sr: "Oblikovanje i sigurnost"}
+    top:
+      en: "The phrases are shaped (a slight swell toward the middle, the B phrase sung as a contrast), and the return of the theme in bar 13 sounds like a homecoming."
+      sr: "Fraze su oblikovane (blago rastu ka sredini, fraza B je otpevana kao kontrast), a povratak teme u 13. taktu zvuči kao povratak kući."

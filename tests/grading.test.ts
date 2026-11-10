@@ -92,3 +92,11 @@ describe("sing grading", () => {
     expect(fitToRange([60], undefined)).toEqual([60]);
   });
 });
+
+describe("sing grading with rests in the layout", () => {
+  it("maps targets to voice-score indexes that count rests", () => {
+    const it2 = sing({ targets: [60, 62], layout: [{ midi: 60, beats: 1 }, { beats: 1 }, { midi: 62, beats: 1 }] });
+    expect(gradeSing(it2, { analysis: { tracker: "t", notes: [note(0, 5), note(2, -3)] } }).score).toBe(1);
+    expect(gradeSing(it2, { analysis: { tracker: "t", notes: [note(0, 5), note(1, -3)] } }).score).toBe(0.5);
+  });
+});

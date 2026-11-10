@@ -10,7 +10,8 @@ import { abcTune, abcChords } from "../music/abc";
 
 export interface PlaySpec {
   mode: "melodic" | "harmonic" | "chords";
-  notes?: number[];
+  notes?: number[]; // melodic: -1 = rest
+  durations?: number[]; // melodic: beats per note (default 1 each)
   chords?: number[][];
   tempo: number;
 }
@@ -56,6 +57,9 @@ export interface SingItem extends ItemBase {
   tolerance: number; // cents
   octaveAgnostic: boolean;
   noteLabels: Loc;
+  // full sequence including rests (sent to voice-score, whose note indexes count rests);
+  // absent = targets in order with no rests
+  layout?: { midi?: number; beats: number }[];
 }
 export interface RangeItem extends ItemBase {
   kind: "range";

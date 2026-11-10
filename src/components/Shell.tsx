@@ -39,7 +39,7 @@ function Bar() {
       window.removeEventListener("offline", on);
     };
   }, [setLocale]);
-  const nav: [string, "today" | "progress" | "settings" | "voice"][] = [["/", "today"], ["/progress", "progress"], ["/voice", "voice"], ["/settings", "settings"]];
+  const nav: [string, "today" | "progress" | "settings" | "voice" | "history2" | "project"][] = [["/", "today"], ["/project", "project"], ["/progress", "progress"], ["/history", "history2"], ["/voice", "voice"], ["/settings", "settings"]];
   return (
     <header className="bar">
       <Link href="/" className="brand">♪ music-trainer</Link>

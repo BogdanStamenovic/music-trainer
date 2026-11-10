@@ -17,6 +17,7 @@ export default function TodayPage() {
   const [d, setD] = useState<Today | null>(null);
   const [stale, setStale] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [proj, setProj] = useState<{ project: { def: { id: string; kind: string; title: { en: string; sr: string } }; status: string; score: number | null; final: number } | null; due?: string } | null>(null);
   const load = () =>
     getJson<Today>("/api/today")
       .then(({ data, stale }) => {
@@ -35,6 +36,7 @@ export default function TodayPage() {
       .catch((e) => setErr(String(e)));
   useEffect(() => {
     void load();
+    getJson<typeof proj>("/api/projects/current").then(({ data }) => setProj(data)).catch(() => {});
   }, []);
   if (err) return <p className="bad">{err}</p>;
   if (!d) return <p className="muted">…</p>;
@@ -107,7 +109,9 @@ export default function TodayPage() {
       {p.kind === "test" && p.test ? (
         <section className="card">
           <h2>{t("weeklyTest")}</h2>
-          <p className="muted">{p.test.exercises.length} × {t("exercise").toLowerCase()}</p>
+          <p className="muted">
+            {p.test.exercises.length} × {t("exercise").toLowerCase()} ({p.test.exercises.filter((e) => e.source !== "review").length} {t("weekTest")}, {p.test.exercises.filter((e) => e.source === "review").length} {t("reviewItems")})
+          </p>
           <Link className="button primary" href="/test">
             {t("start")}
           </Link>
@@ -138,6 +142,22 @@ export default function TodayPage() {
             ))}
           </ul>
           {p.lessons.every((x) => x.status === "passed" || x.status === "skipped") ? <p className="good">{t("allDone")}</p> : null}
+        </section>
+      ) : null}
+
+      {proj?.project ? (
+        <section className={`card ${p.weekday === "sat" || p.weekday === "sun" ? "highlight" : ""}`} data-testid="project-card">
+          <h2>
+            {t("project")} <span className="muted small">{t(("kind_" + proj.project.def.kind) as "kind_composition")} · {t("due")} {proj.due}</span>
+          </h2>
+          <p>
+            <Link href="/project" data-testid="project-link">
+              <span className="tag">{proj.project.def.id}</span> {l(proj.project.def.title)}
+            </Link>{" "}
+            <span className="muted small">
+              {proj.project.status === "open" ? t("new") : proj.project.score != null ? `${Math.round(proj.project.score * 100)}% · ${proj.project.final ? t("final") : t("provisional")}` : proj.project.status}
+            </span>
+          </p>
         </section>
       ) : null}
 

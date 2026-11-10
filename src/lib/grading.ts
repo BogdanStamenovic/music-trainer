@@ -255,8 +255,10 @@ export function exerciseScore(scores: number[]): number {
 export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; reason?: string }) {
   const a = r.analysis;
   if (!a) return { score: 0, detail: { reason: r.reason ?? "no analysis" } };
+  // voice-score indexes count rests; map each target to its position in the full layout
+  const idx = item.layout ? item.layout.map((e, k) => (e.midi != null ? k : -1)).filter((k) => k >= 0) : item.targets.map((_, i) => i);
   const per = item.targets.map((t, i) => {
-    const n = a.notes.find((x) => x.index === i);
+    const n = a.notes.find((x) => x.index === idx[i]);
     if (!n || n.cents_error == null) return { target: t, score: 0, cents: null as number | null, sustain: null as number | null };
     let c = Math.abs(n.cents_error);
     if (!item.octaveAgnostic && n.octave_offset) c += 1200 * Math.abs(n.octave_offset);

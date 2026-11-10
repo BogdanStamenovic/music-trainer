@@ -1,0 +1,118 @@
+id: PV-001
+kind: vocal
+order: 3
+title: {en: "Sing: Frère Jacques", sr: "Pevaj: Frère Jacques"}
+minutes: 30
+prereqs: [V-008, V-009]
+melody:
+  title: {en: "Frère Jacques (Are You Sleeping)", sr: "Frère Jacques (Bratec Martin)"}
+  source: "French traditional round, in print by about 1780; melody and French words are public domain (traditional English words likewise)."
+  key: F major
+  meter: 4/4
+  tempo: 88
+  notes: [F4, G4, A4, F4, F4, G4, A4, F4, A4, Bb4, C5, A4, Bb4, C5, C5, D5, C5, Bb4, A4, F4, C5, D5, C5, Bb4, A4, F4, F4, C4, F4, F4, C4, F4]
+  beats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 2]
+brief:
+  en: |
+    Record yourself singing **Frère Jacques**, 8 bars in F major, on **"la"** or with the French
+    words. You know the tune; the point this week is to sing a whole song in tune, in time, with
+    planned breaths and an easy voice.
+
+    ```abc
+    X:1
+    T:Frère Jacques
+    M:4/4
+    L:1/8
+    Q:1/4=88
+    K:F
+    F2 G2 A2 F2 | F2 G2 A2 F2 !breath!| A2 B2 c4 | A2 B2 c4 !breath!| c d c B A2 F2 | c d c B A2 F2 !breath!| F2 C2 F4 | F2 C2 F4 |]
+    w: Frè-re Jac-ques, frè-re Jac-ques, dor-mez-vous? Dor-mez-vous? Son-nez les ma-ti-nes, son-nez les ma-ti-nes, ding, dang, dong. Ding, dang, dong.
+    ```
+
+    ### Before you sing
+
+    - **Warm up first** (the daily warm-up, V-001): low breaths, quiet sirens on "ng", five-note
+      scales on "la". At least 3 minutes.
+    - **Stop if anything hurts, scratches or you get hoarse.** Try again another day.
+    - The written range is C4–D5. If that sits high or low for your voice, sing it an
+      octave lower (or higher): what matters is the pitch relative to the key.
+
+    ### How to sing it
+
+    - **Breathe at the marks** (the comma-shaped breath marks after bars 2, 4 and 6): a low, quiet breath, belly and
+      ribs out, shoulders still. Two bars per breath is plenty of air.
+    - **Bars 3–4:** the long C on "vous" should stay steady to its end; do not let it sag.
+    - **Bars 5–6:** the eighth notes are light and quick; keep them in tune rather than loud.
+    - **Bars 7–8:** the low C is the lowest note: let it be quiet rather than pushing down.
+    - Listen to the app's playback twice and sing along once before you record.
+
+    ### How it is graded
+
+    - **Pitch (60%)** is measured from the recording: every note against the melody, within
+      a tolerance of three quarters of a semitone.
+    - **The rest (40%)** is the rubric below: a reviewer scores what the pitch meter cannot
+      hear, or you rate it yourself from the recording if the reviewer is unavailable.
+  sr: |
+    Snimi sebe kako pevaš **Frère Jacques**, 8 taktova u F-duru, na **„la”** ili sa francuskim
+    tekstom. Melodiju znaš; ove nedelje je cilj da otpevaš celu pesmu čisto, u tempu, sa
+    planiranim udasima i lakim glasom.
+
+    ```abc
+    X:1
+    T:Frère Jacques
+    M:4/4
+    L:1/8
+    Q:1/4=88
+    K:F
+    F2 G2 A2 F2 | F2 G2 A2 F2 !breath!| A2 B2 c4 | A2 B2 c4 !breath!| c d c B A2 F2 | c d c B A2 F2 !breath!| F2 C2 F4 | F2 C2 F4 |]
+    w: Frè-re Jac-ques, frè-re Jac-ques, dor-mez-vous? Dor-mez-vous? Son-nez les ma-ti-nes, son-nez les ma-ti-nes, ding, dang, dong. Ding, dang, dong.
+    ```
+
+    ### Pre pevanja
+
+    - **Prvo se zagrej** (dnevno zagrevanje, V-001): niski udasi, tihe sirene na „ng”, lestvice
+      od pet tonova na „la”. Najmanje 3 minuta.
+    - **Prekini ako nešto boli, grebe ili osetiš promuklost.** Probaj ponovo drugog dana.
+    - Zapisani opseg je C4–D5. Ako ti je previsoko ili preduboko, pevaj oktavu niže (ili više):
+      važna je visina u odnosu na tonalitet.
+
+    ### Kako se peva
+
+    - **Udahni na znacima** (znaci za udah, nalik zarezu, posle 2, 4. i 6. takta): nizak, tih udah, stomak i rebra se šire,
+      ramena miruju. Dva takta po udahu je sasvim dovoljno vazduha.
+    - **Taktovi 3–4:** dugo C na „vous” neka ostane mirno do kraja; ne daj mu da padne.
+    - **Taktovi 5–6:** osmine su lake i brze; drži ih čisto, ne glasno.
+    - **Taktovi 7–8:** donje C je najniži ton: neka bude tiho umesto da ga guraš naniže.
+    - Poslušaj reprodukciju u aplikaciji dva puta i jednom pevaj uz nju pre snimanja.
+
+    ### Kako se ocenjuje
+
+    - **Intonacija (60%)** se meri iz snimka: svaki ton prema melodiji, uz toleranciju od tri
+      četvrtine polustepena.
+    - **Ostatak (40%)** je rubrika ispod: recenzent ocenjuje ono što merač visine ne čuje, ili
+      sam oceniš sa snimka ako recenzent nije dostupan.
+rubric:
+  - id: breath
+    weight: 2
+    label: {en: "Breath and phrasing", sr: "Dah i fraziranje"}
+    top:
+      en: "Breaths only at the marks, quiet and low; no phrase runs out of air; the long notes in bars 3–4 are held to full length."
+      sr: "Udasi samo na znacima, tihi i niski; nijednoj frazi ne ponestaje vazduha; dugi tonovi u taktovima 3–4 traju punu vrednost."
+  - id: ease
+    weight: 2
+    label: {en: "Ease of tone", sr: "Lakoća tona"}
+    top:
+      en: "The voice sounds free on every note, including D5 and the low C: no squeezing, no pushing for volume, no breaking."
+      sr: "Glas zvuči slobodno na svakom tonu, i na D5 i na donjem C: bez stiskanja, guranja jačine ili pucanja."
+  - id: rhythm-flow
+    weight: 1
+    label: {en: "Steady time", sr: "Ravnomeran tempo"}
+    top:
+      en: "The pulse stays steady through the whole song; the eighth notes in bars 5–6 are even and do not rush."
+      sr: "Puls je stalan kroz celu pesmu; osmine u taktovima 5–6 su ujednačene i ne žure."
+  - id: expression
+    weight: 1
+    label: {en: "Confidence and text", sr: "Sigurnost i tekst"}
+    top:
+      en: "Sung with commitment from the first note, clear vowels (a clean 'la' or understandable French), and a deliberate ending rather than a fade."
+      sr: "Otpevano sigurno od prvog tona, jasni vokali (čisto „la” ili razumljiv francuski) i nameran završetak, ne utihnuće."

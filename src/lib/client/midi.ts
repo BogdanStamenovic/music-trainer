@@ -112,7 +112,14 @@ class MidiManager {
     const events: { at: number; notes: number[]; dur: number }[] = [];
     if (spec.mode === "harmonic") events.push({ at: 0, notes: spec.notes ?? [], dur: beat * 2 });
     else if (spec.mode === "chords") (spec.chords ?? []).forEach((c, i) => events.push({ at: i * beat * 1.5, notes: c, dur: beat * 1.4 }));
-    else (spec.notes ?? []).forEach((n, i) => events.push({ at: i * beat, notes: [n], dur: beat * 0.95 }));
+    else {
+      let at = 0;
+      (spec.notes ?? []).forEach((n, i) => {
+        const d = (spec.durations?.[i] ?? 1) * beat;
+        if (n >= 0) events.push({ at, notes: [n], dur: d * 0.95 });
+        at += d;
+      });
+    }
     const total = events.length ? Math.max(...events.map((e) => e.at + e.dur)) : 0;
     const out = this.playback !== "webaudio" ? this.output() : null;
     if (out) {

@@ -1,4 +1,4 @@
-import type { Lesson, Check, Exercise, Placement } from "./schema";
+import type { Lesson, Check, Exercise, Placement, Project, Melody } from "./schema";
 import { derive, generateItems } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
@@ -135,5 +135,51 @@ export function validatePlacement(p: Placement, lessonIds: Set<string>): string[
       errs.push(...checkExercise(ex, `placement/${ex.id}`));
       for (const sk of ex.skips) if (!lessonIds.has(sk)) errs.push(`placement/${ex.id}: skips unknown lesson ${sk}`);
     }
+  return errs;
+}
+
+const KEY_RE = /^([A-G](#|b)?) (major|minor)$/;
+
+/** Melody sanity: one duration per note, bar arithmetic adds up, notes parse. */
+export function validateMelody(m: Melody, where: string): string[] {
+  const errs: string[] = [];
+  if (m.notes.length !== m.beats.length) errs.push(`${where}: ${m.notes.length} notes but ${m.beats.length} beats`);
+  if (!KEY_RE.test(m.key)) errs.push(`${where}: key "${m.key}" must look like "D major" / "A minor"`);
+  const [num, den] = m.meter.split("/").map(Number);
+  const bar = num * (4 / den); // in quarter-note beats
+  const total = m.beats.reduce((a, b) => a + b, 0) - m.pickup;
+  // a pickup is usually balanced by a short last bar; accept either a whole number of bars
+  // or whole bars minus the pickup
+  const ok = (x: number) => Math.abs(x / bar - Math.round(x / bar)) < 1e-6;
+  if (!ok(total) && !ok(total + m.pickup)) errs.push(`${where}: ${total} beats after the pickup is not a whole number of ${m.meter} bars`);
+  for (const n of m.notes) {
+    if (n === "r") continue;
+    try {
+      parseNote(n);
+    } catch {
+      errs.push(`${where}: bad note ${n}`);
+    }
+  }
+  return errs;
+}
+
+export function validateProjects(projects: Project[], lessonIds: Set<string>): string[] {
+  const errs: string[] = [];
+  const ids = new Set<string>();
+  const prefix = { composition: "PC", lyrics: "PL", vocal: "PV", byear: "PE" } as const;
+  for (const p of projects) {
+    if (ids.has(p.id)) errs.push(`duplicate project id ${p.id}`);
+    ids.add(p.id);
+    if (!p.id.startsWith(prefix[p.kind])) errs.push(`${p.id}: id prefix must be ${prefix[p.kind]} for ${p.kind}`);
+    for (const pr of p.prereqs) if (!lessonIds.has(pr)) errs.push(`${p.id}: unknown prereq ${pr}`);
+    const rid = new Set<string>();
+    for (const c of p.rubric) {
+      if (rid.has(c.id)) errs.push(`${p.id}: duplicate rubric id ${c.id}`);
+      rid.add(c.id);
+    }
+    if (p.kind === "composition" && !KEY_RE.test(p.composition.key)) errs.push(`${p.id}: key "${p.composition.key}" must look like "C major"`);
+    if (p.kind === "composition" && p.composition.chords && p.composition.chords.length !== p.composition.bars) errs.push(`${p.id}: ${p.composition.chords.length} chords for ${p.composition.bars} bars`);
+    if (p.kind === "vocal" || p.kind === "byear") errs.push(...validateMelody(p.melody, p.id));
+  }
   return errs;
 }

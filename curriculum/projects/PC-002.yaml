@@ -1,0 +1,128 @@
+id: PC-002
+kind: composition
+order: 5
+title: {en: "A melody over a chord progression", sr: "Melodija nad zadatim akordima"}
+minutes: 75
+prereqs: [T-012, T-014, K-008]
+composition:
+  key: G major
+  meter: 4/4
+  bars: 8
+  range: [D4, E5]
+  chords: [I, IV, I, V, I, IV, V, I]
+  rules: [bars, key, range, half-cadence, cadence, leaps, augmented, rhythm]
+brief:
+  en: |
+    Write an **8-bar melody in G major, 4/4, over this progression**, one chord per bar:
+
+    | bar | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | chord | I | IV | I | V | I | IV | V | I |
+    | notes | G B D | C E G | G B D | D F# A | G B D | C E G | D F# A | G B D |
+
+    It is again a **question and answer**: bar 4 is on V (a **half cadence**, the comma) and
+    bars 7–8 are **V → I** (an **authentic cadence**, the full stop).
+
+    ### The idea
+
+    - **Chord tones on the strong beats.** Beats 1 and 3 should usually carry a note of that
+      bar's chord. That is what makes a melody sound like it *belongs* to the harmony.
+    - **Passing and neighbour notes in between.** On the weak beats and on eighths you are free
+      to use other scale notes, as long as they move by step: from a chord tone, through a
+      non-chord tone, to the next chord tone (**passing note**), or out a step and back
+      (**neighbour note**).
+    - **Hear the chord change.** When the chord changes, a melody note that moves to the nearest
+      note of the new chord sounds smooth (e.g. B over I → C over IV: a half step). Holding a note
+      that belongs to both chords (G over I → G over IV) is smooth too.
+    - **Bar 7 (V):** F#, the **leading tone**, wants to rise to G. Putting F# in bar 7 and G on
+      beat 1 of bar 8 gives the strongest ending. Or come down from A to G (2 → 1).
+    - Reuse a motif, as in the last composition: bars 5–6 can start like bars 1–2.
+    - **Range: D4 to E5.**
+
+    ### Practical tips
+
+    - Play the progression with the left hand (root position or the smooth voicings from K-008)
+      and improvise right-hand lines over it for a few minutes before you fix anything.
+    - First choose one chord tone per bar (a "skeleton" of 8 notes, moving mostly by step),
+      then decorate it with passing and neighbour notes.
+    - Sing it without the piano. If it only makes sense with the chords under it, it is not yet
+      a melody.
+    - **Enter only the melody** (one note at a time), by recording on the piano with the
+      metronome or by typing ABC. The progression is given, you do not enter it.
+
+    ### How it is graded
+
+    - **Rule checks (half):** 8 full bars of 4/4, only G-major notes (F#, not F), range D4–E5,
+      bar 4 ends on a V-chord note, last note G, no augmented leaps (watch **C–F#**, a
+      tritone), leaps under control, sensible rhythm.
+    - **Critique (half):** a reviewer (AI) scores the criteria below 0–4, including how well
+      the melody fits the chords, and suggests what to try next.
+  sr: |
+    Napiši **melodiju od 8 taktova u G-duru, 4/4, nad ovom harmonskom progresijom**, jedan
+    akord po taktu:
+
+    | takt | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | akord | I | IV | I | V | I | IV | V | I |
+    | tonovi | G H D | C E G | G H D | D Fis A | G H D | C E G | D Fis A | G H D |
+
+    Opet je to **pitanje i odgovor**: 4. takt je na V (**polukadenca**, zarez), a taktovi
+    7–8 su **V → I** (**autentična kadenca**, tačka).
+
+    ### Ideja
+
+    - **Akordski tonovi na jakim dobama.** Na 1. i 3. dobi obično treba da bude ton akorda tog
+      takta. Zbog toga melodija zvuči kao da *pripada* harmoniji.
+    - **Prolaznice i skretnice između.** Na slabim dobama i osminama slobodno koristi druge
+      tonove lestvice, ali korakom: od akordskog tona, preko neakordskog, do sledećeg
+      akordskog (**prolazni ton**, *prolaznica*), ili korak u stranu pa nazad (**skretni ton**, *skretnica*).
+    - **Čuj promenu akorda.** Kad se akord promeni, glatko zvuči ton melodije koji pređe na
+      najbliži ton novog akorda (npr. H nad I → C nad IV: polustepen). Glatko zvuči i ton koji
+      pripada oba akorda (G nad I → G nad IV).
+    - **Takt 7 (V):** Fis, **vođica**, želi da ide naviše u G. Fis u 7. taktu i G na prvoj dobi
+      8. takta daju najjači završetak. Ili siđi sa A na G (2 → 1).
+    - Iskoristi motiv kao u prošloj kompoziciji: taktovi 5–6 mogu da počnu kao taktovi 1–2.
+    - **Opseg: D4 do E5.**
+
+    ### Praktični saveti
+
+    - Sviraj progresiju levom rukom (osnovni položaj ili glatko vođenje glasova iz K-008) i
+      nekoliko minuta improvizuj desnom rukom pre nego što išta fiksiraš.
+    - Prvo izaberi po jedan akordski ton u svakom taktu („skelet” od 8 tonova, uglavnom
+      postupno), pa ga ukrasi prolaznim i skretnim tonovima.
+    - Otpevaj je bez klavira. Ako ima smisla samo uz akorde ispod, još nije melodija.
+    - **Unosiš samo melodiju** (jedan po jedan ton), snimanjem na klaviru uz metronom ili
+      kucanjem u ABC zapisu. Progresija je zadata, nju ne unosiš.
+
+    ### Kako se ocenjuje
+
+    - **Provera pravila (pola):** 8 punih taktova 4/4, samo tonovi G-dura (Fis, ne F), opseg
+      D4–E5, 4. takt se završava tonom V akorda, poslednji ton G, bez povećanih skokova (pazi
+      na **C–Fis**, tritonus), skokovi pod kontrolom, smislen ritam.
+    - **Kritika (pola):** recenzent (AI) ocenjuje kriterijume ispod od 0 do 4, uključujući
+      koliko melodija odgovara akordima, i predlaže šta dalje da probaš.
+rubric:
+  - id: harmony-fit
+    weight: 2
+    label: {en: "Fits the chords", sr: "Slaganje sa akordima"}
+    top:
+      en: "Strong beats land on chord tones of each bar's chord; every non-chord tone is a clear passing or neighbour note; the F# in bar 7 (or 2 → 1) makes the final cadence unmistakable."
+      sr: "Jake dobe padaju na tonove akorda svakog takta; svaki neakordski ton je jasan prolazni ili skretni ton; Fis u 7. taktu (ili 2 → 1) čini završnu kadencu nepogrešivom."
+  - id: phrase-structure
+    weight: 1
+    label: {en: "Question and answer", sr: "Pitanje i odgovor"}
+    top:
+      en: "Bar 4 sounds like a comma on V, bars 5–8 refer back to the opening and close firmly on G."
+      sr: "4. takt zvuči kao zarez na V, taktovi 5–8 se vraćaju na početak i čvrsto zatvaraju na G."
+  - id: motif
+    weight: 1
+    label: {en: "Motif and variation", sr: "Motiv i varijacija"}
+    top:
+      en: "A recognisable motif returns, adapted to the changing chords (same rhythm, notes adjusted to fit), so the melody sounds like one idea rather than a walk through chord tones."
+      sr: "Prepoznatljiv motiv se vraća, prilagođen akordima (isti ritam, tonovi prilagođeni harmoniji), pa melodija zvuči kao jedna ideja, a ne kao šetnja po akordskim tonovima."
+  - id: contour
+    weight: 1
+    label: {en: "Melodic shape and singability", sr: "Melodijska linija i pevljivost"}
+    top:
+      en: "Mainly stepwise with a few purposeful leaps, one high point in the second half, comfortable to sing without the piano."
+      sr: "Uglavnom postupno uz nekoliko smislenih skokova, jedan vrhunac u drugoj polovini, udobno se peva i bez klavira."

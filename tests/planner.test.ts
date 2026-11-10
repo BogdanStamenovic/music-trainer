@@ -124,3 +124,23 @@ describe("no piano today", () => {
     expect(needsPiano({ id: "T-001-1", type: "mcq", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], options: ["a", "b"], answer: 0 })).toBe(false);
   });
 });
+
+describe("weekly test v2", () => {
+  const mcq = (uuid: string, date: string, lesson: string, right: boolean) =>
+    submit({ uuid, date, context: "lesson", lessonId: lesson, exerciseId: `${lesson}-1`, seed: "x", responses: [{ itemId: `${lesson}-1#0`, response: { kind: "mcq", choice: right ? 0 : 1 } }] });
+  it("this week's lessons (most practised first) plus items failed earlier", async () => {
+    const { weeklyTest, isoWeek } = await import("@/lib/server/planner");
+    expect(isoWeek("2026-11-15")).toEqual({ week: "2026-W46", monday: "2026-11-09", sunday: "2026-11-15" });
+    expect(isoWeek("2027-01-01").week).toBe("2026-W53");
+    mcq("w0", "2026-11-03", "T-003", false); // last week, failed -> SRS lapse
+    mcq("w1", "2026-11-10", "T-001", true);
+    mcq("w2", "2026-11-11", "T-002", true);
+    mcq("w3", "2026-11-12", "T-002", true);
+    const t = weeklyTest("2026-11-15").exercises;
+    expect(t).toEqual([
+      { exerciseId: "T-002-1", lessonId: "T-002", source: "week" },
+      { exerciseId: "T-001-1", lessonId: "T-001", source: "week" },
+      { exerciseId: "T-003-1", lessonId: "T-003", source: "review" },
+    ]);
+  });
+});

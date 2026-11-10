@@ -29,6 +29,15 @@ const MIGRATIONS: string[] = [
      params TEXT NOT NULL, server_analysis TEXT, browser_analysis TEXT, status TEXT NOT NULL, error TEXT);
    CREATE INDEX recordings_created ON recordings(created_at);
    CREATE TABLE voice_days (date TEXT PRIMARY KEY, state TEXT NOT NULL, at INTEGER NOT NULL);`,
+  // 3: weekly projects and the background job queue (claude -p reviews)
+  `CREATE TABLE projects (id TEXT PRIMARY KEY, week TEXT NOT NULL, project_id TEXT NOT NULL, kind TEXT NOT NULL,
+     assigned_at INTEGER NOT NULL, status TEXT NOT NULL, locale TEXT, submission TEXT, submitted_at INTEGER,
+     auto TEXT, self TEXT, ai TEXT, ai_status TEXT, score REAL, final INTEGER NOT NULL DEFAULT 0, updated_at INTEGER NOT NULL);
+   CREATE UNIQUE INDEX projects_week ON projects(week);
+   CREATE TABLE jobs (id INTEGER PRIMARY KEY, kind TEXT NOT NULL, ref_id TEXT NOT NULL, payload TEXT NOT NULL,
+     status TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0, last_error TEXT, result TEXT,
+     created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL, next_run_at INTEGER NOT NULL);
+   CREATE INDEX jobs_due ON jobs(status, next_run_at);`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;
