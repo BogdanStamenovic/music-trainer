@@ -178,3 +178,13 @@ describe("smooth voicing", () => {
   });
 });
 import { toMidi as toM } from "@/lib/music/pitch";
+
+import { checkAbc } from "@/lib/curriculum/validate";
+describe("ABC validation", () => {
+  it("passes clean ABC with matching lyrics; flags bad syntax and syllable mismatches", () => {
+    expect(checkAbc("X:1\nM:4/4\nL:1/4\nK:C\nC D E F | G4 |]\nw: Twin-kle twin-kle star", "t")).toEqual([]);
+    expect(checkAbc("X:1\nK:C\nC D ^^^ E |]", "t").join()).toMatch(/Unknown character/);
+    expect(checkAbc("X:1\nM:4/4\nL:1/4\nK:C\nC D E F | G4 |]\nw: Twin-kle twin-kle", "t").join()).toMatch(/4 syllables for 5 notes/);
+    expect(checkAbc("X:1\nM:4/4\nL:1/4\nK:C\nC D E F | G4 |]\nw: Twin-kle_ twin-kle", "t")).toEqual([]); // explicit hold: trusted
+  });
+});

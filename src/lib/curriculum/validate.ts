@@ -1,6 +1,7 @@
 import type { Lesson, Check, Exercise, Placement, Project, Melody } from "./schema";
 import { Check as CheckSchema } from "./schema";
 import type { z } from "zod";
+import abcjs from "abcjs";
 import { derive, generateItems } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
@@ -140,6 +141,7 @@ export function validateLessons(lessons: Lesson[]): string[] {
       if (!ex.id.startsWith(l.id + "-")) errs.push(`${ex.id}: exercise id must start with ${l.id}-`);
       errs.push(...checkExercise(ex, ex.id));
     }
+    for (const b of lessonAbc(l)) errs.push(...checkAbc(b.abc, b.where));
   }
   for (const l of lessons) for (const p of l.prereqs) if (!ids.has(p)) errs.push(`${l.id}: unknown prereq ${p}`);
   // Voice safety (SPEC): distortion work unlocks only after support + onset units, and
@@ -228,4 +230,53 @@ export function validateProjects(projects: Project[], lessonIds: Set<string>): s
     if (p.kind === "vocal" || p.kind === "byear") errs.push(...validateMelody(p.melody, p.id));
   }
   return errs;
+}
+
+// ---------- ABC notation ----------
+/**
+ * Parse an ABC block exactly as the app renders it (abcjs). Errors: any parser warning
+ * (unknown characters, bad syntax), and lyric lines (w:) that do not give one syllable
+ * per note. Lines using explicit holds (_ or *) are trusted, not counted.
+ */
+export function checkAbc(abc: string, where: string): string[] {
+  const errs: string[] = [];
+  let tune;
+  try {
+    tune = abcjs.parseOnly(abc, {})[0];
+  } catch (e) {
+    return [`${where}: ABC does not parse: ${(e as Error).message}`];
+  }
+  if (!tune) return [`${where}: ABC has no tune`];
+  for (const w of tune.warnings ?? []) errs.push(`${where}: ABC: ${String(w).replace(/<[^>]+>/g, "")}`);
+  if (/^w:/m.test(abc) && !/^w:.*[_*]/m.test(abc)) {
+    let notes = 0;
+    let sung = 0;
+    for (const line of tune.lines ?? [])
+      for (const staff of (line as { staff?: { voices: { el_type: string; rest?: unknown; lyric?: unknown }[][] }[] }).staff ?? [])
+        for (const voice of staff.voices)
+          for (const el of voice)
+            if (el.el_type === "note" && !el.rest) {
+              notes++;
+              if (el.lyric) sung++;
+            }
+    if (sung && sung !== notes) errs.push(`${where}: lyrics give ${sung} syllables for ${notes} notes`);
+  }
+  return errs;
+}
+
+/** All ABC in a lesson: ```abc fences in both explanations, `abc` fields, compose given/example. */
+export function lessonAbc(l: Lesson): { where: string; abc: string }[] {
+  const out: { where: string; abc: string }[] = [];
+  for (const lang of ["en", "sr"] as const) {
+    let i = 0;
+    for (const m of l.explain[lang].matchAll(/```abc\n([\s\S]*?)```/g)) out.push({ where: `${l.id} explain.${lang}#${++i}`, abc: m[1] });
+  }
+  for (const ex of l.exercises) {
+    if (ex.abc) out.push({ where: `${ex.id}.abc`, abc: ex.abc });
+    if (ex.type === "compose") {
+      if (ex.given) out.push({ where: `${ex.id}.given`, abc: ex.given });
+      if (ex.example) out.push({ where: `${ex.id}.example`, abc: ex.example });
+    }
+  }
+  return out;
 }
