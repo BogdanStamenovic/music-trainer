@@ -131,3 +131,25 @@ describe("rhythm cells, triplets, written rhythm timing", () => {
     expect(grade(it0, { kind: "midi", events: even }).score).toBeLessThan(0.95);
   });
 });
+
+import { fitToRange } from "@/lib/curriculum/items";
+describe("voice engine fixes", () => {
+  it("sing-phrase: rests in the layout, rhythm in playback, written spelling kept", () => {
+    const ex = Exercise.parse({ id: "V-097-1", type: "sing-phrase", prompt: { en: "p", sr: "p" }, notes: ["Bb3", "r", "C4", "D4"], beats: [1, 1, 1, 2], tempo: 80 });
+    const it0 = generateItems(ex, "s", undefined, { voiceRange: [55, 67] })[0] as { targets: number[]; layout: { midi?: number; beats: number }[]; play: { notes: number[]; durations: number[] }; noteLabels: { en: string } };
+    expect(it0.targets.length).toBe(3);
+    expect(it0.layout.map((e) => e.midi == null)).toEqual([false, true, false, false]);
+    expect(it0.play.durations).toEqual([1, 1, 1, 2]);
+    expect(it0.play.notes[1]).toBe(-1);
+    expect(it0.noteLabels.en).toMatch(/^Bb/);
+  });
+  it("fitRange low/high place the phrase towards that end", () => {
+    expect(fitToRange([60, 62, 64], [45, 72], "low")).toEqual([48, 50, 52]);
+    expect(fitToRange([60, 62, 64], [45, 72], "high")).toEqual([60, 62, 64]);
+    expect(fitToRange([48, 50], [45, 72], "high")).toEqual([60, 62]);
+  });
+  it("octave pitch-match does not fail on a range narrower than an octave", () => {
+    const ex = Exercise.parse({ id: "V-097-2", type: "generated", prompt: { en: "p", sr: "p" }, count: 3, gen: { kind: "pitch-match", intervals: ["P8"] } });
+    expect(generateItems(ex, "s", undefined, { voiceRange: [50, 58] }).length).toBe(3);
+  });
+});

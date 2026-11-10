@@ -50,7 +50,8 @@ export function SingInput({ item, meta, onSubmit, disabled }: { item: SingItem; 
   const beatS = item.tempo ? 60 / item.tempo : 1;
   const expected = item.layout ? item.layout.reduce((a, e) => a + e.beats, 0) * beatS : item.beats ? item.beats.reduce((a, b) => a + b, 0) * beatS : item.sustain ?? 2;
   const go = async () => {
-    const blob = await rec.start(Math.min(30, expected + 4));
+    // voice-score accepts up to 60 s
+    const blob = await rec.start(Math.min(58, expected + 4));
     if (!blob) return;
     setUrl(URL.createObjectURL(blob));
     const params = {

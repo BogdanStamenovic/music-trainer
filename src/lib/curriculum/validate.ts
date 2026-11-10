@@ -1,12 +1,15 @@
 import type { Lesson, Check, Exercise, Placement, Project, Melody } from "./schema";
+import { Check as CheckSchema } from "./schema";
+import type { z } from "zod";
 import { derive, generateItems } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
-import { scale, keySignature, romanNumeral, identifyChord, triadQualityOf, seventhQualityOf } from "../music/harmony";
+import { scale, keySignature, romanNumeral, romanNumeral7, CHORDS } from "../music/harmony";
 import { syllables } from "../projects";
 
 /** Run one content assertion; returns an error message or null. */
-export function runCheck(c: Check): string | null {
+export function runCheck(input: z.input<typeof CheckSchema>): string | null {
+  const c: Check = CheckSchema.parse(input);
   if ("interval" in c) {
     const got = ivStr(intervalBetween(parseNote(c.interval.from), parseNote(c.interval.to)));
     return got === c.interval.is ? null : `interval ${c.interval.from}-${c.interval.to} is ${got}, content says ${c.interval.is}`;
@@ -16,27 +19,45 @@ export function runCheck(c: Check): string | null {
     return got === c.semitones.is ? null : `${c.semitones.from}-${c.semitones.to} is ${got} semitones, content says ${c.semitones.is}`;
   }
   if ("chord" in c) {
+    // Judged by SPELLING from the stated root (not by pitch-class identification, which
+    // cannot tell Dm7 from F6): every note is a chord member above the root, the member
+    // set matches the quality (shell voicings without the 5th allowed for 7th chords), and
+    // the lowest note gives the inversion.
     const notes = c.chord.notes.map((n) => parseNote(n));
-    const id = identifyChord(notes.map(toMidi));
-    if (!id) return `chord ${c.chord.notes.join(" ")} not identifiable`;
-    const rootPc = (toMidi(parseNote(c.chord.root, 4)) % 12 + 12) % 12;
-    if (id.rootPc !== rootPc || id.quality !== c.chord.quality || id.inversion !== c.chord.inversion)
-      return `chord ${c.chord.notes.join(" ")} is root pc ${id.rootPc} ${id.quality} inv ${id.inversion}, content says ${c.chord.root} ${c.chord.quality} inv ${c.chord.inversion}`;
-    // spelling must also be tertian from the stated root
     const root = notes.find((n) => pcName(n) === c.chord.root);
     if (!root) return `chord ${c.chord.notes.join(" ")} does not contain spelled root ${c.chord.root}`;
     const steps = (n: { octave: number; letter: number }) => n.octave * 7 + n.letter;
-    // doubled notes (A2 A3 C4 E4) are the same chord member: keep one of each spelled pitch class
-    const uniq = notes.filter((n, i) => n !== root && n.letter * 10 + n.acc !== root.letter * 10 + root.acc && notes.findIndex((m) => m.letter === n.letter && m.acc === n.acc) === i);
-    const up = [root, ...uniq.map((n) => {
+    const members = new Set<string>();
+    for (const n of notes) {
+      if (n.letter === root.letter && n.acc === root.acc) continue;
       const m = { ...n };
       while (steps(m) <= steps(root)) m.octave++;
       while (steps(m) - steps(root) > 7) m.octave--;
-      return m;
-    })].sort((a, b) => steps(a) - steps(b));
-    const q = up.length === 3 ? triadQualityOf(up) : seventhQualityOf(up);
-    if (q !== c.chord.quality) return `chord ${c.chord.notes.join(" ")} spelled as ${q ?? "non-tertian"}, content says ${c.chord.quality}`;
-    return null;
+      let iv: string;
+      try {
+        iv = ivStr(intervalBetween(root, m));
+      } catch {
+        return `chord ${c.chord.notes.join(" ")}: ${noteStr(n)} is not spellable above ${c.chord.root}`;
+      }
+      // 9ths are written as 2nds within the octave
+      members.add(iv.replace(/^(m|M|A)2$/, "$19").replace(/^P4$/, "P4"));
+    }
+    const shape = CHORDS[c.chord.quality].slice(1).map((x) => x);
+    const want = new Set<string>(shape);
+    const got = [...members];
+    const isShell = c.chord.quality.includes("7") && !members.has("P5") && !members.has("d5") && !members.has("A5") && shape.filter((x) => !/5$/.test(x)).every((x) => members.has(x));
+    if (!(got.every((g) => want.has(g)) && (shape.every((x) => members.has(x)) || isShell)))
+      return `chord ${c.chord.notes.join(" ")} spelled from ${c.chord.root} has ${got.join(",")}, a ${c.chord.quality} chord needs ${shape.join(",")}`;
+    const bass = notes.reduce((a, b) => (toMidi(a) <= toMidi(b) ? a : b));
+    const order: string[] = ["P1", ...shape];
+    let inv = 0;
+    if (!(bass.letter === root.letter && bass.acc === root.acc)) {
+      const b = { ...bass };
+      while (steps(b) <= steps(root)) b.octave++;
+      while (steps(b) - steps(root) > 7) b.octave--;
+      inv = order.indexOf(ivStr(intervalBetween(root, b)).replace(/^(m|M|A)2$/, "$19"));
+    }
+    return inv === c.chord.inversion ? null : `chord ${c.chord.notes.join(" ")} is in inversion ${inv}, content says ${c.chord.inversion}`;
   }
   if ("scale" in c) {
     const got = scale(parseNote(c.scale.tonic), c.scale.type).map((n) => pcName(n));
@@ -47,7 +68,7 @@ export function runCheck(c: Check): string | null {
     return got === c.keysig.is ? null : `${c.keysig.key} ${c.keysig.mode} signature is ${got}, content says ${c.keysig.is}`;
   }
   if ("roman" in c) {
-    const got = romanNumeral(parseNote(c.roman.key), c.roman.type, c.roman.degree);
+    const got = c.roman.seventh ? romanNumeral7(parseNote(c.roman.key), c.roman.type, c.roman.degree) : romanNumeral(parseNote(c.roman.key), c.roman.type, c.roman.degree);
     return got === c.roman.is ? null : `degree ${c.roman.degree} in ${c.roman.key} ${c.roman.type} is ${got}, content says ${c.roman.is}`;
   }
   if ("syllables" in c) {
@@ -71,6 +92,7 @@ function checkExercise(ex: Exercise, where: string): string[] {
   if (ex.type === "mcq" && ex.play?.durations && ex.play.notes && ex.play.durations.length !== ex.play.notes.length) errs.push(`${where}: play.durations length != notes length`);
   if (ex.type === "sing-phrase" && !ex.notes && !ex.derive) errs.push(`${where}: sing-phrase needs notes or derive`);
   if (ex.type === "sing-phrase" && ex.beats && ex.notes && ex.beats.length !== ex.notes.length) errs.push(`${where}: beats length != notes length`);
+  if (ex.type === "sing-phrase" && ex.notes && ex.notes.every((n) => n === "r")) errs.push(`${where}: a phrase of only rests`);
   if (ex.type === "mcq" && ex.answer >= ex.options.length) errs.push(`${where}: answer index ${ex.answer} out of range`);
   if ((ex.type === "midi-play" || ex.type === "midi-echo" || ex.type === "notation-input") && !ex.derive && !ex.expect && !("expectChords" in ex && ex.expectChords))
     errs.push(`${where}: needs expect or derive`);

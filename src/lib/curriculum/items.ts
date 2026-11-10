@@ -93,12 +93,12 @@ export interface GenCtx {
 }
 
 /** Move a group of notes by whole octaves so it sits inside the comfortable range (best effort). */
-export function fitToRange(ms: number[], range?: [number, number]): number[] {
-  if (!range || !ms.length) return ms;
+export function fitToRange(ms: number[], range?: [number, number], where: boolean | "low" | "high" = true): number[] {
+  if (!range || !ms.length || where === false) return ms;
   const [lo, hi] = range;
-  const mid = (lo + hi) / 2;
+  const target = where === "low" ? lo + (Math.max(...ms) - Math.min(...ms)) / 2 : where === "high" ? hi - (Math.max(...ms) - Math.min(...ms)) / 2 : (lo + hi) / 2;
   const center = (Math.min(...ms) + Math.max(...ms)) / 2;
-  let shift = Math.round((mid - center) / 12) * 12;
+  let shift = Math.round((target - center) / 12) * 12;
   // prefer a shift that keeps every note inside the range, if one exists
   for (const k of [shift, shift - 12, shift + 12]) {
     if (Math.min(...ms) + k >= lo && Math.max(...ms) + k <= hi) {
@@ -107,6 +107,10 @@ export function fitToRange(ms: number[], range?: [number, number]): number[] {
     }
   }
   return ms.map((m) => m + shift);
+}
+/** Labels that keep the written spelling (Bb stays Bb) after an octave shift. */
+function spelledLabels(written: Note[], shifted: number[]): Loc {
+  return join(written.map((n, i) => nno({ ...n, octave: n.octave + Math.round((shifted[i] - toMidi(n)) / 12) })));
 }
 const midiLabels = (ms: number[]): Loc => join(ms.map((m) => nno(midiToNote(m, false))));
 
@@ -290,14 +294,31 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
     case "practice":
       return { ...base, kind: "practice", minutes: ex.minutes, play: playSpec(ex.play) };
     case "sing-pitch": {
-      const ms = ex.fitRange ? fitToRange(ex.notes.map((n) => toMidi(parseNote(n))), ctx.voiceRange) : ex.notes.map((n) => toMidi(parseNote(n)));
-      return { ...base, kind: "sing", targets: ms, sustain: ex.sustain, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: midiLabels(ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: 50 } : undefined };
+      const written = ex.notes.map((n) => parseNote(n));
+      const ms = fitToRange(written.map(toMidi), ctx.voiceRange, ex.fitRange);
+      return { ...base, kind: "sing", targets: ms, sustain: ex.sustain, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: spelledLabels(written, ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: 50 } : undefined };
     }
     case "sing-phrase": {
-      const raw = ex.notes ? ex.notes.map((n) => toMidi(parseNote(n))) : derive(ex.derive!)[0].map(toMidi);
-      const ms = ex.fitRange ? fitToRange(raw, ctx.voiceRange) : raw;
-      const beats = ex.beats ?? ms.map(() => 1);
-      return { ...base, kind: "sing", targets: ms, beats, tempo: ex.tempo, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: midiLabels(ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: ex.tempo } : undefined };
+      // rests ("r") are kept in the layout: voice-score note indexes count them
+      const seq: (Note | null)[] = ex.notes ? ex.notes.map((n) => (n === "r" ? null : parseNote(n))) : derive(ex.derive!)[0];
+      const written = seq.filter((n): n is Note => n !== null);
+      const ms = fitToRange(written.map(toMidi), ctx.voiceRange, ex.fitRange);
+      const allBeats = ex.beats ?? seq.map(() => 1);
+      let k = 0;
+      const layout = seq.map((n, i) => (n ? { midi: ms[k++], beats: allBeats[i] } : { beats: allBeats[i] }));
+      const beats = layout.filter((e) => e.midi != null).map((e) => e.beats);
+      return {
+        ...base,
+        kind: "sing",
+        targets: ms,
+        beats,
+        tempo: ex.tempo,
+        tolerance: ex.tolerance,
+        octaveAgnostic: ex.octaveAgnostic,
+        noteLabels: spelledLabels(written, ms),
+        layout: seq.some((n) => n === null) ? layout : undefined,
+        play: ex.reference ? { mode: "melodic", notes: layout.map((e) => e.midi ?? -1), durations: layout.map((e) => e.beats), tempo: ex.tempo } : undefined,
+      };
     }
     case "voice-range":
       return { ...base, kind: "range" };
@@ -740,7 +761,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         play: { mode: "melodic", notes: durs.map(() => pitch), durations: durs, tempo: g.tempo },
         abc: g.showAbc ? abcRhythm(durs, g.meter) : undefined,
         prompt: L(`Listen, then tap the rhythm back on any key (♩=${g.tempo}).`, `Slušaj, pa otkucaj ritam na bilo kojoj dirki (♩=${g.tempo}).`),
-        noteLabels: L(durs.join(" "), durs.join(" ")),
+        noteLabels: L(durs.map(fmtBeats).join(" "), durs.map(fmtBeats).join(" ")),
       };
     }
     case "progression-ear": {
@@ -777,6 +798,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         }
       const keyLoc = keyName(key, g.type, g.type !== "natural-minor").nom;
       const scLoc = keyName(scaleTonic, g.scale, true).nom;
+      // a blues (dominant 7ths on I/IV/V) is not "in C major": name only the tonal centre
+      const dominantBlues = g.numerals.some((n) => /^[b#]?(I|IV)7$/.test(n));
       return {
         ...base,
         kind: "midi",
@@ -789,8 +812,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         improv: { scale: sc, chords: chordsPc, beatsPerChord: beat, loops: g.loops, tonicPc: pitchClassOf(key) },
         play: { mode: "chords", chords: all, durations, tempo: g.tempo },
         prompt: L(
-          `Improvise a melody over ${g.numerals.join(" – ")} in ${keyLoc.en} (×${g.loops}). Use the ${scLoc.en} scale; aim for chord tones on the first beat of each chord.`,
-          `Improvizuj melodiju preko ${g.numerals.join(" – ")} u ${keyLoc.sr} (×${g.loops}). Koristi lestvicu ${scLoc.sr}; na prvu dobu svakog akorda ciljaj ton akorda.`,
+          `Improvise a melody over ${g.numerals.join(" – ")}${dominantBlues ? ` (key of ${pcName(key)})` : ` in ${keyLoc.en}`} (×${g.loops}). Notes: ${scLoc.en.replace(/ scale$/, "")} scale; aim for chord tones on the first beat of each chord.`,
+          `Improvizuj melodiju preko ${g.numerals.join(" – ")}${dominantBlues ? ` (tonalni centar ${noteNameSr(key)})` : ` u ${keyName(key, g.type, g.type !== "natural-minor").loc.sr}`} (×${g.loops}). Tonovi: ${scLoc.sr}; na prvu dobu svakog akorda ciljaj ton akorda.`,
         ),
         noteLabels: L(g.numerals.join(" "), g.numerals.join(" ")),
       };
@@ -808,7 +831,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
           } catch {
             continue;
           }
-          if (toMidi(top) > hi || Math.abs(top.acc) > 1) continue;
+          // a stored range narrower than the interval: after 100 tries, allow the top to exceed it
+          if ((toMidi(top) > hi && t < 100) || Math.abs(top.acc) > 1) continue;
           const ms = [toMidi(root), toMidi(top)];
           const ivl = ivLoc(iv);
           return {
@@ -904,6 +928,15 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
 }
 
 /** Items for one exercise. `seed` must be stored with the attempt for re-grading. */
+/** 0.5 -> "1/2", 0.333.. -> "1/3", 1.5 -> "3/2" (beats, for labels). */
+function fmtBeats(d: number): string {
+  for (const den of [1, 2, 3, 4, 6, 8]) {
+    const num = d * den;
+    if (Math.abs(num - Math.round(num)) < 1e-6) return den === 1 ? String(Math.round(num)) : `${Math.round(num)}/${den}`;
+  }
+  return d.toFixed(2);
+}
+
 function pitchClassOf(n: Note): number {
   return ((toMidi(n) % 12) + 12) % 12;
 }

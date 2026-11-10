@@ -28,10 +28,10 @@ export type Derive = z.infer<typeof Derive>;
 /** Assertions about static content, executed by tests/curriculum.test.ts. */
 export const Check = z.union([
   z.object({ interval: z.object({ from: NoteS, to: NoteS, is: IvS }) }),
-  z.object({ chord: z.object({ notes: z.array(NoteS).min(3), root: PcS, quality: ChordQ, inversion: z.number().int().default(0) }) }),
+  z.object({ chord: z.object({ notes: z.array(NoteS).min(2), root: PcS, quality: ChordQ, inversion: z.number().int().default(0) }) }),
   z.object({ scale: z.object({ tonic: PcS, type: ScaleType, is: z.array(PcS) }) }),
   z.object({ keysig: z.object({ key: PcS, mode: Mode.default("major"), is: z.number().int() }) }),
-  z.object({ roman: z.object({ key: PcS, type: ScaleType.default("major"), degree: z.number().int().min(1).max(7), is: z.string() }) }),
+  z.object({ roman: z.object({ key: PcS, type: ScaleType.default("major"), degree: z.number().int().min(1).max(7), is: z.string(), seventh: z.boolean().default(false) }) }),
   z.object({ semitones: z.object({ from: NoteS, to: NoteS, is: z.number().int() }) }),
   // Serbian only: vowels + syllabic r is reliable; English syllables need a dictionary
   z.object({ syllables: z.object({ text: z.string().min(1), lang: z.literal("sr"), is: z.number().int().min(1) }) }),
@@ -91,10 +91,12 @@ const SingCommon = {
   tolerance: z.number().min(10).max(200).default(50), // cents; full credit inside, zero at 3x
   octaveAgnostic: z.boolean().default(true),
   reference: z.boolean().default(true), // play the target(s) before recording
-  fitRange: z.boolean().default(true), // move written notes into the stored comfortable range (by octaves)
+  // move written notes into the stored comfortable range by octaves: true = centred,
+  // "low"/"high" = towards that end (chest / head-voice work), false = as written
+  fitRange: z.union([z.boolean(), z.enum(["low", "high"])]).default(true),
 };
 export const SingPitch = z.object({ ...Base, type: z.literal("sing-pitch"), ...SingCommon, notes: z.array(NoteS).min(1), sustain: z.number().min(0).max(15).default(2) });
-export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(NoteS).optional(), derive: Derive.optional(), beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
+export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(z.union([NoteS, z.literal("r")])).optional() /* "r" = rest */, derive: Derive.optional(), beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
 /** Records a low glide and a high glide; stores the learner's range. */
 export const VoiceRange = z.object({ ...Base, type: z.literal("voice-range") });
 /** Fatigue/hoarseness check-in. Anything but "fine" ends voice work for the day. */

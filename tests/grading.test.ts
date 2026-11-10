@@ -8,10 +8,10 @@ describe("content checks catch wrong facts", () => {
     expect(runCheck({ interval: { from: "C4", to: "E4", is: "m3" } })).toMatch(/is M3/);
     expect(runCheck({ interval: { from: "C4", to: "E4", is: "M3" } })).toBeNull();
     expect(runCheck({ chord: { notes: ["E4", "G4", "C5"], root: "C", quality: "maj", inversion: 1 } })).toBeNull();
-    expect(runCheck({ chord: { notes: ["E4", "G4", "C5"], root: "C", quality: "maj", inversion: 0 } })).toMatch(/inv 1/);
-    expect(runCheck({ chord: { notes: ["C4", "Eb4", "G4"], root: "C", quality: "maj", inversion: 0 } })).toMatch(/min/);
+    expect(runCheck({ chord: { notes: ["E4", "G4", "C5"], root: "C", quality: "maj", inversion: 0 } })).toMatch(/inversion 1/);
+    expect(runCheck({ chord: { notes: ["C4", "Eb4", "G4"], root: "C", quality: "maj", inversion: 0 } })).toMatch(/needs M3,P5/);
     // enharmonic misspelling: C E Ab sounds like C aug but is not spelled as one
-    expect(runCheck({ chord: { notes: ["C4", "E4", "Ab4"], root: "C", quality: "aug", inversion: 0 } })).toMatch(/spelled/);
+    expect(runCheck({ chord: { notes: ["C4", "E4", "Ab4"], root: "C", quality: "aug", inversion: 0 } })).toMatch(/has M3,m6/);
     expect(runCheck({ scale: { tonic: "D", type: "major", is: ["D", "E", "Gb", "G", "A", "B", "Db"] } })).toMatch(/F#/);
     expect(runCheck({ keysig: { key: "Eb", mode: "major", is: -2 } })).toMatch(/-3/);
     expect(runCheck({ roman: { key: "C", type: "major", degree: 7, is: "vii°" } })).toBeNull();
@@ -106,5 +106,19 @@ describe("chord check with doubled notes", () => {
     expect(runCheck({ chord: { notes: ["A2", "A3", "C4", "E4"], root: "A", quality: "min", inversion: 0 } })).toBeNull();
     expect(runCheck({ chord: { notes: ["C3", "G3", "C4", "E4"], root: "C", quality: "maj", inversion: 0 } })).toBeNull();
     expect(runCheck({ chord: { notes: ["G2", "G3", "B3", "D4", "F4"], root: "G", quality: "7", inversion: 0 } })).toBeNull();
+  });
+});
+
+describe("chord checks by spelling", () => {
+  it("min7 vs 6 is decided by the stated root; shells and 9ths are fine", () => {
+    expect(runCheck({ chord: { notes: ["D3", "F3", "A3", "C4"], root: "D", quality: "min7", inversion: 0 } })).toBeNull();
+    expect(runCheck({ chord: { notes: ["F3", "A3", "C4", "D4"], root: "F", quality: "6", inversion: 0 } })).toBeNull();
+    expect(runCheck({ chord: { notes: ["G2", "B3", "F4"], root: "G", quality: "7", inversion: 0 } })).toBeNull(); // shell
+    expect(runCheck({ chord: { notes: ["C3", "E3", "G3", "Bb3", "D4"], root: "C", quality: "9", inversion: 0 } })).toBeNull();
+    expect(runCheck({ chord: { notes: ["F3", "A3", "C4", "D4"], root: "D", quality: "min7", inversion: 1 } })).toBeNull(); // Dm7/F
+    expect(runCheck({ chord: { notes: ["D3", "F3", "A3", "C#4"], root: "D", quality: "min7", inversion: 0 } })).toMatch(/needs/);
+  });
+  it("seventh roman check", () => {
+    expect(runCheck({ roman: { key: "C", type: "major", degree: 7, is: "viiø7", seventh: true } })).toBeNull();
   });
 });
