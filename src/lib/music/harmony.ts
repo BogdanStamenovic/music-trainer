@@ -85,8 +85,9 @@ const QUAL_NAMES: Record<ChordQuality, { en: string; sr: string }> = {
   sus4: { en: "suspended fourth", sr: "sus4 (kvarta umesto terce)" },
   sus2: { en: "suspended second", sr: "sus2 (sekunda umesto terce)" },
   "7sus4": { en: "dominant seventh sus4", sr: "dominantni septakord sus4" },
-  "6": { en: "major sixth", sr: "durski sekstakord (dodata seksta)" },
-  min6: { en: "minor sixth", sr: "molski akord s dodatom sekstom" },
+  // not "sekstakord": in Serbian that names a first-inversion triad
+  "6": { en: "major sixth (added 6th)", sr: "durski akord s dodatom sekstom" },
+  min6: { en: "minor sixth (added 6th)", sr: "molski akord s dodatom sekstom" },
 };
 export function qualityName(q: ChordQuality, locale: Locale): string {
   return QUAL_NAMES[q][locale];

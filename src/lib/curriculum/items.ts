@@ -206,6 +206,9 @@ function accCount(n: number, sharp: boolean): string {
 }
 const chordSr = (root: Note, q: ChordQuality) => `${noteNameSr(root)} ${qualityName(q, "sr")}${["maj", "min", "dim", "aug"].includes(q) ? " trozvuk" : ""}`;
 const INV_NAMES: Loc[] = [L("root position", "osnovni položaj"), L("1st inversion", "1. obrtaj (sekstakord)"), L("2nd inversion", "2. obrtaj (kvartsekstakord)"), L("3rd inversion", "3. obrtaj")];
+// seventh chords have their own inversion names (figured bass 65 / 43 / 42)
+const INV_NAMES_7: Loc[] = [L("root position", "osnovni položaj"), L("1st inversion (6/5)", "1. obrtaj (kvintsekstakord)"), L("2nd inversion (4/3)", "2. obrtaj (terckvartakord)"), L("3rd inversion (4/2)", "3. obrtaj (sekundakord)")];
+const invName = (q: ChordQuality, inv: number): Loc => (CHORDS[q].length >= 4 ? INV_NAMES_7 : INV_NAMES)[inv];
 
 export function derive(d: Derive): Note[][] {
   if ("chord" in d) return [chord(d.chord.root, d.chord.quality, d.chord.inversion)];
@@ -498,7 +501,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         if (notes.some((n) => Math.abs(n.acc) > 1)) continue;
         const sym = chordSymbol(root, q);
         const symSr = chordSr(root, q);
-        const invTxt = inv ? INV_NAMES[inv] : null;
+        const invTxt = inv ? invName(q, inv) : null;
         if (g.answer === "name")
           return {
             ...base,
