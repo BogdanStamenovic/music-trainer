@@ -4,7 +4,7 @@ order: 29
 title: {en: "Mix intro I: light \"nay\" and \"gee\"", sr: "Uvod u miks I: lagano „nej” i „gi”"}
 prereqs: [V-028, V-016]
 minutes: 10
-tags: [voice, register]
+tags: [voice, register, mix]
 explain:
   en: |
     **Mix** (Serbian: *miks*, sometimes *mešani glas*) is a way of singing through the middle of your range where the voice does not flip from chest to head:

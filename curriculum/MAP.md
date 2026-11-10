@@ -246,3 +246,105 @@ generator has `smooth: true` (voice-led, no parallels) for playing progressions.
 | L-010 | Starogradska and sevdah: images and the osmerac line |
 | L-011 | The pop lyric: details in the verse, the summary in the chorus |
 | L-012 | Editing: cut, sharpen, replace clichés |
+
+## Wave 3 lessons (weeks 15–20)
+
+Belt appears for the first time (V), at low intensity and speech-level only. Lessons
+tagged `belt` must (transitively) require lessons tagged `support`, `onset` and `mix`,
+and state the stop protocol; validation enforces it. No distortion (wave 8, gated).
+
+### T (T-051 … T-068)
+| id | title |
+|---|---|
+| T-051 | Closely related keys |
+| T-052 | Modulation by pivot chord |
+| T-053 | Finding the pivot: chords common to two keys |
+| T-054 | Modulation to the dominant |
+| T-055 | Modulation to the relative minor/major |
+| T-056 | Direct (phrase) modulation |
+| T-057 | Chromatic modulation (a common tone, a chromatic step) |
+| T-058 | Tonicization vs modulation: how long is "in a new key"? |
+| T-059 | Secondary dominants in minor keys |
+| T-060 | The diminished seventh chord: four resolutions |
+| T-061 | The Neapolitan sixth (preview) |
+| T-062 | Binary form |
+| T-063 | Ternary form |
+| T-064 | Song forms I: AABA |
+| T-065 | Song forms II: verse–chorus–bridge |
+| T-066 | The 12-bar blues as form |
+| T-067 | Reading a lead sheet: form, repeats, codas, endings |
+| T-068 | Review: analysing a modulating song |
+
+### E (E-035 … E-046)
+| id | title | key prereqs |
+|---|---|---|
+| E-035 | Hearing a modulation: where is home now? | T-052 |
+| E-036 | Modulation to the dominant by ear | E-035, T-054 |
+| E-037 | Relative minor/major by ear | E-035, T-055 |
+| E-038 | Secondary dominants in progressions (V/V, V/vi, V/ii) | E-034 |
+| E-039 | The diminished seventh by ear | T-060 |
+| E-040 | Longer melodic dictation (2 phrases) | E-030 |
+| E-041 | Song form by ear: verse, chorus, bridge | T-065 |
+| E-042 | Bass + chords of a pop song, phrase by phrase | E-032 |
+| E-043 | Rhythm dictation: 6/8 and swing feel | E-031 |
+| E-044 | Third song by ear (public-domain), with chords | E-033 |
+| E-045 | Blues progression by ear (quick change, turnaround) | T-066 |
+| E-046 | Review: modulating progressions | E-036, E-037 |
+
+### K (K-035 … K-046)
+| id | title | key prereqs |
+|---|---|---|
+| K-035 | Pivot-chord modulation at the keys (C→G, C→Am) | T-052 |
+| K-036 | Modulating cadences in 4 keys | K-035 |
+| K-037 | Minor ii–V–i (iiø7–V7–i) in 4 keys | T-059 |
+| K-038 | Diminished seventh chords: resolutions at the keys | T-060 |
+| K-039 | Dorian: the scale and a ii–V vamp | K-033 |
+| K-040 | Improvising in D dorian over Dm7–G7 | K-039 |
+| K-041 | Comping a 12-bar blues (left hand + right-hand shells) | K-020, T-066 |
+| K-042 | Blues improvisation: call and response over the changes | K-041 |
+| K-043 | Playing an AABA tune from a lead sheet | T-064, K-034 |
+| K-044 | Accompanying a verse–chorus song: changing the texture | K-032, T-065 |
+| K-045 | Secondary dominants in minor at the keys | K-030, T-059 |
+| K-046 | Review: a lead sheet with a modulation | K-043, K-036 |
+
+### V (V-046 … V-063)
+| id | title | tags |
+|---|---|---|
+| V-046 | Mix development I: carrying light mix higher | register, mix |
+| V-047 | Mix development II: evening out the break | register, mix |
+| V-048 | Twang: bright, efficient, not louder | |
+| V-049 | Speech-level singing: talk the line, then sing it | |
+| V-050 | Belt intro I: what belt is, and the safe "call" (low intensity) | belt |
+| V-051 | Belt intro II: short calls on 3 notes, mid range | belt |
+| V-052 | Breath for stronger sound (support, not push) | support |
+| V-053 | Sustain and steadiness in mix | mix |
+| V-054 | Agility III: runs in minor | |
+| V-055 | Intervals: tritone and 7ths sung in context | |
+| V-056 | Phrasing: shaping a line (start, peak, landing) | |
+| V-057 | Singing in 6/8 | |
+| V-058 | Song phrase IV: a folk song (public-domain) | |
+| V-059 | Harmony singing II: a 3rd below, a 6th above | |
+| V-060 | Pop style basics: straight tone vs gentle vibrato | |
+| V-061 | Range check and comfortable top in mix | mix |
+| V-062 | Song: verse in light voice, chorus in mix | mix |
+| V-063 | Review: a song with one short low-intensity belted line | belt |
+
+### C (C-013 … C-018)
+| id | title |
+|---|---|
+| C-013 | A melody in minor over i–iv–V |
+| C-014 | Modulating to the dominant in a melody |
+| C-015 | Writing over a given progression with a secondary dominant |
+| C-016 | AABA: writing the bridge |
+| C-017 | Verse vs chorus melodies: range and rhythm contrast |
+| C-018 | A 12-bar blues melody |
+
+### L (L-013 … L-018)
+| id | title |
+|---|---|
+| L-013 | Rock lyrics: attitude, concrete images, short lines |
+| L-014 | Folk/story song: characters, a turn, a last verse that lands |
+| L-015 | The bridge: a new angle |
+| L-016 | Rhyme schemes in practice (ABAB, AABB, internal rhyme) |
+| L-017 | Rewriting: from first draft to second |
+| L-018 | Writing to a given melody (prosody in practice) |

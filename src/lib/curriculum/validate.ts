@@ -169,12 +169,15 @@ export function validateLessons(lessons: Lesson[]): string[] {
     return seen;
   };
   for (const l of lessons) {
-    if (!l.tags.includes("distortion")) continue;
-    if (l.track !== "V") errs.push(`${l.id}: distortion lessons belong in V`);
+    // belt (wave 3+) gets the same gate as distortion, minus the daily cap
+    if (!l.tags.includes("distortion") && !l.tags.includes("belt")) continue;
+    const kind = l.tags.includes("distortion") ? "distortion" : "belt";
+    if (l.track !== "V") errs.push(`${l.id}: ${kind} lessons belong in V`);
     const anc = [...ancestors(l.id)].map((a) => byIdV.get(a)).filter(Boolean);
-    if (!anc.some((a) => a!.tags.includes("support"))) errs.push(`${l.id}: distortion lesson must (transitively) require a lesson tagged "support"`);
-    if (!anc.some((a) => a!.tags.includes("onset"))) errs.push(`${l.id}: distortion lesson must (transitively) require a lesson tagged "onset"`);
-    if (!/stop/i.test(l.explain.en) || !/prekin|stani/i.test(l.explain.sr)) errs.push(`${l.id}: distortion lesson must state the stop protocol (EN "stop", SR "prekini/stani")`);
+    if (!anc.some((a) => a!.tags.includes("support"))) errs.push(`${l.id}: ${kind} lesson must (transitively) require a lesson tagged "support"`);
+    if (!anc.some((a) => a!.tags.includes("onset"))) errs.push(`${l.id}: ${kind} lesson must (transitively) require a lesson tagged "onset"`);
+    if (!/stop/i.test(l.explain.en) || !/prekin|stani/i.test(l.explain.sr)) errs.push(`${l.id}: ${kind} lesson must state the stop protocol (EN "stop", SR "prekini/stani")`);
+    if (kind === "belt" && !anc.some((a) => a!.tags.includes("mix"))) errs.push(`${l.id}: belt lesson must (transitively) require a lesson tagged "mix" (light mix comes first)`);
   }
   // prereq cycles
   const byId = new Map(lessons.map((l) => [l.id, l]));
