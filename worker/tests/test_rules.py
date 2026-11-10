@@ -443,3 +443,22 @@ def test_chord_symbols_are_not_melody_notes():
     by = {c["id"]: c for c in r["checks"]}
     assert by["rhythm"]["pass"] and by["bars"]["pass"] and by["range"]["pass"], by
     assert by["cadence"]["score"] == 1.0
+
+
+def test_short_bass_fails_bars():
+    """A bass written for 1 of 4 bars is not a bass line (regression, C-007 review)."""
+    abc = "X:1\nM:4/4\nL:1/4\nK:C\nV:1\nC D E F | G A B c | c B A G | E D C2 |]\nV:2 clef=bass\nC,4 |]"
+    r = run({"abc": abc, "key": "C major", "meter": "4/4", "bars": 4, "rules": ["bars"]})
+    assert r["ok"], r
+    assert not r["checks"][0]["pass"]
+    assert "bass covers only 1 of 4" in r["checks"][0]["detail"]
+
+
+def test_half_cadence_16_bars_checks_4_and_12():
+    """Double period: half cadences at 4 and 12; bar 8 may close on the tonic."""
+    a = "C D E F | G A G E | F E D C | D4 |"   # bar 4 on D (2): half cadence
+    b = "C D E F | G A G E | F E D B, | C4 |"  # bar 8 on C: full close
+    abc = f"X:1\nM:4/4\nL:1/4\nK:C\n{a} {b} {a} {b}]"
+    r = run({"abc": abc, "key": "C major", "meter": "4/4", "bars": 16, "rules": ["half-cadence"]})
+    assert r["ok"], r
+    assert r["checks"][0]["pass"], r["checks"][0]

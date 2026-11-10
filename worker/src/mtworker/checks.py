@@ -92,9 +92,27 @@ def _count_bars(piece: Piece) -> tuple[int, float, float]:
     return complete, piece.pickup, rem
 
 
+def _voice_bars(piece: Piece, v) -> int:
+    """Complete bars one voice covers (same pickup / short-last-bar rule as the piece)."""
+    body = v.end - piece.pickup
+    full = int((body + EPS) // piece.bar_len)
+    rem = body - full * piece.bar_len
+    if piece.pickup > EPS and rem > EPS and abs(piece.pickup + rem - piece.bar_len) < EPS:
+        full += 1
+    return full
+
+
 def check_bars(piece: Piece, req: dict) -> dict:
     want = req.get("bars")
     have, pickup, rem = _count_bars(piece)
+    # Two voices: each must cover the piece. A bass written for 1 of 8 bars is not a bass
+    # line (the piece length alone comes from the longest voice and would hide it).
+    if len(piece.voices) > 1:
+        short = [(i, _voice_bars(piece, v)) for i, v in enumerate(piece.voices) if _voice_bars(piece, v) < have]
+        if short:
+            i, n = short[0]
+            label = "melody" if i == 0 else "bass"
+            return _result("bars", False, max(0.0, n / max(1, have)) * 0.5, f"the {label} covers only {n} of {have} bars", list(range(n + 1, have + 1)))
     notes = []
     if pickup > EPS:
         notes.append(f"pickup of {pickup:g} beats")
@@ -263,25 +281,43 @@ def check_cadence(piece: Piece, req: dict) -> dict:
     return _result("cadence", score >= 0.75, score, f"{how} (bar {bar})", bars)
 
 
+def _half_cadence_bars(n_bars: int) -> list[int]:
+    """Where antecedent phrases end: bar 4 of an 8-bar period; bars 4 and 12 of a 16-bar
+    double period (bar 8 there is the first period's full close, not a half cadence)."""
+    if n_bars >= 16 and n_bars % 8 == 0:
+        return [b for b in range(4, n_bars, 8)]
+    return [n_bars // 2]
+
+
 def check_half_cadence(piece: Piece, req: dict) -> dict:
     want = req.get("bars")
     n_bars = want if isinstance(want, int) and want > 0 else _count_bars(piece)[0]
     if n_bars < 8:
         return _result("half-cadence", True, 1.0, f"{n_bars} bars: half cadence only checked for 8 or more")
-    mid = n_bars // 2
     mel = piece.melody.notes
-    in_bar = [n for n in mel if piece.bar_of(n.offset) == mid]
-    note = in_bar[-1] if in_bar else next((n for n in reversed(mel) if piece.bar_of(n.offset) < mid), None)
-    if note is None:
-        return _result("half-cadence", False, 0.0, f"no melody note in or before bar {mid}", [mid])
-    d = piece.degree(note)
-    if d in (2, 5, 7):
-        return _result("half-cadence", True, 1.0, f"bar {mid} ends on {_deg_word(piece, note)}: half cadence on V", [mid])
-    if d == 1:
-        msg = f"bar {mid} ends on the tonic: phrase 1 closes instead of pausing on V (use 2, 5 or 7)"
-    else:
-        msg = f"bar {mid} ends on {_deg_word(piece, note)}, not 2, 5 or 7 (no half cadence on V)"
-    return _result("half-cadence", False, 0.0, msg, [mid])
+    good: list[str] = []
+    bad: list[str] = []
+    bad_bars: list[int] = []
+    for mid in _half_cadence_bars(n_bars):
+        in_bar = [n for n in mel if piece.bar_of(n.offset) == mid]
+        note = in_bar[-1] if in_bar else next((n for n in reversed(mel) if piece.bar_of(n.offset) < mid), None)
+        if note is None:
+            bad.append(f"no melody note in or before bar {mid}")
+            bad_bars.append(mid)
+            continue
+        d = piece.degree(note)
+        if d in (2, 5, 7):
+            good.append(f"bar {mid} ends on {_deg_word(piece, note)}")
+        elif d == 1:
+            bad.append(f"bar {mid} ends on the tonic: the phrase closes instead of pausing on V (use 2, 5 or 7)")
+            bad_bars.append(mid)
+        else:
+            bad.append(f"bar {mid} ends on {_deg_word(piece, note)}, not 2, 5 or 7 (no half cadence on V)")
+            bad_bars.append(mid)
+    total = len(good) + len(bad)
+    if not bad:
+        return _result("half-cadence", True, 1.0, "; ".join(good) + ": half cadence on V", [int(x.split()[1]) for x in good])
+    return _result("half-cadence", False, len(good) / total, "; ".join(bad + good), bad_bars)
 
 
 # ---------------------------------------------------------------- melodic motion
