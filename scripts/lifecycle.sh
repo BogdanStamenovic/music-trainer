@@ -197,6 +197,7 @@ cmd_update() {
 
 cmd_remove() {
   systemctl --user disable --now "$NAME.service" 2>/dev/null || true
+  systemctl --user reset-failed "$NAME.service" 2>/dev/null || true
   rm -f "$UNIT"
   systemctl --user daemon-reload || true
   if command -v tailscale >/dev/null; then
