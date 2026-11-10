@@ -143,3 +143,106 @@ theory") but should still be right.
 | L-004 | Show, don't tell: concrete images |
 | L-005 | The hook and the title |
 | L-006 | Song sections: what verse, pre-chorus, chorus and bridge do |
+
+## Wave 2 lessons (weeks 9–14)
+
+Same rules as wave 1. Four-part (SATB) work: the music21 worker checks at most two
+voices, so four-part writing is taught with `midi-play` (exact voicings, `octave: exact`),
+`mcq` (spot the error) and two-voice `compose` (outer voices). The `progression`
+generator has `smooth: true` (voice-led, no parallels) for playing progressions.
+
+### T (T-033 … T-050)
+| id | title |
+|---|---|
+| T-033 | Four-part writing: SATB ranges and spacing |
+| T-034 | Voice-leading rules: parallels, contrary motion, common tones |
+| T-035 | Connecting root-position triads (common tone, stepwise) |
+| T-036 | First-inversion triads in four parts: doubling |
+| T-037 | Figured bass I: triads (5/3, 6, 6/4) |
+| T-038 | Figured bass II: seventh chords (7, 6/5, 4/3, 4/2) and accidentals |
+| T-039 | Minor-key harmony in practice: raised 6 and 7 |
+| T-040 | Leading-tone seventh chords (viiø7, vii°7) and their resolution |
+| T-041 | Predominant chords: IV, ii6, ii65 before V |
+| T-042 | The deceptive progression (V–vi, V–VI in minor) |
+| T-043 | Secondary dominants I: V/V and V7/V |
+| T-044 | Secondary dominants II: V/ii, V/iii, V/IV, V/vi |
+| T-045 | Secondary leading-tone chords (vii°/V, vii°7/V) |
+| T-046 | Spotting tonicization: accidentals as clues |
+| T-047 | Sequences: descending fifths with secondary dominants |
+| T-048 | Harmonic rhythm |
+| T-049 | Harmonizing a soprano melody in four parts |
+| T-050 | Review: analysing a chorale-style phrase |
+
+### E (E-023 … E-034)
+| id | title | key prereqs |
+|---|---|---|
+| E-023 | Bass lines with inversions (I6, IV6, V6, V43) | T-036 |
+| E-024 | Cadence types by ear (authentic, half, plagal, deceptive) | T-042 |
+| E-025 | Two-voice dictation I: outer voices, stepwise | E-019 |
+| E-026 | Two-voice dictation II: contrary motion and leaps | E-025, T-034 |
+| E-027 | Minor progressions by ear (i–iv–V–i, i–VI–III–VII) | T-039 |
+| E-028 | Seventh chords in progressions (ii7–V7–Imaj7, vi7) | E-022 |
+| E-029 | Hearing V/V before V | T-043 |
+| E-030 | Melodic dictation with chromatic notes (♯4, ♭7) | E-019, T-046 |
+| E-031 | Rhythm dictation: syncopation and ties (notation hidden) | E-018 |
+| E-032 | Pop progressions by ear (I–V–vi–IV family) | E-016 |
+| E-033 | Second song by ear, phrase by phrase | E-021 |
+| E-034 | Review: progressions with secondary dominants | E-029, T-044 |
+
+### K (K-023 … K-034)
+| id | title | key prereqs |
+|---|---|---|
+| K-023 | I–IV–V7–I in all 12 major keys | K-022 |
+| K-024 | Seventh-chord inversions at the keys (ii65, V43, V42) | T-038 |
+| K-025 | Pop comping I: pulse and broken-chord patterns for I–V–vi–IV | K-016 |
+| K-026 | Pop comping II: syncopated right-hand rhythms over a bass | K-025, T-018 |
+| K-027 | Improvising with chord tones over ii–V–I | K-019, T-025 |
+| K-028 | Call and response: 2-bar improvised answers | K-027 |
+| K-029 | Secondary dominants at the keys: I–V7/V–V7–I in 4 keys | T-043 |
+| K-030 | Minor cadences: i–iv–V7–i in 6 minor keys | T-039 |
+| K-031 | Harmonizing a melody with secondary dominants | K-017, T-044 |
+| K-032 | Accompanying a singer: simple patterns, slow | K-025 |
+| K-033 | Improvising in A minor over i–iv–v (minor pentatonic, natural minor) | K-020 |
+| K-034 | Lead sheet: melody in the right hand, chords in the left | K-032, T-031 |
+
+### V (V-028 … V-045)
+| id | title | tags |
+|---|---|---|
+| V-028 | Falsetto vs head voice: feeling the difference | register |
+| V-029 | Mix intro I: light "nay" and "gee" | register |
+| V-030 | Mix intro II: a light mix up a 5-note scale | register |
+| V-031 | Vowel modification near the top of the range | |
+| V-032 | Legato II: longer phrases on one breath | support |
+| V-033 | Agility I: slow 5-note runs | |
+| V-034 | Agility II: 1-3-5-8-5-3-1, light | |
+| V-035 | Onset review: gentle staccato arpeggios | onset |
+| V-036 | Support under long phrases | support |
+| V-037 | Singing minor 6ths and minor 7ths | |
+| V-038 | Singing in minor: natural vs harmonic | |
+| V-039 | Song phrase III (8 bars) | |
+| V-040 | Dynamics II: crescendo and decrescendo on a phrase (light) | support |
+| V-041 | Resonance II: brighter and darker colours (no pushing) | |
+| V-042 | Tuning to chords: sing the 3rd, the 5th, the root | |
+| V-043 | Harmony singing I: a 3rd above a melody | |
+| V-044 | Range check and easy extension | |
+| V-045 | Review: a whole song in light mix | |
+
+### C (C-007 … C-012)
+| id | title |
+|---|---|
+| C-007 | Harmonizing a melody: one chord per bar |
+| C-008 | A bass line under a melody (contrary motion) |
+| C-009 | Accompaniment patterns: block, broken, Alberti |
+| C-010 | A melody in minor: the leading tone |
+| C-011 | Developing a motif: inversion and fragmentation |
+| C-012 | A 16-bar melody: two periods |
+
+### L (L-007 … L-012)
+| id | title |
+|---|---|
+| L-007 | Prosody: stressed syllables on strong beats |
+| L-008 | Point of view and story |
+| L-009 | The blues lyric: AAB and the turnaround line |
+| L-010 | Starogradska and sevdah: images and the osmerac line |
+| L-011 | The pop lyric: details in the verse, the summary in the chorus |
+| L-012 | Editing: cut, sharpen, replace clichés |
