@@ -71,3 +71,11 @@ checks:
 
 With the weekday-focus schedule (Mon T, Tue E/K, Thu T, Fri E/K, ...) a focus day uses
 2–4 lessons, so two weeks need ~14 T and ~20 E/K lessons.
+
+## ABC notes
+
+- A `w:` lyric line applies only to the music line directly above it: split lyrics per line.
+- Accidentals carry through the bar (`^F` then `F` in the same bar is still F♯); write `=F`.
+- All lesson ABC is validated with abcjs (parser warnings; one syllable per note in `w:`
+  lines unless `_`/`*` holds are used). Whether the shown notes match the graded notes is
+  still checked by eye.

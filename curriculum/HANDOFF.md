@@ -107,6 +107,8 @@ and figures for inversions.
 | Rising-key sequences for vocal exercises | V | self-rated practice |
 | Repeated same-pitch notes in sung phrases | V | untested with real audio; use rests between |
 | `composition.key` only major/minor (modes via the parallel minor) | projects | |
+| Vibrato shown as feedback (voice-score computes rate/extent) | V | V-060 uses a wider tolerance only |
+| Belt-call counter / rest timer between reps | V | instruction + self-count; the planner caps belt lessons at 1/day |
 | Rests in static midi exercises | K | folded into the previous note's `beats`; ABC shows them |
 | Swing timing (a ratio on `beats`/rhythm) | K, E | swing is taught as practice; grading uses straight time |
 | Shell voicings in the `progression` generator | K | close position only; typed exercises for shells |

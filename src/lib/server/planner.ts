@@ -95,10 +95,11 @@ export function fillFocus(tracks: Track[], target: number, statuses: Map<string,
     for (const t of tracks) {
       if (minutes >= target) break;
       const c = getCurriculum();
-      const distortionPicked = picked.some((p) => c.byId.get(p.id)?.tags.includes("distortion"));
-      // voice safety: at most one distortion lesson a day, never on a voice-rest day
+      const heavy = (tags: string[]) => tags.includes("distortion") || tags.includes("belt");
+      const heavyPicked = picked.some((p) => heavy(c.byId.get(p.id)?.tags ?? []));
+      // voice safety: at most one belt/distortion lesson a day, never on a voice-rest day
       const next = available(t, sim).find(
-        (a) => !picked.some((p) => p.id === a.lesson.id) && !(a.lesson.tags.includes("distortion") && (distortionPicked || (opts?.date && voiceRest(opts.date)))),
+        (a) => !picked.some((p) => p.id === a.lesson.id) && !(heavy(a.lesson.tags) && (heavyPicked || (opts?.date && voiceRest(opts.date)))),
       );
       if (!next) continue;
       if (picked.length > 0 && minutes + next.lesson.minutes > cap) continue;
@@ -300,11 +301,12 @@ export function practiceFill(tracks: Track[], minutesLeft: number, date: string)
   return pool.slice(0, Math.min(10, Math.floor(minutesLeft / 1.5))).map(({ exerciseId, lessonId }) => ({ exerciseId, lessonId }));
 }
 
-/** Distortion lessons: another one already attempted today blocks this one (daily cap, SPEC voice safety). */
+/** Belt/distortion lessons: another one already attempted today blocks this one (daily cap, SPEC voice safety). */
 export function distortionBlocked(lessonId: string, date: string): string | null {
   const c = getCurriculum();
-  if (!c.byId.get(lessonId)?.tags.includes("distortion")) return null;
+  const heavy = (id: string) => !!c.byId.get(id)?.tags.some((t) => t === "distortion" || t === "belt");
+  if (!heavy(lessonId)) return null;
   if (voiceRest(date)) return "voice-rest";
   const others = getDb().prepare("SELECT DISTINCT lesson_id FROM attempts WHERE date = ? AND lesson_id IS NOT NULL AND lesson_id != ?").all(date, lessonId) as { lesson_id: string }[];
-  return others.some((o) => c.byId.get(o.lesson_id)?.tags.includes("distortion")) ? "daily-cap" : null;
+  return others.some((o) => heavy(o.lesson_id)) ? "daily-cap" : null;
 }

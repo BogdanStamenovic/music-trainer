@@ -172,7 +172,7 @@ const D = {
   playNow: ["Play!", "Sviraj!"],
   distortionProtocol: ["Distortion: safety protocol", "Distorzija: bezbednosni protokol"],
   distortionProtocolText: ["Warm up first. Quiet and short: seconds, not minutes. It must feel effortless; stop immediately at any pain, scratching, tickle, cough or hoarseness, and rest the voice for the day. One distortion lesson per day, at most. More distortion is never a better score.", "Prvo se zagrej. Tiho i kratko: sekunde, ne minuti. Mora da ide bez napora; odmah prekini na bilo kakav bol, grebanje, golicanje, kašalj ili promuklost, i odmori glas do kraja dana. Najviše jedna lekcija distorzije dnevno. Više distorzije nikad nije bolja ocena."],
-  distortionCap: ["One distortion lesson per day: you have already done one today. Tomorrow.", "Jedna lekcija distorzije dnevno: danas si već radio jednu. Sutra."],
+  distortionCap: ["One belt or distortion lesson per day: you have already done one today. Tomorrow.", "Jedna lekcija beltinga ili distorzije dnevno: danas si već radio jednu. Sutra."],
   practice: ["Practice", "Vežbanje"],
   practiceHint: ["drills from lessons you have passed", "vežbe iz položenih lekcija"],
   earlierWork: ["Your earlier work of this kind", "Tvoji raniji radovi ove vrste"],

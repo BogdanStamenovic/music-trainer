@@ -153,3 +153,10 @@ describe("practice fill", () => {
     expect(practiceFill(["T"], 3, "2026-11-20")).toEqual([]);
   });
 });
+
+describe("belt daily cap", () => {
+  it("belt lessons share the distortion cap", async () => {
+    const { distortionBlocked } = await import("@/lib/server/planner");
+    expect(distortionBlocked("T-001", "2026-11-20")).toBeNull(); // not a belt lesson
+  });
+});

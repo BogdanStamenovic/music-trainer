@@ -93,12 +93,12 @@ export interface GenCtx {
 }
 
 /** Move a group of notes by whole octaves so it sits inside the comfortable range (best effort). */
-export function fitToRange(ms: number[], range?: [number, number], where: boolean | "low" | "high" = true): number[] {
+export function fitToRange(ms: number[], range?: [number, number], where: boolean | "low" | "lowmid" | "high" = true): number[] {
   if (!range || !ms.length || where === false) return ms;
   const lo = range[0];
   // head voice / falsetto work may reach 2 semitones above the comfortable top
   const hi = where === "high" ? range[1] + 2 : range[1];
-  const target = where === "low" ? lo + (Math.max(...ms) - Math.min(...ms)) / 2 : where === "high" ? hi - (Math.max(...ms) - Math.min(...ms)) / 2 : (lo + hi) / 2;
+  const target = where === "low" ? lo + (Math.max(...ms) - Math.min(...ms)) / 2 : where === "high" ? hi - (Math.max(...ms) - Math.min(...ms)) / 2 : where === "lowmid" ? lo + (hi - lo) / 3 : (lo + hi) / 2;
   const center = (Math.min(...ms) + Math.max(...ms)) / 2;
   let shift = Math.round((target - center) / 12) * 12;
   const fits = (k: number) => Math.min(...ms) + k >= lo && Math.max(...ms) + k <= hi;
