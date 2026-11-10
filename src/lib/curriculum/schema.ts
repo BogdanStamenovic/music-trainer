@@ -42,6 +42,7 @@ export const Playback = z.object({
   derive: Derive.optional(),
   mode: z.enum(["melodic", "harmonic", "chords"]).default("melodic"),
   tempo: z.number().min(20).max(240).default(80),
+  durations: z.array(z.number().positive()).optional(), // beats per note/chord (real rhythm)
 });
 export type Playback = z.infer<typeof Playback>;
 
@@ -107,6 +108,9 @@ export const Compose = z.object({
   given: z.string().optional(), // ABC shown as the starting point (e.g. the question phrase)
   range: z.tuple([NoteS, NoteS]).optional(),
   voices: z.number().int().min(1).max(2).default(1),
+  // a model answer: tests run it through the real music21 worker and require it to pass,
+  // so an exercise whose rules cannot all be satisfied is caught before it ships
+  example: z.string().optional(),
 });
 /** Write text (lyrics); graded by the learner's own rubric rating; AI feedback is optional and never blocks. */
 export const Write = z.object({

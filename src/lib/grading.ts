@@ -325,8 +325,11 @@ export function gradeImprov(item: MidiItem, events: MidiEvent[]) {
 const round3 = (x: number) => Math.round(x * 1000) / 1000;
 
 /** Composition exercise: the server's music21 result; unavailable worker = completion credit, flagged. */
-export function gradeCompose(_item: ComposeItem, r: { abc: string; rules?: { ok: boolean; score?: number; checks?: unknown[]; error?: string; unavailable?: boolean } | null }) {
+export function gradeCompose(item: ComposeItem, r: { abc: string; rules?: { ok: boolean; score?: number; checks?: unknown[]; error?: string; unavailable?: boolean } | null }) {
   if (!r.abc?.trim()) return { score: 0, detail: { error: "empty" } };
+  // handing back the given starting point unchanged is not an answer
+  const norm = (x: string) => x.replace(/\s+/g, " ").trim();
+  if (item.given && norm(r.abc) === norm(item.given)) return { score: 0, detail: { error: "unchanged starting point" } };
   if (!r.rules) return { score: 0, detail: { pending: "rules are checked on the server" } };
   if (!r.rules.ok) return r.rules.unavailable ? { score: 1, detail: { unchecked: true, error: r.rules.error } } : { score: 0, detail: { error: r.rules.error } };
   return { score: r.rules.score ?? 0, detail: { checks: r.rules.checks } };

@@ -60,6 +60,8 @@ function checkExercise(ex: Exercise, where: string): string[] {
       errs.push(`${where}: check threw ${(e as Error).message}`);
     }
   }
+  if (ex.type === "compose" && !ex.example) errs.push(`${where}: compose exercises need an \`example\` model answer (tests run it through the music21 worker)`);
+  if (ex.type === "mcq" && ex.play?.durations && ex.play.notes && ex.play.durations.length !== ex.play.notes.length) errs.push(`${where}: play.durations length != notes length`);
   if (ex.type === "sing-phrase" && !ex.notes && !ex.derive) errs.push(`${where}: sing-phrase needs notes or derive`);
   if (ex.type === "sing-phrase" && ex.beats && ex.notes && ex.beats.length !== ex.notes.length) errs.push(`${where}: beats length != notes length`);
   if (ex.type === "mcq" && ex.answer >= ex.options.length) errs.push(`${where}: answer index ${ex.answer} out of range`);

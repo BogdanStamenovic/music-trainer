@@ -218,13 +218,13 @@ export function derive(d: Derive): Note[][] {
 
 function playSpec(p: PlaybackDef | undefined): PlaySpec | undefined {
   if (!p) return undefined;
-  if (p.chords) return { mode: "chords", chords: p.chords.map((c) => c.map((n) => toMidi(parseNote(n)))), tempo: p.tempo };
+  if (p.chords) return { mode: "chords", chords: p.chords.map((c) => c.map((n) => toMidi(parseNote(n)))), tempo: p.tempo, durations: p.durations };
   if (p.derive) {
     const d = derive(p.derive);
     if ("roman" in p.derive) return { mode: "chords", chords: d.map((c) => c.map(toMidi)), tempo: p.tempo };
     return { mode: p.mode, notes: d[0].map(toMidi), tempo: p.tempo };
   }
-  return { mode: p.mode, notes: (p.notes ?? []).map((n) => toMidi(parseNote(n))), tempo: p.tempo };
+  return { mode: p.mode, notes: (p.notes ?? []).map((n) => toMidi(parseNote(n))), tempo: p.tempo, durations: p.durations };
 }
 
 function inRange(n: Note, range?: [string, string]): boolean {
