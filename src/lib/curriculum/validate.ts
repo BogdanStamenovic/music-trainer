@@ -113,7 +113,11 @@ function checkExercise(ex: Exercise, where: string): string[] {
     if (n && ex.beats.length !== n) errs.push(`${where}: ${ex.beats.length} beats for ${n} ${ex.mode === "chords" ? "chords" : "notes"}`);
   }
   if (ex.type === "compose" && !ex.example) errs.push(`${where}: compose exercises need an \`example\` model answer (tests run it through the music21 worker)`);
-  if (ex.type === "mcq" && ex.play?.durations && ex.play.notes && ex.play.durations.length !== ex.play.notes.length) errs.push(`${where}: play.durations length != notes length`);
+  for (const pl of [(ex as { play?: { durations?: number[]; notes?: string[]; chords?: string[][] } }).play, (ex as { accompany?: { durations?: number[]; notes?: string[]; chords?: string[][] } }).accompany]) {
+    if (!pl?.durations) continue;
+    const n = pl.chords?.length ?? pl.notes?.length;
+    if (n != null && pl.durations.length !== n) errs.push(`${where}: ${pl.durations.length} durations for ${n} ${pl.chords ? "chords" : "notes"}`);
+  }
   if (ex.type === "sing-phrase" && !ex.notes && !ex.derive) errs.push(`${where}: sing-phrase needs notes or derive`);
   if (ex.type === "sing-phrase" && ex.beats && ex.notes && ex.beats.length !== ex.notes.length) errs.push(`${where}: beats length != notes length`);
   if (ex.type === "sing-phrase" && ex.notes && ex.notes.every((n) => n === "r")) errs.push(`${where}: a phrase of only rests`);

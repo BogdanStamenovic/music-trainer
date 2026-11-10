@@ -178,6 +178,11 @@ const opt = (o: string | Loc): Loc => {
     }
   });
   if (notes.some((n) => !n)) return L(o, o);
+  // only when it is clearly note names: one token, a comma list, or accidentals/octaves.
+  // Space/dash-separated bare letters ("A A B A", "A–B–A") are form labels.
+  const commaList = parts.some((p, i) => i % 2 === 1 && p.includes(","));
+  const marked = toks.some((t) => /[#b♯♭]|\d/.test(t.slice(1)));
+  if (toks.length > 1 && !commaList && !marked) return L(o, o);
   let k = 0;
   const sr = parts.map((p, i) => (i % 2 === 0 && p !== "" ? noteNameSr(notes[k]!, /\d$/.test(toks[k++])) : p)).join("");
   return L(o, sr);

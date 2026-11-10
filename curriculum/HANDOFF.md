@@ -107,6 +107,8 @@ and figures for inversions.
 | Rising-key sequences for vocal exercises | V | self-rated practice |
 | Repeated same-pitch notes in sung phrases | V | untested with real audio; use rests between |
 | `composition.key` only major/minor (modes via the parallel minor) | projects | |
+| `play` from roman numerals (`play: {roman: {key, numerals}, durations}`) | T, E | listening chords are typed + checked by hand |
+| progression-ear options in a second key ("G: V7") for modulation | T, E | written in home-key numerals (V7/V – V) |
 | Vibrato shown as feedback (voice-score computes rate/extent) | V | V-060 uses a wider tolerance only |
 | Belt-call counter / rest timer between reps | V | instruction + self-count; the planner caps belt lessons at 1/day |
 | Rests in static midi exercises | K | folded into the previous note's `beats`; ABC shows them |

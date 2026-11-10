@@ -233,6 +233,8 @@ describe("review fixes (wave 2)", () => {
     const ex = Exercise.parse({ id: "T-095-1", type: "mcq", prompt: { en: "q", sr: "q" }, options: ["B", "Bb", "A, C, E♭", "F#4", "V7"], answer: 0, keepOrder: true });
     const it0 = generateItems(ex, "s")[0] as { options: { en: string; sr: string }[] };
     expect(it0.options.map((o) => o.sr)).toEqual(["H", "B", "A, C, Es", "Fis4", "V7"]);
+    const forms = Exercise.parse({ id: "T-095-2", type: "mcq", prompt: { en: "q", sr: "q" }, options: ["A A B A", "A–B–A", "A B"], answer: 0, keepOrder: true });
+    expect((generateItems(forms, "s")[0] as { options: { sr: string }[] }).options.map((o) => o.sr)).toEqual(["A A B A", "A–B–A", "A B"]); // form labels untouched
   });
 });
 
