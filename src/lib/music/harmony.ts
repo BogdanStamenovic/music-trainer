@@ -210,21 +210,76 @@ export function parseRoman(s: string): { degree: number; inversion: number; seve
 }
 
 /**
- * Notes of a roman-numeral chord in a key, close position, requested inversion.
- * The bass is placed nearest the tonic (within -6..+5 semitones), which gives the
- * "hand stays still" voicings: in C, IV64 = C4 F4 A4 and V6 = B3 D4 G4.
+ * Roman numeral -> notes, read the way lead sheets and harmony books write them:
+ * - case gives the third (upper = major, lower = minor); ° dim, + aug, ø half-dim
+ * - 7 = dominant seventh on an upper-case numeral, minor seventh on a lower-case one;
+ *   maj7 = major seventh; °7 = diminished seventh; ø7 = half-diminished; i(maj7) = minor-major
+ * - b/# prefix alters the root (bVII, bIII, #iv°): borrowed and chromatic chords
+ * - X/Y = chord X in the key of Y (secondary dominants: V/V, V7/ii, vii°/V)
+ * - figures 6, 64, 65, 43, 42 = inversions
+ * Roots come from the key's scale (`type`), so diatonic numerals give diatonic chords.
+ * Close position; the bass is placed nearest the tonic (-6..+5 semitones), which gives
+ * hand-still voicings: in C, IV64 = C4 F4 A4 and V6 = B3 D4 G4.
  */
 export function romanChord(tonic: Note | string, type: ScaleType, roman: string): Note[] {
   const t = typeof tonic === "string" ? parseNote(tonic) : tonic;
-  const { degree, inversion, seventh } = parseRoman(roman);
-  const notes = diatonicChord(t, type, degree, seventh);
-  for (let i = 0; i < inversion; i++) {
+  const [head, of] = roman.trim().split("/");
+  let keyTonic = t;
+  let keyType: ScaleType = type;
+  if (of) {
+    // tonicized key: the target chord's root, major for an upper-case target, harmonic minor for lower case
+    const target = parseRomanFull(of);
+    keyTonic = romanRoot(t, type, target);
+    keyType = target.upper ? "major" : "harmonic-minor";
+  }
+  const r = parseRomanFull(head);
+  const root = romanRoot(keyTonic, keyType, r);
+  const notes = chord({ ...root, octave: t.octave + (toMidi({ ...root, octave: t.octave }) < toMidi(t) ? 1 : 0) }, romanQuality(r));
+  for (let i = 0; i < r.inversion; i++) {
     const n = notes.shift()!;
     notes.push({ ...n, octave: n.octave + 1 });
   }
   const d = toMidi(notes[0]) - toMidi(t);
   const shift = Math.floor((d + 6) / 12); // octaves to move down so that d lands in -6..+5
   return notes.map((n) => ({ ...n, octave: n.octave - shift }));
+}
+
+interface RomanParts {
+  acc: number;
+  degree: number;
+  upper: boolean;
+  mark: "" | "°" | "+" | "ø";
+  maj: boolean;
+  seventh: boolean;
+  inversion: number;
+}
+
+export function parseRomanFull(s: string): RomanParts {
+  const m = /^([b#♭♯]?)(VII|VI|V|IV|III|II|I|vii|vi|v|iv|iii|ii|i)(°|o|\+|ø)?(\(?maj\)?)?(7|65|43|42|6|64)?\)?$/.exec(s.trim());
+  if (!m) throw new Error(`bad roman numeral: ${s}`);
+  const acc = m[1] === "b" || m[1] === "♭" ? -1 : m[1] ? 1 : 0;
+  const degree = ROMAN.indexOf(m[2].toUpperCase()) + 1;
+  const mark = (m[3] === "o" ? "°" : m[3] ?? "") as RomanParts["mark"];
+  const fig = m[5] ?? "";
+  return { acc, degree, upper: m[2] === m[2].toUpperCase(), mark, maj: !!m[4], seventh: !!m[4] || ["7", "65", "43", "42"].includes(fig), inversion: { "": 0, "7": 0, "6": 1, "65": 1, "64": 2, "43": 2, "42": 3 }[fig]! };
+}
+
+function romanRoot(tonic: Note, type: ScaleType, r: RomanParts): Note {
+  const deg = scale(tonic, type)[r.degree - 1];
+  return { ...deg, acc: deg.acc + r.acc };
+}
+
+function romanQuality(r: RomanParts): ChordQuality {
+  if (!r.seventh) {
+    if (r.mark === "°" || r.mark === "ø") return "dim";
+    if (r.mark === "+") return "aug";
+    return r.upper ? "maj" : "min";
+  }
+  if (r.mark === "°") return "dim7";
+  if (r.mark === "ø") return "m7b5";
+  if (r.mark === "+") return "augmaj7";
+  if (r.upper) return r.maj ? "maj7" : "7";
+  return r.maj ? "minmaj7" : "min7";
 }
 
 export function midis(notes: Note[]): number[] {

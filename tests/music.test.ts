@@ -170,3 +170,23 @@ describe("sevenths, extended chords, modes", () => {
     expect(names(scale("A3", "blues"), false)).toEqual(["A", "C", "D", "Eb", "E", "G"]);
   });
 });
+
+describe("roman numerals as written (lead-sheet convention)", () => {
+  it("case and markers set the quality; diatonic numerals stay diatonic", () => {
+    expect(names(romanChord("C4", "major", "I7"))).toEqual(["C4", "E4", "G4", "Bb4"]);
+    expect(names(romanChord("C4", "major", "Imaj7"))).toEqual(["C4", "E4", "G4", "B4"]);
+    expect(names(romanChord("C4", "major", "IV7"))).toEqual(["F4", "A4", "C5", "Eb5"]);
+    expect(names(romanChord("C4", "major", "iv"))).toEqual(["F4", "Ab4", "C5"]); // borrowed
+    expect(names(romanChord("C4", "major", "bVII"))).toEqual(["Bb3", "D4", "F4"]);
+    expect(names(romanChord("C4", "major", "bIII"))).toEqual(["Eb4", "G4", "Bb4"]);
+    expect(names(romanChord("A3", "harmonic-minor", "i(maj7)"))).toEqual(["A3", "C4", "E4", "G#4"]);
+    expect(names(romanChord("C4", "major", "viiø7"))).toEqual(["B3", "D4", "F4", "A4"]);
+    expect(names(romanChord("A3", "harmonic-minor", "vii°7"))).toEqual(["G#3", "B3", "D4", "F4"]);
+  });
+  it("secondary dominants", () => {
+    expect(names(romanChord("C4", "major", "V/V"))).toEqual(["D4", "F#4", "A4"]);
+    expect(names(romanChord("C4", "major", "V7/ii"))).toEqual(["A3", "C#4", "E4", "G4"]);
+    expect(names(romanChord("C4", "major", "vii°/V"))).toEqual(["F#3", "A3", "C4"]); // tritone from C: placed below (-6)
+    expect(names(romanChord("G4", "major", "V7/IV"))).toEqual(["G4", "B4", "D5", "F5"]);
+  });
+});
