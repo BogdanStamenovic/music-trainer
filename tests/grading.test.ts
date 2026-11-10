@@ -122,3 +122,12 @@ describe("chord checks by spelling", () => {
     expect(runCheck({ roman: { key: "C", type: "major", degree: 7, is: "viiø7", seventh: true } })).toBeNull();
   });
 });
+
+describe("octave-agnostic phrases", () => {
+  it("whole phrase an octave down is fine; one note an octave off is wrong", () => {
+    const it8 = sing({ targets: [48, 60], beats: [2, 2], tempo: 60 }); // octave leap C3 -> C4
+    const n2 = (i: number, off: number) => ({ index: i, target_midi: 48, cents_error: 0, sustain_s: 2, octave_offset: off });
+    expect(gradeSing(it8, { analysis: { tracker: "t", notes: [n2(0, -1), n2(1, -1)] } }).score).toBe(1); // both an octave down
+    expect(gradeSing(it8, { analysis: { tracker: "t", notes: [n2(0, 0), n2(1, -1)] } }).score).toBe(0.5); // sang C3 twice
+  });
+});

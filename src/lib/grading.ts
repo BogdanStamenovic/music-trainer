@@ -267,11 +267,20 @@ export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; r
   if (!a) return { score: 0, detail: { reason: r.reason ?? "no analysis" } };
   // voice-score indexes count rests; map each target to its position in the full layout
   const idx = item.layout ? item.layout.map((e, k) => (e.midi != null ? k : -1)).filter((k) => k >= 0) : item.targets.map((_, i) => i);
+  // Octave-agnostic means the PHRASE may sit in any octave, not each note on its own:
+  // otherwise singing one pitch twice would pass an octave-leap exercise. The phrase's
+  // octave is the most common offset; a note that disagrees with it is off by an octave.
+  const offs = item.targets.map((_, i) => a.notes.find((x) => x.index === idx[i])?.octave_offset ?? 0);
+  const counts = new Map<number, number>();
+  for (const o of offs) counts.set(o, (counts.get(o) ?? 0) + 1);
+  const phraseOffset = [...counts.entries()].sort((x, y) => y[1] - x[1] || Math.abs(x[0]) - Math.abs(y[0]))[0]?.[0] ?? 0;
   const per = item.targets.map((t, i) => {
     const n = a.notes.find((x) => x.index === idx[i]);
     if (!n || n.cents_error == null) return { target: t, score: 0, cents: null as number | null, sustain: null as number | null };
     let c = Math.abs(n.cents_error);
-    if (!item.octaveAgnostic && n.octave_offset) c += 1200 * Math.abs(n.octave_offset);
+    const off = n.octave_offset ?? 0;
+    if (!item.octaveAgnostic && off) c += 1200 * Math.abs(off);
+    else if (item.octaveAgnostic && off !== phraseOffset) c += 1200 * Math.abs(off - phraseOffset);
     let sc = c <= item.tolerance ? 1 : Math.max(0, 1 - (c - item.tolerance) / (2 * item.tolerance));
     const need = item.sustain && i === item.targets.length - 1 ? item.sustain : 0;
     if (need && (n.sustain_s ?? 0) < need) sc *= Math.max(0, (n.sustain_s ?? 0) / need);

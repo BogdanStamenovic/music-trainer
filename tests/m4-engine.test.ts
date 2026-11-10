@@ -146,7 +146,8 @@ describe("voice engine fixes", () => {
   it("fitRange low/high place the phrase towards that end", () => {
     expect(fitToRange([60, 62, 64], [45, 72], "low")).toEqual([48, 50, 52]);
     expect(fitToRange([60, 62, 64], [45, 72], "high")).toEqual([60, 62, 64]);
-    expect(fitToRange([48, 50], [45, 72], "high")).toEqual([60, 62]);
+    expect(fitToRange([48, 50], [45, 72], "high")).toEqual([72, 74]); // may reach 2 above the comfortable top
+    expect(fitToRange([60, 64, 67], [45, 65], "high")).toEqual([60, 64, 67]); // head-voice phrase stays up (G4 = top + 2)
   });
   it("octave pitch-match does not fail on a range narrower than an octave", () => {
     const ex = Exercise.parse({ id: "V-097-2", type: "generated", prompt: { en: "p", sr: "p" }, count: 3, gen: { kind: "pitch-match", intervals: ["P8"] } });
