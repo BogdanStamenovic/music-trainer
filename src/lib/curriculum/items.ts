@@ -160,7 +160,28 @@ const L = (en: string, sr: string): Loc => ({ en, sr });
 const nn = (n: Note): Loc => L(pcName(n), noteNameSr(n));
 const nno = (n: Note): Loc => L(noteStr(n), noteNameSr(n, true));
 const join = (ls: Loc[], sep = " "): Loc => L(ls.map((l) => l.en).join(sep), ls.map((l) => l.sr).join(sep));
-const opt = (o: string | Loc): Loc => (typeof o === "string" ? L(o, o) : o);
+/**
+ * Plain-string options are language-neutral, EXCEPT note names: "B" means B-flat to a
+ * Serbian reader. Options made only of note names (with separators, e.g. "A, C, E♭",
+ * "Bb", "F#4") show German-system names in Serbian.
+ */
+const opt = (o: string | Loc): Loc => {
+  if (typeof o !== "string") return o;
+  const parts = o.split(/([\s,/–-]+)/);
+  const toks = parts.filter((p, i) => i % 2 === 0 && p !== "");
+  if (!toks.length) return L(o, o);
+  const notes = toks.map((t) => {
+    try {
+      return /^[A-G](##|#|bb|b|♯|♭)?-?\d?$/.test(t) ? parseNote(t.replace("♯", "#").replace("♭", "b")) : null;
+    } catch {
+      return null;
+    }
+  });
+  if (notes.some((n) => !n)) return L(o, o);
+  let k = 0;
+  const sr = parts.map((p, i) => (i % 2 === 0 && p !== "" ? noteNameSr(notes[k]!, /\d$/.test(toks[k++])) : p)).join("");
+  return L(o, sr);
+};
 const SCALE_NAMES: Record<ScaleType, Loc> = {
   major: L("major", "durska"),
   "natural-minor": L("natural minor", "prirodna molska"),
@@ -970,6 +991,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
 export function smoothVoicing(chords: Note[][]): Note[][] {
   let prev = [64, 67, 72];
   let prevBass: number | null = null;
+  let prevSeventhPc: number | null = null; // the 7th of the previous chord, if it had one
   // parallel perfect 5ths/8ves between any two voices (bass included) cost extra
   const parallels = (a: number[], b: number[]) => {
     let n = 0;
@@ -1013,6 +1035,14 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
       });
       let cost = midis.reduce((a, m, v) => a + Math.abs(m - prev[v]), 0);
       if (prevBass !== null) cost += 5 * parallels([prevBass, ...prev], [bass, ...midis]);
+      // a chord 7th resolves down by step (C of D7 -> B of G): anything else costs extra
+      if (prevSeventhPc !== null)
+        prev.forEach((p, v) => {
+          if ((((p % 12) + 12) % 12) === prevSeventhPc) {
+            const d = p - midis[v];
+            if (d < 1 || d > 2) cost += 6;
+          }
+        });
       if (cost < bestCost) {
         bestCost = cost;
         best = { midis, notes: order };
@@ -1021,6 +1051,8 @@ export function smoothVoicing(chords: Note[][]): Note[][] {
     const pairs = best!.midis.map((m, i) => ({ m, n: best!.notes[i] })).sort((a, b) => a.m - b.m);
     prev = pairs.map((p) => p.m);
     prevBass = bass;
+    const seventh = c.length >= 4 ? c.find((n) => (n.letter - root.letter + 7) % 7 === 6) : undefined;
+    prevSeventhPc = seventh ? pitchClassOf(seventh) : null;
     const upper = pairs.map(({ m, n }) => ({ ...n, octave: n.octave + Math.round((m - toMidi(n)) / 12) }));
     return [{ ...c[0], octave: 3 }, ...upper];
   });

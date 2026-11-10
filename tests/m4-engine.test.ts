@@ -220,3 +220,18 @@ describe("smooth voicing doubling", () => {
     expect(k64.filter((p) => p === 7).length).toBe(2); // G doubled
   });
 });
+
+describe("review fixes (wave 2)", () => {
+  it("V7/V -> V7: the 7th (C) falls to B", () => {
+    const v = smoothVoicing(["I", "V7/V", "V7", "I"].map((r) => romanChord("C4", "major", r)));
+    const d7 = v[1].map(toM), g7 = v[2].map(toM);
+    const iC = d7.findIndex((m) => m % 12 === 0);
+    expect(iC).toBeGreaterThan(0);
+    expect(d7[iC] - g7[iC]).toBe(1); // C -> B
+  });
+  it("note-name options are shown with Serbian names", () => {
+    const ex = Exercise.parse({ id: "T-095-1", type: "mcq", prompt: { en: "q", sr: "q" }, options: ["B", "Bb", "A, C, E♭", "F#4", "V7"], answer: 0, keepOrder: true });
+    const it0 = generateItems(ex, "s")[0] as { options: { en: string; sr: string }[] };
+    expect(it0.options.map((o) => o.sr)).toEqual(["H", "B", "A, C, Es", "Fis4", "V7"]);
+  });
+});
