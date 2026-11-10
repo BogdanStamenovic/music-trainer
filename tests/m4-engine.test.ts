@@ -188,3 +188,12 @@ describe("ABC validation", () => {
     expect(checkAbc("X:1\nM:4/4\nL:1/4\nK:C\nC D E F | G4 |]\nw: Twin-kle_ twin-kle", "t")).toEqual([]); // explicit hold: trusted
   });
 });
+
+describe("accompaniment follows the singer's octave", () => {
+  it("accompany moves by the same octave shift as the sung targets", () => {
+    const ex = Exercise.parse({ id: "V-096-1", type: "sing-phrase", prompt: { en: "p", sr: "p" }, notes: ["E4", "F4", "G4"], accompany: { notes: ["C4", "D4", "E4"], mode: "melodic" } });
+    const low = generateItems(ex, "s", undefined, { voiceRange: [45, 57] })[0] as { targets: number[]; play: { notes: number[] } };
+    expect(low.targets).toEqual([52, 53, 55]); // an octave down
+    expect(low.play.notes).toEqual([48, 50, 52]); // the melody too
+  });
+});

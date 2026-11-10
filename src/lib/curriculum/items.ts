@@ -225,6 +225,12 @@ export function derive(d: Derive): Note[][] {
   return d.roman.numerals.map((r) => romanChord(d.roman.key, d.roman.type, r));
 }
 
+/** Move a playback by whole semitones (octave shifts from fitToRange); rests (-1) stay rests. */
+function shiftPlay(p: PlaySpec | undefined, by: number): PlaySpec | undefined {
+  if (!p || !by) return p;
+  return { ...p, notes: p.notes?.map((n) => (n < 0 ? n : n + by)), chords: p.chords?.map((c) => c.map((n) => n + by)) };
+}
+
 function playSpec(p: PlaybackDef | undefined): PlaySpec | undefined {
   if (!p) return undefined;
   if (p.chords) return { mode: "chords", chords: p.chords.map((c) => c.map((n) => toMidi(parseNote(n)))), tempo: p.tempo, durations: p.durations };
@@ -305,7 +311,17 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
     case "sing-pitch": {
       const written = ex.notes.map((n) => parseNote(n));
       const ms = fitToRange(written.map(toMidi), ctx.voiceRange, ex.fitRange);
-      return { ...base, kind: "sing", targets: ms, sustain: ex.sustain, tolerance: ex.tolerance, octaveAgnostic: ex.octaveAgnostic, noteLabels: spelledLabels(written, ms), play: ex.reference ? { mode: "melodic", notes: ms, tempo: 50 } : undefined };
+      const shift = ms[0] - toMidi(written[0]);
+      return {
+        ...base,
+        kind: "sing",
+        targets: ms,
+        sustain: ex.sustain,
+        tolerance: ex.tolerance,
+        octaveAgnostic: ex.octaveAgnostic,
+        noteLabels: spelledLabels(written, ms),
+        play: ex.accompany ? shiftPlay(playSpec(ex.accompany), shift) : ex.reference ? { mode: "melodic", notes: ms, tempo: 50 } : undefined,
+      };
     }
     case "sing-phrase": {
       // rests ("r") are kept in the layout: voice-score note indexes count them
@@ -326,7 +342,8 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
         octaveAgnostic: ex.octaveAgnostic,
         noteLabels: spelledLabels(written, ms),
         layout: seq.some((n) => n === null) ? layout : undefined,
-        play: ex.accompany ? playSpec(ex.accompany) : ex.reference ? { mode: "melodic", notes: layout.map((e) => e.midi ?? -1), durations: layout.map((e) => e.beats), tempo: ex.tempo } : undefined,
+        // the accompaniment moves by the same octaves as the sung line, so it sounds where you sing
+        play: ex.accompany ? shiftPlay(playSpec(ex.accompany), written.length ? ms[0] - toMidi(written[0]) : 0) : ex.reference ? { mode: "melodic", notes: layout.map((e) => e.midi ?? -1), durations: layout.map((e) => e.beats), tempo: ex.tempo } : undefined,
       };
     }
     case "voice-range":

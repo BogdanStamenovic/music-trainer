@@ -95,7 +95,7 @@ const SingCommon = {
   // "low"/"high" = towards that end (chest / head-voice work), false = as written
   fitRange: z.union([z.boolean(), z.enum(["low", "high"])]).default(true),
 };
-export const SingPitch = z.object({ ...Base, type: z.literal("sing-pitch"), ...SingCommon, notes: z.array(NoteS).min(1), sustain: z.number().min(0).max(15).default(2) });
+export const SingPitch = z.object({ ...Base, type: z.literal("sing-pitch"), ...SingCommon, notes: z.array(NoteS).min(1), sustain: z.number().min(0).max(15).default(2), accompany: Playback.optional() });
 export const SingPhrase = z.object({ ...Base, type: z.literal("sing-phrase"), ...SingCommon, notes: z.array(z.union([NoteS, z.literal("r")])).optional() /* "r" = rest */, derive: Derive.optional(), accompany: Playback.optional() /* reference played instead of the targets (e.g. the melody to harmonize); sung alone afterwards: the mic would hear simultaneous playback */, beats: z.array(z.number().positive()).optional(), tempo: z.number().min(30).max(200).default(72) });
 /** Records a low glide and a high glide; stores the learner's range. */
 export const VoiceRange = z.object({ ...Base, type: z.literal("voice-range") });
