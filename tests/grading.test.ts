@@ -131,3 +131,12 @@ describe("octave-agnostic phrases", () => {
     expect(gradeSing(it8, { analysis: { tracker: "t", notes: [n2(0, 0), n2(1, -1)] } }).score).toBe(0.5); // sang C3 twice
   });
 });
+
+describe("numeral check (secondary/borrowed chords)", () => {
+  it("verifies spelled chord tones and bass", () => {
+    expect(runCheck({ numeral: { key: "C", is: "V7/V", notes: ["D3", "F#4", "A4", "C5"] } })).toBeNull();
+    expect(runCheck({ numeral: { key: "C", is: "V7/V", notes: ["D3", "Gb4", "A4", "C5"] } })).toMatch(/F#/);
+    expect(runCheck({ numeral: { key: "C", is: "V65/V", notes: ["F#3", "A3", "C4", "D4"] } })).toBeNull();
+    expect(runCheck({ numeral: { key: "C", is: "bVII", notes: ["Bb3", "D4", "F4"] } })).toBeNull();
+  });
+});

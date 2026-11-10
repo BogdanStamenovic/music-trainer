@@ -5,7 +5,7 @@ import abcjs from "abcjs";
 import { derive, generateItems } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
-import { scale, keySignature, romanNumeral, romanNumeral7, CHORDS } from "../music/harmony";
+import { scale, keySignature, romanNumeral, romanNumeral7, romanChord, CHORDS } from "../music/harmony";
 import { syllables } from "../projects";
 
 /** Run one content assertion; returns an error message or null. */
@@ -71,6 +71,19 @@ export function runCheck(input: z.input<typeof CheckSchema>): string | null {
   if ("roman" in c) {
     const got = c.roman.seventh ? romanNumeral7(parseNote(c.roman.key), c.roman.type, c.roman.degree) : romanNumeral(parseNote(c.roman.key), c.roman.type, c.roman.degree);
     return got === c.roman.is ? null : `degree ${c.roman.degree} in ${c.roman.key} ${c.roman.type} is ${got}, content says ${c.roman.is}`;
+  }
+  if ("numeral" in c) {
+    // same spelled pitch classes as the engine's chord for that numeral, and the same bass
+    const want = romanChord(parseNote(c.numeral.key, 4), c.numeral.type, c.numeral.is);
+    const got = c.numeral.notes.map((n) => parseNote(n));
+    const key = (n: { letter: number; acc: number }) => `${n.letter}:${n.acc}`;
+    const w = new Set(want.map(key));
+    const g = new Set(got.map(key));
+    const same = w.size === g.size && [...w].every((x) => g.has(x));
+    const lowest = (ns: typeof got) => ns.reduce((a, b) => (toMidi(a) <= toMidi(b) ? a : b));
+    if (!same) return `${c.numeral.is} in ${c.numeral.key} ${c.numeral.type} is ${want.map((n) => pcName(n)).join("-")}, content has ${got.map((n) => pcName(n)).join("-")}`;
+    if (key(lowest(got)) !== key(lowest(want))) return `${c.numeral.is} in ${c.numeral.key}: bass should be ${pcName(lowest(want))}, content has ${pcName(lowest(got))}`;
+    return null;
   }
   if ("syllables" in c) {
     const got = c.syllables.text.split(/\s+/).filter(Boolean).reduce((a, w) => a + syllables(w, "sr"), 0);
