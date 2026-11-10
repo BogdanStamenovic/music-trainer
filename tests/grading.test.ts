@@ -140,3 +140,11 @@ describe("numeral check (secondary/borrowed chords)", () => {
     expect(runCheck({ numeral: { key: "C", is: "bVII", notes: ["Bb3", "D4", "F4"] } })).toBeNull();
   });
 });
+
+describe("numeral check with shells", () => {
+  it("complete:false accepts a voicing without the 5th, not one missing the 3rd", () => {
+    expect(runCheck({ numeral: { key: "C", is: "V7/ii", notes: ["A2", "C#4", "G4"], complete: false } })).toBeNull();
+    expect(runCheck({ numeral: { key: "C", is: "V7/ii", notes: ["A2", "E4", "G4"], complete: false } })).toMatch(/V7\/ii/);
+    expect(runCheck({ numeral: { key: "C", is: "V7/ii", notes: ["A2", "C#4", "G4"] } })).toMatch(/V7\/ii/); // complete by default
+  });
+});

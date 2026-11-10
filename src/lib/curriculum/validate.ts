@@ -79,7 +79,13 @@ export function runCheck(input: z.input<typeof CheckSchema>): string | null {
     const key = (n: { letter: number; acc: number }) => `${n.letter}:${n.acc}`;
     const w = new Set(want.map(key));
     const g = new Set(got.map(key));
-    const same = w.size === g.size && [...w].every((x) => g.has(x));
+    let same = w.size === g.size && [...w].every((x) => g.has(x));
+    if (!c.numeral.complete) {
+      // shell voicing: only chord tones, and nothing essential missing (the 5th may go)
+      const root = want.find((n) => want.every((m) => m === n || [2, 4, 6].includes((m.letter - n.letter + 7) % 7)))!;
+      const essential = want.filter((n) => (n.letter - root.letter + 7) % 7 !== 4).map(key);
+      same = [...g].every((x) => w.has(x)) && essential.every((x) => g.has(x));
+    }
     const lowest = (ns: typeof got) => ns.reduce((a, b) => (toMidi(a) <= toMidi(b) ? a : b));
     if (!same) return `${c.numeral.is} in ${c.numeral.key} ${c.numeral.type} is ${want.map((n) => pcName(n)).join("-")}, content has ${got.map((n) => pcName(n)).join("-")}`;
     if (key(lowest(got)) !== key(lowest(want))) return `${c.numeral.is} in ${c.numeral.key}: bass should be ${pcName(lowest(want))}, content has ${pcName(lowest(got))}`;
