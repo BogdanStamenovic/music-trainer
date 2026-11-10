@@ -105,6 +105,27 @@ const ivLoc = (s: string): Loc => {
   return L(`${intervalName(iv, "en")} (${s})`, `${intervalName(iv, "sr")} (${s})`);
 };
 const qLoc = (q: ChordQuality): Loc => L(qualityName(q, "en"), qualityName(q, "sr"));
+const isMinor = (t: ScaleType) => t.includes("minor");
+const SR_VARIANT: Record<ScaleType, string> = { major: "", "natural-minor": "prirodni", "harmonic-minor": "harmonski", "melodic-minor": "melodijski", "major-pentatonic": "pentatonika", "minor-pentatonic": "pentatonika" };
+/**
+ * Key/scale names. Serbian: "C-dur", "a-mol" (minor keys lower case), locative
+ * "u C-duru", "u a-molu"; scale variants follow ("a-mol harmonski").
+ * `variant` adds the scale variant (needed for scales, not for keys).
+ */
+function keyName(tonic: Note, type: ScaleType, variant = true): { nom: Loc; loc: Loc } {
+  const minor = isMinor(type);
+  const base = minor ? noteNameSr(tonic).toLowerCase() + "-mol" : noteNameSr(tonic) + "-dur";
+  const showVar = variant && type !== "major" && (type !== "natural-minor" || variant);
+  const v = showVar && SR_VARIANT[type] ? " " + SR_VARIANT[type] : "";
+  const en = `${pcName(tonic)} ${type === "major" || (type === "natural-minor" && !variant) ? (minor ? "minor" : "major") : SCALE_NAMES[type].en}`;
+  return { nom: L(en, base + v), loc: L(en, base + "u" + (v ? ` (${v.trim()})` : "")) };
+}
+/** Serbian count + noun in accusative after a verb: 1 povisilicu, 2-4 povisilice, 5+ povisilica. */
+function accCount(n: number, sharp: boolean): string {
+  const stem = sharp ? "povisilic" : "snizilic";
+  return `${n} ${stem}${n === 1 ? "u" : n <= 4 ? "e" : "a"}`;
+}
+const chordSr = (root: Note, q: ChordQuality) => `${noteNameSr(root)} ${qualityName(q, "sr")}${["maj", "min", "dim", "aug"].includes(q) ? " trozvuk" : ""}`;
 const INV_NAMES: Loc[] = [L("root position", "osnovni položaj"), L("1st inversion", "1. obrtaj (sekstakord)"), L("2nd inversion", "2. obrtaj (kvartsekstakord)"), L("3rd inversion", "3. obrtaj")];
 
 export function derive(d: Derive): Note[][] {
@@ -338,7 +359,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             noteLabels: join(notes.map(nno)),
           };
         const { options, answer } = mcq(rng, q, g.qualities, g.qualities.length);
-        return { ...base, kind: "mcq", play, prompt: L("What quality is this chord?", "Koji je ovo akord (vrsta)?"), options: options.map((o) => qLoc(o as ChordQuality)), answer };
+        return { ...base, kind: "mcq", play, prompt: L("What quality is this chord?", "Kakav je ovo akord?"), options: options.map((o) => qLoc(o as ChordQuality)), answer };
       }
       throw new Error(`chord-ear: could not generate for ${ex.id}`);
     }
@@ -356,7 +377,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         }
         if (notes.some((n) => Math.abs(n.acc) > 1)) continue;
         const sym = chordSymbol(root, q);
-        const symSr = `${noteNameSr(root)} ${qualityName(q, "sr")}`;
+        const symSr = chordSr(root, q);
         const invTxt = inv ? INV_NAMES[inv] : null;
         if (g.answer === "name")
           return {
@@ -407,7 +428,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
           options: options.map((o) => {
             const [r, qq] = o.split("|");
             const rn = parseNote(r);
-            return L(`${chordSymbol(rn, qq as ChordQuality)} (${pcName(rn)} ${qualityName(qq as ChordQuality, "en")})`, `${noteNameSr(rn)} ${qualityName(qq as ChordQuality, "sr")}`);
+            return L(`${chordSymbol(rn, qq as ChordQuality)} (${pcName(rn)} ${qualityName(qq as ChordQuality, "en")})`, chordSr(rn, qq as ChordQuality));
           }),
           answer,
         };
@@ -418,9 +439,11 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const type = rng.pick(g.types);
       const tonicName = rng.pick(g.tonics);
       const tonic = parseNote(tonicName, toMidi(parseNote(tonicName, 4)) > 66 ? 3 : 4);
-      let notes = scale(tonic, type, true);
+      // melodic minor descends as natural minor
+      let notes = g.descending && type === "melodic-minor" ? scale(tonic, "natural-minor", true) : scale(tonic, type, true);
       if (g.descending) notes = notes.reverse();
       const nm = SCALE_NAMES[type];
+      const kn = keyName(tonic, type).nom;
       const dir = g.descending ? L(", descending", ", silazno") : L("", "");
       if (g.answer === "name")
         return {
@@ -428,7 +451,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
           kind: "names",
           ordered: true,
           expect: notes.slice(0, 7).map(pcName),
-          prompt: L(`Spell the ${pcName(tonic)} ${nm.en} scale (7 notes, from the tonic).`, `Napiši ${noteNameSr(tonic)} ${nm.sr} lestvicu (7 tonova, od tonike).`),
+          prompt: L(`Spell the ${pcName(tonic)} ${nm.en} scale (7 notes, from the tonic).`, `Napiši lestvicu ${kn.sr} (7 tonova, od tonike).`),
         };
       return {
         ...base,
@@ -440,8 +463,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         tempo: g.tempo,
         showNotes: false,
         prompt: L(
-          `Play ${pcName(tonic)} ${nm.en}${dir.en}, one octave from ${noteStr(g.descending ? notes[0] : tonic)}${g.tempo ? ` at ♩=${g.tempo}` : ""}.`,
-          `Odsviraj ${noteNameSr(tonic)} ${nm.sr} lestvicu${dir.sr}, jednu oktavu od ${noteNameSr(g.descending ? notes[0] : tonic, true)}${g.tempo ? `, ♩=${g.tempo}` : ""}.`,
+          `Play ${pcName(tonic)} ${g.descending && type === "melodic-minor" ? "melodic minor (descending = natural minor)" : nm.en}${dir.en}, one octave from ${noteStr(g.descending ? notes[0] : tonic)}${g.tempo ? ` at ♩=${g.tempo}` : ""}.`,
+          `Odsviraj lestvicu ${kn.sr}${dir.sr}, jednu oktavu od ${noteNameSr(g.descending ? notes[0] : tonic, true)}${g.tempo ? `, ♩=${g.tempo}` : ""}.`,
         ),
         noteLabels: join(notes.map(nn)),
       };
@@ -452,7 +475,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const sig = keySignature(tonic, g.mode);
       const sigLoc = (s: number): Loc => (s === 0 ? L("no sharps or flats", "bez predznaka") : s > 0 ? L(`${s} sharp${s > 1 ? "s" : ""}`, `${s} ${s === 1 ? "povisilica" : "povisilice"}`.replace(/^([5-7]) povisilice$/, "$1 povisilica")) : L(`${-s} flat${s < -1 ? "s" : ""}`, `${-s} ${s === -1 ? "snizilica" : "snizilice"}`.replace(/^([5-7]) snizilice$/, "$1 snizilica")));
       const modeLoc = g.mode === "major" ? L("major", "dur") : L("minor", "mol");
-      const keyLoc = L(`${pcName(tonic)} ${modeLoc.en}`, `${noteNameSr(tonic)}-${modeLoc.sr}`);
+      const keyLoc = keyName(tonic, g.mode === "major" ? "major" : "natural-minor", false).nom;
       if (g.ask === "count") {
         const pool = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7].map(String);
         const { options, answer } = mcq(rng, String(sig), pool.filter((p) => Math.abs(+p - sig) <= 3));
@@ -468,14 +491,14 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       }
       const pool = [...new Set(g.keys.map((k) => pcName(parseNote(k))))];
       const { options, answer } = mcq(rng, pcName(tonic), pool);
-      return { ...base, kind: "mcq", prompt: L(`Which ${modeLoc.en} key has ${sigLoc(sig).en}?`, `Koji ${modeLoc.sr} ima ${sigLoc(sig).sr}?`), options: options.map((o) => nn(parseNote(o))), answer };
+      return { ...base, kind: "mcq", prompt: L(`Which ${modeLoc.en} key has ${sigLoc(sig).en}?`, sig === 0 ? `Koji ${modeLoc.sr} nema predznaka?` : `Koji ${modeLoc.sr} ima ${accCount(Math.abs(sig), sig > 0)}?`), options: options.map((o) => nn(parseNote(o))), answer };
     }
     case "roman": {
       const key = parseNote(rng.pick(g.keys), 4);
       const deg = rng.pick(g.degrees ?? [1, 2, 3, 4, 5, 6, 7]);
       const rn = romanNumeral(key, g.type, deg);
       const notes = diatonicChord(key, g.type, deg);
-      const keyLoc = g.type === "major" ? L(`${pcName(key)} major`, `${noteNameSr(key)}-dur`) : L(`${pcName(key)} ${SCALE_NAMES[g.type].en}`, `${noteNameSr(key)}-mol (${SCALE_NAMES[g.type].sr})`);
+      const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       if (g.ask === "numeral") {
         const pool = [1, 2, 3, 4, 5, 6, 7].map((d) => romanNumeral(key, g.type, d));
         const chordTxt = join(notes.map(nn), "-");
@@ -499,7 +522,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
     case "progression": {
       const key = parseNote(rng.pick(g.keys), toMidi(parseNote(g.keys[0], 4)) > 67 ? 3 : 4);
       const chords = g.numerals.map((r) => romanChord(key, g.type, r));
-      const keyLoc = g.type === "major" ? L(`${pcName(key)} major`, `${noteNameSr(key)}-dur`) : L(`${pcName(key)} minor`, `${noteNameSr(key)}-mol`);
+      const keyLoc = keyName(key, g.type, g.type !== "natural-minor").loc;
       const prog = g.numerals.join(" – ");
       const ec = chords.map((c) => c.map(toMidi));
       return {
@@ -535,7 +558,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       }
       const notes = seq.map((i) => sc[i]);
       const ms = notes.map(toMidi);
-      const keyLoc = L(`${pcName(tonic)} ${SCALE_NAMES[g.type].en}`, `${noteNameSr(tonic)} ${SCALE_NAMES[g.type].sr}`);
+      const keyLoc = keyName(tonic, g.type, g.type !== "natural-minor").nom;
       return {
         ...base,
         kind: "midi",
@@ -558,7 +581,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       // key-establishing I-IV-V-I in the octave below, then the target note
       const ctx = cadence.map((c) => c.map((n) => toMidi(n) - 12));
       const play: PlaySpec = { mode: "chords", chords: [...ctx, [toMidi(target)]], tempo: 72 };
-      const keyLoc = L(`${pcName(tonic)} ${SCALE_NAMES[g.type].en}`, `${noteNameSr(tonic)} ${SCALE_NAMES[g.type].sr}`);
+      const keyLoc = keyName(tonic, g.type, g.type !== "natural-minor").nom;
       if (g.answer === "play")
         return {
           ...base,
@@ -592,7 +615,7 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         roots.push(romanChord(key, g.type, r.replace(/[0-9]+$/, ""))[0]);
       }
       const ms = roots.map(toMidi);
-      const keyLoc = g.type === "major" ? L(`${pcName(key)} major`, `${noteNameSr(key)}-dur`) : L(`${pcName(key)} minor`, `${noteNameSr(key)}-mol`);
+      const keyLoc = keyName(key, g.type, g.type !== "natural-minor").nom;
       return {
         ...base,
         kind: "midi",

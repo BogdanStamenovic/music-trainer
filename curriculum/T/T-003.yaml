@@ -1,0 +1,115 @@
+id: T-003
+track: T
+order: 3
+prereqs: [T-002]
+title: {en: "Interval size: counting letter names", sr: "Veličina intervala: brojanje imena nota"}
+minutes: 9
+tags: [intervals]
+explain:
+  en: |
+    An **interval** is the distance between two notes. Its *size* (number) comes from counting **letter names**,
+    including both ends:
+
+    - C → E: C, D, E = 3 letters = a **3rd**.
+    - C → A: C D E F G A = a **6th**.
+    - Same letter = **unison** (1); the next same letter up = **octave** (8).
+
+    | number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | name | unison | 2nd | 3rd | 4th | 5th | 6th | 7th | octave |
+
+    **Accidentals do not change the number.** C–E♭, C–E and C–E♯ are all 3rds, because the letters are C and E.
+    (The next lessons add the *quality* word, like "major" or "minor", which is where the accidentals matter.)
+
+    On the staff: line-to-line or space-to-space is an odd number (3, 5, 7); line-to-space is even (2, 4, 6).
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CE] [CG] [CB] | [CD] [CF] [CA] |]
+    ```
+  sr: |
+    **Interval** je rastojanje između dva tona. Njegova *veličina* (broj) dobija se brojanjem **imena nota**,
+    računajući oba kraja:
+
+    - C → E: C, D, E = 3 imena = **terca**.
+    - C → A: C D E F G A = **seksta**.
+    - Isto ime = **prima** (1); sledeće isto ime naviše = **oktava** (8).
+
+    | broj | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+    |---|---|---|---|---|---|---|---|---|
+    | naziv | prima | sekunda | terca | kvarta | kvinta | seksta | septima | oktava |
+
+    **Predznaci ne menjaju broj.** C–Es, C–E i C–Eis su sve terce, jer su imena C i E.
+    (Sledeće lekcije dodaju *vrstu* intervala, npr. „velika" ili „mala", i tu predznaci postaju važni.)
+
+    Na linijskom sistemu: linija–linija ili praznina–praznina daje neparan broj (3, 5, 7); linija–praznina paran (2, 4, 6).
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CE] [CG] [CB] | [CD] [CF] [CA] |]
+    ```
+exercises:
+  - id: T-003-1
+    type: mcq
+    prompt: {en: "What size is this interval?", sr: "Koje veličine je ovaj interval?"}
+    abc: "X:1\nL:1/2\nK:C clef=treble\nD B |]"
+    options:
+      - {en: "5th", sr: "kvinta"}
+      - {en: "6th", sr: "seksta"}
+      - {en: "7th", sr: "septima"}
+      - {en: "4th", sr: "kvarta"}
+    answer: 1
+    checks:
+      - interval: {from: D4, to: B4, is: M6}
+  - id: T-003-2
+    type: mcq
+    prompt: {en: "E up to A♭: what size? (Count letters, ignore the flat.)", sr: "E naviše do As: koje veličine? (Broj imena, zanemari snizilicu.)"}
+    options:
+      - {en: "3rd", sr: "terca"}
+      - {en: "4th", sr: "kvarta"}
+      - {en: "5th", sr: "kvinta"}
+    answer: 1
+    checks:
+      - interval: {from: E4, to: Ab4, is: d4}
+  - id: T-003-3
+    type: mcq
+    prompt: {en: "What size is this interval?", sr: "Koje veličine je ovaj interval?"}
+    abc: "X:1\nL:1/2\nK:C clef=treble\nF e |]"
+    options:
+      - {en: "6th", sr: "seksta"}
+      - {en: "7th", sr: "septima"}
+      - {en: "octave", sr: "oktava"}
+      - {en: "5th", sr: "kvinta"}
+    answer: 1
+    checks:
+      - interval: {from: F4, to: E5, is: M7}
+  - id: T-003-4
+    type: mcq
+    prompt: {en: "What size is this interval?", sr: "Koje veličine je ovaj interval?"}
+    abc: "X:1\nL:1/2\nK:C clef=bass\nG, D |]"
+    options:
+      - {en: "4th", sr: "kvarta"}
+      - {en: "5th", sr: "kvinta"}
+      - {en: "6th", sr: "seksta"}
+      - {en: "3rd", sr: "terca"}
+    answer: 1
+    checks:
+      - interval: {from: G3, to: D4, is: P5}
+  - id: T-003-5
+    type: midi-play
+    prompt: {en: "Play C4, then the white key a 5th above it.", sr: "Odsviraj C4, pa belu dirku kvintu iznad."}
+    mode: sequence
+    derive: {interval: {from: C4, iv: P5}}
+  - id: T-003-6
+    type: midi-play
+    prompt: {en: "Play D4, then the white key a 3rd above it.", sr: "Odsviraj D4, pa belu dirku tercu iznad."}
+    mode: sequence
+    derive: {interval: {from: D4, iv: m3}}
+  - id: T-003-7
+    type: notation-input
+    prompt: {en: "Which white-key note is a 6th above E?", sr: "Koja nota (bela dirka) je seksta iznad E?"}
+    derive: {interval: {from: E4, iv: m6}}

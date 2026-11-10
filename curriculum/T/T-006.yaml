@@ -1,0 +1,119 @@
+id: T-006
+track: T
+order: 6
+prereqs: [T-005]
+title: {en: "6ths, 7ths, the full interval table and inversion", sr: "Sekste, septime, tablica intervala i obrtaj intervala"}
+minutes: 13
+tags: [intervals]
+explain:
+  en: |
+    6ths and 7ths are major or minor, like 2nds and 3rds. The whole table inside one octave:
+
+    | half steps | interval | | half steps | interval |
+    |---|---|---|---|---|
+    | 1 | minor 2nd (m2) | | 7 | perfect 5th (P5) |
+    | 2 | major 2nd (M2) | | 8 | minor 6th (m6) |
+    | 3 | minor 3rd (m3) | | 9 | major 6th (M6) |
+    | 4 | major 3rd (M3) | | 10 | minor 7th (m7) |
+    | 5 | perfect 4th (P4) | | 11 | major 7th (M7) |
+    | 6 | A4 / d5 (tritone) | | 12 | perfect octave (P8) |
+
+    Keyboard shortcut for big intervals: a **major 7th** is a half step below the octave, a **minor 7th** a whole step below it.
+
+    **Inversion**: move the lower note up an octave (C–E becomes E–C). Three rules:
+    - the numbers add up to **9** (3rd ↔ 6th, 2nd ↔ 7th, 4th ↔ 5th);
+    - **major ↔ minor**, **augmented ↔ diminished**;
+    - **perfect stays perfect**.
+
+    So M3 (C–E) inverts to m6 (E–C), and A4 (F–B) to d5 (B–F). Useful trick: a 6th or 7th is often easier to find as "the inversion of a small interval".
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CE] [Ec] | [CA] [Ac] |]
+    ```
+  sr: |
+    Sekste i septime su velike ili male, kao sekunde i terce. Cela tablica unutar oktave:
+
+    | polustepeni | interval | | polustepeni | interval |
+    |---|---|---|---|---|
+    | 1 | mala sekunda (m2) | | 7 | čista kvinta (P5) |
+    | 2 | velika sekunda (M2) | | 8 | mala seksta (m6) |
+    | 3 | mala terca (m3) | | 9 | velika seksta (M6) |
+    | 4 | velika terca (M3) | | 10 | mala septima (m7) |
+    | 5 | čista kvarta (P4) | | 11 | velika septima (M7) |
+    | 6 | A4 / d5 (tritonus) | | 12 | čista oktava (P8) |
+
+    Prečica za velike intervale: **velika septima** je polustepen ispod oktave, **mala septima** ceo stepen ispod nje.
+
+    **Obrtaj intervala**: donji ton prenesemo oktavu više (C–E postaje E–C). Tri pravila:
+    - zbir brojeva je **9** (terca ↔ seksta, sekunda ↔ septima, kvarta ↔ kvinta);
+    - **velika ↔ mala**, **povećana ↔ smanjena**;
+    - **čista ostaje čista**.
+
+    Tako se M3 (C–E) obrće u m6 (E–C), a A4 (F–H) u d5 (H–F). Korisno: sekstu ili septimu je često lakše naći kao „obrtaj malog intervala".
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CE] [Ec] | [CA] [Ac] |]
+    ```
+exercises:
+  - id: T-006-1
+    type: generated
+    prompt: {en: "Count half steps, up to an octave", sr: "Broj polustepene, do oktave"}
+    count: 5
+    gen: {kind: semitones, maxSemitones: 12}
+  - id: T-006-2
+    type: generated
+    prompt: {en: "Name 6ths and 7ths", sr: "Imenuj sekste i septime"}
+    count: 6
+    gen: {kind: interval-name, intervals: [m6, M6, m7, M7], show: both}
+  - id: T-006-3
+    type: generated
+    prompt: {en: "Find 6ths and 7ths on the keys", sr: "Nađi sekste i septime na klavijaturi"}
+    count: 4
+    gen: {kind: interval-build, intervals: [m6, M6, m7, M7], answer: play}
+  - id: T-006-4
+    type: mcq
+    prompt: {en: "C–E is a major 3rd. Its inversion E–C is a…", sr: "C–E je velika terca. Njen obrtaj E–C je…"}
+    options:
+      - {en: "minor 6th", sr: "mala seksta"}
+      - {en: "major 6th", sr: "velika seksta"}
+      - {en: "minor 3rd", sr: "mala terca"}
+      - {en: "perfect 5th", sr: "čista kvinta"}
+    answer: 0
+    checks:
+      - interval: {from: C4, to: E4, is: M3}
+      - interval: {from: E4, to: C5, is: m6}
+  - id: T-006-5
+    type: mcq
+    prompt: {en: "D–C is a minor 7th. What is its inversion C–D?", sr: "D–C je mala septima. Šta je njen obrtaj C–D?"}
+    options:
+      - {en: "minor 2nd", sr: "mala sekunda"}
+      - {en: "major 2nd", sr: "velika sekunda"}
+      - {en: "major 7th", sr: "velika septima"}
+      - {en: "minor 3rd", sr: "mala terca"}
+    answer: 1
+    checks:
+      - interval: {from: D4, to: C5, is: m7}
+      - interval: {from: C5, to: D5, is: M2}
+  - id: T-006-6
+    type: mcq
+    prompt: {en: "A perfect 4th inverts to a…", sr: "Čista kvarta se obrće u…"}
+    options:
+      - {en: "perfect 5th", sr: "čistu kvintu"}
+      - {en: "diminished 5th", sr: "smanjenu kvintu"}
+      - {en: "perfect 4th", sr: "čistu kvartu"}
+      - {en: "major 6th", sr: "veliku sekstu"}
+    answer: 0
+    checks:
+      - interval: {from: G4, to: C5, is: P4}
+      - interval: {from: C5, to: G5, is: P5}
+  - id: T-006-7
+    type: generated
+    prompt: {en: "Hear 6ths, 7ths and the octave", sr: "Prepoznaj sluhom sekste, septime i oktavu"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m6, M6, m7, M7, P8], direction: up}

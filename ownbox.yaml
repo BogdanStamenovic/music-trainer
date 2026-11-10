@@ -1,0 +1,18 @@
+schema: 1
+name: music-trainer
+description: Personal daily music course PWA (theory, ear, keys, voice) with MIDI grading, served on the tailnet
+homepage: https://github.com/BogdanStamenovic/music-trainer
+tags: [music, pwa, midi, nextjs, sqlite, learning]
+install:
+  platforms: [linux]
+  setup:
+    linux:
+      - bash scripts/lifecycle.sh setup
+  update:
+    linux:
+      - bash scripts/lifecycle.sh update
+  remove:
+    linux:
+      - bash scripts/lifecycle.sh remove
+command:
+  linux: bin/music-trainer

@@ -1,0 +1,101 @@
+id: T-013
+track: T
+order: 13
+prereqs: [T-012]
+title: {en: "Triad inversions and finding the root", sr: "Obrtaji trozvuka i pronalaženje osnovnog tona"}
+minutes: 13
+tags: [chords, harmony]
+explain:
+  en: |
+    The same three notes can be stacked with a different note in the **bass** (lowest). The bass note decides the position:
+
+    | position | bass | C major | figure | Serbian |
+    |---|---|---|---|---|
+    | root position | root | C E G | (5/3) | kvintakord |
+    | 1st inversion | 3rd | E G C | **6** | sekstakord |
+    | 2nd inversion | 5th | G C E | **6/4** | kvartsekstakord |
+
+    The figures name the intervals **above the bass**: E–G–C has a 3rd and a **6th** above E; G–C–E has a **4th** and a **6th** above G.
+    With Roman numerals they are written after the numeral: **I6**, **I64**, **V6**.
+
+    **Finding the root** of a close-position chord:
+    - all 3rds (snowman) → the bass is the root;
+    - otherwise find the **4th** between neighbouring notes: its **upper note is the root**.
+      E–G–**C**: G–C is the 4th, so C. **G**–**C**–E: G–C again, root C.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [EGc] [Gce] |]
+    ```
+  sr: |
+    Ista tri tona mogu se složiti tako da je u **basu** (najniže) drugi ton. Bas određuje položaj:
+
+    | položaj | u basu | C-dur | oznaka | engleski |
+    |---|---|---|---|---|
+    | osnovni položaj | osnovni ton | C E G | (5/3) — **kvintakord** | root position |
+    | 1. obrtaj | terca | E G C | **6** — **sekstakord** | 1st inversion |
+    | 2. obrtaj | kvinta | G C E | **6/4** — **kvartsekstakord** | 2nd inversion |
+
+    Oznake su intervali **iznad basa**: E–G–C ima tercu i **sekstu** iznad E; G–C–E ima **kvartu** i **sekstu** iznad G.
+    Uz rimske brojeve pišu se posle broja: **I6**, **I64**, **V6**.
+
+    **Kako naći osnovni ton** akorda u tesnom slogu:
+    - sve terce (linija-linija-linija) → bas je osnovni ton;
+    - inače nađi **kvartu** između susednih tonova: njen **gornji ton je osnovni ton**.
+      E–G–**C**: G–C je kvarta, dakle C. **G**–**C**–E: opet G–C, osnovni ton C.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [EGc] [Gce] |]
+    ```
+exercises:
+  - id: T-013-1
+    type: mcq
+    prompt: {en: "Which position is this C major chord in?", sr: "U kom položaju je ovaj C-dur akord?"}
+    abc: "X:1\nL:1\nK:C clef=treble\n[Gce] |]"
+    options:
+      - {en: "root position", sr: "osnovni položaj (kvintakord)"}
+      - {en: "1st inversion (6)", sr: "1. obrtaj (sekstakord)"}
+      - {en: "2nd inversion (6/4)", sr: "2. obrtaj (kvartsekstakord)"}
+    answer: 2
+    checks:
+      - chord: {notes: [G4, C5, E5], root: C, quality: maj, inversion: 2}
+      - chord: {notes: [E4, G4, C5], root: C, quality: maj, inversion: 1}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj, inversion: 0}
+      - interval: {from: G4, to: C5, is: P4}
+  - id: T-013-2
+    type: mcq
+    prompt: {en: "A–C–F: what is the root?", sr: "A–C–F: koji je osnovni ton?"}
+    abc: "X:1\nL:1\nK:C clef=treble\n[Acf] |]"
+    options:
+      - {en: "A", sr: "A"}
+      - {en: "C", sr: "C"}
+      - {en: "F", sr: "F"}
+    answer: 2
+    checks:
+      - chord: {notes: [A4, C5, F5], root: F, quality: maj, inversion: 1}
+      - interval: {from: C5, to: F5, is: P4}
+  - id: T-013-3
+    type: generated
+    prompt: {en: "Name inverted triads (find the root)", sr: "Imenuj obrnute trozvuke (nađi osnovni ton)"}
+    count: 5
+    gen: {kind: chord-name, qualities: [maj, min], inversions: [1, 2]}
+  - id: T-013-4
+    type: generated
+    prompt: {en: "Spell triads in inversion, bass first", sr: "Napiši obrtaje trozvuka, od basa"}
+    count: 4
+    gen: {kind: chord-build, qualities: [maj, min], inversions: [1, 2], answer: name}
+  - id: T-013-5
+    type: generated
+    prompt: {en: "Play triads in all positions", sr: "Odsviraj trozvuke u svim položajima"}
+    count: 5
+    gen: {kind: chord-build, qualities: [maj, min], inversions: [0, 1, 2], answer: play}
+  - id: T-013-6
+    type: generated
+    prompt: {en: "Smooth voice leading with inversions: I–IV64–I–V6–I", sr: "Glatko vođenje glasova uz obrtaje: I–IV64–I–V6–I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, IV64, I, V6, I]}

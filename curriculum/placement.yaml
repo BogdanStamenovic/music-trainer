@@ -1,0 +1,181 @@
+# Day-one placement. Each exercise that passes marks its `skips` lessons as
+# skipped (only when their prereqs are passed/skipped too). Thresholds are high
+# on purpose: skipping a lesson you half-know costs more than doing it.
+# Vocal range / pitch-matching baseline arrives with the voice module (M2).
+sections:
+  - id: notation
+    title: {en: "Notation", sr: "Notacija"}
+    intro:
+      en: "You read music already; this confirms it so the note-naming lesson can be skipped."
+      sr: "Note već čitaš; ovo to potvrđuje da bi se lekcija o imenima nota preskočila."
+    exercises:
+      - id: P-001-1
+        type: generated
+        prompt: {en: "Treble clef", sr: "Violinski ključ"}
+        pass: 0.9
+        count: 5
+        gen: {kind: note-read, clef: treble, range: [G3, C6], accidentals: true}
+        skips: [T-001]
+      - id: P-001-2
+        type: generated
+        prompt: {en: "Bass clef", sr: "Bas ključ"}
+        pass: 0.9
+        count: 5
+        gen: {kind: note-read, clef: bass, range: [C2, E4], accidentals: true}
+        skips: [T-001]
+      - id: P-001-3
+        type: generated
+        prompt: {en: "Play what you read", sr: "Odsviraj ono što čitaš"}
+        pass: 0.9
+        count: 3
+        gen: {kind: note-read, clef: both, answer: play}
+        skips: [T-001]
+  - id: theory
+    title: {en: "Theory", sr: "Teorija"}
+    intro:
+      en: "Expected to be mostly new. Guessing is fine; a wrong answer just keeps that lesson in your course."
+      sr: "Očekuje se da je uglavnom novo. Slobodno pogađaj; pogrešan odgovor samo zadržava tu lekciju u kursu."
+    exercises:
+      - id: P-002-1
+        type: generated
+        prompt: {en: "Half steps", sr: "Polustepeni"}
+        pass: 0.99
+        count: 3
+        gen: {kind: semitones, maxSemitones: 12}
+        skips: [T-002]
+      - id: P-002-2
+        type: generated
+        prompt: {en: "Seconds and thirds", sr: "Sekunde i terce"}
+        pass: 0.99
+        count: 4
+        gen: {kind: interval-name, intervals: [m2, M2, m3, M3], show: both}
+        skips: [T-003, T-004]
+      - id: P-002-3
+        type: generated
+        prompt: {en: "Perfect intervals and the tritone", sr: "Čisti intervali i triton"}
+        pass: 0.99
+        count: 4
+        gen: {kind: interval-name, intervals: [P4, A4, d5, P5, P8], show: both}
+        skips: [T-005]
+      - id: P-002-4
+        type: generated
+        prompt: {en: "Sixths and sevenths", sr: "Sekste i septime"}
+        pass: 0.99
+        count: 4
+        gen: {kind: interval-name, intervals: [m6, M6, m7, M7], show: both}
+        skips: [T-006]
+      - id: P-002-5
+        type: generated
+        prompt: {en: "Major scales", sr: "Durske lestvice"}
+        pass: 0.99
+        count: 3
+        gen: {kind: scale-build, types: [major], tonics: [D, Bb, E, Ab, A, Eb], answer: name}
+        skips: [T-007]
+      - id: P-002-6
+        type: generated
+        prompt: {en: "Sharp key signatures", sr: "Predznaci sa povisilicama"}
+        pass: 0.99
+        count: 3
+        gen: {kind: keysig, keys: [G, D, A, E, B, F#], ask: count}
+        skips: [T-008]
+      - id: P-002-7
+        type: generated
+        prompt: {en: "Flat key signatures", sr: "Predznaci sa snizilicama"}
+        pass: 0.99
+        count: 3
+        gen: {kind: keysig, keys: [F, Bb, Eb, Ab, Db, Gb], ask: count}
+        skips: [T-009]
+      - id: P-002-8
+        type: generated
+        prompt: {en: "Minor scales", sr: "Molske lestvice"}
+        pass: 0.99
+        count: 2
+        gen: {kind: scale-build, types: [harmonic-minor, melodic-minor], tonics: [A, E, D, G], answer: name}
+        skips: [T-010]
+      - id: P-002-9
+        type: generated
+        prompt: {en: "Triad qualities", sr: "Vrste trozvuka"}
+        pass: 0.99
+        count: 4
+        gen: {kind: chord-name, qualities: [maj, min, dim, aug]}
+        skips: [T-011]
+      - id: P-002-10
+        type: generated
+        prompt: {en: "Roman numerals", sr: "Rimski brojevi"}
+        pass: 0.99
+        count: 3
+        gen: {kind: roman, keys: [C, G, F, D], ask: numeral}
+        skips: [T-012]
+      - id: P-002-11
+        type: generated
+        prompt: {en: "Inverted triads", sr: "Obrnuti trozvuci"}
+        pass: 0.99
+        count: 3
+        gen: {kind: chord-name, qualities: [maj, min], inversions: [1, 2]}
+        skips: [T-013]
+      - id: P-002-12
+        type: mcq
+        prompt: {en: "A phrase ending V → I is called…", sr: "Završetak fraze V → I zove se…"}
+        pass: 0.99
+        options:
+          - {en: "authentic cadence", sr: "autentična kadenca"}
+          - {en: "plagal cadence", sr: "plagalna kadenca"}
+          - {en: "half cadence", sr: "polukadenca"}
+          - {en: "deceptive cadence", sr: "prekinuta (varljiva) kadenca"}
+        answer: 0
+        skips: [T-014]
+  - id: ear
+    title: {en: "Ear baseline", sr: "Početna procena sluha"}
+    intro:
+      en: "Listen and answer or play back. Turn the sound up; if a piano is connected, playback goes to it."
+      sr: "Slušaj i odgovori ili odsviraj. Pojačaj zvuk; ako je klavir povezan, zvuk ide kroz njega."
+    exercises:
+      - id: P-003-1
+        type: generated
+        prompt: {en: "Find the note", sr: "Nađi ton"}
+        pass: 0.9
+        count: 4
+        gen: {kind: interval-ear, intervals: [m2, M2, m3, M3, P4, P5], direction: up, range: [C4, G4], answer: play}
+        skips: [E-001]
+      - id: P-003-2
+        type: generated
+        prompt: {en: "Seconds and thirds by ear", sr: "Sekunde i terce po sluhu"}
+        pass: 0.9
+        count: 5
+        gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: mixed}
+        skips: [E-002]
+      - id: P-003-3
+        type: generated
+        prompt: {en: "Fourths, fifths, octaves by ear", sr: "Kvarte, kvinte, oktave po sluhu"}
+        pass: 0.9
+        count: 5
+        gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: mixed}
+        skips: [E-003]
+      - id: P-003-4
+        type: generated
+        prompt: {en: "Major or minor?", sr: "Dur ili mol?"}
+        pass: 0.9
+        count: 5
+        gen: {kind: chord-ear, qualities: [maj, min]}
+        skips: [E-004]
+      - id: P-003-5
+        type: generated
+        prompt: {en: "Play back a melody", sr: "Odsviraj melodiju"}
+        pass: 0.9
+        count: 3
+        gen: {kind: melody-echo, tonics: [C, G, F], length: [4, 5], maxLeap: 1}
+        skips: [E-006]
+      - id: P-003-6
+        type: generated
+        prompt: {en: "Major scales at the keys", sr: "Durske lestvice na klaviru"}
+        pass: 0.9
+        count: 2
+        gen: {kind: scale-build, types: [major], tonics: [C, G, D, F], answer: play}
+        skips: [K-002]
+      - id: P-003-7
+        type: generated
+        prompt: {en: "Triads at the keys", sr: "Trozvuci na klaviru"}
+        pass: 0.9
+        count: 4
+        gen: {kind: chord-build, qualities: [maj, min], roots: [C, D, E, F, G, A, Bb, Eb, Ab, Db, F#, B]}
+        skips: [K-005]

@@ -1,0 +1,102 @@
+id: T-012
+track: T
+order: 12
+prereqs: [T-011]
+title: {en: "Diatonic triads in major and Roman numerals", sr: "Trozvuci na stupnjevima dura i rimski brojevi"}
+minutes: 13
+tags: [chords, harmony]
+explain:
+  en: |
+    Build a triad on **every degree** of a major scale, using only notes of that scale (every other note).
+    In C major:
+
+    | degree | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+    |---|---|---|---|---|---|---|---|
+    | notes | C E G | D F A | E G B | F A C | G B D | A C E | B D F |
+    | quality | major | minor | minor | major | major | minor | dim. |
+    | numeral | **I** | **ii** | **iii** | **IV** | **V** | **vi** | **vii°** |
+
+    **Roman numerals** name a chord by its degree, not its letters: **upper case = major**, **lower case = minor**, **° = diminished**.
+    The pattern **I ii iii IV V vi vii°** is the same in *every* major key. In G major, V is D–F♯–A; in F major, V is C–E–G.
+
+    That is why musicians say "I–vi–IV–V": it describes the progression in any key at once.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [DFA] [EGB] [FAc] | [GBd] [Ace] [Bdf] [ceg] |]
+    ```
+  sr: |
+    Napravimo trozvuk na **svakom stupnju** durske lestvice, koristeći samo tonove te lestvice (svaki drugi ton).
+    U C-duru:
+
+    | stupanj | I | II | III | IV | V | VI | VII |
+    |---|---|---|---|---|---|---|---|
+    | tonovi | C E G | D F A | E G H | F A C | G H D | A C E | H D F |
+    | vrsta | durski | molski | molski | durski | durski | molski | smanjeni |
+    | oznaka | **I** | **ii** | **iii** | **IV** | **V** | **vi** | **vii°** |
+
+    **Rimski brojevi** imenuju akord po stupnju, a ne po imenima tonova: **veliko slovo = durski**, **malo slovo = molski**, **° = smanjeni**.
+    Raspored **I ii iii IV V vi vii°** isti je u *svakom* duru. U G-duru V je D–Fis–A; u F-duru V je C–E–G.
+    (U domaćoj literaturi stupnjevi se često pišu svi velikim rimskim brojevima; ovde koristimo međunarodni način, gde slovo pokazuje i vrstu akorda.)
+
+    Zato muzičari kažu „I–vi–IV–V": to opisuje niz akorada u bilo kom tonalitetu odjednom.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [DFA] [EGB] [FAc] | [GBd] [Ace] [Bdf] [ceg] |]
+    ```
+exercises:
+  - id: T-012-1
+    type: generated
+    prompt: {en: "Which numeral is this chord in C major?", sr: "Koji je rimski broj ovog akorda u C-duru?"}
+    count: 5
+    gen: {kind: roman, keys: [C], ask: numeral}
+    checks:
+      - roman: {key: C, degree: 1, is: "I"}
+      - roman: {key: C, degree: 2, is: "ii"}
+      - roman: {key: C, degree: 3, is: "iii"}
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}
+      - roman: {key: C, degree: 6, is: "vi"}
+      - roman: {key: C, degree: 7, is: "vii°"}
+  - id: T-012-2
+    type: generated
+    prompt: {en: "Spell diatonic triads", sr: "Napiši trozvuke na stupnjevima"}
+    count: 4
+    gen: {kind: roman, keys: [G, F, D], ask: name}
+  - id: T-012-3
+    type: generated
+    prompt: {en: "Play diatonic triads", sr: "Odsviraj trozvuke na stupnjevima"}
+    count: 5
+    gen: {kind: roman, keys: [C, G, F, D], ask: play}
+  - id: T-012-4
+    type: mcq
+    prompt: {en: "In any major key, the three major triads are…", sr: "U svakom duru tri durska trozvuka su…"}
+    options: ["I, IV, V", "I, ii, V", "ii, iii, vi", "I, V, vi"]
+    answer: 0
+    checks:
+      - roman: {key: G, degree: 1, is: "I"}
+      - roman: {key: G, degree: 4, is: "IV"}
+      - roman: {key: G, degree: 5, is: "V"}
+      - roman: {key: Eb, degree: 4, is: "IV"}
+  - id: T-012-5
+    type: mcq
+    prompt: {en: "What is vii° in D major?", sr: "Koji je akord vii° u D-duru?"}
+    options:
+      - {en: "C♯–E–G", sr: "Cis–E–G"}
+      - {en: "C–E–G", sr: "C–E–G"}
+      - {en: "C♯–E–G♯", sr: "Cis–E–Gis"}
+      - {en: "B–D–F♯", sr: "H–D–Fis"}
+    answer: 0
+    checks:
+      - roman: {key: D, degree: 7, is: "vii°"}
+      - chord: {notes: [C#4, E4, G4], root: C#, quality: dim}
+  - id: T-012-6
+    type: generated
+    prompt: {en: "Play I–vi–IV–V–I", sr: "Odsviraj I–vi–IV–V–I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F], numerals: [I, vi, IV, V, I]}

@@ -1,0 +1,97 @@
+id: T-011
+track: T
+order: 11
+prereqs: [T-010]
+title: {en: "Triads: major, minor, diminished, augmented", sr: "Trozvuci: durski, molski, smanjeni, povećani"}
+minutes: 13
+tags: [chords]
+explain:
+  en: |
+    A **triad** is three notes stacked in **3rds**: a **root**, the **3rd** above it, and the **5th** above it.
+    On the staff that is line-line-line or space-space-space, like a snowman.
+
+    Which two 3rds you stack decides the quality:
+
+    | triad | lower 3rd | upper 3rd | root to 5th | C example |
+    |---|---|---|---|---|
+    | major | M3 | m3 | P5 | C E G |
+    | minor | m3 | M3 | P5 | C E♭ G |
+    | diminished | m3 | m3 | d5 | C E♭ G♭ |
+    | augmented | M3 | M3 | A5 | C E G♯ |
+
+    Major and minor share the perfect 5th; only the 3rd differs. Diminished squeezes the 5th, augmented stretches it.
+    Spelling still matters: C diminished is C–E♭–G♭, not C–E♭–F♯, because a triad uses every other letter (C, E, G).
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [C_EG] | [C_E_G] [CE^G] |]
+    ```
+  sr: |
+    **Trozvuk** su tri tona složena po **tercama**: **osnovni ton**, **terca** iznad njega i **kvinta** iznad njega.
+    Na linijskom sistemu to je linija-linija-linija ili praznina-praznina-praznina.
+    Trozvuk u osnovnom položaju zove se i **kvintakord**.
+
+    Koje dve terce složiš, to određuje vrstu:
+
+    | trozvuk | donja terca | gornja terca | osnovni ton – kvinta | primer od C |
+    |---|---|---|---|---|
+    | durski | M3 | m3 | P5 | C E G |
+    | molski | m3 | M3 | P5 | C Es G |
+    | smanjeni | m3 | m3 | d5 | C Es Ges |
+    | povećani | M3 | M3 | A5 | C E Gis |
+
+    Durski i molski imaju istu čistu kvintu; razlikuje se samo terca. Smanjeni sužava kvintu, povećani je širi.
+    Zapis je i ovde važan: smanjeni trozvuk od C je C–Es–Ges, a ne C–Es–Fis, jer trozvuk koristi svako drugo ime (C, E, G).
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CEG] [C_EG] | [C_E_G] [CE^G] |]
+    ```
+exercises:
+  - id: T-011-1
+    type: generated
+    prompt: {en: "Spell major and minor triads", sr: "Napiši durske i molske trozvuke"}
+    count: 4
+    gen: {kind: chord-build, qualities: [maj, min], answer: name}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [C4, Eb4, G4], root: C, quality: min}
+      - chord: {notes: [C4, Eb4, Gb4], root: C, quality: dim}
+      - chord: {notes: [C4, E4, G#4], root: C, quality: aug}
+  - id: T-011-2
+    type: generated
+    prompt: {en: "Play all four triad types", sr: "Odsviraj sve četiri vrste trozvuka"}
+    count: 5
+    gen: {kind: chord-build, qualities: [maj, min, dim, aug], answer: play}
+  - id: T-011-3
+    type: generated
+    prompt: {en: "Name the triad on the staff", sr: "Imenuj trozvuk sa notnog zapisa"}
+    count: 5
+    gen: {kind: chord-name, qualities: [maj, min, dim, aug]}
+  - id: T-011-4
+    type: generated
+    prompt: {en: "Hear the triad quality", sr: "Prepoznaj vrstu trozvuka sluhom"}
+    count: 6
+    gen: {kind: chord-ear, qualities: [maj, min, dim, aug]}
+  - id: T-011-5
+    type: mcq
+    prompt: {en: "B–D–F (white keys) is a…", sr: "H–D–F (bele dirke) je…"}
+    abc: "X:1\nL:1\nK:C clef=treble\n[Bdf] |]"
+    options:
+      - {en: "minor triad", sr: "molski trozvuk"}
+      - {en: "diminished triad", sr: "smanjeni trozvuk"}
+      - {en: "major triad", sr: "durski trozvuk"}
+      - {en: "augmented triad", sr: "povećani trozvuk"}
+    answer: 1
+    checks:
+      - chord: {notes: [B4, D5, F5], root: B, quality: dim}
+  - id: T-011-6
+    type: notation-input
+    prompt: {en: "Spell the E♭ major triad (root, 3rd, 5th).", sr: "Napiši Es-dur trozvuk (osnovni ton, terca, kvinta)."}
+    derive: {chord: {root: Eb4, quality: maj}}
+    checks:
+      - chord: {notes: [Eb4, G4, Bb4], root: Eb, quality: maj}

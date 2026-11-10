@@ -1,0 +1,127 @@
+id: T-009
+track: T
+order: 9
+prereqs: [T-008]
+title: {en: "Flat keys and the full circle of fifths", sr: "Tonaliteti sa snizilicama i ceo kvintni krug"}
+minutes: 12
+tags: [keys]
+explain:
+  en: |
+    Go the other way from C: **down a perfect 5th** (or up a 4th) each time, and every step adds one flat:
+
+    | key | flats | new flat |
+    |---|---|---|
+    | F | 1 | B♭ |
+    | B♭ | 2 | E♭ |
+    | E♭ | 3 | A♭ |
+    | A♭ | 4 | D♭ |
+    | D♭ | 5 | G♭ |
+    | G♭ | 6 | C♭ |
+    | C♭ | 7 | F♭ |
+
+    **Order of flats**: **B E A D G C F**, the order of sharps backwards.
+
+    Reading trick: the **second-to-last flat is the tonic**. B♭ E♭ **A♭** D♭ → A♭ major.
+    (F major, with just one flat, you memorise.)
+
+    **The full circle.** Clockwise = up a 5th = one more sharp; counter-clockwise = down a 5th = one more flat.
+    At the bottom the two sides overlap in three pairs of enharmonic keys that sound identical:
+    B = C♭ (5♯ / 7♭), F♯ = G♭ (6♯ / 6♭), C♯ = D♭ (7♯ / 5♭).
+
+    ```abc
+    X:1
+    L:1
+    K:Cb clef=treble
+    z |]
+    ```
+  sr: |
+    Krenimo od C na drugu stranu: **čistu kvintu naniže** (ili kvartu naviše), i svaki korak dodaje jednu snizilicu:
+
+    | tonalitet | snizilice | nova snizilica |
+    |---|---|---|
+    | F-dur | 1 | B |
+    | B-dur | 2 | Es |
+    | Es-dur | 3 | As |
+    | As-dur | 4 | Des |
+    | Des-dur | 5 | Ges |
+    | Ges-dur | 6 | Ces |
+    | Ces-dur | 7 | Fes |
+
+    **Redosled snizilica**: **B Es As Des Ges Ces Fes**, obrnut redosled povisilica.
+
+    Trik za čitanje: **pretposlednja snizilica je tonika**. B Es **As** Des → As-dur.
+    (F-dur, sa samo jednom snizilicom, treba zapamtiti.)
+
+    **Ceo kvintni krug.** U smeru kazaljke = kvinta naviše = jedna povisilica više; suprotno = kvinta naniže = jedna snizilica više.
+    Na dnu kruga se strane preklapaju u tri para enharmonski istih tonaliteta, koji zvuče potpuno isto:
+    H-dur = Ces-dur (5 povisilica / 7 snizilica), Fis-dur = Ges-dur (6 / 6), Cis-dur = Des-dur (7 povisilica / 5 snizilica).
+
+    ```abc
+    X:1
+    L:1
+    K:Cb clef=treble
+    z |]
+    ```
+exercises:
+  - id: T-009-1
+    type: generated
+    prompt: {en: "How many flats?", sr: "Koliko snizilica?"}
+    count: 5
+    gen: {kind: keysig, keys: [F, Bb, Eb, Ab, Db, Gb, Cb], ask: count}
+    checks:
+      - keysig: {key: F, is: -1}
+      - keysig: {key: Bb, is: -2}
+      - keysig: {key: Eb, is: -3}
+      - keysig: {key: Ab, is: -4}
+      - keysig: {key: Db, is: -5}
+      - keysig: {key: Gb, is: -6}
+      - keysig: {key: Cb, is: -7}
+      - keysig: {key: B, is: 5}
+      - keysig: {key: C#, is: 7}
+  - id: T-009-2
+    type: generated
+    prompt: {en: "Which key has this signature?", sr: "Koji tonalitet ima ovaj predznak?"}
+    count: 4
+    gen: {kind: keysig, keys: [F, Bb, Eb, Ab, Db, Gb], ask: key}
+  - id: T-009-3
+    type: notation-input
+    prompt: {en: "Write the flats of A♭ major in signature order.", sr: "Napiši snizilice As-dura redosledom kojim se pišu u predznaku."}
+    expect: [Bb, Eb, Ab, Db]
+    checks:
+      - keysig: {key: Ab, is: -4}
+      - scale: {tonic: Ab, type: major, is: [Ab, Bb, C, Db, Eb, F, G]}
+  - id: T-009-4
+    type: mcq
+    prompt: {en: "F♯ major (6♯) and G♭ major (6♭) are…", sr: "Fis-dur (6 povisilica) i Ges-dur (6 snizilica) su…"}
+    options:
+      - {en: "enharmonic: they sound the same", sr: "enharmonski isti: zvuče isto"}
+      - {en: "a half step apart", sr: "udaljeni za polustepen"}
+      - {en: "relative keys", sr: "paralelni tonaliteti"}
+    answer: 0
+    checks:
+      - keysig: {key: F#, is: 6}
+      - keysig: {key: Gb, is: -6}
+      - semitones: {from: F#4, to: Gb4, is: 0}
+  - id: T-009-5
+    type: mcq
+    prompt: {en: "One step counter-clockwise from E♭ major (down a 5th) is…", sr: "Jedan korak suprotno od kazaljke od Es-dura (kvinta naniže) je…"}
+    options:
+      - {en: "B♭ major", sr: "B-dur"}
+      - {en: "A♭ major", sr: "As-dur"}
+      - {en: "D♭ major", sr: "Des-dur"}
+      - {en: "G major", sr: "G-dur"}
+    answer: 1
+    checks:
+      - interval: {from: Ab3, to: Eb4, is: P5}
+      - keysig: {key: Eb, is: -3}
+      - keysig: {key: Ab, is: -4}
+  - id: T-009-6
+    type: generated
+    prompt: {en: "The whole circle: sharps or flats?", sr: "Ceo krug: povisilice ili snizilice?"}
+    count: 6
+    gen: {kind: keysig, keys: [C, G, D, A, E, B, F#, C#, F, Bb, Eb, Ab, Db, Gb, Cb], ask: count}
+  - id: T-009-7
+    type: generated
+    prompt: {en: "Play flat-key scales", sr: "Odsviraj lestvice sa snizilicama"}
+    count: 2
+    gen: {kind: scale-build, types: [major], tonics: [F, Bb, Eb, Ab]}

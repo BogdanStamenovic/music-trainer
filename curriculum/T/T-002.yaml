@@ -1,0 +1,121 @@
+id: T-002
+track: T
+order: 2
+prereqs: [T-001]
+title: {en: "Half steps, whole steps, accidentals and enharmonics", sr: "Polustepen, ceo stepen, predznaci i enharmonija"}
+minutes: 10
+tags: [notation, intervals]
+explain:
+  en: |
+    The smallest distance on the piano is a **half step** (semitone): from one key to the very next key, black or white.
+    Two half steps make a **whole step** (whole tone).
+
+    - Most neighbouring white keys are a whole step apart (C–D, F–G), because a black key sits between them.
+    - **E–F** and **B–C** have no black key between them: they are the two *natural half steps*.
+
+    **Accidentals** move a note by half steps:
+
+    | sign | name | effect |
+    |---|---|---|
+    | ♯ | sharp | up a half step |
+    | ♭ | flat | down a half step |
+    | ♮ | natural | cancels a sharp or flat |
+    | 𝄪 / 𝄫 | double sharp / double flat | up / down a whole step |
+
+    An accidental in the music lasts until the bar line, on that line or space only.
+
+    **Enharmonic equivalents** are two names for the same key: F♯ = G♭, C♯ = D♭, and also E♯ = F, B♯ = C, C♭ = B.
+    The name is not arbitrary: later lessons show that a scale or chord decides which spelling is correct.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C clef=treble
+    ^F _G | E ^E | =F _F |]
+    ```
+  sr: |
+    Najmanje rastojanje na klaviru je **polustepen**: od jedne dirke do prve susedne, crne ili bele.
+    Dva polustepena čine **ceo stepen**.
+
+    - Većina susednih belih dirki je udaljena za ceo stepen (C–D, F–G), jer je između njih crna dirka.
+    - Između **E–F** i **H–C** nema crne dirke: to su dva *prirodna polustepena*.
+
+    **Predznaci** pomeraju notu za polustepen:
+
+    | znak | naziv | dejstvo |
+    |---|---|---|
+    | ♯ | povisilica (sharp) | naviše za polustepen |
+    | ♭ | snizilica (flat) | naniže za polustepen |
+    | ♮ | razrešilica (natural) | poništava povisilicu ili snizilicu |
+    | 𝄪 / 𝄫 | dvostruka povisilica / dvostruka snizilica | naviše / naniže za ceo stepen |
+
+    Predznak napisan u taktu (prolazni predznak) važi do taktne crte, samo za tu liniju ili prazninu.
+
+    **Enharmonski isti tonovi** su dva imena za istu dirku: Fis = Ges, Cis = Des, a takođe Eis = F, His = C, Ces = H.
+    Ime nije proizvoljno: kasnije ćeš videti da lestvica ili akord određuju koji je zapis ispravan.
+
+    ```abc
+    X:1
+    L:1/4
+    K:C clef=treble
+    ^F _G | E ^E | =F _F |]
+    ```
+exercises:
+  - id: T-002-1
+    type: generated
+    prompt: {en: "Count half steps", sr: "Broj polustepene"}
+    count: 6
+    gen: {kind: semitones, maxSemitones: 4}
+  - id: T-002-2
+    type: mcq
+    prompt: {en: "Which pair of white keys is only a half step apart?", sr: "Koje dve bele dirke su udaljene samo za polustepen?"}
+    options:
+      - {en: "C–D", sr: "C–D"}
+      - {en: "E–F", sr: "E–F"}
+      - {en: "G–A", sr: "G–A"}
+      - {en: "A–B", sr: "A–H"}
+    answer: 1
+    checks:
+      - semitones: {from: C4, to: D4, is: 2}
+      - semitones: {from: E4, to: F4, is: 1}
+      - semitones: {from: G4, to: A4, is: 2}
+      - semitones: {from: A4, to: B4, is: 2}
+  - id: T-002-3
+    type: mcq
+    prompt: {en: "Which note is the same key as F♯ (enharmonic)?", sr: "Koji ton je ista dirka kao Fis (enharmonski isti)?"}
+    options:
+      - {en: "G♭", sr: "Ges"}
+      - {en: "G", sr: "G"}
+      - {en: "E♯", sr: "Eis"}
+      - {en: "F♭", sr: "Fes"}
+    answer: 0
+    checks:
+      - semitones: {from: F#4, to: Gb4, is: 0}
+      - semitones: {from: F#4, to: G4, is: 1}
+      - semitones: {from: E#4, to: F#4, is: 1}
+  - id: T-002-4
+    type: mcq
+    prompt: {en: "B♯ is played on which white key?", sr: "His se svira na kojoj beloj dirki?"}
+    options:
+      - {en: "B", sr: "H"}
+      - {en: "C", sr: "C"}
+      - {en: "A", sr: "A"}
+      - {en: "C♯ (a black key)", sr: "Cis (crna dirka)"}
+    answer: 1
+    checks:
+      - semitones: {from: B#3, to: C4, is: 0}
+  - id: T-002-5
+    type: notation-input
+    prompt: {en: "Name the note a whole step above E (use the next letter).", sr: "Koji ton je ceo stepen iznad E (sledeće slovo)?"}
+    derive: {interval: {from: E4, iv: M2}}
+  - id: T-002-6
+    type: notation-input
+    prompt: {en: "Name the note a half step below C (use the previous letter).", sr: "Koji ton je polustepen ispod C (prethodno slovo)?"}
+    derive: {interval: {from: C5, iv: m2, down: true}}
+  - id: T-002-7
+    type: midi-play
+    prompt: {en: "Play the chromatic scale (every half step) from C4 up to C5.", sr: "Odsviraj hromatsku lestvicu (svaki polustepen) od C4 do C5."}
+    mode: sequence
+    expect: [C4, C#4, D4, D#4, E4, F4, F#4, G4, G#4, A4, A#4, B4, C5]
+    checks:
+      - semitones: {from: C4, to: C5, is: 12}

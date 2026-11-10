@@ -1,0 +1,111 @@
+id: T-005
+track: T
+order: 5
+prereqs: [T-004]
+title: {en: "Perfect intervals and the tritone", sr: "Čisti intervali i tritonus"}
+minutes: 12
+tags: [intervals]
+explain:
+  en: |
+    Unisons, 4ths, 5ths and octaves are never called major or minor. Their normal size is **perfect** (P):
+
+    | interval | half steps |
+    |---|---|
+    | perfect unison (P1) | 0 |
+    | perfect 4th (P4) | 5 |
+    | perfect 5th (P5) | 7 |
+    | perfect octave (P8) | 12 |
+
+    One half step bigger than perfect is **augmented** (A); one smaller is **diminished** (d).
+
+    On white keys, every 4th is perfect **except F–B**, and every 5th is perfect **except B–F**.
+    Both are 6 half steps, half an octave: the **tritone**.
+    F–B is an *augmented 4th* (A4), B–F a *diminished 5th* (d5). Same sound, different spelling.
+
+    Perfect 5ths matter a lot: stacking them (C–G–D–A–E…) builds the circle of fifths later on.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CF] [CG] | [FB] [Bf] |]
+    ```
+  sr: |
+    Prime, kvarte, kvinte i oktave nikad nisu velike ni male. Njihova normalna veličina je **čista** (P):
+
+    | interval | polustepeni |
+    |---|---|
+    | čista prima (P1) | 0 |
+    | čista kvarta (P4) | 5 |
+    | čista kvinta (P5) | 7 |
+    | čista oktava (P8) | 12 |
+
+    Polustepen veći od čistog je **povećan** (A); polustepen manji je **smanjen** (d).
+
+    Na belim dirkama svaka kvarta je čista **osim F–H**, i svaka kvinta je čista **osim H–F**.
+    Oba imaju 6 polustepena, pola oktave: to je **tritonus**.
+    F–H je *povećana kvarta* (A4), H–F *smanjena kvinta* (d5). Isti zvuk, drugačiji zapis.
+
+    Čiste kvinte su veoma važne: nizanjem (C–G–D–A–E…) kasnije gradimo kvintni krug.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [CF] [CG] | [FB] [Bf] |]
+    ```
+exercises:
+  - id: T-005-1
+    type: mcq
+    prompt: {en: "F up to B on white keys is a…", sr: "F naviše do H (bele dirke) je…"}
+    options:
+      - {en: "perfect 4th", sr: "čista kvarta"}
+      - {en: "augmented 4th", sr: "povećana kvarta"}
+      - {en: "diminished 5th", sr: "smanjena kvinta"}
+      - {en: "perfect 5th", sr: "čista kvinta"}
+    answer: 1
+    checks:
+      - interval: {from: F4, to: B4, is: A4}
+      - semitones: {from: F4, to: B4, is: 6}
+  - id: T-005-2
+    type: mcq
+    prompt: {en: "B up to F on white keys is a…", sr: "H naviše do F (bele dirke) je…"}
+    options:
+      - {en: "perfect 5th", sr: "čista kvinta"}
+      - {en: "augmented 4th", sr: "povećana kvarta"}
+      - {en: "diminished 5th", sr: "smanjena kvinta"}
+      - {en: "perfect 4th", sr: "čista kvarta"}
+    answer: 2
+    checks:
+      - interval: {from: B3, to: F4, is: d5}
+      - semitones: {from: B3, to: F4, is: 6}
+  - id: T-005-3
+    type: generated
+    prompt: {en: "Name perfect intervals and tritones", sr: "Imenuj čiste intervale i tritonuse"}
+    count: 6
+    gen: {kind: interval-name, intervals: [P4, P5, P8, A4, d5], show: both}
+  - id: T-005-4
+    type: generated
+    prompt: {en: "Spell perfect 4ths and 5ths", sr: "Napiši čiste kvarte i kvinte"}
+    count: 5
+    gen: {kind: interval-build, intervals: [P4, P5], answer: name}
+  - id: T-005-5
+    type: generated
+    prompt: {en: "Hear 4ths, 5ths, octaves and the tritone", sr: "Prepoznaj sluhom kvarte, kvinte, oktave i tritonus"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [P4, A4, P5, P8], direction: up}
+  - id: T-005-6
+    type: midi-play
+    prompt: {en: "Play a chain of perfect 5ths up from C3: C3 G3 D4 A4 E5.", sr: "Odsviraj niz čistih kvinti naviše od C3: C3 G3 D4 A4 E5."}
+    mode: sequence
+    expect: [C3, G3, D4, A4, E5]
+    checks:
+      - interval: {from: C3, to: G3, is: P5}
+      - interval: {from: G3, to: D4, is: P5}
+      - interval: {from: D4, to: A4, is: P5}
+      - interval: {from: A4, to: E5, is: P5}
+  - id: T-005-7
+    type: generated
+    prompt: {en: "Find 5ths and 4ths above a note", sr: "Nađi kvintu i kvartu iznad tona"}
+    count: 4
+    gen: {kind: interval-build, intervals: [P4, P5], answer: play}

@@ -1,0 +1,120 @@
+id: T-014
+track: T
+order: 14
+prereqs: [T-013]
+title: {en: "Primary chords (I, IV, V) and cadences", sr: "Glavni akordi (I, IV, V) i kadence"}
+minutes: 14
+tags: [harmony]
+explain:
+  en: |
+    The **primary chords** are the major triads on degrees 1, 4 and 5: **tonic (I)**, **subdominant (IV)**, **dominant (V)**.
+    Together they contain all seven notes of the scale, so they can harmonise almost any simple melody.
+    In C major: I = C E G, IV = F A C, V = G B D.
+
+    A **cadence** is the chord pair that ends a phrase, the musical punctuation:
+
+    | cadence | chords | feel |
+    |---|---|---|
+    | authentic | **V → I** | full stop. *Perfect* authentic: both in root position, tonic on top |
+    | plagal | **IV → I** | softer close, the church "Amen" |
+    | half | **? → V** | comma: ends on V, wants to continue |
+    | deceptive | **V → vi** | the ear expects I and gets vi instead |
+
+    Listen for the last chord first: ends on I → authentic or plagal (which chord came before?); ends on V → half; V goes somewhere other than I → deceptive.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    "I"[CEG] "IV"[FAc] | "V"[GBd] "I"[ceg] |]
+    ```
+  sr: |
+    **Glavni akordi** su durski trozvuci na I, IV i V stupnju: **tonika (T, I)**, **subdominanta (S, IV)**, **dominanta (D, V)**.
+    Zajedno sadrže svih sedam tonova lestvice, pa mogu da harmonizuju skoro svaku jednostavnu melodiju.
+    U C-duru: I = C E G, IV = F A C, V = G H D.
+
+    **Kadenca** je završetak muzičke rečenice, muzička interpunkcija:
+
+    | kadenca | akordi | utisak |
+    |---|---|---|
+    | autentična | **V → I** | tačka. *Potpuna (savršena)* autentična: oba akorda u osnovnom položaju, tonika u sopranu |
+    | plagalna | **IV → I** | mekši završetak, crkveno „Amin" |
+    | polukadenca | **? → V** | zarez: završava se na V, traži nastavak |
+    | prekinuta (varljiva) | **V → vi** | uho očekuje I, a dobije vi |
+
+    Slušaj najpre poslednji akord: završetak na I → autentična ili plagalna (koji akord je bio pre?); na V → polukadenca; V ide negde drugde, ne na I → prekinuta.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    "I"[CEG] "IV"[FAc] | "V"[GBd] "I"[ceg] |]
+    ```
+exercises:
+  - id: T-014-1
+    type: generated
+    prompt: {en: "Play the primary chords", sr: "Odsviraj glavne akorde"}
+    count: 4
+    gen: {kind: roman, keys: [C, G, F, D, Bb], degrees: [1, 4, 5], ask: play}
+    checks:
+      - scale: {tonic: C, type: major, is: [C, D, E, F, G, A, B]}
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+  - id: T-014-2
+    type: mcq
+    prompt: {en: "Listen. Which cadence ends this phrase?", sr: "Slušaj. Kojom kadencom se završava fraza?"}
+    play: {derive: {roman: {key: C4, numerals: [I, IV, V, I]}}, tempo: 60}
+    options:
+      - {en: "authentic (V–I)", sr: "autentična (V–I)"}
+      - {en: "plagal (IV–I)", sr: "plagalna (IV–I)"}
+      - {en: "half (ends on V)", sr: "polukadenca (završava se na V)"}
+      - {en: "deceptive (V–vi)", sr: "prekinuta (V–vi)"}
+    answer: 0
+  - id: T-014-3
+    type: mcq
+    prompt: {en: "Listen. Which cadence ends this phrase?", sr: "Slušaj. Kojom kadencom se završava fraza?"}
+    play: {derive: {roman: {key: C4, numerals: [I, vi, IV, I]}}, tempo: 60}
+    options:
+      - {en: "authentic (V–I)", sr: "autentična (V–I)"}
+      - {en: "plagal (IV–I)", sr: "plagalna (IV–I)"}
+      - {en: "half (ends on V)", sr: "polukadenca (završava se na V)"}
+      - {en: "deceptive (V–vi)", sr: "prekinuta (V–vi)"}
+    answer: 1
+  - id: T-014-4
+    type: mcq
+    prompt: {en: "Listen. Which cadence ends this phrase?", sr: "Slušaj. Kojom kadencom se završava fraza?"}
+    play: {derive: {roman: {key: G3, numerals: [I, IV, V, vi]}}, tempo: 60}
+    options:
+      - {en: "authentic (V–I)", sr: "autentična (V–I)"}
+      - {en: "plagal (IV–I)", sr: "plagalna (IV–I)"}
+      - {en: "half (ends on V)", sr: "polukadenca (završava se na V)"}
+      - {en: "deceptive (V–vi)", sr: "prekinuta (V–vi)"}
+    answer: 3
+    checks:
+      - roman: {key: G, degree: 6, is: "vi"}
+  - id: T-014-5
+    type: mcq
+    prompt: {en: "Listen. Which cadence ends this phrase?", sr: "Slušaj. Kojom kadencom se završava fraza?"}
+    play: {derive: {roman: {key: F4, numerals: [I, vi, ii, V]}}, tempo: 60}
+    options:
+      - {en: "authentic (V–I)", sr: "autentična (V–I)"}
+      - {en: "plagal (IV–I)", sr: "plagalna (IV–I)"}
+      - {en: "half (ends on V)", sr: "polukadenca (završava se na V)"}
+      - {en: "deceptive (V–vi)", sr: "prekinuta (V–vi)"}
+    answer: 2
+  - id: T-014-6
+    type: generated
+    prompt: {en: "Play an authentic cadence: I–IV–V–I", sr: "Odsviraj autentičnu kadencu: I–IV–V–I"}
+    count: 2
+    gen: {kind: progression, keys: [C, G, F, D], numerals: [I, IV, V, I]}
+  - id: T-014-7
+    type: midi-play
+    prompt: {en: "Play a deceptive cadence in C major: V then vi (any octave, root in the bass).", sr: "Odsviraj prekinutu kadencu u C-duru: V pa vi (bilo koja oktava, osnovni ton u basu)."}
+    mode: chords
+    octave: any
+    bass: true
+    derive: {roman: {key: C4, numerals: [V, vi]}}
+    checks:
+      - chord: {notes: [G4, B4, D5], root: G, quality: maj}
+      - chord: {notes: [A4, C5, E5], root: A, quality: min}

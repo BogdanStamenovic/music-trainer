@@ -1,0 +1,94 @@
+id: T-004
+track: T
+order: 4
+prereqs: [T-003]
+title: {en: "Interval quality I: major and minor 2nds and 3rds", sr: "Vrsta intervala I: velike i male sekunde i terce"}
+minutes: 12
+tags: [intervals]
+explain:
+  en: |
+    The letter count gives the number; **counting half steps** gives the *quality*.
+    2nds and 3rds come in two everyday sizes, **major** (M) and **minor** (m):
+
+    | interval | half steps | example |
+    |---|---|---|
+    | minor 2nd (m2) | 1 | E–F, B–C |
+    | major 2nd (M2) | 2 | C–D, F–G |
+    | minor 3rd (m3) | 3 | D–F, A–C |
+    | major 3rd (M3) | 4 | C–E, F–A |
+
+    Method, always in this order:
+    1. Count letters → number (C–E♭ is a 3rd).
+    2. Count half steps → quality (C–E♭ = 3 half steps → **minor 3rd**).
+
+    Spelling matters: C–D♯ is also 3 half steps, but C–D is a 2nd, so C–D♯ is an *augmented 2nd*, not a minor 3rd.
+    Same key on the piano, different job in the music.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [EF] [CD] | [DF] [CE] |]
+    ```
+  sr: |
+    Brojanje imena daje broj intervala; **brojanje polustepena** daje *vrstu*.
+    Sekunde i terce se najčešće javljaju u dve veličine, **velika** (M) i **mala** (m):
+
+    | interval | polustepeni | primer |
+    |---|---|---|
+    | mala sekunda (m2) | 1 | E–F, H–C |
+    | velika sekunda (M2) | 2 | C–D, F–G |
+    | mala terca (m3) | 3 | D–F, A–C |
+    | velika terca (M3) | 4 | C–E, F–A |
+
+    Postupak, uvek ovim redom:
+    1. Prebroj imena → broj (C–Es je terca).
+    2. Prebroj polustepene → vrsta (C–Es = 3 polustepena → **mala terca**).
+
+    Zapis je važan: C–Dis je takođe 3 polustepena, ali C–D je sekunda, pa je C–Dis *povećana sekunda*, a ne mala terca.
+    Ista dirka na klaviru, druga uloga u muzici.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C clef=treble
+    [EF] [CD] | [DF] [CE] |]
+    ```
+exercises:
+  - id: T-004-1
+    type: generated
+    prompt: {en: "Count half steps", sr: "Broj polustepene"}
+    count: 5
+    gen: {kind: semitones, maxSemitones: 4}
+  - id: T-004-2
+    type: generated
+    prompt: {en: "Name 2nds and 3rds", sr: "Imenuj sekunde i terce"}
+    count: 6
+    gen: {kind: interval-name, intervals: [m2, M2, m3, M3], show: both}
+  - id: T-004-3
+    type: generated
+    prompt: {en: "Spell 2nds and 3rds above a note", sr: "Napiši sekunde i terce iznad tona"}
+    count: 5
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3], answer: name}
+  - id: T-004-4
+    type: generated
+    prompt: {en: "Find 2nds and 3rds on the keys", sr: "Nađi sekunde i terce na klavijaturi"}
+    count: 4
+    gen: {kind: interval-build, intervals: [m2, M2, m3, M3], answer: play}
+  - id: T-004-5
+    type: generated
+    prompt: {en: "Hear minor vs major 3rds", sr: "Razlikuj sluhom malu i veliku tercu"}
+    count: 6
+    gen: {kind: interval-ear, intervals: [m3, M3], direction: harmonic}
+  - id: T-004-6
+    type: mcq
+    prompt: {en: "C–E♭ and C–D♯ are both 3 half steps. Which one is a minor 3rd?", sr: "C–Es i C–Dis imaju po 3 polustepena. Koji je mala terca?"}
+    options:
+      - {en: "C–E♭", sr: "C–Es"}
+      - {en: "C–D♯", sr: "C–Dis"}
+      - {en: "both", sr: "oba"}
+    answer: 0
+    checks:
+      - interval: {from: C4, to: Eb4, is: m3}
+      - interval: {from: C4, to: D#4, is: A2}
+      - semitones: {from: C4, to: D#4, is: 3}

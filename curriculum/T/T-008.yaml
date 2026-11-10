@@ -1,0 +1,123 @@
+id: T-008
+track: T
+order: 8
+prereqs: [T-007]
+title: {en: "Sharp keys, order of sharps, circle of fifths", sr: "Tonaliteti sa povisilicama, redosled povisilica, kvintni krug"}
+minutes: 12
+tags: [keys]
+explain:
+  en: |
+    A **key signature** collects the accidentals a major scale needs and writes them once, at the start of every line.
+
+    Start at C major (none) and go **up a perfect 5th** each time; every step adds one sharp:
+
+    | key | sharps | new sharp |
+    |---|---|---|
+    | C | 0 | – |
+    | G | 1 | F♯ |
+    | D | 2 | C♯ |
+    | A | 3 | G♯ |
+    | E | 4 | D♯ |
+    | B | 5 | A♯ |
+    | F♯ | 6 | E♯ |
+    | C♯ | 7 | B♯ |
+
+    **Order of sharps** (always written in this order): **F C G D A E B**, itself a chain of 5ths.
+
+    Reading trick: the **last sharp is the leading tone**, so the key is a half step above it.
+    Three sharps: F♯ C♯ **G♯** → A major.
+
+    Arranged in a circle, these fifths form the **circle of fifths**; the flat side comes in the next lesson.
+
+    ```abc
+    X:1
+    L:1
+    K:C# clef=treble
+    z |]
+    ```
+  sr: |
+    **Predznak** (ključni predznaci) skuplja povisilice ili snizilice koje durska lestvica traži i piše ih jednom, na početku svakog reda.
+
+    Krenimo od C-dura (bez predznaka) i idimo **čistu kvintu naviše**; svaki korak dodaje jednu povisilicu:
+
+    | tonalitet | povisilice | nova povisilica |
+    |---|---|---|
+    | C-dur | 0 | – |
+    | G-dur | 1 | Fis |
+    | D-dur | 2 | Cis |
+    | A-dur | 3 | Gis |
+    | E-dur | 4 | Dis |
+    | H-dur | 5 | Ais |
+    | Fis-dur | 6 | Eis |
+    | Cis-dur | 7 | His |
+
+    **Redosled povisilica** (uvek se pišu ovim redom): **Fis Cis Gis Dis Ais Eis His**, i to je niz kvinti.
+
+    Trik za čitanje: **poslednja povisilica je vođica**, pa je tonika polustepen iznad nje.
+    Tri povisilice: Fis Cis **Gis** → A-dur.
+
+    Poređane u krug, ove kvinte čine **kvintni krug**; strana sa snizilicama dolazi u sledećoj lekciji.
+
+    ```abc
+    X:1
+    L:1
+    K:C# clef=treble
+    z |]
+    ```
+exercises:
+  - id: T-008-1
+    type: generated
+    prompt: {en: "How many sharps?", sr: "Koliko povisilica?"}
+    count: 5
+    gen: {kind: keysig, keys: [C, G, D, A, E, B, F#, C#], ask: count}
+    checks:
+      - keysig: {key: C, is: 0}
+      - keysig: {key: G, is: 1}
+      - keysig: {key: D, is: 2}
+      - keysig: {key: A, is: 3}
+      - keysig: {key: E, is: 4}
+      - keysig: {key: B, is: 5}
+      - keysig: {key: F#, is: 6}
+      - keysig: {key: C#, is: 7}
+  - id: T-008-2
+    type: generated
+    prompt: {en: "Which key has this signature?", sr: "Koji tonalitet ima ovaj predznak?"}
+    count: 4
+    gen: {kind: keysig, keys: [G, D, A, E, B, F#], ask: key}
+  - id: T-008-3
+    type: mcq
+    prompt: {en: "Which major key has this key signature?", sr: "Koji dur ima ovaj predznak?"}
+    abc: "X:1\nL:1\nK:E clef=treble\nz |]"
+    options:
+      - {en: "A major", sr: "A-dur"}
+      - {en: "E major", sr: "E-dur"}
+      - {en: "B major", sr: "H-dur"}
+      - {en: "D major", sr: "D-dur"}
+    answer: 1
+    checks:
+      - keysig: {key: E, is: 4}
+      - scale: {tonic: E, type: major, is: [E, F#, G#, A, B, C#, D#]}
+  - id: T-008-4
+    type: notation-input
+    prompt: {en: "Write the sharps of A major in signature order.", sr: "Napiši povisilice A-dura redosledom kojim se pišu u predznaku."}
+    expect: [F#, C#, G#]
+    checks:
+      - keysig: {key: A, is: 3}
+      - scale: {tonic: A, type: major, is: [A, B, C#, D, E, F#, G#]}
+  - id: T-008-5
+    type: mcq
+    prompt: {en: "The last sharp in a signature is A♯. Which major key is it?", sr: "Poslednja povisilica u predznaku je Ais. Koji je to dur?"}
+    options:
+      - {en: "A major", sr: "A-dur"}
+      - {en: "B major", sr: "H-dur"}
+      - {en: "E major", sr: "E-dur"}
+      - {en: "F♯ major", sr: "Fis-dur"}
+    answer: 1
+    checks:
+      - keysig: {key: B, is: 5}
+      - scale: {tonic: B, type: major, is: [B, C#, D#, E, F#, G#, A#]}
+  - id: T-008-6
+    type: generated
+    prompt: {en: "Play sharp-key scales", sr: "Odsviraj lestvice sa povisilicama"}
+    count: 2
+    gen: {kind: scale-build, types: [major], tonics: [A, E, B]}

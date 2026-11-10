@@ -1,0 +1,114 @@
+id: T-010
+track: T
+order: 10
+prereqs: [T-009]
+title: {en: "Minor scales and relative keys", sr: "Molske lestvice i paralelni tonaliteti"}
+minutes: 14
+tags: [scales, keys]
+explain:
+  en: |
+    Play A to A on white keys: that is **A natural minor**. It uses the same notes and key signature as C major,
+    just starting on degree 6. Pairs like this are **relative** keys; the relative minor's tonic is a **minor 3rd below** the major tonic
+    (C major ↔ A minor, G major ↔ E minor, F major ↔ D minor).
+
+    Natural minor steps: **W H W W H W W**. Compared with major, degrees 3, 6 and 7 are lowered.
+
+    Natural minor has no leading tone (G–A is a whole step), so composers raise degree 7. That gives three forms:
+
+    | form | A minor | what changes |
+    |---|---|---|
+    | natural | A B C D E F G | nothing, key signature only |
+    | harmonic | A B C D E F G♯ | 7 raised: a leading tone; F–G♯ is an augmented 2nd |
+    | melodic (up) | A B C D E F♯ G♯ | 6 and 7 raised, smooths out the augmented 2nd |
+
+    **Melodic minor descends as natural minor** (G♮ F♮). The raised notes are written as accidentals; they never go into the key signature.
+
+    Terminology trap: in Serbian, *paralelni* tonalitet means **relative** (C-dur / a-mol). English "parallel" means **same tonic** (C major / C minor), which in Serbian is *istoimeni*.
+
+    ```abc
+    X:1
+    L:1/8
+    K:Am clef=treble
+    A B c d e f ^g a |]
+    ```
+  sr: |
+    Odsviraj od A do A po belim dirkama: to je **prirodni a-mol**. Ima iste tonove i isti predznak kao C-dur,
+    samo počinje od VI stupnja. Takvi parovi su **paralelni** tonaliteti; tonika paralelnog mola je **mala terca ispod** tonike dura
+    (C-dur ↔ a-mol, G-dur ↔ e-mol, F-dur ↔ d-mol).
+
+    Koraci prirodnog mola: **C P C C P C C**. U poređenju s durom, III, VI i VII stupanj su sniženi.
+
+    Prirodni mol nema vođicu (G–A je ceo stepen), pa se VII stupanj povisuje. Tako nastaju tri vrste:
+
+    | vrsta | a-mol | šta se menja |
+    |---|---|---|
+    | prirodni | A H C D E F G | ništa, samo predznak |
+    | harmonski | A H C D E F Gis | povišen VII: vođica; F–Gis je povećana sekunda |
+    | melodijski (uzlazno) | A H C D E Fis Gis | povišeni VI i VII, nema povećane sekunde |
+
+    **Melodijski mol silazno je isti kao prirodni** (G, F bez povisilica). Povišeni tonovi se pišu kao prolazni predznaci; nikad ne ulaze u predznak na početku.
+
+    Zamka u nazivima: srpski *paralelni* tonalitet je engleski **relative** (C-dur / a-mol). Engleski „parallel" znači **istu toniku** (C-dur / c-mol), što je kod nas *istoimeni* tonalitet.
+
+    ```abc
+    X:1
+    L:1/8
+    K:Am clef=treble
+    A B c d e f ^g a |]
+    ```
+exercises:
+  - id: T-010-1
+    type: generated
+    prompt: {en: "Relative minor of a major key", sr: "Paralelni mol datog dura"}
+    count: 4
+    gen: {kind: keysig, keys: [C, G, D, A, F, Bb, Eb], mode: major, ask: relative}
+    checks:
+      - keysig: {key: A, mode: minor, is: 0}
+      - keysig: {key: E, mode: minor, is: 1}
+      - keysig: {key: D, mode: minor, is: -1}
+      - interval: {from: A3, to: C4, is: m3}
+  - id: T-010-2
+    type: generated
+    prompt: {en: "Key signatures of minor keys", sr: "Predznaci molskih tonaliteta"}
+    count: 4
+    gen: {kind: keysig, keys: [A, E, B, D, G, C], mode: minor, ask: count}
+  - id: T-010-3
+    type: mcq
+    prompt: {en: "In A harmonic minor, which note is raised?", sr: "Koji ton je povišen u harmonskom a-molu?"}
+    options:
+      - {en: "G♯ (degree 7)", sr: "Gis (VII stupanj)"}
+      - {en: "F♯ (degree 6)", sr: "Fis (VI stupanj)"}
+      - {en: "C♯ (degree 3)", sr: "Cis (III stupanj)"}
+      - {en: "F♯ and G♯", sr: "Fis i Gis"}
+    answer: 0
+    checks:
+      - scale: {tonic: A, type: natural-minor, is: [A, B, C, D, E, F, G]}
+      - scale: {tonic: A, type: harmonic-minor, is: [A, B, C, D, E, F, G#]}
+      - scale: {tonic: A, type: melodic-minor, is: [A, B, C, D, E, F#, G#]}
+      - interval: {from: F4, to: G#4, is: A2}
+  - id: T-010-4
+    type: generated
+    prompt: {en: "Spell minor scales", sr: "Napiši molske lestvice"}
+    count: 4
+    gen: {kind: scale-build, types: [natural-minor, harmonic-minor, melodic-minor], tonics: [A, E, D, G], answer: name}
+  - id: T-010-5
+    type: mcq
+    prompt: {en: "Melodic minor coming down uses the notes of…", sr: "Melodijski mol silazno koristi tonove…"}
+    options:
+      - {en: "natural minor", sr: "prirodnog mola"}
+      - {en: "harmonic minor", sr: "harmonskog mola"}
+      - {en: "melodic minor ascending", sr: "melodijskog mola uzlazno"}
+      - {en: "the parallel major", sr: "istoimenog dura"}
+    answer: 0
+  - id: T-010-6
+    type: midi-play
+    prompt: {en: "Play D harmonic minor up one octave from D4.", sr: "Odsviraj harmonski d-mol naviše, jednu oktavu od D4."}
+    mode: sequence
+    derive: {scale: {tonic: D4, type: harmonic-minor}}
+    checks:
+      - scale: {tonic: D, type: harmonic-minor, is: [D, E, F, G, A, Bb, C#]}
+  - id: T-010-7
+    type: generated
+    prompt: {en: "Play harmonic and melodic minor", sr: "Odsviraj harmonski i melodijski mol"}
+    count: 2
+    gen: {kind: scale-build, types: [harmonic-minor, melodic-minor], tonics: [A, E, G]}
