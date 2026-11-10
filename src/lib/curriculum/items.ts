@@ -254,11 +254,15 @@ function mcq(rng: Rng, correct: string, pool: string[], k = 4): { options: strin
 }
 
 // ---------- static exercises ----------
-function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = {}): Item {
+function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = {}, seed = ""): Item {
   const base = { id: `${ex.id}#0`, exerciseId: ex.id, prompt: ex.prompt, abc: ex.abc };
   switch (ex.type) {
-    case "mcq":
-      return { ...base, kind: "mcq", options: ex.options.map(opt), answer: ex.answer, play: playSpec(ex.play) };
+    case "mcq": {
+      const options = ex.options.map(opt);
+      if (ex.keepOrder) return { ...base, kind: "mcq", options, answer: ex.answer, play: playSpec(ex.play) };
+      const order = new Rng(`${ex.id}|${seed}|order`).shuffle(options.map((_, i) => i));
+      return { ...base, kind: "mcq", options: order.map((i) => options[i]), answer: order.indexOf(ex.answer), play: playSpec(ex.play) };
+    }
     case "notation-input": {
       const expect = ex.expect ?? derive(ex.derive!)[0].map((n) => pcName(n));
       return { ...base, kind: "names", expect, ordered: ex.ordered };
@@ -913,7 +917,7 @@ function abcRhythm(durs: number[], meter: string): string {
 }
 
 export function generateItems(ex: Exercise, seed: string, countOverride?: number, ctx: GenCtx = {}): Item[] {
-  if (ex.type !== "generated") return [staticItem(ex, ctx)];
+  if (ex.type !== "generated") return [staticItem(ex, ctx, seed)];
   const rng = new Rng(`${ex.id}|${seed}`);
   const count = countOverride ?? ex.count;
   const items: Item[] = [];

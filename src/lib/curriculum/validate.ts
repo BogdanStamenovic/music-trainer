@@ -3,6 +3,7 @@ import { derive, generateItems } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
 import { scale, keySignature, romanNumeral, identifyChord, triadQualityOf, seventhQualityOf } from "../music/harmony";
+import { syllables } from "../projects";
 
 /** Run one content assertion; returns an error message or null. */
 export function runCheck(c: Check): string | null {
@@ -25,7 +26,9 @@ export function runCheck(c: Check): string | null {
     const root = notes.find((n) => pcName(n) === c.chord.root);
     if (!root) return `chord ${c.chord.notes.join(" ")} does not contain spelled root ${c.chord.root}`;
     const steps = (n: { octave: number; letter: number }) => n.octave * 7 + n.letter;
-    const up = [root, ...notes.filter((n) => n !== root).map((n) => {
+    // doubled notes (A2 A3 C4 E4) are the same chord member: keep one of each spelled pitch class
+    const uniq = notes.filter((n, i) => n !== root && n.letter * 10 + n.acc !== root.letter * 10 + root.acc && notes.findIndex((m) => m.letter === n.letter && m.acc === n.acc) === i);
+    const up = [root, ...uniq.map((n) => {
       const m = { ...n };
       while (steps(m) <= steps(root)) m.octave++;
       while (steps(m) - steps(root) > 7) m.octave--;
@@ -46,6 +49,10 @@ export function runCheck(c: Check): string | null {
   if ("roman" in c) {
     const got = romanNumeral(parseNote(c.roman.key), c.roman.type, c.roman.degree);
     return got === c.roman.is ? null : `degree ${c.roman.degree} in ${c.roman.key} ${c.roman.type} is ${got}, content says ${c.roman.is}`;
+  }
+  if ("syllables" in c) {
+    const got = c.syllables.text.split(/\s+/).filter(Boolean).reduce((a, w) => a + syllables(w, "sr"), 0);
+    return got === c.syllables.is ? null : `"${c.syllables.text}" has ${got} syllables (vowels + syllabic r), content says ${c.syllables.is}`;
   }
   return "unknown check";
 }

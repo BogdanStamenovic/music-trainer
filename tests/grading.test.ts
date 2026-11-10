@@ -100,3 +100,11 @@ describe("sing grading with rests in the layout", () => {
     expect(gradeSing(it2, { analysis: { tracker: "t", notes: [note(0, 5), note(1, -3)] } }).score).toBe(0.5);
   });
 });
+
+describe("chord check with doubled notes", () => {
+  it("accepts open voicings with a doubled root or fifth", () => {
+    expect(runCheck({ chord: { notes: ["A2", "A3", "C4", "E4"], root: "A", quality: "min", inversion: 0 } })).toBeNull();
+    expect(runCheck({ chord: { notes: ["C3", "G3", "C4", "E4"], root: "C", quality: "maj", inversion: 0 } })).toBeNull();
+    expect(runCheck({ chord: { notes: ["G2", "G3", "B3", "D4", "F4"], root: "G", quality: "7", inversion: 0 } })).toBeNull();
+  });
+});

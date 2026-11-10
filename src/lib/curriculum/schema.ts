@@ -33,6 +33,8 @@ export const Check = z.union([
   z.object({ keysig: z.object({ key: PcS, mode: Mode.default("major"), is: z.number().int() }) }),
   z.object({ roman: z.object({ key: PcS, type: ScaleType.default("major"), degree: z.number().int().min(1).max(7), is: z.string() }) }),
   z.object({ semitones: z.object({ from: NoteS, to: NoteS, is: z.number().int() }) }),
+  // Serbian only: vowels + syllabic r is reliable; English syllables need a dictionary
+  z.object({ syllables: z.object({ text: z.string().min(1), lang: z.literal("sr"), is: z.number().int().min(1) }) }),
 ]);
 export type Check = z.infer<typeof Check>;
 
@@ -56,7 +58,8 @@ const Base = {
 
 const Option = z.union([Loc, z.string()]); // plain string = language-neutral (e.g. "Bb", "V7")
 
-export const Mcq = z.object({ ...Base, type: z.literal("mcq"), options: z.array(Option).min(2), answer: z.number().int().min(0), play: Playback.optional() });
+// options are shuffled per seed (fixed for a given attempt); keepOrder for ordered option lists
+export const Mcq = z.object({ ...Base, type: z.literal("mcq"), options: z.array(Option).min(2), answer: z.number().int().min(0), play: Playback.optional(), keepOrder: z.boolean().default(false) });
 
 export const NotationInput = z.object({
   ...Base,

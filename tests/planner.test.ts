@@ -121,7 +121,7 @@ describe("no piano today", () => {
   it("needsPiano: midi exercises yes, mcq no", async () => {
     const { needsPiano } = await import("@/lib/curriculum/items");
     expect(needsPiano({ id: "K-001-1", type: "midi-play", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], mode: "sequence", expect: ["C4"], octave: "exact", bass: false, showNotes: true })).toBe(true);
-    expect(needsPiano({ id: "T-001-1", type: "mcq", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], options: ["a", "b"], answer: 0 })).toBe(false);
+    expect(needsPiano({ id: "T-001-1", type: "mcq", prompt: { en: "x", sr: "x" }, pass: 0.8, checks: [], options: ["a", "b"], answer: 0, keepOrder: false })).toBe(false);
   });
 });
 

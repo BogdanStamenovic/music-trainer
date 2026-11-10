@@ -85,3 +85,24 @@ describe("distortion gate (voice safety)", () => {
     expect(errs).toMatch(/stop protocol/);
   });
 });
+
+import { runCheck } from "@/lib/curriculum/validate";
+describe("mcq shuffle + syllable check", () => {
+  it("static options shuffle per seed, answer follows; keepOrder keeps them", () => {
+    const ex = Exercise.parse({ id: "T-098-1", type: "mcq", prompt: { en: "q", sr: "q" }, options: ["a", "b", "c", "d"], answer: 2 });
+    const seen = new Set<string>();
+    for (const s of ["1", "2", "3", "4", "5", "6"]) {
+      const it0 = generateItems(ex, s)[0] as { options: { en: string }[]; answer: number };
+      expect(it0.options[it0.answer].en).toBe("c");
+      seen.add(it0.options.map((o) => o.en).join(""));
+    }
+    expect(seen.size).toBeGreaterThan(1);
+    const keep = Exercise.parse({ id: "T-098-2", type: "mcq", prompt: { en: "q", sr: "q" }, options: ["1", "2", "3"], answer: 1, keepOrder: true });
+    expect((generateItems(keep, "x")[0] as { options: { en: string }[] }).options.map((o) => o.en)).toEqual(["1", "2", "3"]);
+  });
+  it("Serbian syllable check (syllabic r)", () => {
+    expect(runCheck({ syllables: { text: "Srce moje, crveni trn", lang: "sr", is: 8 } })).toBeNull();
+    expect(runCheck({ syllables: { text: "Mladi momak konja izvodio", lang: "sr", is: 10 } })).toBeNull();
+    expect(runCheck({ syllables: { text: "prst", lang: "sr", is: 2 } })).toMatch(/has 1/);
+  });
+});
