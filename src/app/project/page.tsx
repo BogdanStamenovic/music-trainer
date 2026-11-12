@@ -137,7 +137,7 @@ function ByEar({ def, onEvents }: { def: Extract<Project, { kind: "byear" }>; on
       ev.current = [...ev.current, e];
       setEvents(ev.current);
       onEvents(ev.current);
-    });
+    }, { expect: true });
     return () => void un();
   }, [onEvents]);
   // no notation here on purpose: the point is to find the tune by ear

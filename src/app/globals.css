@@ -22,6 +22,10 @@ h1 { font-size: 1.5rem; margin: 0.4em 0; } h2 { font-size: 1.15rem; margin: 0 0 
 .bar nav { display: flex; gap: 12px; } .bar nav a { text-decoration: none; color: var(--muted); } .bar nav a.active { color: var(--fg); font-weight: 600; }
 .status { margin-left: auto; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .pill { display: inline-block; font-size: 0.78rem; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+button.pill { background: none; cursor: pointer; font: inherit; font-size: 0.78rem; }
+.midi-ind .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--line); margin-right: 3px; vertical-align: middle; transition: background 60ms; }
+.midi-ind.ok .dot { background: color-mix(in srgb, var(--good) 35%, transparent); }
+.midi-ind .dot.lit { background: var(--good); box-shadow: 0 0 5px var(--good); }
 .pill.ok { color: var(--good); border-color: var(--good); } .pill.warn { color: var(--warn); border-color: var(--warn); }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
 .card.good { border-color: var(--good); }

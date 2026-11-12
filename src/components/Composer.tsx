@@ -71,7 +71,7 @@ export function Composer({ keyName, meter, bars, voices, value, onChange }: { ke
   useEffect(() => {
     const un = midi().subscribe((e) => {
       if (state !== "idle") evRef.current.push(e);
-    });
+    }, { expect: state !== "idle" });
     return () => void un();
   }, [state]);
 

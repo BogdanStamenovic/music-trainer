@@ -253,7 +253,7 @@ function MidiInput({ item, onSubmit, disabled }: { item: MidiItem; onSubmit: (e:
       } else if (item.mode === "sequence" || item.mode === "rhythm") {
         if (ev.filter((x) => x.type === "on").length >= item.expect.length) timer.current = window.setTimeout(submit, 900);
       } else if (clusterChords(ev).length >= (item.expectChords?.length ?? 1)) timer.current = window.setTimeout(submit, 1200);
-    });
+    }, { expect: true });
     return () => {
       un();
       if (timer.current) clearTimeout(timer.current);

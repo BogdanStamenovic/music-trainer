@@ -156,7 +156,7 @@ export function ImprovInput({ item, onSubmit, disabled }: { item: MidiItem; onSu
       if (!active.current) return;
       ev.current.push({ ...e, t: e.t - t0.current });
       if (e.type === "on") setN((x) => x + 1);
-    });
+    }, { expect: true });
     return () => void un();
   }, []);
   const start = async () => {

@@ -8,12 +8,15 @@ import type { MidiEvent } from "../grading";
 import type { PlaySpec } from "../curriculum/items";
 
 type Listener = (e: MidiEvent) => void;
+const THRU = /through|thru/i;
 export interface Port {
   id: string;
   name: string;
+  /** Web MIDI connection: "open" | "pending" | "closed". */
+  connection?: string;
 }
 
-class MidiManager {
+export class MidiManager {
   access: MIDIAccess | null = null;
   status: "unsupported" | "pending" | "denied" | "ready" = "pending";
   inputs: Port[] = [];
@@ -26,6 +29,14 @@ class MidiManager {
   private changeListeners = new Set<() => void>();
   private muteUntil = 0; // ignore echo from the piano while we are playing to it
   private timers: number[] = [];
+  /** performance.now() of the last message from hardware (or an on-screen key); 0 = none yet. */
+  lastActivity = 0;
+  private pedalDown = false;
+  /** Exercises waiting for MIDI input: start time of the oldest open one, for the "nothing arrives" hint. */
+  private expecting = 0;
+  expectSince = 0;
+  private reopenTimer: number | null = null;
+  private openTried = new Map<string, number>();
 
   async init() {
     if (typeof navigator === "undefined" || !("requestMIDIAccess" in navigator)) {
@@ -34,10 +45,49 @@ class MidiManager {
       return;
     }
     try {
-      this.access = await navigator.requestMIDIAccess({ sysex: false });
-      this.status = "ready";
-      this.access.onstatechange = () => this.refresh();
-      this.refresh();
+      this.bind(await navigator.requestMIDIAccess({ sysex: false }));
+    } catch {
+      this.status = "denied";
+      this.emitChange();
+    }
+  }
+
+  private bind(access: MIDIAccess) {
+    if (this.access && this.access !== access) {
+      this.access.onstatechange = null;
+      for (const inp of this.access.inputs.values()) inp.onmidimessage = null;
+    }
+    this.access = access;
+    this.status = "ready";
+    access.onstatechange = () => this.refresh();
+    this.refresh();
+  }
+
+  /**
+   * Drop the current MIDIAccess, ask for a new one and rebind every input.
+   * ALSA rawmidi is exclusive: if another process held the port when Chrome
+   * opened it, Chrome's input stays silent until the port is reopened. Called
+   * when the user taps the MIDI indicator.
+   */
+  async reconnect() {
+    if (typeof navigator === "undefined" || !("requestMIDIAccess" in navigator)) return;
+    if (this.access) {
+      for (const inp of this.access.inputs.values()) {
+        inp.onmidimessage = null;
+        try {
+          await inp.close();
+        } catch {
+          /* already closed */
+        }
+      }
+    }
+    this.held.clear();
+    this.pedalDown = false;
+    this.openTried.clear();
+    this.status = "pending";
+    this.emitChange();
+    try {
+      this.bind(await navigator.requestMIDIAccess({ sysex: false }));
     } catch {
       this.status = "denied";
       this.emitChange();
@@ -46,34 +96,90 @@ class MidiManager {
 
   private refresh() {
     if (!this.access) return;
-    this.inputs = [...this.access.inputs.values()].map((p) => ({ id: p.id, name: p.name ?? p.id }));
-    this.outputs = [...this.access.outputs.values()].map((p) => ({ id: p.id, name: p.name ?? p.id }));
-    for (const inp of this.access.inputs.values()) inp.onmidimessage = (m) => this.onMessage(inp.id, m);
+    const ins = [...this.access.inputs.values()];
+    this.inputs = ins.map((p) => ({ id: p.id, name: p.name ?? p.id, connection: p.connection }));
+    this.outputs = [...this.access.outputs.values()].map((p) => ({ id: p.id, name: p.name ?? p.id, connection: p.connection }));
+    for (const inp of ins) {
+      inp.onmidimessage = (m) => this.onMessage(inp.id, m);
+      // A present device whose connection did not open (port busy, replugged):
+      // open it explicitly and keep retrying until it does.
+      // Throttled: open() itself fires statechange, which lands back here.
+      const now = Date.now();
+      if (inp.state === "connected" && inp.connection !== "open" && now - (this.openTried.get(inp.id) ?? 0) > 2000) {
+        this.openTried.set(inp.id, now);
+        void inp.open().catch(() => {});
+      }
+    }
+    const stuck = ins.some((p) => p.state === "connected" && p.connection !== "open" && !THRU.test(p.name ?? ""));
+    if (stuck && this.reopenTimer === null && typeof window !== "undefined")
+      this.reopenTimer = window.setTimeout(() => {
+        this.reopenTimer = null;
+        this.refresh();
+      }, 3000);
     this.emitChange();
   }
 
-  private onMessage(portId: string, m: MIDIMessageEvent) {
+  /** Raw MIDI bytes from port `portId`; public for tests. */
+  onMessage(portId: string, m: { data: Uint8Array | null; timeStamp: number }) {
     if (this.inputId && portId !== this.inputId) return;
     const d = m.data;
-    if (!d || d.length < 2) return;
+    if (!d || d.length < 2 || d[0] >= 0xf0) return; // system/realtime (active sensing, clock)
+    const now = typeof performance !== "undefined" ? performance.now() : 0;
+    this.lastActivity = now;
+    this.emitChange(); // indicator blink
     const cmd = d[0] & 0xf0;
-    const t = m.timeStamp || performance.now();
+    const t = m.timeStamp || now;
     if (t < this.muteUntil && this.usingMidiOut()) return;
     if (cmd === 0x90 && d[2] > 0) this.inject({ t, type: "on", note: d[1], vel: d[2] });
     else if (cmd === 0x80 || (cmd === 0x90 && d[2] === 0)) this.inject({ t, type: "off", note: d[1] });
-    else if (cmd === 0xb0 && d[1] === 64) this.inject({ t, type: "pedal", note: d[2] >= 64 ? 1 : 0 });
+    else if (cmd === 0xb0 && d[1] === 64) {
+      // Continuous (half-)pedals send a stream of values per press (Arius: 6, 45, 76,
+      // 127, 79, 32, 0). Only a crossing of 64 is an event.
+      const down = d[2] >= 64;
+      if (down === this.pedalDown) return;
+      this.pedalDown = down;
+      this.inject({ t, type: "pedal", note: down ? 1 : 0 });
+    }
   }
 
   /** Also used by the on-screen keyboard. */
   inject(e: MidiEvent) {
     if (e.type === "on") this.held.add(e.note);
     if (e.type === "off") this.held.delete(e.note);
+    if (typeof performance !== "undefined") this.lastActivity = Math.max(this.lastActivity, performance.now());
     this.listeners.forEach((l) => l(e));
   }
 
-  subscribe(l: Listener) {
+  /**
+   * `expect: true` marks an exercise waiting for the learner to play; the
+   * indicator hints "reconnect" if a device is connected but nothing arrives.
+   */
+  subscribe(l: Listener, opts: { expect?: boolean } = {}) {
     this.listeners.add(l);
-    return () => this.listeners.delete(l);
+    if (opts.expect) {
+      if (this.expecting++ === 0) this.expectSince = typeof performance !== "undefined" ? performance.now() : 0;
+      this.emitChange();
+    }
+    let done = false;
+    return () => {
+      this.listeners.delete(l);
+      if (opts.expect && !done) {
+        done = true;
+        if (--this.expecting === 0) this.expectSince = 0;
+        this.emitChange();
+      }
+    };
+  }
+
+  /** Real (non-"Through") inputs. */
+  realInputs(): Port[] {
+    return this.inputs.filter((i) => !THRU.test(i.name));
+  }
+
+  /** True when a device is connected, an exercise has waited `ms`, and nothing came in since it started. */
+  silent(now: number, ms = 15000): boolean {
+    if (!this.expectSince || !this.realInputs().length) return false;
+    return now - this.expectSince >= ms && this.lastActivity < this.expectSince;
   }
   onChange(l: () => void) {
     this.changeListeners.add(l);
@@ -88,7 +194,7 @@ class MidiManager {
     const outs = [...this.access.outputs.values()];
     if (this.outputId) return outs.find((o) => o.id === this.outputId) ?? null;
     // auto: first output that is not a software "Through" port
-    return outs.find((o) => !/through|thru/i.test(o.name ?? "")) ?? null;
+    return outs.find((o) => !THRU.test(o.name ?? "")) ?? null;
   }
   usingMidiOut(): boolean {
     return this.playback !== "webaudio" && !!this.output();
