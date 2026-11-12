@@ -52,4 +52,22 @@ describe("calibration view", () => {
     expect(c.totals.voiceRestDays).toBe(1);
     expect(c.days.find((d) => d.date === "2026-11-18")?.noPiano).toBe(true);
   });
+
+  it("recording setup per day: applied mic processing and quality warnings", async () => {
+    const { getDb } = await import("@/lib/server/db");
+    const { cleanMic } = await import("@/lib/server/recordings");
+    const { micKey } = await import("@/lib/server/calibration");
+    const ins = getDb().prepare(
+      "INSERT INTO recordings(id, created_at, date, exercise_id, item_id, file, mime, size, params, status, mic, server_analysis) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+    );
+    const mic = cleanMic({ label: "Built-in Audio", noiseSuppression: true, autoGainControl: false, echoCancellation: false, sampleRate: 48000, junk: { big: 1 } });
+    expect(JSON.parse(mic!)).not.toHaveProperty("junk");
+    const an = (w: string[]) => JSON.stringify({ tracker: "swift-f0", notes: [], warnings: w });
+    ins.run("r1", 1, "2026-11-20", "V-001-1", "i", "f", "audio/webm", 1, "{}", "analyzed", mic, an(["low recording level (voice peaks at -50 dBFS); ..."]));
+    ins.run("r2", 2, "2026-11-20", "V-001-1", "i", "f", "audio/webm", 1, "{}", "analyzed", null, an(["noisy recording: voice only 4 dB above the background; ..."]));
+    const day = calibration().recording.find((d) => d.date === "2026-11-20")!;
+    expect(day).toMatchObject({ takes: 2, lowLevel: 1, noisy: 1 });
+    expect(day.mics).toEqual({ "Built-in Audio · NS ON AGC off EC off · 48000 Hz": 1, unknown: 1 });
+    expect(micKey(null)).toBe("unknown");
+  });
 });

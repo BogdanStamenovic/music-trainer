@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { SingItem, RangeItem } from "@/lib/curriculum/items";
-import type { Response, VoiceAnalysis } from "@/lib/grading";
+import { takeQuality, type Response, type VoiceAnalysis } from "@/lib/grading";
 import { record, analyzeTake } from "@/lib/client/voice";
 import { midi } from "@/lib/client/midi";
 import { useI18n } from "@/lib/client/i18n";
@@ -107,6 +107,20 @@ export function SingInput({ item, meta, onSubmit, disabled }: { item: SingItem; 
   );
 }
 
+/** Recording-quality warnings from voice-score, in plain words. */
+export function TakeWarnings({ analysis, graded = true }: { analysis: VoiceAnalysis | null | undefined; graded?: boolean }) {
+  const { t } = useI18n();
+  const q = takeQuality(analysis);
+  if (!q.lowLevel && !q.noisy) return null;
+  return (
+    <div className="warn small" data-testid="take-warnings">
+      {q.lowLevel ? <p>⚠ {t("takeLowLevel")}</p> : null}
+      {q.noisy ? <p>⚠ {t("takeNoisy")}</p> : null}
+      {graded ? <p>{t("takeUnreliable")}</p> : null}
+    </div>
+  );
+}
+
 export function SingFeedback({ item, detail, resp }: { item: SingItem; detail: Record<string, unknown>; resp: Response }) {
   const { t, locale } = useI18n();
   const notes = (detail.notes as { target: number; score: number; cents: number | null; sustain: number | null }[] | undefined) ?? [];
@@ -128,6 +142,7 @@ export function SingFeedback({ item, detail, resp }: { item: SingItem; detail: R
       <div className="muted small">
         {src} · ±{item.tolerance} {t("cents")}
       </div>
+      {resp.kind === "sing" ? <TakeWarnings analysis={resp.analysis} /> : null}
     </div>
   );
 }
@@ -149,12 +164,14 @@ export function RangeInput({ item, meta, onSubmit, disabled }: { item: RangeItem
   const [low, setLow] = useState<{ id: string; midi: number | null } | null>(null);
   const [high, setHigh] = useState<{ id: string; midi: number | null } | null>(null);
   const [fail, setFail] = useState(false);
+  const [lastAnalysis, setLastAnalysis] = useState<VoiceAnalysis | null>(null);
   const go = async () => {
     setFail(false);
     const blob = await rec.start(12);
     if (!blob) return;
     const out = await analyzeTake(blob, {}, { ...meta, exerciseId: item.exerciseId, itemId: `${item.id}:${step === 0 ? "low" : "high"}` });
     rec.setState("idle");
+    setLastAnalysis(out.analysis);
     const m = rangeEnd(out.analysis, step === 0 ? "low" : "high");
     if (m == null) {
       setFail(true);
@@ -190,6 +207,7 @@ export function RangeInput({ item, meta, onSubmit, disabled }: { item: RangeItem
       ) : null}
       {rec.state === "recording" ? <Meter level={rec.level} /> : null}
       {fail ? <p className="bad small">{t("noVoice")}</p> : null}
+      <TakeWarnings analysis={lastAnalysis} graded={false} />
       {low ? (
         <p data-testid="range-result">
           {t("rangeResult")}: {nm(low.midi)} – {nm(high?.midi ?? null)}

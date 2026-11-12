@@ -36,9 +36,14 @@ export interface Take {
   seconds: number;
 }
 
+/** What the browser actually applied to the mic for the last take; stored with each recording. */
+let lastMic: Record<string, unknown> | null = null;
+
 /** Records until stop() or maxSeconds. `onLevel` gets RMS 0..1 about 20x/s for a meter. */
 export async function record(maxSeconds: number, onLevel?: (v: number) => void): Promise<{ stop: () => void; done: Promise<Take> }> {
   const s = await mic();
+  const track = s.getAudioTracks()[0];
+  lastMic = track ? { ...track.getSettings(), label: track.label } : null;
   const mime = ["audio/webm;codecs=opus", "audio/webm", "audio/ogg;codecs=opus", "audio/mp4"].find((m) => MediaRecorder.isTypeSupported(m)) ?? "";
   const rec = new MediaRecorder(s, mime ? { mimeType: mime } : undefined);
   const chunks: Blob[] = [];
@@ -156,7 +161,7 @@ if (typeof window !== "undefined") window.addEventListener("online", () => void 
 /** Store + analyze a take. Never throws: degraded paths come back as source/reason. */
 export async function analyzeTake(blob: Blob, params: VoiceParams, meta: { date: string; lessonId: string | null; exerciseId: string; itemId: string }): Promise<AnalyzeOutcome> {
   const id = crypto.randomUUID();
-  const fullMeta = { ...meta, params: { ...params, contour: false } };
+  const fullMeta = { ...meta, params: { ...params, contour: false }, mic: lastMic };
   try {
     const up = await upload(id, blob, fullMeta);
     if (up.analysis) return { recordingId: id, analysis: up.analysis, source: up.source, queued: false };

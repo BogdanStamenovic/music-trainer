@@ -85,6 +85,21 @@ export function calibration() {
   }
   for (const t of Object.values(pace)) t.ratio = t.est ? Math.round((t.actual / t.est) * 100) / 100 : null;
 
+  // recording setup per day: what the browser applied to the mic (processing should be
+  // off; the platform may ignore the request) and voice-score's quality warnings
+  const recs = db.prepare("SELECT date, mic, COALESCE(server_analysis, browser_analysis) AS a FROM recordings ORDER BY created_at").all() as { date: string; mic: string | null; a: string | null }[];
+  const recDays = new Map<string, { date: string; takes: number; lowLevel: number; noisy: number; mics: Record<string, number> }>();
+  for (const r of recs) {
+    const d = recDays.get(r.date) ?? { date: r.date, takes: 0, lowLevel: 0, noisy: 0, mics: {} };
+    recDays.set(r.date, d);
+    d.takes++;
+    const w: string[] = (r.a ? (JSON.parse(r.a).warnings as string[] | undefined) : undefined) ?? [];
+    if (w.some((x) => x.startsWith("low recording level"))) d.lowLevel++;
+    if (w.some((x) => x.startsWith("noisy recording"))) d.noisy++;
+    const key = micKey(r.mic);
+    d.mics[key] = (d.mics[key] ?? 0) + 1;
+  }
+
   const projects = db.prepare("SELECT week, project_id, status, score, ai_status FROM projects ORDER BY week").all();
   return {
     generatedAt: new Date().toISOString(),
@@ -100,9 +115,20 @@ export function calibration() {
       voiceRestDays: [...rest.values()].filter((s) => s !== "fine").length,
     },
     pace,
+    recording: [...recDays.values()],
     lessons,
     days,
     projects,
     note: "Times are client-measured (from showing an exercise to submitting it), so they include pauses. Events made offline other than submissions are not recorded.",
   };
+}
+
+/** "Built-in mic · NS on AGC off EC off · 48000 Hz", or "unknown" for takes before schema v5. */
+export function micKey(mic: string | null): string {
+  if (!mic) return "unknown";
+  const m = JSON.parse(mic) as Record<string, unknown>;
+  const flag = (k: string, n: string) => (m[k] === undefined ? `${n} ?` : `${n} ${m[k] ? "ON" : "off"}`);
+  return [m.label || m.deviceId || "mic", [flag("noiseSuppression", "NS"), flag("autoGainControl", "AGC"), flag("echoCancellation", "EC")].join(" "), m.sampleRate ? `${m.sampleRate} Hz` : null]
+    .filter(Boolean)
+    .join(" · ");
 }

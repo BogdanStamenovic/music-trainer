@@ -25,6 +25,11 @@ for (const l of j.lessons)
 console.log("\ndays:");
 for (const d of j.days)
   console.log(`  ${d.date} ${String(d.weekday ?? "").padEnd(3)} ${(d.focus ?? []).join("+").padEnd(6)} ${d.noPiano ? "no-piano " : ""}${d.voiceRest ? `voice-rest(${d.voiceRest}) ` : ""}${d.minutes} min, ${d.submissions} subs, passed ${d.passedThatDay.join(" ") || "-"}`);
+if (j.recording?.length) {
+  console.log("\nrecording setup (mic processing as applied by the browser; voice-score quality warnings):");
+  for (const d of j.recording)
+    console.log(`  ${d.date} ${d.takes} takes, low level ${d.lowLevel}, noisy ${d.noisy} · ${Object.entries(d.mics).map(([k, n]) => `${k} (${n})`).join("; ")}`);
+}
 if (j.projects.length) {
   console.log("\nprojects:");
   for (const p of j.projects) console.log(`  ${p.week} ${p.project_id} ${p.status} ${p.score == null ? "" : Math.round(p.score * 100) + "%"} ${p.ai_status ?? ""}`);

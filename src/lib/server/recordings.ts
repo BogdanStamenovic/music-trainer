@@ -15,6 +15,20 @@ export interface RecordingMeta {
   exerciseId: string;
   itemId: string;
   params: Record<string, unknown>; // what was sent to voice-score (targets, tempo...)
+  mic?: Record<string, unknown> | null; // MediaTrackSettings the browser applied
+}
+
+const MIC_KEYS = ["deviceId", "groupId", "label", "echoCancellation", "noiseSuppression", "autoGainControl", "sampleRate", "channelCount", "latency", "sampleSize", "voiceIsolation"];
+/** Keep the known MediaTrackSettings fields only; the client is not trusted to send a small object. */
+export function cleanMic(m: unknown): string | null {
+  if (!m || typeof m !== "object") return null;
+  const out: Record<string, unknown> = {};
+  for (const k of MIC_KEYS) {
+    const v = (m as Record<string, unknown>)[k];
+    if (typeof v === "boolean" || typeof v === "number") out[k] = v;
+    else if (typeof v === "string") out[k] = v.slice(0, 120);
+  }
+  return Object.keys(out).length ? JSON.stringify(out) : null;
 }
 
 export interface RecordingRow {
@@ -32,6 +46,7 @@ export interface RecordingRow {
   browser_analysis: string | null;
   status: string;
   error: string | null;
+  mic?: string | null;
 }
 
 const EXT: Record<string, string> = { "audio/webm": "webm", "audio/ogg": "ogg", "audio/mp4": "m4a", "audio/wav": "wav", "audio/x-wav": "wav", "audio/mpeg": "mp3" };
@@ -85,10 +100,10 @@ export async function saveRecording(meta: RecordingMeta, audio: Blob) {
   fs.writeFileSync(abs, buf);
   getDb()
     .prepare(
-      `INSERT INTO recordings(id, created_at, date, lesson_id, exercise_id, item_id, file, mime, size, params, status)
-       VALUES (?,?,?,?,?,?,?,?,?,?, 'pending')`,
+      `INSERT INTO recordings(id, created_at, date, lesson_id, exercise_id, item_id, file, mime, size, params, status, mic)
+       VALUES (?,?,?,?,?,?,?,?,?,?, 'pending', ?)`,
     )
-    .run(meta.id, now(), meta.date, meta.lessonId, meta.exerciseId, meta.itemId, rel, mime, buf.length, JSON.stringify(meta.params));
+    .run(meta.id, now(), meta.date, meta.lessonId, meta.exerciseId, meta.itemId, rel, mime, buf.length, JSON.stringify(meta.params), cleanMic(meta.mic));
   const r = await runServerAnalysis(getRecording(meta.id)!);
   const row = getRecording(meta.id)!;
   return { row, analysis: bestAnalysis(row), reason: r.ok ? "analyzed" : r.reason };

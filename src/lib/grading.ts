@@ -38,6 +38,14 @@ export interface VoiceAnalysis {
   version?: string;
   notes: VoiceNote[];
   summary?: { range?: { low_note?: string; high_note?: string; low_hz?: number; high_hz?: number } | null; longest_sustain_s?: number | null; mean_abs_cents?: number | null };
+  /** voice-score >= 0.2.1: "low recording level ...", "noisy recording ...", octave folding. */
+  warnings?: string[];
+}
+
+/** Recording-quality problems in a voice-score analysis (octave folding is not one). */
+export function takeQuality(a: VoiceAnalysis | null | undefined): { lowLevel: boolean; noisy: boolean } {
+  const w = a?.warnings ?? [];
+  return { lowLevel: w.some((x) => x.startsWith("low recording level")), noisy: w.some((x) => x.startsWith("noisy recording")) };
 }
 
 export interface Grade {

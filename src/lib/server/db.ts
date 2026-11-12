@@ -42,6 +42,9 @@ const MIGRATIONS: string[] = [
   `CREATE TABLE events (id INTEGER PRIMARY KEY, at INTEGER NOT NULL, date TEXT NOT NULL, kind TEXT NOT NULL,
      lesson_id TEXT, exercise_id TEXT, detail TEXT);
    CREATE INDEX events_date ON events(date, kind);`,
+  // 5: what the browser actually applied to the mic for each take (track.getSettings()):
+  // the constraints ask for no processing, but the platform may ignore them
+  `ALTER TABLE recordings ADD COLUMN mic TEXT;`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;
