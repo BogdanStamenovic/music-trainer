@@ -39,7 +39,8 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
   };
   useEffect(loadSession, [voiceLesson, context, date]); // eslint-disable-line react-hooks/exhaustive-deps
   const skipOf = (x: QueueEntry): "warm" | "later" | null => {
-    if (!session || forceRun.has(x.ex.id)) return null;
+    // never for an item done in this visit (the warm-up just done would otherwise flip to "already warm")
+    if (!session || forceRun.has(x.ex.id) || done[x.ex.id]) return null;
     if (x.ex.role === "warmup" && session.warm) return "warm";
     if (x.ex.role === "cooldown" && session.openV.some((id) => id !== x.lessonId)) return "later";
     return null;
