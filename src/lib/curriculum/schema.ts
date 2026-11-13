@@ -57,6 +57,9 @@ const Base = {
   pass: z.number().min(0).max(1).default(0.8),
   checks: z.array(Check).default([]),
   abc: z.string().optional(), // ABC notation fragment shown above the prompt
+  // Whether passing this exercise is required to pass the lesson. Default: yes, except
+  // ear-recognition drills outside the E track (see gatesLesson in items.ts).
+  gate: z.boolean().optional(),
 };
 
 const Option = z.union([Loc, z.string()]); // plain string = language-neutral (e.g. "Bb", "V7")
@@ -140,7 +143,9 @@ export const Gen = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("note-read"), clef: z.enum(["treble", "bass", "both"]).default("treble"), range: Range.optional(), accidentals: z.boolean().default(false), answer: z.enum(["name", "play"]).default("name") }),
   z.object({ kind: z.literal("interval-name"), intervals: z.array(IvS).min(1), roots: z.array(NoteS).optional(), range: Range.optional(), show: z.enum(["staff", "names", "both"]).default("both") }),
   z.object({ kind: z.literal("interval-build"), intervals: z.array(IvS).min(1), roots: z.array(NoteS).optional(), range: Range.optional(), down: z.boolean().default(false), answer: z.enum(["name", "play"]).default("name") }),
-  z.object({ kind: z.literal("interval-ear"), intervals: z.array(IvS).min(2), range: Range.optional(), direction: z.enum(["up", "down", "harmonic", "mixed"]).default("up"), answer: z.enum(["choose", "play"]).default("choose") }),
+  z.object({ kind: z.literal("interval-ear"), intervals: z.array(IvS).min(2), range: Range.optional(), direction: z.enum(["up", "down", "harmonic", "mixed"]).default("up"), answer: z.enum(["choose", "play"]).default("choose"),
+    // "triad": play the bottom note's major/minor triad first, as a cue for 3rds (m3/M3 only)
+    cue: z.enum(["triad"]).optional() }),
   z.object({ kind: z.literal("semitones"), maxSemitones: z.number().int().min(1).max(12).default(12), range: Range.optional() }),
   z.object({ kind: z.literal("chord-ear"), qualities: z.array(ChordQ).min(2), inversions: z.array(z.number().int().min(0).max(3)).default([0]), range: Range.optional(), answer: z.enum(["choose", "play"]).default("choose") }),
   z.object({ kind: z.literal("chord-build"), qualities: z.array(ChordQ).min(1), roots: z.array(PcS).optional(), inversions: z.array(z.number().int().min(0).max(3)).default([0]), answer: z.enum(["name", "play"]).default("play") }),

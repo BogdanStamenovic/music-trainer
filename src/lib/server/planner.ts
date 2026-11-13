@@ -85,7 +85,7 @@ export function available(track: Track, statuses: Map<string, { status: string }
  * a single lesson is longer). Lessons chain: a lesson planned today counts as
  * done for unlocking the next one, since it will be done before it.
  */
-export function fillFocus(tracks: Track[], target: number, statuses: Map<string, { status: string }>, opts?: { date?: string }): PlanLesson[] {
+export function fillFocus(tracks: Track[], target: number, statuses: Map<string, { status: string }>, opts?: { date?: string; maxNewVoice?: number }): PlanLesson[] {
   const sim = new Map(statuses);
   const picked: PlanLesson[] = [];
   let minutes = 0;
@@ -103,6 +103,8 @@ export function fillFocus(tracks: Track[], target: number, statuses: Map<string,
       );
       if (!next) continue;
       if (picked.length > 0 && minutes + next.lesson.minutes > cap) continue;
+      // vocal load: a cap on new V lessons per day (default 3); the rest of a V day goes to T/E practice
+      if (t === "V" && opts?.maxNewVoice !== undefined && picked.filter((p) => p.track === "V").length >= opts.maxNewVoice) continue;
       picked.push({ id: next.lesson.id, track: t, minutes: next.lesson.minutes, status: statuses.get(next.lesson.id)?.status ?? "new", aheadOfTheory: next.ahead.length ? next.ahead : undefined });
       sim.set(next.lesson.id, { status: "passed" });
       minutes += next.lesson.minutes;
@@ -145,10 +147,10 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   if (opts.noPiano) {
     // theory unless it is ahead of schedule (then voice); voice never on a voice-rest day
     let tracks: Track[] = theoryAhead(date, s) && !voiceRest(date) ? ["V"] : ["T"];
-    let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date });
+    let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
     if (!lessons.length) {
       const alt: Track[] = tracks[0] === "T" && !voiceRest(date) ? ["V"] : ["T"];
-      const got = fillFocus(alt, s.focusMinutes, statuses, { date });
+      const got = fillFocus(alt, s.focusMinutes, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
       if (got.length) [tracks, lessons] = [alt, got];
     }
     const name = tracks.map((t) => TRACK_NAMES[t]);
@@ -174,13 +176,13 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   // Focus tracks with content; otherwise walk the week forward to the next day that has some.
   const tracksOf = (f: Focus[]) => f.filter((x): x is Track => !["test", "rest"].includes(x));
   let tracks = tracksOf(focus);
-  let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date });
+  let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
   if (lessons.length === 0) {
     const idx = WEEKDAYS.indexOf(weekday);
     for (let k = 1; k <= 7 && lessons.length === 0; k++) {
       const alt = tracksOf(s.schedule[WEEKDAYS[(idx + k) % 7]]);
       if (!alt.length || alt.join() === tracks.join()) continue;
-      const got = fillFocus(alt, s.focusMinutes, statuses, { date });
+      const got = fillFocus(alt, s.focusMinutes, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
       if (got.length) {
         const from = tracks.map((t) => TRACK_NAMES[t]);
         const to = alt.map((t) => TRACK_NAMES[t]);
@@ -194,7 +196,9 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
     }
   }
   if (lessons.length === 0 && !base.note) base.note = { en: "You have finished every available lesson. Reviews only today.", sr: "Završio si sve dostupne lekcije. Danas samo ponavljanje." };
-  const practice = practiceFill(tracks, s.focusMinutes - lessons.reduce((a, l) => a + l.minutes, 0), date);
+  // practice fill never adds voice: on a V day the spare time goes to T/E drills
+  const fillTracks: Track[] = tracks.includes("V") ? [...new Set<Track>([...tracks.filter((t) => t !== "V"), "T", "E"])] : tracks;
+  const practice = practiceFill(fillTracks, s.focusMinutes - lessons.reduce((a, l) => a + l.minutes, 0), date);
   return { ...base, focusUsed: tracks, lessons, maintenance: maintenance(), practice: practice.length ? practice : undefined };
 }
 

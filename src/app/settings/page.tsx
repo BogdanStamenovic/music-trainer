@@ -73,6 +73,9 @@ export default function SettingsPage() {
           {t("focusMinutes")}: <input type="number" min={25} max={50} value={s.focusMinutes} onChange={(e) => void save({ focusMinutes: Number(e.target.value) })} />
         </label>
         <label className="row">
+          {t("maxNewVoice")}: <input type="number" min={1} max={10} value={s.maxNewVoiceLessons} onChange={(e) => void save({ maxNewVoiceLessons: Number(e.target.value) })} data-testid="max-new-voice" />
+        </label>
+        <label className="row">
           <input type="checkbox" checked={s.maintenance} onChange={(e) => void save({ maintenance: e.target.checked })} data-testid="maintenance-toggle" /> {t("maintenanceOn")}
         </label>
         <button type="button" className="secondary" onClick={replan}>{t("replan")}</button>

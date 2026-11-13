@@ -89,11 +89,18 @@ exercises:
     prompt: {en: "Spell perfect 4ths and 5ths", sr: "Napiši čiste kvarte i kvinte"}
     count: 5
     gen: {kind: interval-build, intervals: [P4, P5], answer: name}
+  # two steps instead of one four-way choice (calibration 2026-11-13: 67% over 36 items,
+  # the octave was heard as a 4th or 5th 5 times in 11)
   - id: T-005-5
     type: generated
-    prompt: {en: "Hear 4ths, 5ths, octaves and the tritone", sr: "Prepoznaj sluhom kvarte, kvinte, oktave i tritonus"}
-    count: 6
-    gen: {kind: interval-ear, intervals: [P4, A4, P5, P8], direction: up}
+    prompt: {en: "Hear 4ths, 5ths and octaves", sr: "Prepoznaj sluhom kvarte, kvinte i oktave"}
+    count: 4
+    gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: up}
+  - id: T-005-8
+    type: generated
+    prompt: {en: "Now the tritone among them: 4th, tritone or 5th?", sr: "Sad i tritonus: kvarta, tritonus ili kvinta?"}
+    count: 4
+    gen: {kind: interval-ear, intervals: [P4, A4, P5], direction: up}
   - id: T-005-6
     type: midi-play
     prompt: {en: "Play a chain of perfect 5ths up from C3: C3 G3 D4 A4 E5.", sr: "Odsviraj niz čistih kvinti naviše od C3: C3 G3 D4 A4 E5."}

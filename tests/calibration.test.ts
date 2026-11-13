@@ -15,6 +15,7 @@ const { setNoPiano } = await import("@/lib/server/planner");
 const { updateSettings } = await import("@/lib/server/settings");
 const { setVoiceDay } = await import("@/lib/server/recordings");
 const { calibration } = await import("@/lib/server/calibration");
+const { getDb: getDbSync } = await import("@/lib/server/db");
 
 beforeAll(() => {
   const conn = new Database(":memory:");
@@ -69,5 +70,22 @@ describe("calibration view", () => {
     expect(day).toMatchObject({ takes: 2, lowLevel: 1, noisy: 1 });
     expect(day.mics).toEqual({ "Built-in Audio · NS ON AGC off EC off · 48000 Hz": 1, unknown: 1 });
     expect(micKey(null)).toBe("unknown");
+  });
+
+  it("abandoned excludes reopening passed exercises and clicking through the step list", () => {
+    const db = getDbSync();
+    db.prepare("DELETE FROM events").run();
+    const ins = db.prepare("INSERT INTO events(at, date, kind, lesson_id, exercise_id, detail) VALUES (?,?,?,?,?,?)");
+    const D = "2026-12-01";
+    const done = (at: number, ex: string, pass: boolean) => ins.run(at, D, "exercise_done", "T-001", ex, JSON.stringify({ ms: 1000, score: pass ? 1 : 0, pass, context: "lesson" }));
+    ins.run(1_000, D, "exercise_start", "T-001", "T-001-1", "{}");
+    done(5_000, "T-001-1", true);
+    ins.run(100_000, D, "exercise_start", "T-001", "T-001-1", "{}"); // reopened after passing: browsing
+    ins.run(200_000, D, "exercise_start", "T-001", "T-001-2", "{}"); // clicked past within 2 s
+    ins.run(202_000, D, "exercise_start", "T-001", "T-001-2", "{}"); // stayed 60 s, left: abandoned
+    ins.run(262_000, D, "lesson_open", "T-001", null, "{}");
+    const c = calibration();
+    expect(c.totals.abandoned).toBe(1);
+    expect(c.totals.browsed).toBe(2);
   });
 });

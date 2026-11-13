@@ -77,9 +77,11 @@ exercises:
     gen: {kind: interval-build, intervals: [m2, M2, m3, M3], answer: play}
   - id: T-004-5
     type: generated
-    prompt: {en: "Hear minor vs major 3rds", sr: "Razlikuj sluhom malu i veliku tercu"}
+    prompt: {en: "Hear minor vs major 3rds, inside their chord", sr: "Razlikuj sluhom malu i veliku tercu, unutar njihovog akorda"}
     count: 6
-    gen: {kind: interval-ear, intervals: [m3, M3], direction: harmonic}
+    # melodic, with the triad as a cue (calibration 2026-11-13: harmonic 3rds with no context
+    # were at chance level, M3 8/15); harmonic 3rds come later in E-012
+    gen: {kind: interval-ear, intervals: [m3, M3], direction: up, cue: triad}
   - id: T-004-6
     type: mcq
     prompt: {en: "C–E♭ and C–D♯ are both 3 half steps. Which one is a minor 3rd?", sr: "C–Es i C–Dis imaju po 3 polustepena. Koji je mala terca?"}

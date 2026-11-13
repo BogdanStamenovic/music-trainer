@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import type { GenCtx } from "@/lib/curriculum/items";
 import type { Exercise } from "@/lib/curriculum/schema";
+import { gatesLesson } from "@/lib/curriculum/items";
 import { ExerciseRunner, RunnerDone } from "./ExerciseRunner";
 import { useI18n } from "@/lib/client/i18n";
 import type { Context } from "@/lib/server/progress";
@@ -74,6 +75,9 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
             {t("exercise")} {i + 1}/{entries.length}
           </h3>
           <ExerciseRunner key={`${e.ex.id}:${attempt[e.ex.id] ?? 0}`} ex={e.ex} seed={`${date}:${attempt[e.ex.id] ?? 0}`} count={e.ex.type === "generated" ? count : undefined} context={context} date={date} lessonId={e.lessonId} ctx={ctx} onDone={onDone} />
+          {current && !current.pass && context === "lesson" && e.lessonId && !gatesLesson(e.ex, e.lessonId[0]) && e.ex.type !== "practice" && e.ex.type !== "checkin" ? (
+            <p className="muted small" data-testid="not-gating">{t("notGating")}</p>
+          ) : null}
           {current ? (
             <div className="row">
               {!current.pass && allowRetry ? (

@@ -27,6 +27,8 @@ export interface McqItem extends ItemBase {
   kind: "mcq";
   options: Loc[];
   answer: number;
+  /** Ear drills: what each option would have sounded like, for "compare / check on the piano" after a miss. */
+  compare?: ({ play: PlaySpec; notes: Loc } | null)[];
 }
 export interface NamesItem extends ItemBase {
   kind: "names";
@@ -475,7 +477,16 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         }
         if (!inRange(b, [range[0], "C6"]) || Math.abs(b.acc) > 1) continue;
         const notes = [toMidi(a), toMidi(b)];
-        const play: PlaySpec = { mode: dir === "harmonic" ? "harmonic" : "melodic", notes, tempo: 70 };
+        let play: PlaySpec = { mode: dir === "harmonic" ? "harmonic" : "melodic", notes, tempo: 70 };
+        if (g.cue === "triad") {
+          if (iv !== "m3" && iv !== "M3") throw new Error(`interval-ear ${ex.id}: cue "triad" is for m3/M3 only`);
+          if (dir === "down") throw new Error(`interval-ear ${ex.id}: cue "triad" needs the 3rd above the root`);
+          const triad = chord(a, iv === "M3" ? "maj" : "min", 0).map(toMidi);
+          // the chord, a beat of silence, then the interval (both notes are in the chord)
+          play = dir === "harmonic"
+            ? { mode: "chords", chords: [triad, [], notes], durations: [2, 1, 2], tempo: 70 }
+            : { mode: "chords", chords: [triad, [], [notes[0]], [notes[1]]], durations: [2, 1, 1, 1.5], tempo: 70 };
+        }
         if (g.answer === "play")
           return {
             ...base,
@@ -490,7 +501,19 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             noteLabels: join([nno(a), nno(b)]),
           };
         const { options, answer } = mcq(rng, iv, g.intervals, Math.min(4, g.intervals.length));
-        return { ...base, kind: "mcq", play, prompt: L("Which interval do you hear?", "Koji interval čuješ?"), options: options.map(ivLoc), answer };
+        const compare = options.map((o) => {
+          try {
+            const c = transpose(a, o, dir === "down");
+            const ns = [toMidi(a), toMidi(c)];
+            return { play: { mode: dir === "harmonic" ? "harmonic" : "melodic", notes: ns, tempo: 70 } as PlaySpec, notes: join([nno(a), nno(c)]) };
+          } catch {
+            return null;
+          }
+        });
+        const prompt = g.cue === "triad"
+          ? L("First the chord, then its root and 3rd. Major or minor 3rd? Let the chord's colour tell you.", "Prvo akord, pa njegova osnova i terca. Velika ili mala terca? Neka ti boja akorda kaže.")
+          : L("Which interval do you hear?", "Koji interval čuješ?");
+        return { ...base, kind: "mcq", play, prompt, options: options.map(ivLoc), answer, compare };
       }
       throw new Error(`interval-ear: could not generate for ${ex.id}`);
     }
@@ -537,7 +560,16 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
             noteLabels: join(notes.map(nno)),
           };
         const { options, answer } = mcq(rng, q, g.qualities, g.qualities.length);
-        return { ...base, kind: "mcq", play, prompt: L("What quality is this chord?", "Kakav je ovo akord?"), options: options.map((o) => qLoc(o as ChordQuality)), answer };
+        const compare = options.map((o) => {
+          try {
+            const ns = chord(root, o as ChordQuality, inv);
+            if (ns.some((n) => Math.abs(n.acc) > 1)) return null;
+            return { play: { mode: "harmonic", notes: ns.map(toMidi), tempo: 60 } as PlaySpec, notes: join(ns.map(nno)) };
+          } catch {
+            return null;
+          }
+        });
+        return { ...base, kind: "mcq", play, prompt: L("What quality is this chord?", "Kakav je ovo akord?"), options: options.map((o) => qLoc(o as ChordQuality)), answer, compare };
       }
       throw new Error(`chord-ear: could not generate for ${ex.id}`);
     }
@@ -1153,6 +1185,27 @@ export function generateItems(ex: Exercise, seed: string, countOverride?: number
 export { SCALES, CHORDS };
 
 /** True when an exercise can only be done at a (MIDI) keyboard (used by "no piano today"). */
+const EAR_KINDS = new Set(["interval-ear", "chord-ear", "progression-ear", "degree-ear", "scale-ear"]);
+/** Recognize-by-ear drills (choose an answer after listening), as opposed to play-back or theory. */
+export function isEarRecognition(ex: Exercise): boolean {
+  if (ex.type === "mcq") return !!ex.play;
+  if (ex.type !== "generated") return false;
+  const g = ex.gen as { kind: string; answer?: string };
+  return EAR_KINDS.has(g.kind) && (g.answer ?? "choose") !== "play";
+}
+
+/**
+ * Does passing `ex` count toward passing its lesson? Ear-recognition drills inside
+ * non-E lessons do not (calibration 2026-11-13: harmonic m3/M3 in T-004 took 6 rounds
+ * at chance level and turned a theory lesson into 20 min of ear grinding). They are
+ * still graded and go to SRS; the E track is where ear skills gate.
+ */
+export function gatesLesson(ex: Exercise, track: string): boolean {
+  if (ex.type === "practice" || ex.type === "checkin") return false;
+  if (ex.gate !== undefined) return ex.gate;
+  return !(track !== "E" && isEarRecognition(ex));
+}
+
 export function needsPiano(ex: Exercise): boolean {
   if (ex.type === "midi-play" || ex.type === "midi-echo") return true;
   if (ex.type !== "generated") return false;

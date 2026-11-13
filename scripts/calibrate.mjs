@@ -13,7 +13,7 @@ if (process.argv.includes("--json")) {
 const t = j.totals;
 console.log(`music-trainer calibration (${j.generatedAt})`);
 console.log(`placement: ${j.placement.finished ? "done" : "not done"}${j.placement.pending.length ? `, pending: ${j.placement.pending.join(", ")}` : ""}`);
-console.log(`active days ${t.daysActive} · lessons passed ${t.lessonsPassed} (+${t.lessonsSkippedByPlacement} skipped by placement) · submissions ${t.submissions} · ~${t.minutes} min · abandoned ${t.abandoned} · no-piano days ${t.noPianoDays} · voice-rest days ${t.voiceRestDays}`);
+console.log(`active days ${t.daysActive} · lessons passed ${t.lessonsPassed} (+${t.lessonsSkippedByPlacement} skipped by placement) · submissions ${t.submissions} · ~${t.minutes} min · abandoned ${t.abandoned} (+${t.browsed ?? 0} browsed) · no-piano days ${t.noPianoDays} · voice-rest days ${t.voiceRestDays}`);
 console.log("\npace (actual / estimated minutes, passed lessons):");
 for (const [k, v] of Object.entries(j.pace)) console.log(`  ${k}: ${v.lessons} lessons, ${v.actual} / ${v.est} min = x${v.ratio}`);
 console.log("\nlessons:");

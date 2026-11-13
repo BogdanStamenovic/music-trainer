@@ -1,6 +1,6 @@
 import { getDb, now } from "./db";
 import { getCurriculum } from "../curriculum/loader";
-import { generateItems, Item, GenCtx } from "../curriculum/items";
+import { generateItems, gatesLesson, Item, GenCtx } from "../curriculum/items";
 import { getRecording, bestAnalysis, setVoiceDay } from "./recordings";
 import { setVoiceRange, getSettings, setPlacementPending } from "./settings";
 import { grade, exerciseScore, Response, Grade } from "../grading";
@@ -123,10 +123,10 @@ function setLesson(lessonId: string, status: string, score: number | null, sourc
     .run(lessonId, status, score, source, now());
 }
 
-/** Lesson passes when every non-practice exercise has passed at least once. */
+/** Lesson passes when every gating exercise (gatesLesson) has passed at least once. */
 function refreshLesson(lesson: Lesson): boolean {
   const st = new Map(exerciseStates(lesson.id).map((r) => [r.exercise_id, r]));
-  const graded = lesson.exercises.filter((e) => e.type !== "practice" && e.type !== "checkin");
+  const graded = lesson.exercises.filter((e) => gatesLesson(e, lesson.track));
   const passed = graded.every((e) => st.get(e.id)?.passed);
   const cur = lessonStatuses().get(lesson.id);
   const mean = graded.length ? graded.reduce((a, e) => a + (st.get(e.id)?.best ?? 0), 0) / graded.length : 1;

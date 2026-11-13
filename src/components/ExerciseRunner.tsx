@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import type { Exercise } from "@/lib/curriculum/schema";
-import { generateItems, Item, MidiItem, GenCtx } from "@/lib/curriculum/items";
+import { generateItems, Item, MidiItem, McqItem, GenCtx } from "@/lib/curriculum/items";
 import { SingInput, RangeInput, CheckinInput, SingFeedback } from "./VoiceInputs";
 import { ComposeInput, WriteInput, ImprovInput } from "./LessonInputs";
 import { grade, Response, MidiEvent, heldChord, clusterChords } from "@/lib/grading";
@@ -156,6 +156,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
       {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "practice" ? (
         <div className="practice">
+          <PracticeTimer minutes={item.minutes} />
           <p className="muted">
             ~{item.minutes} {t("min")} · {t("selfRate")}
           </p>
@@ -189,6 +190,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
           ) : null}
           {item.kind === "midi" && fb.score >= 0.999 && item.noteLabels ? <div className="muted">{l(item.noteLabels)}</div> : null}
           {item.kind === "sing" ? <SingFeedback item={item} detail={fb.detail} resp={fb.resp} /> : null}
+          {item.kind === "mcq" && item.compare && fb.score < 0.999 ? <Compare item={item} choice={(fb.resp as { choice: number }).choice} /> : null}
           {item.kind === "names" && fb.score < 0.999 ? (
             <div>
               {t("expected")}: {(fb.detail.expect as string[]).map((n) => noteName(parseNote(n), locale)).join(" ")}
@@ -199,6 +201,81 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
           </button>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+/**
+ * Guided timer for practice items (warm-ups, cool-downs, drills). Nothing is forced: the
+ * self-rating stays available, but running the timer is the easy path. Calibration
+ * 2026-11-13: 2-minute warm-ups were being submitted after 18-39 s.
+ */
+function PracticeTimer({ minutes }: { minutes: number }) {
+  const { t } = useI18n();
+  const total = Math.round(minutes * 60);
+  const [left, setLeft] = useState<number | null>(null);
+  useEffect(() => {
+    if (left === null || left <= 0) return;
+    const id = window.setTimeout(() => setLeft((x) => (x === null ? x : x - 1)), 1000);
+    return () => clearTimeout(id);
+  }, [left]);
+  useEffect(() => {
+    if (left === 0) {
+      try {
+        navigator.vibrate?.(200);
+      } catch {
+        /* no vibration */
+      }
+      void midi().play({ mode: "melodic", notes: [84, 79], durations: [0.5, 1], tempo: 120 }, { muteInput: false });
+    }
+  }, [left]);
+  if (total < 20) return null;
+  const fmt = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  if (left === null)
+    return (
+      <button type="button" className="secondary" onClick={() => setLeft(total)} data-testid="practice-timer">
+        ▶ {t("startTimer")} {fmt(total)}
+      </button>
+    );
+  if (left > 0)
+    return (
+      <p className="timer" data-testid="practice-timer-running">
+        ⏱ <strong>{fmt(left)}</strong>{" "}
+        <button type="button" className="linkish" onClick={() => setLeft(null)}>
+          {t("reset")}
+        </button>
+      </p>
+    );
+  return <p className="good" data-testid="practice-timer-done">✓ {t("timeUp")}</p>;
+}
+
+/** After a missed ear question: hear the right answer and your pick side by side, then check on the piano. */
+function Compare({ item, choice }: { item: McqItem; choice: number }) {
+  const { t, l } = useI18n();
+  const right = item.compare?.[item.answer];
+  const mine = item.compare?.[choice];
+  if (!right) return null;
+  return (
+    <div className="compare" data-testid="compare">
+      <div className="row">
+        <button type="button" className="secondary" onClick={() => void midi().play(right.play)} data-testid="compare-right">
+          ▶ {l(item.options[item.answer])}
+        </button>
+        {mine ? (
+          <button type="button" className="secondary" onClick={() => void midi().play(mine.play)} data-testid="compare-mine">
+            ▶ {l(item.options[choice])} ({t("yourAnswer")})
+          </button>
+        ) : null}
+      </div>
+      <p className="small">
+        🎹 {t("checkOnPiano")}: <strong>{l(right.notes)}</strong>
+        {mine ? (
+          <>
+            {" "}
+            {t("thenCompare")} <strong>{l(mine.notes)}</strong>
+          </>
+        ) : null}
+      </p>
     </div>
   );
 }

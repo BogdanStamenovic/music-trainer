@@ -23,8 +23,14 @@ export function calibration() {
   const done = ev.filter((e) => e.kind === "exercise_done").map((e) => ({ ...e, d: JSON.parse(e.detail ?? "{}") as { ms: number | null; score: number; pass: boolean; context: string } }));
   const starts = ev.filter((e) => e.kind === "exercise_start");
 
-  // abandoned: an exercise started on a date with no submission for it on that date afterwards
-  const abandoned = starts.filter((s) => !done.some((d) => d.exercise_id === s.exercise_id && d.date === s.date && d.at >= s.at));
+  // abandoned: an exercise started on a date with no submission for it on that date afterwards.
+  // Not counted (2026-11-13: all 5 early "abandoned" were this): reopening an exercise already
+  // passed, or clicking through the step list (the next event follows within 10 s).
+  const unsubmitted = starts.filter((s) => !done.some((d) => d.exercise_id === s.exercise_id && d.date === s.date && d.at >= s.at));
+  const nextAt = (s: Ev) => ev.find((e) => e.at > s.at)?.at ?? Infinity;
+  const passedBefore = (s: Ev) => done.some((d) => d.exercise_id === s.exercise_id && d.at < s.at && d.d.pass);
+  const abandoned = unsubmitted.filter((s) => !passedBefore(s) && nextAt(s) - s.at >= 10_000);
+  const browsed = unsubmitted.length - abandoned.length;
 
   const lessons = c.lessons
     .filter((l) => !l.tags.includes("maintenance"))
@@ -111,6 +117,7 @@ export function calibration() {
       submissions: done.length,
       minutes: Math.round(done.reduce((a, d) => a + (d.d.ms ?? 0), 0) / 60000),
       abandoned: abandoned.length,
+      browsed,
       noPianoDays: days.filter((d) => d.noPiano).length,
       voiceRestDays: [...rest.values()].filter((s) => s !== "fine").length,
     },
