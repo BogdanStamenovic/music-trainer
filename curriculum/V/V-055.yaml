@@ -50,6 +50,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-055-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 3 lip-trill sirens, then hum along with the G7 arpeggio and its resolution to C, twice."

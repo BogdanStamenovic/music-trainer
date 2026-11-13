@@ -56,6 +56,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-047-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, then 4 very slow lip-trill sirens from low to high and back. Notice the spot where it wants to bump; do not fix it yet, just find it."

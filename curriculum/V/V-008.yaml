@@ -48,6 +48,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-008-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 2 slow hisses on 'sss' (aim for 20 s, no squeezing), 3 quiet sirens on 'ng', then lip trills on the five notes."

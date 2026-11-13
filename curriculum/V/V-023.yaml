@@ -48,6 +48,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-023-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: pulsed hiss 'ts-ts-ts-ts', 8 per breath, 3 rounds (feel the belly bounce); then lip trills along with the five notes up and down."

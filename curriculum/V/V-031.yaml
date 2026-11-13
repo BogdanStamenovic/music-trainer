@@ -69,6 +69,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-031-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then 1-3-5-3-1 on 'nay' (light mix) along with the piano."

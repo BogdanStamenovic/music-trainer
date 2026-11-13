@@ -25,6 +25,11 @@ for (const l of j.lessons)
 console.log("\ndays:");
 for (const d of j.days)
   console.log(`  ${d.date} ${String(d.weekday ?? "").padEnd(3)} ${(d.focus ?? []).join("+").padEnd(6)} ${d.noPiano ? "no-piano " : ""}${d.voiceRest ? `voice-rest(${d.voiceRest}) ` : ""}${d.minutes} min, ${d.submissions} subs, passed ${d.passedThatDay.join(" ") || "-"}`);
+if (j.voiceSessions?.length) {
+  console.log("\nsinging sessions (warm-up once per session; minutes are client-measured):");
+  for (const d of j.voiceSessions)
+    console.log(`  ${d.date} warm-ups ${d.warmups.map((w) => `${w.at} (${w.min ?? "?"} min)`).join(", ") || "-"} · reused ${d.reused} · cool-downs ${d.cooldowns.map((c) => `${c.at} (${c.min ?? "?"} min, ${c.from})`).join(", ") || "-"}`);
+}
 if (j.recording?.length) {
   console.log("\nrecording setup (mic processing as applied by the browser; voice-score quality warnings):");
   for (const d of j.recording)

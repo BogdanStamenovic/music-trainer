@@ -165,6 +165,8 @@ export function validateLessons(lessons: Lesson[]): string[] {
     for (const ex of l.exercises) {
       if (exIds.has(ex.id)) errs.push(`duplicate exercise id ${ex.id}`);
       exIds.add(ex.id);
+      if (ex.role && (ex.type !== "practice" || l.track !== "V")) errs.push(`${ex.id}: role ${ex.role} is for practice items in V lessons`);
+      if (ex.role === "warmup" && l.exercises[1]?.id !== ex.id) errs.push(`${ex.id}: the warm-up must come right after the check-in`);
       if (!ex.id.startsWith(l.id + "-")) errs.push(`${ex.id}: exercise id must start with ${l.id}-`);
       errs.push(...checkExercise(ex, ex.id));
     }

@@ -219,8 +219,20 @@ export function RangeInput({ item, meta, onSubmit, disabled }: { item: RangeItem
   );
 }
 
-export function CheckinInput({ onSubmit, disabled }: { onSubmit: (r: Response) => void; disabled: boolean }) {
+export function CheckinInput({ onSubmit, disabled, compact = false }: { onSubmit: (r: Response) => void; disabled: boolean; compact?: boolean }) {
   const { t } = useI18n();
+  const [full, setFull] = useState(!compact);
+  if (!full)
+    return (
+      <div className="row" data-testid="checkin-compact">
+        <button type="button" className="primary" disabled={disabled} onClick={() => onSubmit({ kind: "checkin", state: "fine" })} data-testid="checkin-still-ok">
+          🙂 {t("checkinStillOk")}
+        </button>
+        <button type="button" className="linkish" disabled={disabled} onClick={() => setFull(true)} data-testid="checkin-not-quite">
+          {t("checkinNotQuite")}
+        </button>
+      </div>
+    );
   return (
     <div className="options three">
       <button type="button" disabled={disabled} onClick={() => onSubmit({ kind: "checkin", state: "fine" })} data-testid="checkin-fine">

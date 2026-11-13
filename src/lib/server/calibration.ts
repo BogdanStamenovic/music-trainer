@@ -36,7 +36,9 @@ export function calibration() {
     .filter((l) => !l.tags.includes("maintenance"))
     .map((l) => {
       const subs = done.filter((d) => d.lesson_id === l.id);
-      const lessonSubs = subs.filter((d) => d.d.context === "lesson");
+      // warm-up/cool-down are session parts (once per singing session): kept out of lesson pace
+      const sessionPart = new Set(l.exercises.filter((x) => x.role).map((x) => x.id));
+      const lessonSubs = subs.filter((d) => d.d.context === "lesson" && !sessionPart.has(d.exercise_id ?? ""));
       const ms = lessonSubs.reduce((a, d) => a + (d.d.ms ?? 0), 0);
       const perEx = l.exercises.map((x) => {
         const s = lessonSubs.filter((d) => d.exercise_id === x.id);
@@ -106,6 +108,21 @@ export function calibration() {
     d.mics[key] = (d.mics[key] ?? 0) + 1;
   }
 
+  // singing sessions per day: warm-ups (in lessons, or the maintenance warm-up), reused
+  // warm-ups (a later lesson skipped its own), cool-downs
+  const sessDays = new Map<string, { date: string; warmups: { at: string; min: number | null }[]; reused: number; cooldowns: { at: string; min: number | null; from: string }[] }>();
+  const hm = (at: number) => new Date(at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Belgrade" });
+  for (const e of ev) {
+    if (!["voice_warmup", "voice_cooldown", "voice_warm_reuse"].includes(e.kind)) continue;
+    const d = sessDays.get(e.date) ?? { date: e.date, warmups: [], reused: 0, cooldowns: [] };
+    sessDays.set(e.date, d);
+    const det = JSON.parse(e.detail ?? "{}") as { ms?: number | null; from?: string };
+    const min = typeof det.ms === "number" ? Math.round(det.ms / 6000) / 10 : null;
+    if (e.kind === "voice_warmup") d.warmups.push({ at: hm(e.at), min });
+    else if (e.kind === "voice_cooldown") d.cooldowns.push({ at: hm(e.at), min, from: det.from ?? e.lesson_id ?? "?" });
+    else d.reused++;
+  }
+
   const projects = db.prepare("SELECT week, project_id, status, score, ai_status FROM projects ORDER BY week").all();
   return {
     generatedAt: new Date().toISOString(),
@@ -123,6 +140,7 @@ export function calibration() {
     },
     pace,
     recording: [...recDays.values()],
+    voiceSessions: [...sessDays.values()],
     lessons,
     days,
     projects,

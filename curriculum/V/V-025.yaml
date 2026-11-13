@@ -56,6 +56,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-025-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 4 quiet lip-trill sirens through your whole comfortable range, then 3 light owl hoots sliding down."
@@ -92,6 +93,7 @@ exercises:
       sr: "Izmeri ponovo: sporo, tiho klizanje naniže do najdubljeg tona koji pevaš bez napora, pa naviše do najvišeg bez napora. Bez forsiranja: aplikacija sama ostavlja sigurnosnu marginu od 2 polustepena unutar oba kraja."
   - id: V-025-7
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet hums sliding gently downward, then breathe normally. Compare the two keys you noted with your old range."

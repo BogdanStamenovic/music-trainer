@@ -54,6 +54,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-030-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then bratty spoken 'nay-nay-nay' at three rising pitches, same effort each time."
@@ -116,6 +117,7 @@ exercises:
       sr: "Samostalno: odsviraj 1-2-3-4-5-4-3-2-1 na klaviru i otpevaj na „nej”; svaku rundu pomeri za polustepen naviše. Stani na prvoj rundi koja postane glasnija, preskoči ili se stegne, i vrati se jedan tonalitet niže za poslednju čistu rundu. Oceni koliko je tonaliteta ostalo iste veličine."
   - id: V-030-8
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet 'oo' sirens from high to low, then hum 5-4-3-2-1 softly."

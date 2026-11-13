@@ -35,9 +35,11 @@ interface Props {
   lessonId: string | null;
   ctx?: GenCtx;
   onDone: (r: RunnerDone) => void;
+  /** Later lessons in a singing session: the check-in is one tap ("still OK?"). */
+  compactCheckin?: boolean;
 }
 
-export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, onDone }: Props) {
+export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, onDone, compactCheckin = false }: Props) {
   const { t, l } = useI18n();
   const items = useMemo(() => generateItems(ex, seed, count, ctx ?? {}), [ex, seed, count, ctx]);
   const [idx, setIdx] = useState(0);
@@ -89,7 +91,7 @@ export function ExerciseRunner({ ex, seed, count, context, date, lessonId, ctx, 
       <div className="muted small">
         {l(ex.prompt)} · {idx + 1} {t("of")} {items.length}
       </div>
-      <ItemView key={`${seed}-${item.id}`} item={item} pass={ex.pass} meta={{ date, lessonId }} onAnswer={(resp, score) => record(item.id, resp, score)} onNext={advance} last={idx + 1 === items.length} />
+      <ItemView key={`${seed}-${item.id}`} item={item} pass={ex.pass} compactCheckin={compactCheckin} meta={{ date, lessonId }} onAnswer={(resp, score) => record(item.id, resp, score)} onNext={advance} last={idx + 1 === items.length} />
     </div>
   );
 }
@@ -98,7 +100,7 @@ function names(ms: number[], locale: "en" | "sr") {
   return ms.map((m) => noteName(midiToNote(m), locale, true)).join(" ");
 }
 
-function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pass: number; meta: { date: string; lessonId: string | null }; onAnswer: (r: Response, score: number) => void; onNext: () => void; last: boolean }) {
+function ItemView({ item, pass, meta, onAnswer, onNext, last, compactCheckin = false }: { item: Item; pass: number; compactCheckin?: boolean; meta: { date: string; lessonId: string | null }; onAnswer: (r: Response, score: number) => void; onNext: () => void; last: boolean }) {
   const { t, l, locale } = useI18n();
   const [fb, setFb] = useState<null | { score: number; detail: Record<string, unknown>; resp: Response }>(null);
   const answer = (resp: Response) => {
@@ -153,7 +155,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
       {item.kind === "write" ? <WriteInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "sing" ? <SingInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "range" ? <RangeInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
-      {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} compact={compactCheckin} /> : null}
       {item.kind === "practice" ? (
         <div className="practice">
           <PracticeTimer minutes={item.minutes} />
@@ -210,7 +212,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last }: { item: Item; pa
  * self-rating stays available, but running the timer is the easy path. Calibration
  * 2026-11-13: 2-minute warm-ups were being submitted after 18-39 s.
  */
-function PracticeTimer({ minutes }: { minutes: number }) {
+export function PracticeTimer({ minutes }: { minutes: number }) {
   const { t } = useI18n();
   const total = Math.round(minutes * 60);
   const [left, setLeft] = useState<number | null>(null);
@@ -268,10 +270,9 @@ function Compare({ item, choice }: { item: McqItem; choice: number }) {
         ) : null}
       </div>
       <p className="small">
-        🎹 {t("checkOnPiano")}: <strong>{l(right.notes)}</strong>
+        🎹 {t("checkOnPiano")} <strong>{l(right.notes)}</strong>
         {mine ? (
           <>
-            {" "}
             {t("thenCompare")} <strong>{l(mine.notes)}</strong>
           </>
         ) : null}

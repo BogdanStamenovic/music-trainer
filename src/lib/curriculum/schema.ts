@@ -60,6 +60,9 @@ const Base = {
   // Whether passing this exercise is required to pass the lesson. Default: yes, except
   // ear-recognition drills outside the E track (see gatesLesson in items.ts).
   gate: z.boolean().optional(),
+  // Voice session parts (practice items in V lessons): a warm-up runs once per singing
+  // session and a cool-down once at its end, not in every back-to-back lesson.
+  role: z.enum(["warmup", "cooldown"]).optional(),
 };
 
 const Option = z.union([Loc, z.string()]); // plain string = language-neutral (e.g. "Bb", "V7")

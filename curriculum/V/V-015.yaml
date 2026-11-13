@@ -66,6 +66,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-015-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then 4 light owl hoots ('hoo') sliding down."

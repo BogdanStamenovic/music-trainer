@@ -56,6 +56,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-049-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then read a sentence of any text aloud in a lively, friendly voice. Then 'nay-nay-nay' at that speaking pitch and two notes higher."

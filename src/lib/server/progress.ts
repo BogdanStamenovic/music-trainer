@@ -191,6 +191,12 @@ export function submit(sub: Submission): SubmissionResult {
       result.lessonPassed = refreshLesson(lesson);
     }
     db.prepare("INSERT INTO submissions(uuid, received_at, result) VALUES (?,?,?)").run(sub.uuid, now(), JSON.stringify(result));
+    // voice session parts, for the session view and calibration (warm-up once per session)
+    const ms = typeof sub.ms === "number" && sub.ms > 0 && sub.ms < 4 * 3600_000 ? Math.round(sub.ms) : null;
+    if (lesson && sub.context === "lesson" && ex.type === "practice") {
+      if (ex.role === "warmup" || (lesson.tags.includes("maintenance") && lesson.tags.includes("warmup"))) logEvent(sub.date, "voice_warmup", lesson.id, ex.id, { ms });
+      else if (ex.role === "cooldown") logEvent(sub.date, "voice_cooldown", lesson.id, ex.id, { ms });
+    }
     logEvent(sub.date, "exercise_done", lesson?.id ?? null, ex.id, { ms: typeof sub.ms === "number" && sub.ms > 0 && sub.ms < 4 * 3600_000 ? Math.round(sub.ms) : null, score: result.score, pass: result.pass, context: sub.context, items: graded.length });
   })();
   return result;

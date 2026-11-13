@@ -52,6 +52,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Meri samo kad je glas „dobro”; umoran glas daje pogrešan broj.)"
   - id: V-061-2
     type: practice
+    role: warmup
     minutes: 2.5
     prompt:
       en: "Warm-up (a full one before measuring): 4 low breaths, 4 lip-trill sirens over your whole range, 3 'ng' sirens, then 5-4-3-2-1 on bratty 'nay' twice."

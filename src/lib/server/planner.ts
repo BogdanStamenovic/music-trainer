@@ -105,9 +105,11 @@ export function fillFocus(tracks: Track[], target: number, statuses: Map<string,
       if (picked.length > 0 && minutes + next.lesson.minutes > cap) continue;
       // vocal load: a cap on new V lessons per day (default 3); the rest of a V day goes to T/E practice
       if (t === "V" && opts?.maxNewVoice !== undefined && picked.filter((p) => p.track === "V").length >= opts.maxNewVoice) continue;
-      picked.push({ id: next.lesson.id, track: t, minutes: next.lesson.minutes, status: statuses.get(next.lesson.id)?.status ?? "new", aheadOfTheory: next.ahead.length ? next.ahead : undefined });
+      // one warm-up per singing session: later V lessons of the day skip theirs
+      const warmMin = t === "V" && picked.some((p) => p.track === "V") ? next.lesson.exercises.filter((e) => e.role === "warmup").reduce((a, e) => a + (e.type === "practice" ? e.minutes : 0), 0) : 0;
+      picked.push({ id: next.lesson.id, track: t, minutes: Math.max(1, next.lesson.minutes - warmMin), status: statuses.get(next.lesson.id)?.status ?? "new", aheadOfTheory: next.ahead.length ? next.ahead : undefined });
       sim.set(next.lesson.id, { status: "passed" });
-      minutes += next.lesson.minutes;
+      minutes += picked[picked.length - 1].minutes;
       progressed = true;
     }
     if (!progressed) break;

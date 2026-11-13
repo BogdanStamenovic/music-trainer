@@ -56,6 +56,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-003-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, then gentle hums on 'mm' sliding up and down a little around your speaking pitch, then 3 quiet lip-trill sirens."
@@ -68,6 +69,7 @@ exercises:
       sr: "Opseg: snimi sporo, tiho klizanje naniže do najdubljeg udobnog tona, pa klizanje naviše do najvišeg udobnog tona. Udobnog, ne krajnjeg."
   - id: V-003-4
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet hums sliding gently downward, then breathe normally. Did either end feel tight? If yes, redo the range next time a little narrower."

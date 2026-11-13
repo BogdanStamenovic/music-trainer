@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/client/i18n";
 import { getJson } from "@/lib/client/api";
 import type { DayPlan } from "@/lib/server/planner";
+import { PracticeTimer } from "@/components/ExerciseRunner";
+import { track } from "@/lib/client/events";
 
 interface Today {
   plan: DayPlan;
@@ -69,6 +71,7 @@ export default function TodayPage() {
         </p>
       ) : null}
       {p.note ? <p className="note">{l(p.note)}</p> : null}
+      <CooldownCard date={p.date} />
 
       {d.settings?.placementPending?.length ? (
         <section className="card note" data-testid="placement-pending-banner">
@@ -196,5 +199,38 @@ export default function TodayPage() {
         </section>
       ) : null}
     </div>
+  );
+}
+
+/** One cool-down per singing session: shown once there is voice work today that no cool-down closed. */
+function CooldownCard({ date }: { date: string }) {
+  const { t } = useI18n();
+  const [need, setNeed] = useState(false);
+  const [shownAt] = useState(() => Date.now());
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    fetch(`/api/voice/session?date=${date}`).then((r) => r.json()).then((j) => setNeed(!!j.needsCooldown)).catch(() => {});
+  }, [date]);
+  if (!need) return null;
+  if (done) return <p className="good" data-testid="cooldown-done">✓ {t("cooldownDone")}</p>;
+  return (
+    <section className="card" data-testid="cooldown-card">
+      <h2>{t("cooldownCard")}</h2>
+      <p>{t("cooldownText")}</p>
+      <PracticeTimer minutes={2} />
+      <p>
+        <button
+          type="button"
+          className="primary"
+          data-testid="cooldown-finish"
+          onClick={() => {
+            track("voice_cooldown", date, null, null, { ms: Date.now() - shownAt, from: "today" });
+            setDone(true);
+          }}
+        >
+          ✓ {t("cooldownDone")}
+        </button>
+      </p>
+    </section>
   );
 }

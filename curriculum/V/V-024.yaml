@@ -52,6 +52,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-024-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 2 slow hisses on 'sss', 3 quiet lip-trill sirens, then lip trills along with the five notes; the trill never stops between notes, which is legato."

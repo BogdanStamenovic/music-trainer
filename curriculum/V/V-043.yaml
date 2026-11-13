@@ -74,6 +74,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-043-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 quiet lip-trill sirens, then hum the scale with the piano, and once more singing only every other note (C E G... in your head the skipped ones)."

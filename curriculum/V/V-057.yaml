@@ -78,6 +78,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-057-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 3 lip-trill sirens, then hum 'Row, Row, Row Your Boat' while swaying side to side on the two big beats of each bar."

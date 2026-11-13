@@ -54,6 +54,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-017-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 lip-trill sirens through the break, then lip trills on 1-5-8-5-1 along with the piano."
@@ -110,6 +111,7 @@ exercises:
       - semitones: {from: C4, to: C5, is: 12}
   - id: V-017-7
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet 'oo' sirens from high to low. Rate the leaps: did you hear the top note first, and did it stay light?"

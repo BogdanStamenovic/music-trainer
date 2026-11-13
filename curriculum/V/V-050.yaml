@@ -80,6 +80,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas? (Belting samo kad je glas „dobro”.)"
   - id: V-050-2
     type: practice
+    role: warmup
     minutes: 3
     prompt:
       en: "Warm-up (longer today): 4 low breaths, 3 lip-trill sirens through the break, bratty 'nay' 5-4-3-2-1 twice, a tiny witch's cackle, then talk a few lines aloud in a lively voice."

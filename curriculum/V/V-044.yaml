@@ -64,6 +64,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-044-2
     type: practice
+    role: warmup
     minutes: 2.5
     prompt:
       en: "Warm-up (a thorough one before measuring): 4 low breaths, 4 quiet lip-trill sirens through the whole comfortable range, 3 light owl hoots from high, then 1-3-5-3-1 on 'nay' along with the piano."
@@ -119,6 +120,7 @@ exercises:
       sr: "Izmeri: sporo, tiho klizanje naniže do najdubljeg tona koji pevaš bez napora, pa naviše (u glavnom glasu, lagano) do najvišeg bez napora. Bez forsiranja: aplikacija sama čuva sigurnosnu marginu."
   - id: V-044-7
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet hums sliding gently downward. Compare today's range with the measurement from lesson 25 and rate how easy the ends felt, not how far they went."

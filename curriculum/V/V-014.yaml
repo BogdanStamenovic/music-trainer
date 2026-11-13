@@ -52,6 +52,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-014-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, then 4 quiet sirens on 'ng', each starting a little higher than the last, and lip trills on the five notes."
@@ -110,6 +111,7 @@ exercises:
       - interval: {from: A3, to: A4, is: P8}
   - id: V-014-7
     type: practice
+    role: cooldown
     minutes: 1
     prompt:
       en: "Cool-down: 3 quiet 'oo' sirens from high to low, then hum gently near your speaking pitch. Rate how easy the top felt (easy = right, effort = too high today)."

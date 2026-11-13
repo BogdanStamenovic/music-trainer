@@ -68,6 +68,7 @@ exercises:
       sr: "Provera: tiho pevuši 10 sekundi. Kako ti je glas?"
   - id: V-048-2
     type: practice
+    role: warmup
     minutes: 2
     prompt:
       en: "Warm-up: 4 low breaths, 3 lip-trill sirens, then speak, tiny and quiet: a witch's cackle 'nyeh-heh-heh', a whiny 'nyaaa', a duck quack. Then the nose-pinch test on 'ee': does the sound stay the same?"
