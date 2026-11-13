@@ -1,8 +1,8 @@
 id: E-005
 track: E
-order: 5
+order: 7
 title: {en: "Scale degrees 1 to 5 in major", sr: "Stupnjevi 1 do 5 u duru"}
-prereqs: [E-004, T-007]
+prereqs: [E-048, T-007]
 minutes: 12
 tags: [ear, degrees]
 explain:

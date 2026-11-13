@@ -1,6 +1,6 @@
 id: E-014
 track: E
-order: 14
+order: 16
 title: {en: "Scale degrees in minor", sr: "Stupnjevi u molu"}
 prereqs: [E-013, T-010]
 minutes: 14

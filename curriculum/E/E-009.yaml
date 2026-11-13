@@ -1,6 +1,6 @@
 id: E-009
 track: E
-order: 9
+order: 11
 title: {en: "Bass lines: I, IV, V and vi", sr: "Bas linije: I, IV, V i vi"}
 prereqs: [E-008, T-012]
 minutes: 13

@@ -90,13 +90,34 @@ and figures for inversions.
   never on a voice-rest day;
 - sung phrases are octave-agnostic per phrase.
 
+## Added 2026-11-13 (from the first days of real use)
+
+- **Lesson gating:** ear-recognition drills (choose after listening) inside non-E lessons do
+  not gate the lesson; they are graded and go to SRS. Override per exercise with `gate`.
+  Reason: T-004-5 (harmonic m3/M3) went 4,4,3,2,4,5 out of 6, at chance level.
+- **`interval-ear` `cue: triad`** (m3/M3 only): the matching triad first, then root and 3rd.
+- **Compare after a miss:** interval-ear, chord-ear and function-ear items carry `compare`
+  (what each option sounds like); the feedback plays the right answer and the learner's pick.
+- **`function-ear`** generator: `ask: feel` (I–IV–V7–I, then one chord: home/away/tension)
+  or `ask: ending` (does a short progression end on I, IV or V7). Options in fixed order.
+- **`harmonize`** exercise type: a public-domain melody (`melody.notes` with `z` rests,
+  `durations` in beats, `pickup`, `beatsPerBar`), `slots` in beats, `model` per slot plus
+  optional `alternatives`. Validation checks every accepted chord against the melody (the
+  note where the chord starts is a chord tone, and chord tones fill at least half the slot;
+  V = V7), that slots stay inside bars, and that the tune ends on I. Playback can layer
+  melody and chords (`PlaySpec` mode `layers`).
+- **Voice sessions:** `role: warmup | cooldown` on V practice items; the warm-up runs once per
+  singing session (window setting, default 45 min after the last voice activity), cool-down
+  once at its end. Practice items have a guided timer. At most `maxNewVoiceLessons` (default
+  3) new V lessons per day; V-day spare time goes to T/E drills.
+
 ## Known gaps (not built yet)
 
 | Gap | Wanted by | Note |
 |---|---|---|
 | Arpeggio generator | K | arpeggios are static now |
 | Secondary-dominant generator | T, E | static `derive` + progression-ear for now |
-| "Choose chords for this melody" exercise with per-span grading | K, C | mcq workaround |
+| "Choose chords for this melody": built as `harmonize` (I/IV/V style choices); no free chord entry yet | K, C | |
 | Improv that plays a fixed call (call and response) | K | self-directed now |
 | Simultaneous notes in sequence mode (two hands with rhythm) | K | |
 | Rhythm ties across bar lines in rhythm-echo | E, K | use one long bar (e.g. 8/4) as a workaround |

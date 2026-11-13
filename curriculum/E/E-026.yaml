@@ -1,6 +1,6 @@
 id: E-026
 track: E
-order: 26
+order: 28
 title: {en: "Two-voice dictation II: contrary motion and leaps", sr: "Dvoglasni diktat II: suprotno kretanje i skokovi"}
 prereqs: [E-025, T-034]
 minutes: 15

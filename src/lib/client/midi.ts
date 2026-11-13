@@ -214,43 +214,53 @@ export class MidiManager {
   play(spec: PlaySpec, opts: { muteInput?: boolean } = {}): Promise<void> {
     unlockAudio();
     this.stop();
-    const beat = 60 / spec.tempo;
-    const events: { at: number; notes: number[]; dur: number }[] = [];
-    if (spec.mode === "harmonic") events.push({ at: 0, notes: spec.notes ?? [], dur: beat * 2 });
-    else if (spec.mode === "chords") {
-      // with durations (backing tracks): chords back to back; without: spaced for listening
-      let at = 0;
-      (spec.chords ?? []).forEach((c, i) => {
-        const d = spec.durations ? spec.durations[i] * beat : beat * 1.5;
-        events.push({ at, notes: c, dur: spec.durations ? d * 0.97 : beat * 1.4 });
-        at += d;
-      });
-    }
-    else {
-      let at = 0;
-      (spec.notes ?? []).forEach((n, i) => {
-        const d = (spec.durations?.[i] ?? 1) * beat;
-        if (n >= 0) events.push({ at, notes: [n], dur: d * 0.95 });
-        at += d;
-      });
-    }
+    const events = playEvents(spec);
     const total = events.length ? Math.max(...events.map((e) => e.at + e.dur)) : 0;
     const out = this.playback !== "webaudio" ? this.output() : null;
     if (out) {
       const now = performance.now();
       for (const e of events)
         for (const n of e.notes) {
-          out.send([0x90, n, 80], now + e.at * 1000);
+          out.send([0x90, n, e.vel ?? 80], now + e.at * 1000);
           out.send([0x80, n, 0], now + (e.at + e.dur) * 1000);
         }
       if (opts.muteInput !== false) this.muteUntil = now + total * 1000 + 250;
     } else if (this.playback !== "midi") {
-      for (const e of events) for (const n of e.notes) synthNote(n, e.at, e.dur);
+      for (const e of events) for (const n of e.notes) synthNote(n, e.at, e.dur, (e.vel ?? 80) / 115);
     }
     return new Promise((res) => {
       this.timers.push(window.setTimeout(res, total * 1000 + 100));
     });
   }
+}
+
+type PlayEvent = { at: number; notes: number[]; dur: number; vel?: number };
+/** Seconds-based note events for a PlaySpec; "layers" start together (melody louder than chords). */
+export function playEvents(spec: PlaySpec, vel?: number): PlayEvent[] {
+  const beat = 60 / spec.tempo;
+  const events: PlayEvent[] = [];
+  if (spec.mode === "layers") {
+    (spec.layers ?? []).forEach((l, i) => events.push(...playEvents(l, i === 0 ? 92 : 58)));
+    return events;
+  }
+  if (spec.mode === "harmonic") events.push({ at: 0, notes: spec.notes ?? [], dur: beat * 2, vel });
+  else if (spec.mode === "chords") {
+    // with durations (backing tracks): chords back to back; without: spaced for listening
+    let at = 0;
+    (spec.chords ?? []).forEach((c, i) => {
+      const d = spec.durations ? spec.durations[i] * beat : beat * 1.5;
+      events.push({ at, notes: c, dur: spec.durations ? d * 0.97 : beat * 1.4, vel });
+      at += d;
+    });
+  } else {
+    let at = 0;
+    (spec.notes ?? []).forEach((n, i) => {
+      const d = (spec.durations?.[i] ?? 1) * beat;
+      if (n >= 0) events.push({ at, notes: [n], dur: d * 0.95, vel });
+      at += d;
+    });
+  }
+  return events;
 }
 
 let mgr: MidiManager | null = null;

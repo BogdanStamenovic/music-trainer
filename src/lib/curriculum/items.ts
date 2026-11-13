@@ -6,14 +6,15 @@ import type { Exercise, Derive, Playback as PlaybackDef, Gen, Loc } from "./sche
 import { Note, parseNote, toMidi, noteStr, noteNameSr, pcName, midiToNote, LETTERS } from "../music/pitch";
 import { parseInterval, transpose, intervalBetween, ivStr, intervalName } from "../music/interval";
 import { scale, chord, CHORDS, ChordQuality, keySignature, relativeMinor, romanNumeral, romanNumeral7, romanChord, diatonicChord, qualityName, chordSymbol, SCALES, ScaleType } from "../music/harmony";
-import { abcTune, abcChords } from "../music/abc";
+import { abcTune, abcChords, noteToAbc } from "../music/abc";
 
 export interface PlaySpec {
-  mode: "melodic" | "harmonic" | "chords";
+  mode: "melodic" | "harmonic" | "chords" | "layers";
   notes?: number[]; // melodic: -1 = rest
   durations?: number[]; // melodic: beats per note (default 1 each)
   chords?: number[][];
   tempo: number;
+  layers?: PlaySpec[]; // "layers": parts played together from the same start (melody + chords)
 }
 
 interface ItemBase {
@@ -87,7 +88,21 @@ export interface WriteItem extends ItemBase {
   lines?: [number, number];
   rubric: { id: string; label: Loc; weight: number; top: Loc }[];
 }
-export type Item = McqItem | NamesItem | MidiItem | PracticeItem | SingItem | RangeItem | CheckinItem | ComposeItem | WriteItem;
+export interface HarmonizeItem extends ItemBase {
+  kind: "harmonize";
+  tune: Loc;
+  melody: number[]; // -1 = rest
+  durations: number[];
+  pickup: number;
+  beatsPerBar: number;
+  slots: number[]; // beats per slot
+  choices: string[];
+  chordNotes: Record<string, number[]>; // playback voicing per choice
+  model: string[];
+  accept: string[][]; // per slot: choices whose chord tones fit the strong-beat melody notes
+  tempo: number;
+}
+export type Item = McqItem | NamesItem | MidiItem | PracticeItem | SingItem | RangeItem | CheckinItem | ComposeItem | WriteItem | HarmonizeItem;
 
 /** Learner state that shapes generated items. Stored with each submission so the server regenerates the same items. */
 export interface GenCtx {
@@ -388,7 +403,83 @@ function staticItem(ex: Exclude<Exercise, { type: "generated" }>, ctx: GenCtx = 
       return { ...base, kind: "compose", key: ex.key, meter: ex.meter, bars: ex.bars, rules: ex.rules, given: ex.given, voices: ex.voices as 1 | 2, range: ex.range ? [toMidi(parseNote(ex.range[0])), toMidi(parseNote(ex.range[1]))] : undefined };
     case "write":
       return { ...base, kind: "write", language: ex.language, lines: ex.lines, rubric: ex.rubric };
+    case "harmonize":
+      return harmonizeItem(ex, base);
   }
+}
+
+/** V means V7 for fit (the 7th, scale degree 4, is a chord tone over V). */
+const FIT_NUMERAL: Record<string, string> = { V: "V7" };
+
+/**
+ * Does `chord` fit slot `i` of the melody? The note sounding where the chord starts is a
+ * chord tone, and chord tones fill at least half of the slot's sounding time (rests
+ * excluded). Passing and neighbour notes on weak beats are allowed; V means V7 here.
+ */
+export function harmonizeFits(ex: Extract<Exercise, { type: "harmonize" }>, i: number, chordNum: string): boolean {
+  const tonic = parseNote(ex.key, 3);
+  const pcs = new Set(romanChord(tonic, "major", FIT_NUMERAL[chordNum] ?? chordNum).map(pitchClassOf));
+  const s0 = ex.pickup + ex.slots.slice(0, i).reduce((a, b) => a + b, 0);
+  const s1 = s0 + ex.slots[i];
+  let t = 0;
+  let sounding = 0;
+  let fit = 0;
+  let first: boolean | null = null;
+  ex.melody.notes.forEach((n, k) => {
+    const a = t;
+    const b = t + ex.melody.durations[k];
+    t = b;
+    const overlap = Math.min(b, s1) - Math.max(a, s0);
+    if (overlap <= 1e-9 || n === "z") return;
+    const ok = pcs.has(pitchClassOf(parseNote(n)));
+    if (first === null && a <= s0 + 1e-9) first = ok;
+    else if (first === null) first = ok; // slot starts on a rest: the first note decides
+    sounding += overlap;
+    if (ok) fit += overlap;
+  });
+  return first === true && fit >= sounding / 2 - 1e-9;
+}
+
+/** Chords that count per slot: the model plus the authored alternatives. */
+export function harmonizeAccept(ex: Extract<Exercise, { type: "harmonize" }>): string[][] {
+  return ex.model.map((m, i) => [m, ...(ex.alternatives?.[i] ?? []).filter((c) => c !== m)]);
+}
+
+function harmonizeItem(ex: Extract<Exercise, { type: "harmonize" }>, base: { id: string; exerciseId: string; prompt: Loc; abc?: string }): HarmonizeItem {
+  const tonic = parseNote(ex.key, 3);
+  const chordNotes: Record<string, number[]> = {};
+  for (const c of ex.choices) chordNotes[c] = romanChord(tonic, "major", FIT_NUMERAL[c] ?? c).map(toMidi);
+  return {
+    ...base,
+    kind: "harmonize",
+    tune: ex.tune,
+    melody: ex.melody.notes.map((n) => (n === "z" ? -1 : toMidi(parseNote(n)))),
+    durations: ex.melody.durations,
+    pickup: ex.pickup,
+    beatsPerBar: ex.beatsPerBar,
+    slots: ex.slots,
+    choices: ex.choices,
+    chordNotes,
+    model: ex.model,
+    accept: harmonizeAccept(ex),
+    tempo: ex.tempo,
+    abc: base.abc ?? melodyAbc(ex),
+  };
+}
+
+/** The melody as ABC with bar lines (L:1/8 so halves of a beat are whole units). */
+export function melodyAbc(ex: Extract<Exercise, { type: "harmonize" }>): string {
+  const parts: string[] = [];
+  let t = 0;
+  const barAt = (x: number) => x > ex.pickup - 1e-9 && Math.abs(((x - ex.pickup) % ex.beatsPerBar)) < 1e-9;
+  ex.melody.notes.forEach((n, i) => {
+    const len = Math.round(ex.melody.durations[i] * 2);
+    const sym = n === "z" ? "z" : noteToAbc(parseNote(n));
+    parts.push(sym + (len === 1 ? "" : String(len)));
+    t += ex.melody.durations[i];
+    if (i < ex.melody.notes.length - 1 && (barAt(t) || (ex.pickup > 0 && Math.abs(t - ex.pickup) < 1e-9))) parts.push("|");
+  });
+  return `X:1\nM:${ex.beatsPerBar}/4\nL:1/8\nK:${ex.key}\n${parts.join(" ")} |]`;
 }
 
 // ---------- generators ----------
@@ -853,6 +944,56 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
         abc: g.showAbc ? abcRhythm(durs, g.meter) : undefined,
         prompt: L(`Listen, then tap the rhythm back on any key (♩=${g.tempo}).`, `Slušaj, pa otkucaj ritam na bilo kojoj dirki (♩=${g.tempo}).`),
         noteLabels: L(durs.map(fmtBeats).join(" "), durs.map(fmtBeats).join(" ")),
+      };
+    }
+    case "function-ear": {
+      const keyName0 = rng.pick(g.keys);
+      const key = parseNote(keyName0, toMidi(parseNote(keyName0, 4)) > 67 ? 3 : 4);
+      const FUN = ["I", "IV", "V7"] as const;
+      const feelLoc: Record<string, Loc> = {
+        I: L("home (I)", "kuća (I)"),
+        IV: L("away, but relaxed (IV)", "odlazak, ali opušteno (IV)"),
+        V7: L("tension: wants to go home (V7)", "napetost: vuče kući (V7)"),
+      };
+      const endLoc: Record<string, Loc> = {
+        I: L("ends at home (I)", "završava kod kuće (I)"),
+        IV: L("ends away, open (IV)", "završava u odlasku, otvoreno (IV)"),
+        V7: L("hangs on the tension (V7)", "visi na napetosti (V7)"),
+      };
+      // fixed option order (home, away, tension) so the three feelings keep their place
+      const target = rng.pick([...FUN]);
+      const ENDINGS: Record<string, string[][]> = {
+        I: [["I", "IV", "V7", "I"], ["I", "V7", "IV", "I"], ["I", "IV", "I", "V7", "I"]],
+        IV: [["I", "V7", "I", "IV"], ["I", "IV", "V7", "I", "IV"]],
+        V7: [["I", "IV", "I", "V7"], ["I", "IV", "V7"], ["I", "V7", "I", "IV", "V7"]],
+      };
+      const build = (t: string) => {
+        if (g.ask === "feel") {
+          const nums = ["I", "IV", "V7", "I", t];
+          const v = smoothVoicing(nums.map((r) => romanChord(key, "major", r)), key).map((c) => c.map(toMidi));
+          return { play: { mode: "chords", chords: [...v.slice(0, 4), [], v[4]], durations: [1, 1, 1, 2, 1, 3], tempo: g.tempo } as PlaySpec, nums };
+        }
+        const nums = rng.pick(ENDINGS[t]);
+        const v = smoothVoicing(nums.map((r) => romanChord(key, "major", r)), key).map((c) => c.map(toMidi));
+        return { play: { mode: "chords", chords: v, durations: nums.map((_, i) => (i === nums.length - 1 ? 3 : 2)), tempo: g.tempo } as PlaySpec, nums };
+      };
+      const main = build(target);
+      const keyLoc = keyName(key, "major", true).loc;
+      const compare = FUN.map((t) => {
+        const b = t === target ? main : build(t);
+        return { play: b.play, notes: L(b.nums.join(" – "), b.nums.join(" – ")) };
+      });
+      return {
+        ...base,
+        kind: "mcq",
+        play: main.play,
+        prompt:
+          g.ask === "feel"
+            ? L(`In ${keyLoc.en}: I – IV – V7 – I sets home, then one more chord. How does that last chord feel?`, `U ${keyLoc.sr}: I – IV – V7 – I postavi „kuću”, pa još jedan akord. Kako deluje taj poslednji akord?`)
+            : L(`A short progression in ${keyLoc.en}. How does it end?`, `Kratka progresija u ${keyLoc.sr}. Kako se završava?`),
+        options: FUN.map((t) => (g.ask === "feel" ? feelLoc[t] : endLoc[t])),
+        answer: FUN.indexOf(target),
+        compare,
       };
     }
     case "progression-ear": {

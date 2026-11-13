@@ -1,6 +1,6 @@
 id: E-019
 track: E
-order: 19
+order: 21
 title: {en: "Melodic dictation: 6–8 notes, scale-wise and triad leaps", sr: "Melodijski diktat: 6–8 tonova, koraci i skokovi po akordu"}
 prereqs: [E-018, E-010]
 minutes: 15

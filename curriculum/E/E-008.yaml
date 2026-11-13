@@ -1,6 +1,6 @@
 id: E-008
 track: E
-order: 8
+order: 10
 title: {en: "Diminished and augmented triads", sr: "Smanjeni i povećani kvintakord"}
 prereqs: [E-007, T-011]
 minutes: 12

@@ -1,6 +1,6 @@
 id: E-015
 track: E
-order: 15
+order: 17
 title: {en: "Seventh-chord qualities by ear (maj7, 7, m7, m7b5, dim7)", sr: "Vrste septakorada po sluhu (maj7, 7, m7, m7b5, dim7)"}
 prereqs: [E-014, T-022]
 minutes: 14

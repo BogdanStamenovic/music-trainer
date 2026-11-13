@@ -1,6 +1,6 @@
 id: E-024
 track: E
-order: 24
+order: 26
 title: {en: "Cadence types by ear (authentic, half, plagal, deceptive)", sr: "Vrste kadenci po sluhu (autentična, polukadenca, plagalna, varljiva)"}
 prereqs: [E-023, E-020, T-042]
 minutes: 14

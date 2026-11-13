@@ -1,6 +1,6 @@
 id: E-040
 track: E
-order: 40
+order: 42
 title: {en: "Longer melodic dictation (2 phrases)", sr: "Duži melodijski diktat (2 rečenice)"}
 prereqs: [E-039, E-030]
 minutes: 15

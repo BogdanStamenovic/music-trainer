@@ -1,6 +1,6 @@
 id: E-042
 track: E
-order: 42
+order: 44
 title: {en: "Bass + chords of a pop song, phrase by phrase", sr: "Bas i akordi pop pesme, fraza po frazu"}
 prereqs: [E-041, E-032]
 minutes: 15

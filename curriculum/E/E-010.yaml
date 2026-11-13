@@ -1,6 +1,6 @@
 id: E-010
 track: E
-order: 10
+order: 12
 title: {en: "Melodic dictation with leaps", sr: "Melodijski diktat sa skokovima"}
 prereqs: [E-009]
 minutes: 14

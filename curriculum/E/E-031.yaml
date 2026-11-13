@@ -1,6 +1,6 @@
 id: E-031
 track: E
-order: 31
+order: 33
 title: {en: "Rhythm dictation: syncopation and ties (notation hidden)", sr: "Ritmički diktat: sinkopa i ligature (bez nota)"}
 prereqs: [E-030, E-018]
 minutes: 13

@@ -166,6 +166,9 @@ export const Gen = z.discriminatedUnion("kind", [
   // smooth: bass on the root, upper three voices moved to the nearest chord tones (voice leading)
   z.object({ kind: z.literal("progression"), keys: z.array(PcS).min(1), type: ScaleType.default("major"), numerals: z.array(z.string()).min(2), tempo: z.number().optional(), octave: z.enum(["exact", "any"]).default("any"), echo: z.boolean().default(false), smooth: z.boolean().default(false) }),
   z.object({ kind: z.literal("melody-echo"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(1), z.number().int().min(1)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), startOnTonic: z.boolean().default(true), octave: z.number().int().default(4), tempo: z.number().default(80) }),
+  // what I, IV and V7 do, by feel: "feel" = a cadence sets the key, then one chord (home / away / tension);
+  // "ending" = a short progression; does it end home, away (IV) or hanging on V7?
+  z.object({ kind: z.literal("function-ear"), keys: z.array(PcS).min(1), ask: z.enum(["feel", "ending"]), tempo: z.number().min(30).max(160).default(72) }),
   z.object({ kind: z.literal("degree-ear"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), degrees: z.array(z.number().int().min(1).max(8)).min(2), answer: z.enum(["choose", "play"]).default("choose"), octave: z.number().int().default(4) }),
   z.object({ kind: z.literal("pitch-match"), range: Range.optional(), sustain: z.number().min(0).max(10).default(2), tolerance: z.number().min(10).max(200).default(50), intervals: z.array(IvS).optional() }),
   z.object({ kind: z.literal("phrase-sing"), tonics: z.array(PcS).min(1), type: ScaleType.default("major"), length: z.tuple([z.number().int().min(2), z.number().int().min(2)]), degrees: z.array(z.number().int().min(1).max(8)).optional(), maxLeap: z.number().int().min(1).max(8).default(2), tempo: z.number().default(72), tolerance: z.number().min(10).max(200).default(50) }),
@@ -175,7 +178,29 @@ export type Gen = z.infer<typeof Gen>;
 
 export const Generated = z.object({ ...Base, type: z.literal("generated"), count: z.number().int().min(1).max(30).default(5), gen: Gen });
 
-export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated, SingPitch, SingPhrase, VoiceRange, Checkin, Compose, Write]);
+/**
+ * Harmonize by ear: the app plays a (public-domain) melody, the learner picks a chord
+ * for each slot from `choices`, hears melody and chords together, and is graded per
+ * slot. A pick counts if it is the `model` chord (the usual harmonization, played as
+ * the answer) or one of the slot's `alternatives`. Validation checks every accepted
+ * chord against the melody (harmonizeFits); V means V7 there.
+ */
+export const Harmonize = z.object({
+  ...Base,
+  type: z.literal("harmonize"),
+  tune: Loc, // name and source of the tune, e.g. "Ode to Joy (Beethoven, 1824)"
+  key: PcS, // major key
+  beatsPerBar: z.number().int().min(2).max(6),
+  tempo: z.number().min(40).max(200).default(90),
+  melody: z.object({ notes: z.array(z.union([NoteS, z.literal("z")])).min(2), durations: z.array(z.number().positive()).min(2) }),
+  pickup: z.number().min(0).default(0), // beats before the first full bar (no chord)
+  slots: z.array(z.number().positive()).min(2), // beats per chord slot, after the pickup
+  model: z.array(z.string()).min(2),
+  alternatives: z.array(z.array(z.string())).optional(), // per slot, other chords that also count
+  choices: z.array(z.string()).min(2).default(["I", "IV", "V"]),
+});
+
+export const Exercise = z.discriminatedUnion("type", [Mcq, NotationInput, MidiPlay, MidiEcho, Practice, Generated, SingPitch, SingPhrase, VoiceRange, Checkin, Compose, Write, Harmonize]);
 export type Exercise = z.infer<typeof Exercise>;
 
 export const Lesson = z.object({

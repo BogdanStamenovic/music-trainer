@@ -1,6 +1,6 @@
 id: E-039
 track: E
-order: 39
+order: 41
 title: {en: "The diminished seventh by ear", sr: "Smanjeni septakord po sluhu"}
 prereqs: [E-038, T-060]
 minutes: 13

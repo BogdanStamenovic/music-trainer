@@ -1,6 +1,6 @@
 id: E-013
 track: E
-order: 13
+order: 15
 title: {en: "Scale degrees 1–7 in major", sr: "Stupnjevi 1–7 u duru"}
 prereqs: [E-012, E-005]
 minutes: 13

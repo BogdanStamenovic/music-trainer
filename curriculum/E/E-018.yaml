@@ -1,6 +1,6 @@
 id: E-018
 track: E
-order: 18
+order: 20
 title: {en: "Rhythm echo: syncopation, triplets, compound meter", sr: "Ritmički eho: sinkopa, triole, složeni takt"}
 prereqs: [E-017, T-018]
 minutes: 14

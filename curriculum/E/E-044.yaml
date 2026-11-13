@@ -1,6 +1,6 @@
 id: E-044
 track: E
-order: 44
+order: 46
 title: {en: "Third song by ear (public-domain), with chords", sr: "Treća pesma po sluhu (javni domen), sa akordima"}
 prereqs: [E-043, E-033]
 minutes: 15

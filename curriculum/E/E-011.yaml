@@ -1,6 +1,6 @@
 id: E-011
 track: E
-order: 11
+order: 13
 title: {en: "All simple intervals, melodic up and down", sr: "Svi prosti intervali, melodijski naviše i naniže"}
 prereqs: [E-010, T-006]
 minutes: 13

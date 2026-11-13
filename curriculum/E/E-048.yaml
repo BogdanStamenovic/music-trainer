@@ -1,0 +1,96 @@
+id: E-048
+track: E
+order: 6
+title: {en: "Harmonize by ear: I, IV or V?", sr: "Harmonizuj po sluhu: I, IV ili V?"}
+# The bridge to playing by ear (Bogdan asked for it explicitly). Tunes are public domain:
+# traditional melodies and Beethoven; no lyrics are shown or needed.
+prereqs: [E-047]
+minutes: 14
+tags: [ear, harmony, function, by-ear]
+explain:
+  en: |
+    Most simple tunes can be accompanied with just I, IV and V. Finding which one goes where is
+    the first real step to playing songs by ear. Here is the method:
+
+    1. **Listen to the melody** a couple of times and hum it.
+    2. **Look at the note where the chord changes** (the start of the bar, or of the half bar).
+       Which of I, IV, V contains it? In C: I = C E G, IV = F A C, V(7) = G B D F.
+       Usually only one or two fit.
+    3. **Use the feelings from E-047.** The tune starts at home (I) and ends at home. Just
+       before the end there is almost always tension (V). A phrase that pauses in the middle
+       often pauses on V, like a question.
+    4. **Listen with your chords.** Your ear decides. If a chord sounds wrong under the
+       melody, try the other one that contains the note.
+
+    Notes that move quickly between two chord notes (passing notes) do not need their own
+    chord: harmonize the note on the change and the longer notes.
+
+    The app plays the melody; you choose a chord for each bar (or half bar); "with my chords"
+    plays both together. After checking, compare with the usual harmonization. When a slot
+    lists something that "also fits", it counts too: there is often more than one good answer.
+    Finish by playing one tune yourself: melody in the right hand, chords in the left.
+  sr: |
+    Većina jednostavnih melodija može da se prati samo sa I, IV i V. Pronaći koji ide gde je prvi
+    pravi korak ka sviranju pesama po sluhu. Evo postupka:
+
+    1. **Slušaj melodiju** par puta i otpevuši je.
+    2. **Pogledaj ton na kome se akord menja** (početak takta, ili polovine takta). Koji od I, IV,
+       V ga sadrži? U C-duru: I = C E G, IV = F A C, V(7) = G H D F. Obično se uklapa samo jedan
+       ili dva.
+    3. **Koristi utiske iz E-047.** Melodija počinje kod kuće (I) i tu se završava. Neposredno
+       pre kraja skoro uvek dolazi napetost (V). Fraza koja zastane na sredini često zastane
+       na V, kao pitanje.
+    4. **Slušaj sa svojim akordima.** Uho odlučuje. Ako akord zvuči pogrešno ispod melodije,
+       probaj drugi koji sadrži taj ton.
+
+    Tonovi koji brzo prelaze između dva tona akorda (prolaznice) ne traže svoj akord:
+    harmonizuj ton na promeni i duže tonove.
+
+    Aplikacija svira melodiju; ti biraš akord za svaki takt (ili polovinu takta); „sa mojim
+    akordima" svira oboje zajedno. Posle provere uporedi sa uobičajenom harmonizacijom. Kad
+    piše da se nešto „takođe uklapa", i to se računa: često postoji više od jednog dobrog
+    odgovora. Na kraju sam odsviraj jednu melodiju: melodija desnom rukom, akordi levom.
+exercises:
+  - id: E-048-1
+    type: harmonize
+    prompt: {en: "A chord for each bar: I, IV or V?", sr: "Akord za svaki takt: I, IV ili V?"}
+    tune: {en: "Mary Had a Little Lamb (traditional)", sr: "Mary Had a Little Lamb (narodna, SAD)"}
+    key: C
+    beatsPerBar: 4
+    tempo: 100
+    melody:
+      notes: [E4, D4, C4, D4, E4, E4, E4, D4, D4, D4, E4, G4, G4, E4, D4, C4, D4, E4, E4, E4, E4, D4, D4, E4, D4, C4]
+      durations: [1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4]
+    slots: [4, 4, 4, 4, 4, 4, 4, 4]
+    model: [I, I, V, I, I, I, V, I]
+  - id: E-048-2
+    type: harmonize
+    prompt: {en: "Bars 4 and 8 change chord halfway. Choose I, IV or V for each slot.", sr: "U taktovima 4 i 8 akord se menja na pola takta. Izaberi I, IV ili V za svako mesto."}
+    tune: {en: "Ode to Joy (Beethoven, Ninth Symphony, 1824)", sr: "Oda radosti (Betoven, Deveta simfonija, 1824)"}
+    key: C
+    beatsPerBar: 4
+    tempo: 100
+    melody:
+      notes: [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4, E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, D4, C4, C4]
+      durations: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1.5, 0.5, 2]
+    slots: [4, 4, 4, 2, 2, 4, 4, 4, 2, 2]
+    model: [I, V, I, I, V, I, V, I, V, I]
+  - id: E-048-3
+    type: harmonize
+    prompt: {en: "Now with IV: a chord for each half bar.", sr: "Sada i sa IV: akord za svaku polovinu takta."}
+    tune: {en: "Twinkle, Twinkle, Little Star (traditional French melody)", sr: "Sjaj, sjaj, zvezdice (stara francuska melodija)"}
+    key: C
+    beatsPerBar: 4
+    tempo: 92
+    melody:
+      notes: [C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4]
+      durations: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2]
+    slots: [2, 2, 2, 2, 2, 2, 2, 2]
+    model: [I, I, IV, I, IV, I, V, I]
+    alternatives: [[], [V], [], [], [V], [], [], []]
+  - id: E-048-4
+    type: practice
+    minutes: 4
+    prompt:
+      en: "Play \"Twinkle, Twinkle\" yourself: melody in the right hand, and in the left hand the chord on each half bar (C C | F C | F C | G C), held. Slowly; then once more without looking at the chords."
+      sr: "Sam odsviraj „Sjaj, sjaj, zvezdice”: melodiju desnom rukom, a levom akord na svakoj polovini takta (C C | F C | F C | G C), držeći ga. Polako; pa još jednom bez gledanja u akorde."

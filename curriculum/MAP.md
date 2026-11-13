@@ -42,6 +42,18 @@ lesson tagged `support` (V-002) and one tagged `onset` (V-005), state the stop p
 both languages, and are capped at one per day by the planner. Nothing ever scores more
 distortion higher. Register/technique labels from voice-score are hints, never grades.
 
+## Added after real use (2026-11-13)
+
+Bogdan: "i get I IV V but i dont understand what they do in songs". Two E lessons go right
+after E-004 (orders 5 and 6; E-005 onward moved down by two, E-005 now needs E-048):
+
+| id | title | key prereqs |
+|---|---|---|
+| E-047 | Home, away, tension: what I, IV and V do | E-004 (soft: T-014) |
+| E-048 | Harmonize by ear: I, IV or V? (public-domain tunes) | E-047 |
+
+T-014's explanation now starts with the felt function before the cadence table.
+
 ## Wave 1 lessons (weeks 3–8)
 
 Ids, titles and the prerequisites others may rely on. Each track's lessons chain in

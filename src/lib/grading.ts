@@ -21,7 +21,8 @@ export type Response =
   | { kind: "checkin"; state: "fine" | "tired" | "hoarse" }
   // rules: set by the SERVER (it runs the music21 worker before grading); a client copy is ignored
   | { kind: "compose"; abc: string; rules?: { ok: boolean; score?: number; checks?: unknown[]; error?: string; unavailable?: boolean } | null }
-  | { kind: "write"; text: string; self: Record<string, number> };
+  | { kind: "write"; text: string; self: Record<string, number> }
+  | { kind: "harmonize"; picks: (string | null)[] };
 
 /** The subset of a voice-score /analyze result that grading uses (server and browser share the shape). */
 export interface VoiceNote {
@@ -87,6 +88,11 @@ function gradeRaw(item: Item, r: Response): { score: number; detail: Record<stri
       return { score: 1, detail: { state: (r as { state: string }).state } };
     case "compose":
       return gradeCompose(item, r as Extract<Response, { kind: "compose" }>);
+    case "harmonize": {
+      const picks = (r as Extract<Response, { kind: "harmonize" }>).picks;
+      const ok = item.accept.map((acc, i) => picks[i] != null && acc.includes(picks[i]!));
+      return { score: ok.filter(Boolean).length / Math.max(1, ok.length), detail: { picks, ok, model: item.model, accept: item.accept } };
+    }
     case "write":
       return gradeWrite(item, r as Extract<Response, { kind: "write" }>);
   }

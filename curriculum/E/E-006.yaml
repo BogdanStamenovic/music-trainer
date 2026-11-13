@@ -1,6 +1,6 @@
 id: E-006
 track: E
-order: 6
+order: 8
 title: {en: "Echo stepwise melodies", sr: "Ponovi melodije u koracima"}
 prereqs: [E-005]
 minutes: 12

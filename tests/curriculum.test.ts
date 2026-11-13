@@ -22,6 +22,7 @@ describe("curriculum content", () => {
           else if (it.kind === "checkin") r = { kind: "checkin" as const, state: "fine" as const };
           else if (it.kind === "range") r = { kind: "range" as const, recordingIds: [], lowMidi: 45, highMidi: 67 };
           else if (it.kind === "compose") r = { kind: "compose" as const, abc: "X:1\nK:C\nC |]", rules: { ok: true, score: 1, checks: [] } };
+          else if (it.kind === "harmonize") r = { kind: "harmonize" as const, picks: it.model };
           else if (it.kind === "write") r = { kind: "write" as const, text: "a line", self: Object.fromEntries(it.rubric.map((c) => [c.id, 4])) };
           else if (it.kind === "midi" && it.mode === "rhythm") {
             const beat = 60000 / (it.tempo ?? 80);

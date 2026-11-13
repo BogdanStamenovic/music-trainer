@@ -1,6 +1,6 @@
 id: E-012
 track: E
-order: 12
+order: 14
 title: {en: "Harmonic intervals and compound intervals (9ths, 10ths)", sr: "Harmonski i složeni intervali (none, decime)"}
 prereqs: [E-011]
 minutes: 14

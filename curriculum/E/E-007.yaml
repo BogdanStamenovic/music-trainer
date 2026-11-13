@@ -1,6 +1,6 @@
 id: E-007
 track: E
-order: 7
+order: 9
 title: {en: "Sixths, sevenths and the tritone", sr: "Sekste, septime i tritonus"}
 prereqs: [E-006, T-006]
 minutes: 13

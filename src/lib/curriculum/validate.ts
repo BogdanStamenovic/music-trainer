@@ -2,7 +2,7 @@ import type { Lesson, Check, Exercise, Placement, Project, Melody } from "./sche
 import { Check as CheckSchema } from "./schema";
 import type { z } from "zod";
 import abcjs from "abcjs";
-import { derive, generateItems } from "./items";
+import { derive, generateItems, harmonizeAccept, harmonizeFits, melodyAbc } from "./items";
 import { parseNote, pcName, noteStr, toMidi } from "../music/pitch";
 import { intervalBetween, ivStr } from "../music/interval";
 import { scale, keySignature, romanNumeral, romanNumeral7, romanChord, CHORDS } from "../music/harmony";
@@ -108,6 +108,7 @@ function checkExercise(ex: Exercise, where: string): string[] {
       errs.push(`${where}: check threw ${(e as Error).message}`);
     }
   }
+  if (ex.type === "harmonize") errs.push(...checkHarmonize(ex, where));
   if ((ex.type === "midi-play" || ex.type === "midi-echo") && ex.beats) {
     const n = ex.mode === "chords" ? (ex.expectChords?.length ?? (ex.derive ? derive(ex.derive).length : 0)) : (ex.expect?.length ?? (ex.derive ? derive(ex.derive)[0].length : 0));
     if (n && ex.beats.length !== n) errs.push(`${where}: ${ex.beats.length} beats for ${n} ${ex.mode === "chords" ? "chords" : "notes"}`);
@@ -311,4 +312,36 @@ export function lessonAbc(l: Lesson): { where: string; abc: string }[] {
     }
   }
   return out;
+}
+
+/** Harmonize-by-ear: lengths line up, slots stay inside bars, the model fits the melody (strong beats). */
+export function checkHarmonize(ex: Extract<Exercise, { type: "harmonize" }>, where: string): string[] {
+  const errs: string[] = [];
+  const { notes, durations } = ex.melody;
+  if (notes.length !== durations.length) errs.push(`${where}: ${notes.length} melody notes for ${durations.length} durations`);
+  if (durations.some((d) => Math.abs(d * 2 - Math.round(d * 2)) > 1e-9)) errs.push(`${where}: durations must be multiples of half a beat`);
+  const total = durations.reduce((a, b) => a + b, 0);
+  const slotTotal = ex.pickup + ex.slots.reduce((a, b) => a + b, 0);
+  if (Math.abs(total - slotTotal) > 1e-9) errs.push(`${where}: melody is ${total} beats, pickup + slots are ${slotTotal}`);
+  if ((total - ex.pickup) % ex.beatsPerBar !== 0) errs.push(`${where}: melody after the pickup is not whole bars of ${ex.beatsPerBar}`);
+  let t = 0;
+  ex.slots.forEach((len, i) => {
+    if (Math.floor(t / ex.beatsPerBar + 1e-9) !== Math.floor((t + len) / ex.beatsPerBar - 1e-9)) errs.push(`${where}: slot ${i + 1} crosses a bar line`);
+    t += len;
+  });
+  if (ex.model.length !== ex.slots.length) errs.push(`${where}: ${ex.model.length} model chords for ${ex.slots.length} slots`);
+  for (const m of ex.model) if (!ex.choices.includes(m)) errs.push(`${where}: model chord ${m} is not one of the choices`);
+  if (ex.model[ex.model.length - 1] !== "I") errs.push(`${where}: the tune must end on I`);
+  if (ex.alternatives && ex.alternatives.length !== ex.slots.length) errs.push(`${where}: alternatives must list one entry per slot`);
+  if (ex.alternatives?.[ex.slots.length - 1]?.length) errs.push(`${where}: the last slot is I only (home)`);
+  if (!errs.length) {
+    harmonizeAccept(ex).forEach((acc, i) =>
+      acc.forEach((c) => {
+        if (!ex.choices.includes(c)) errs.push(`${where}: slot ${i + 1}: ${c} is not one of the choices`);
+        else if (!harmonizeFits(ex, i, c)) errs.push(`${where}: slot ${i + 1}: ${c} does not fit the melody (note on the change, or under half the time in chord tones)`);
+      }),
+    );
+    errs.push(...checkAbc(melodyAbc(ex), `${where} (melody ABC)`));
+  }
+  return errs;
 }

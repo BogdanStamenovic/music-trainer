@@ -1,6 +1,6 @@
 id: E-037
 track: E
-order: 37
+order: 39
 title: {en: "Relative minor/major by ear", sr: "Paralelni mol i dur po sluhu"}
 prereqs: [E-035, T-055]
 minutes: 14

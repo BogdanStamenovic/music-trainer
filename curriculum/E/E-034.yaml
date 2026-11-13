@@ -1,6 +1,6 @@
 id: E-034
 track: E
-order: 34
+order: 36
 title: {en: "Review: progressions with secondary dominants", sr: "Ponavljanje: progresije sa sporednim dominantama"}
 prereqs: [E-033, E-029, T-044]
 minutes: 15

@@ -1,6 +1,6 @@
 id: E-021
 track: E
-order: 21
+order: 23
 title: {en: "First song by ear: phrase by phrase (public-domain tunes)", sr: "Prva pesma po sluhu: fraza po frazu (pesme u javnom domenu)"}
 prereqs: [E-020, E-019]
 minutes: 15

@@ -1,6 +1,6 @@
 id: E-029
 track: E
-order: 29
+order: 31
 title: {en: "Hearing V/V before V", sr: "Čuti V/V pre V"}
 prereqs: [E-028, T-043]
 minutes: 13

@@ -1,6 +1,6 @@
 id: E-023
 track: E
-order: 23
+order: 25
 title: {en: "Bass lines with inversions (I6, IV6, V6, V43)", sr: "Bas linije sa obrtajima (I6, IV6, V6, V43)"}
 prereqs: [E-022, T-036]
 minutes: 14

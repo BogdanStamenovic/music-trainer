@@ -7,11 +7,25 @@ minutes: 14
 tags: [harmony]
 explain:
   en: |
-    The **primary chords** are the major triads on degrees 1, 4 and 5: **tonic (I)**, **subdominant (IV)**, **dominant (V)**.
-    Together they contain all seven notes of the scale, so they can harmonise almost any simple melody.
+    Three chords carry most simple songs, and each one has a job you can **feel**:
+
+    - **I, the tonic: home.** Music that lands on I sounds settled. Songs start and end here.
+    - **IV, the subdominant: away, but relaxed.** A step out of the house. It shares a note with
+      I, so it doesn't pull hard; coming back (IV → I) is soft.
+    - **V, the dominant: tension that wants to go home.** V holds the **leading tone**, a half
+      step under the tonic, which wants to rise to it (in C: B → C). With a 7th added (V7: in C
+      the F) a second note pulls too, down to E. That is why V → I sounds like a door closing.
+
+    That is what they do in songs. A 12-bar blues is only I, IV and V; countless rock and folk
+    songs loop I–IV–V–IV; a phrase that stops on V sounds like a question, one that stops on I
+    like the answer. (E-047 and E-048 train this by ear.)
+
+    These **primary chords** are the major triads on degrees 1, 4 and 5. Together they contain
+    all seven notes of the scale, so they can harmonise almost any simple melody.
     In C major: I = C E G, IV = F A C, V = G B D.
 
-    A **cadence** is the chord pair that ends a phrase, the musical punctuation:
+    A **cadence** is the chord pair that ends a phrase, the musical punctuation. The names below
+    are labels for the feelings above:
 
     | cadence | chords | feel |
     |---|---|---|
@@ -29,11 +43,26 @@ explain:
     "I"[CEG] "IV"[FAc] | "V"[GBd] "I"[ceg] |]
     ```
   sr: |
-    **Glavni akordi** su durski trozvuci na I, IV i V stupnju: **tonika (T, I)**, **subdominanta (S, IV)**, **dominanta (D, V)**.
-    Zajedno sadrže svih sedam tonova lestvice, pa mogu da harmonizuju skoro svaku jednostavnu melodiju.
+    Tri akorda nose većinu jednostavnih pesama, i svaki ima posao koji možeš da **osetiš**:
+
+    - **I, tonika: kuća.** Muzika koja stigne na I zvuči smireno. Pesme tu počinju i završavaju se.
+    - **IV, subdominanta: odlazak, ali opušten.** Korak izvan kuće. Ima zajednički ton sa I,
+      pa ne vuče jako; povratak (IV → I) je mek.
+    - **V, dominanta: napetost koja vuče kući.** V sadrži **vođicu**, polustepen ispod tonike, koja
+      hoće da se podigne na nju (u C-duru: H → C). Sa dodatom septimom (V7: u C-duru F) vuče i
+      drugi ton, naniže ka E. Zato V → I zvuči kao vrata koja se zatvaraju.
+
+    To je ono što rade u pesmama. Bluz od 12 taktova je samo I, IV i V; bezbroj rok i narodnih
+    pesama vrti I–IV–V–IV; fraza koja stane na V zvuči kao pitanje, a ona koja stane na I kao
+    odgovor. (E-047 i E-048 ovo vežbaju po sluhu.)
+
+    Ovi **glavni akordi** su durski trozvuci na I, IV i V stupnju: **tonika (T, I)**,
+    **subdominanta (S, IV)**, **dominanta (D, V)**. Zajedno sadrže svih sedam tonova lestvice,
+    pa mogu da harmonizuju skoro svaku jednostavnu melodiju.
     U C-duru: I = C E G, IV = F A C, V = G H D.
 
-    **Kadenca** je završetak muzičke rečenice, muzička interpunkcija:
+    **Kadenca** je završetak muzičke rečenice, muzička interpunkcija. Nazivi ispod su imena
+    za utiske opisane gore:
 
     | kadenca | akordi | utisak |
     |---|---|---|

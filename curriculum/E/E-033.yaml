@@ -1,6 +1,6 @@
 id: E-033
 track: E
-order: 33
+order: 35
 title: {en: "Second song by ear, phrase by phrase", sr: "Druga pesma po sluhu, fraza po frazu"}
 prereqs: [E-032, E-021]
 minutes: 15

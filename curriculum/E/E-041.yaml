@@ -1,6 +1,6 @@
 id: E-041
 track: E
-order: 41
+order: 43
 title: {en: "Song form by ear: verse, chorus, bridge", sr: "Forma pesme po sluhu: strofa, refren, bridž"}
 prereqs: [E-040, T-065]
 minutes: 13

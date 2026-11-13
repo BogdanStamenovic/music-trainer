@@ -1,6 +1,6 @@
 id: E-027
 track: E
-order: 27
+order: 29
 title: {en: "Minor progressions by ear (i–iv–V–i, i–VI–III–VII)", sr: "Molske progresije po sluhu (i–iv–V–i, i–VI–III–VII)"}
 prereqs: [E-026, E-020, T-039]
 minutes: 14

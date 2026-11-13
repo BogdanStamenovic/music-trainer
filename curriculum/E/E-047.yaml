@@ -1,0 +1,110 @@
+id: E-047
+track: E
+order: 5
+title: {en: "Home, away, tension: what I, IV and V do", sr: "Kuća, odlazak, napetost: šta rade I, IV i V"}
+# Added 2026-11-13 after Bogdan: "i get I IV V but i dont understand what they do in songs".
+# Placed right after E-004 so it comes within 1-2 weeks; T-014 (names and cadences) is a soft prereq.
+prereqs: [E-004, T-014]
+minutes: 12
+tags: [ear, harmony, function]
+explain:
+  en: |
+    You can name I, IV and V. This lesson is about what they **do**, because that is how you
+    hear them in songs. Each one has a feeling:
+
+    - **I: home.** The key's own chord. Music that lands on I sounds settled, and almost
+      every song ends there.
+    - **IV: away, but relaxed.** A step out of the house. IV shares a note with I (in C both
+      contain C), so it does not pull hard: you can stay there a while, and coming back
+      (IV → I) is soft, like the "Amen" at the end of a hymn.
+    - **V and V7: tension that wants to go home.** V contains the **leading tone** (in C: B),
+      a half step under home, and it wants to rise to C. V7 adds the 7th (in C: F), which
+      wants to fall to E. Two notes pulling toward I at once: that is why V7 → I sounds like
+      a door closing.
+
+    In C major: I = C E G, IV = F A C, V7 = G B D F.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "I"[CEG] "IV"[FAc] | "I"[CEG] "V7"[G,B,DF] | "I"[CEG]2 |]
+    ```
+
+    **Where you meet them.** A 12-bar blues uses only these three: four bars of I, two of IV,
+    two of I, then V, IV, I and I (often V in the last bar, to start again). A great many
+    rock and folk songs loop I–IV–V–IV or I–IV–I–V. A phrase that stops on V sounds like a
+    question; one that stops on I sounds like the answer. That is the half cadence and the
+    authentic cadence from T-014, felt instead of named.
+
+    **How to listen.** Say the feeling, not the numeral: "home", "out", "waiting to go home".
+    The numerals follow from that. Today: play the moves yourself first, then hear them in
+    C, G and F.
+  sr: |
+    Znaš da imenuješ I, IV i V. Ova lekcija je o tome šta oni **rade**, jer ih tako čuješ u
+    pesmama. Svaki ima svoj utisak:
+
+    - **I: kuća.** Akord samog tonaliteta. Muzika koja stigne na I zvuči smireno, i skoro
+      svaka pesma se tu završava.
+    - **IV: odlazak, ali opušten.** Korak izvan kuće. IV ima zajednički ton sa I (u C-duru oba
+      sadrže C), pa ne vuče jako: možeš tu da ostaneš neko vreme, a povratak (IV → I) je
+      mek, kao „Amin" na kraju crkvene pesme.
+    - **V i V7: napetost koja vuče kući.** V sadrži **vođicu** (u C-duru: H), polustepen ispod
+      kuće, koja hoće da se podigne na C. V7 dodaje septimu (u C-duru: F), koja hoće da siđe na
+      E. Dva tona vuku ka I u isto vreme: zato V7 → I zvuči kao vrata koja se zatvaraju.
+
+    U C-duru: I = C E G, IV = F A C, V7 = G H D F.
+
+    ```abc
+    X:1
+    L:1/2
+    K:C
+    "I"[CEG] "IV"[FAc] | "I"[CEG] "V7"[G,B,DF] | "I"[CEG]2 |]
+    ```
+
+    **Gde ih srećeš.** Bluz od 12 taktova koristi samo ova tri: četiri takta I, dva IV, dva I,
+    pa V, IV, I i I (u poslednjem taktu često V, da krene ispočetka). Ogroman broj rok i
+    narodnih pesama vrti I–IV–V–IV ili I–IV–I–V. Fraza koja stane na V zvuči kao pitanje; ona
+    koja stane na I zvuči kao odgovor. To su polukadenca i autentična kadenca iz T-014, ovaj
+    put osećene, a ne imenovane.
+
+    **Kako da slušaš.** Izgovori utisak, ne broj: „kuća", „napolju", „čeka da se vrati kući".
+    Brojevi slede iz toga. Danas: prvo sam odsviraj ove pokrete, pa ih čuj u C, G i F-duru.
+exercises:
+  - id: E-047-1
+    type: generated
+    prompt: {en: "Play I – IV – I in C. Hold each chord and listen to the middle one: out, then back.", sr: "Odsviraj I – IV – I u C-duru. Drži svaki akord i slušaj srednji: napolje, pa nazad."}
+    count: 1
+    gen: {kind: progression, keys: [C], numerals: [I, IV, I], smooth: true}
+    checks:
+      - chord: {notes: [C4, E4, G4], root: C, quality: maj}
+      - chord: {notes: [F4, A4, C5], root: F, quality: maj}
+      - numeral: {key: C, is: "IV", notes: [F3, A3, C4]}
+  - id: E-047-2
+    type: generated
+    prompt: {en: "Play I – V7 – I in C. In V7, feel B pull up to C and F pull down to E.", sr: "Odsviraj I – V7 – I u C-duru. U V7 oseti kako H vuče gore ka C, a F dole ka E."}
+    count: 1
+    gen: {kind: progression, keys: [C], numerals: [I, V7, I], smooth: true}
+    checks:
+      - numeral: {key: C, is: "V7", notes: [G3, B3, D4, F4]}
+      - interval: {from: B3, to: C4, is: m2}
+      - interval: {from: E4, to: F4, is: m2}
+  - id: E-047-3
+    type: generated
+    prompt: {en: "After I – IV – V7 – I, one more chord: home, away or tension?", sr: "Posle I – IV – V7 – I još jedan akord: kuća, odlazak ili napetost?"}
+    count: 6
+    gen: {kind: function-ear, keys: [C, G, F], ask: feel}
+  - id: E-047-4
+    type: generated
+    prompt: {en: "Does the progression end at home, away, or hanging on the tension?", sr: "Da li se progresija završava kod kuće, u odlasku, ili visi na napetosti?"}
+    count: 6
+    gen: {kind: function-ear, keys: [C, G, F], ask: ending}
+  - id: E-047-5
+    type: practice
+    minutes: 3
+    prompt:
+      en: "On your own: play a 12-bar blues in C with one chord per bar (C C C C | F F C C | G F C C), slowly. Say the feeling out loud at each change: home, out, home, waiting, back home."
+      sr: "Sam: odsviraj bluz od 12 taktova u C-duru, jedan akord po taktu (C C C C | F F C C | G F C C), polako. Na svakoj promeni izgovori utisak naglas: kuća, napolju, kuća, čeka, nazad kući."
+    checks:
+      - roman: {key: C, degree: 4, is: "IV"}
+      - roman: {key: C, degree: 5, is: "V"}

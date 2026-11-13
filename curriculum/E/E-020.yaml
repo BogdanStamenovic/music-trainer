@@ -1,6 +1,6 @@
 id: E-020
 track: E
-order: 20
+order: 22
 title: {en: "Bass line + chords: hear V7 resolving", sr: "Bas linija + akordi: čuj razrešenje V7"}
 prereqs: [E-019, E-016, T-020]
 minutes: 14

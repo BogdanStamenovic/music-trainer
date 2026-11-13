@@ -1,6 +1,6 @@
 id: E-030
 track: E
-order: 30
+order: 32
 title: {en: "Melodic dictation with chromatic notes (♯4, ♭7)", sr: "Melodijski diktat sa hromatskim tonovima (♯4, ♭7)"}
 prereqs: [E-029, E-019, T-046]
 minutes: 15

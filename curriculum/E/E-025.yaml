@@ -1,6 +1,6 @@
 id: E-025
 track: E
-order: 25
+order: 27
 title: {en: "Two-voice dictation I: outer voices, stepwise", sr: "Dvoglasni diktat I: spoljni glasovi, korakom"}
 prereqs: [E-024, E-019]
 minutes: 15

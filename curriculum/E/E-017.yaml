@@ -1,6 +1,6 @@
 id: E-017
 track: E
-order: 17
+order: 19
 title: {en: "Rhythm echo: quarters, eighths, dotted rhythms", sr: "Ritmički eho: četvrtine, osmine, ritmovi s tačkom"}
 prereqs: [E-016, T-016]
 minutes: 12

@@ -1,6 +1,6 @@
 id: E-022
 track: E
-order: 22
+order: 24
 title: {en: "ii–V–I by ear", sr: "ii–V–I po sluhu"}
 prereqs: [E-021, E-020, T-025]
 minutes: 14

@@ -1,6 +1,6 @@
 id: E-036
 track: E
-order: 36
+order: 38
 title: {en: "Modulation to the dominant by ear", sr: "Modulacija u tonalitet dominante po sluhu"}
 prereqs: [E-035, T-054]
 minutes: 14

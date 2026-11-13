@@ -1,6 +1,6 @@
 id: E-043
 track: E
-order: 43
+order: 45
 title: {en: "Rhythm dictation: 6/8 and swing feel", sr: "Ritmički diktat: 6/8 i sving"}
 prereqs: [E-042, E-031]
 minutes: 13

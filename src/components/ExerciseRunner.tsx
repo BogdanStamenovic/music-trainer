@@ -4,6 +4,7 @@ import type { Exercise } from "@/lib/curriculum/schema";
 import { generateItems, Item, MidiItem, McqItem, GenCtx } from "@/lib/curriculum/items";
 import { SingInput, RangeInput, CheckinInput, SingFeedback } from "./VoiceInputs";
 import { ComposeInput, WriteInput, ImprovInput } from "./LessonInputs";
+import { HarmonizeInput, HarmonizeFeedback } from "./Harmonize";
 import { grade, Response, MidiEvent, heldChord, clusterChords } from "@/lib/grading";
 import { midiToNote, noteName, parseNote } from "@/lib/music/pitch";
 import { midi } from "@/lib/client/midi";
@@ -153,6 +154,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last, compactCheckin = f
       {item.kind === "midi" && item.mode !== "improv" ? <MidiInput item={item} onSubmit={(events) => answer({ kind: "midi", events })} disabled={!!fb} /> : null}
       {item.kind === "compose" ? <ComposeInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "write" ? <WriteInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
+      {item.kind === "harmonize" ? <HarmonizeInput item={item} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "sing" ? <SingInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "range" ? <RangeInput item={item} meta={meta} onSubmit={answer} disabled={!!fb} /> : null}
       {item.kind === "checkin" ? <CheckinInput onSubmit={answer} disabled={!!fb} compact={compactCheckin} /> : null}
@@ -191,6 +193,7 @@ function ItemView({ item, pass, meta, onAnswer, onNext, last, compactCheckin = f
             </>
           ) : null}
           {item.kind === "midi" && fb.score >= 0.999 && item.noteLabels ? <div className="muted">{l(item.noteLabels)}</div> : null}
+          {item.kind === "harmonize" ? <HarmonizeFeedback item={item} detail={fb.detail} /> : null}
           {item.kind === "sing" ? <SingFeedback item={item} detail={fb.detail} resp={fb.resp} /> : null}
           {item.kind === "mcq" && item.compare && fb.score < 0.999 ? <Compare item={item} choice={(fb.resp as { choice: number }).choice} /> : null}
           {item.kind === "names" && fb.score < 0.999 ? (
