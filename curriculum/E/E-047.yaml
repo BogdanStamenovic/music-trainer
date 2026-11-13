@@ -15,7 +15,7 @@ explain:
     - **I: home.** The key's own chord. Music that lands on I sounds settled, and almost
       every song ends there.
     - **IV: away, but relaxed.** A step out of the house. IV shares a note with I (in C both
-      contain C), so it does not pull hard: you can stay there a while, and coming back
+      contain C) and has no leading tone, so it does not pull hard: you can stay there a while, and coming back
       (IV → I) is soft, like the "Amen" at the end of a hymn.
     - **V and V7: tension that wants to go home.** V contains the **leading tone** (in C: B),
       a half step under home, and it wants to rise to C. V7 adds the 7th (in C: F), which
@@ -47,10 +47,10 @@ explain:
     - **I: kuća.** Akord samog tonaliteta. Muzika koja stigne na I zvuči smireno, i skoro
       svaka pesma se tu završava.
     - **IV: odlazak, ali opušten.** Korak izvan kuće. IV ima zajednički ton sa I (u C-duru oba
-      sadrže C), pa ne vuče jako: možeš tu da ostaneš neko vreme, a povratak (IV → I) je
-      mek, kao „Amin" na kraju crkvene pesme.
-    - **V i V7: napetost koja vuče kući.** V sadrži **vođicu** (u C-duru: H), polustepen ispod
-      kuće, koja hoće da se podigne na C. V7 dodaje septimu (u C-duru: F), koja hoće da siđe na
+      sadrže C) i nema vođicu, pa ne vuče jako: možeš tu da ostaneš neko vreme, a povratak (IV → I) je
+      mek, kao „Amin” na kraju crkvene pesme.
+    - **V i V7: napetost koja vuče kući.** V sadrži **vođicu** (u C-duru: H), ton polustepen
+      ispod kuće koji hoće da se podigne na C. V7 dodaje septimu (u C-duru: F), koja hoće da siđe na
       E. Dva tona vuku ka I u isto vreme: zato V7 → I zvuči kao vrata koja se zatvaraju.
 
     U C-duru: I = C E G, IV = F A C, V7 = G H D F.
@@ -68,7 +68,7 @@ explain:
     koja stane na I zvuči kao odgovor. To su polukadenca i autentična kadenca iz T-014, ovaj
     put osećene, a ne imenovane.
 
-    **Kako da slušaš.** Izgovori utisak, ne broj: „kuća", „napolju", „čeka da se vrati kući".
+    **Kako da slušaš.** Izgovori utisak, ne broj: „kuća”, „napolju”, „čeka da se vrati kući”.
     Brojevi slede iz toga. Danas: prvo sam odsviraj ove pokrete, pa ih čuj u C, G i F-duru.
 exercises:
   - id: E-047-1
@@ -103,8 +103,8 @@ exercises:
     type: practice
     minutes: 3
     prompt:
-      en: "On your own: play a 12-bar blues in C with one chord per bar (C C C C | F F C C | G F C C), slowly. Say the feeling out loud at each change: home, out, home, waiting, back home."
-      sr: "Sam: odsviraj bluz od 12 taktova u C-duru, jedan akord po taktu (C C C C | F F C C | G F C C), polako. Na svakoj promeni izgovori utisak naglas: kuća, napolju, kuća, čeka, nazad kući."
+      en: "On your own: play a 12-bar blues in C with one chord per bar (C C C C | F F C C | G F C C), slowly. Say the feeling out loud at each change: home, out, home, waiting, out, back home."
+      sr: "Sam: odsviraj bluz od 12 taktova u C-duru, jedan akord po taktu (C C C C | F F C C | G F C C), polako. Na svakoj promeni izgovori utisak naglas: kuća, napolju, kuća, čeka, napolju, nazad kući."
     checks:
       - roman: {key: C, degree: 4, is: "IV"}
       - roman: {key: C, degree: 5, is: "V"}

@@ -30,8 +30,8 @@ explain:
     lists something that "also fits", it counts too: there is often more than one good answer.
     Finish by playing one tune yourself: melody in the right hand, chords in the left.
   sr: |
-    Većina jednostavnih melodija može da se prati samo sa I, IV i V. Pronaći koji ide gde je prvi
-    pravi korak ka sviranju pesama po sluhu. Evo postupka:
+    Većina jednostavnih melodija može da se prati samo sa I, IV i V. Pronaći koji akord ide gde: to je
+    prvi pravi korak ka sviranju pesama po sluhu. Evo postupka:
 
     1. **Slušaj melodiju** par puta i otpevuši je.
     2. **Pogledaj ton na kome se akord menja** (početak takta, ili polovine takta). Koji od I, IV,
@@ -47,9 +47,9 @@ explain:
     harmonizuj ton na promeni i duže tonove.
 
     Aplikacija svira melodiju; ti biraš akord za svaki takt (ili polovinu takta); „sa mojim
-    akordima" svira oboje zajedno. Posle provere uporedi sa uobičajenom harmonizacijom. Kad
-    piše da se nešto „takođe uklapa", i to se računa: često postoji više od jednog dobrog
-    odgovora. Na kraju sam odsviraj jednu melodiju: melodija desnom rukom, akordi levom.
+    akordima” svira oboje zajedno. Posle provere uporedi sa uobičajenom harmonizacijom. Kad
+    piše da se nešto „takođe uklapa”, i to se računa: često postoji više od jednog dobrog
+    odgovora. Na kraju sam odsviraj jednu melodiju: melodiju desnom rukom, akorde levom.
 exercises:
   - id: E-048-1
     type: harmonize
