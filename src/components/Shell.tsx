@@ -31,6 +31,11 @@ function Bar() {
       m.inputId = s.midiIn ?? null;
       m.outputId = s.midiOut ?? null;
       m.playback = s.playback ?? "auto";
+      try {
+        if (typeof s.dayStartHour === "number") localStorage.setItem("dayStartHour", String(s.dayStartHour));
+      } catch {
+        /* storage blocked: the default (02:00) applies */
+      }
       if ((s.locale === "en" || s.locale === "sr") && !localStorage.getItem("locale")) setLocale(s.locale);
     }).catch(() => {});
     return () => {

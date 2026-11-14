@@ -1,4 +1,5 @@
 "use client";
+import { clientToday } from "@/lib/day";
 import { useEffect, useState, use, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -18,9 +19,7 @@ interface LessonResp {
   exercises: { exercise_id: string; best: number; passed: number }[];
 }
 
-function today() {
-  return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Belgrade" }).format(new Date());
-}
+const today = clientToday;
 
 export default function LessonPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);

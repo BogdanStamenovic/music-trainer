@@ -3,6 +3,7 @@ import { getCurriculum } from "../curriculum/loader";
 import { getSettings, Settings, WEEKDAYS, Weekday, Focus } from "./settings";
 import { lessonStatuses, dueReviews, placementDone, addDays, logEvent } from "./progress";
 import { config } from "./config";
+import { trainingDate, DEFAULT_DAY_START_HOUR } from "../day";
 import type { Lesson, Track } from "../curriculum/schema";
 import { needsPiano } from "../curriculum/items";
 export { needsPiano };
@@ -48,8 +49,17 @@ export function theoryAhead(date: string, s: Settings): boolean {
   return doneT >= tDays * 3 + 3;
 }
 
-export function todayIn(tz = config.timezone, d = new Date()): string {
-  return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(d);
+/** Today's training date: local date in `tz`, with the day starting at the dayStartHour setting (default 02:00). */
+export function todayIn(tz = config.timezone, d = new Date(), startHour?: number): string {
+  let h = startHour;
+  if (h === undefined) {
+    try {
+      h = getSettings().dayStartHour;
+    } catch {
+      h = DEFAULT_DAY_START_HOUR;
+    }
+  }
+  return trainingDate(tz, h, d);
 }
 
 export function weekdayOf(date: string): Weekday {

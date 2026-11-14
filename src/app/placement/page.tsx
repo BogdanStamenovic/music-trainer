@@ -1,4 +1,5 @@
 "use client";
+import { clientToday } from "@/lib/day";
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -36,7 +37,7 @@ function PlacementInner() {
   const [sec, setSec] = useState<number | null>(null);
   const [deferred, setDeferred] = useState<string[]>([]);
   const [result, setResult] = useState<{ skipped: string[]; deferred: string[] } | null>(null);
-  const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Belgrade" }).format(new Date());
+  const date = clientToday();
 
   useEffect(() => {
     Promise.all([getJson<{ placement: Placement }>("/api/lesson/placement"), fetch("/api/placement").then((r) => r.json() as Promise<Status>)])

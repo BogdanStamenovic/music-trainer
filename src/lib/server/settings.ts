@@ -21,6 +21,7 @@ export interface Settings {
   placementPending: string[]; // placement sections deferred with "do this later"; not settable from the client
   maxNewVoiceLessons: number; // new V lessons the planner puts in one day (vocal load); reviews don't count
   voiceSessionMinutes: number; // a warm-up stays valid this long after the last voice activity
+  dayStartHour: number; // local hour a new training day starts (0..6); work before it counts for the day before
 }
 
 // Default weekly schedule from Bogdan (2026-11-10, relayed by manager-15).
@@ -40,6 +41,7 @@ export const DEFAULTS: Settings = {
   placementPending: [],
   maxNewVoiceLessons: 3,
   voiceSessionMinutes: 45,
+  dayStartHour: 2,
 };
 
 export function getSettings(): Settings {
@@ -67,6 +69,7 @@ export function updateSettings(patch: Partial<Settings>): Settings {
   if (typeof patch.focusMinutes === "number") clean.focusMinutes = Math.max(25, Math.min(50, Math.round(patch.focusMinutes)));
   if (typeof patch.maintenance === "boolean") clean.maintenance = patch.maintenance;
   if (typeof patch.reviewLimit === "number") clean.reviewLimit = Math.max(0, Math.min(20, Math.round(patch.reviewLimit)));
+  if (typeof patch.dayStartHour === "number") clean.dayStartHour = Math.max(0, Math.min(6, Math.round(patch.dayStartHour)));
   if (typeof patch.voiceSessionMinutes === "number") clean.voiceSessionMinutes = Math.max(15, Math.min(180, Math.round(patch.voiceSessionMinutes)));
   if (typeof patch.maxNewVoiceLessons === "number") clean.maxNewVoiceLessons = Math.max(1, Math.min(10, Math.round(patch.maxNewVoiceLessons)));
   if (typeof patch.placementSkipped === "boolean") clean.placementSkipped = patch.placementSkipped;

@@ -1,4 +1,5 @@
 "use client";
+import { clientToday } from "@/lib/day";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -216,7 +217,7 @@ function ProjectInner() {
   const [recordingId, setRecordingId] = useState<string | null>(null);
   const [checkin, setCheckin] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Belgrade" }).format(new Date());
+  const date = clientToday();
 
   const load = useCallback(async () => {
     // ?id=<project row> views an earlier week's project (read-only); otherwise this week's

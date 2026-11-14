@@ -73,6 +73,9 @@ export default function SettingsPage() {
           {t("focusMinutes")}: <input type="number" min={25} max={50} value={s.focusMinutes} onChange={(e) => void save({ focusMinutes: Number(e.target.value) })} />
         </label>
         <label className="row">
+          {t("dayStartHour")}: <input type="number" min={0} max={6} value={s.dayStartHour} onChange={(e) => void save({ dayStartHour: Number(e.target.value) })} data-testid="day-start-hour" />:00
+        </label>
+        <label className="row">
           {t("voiceSession")}: <input type="number" min={15} max={180} value={s.voiceSessionMinutes} onChange={(e) => void save({ voiceSessionMinutes: Number(e.target.value) })} data-testid="voice-session-minutes" />
         </label>
         <label className="row">

@@ -114,6 +114,7 @@ const D = {
   withUsualChords: ["With the usual chords", "Sa uobičajenim akordima"],
   usual: ["usual", "uobičajeno"],
   alsoFits: ["also fits", "takođe se uklapa"],
+  dayStartHour: ["A new day starts at (work before this counts for the day before)", "Novi dan počinje u (rad pre toga se računa za prethodni dan)"],
   yourAnswer: ["your answer", "tvoj odgovor"],
   checkOnPiano: ["Check on the piano: play", "Proveri na klaviru, odsviraj"],
   thenCompare: [", then compare with", ", pa uporedi sa"],
