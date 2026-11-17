@@ -193,11 +193,13 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   // the last session on these tracks ran over 2x its estimate: a lighter block, not more
   const slow = slowLastTime(tracks, date);
   const target = slow ? Math.max(15, Math.round(s.focusMinutes / 2)) : s.focusMinutes;
-  if (slow)
-    base.note = {
-      en: `Last time (${slow.date}) these lessons took ${slow.actual} min instead of about ${slow.est}, so today's block is lighter (~${target} min).`,
-      sr: `Prošli put (${slow.date}) ove lekcije su trajale ${slow.actual} min umesto oko ${slow.est}, pa je današnji blok lakši (~${target} min).`,
-    };
+  const slowNote = (planned: number) =>
+    slow
+      ? {
+          en: `Last time (${slow.date}) these lessons took ${slow.actual} min instead of about ${slow.est}, so today's block is lighter (~${planned} min instead of ${s.focusMinutes}).`,
+          sr: `Prošli put (${slow.date}) ove lekcije su trajale ${slow.actual} min umesto oko ${slow.est}, pa je današnji blok lakši (~${planned} min umesto ${s.focusMinutes}).`,
+        }
+      : undefined;
   let lessons = fillFocus(tracks, target, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
   if (lessons.length === 0) {
     const idx = WEEKDAYS.indexOf(weekday);
@@ -218,6 +220,7 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
     }
   }
   if (lessons.length === 0 && !base.note) base.note = { en: "You have finished every available lesson. Reviews only today.", sr: "Završio si sve dostupne lekcije. Danas samo ponavljanje." };
+  if (slow && !base.note) base.note = slowNote(lessons.reduce((a, l) => a + l.minutes, 0));
   // practice fill never adds voice: on a V day the spare time goes to T/E drills
   const fillTracks: Track[] = tracks.includes("V") ? [...new Set<Track>([...tracks.filter((t) => t !== "V"), "T", "E"])] : tracks;
   const practice = practiceFill(fillTracks, target - lessons.reduce((a, l) => a + l.minutes, 0), date);
