@@ -3,7 +3,8 @@ import { json, fail } from "@/lib/server/http";
 
 // voice_cooldown: the end-of-session cool-down card on Today; voice_warm_reuse: a lesson's
 // warm-up skipped because the session's warm-up is still valid
-const KINDS = new Set(["lesson_open", "exercise_start", "exercise_retry", "voice_cooldown", "voice_warm_reuse"]);
+// test_skip: {sunday} of a missed weekly test the learner chose to skip
+const KINDS = new Set(["lesson_open", "exercise_start", "exercise_retry", "voice_cooldown", "voice_warm_reuse", "test_skip"]);
 
 /** Client usage events for calibration: {kind, date, lessonId?, exerciseId?}. Fire-and-forget. */
 export async function POST(req: Request) {

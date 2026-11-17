@@ -28,6 +28,17 @@ export interface SubmissionResult {
   items: { itemId: string; score: number; pass: boolean; detail: Record<string, unknown>; clientScore?: number }[];
   lessonPassed?: boolean;
   srsDue?: string;
+  /** Failed its 2nd round today: no more rounds needed, the lesson can pass provisionally, SRS has it. */
+  deferred?: boolean;
+}
+
+/** Rounds of one exercise in one lesson sitting (training day) before it stops blocking the lesson. */
+export const MAX_ROUNDS_PER_DAY = 2;
+
+/** Exercises deferred by the grind cap (an exercise_deferred event, any day). */
+function deferredIds(lessonId: string): Set<string> {
+  const rows = getDb().prepare("SELECT DISTINCT exercise_id FROM events WHERE kind = 'exercise_deferred' AND lesson_id = ?").all(lessonId) as { exercise_id: string }[];
+  return new Set(rows.map((r) => r.exercise_id));
 }
 
 export function findExercise(exerciseId: string): { ex: Exercise; lesson: Lesson | null; skips: string[] } | null {
@@ -124,15 +135,19 @@ function setLesson(lessonId: string, status: string, score: number | null, sourc
 }
 
 /** Lesson passes when every gating exercise (gatesLesson) has passed at least once. */
+// A deferred exercise (grind cap) counts as satisfied: the lesson passes "provisionally"
+// (source "provisional"), and becomes a plain pass once the drill is passed later (review).
 function refreshLesson(lesson: Lesson): boolean {
   const st = new Map(exerciseStates(lesson.id).map((r) => [r.exercise_id, r]));
   const graded = lesson.exercises.filter((e) => gatesLesson(e, lesson.track));
-  const passed = graded.every((e) => st.get(e.id)?.passed);
+  const deferred = deferredIds(lesson.id);
+  const fully = graded.every((e) => st.get(e.id)?.passed);
+  const passed = fully || graded.every((e) => st.get(e.id)?.passed || deferred.has(e.id));
   const cur = lessonStatuses().get(lesson.id);
   const mean = graded.length ? graded.reduce((a, e) => a + (st.get(e.id)?.best ?? 0), 0) / graded.length : 1;
   if (passed) {
-    if (cur?.status !== "passed") setLesson(lesson.id, "passed", mean, "lesson");
-    else setLesson(lesson.id, "passed", mean, cur.source);
+    if (cur?.status !== "passed") setLesson(lesson.id, "passed", mean, fully ? "lesson" : "provisional");
+    else setLesson(lesson.id, "passed", mean, cur.source === "provisional" && fully ? "lesson" : cur.source);
   } else if (!cur || cur.status === "started") setLesson(lesson.id, "started", mean, "lesson");
   return passed;
 }
@@ -188,6 +203,13 @@ export function submit(sub: Submission): SubmissionResult {
       ).run(ex.id, lesson.id, score, score, pass ? 1 : 0, now());
       // voice is kept out of SRS: singing load is set by the day's plan and the check-in, not by a review queue
       if (ex.type !== "practice" && ex.type !== "checkin" && lesson.track !== "V" && !lesson.tags.includes("maintenance")) result.srsDue = updateSrs(ex.id, lesson.id, score, ex.pass, sub.date);
+      if (!pass && sub.context === "lesson" && gatesLesson(ex, lesson.track)) {
+        const rounds = (db.prepare("SELECT count(DISTINCT uuid) n FROM attempts WHERE exercise_id = ? AND date = ? AND context = 'lesson'").get(ex.id, sub.date) as { n: number }).n;
+        if (rounds >= MAX_ROUNDS_PER_DAY) {
+          result.deferred = true;
+          logEvent(sub.date, "exercise_deferred", lesson.id, ex.id, { rounds, score });
+        }
+      }
       result.lessonPassed = refreshLesson(lesson);
     }
     db.prepare("INSERT INTO submissions(uuid, received_at, result) VALUES (?,?,?)").run(sub.uuid, now(), JSON.stringify(result));

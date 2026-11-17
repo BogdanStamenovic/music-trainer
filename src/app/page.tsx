@@ -19,7 +19,7 @@ export default function TodayPage() {
   const [d, setD] = useState<Today | null>(null);
   const [stale, setStale] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [proj, setProj] = useState<{ project: { def: { id: string; kind: string; title: { en: string; sr: string } }; status: string; score: number | null; final: number } | null; due?: string } | null>(null);
+  const [proj, setProj] = useState<{ project: { def: { id: string; kind: string; title: { en: string; sr: string } }; status: string; score: number | null; final: number } | null; due?: string; overdue?: { id: string; fromWeek: string } } | null>(null);
   const load = () =>
     getJson<Today>("/api/today")
       .then(({ data, stale }) => {
@@ -36,10 +36,11 @@ export default function TodayPage() {
         });
       })
       .catch((e) => setErr(String(e)));
+  const loadProj = () => getJson<typeof proj>("/api/projects/current").then(({ data }) => setProj(data)).catch(() => {});
   useEffect(() => {
     void load();
-    getJson<typeof proj>("/api/projects/current").then(({ data }) => setProj(data)).catch(() => {});
-  }, []);
+    void loadProj();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (err) return <p className="bad">{err}</p>;
   if (!d) return <p className="muted">…</p>;
   const p = d.plan;
@@ -72,6 +73,53 @@ export default function TodayPage() {
       ) : null}
       {p.note ? <p className="note">{l(p.note)}</p> : null}
       <CooldownCard date={p.date} />
+      {p.catchUpTest ? (
+        <section className="card" data-testid="catchup-test">
+          <h2>{t("catchUpTestTitle")}</h2>
+          <p className="small">{t("catchUpTestText").replace("{n}", String(p.catchUpTest.exercises.length))}</p>
+          <div className="row">
+            <Link className="button primary" href="/test" data-testid="catchup-test-take">
+              {t("catchUpTake")}
+            </Link>
+            <button
+              type="button"
+              className="secondary"
+              data-testid="catchup-test-skip"
+              onClick={async () => {
+                await fetch("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind: "test_skip", date: p.date, detail: { sunday: p.catchUpTest!.sunday } }) });
+                await load();
+              }}
+            >
+              {t("catchUpSkip")}
+            </button>
+          </div>
+        </section>
+      ) : null}
+      {proj?.overdue && proj.project ? (
+        <section className="card" data-testid="overdue-project">
+          <h2>{t("overdueProjectTitle")}</h2>
+          <p>
+            <span className="tag">{proj.project.def.id}</span> {l(proj.project.def.title)}
+          </p>
+          <p className="small">{t("overdueProjectText")}</p>
+          <div className="row">
+            {(["continue", "skip"] as const).map((action) => (
+              <button
+                key={action}
+                type="button"
+                className={action === "continue" ? "primary" : "secondary"}
+                data-testid={`overdue-${action}`}
+                onClick={async () => {
+                  await fetch("/api/projects/current", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: proj.overdue!.id, action, date: p.date }) });
+                  await loadProj();
+                }}
+              >
+                {t(action === "continue" ? "overdueContinue" : "overdueSkip")}
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {d.settings?.placementPending?.length ? (
         <section className="card note" data-testid="placement-pending-banner">
@@ -159,7 +207,7 @@ export default function TodayPage() {
         </section>
       ) : null}
 
-      {proj?.project ? (
+      {proj?.project && !proj.overdue ? (
         <section className={`card ${p.weekday === "sat" || p.weekday === "sun" ? "highlight" : ""}`} data-testid="project-card">
           <h2>
             {t("project")} <span className="muted small">{t(("kind_" + proj.project.def.kind) as "kind_composition")} · {t("due")} {proj.due}</span>

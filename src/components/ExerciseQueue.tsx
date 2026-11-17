@@ -110,12 +110,14 @@ export function ExerciseQueue({ entries, context, date, count, onFinished, start
           ) : (
             <ExerciseRunner key={`${e.ex.id}:${attempt[e.ex.id] ?? 0}`} ex={e.ex} seed={`${date}:${attempt[e.ex.id] ?? 0}`} count={e.ex.type === "generated" ? count : undefined} context={context} date={date} lessonId={e.lessonId} ctx={ctx} onDone={onDone} compactCheckin={!!session?.warm && e.ex.type === "checkin"} />
           )}
-          {current && !current.pass && context === "lesson" && e.lessonId && !gatesLesson(e.ex, e.lessonId[0]) && e.ex.type !== "practice" && e.ex.type !== "checkin" ? (
+          {current?.server?.deferred ? (
+            <p className="note small" data-testid="deferred">{t("deferredNote")}</p>
+          ) : current && !current.pass && context === "lesson" && e.lessonId && !gatesLesson(e.ex, e.lessonId[0]) && e.ex.type !== "practice" && e.ex.type !== "checkin" ? (
             <p className="muted small" data-testid="not-gating">{t("notGating")}</p>
           ) : null}
           {current ? (
             <div className="row">
-              {!current.pass && allowRetry ? (
+              {!current.pass && allowRetry && !current.server?.deferred ? (
                 <button type="button" className="secondary" onClick={retry}>
                   ↻ {t("retryExercise")}
                 </button>

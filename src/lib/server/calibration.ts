@@ -56,6 +56,8 @@ export function calibration() {
         retries: perEx.reduce((a, x) => a + x.retries, 0),
         hardest: perEx.filter((x) => x.retries > 0 || (x.submissions && !x.passed)).sort((a, b) => b.retries - a.retries).slice(0, 3),
         abandoned: abandoned.filter((a) => a.lesson_id === l.id).length,
+        // grind cap: drills that stopped blocking after 2 failed rounds in a sitting (now in SRS)
+        deferred: [...new Set(ev.filter((e) => e.kind === "exercise_deferred" && e.lesson_id === l.id).map((e) => e.exercise_id))],
         opened: ev.filter((e) => e.kind === "lesson_open" && e.lesson_id === l.id).length,
         reviewSubs: subs.filter((d) => d.d.context === "review").length,
       };
@@ -85,7 +87,7 @@ export function calibration() {
   // pace by track: actual minutes / estimated minutes over lessons passed through lessons
   const pace: Record<string, { lessons: number; est: number; actual: number; ratio: number | null }> = {};
   for (const l of lessons) {
-    if (l.status !== "passed" || l.source !== "lesson" || l.actualMin == null) continue;
+    if (l.status !== "passed" || (l.source !== "lesson" && l.source !== "provisional") || l.actualMin == null) continue;
     const t = (pace[l.track] ??= { lessons: 0, est: 0, actual: 0, ratio: null });
     t.lessons++;
     t.est += l.estMin;
@@ -129,7 +131,8 @@ export function calibration() {
     placement: placementStatus(),
     totals: {
       daysActive: days.filter((d) => d.submissions).length,
-      lessonsPassed: lessons.filter((l) => l.status === "passed" && l.source === "lesson").length,
+      lessonsPassed: lessons.filter((l) => l.status === "passed" && (l.source === "lesson" || l.source === "provisional")).length,
+      provisional: lessons.filter((l) => l.status === "passed" && l.source === "provisional").map((l) => l.id),
       lessonsSkippedByPlacement: lessons.filter((l) => l.status === "skipped").length,
       submissions: done.length,
       minutes: Math.round(done.reduce((a, d) => a + (d.d.ms ?? 0), 0) / 60000),

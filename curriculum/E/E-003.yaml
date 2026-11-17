@@ -62,16 +62,11 @@ exercises:
     prompt: {en: "4th, 5th or octave, descending", sr: "Kvarta, kvinta ili oktava, naniže"}
     count: 6
     gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: down}
-  - id: E-003-4
-    type: generated
-    prompt: {en: "Played together", sr: "Odsvirani zajedno"}
-    count: 6
-    gen: {kind: interval-ear, intervals: [P4, P5, P8], direction: harmonic}
   - id: E-003-5
     type: generated
-    prompt: {en: "Mixed with thirds, any direction", sr: "Pomešano sa tercama, bilo koji smer"}
+    prompt: {en: "Mixed with thirds, up or down", sr: "Pomešano sa tercama, naviše ili naniže"}
     count: 8
-    gen: {kind: interval-ear, intervals: [m3, M3, P4, P5, P8], direction: mixed}
+    gen: {kind: interval-ear, intervals: [m3, M3, P4, P5, P8], direction: melodic}
   - id: E-003-6
     type: generated
     prompt: {en: "Echo the leap on the keys", sr: "Odsviraj skok na klavijaturi"}

@@ -31,6 +31,8 @@ export interface DayPlan {
   maintenance: null | { reviews: { exerciseId: string; lessonId: string }[]; warmup: string | null; minutes: number };
   test: null | { exercises: { exerciseId: string; lessonId: string; source: "week" | "review" }[] };
   practice?: { exerciseId: string; lessonId: string }[]; // drills from passed lessons when new content runs short
+  // last Sunday's test, not taken and not skipped: offered during this week (never more than one)
+  catchUpTest?: { sunday: string; week: string; exercises: { exerciseId: string; lessonId: string; source: "week" | "review" }[] } | null;
   noPiano?: boolean; // "no piano today": non-piano focus, no piano-only reviews (this day only)
   createdAt: number;
 }
@@ -188,7 +190,15 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   // Focus tracks with content; otherwise walk the week forward to the next day that has some.
   const tracksOf = (f: Focus[]) => f.filter((x): x is Track => !["test", "rest"].includes(x));
   let tracks = tracksOf(focus);
-  let lessons = fillFocus(tracks, s.focusMinutes, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
+  // the last session on these tracks ran over 2x its estimate: a lighter block, not more
+  const slow = slowLastTime(tracks, date);
+  const target = slow ? Math.max(15, Math.round(s.focusMinutes / 2)) : s.focusMinutes;
+  if (slow)
+    base.note = {
+      en: `Last time (${slow.date}) these lessons took ${slow.actual} min instead of about ${slow.est}, so today's block is lighter (~${target} min).`,
+      sr: `Prošli put (${slow.date}) ove lekcije su trajale ${slow.actual} min umesto oko ${slow.est}, pa je današnji blok lakši (~${target} min).`,
+    };
+  let lessons = fillFocus(tracks, target, statuses, { date, maxNewVoice: s.maxNewVoiceLessons });
   if (lessons.length === 0) {
     const idx = WEEKDAYS.indexOf(weekday);
     for (let k = 1; k <= 7 && lessons.length === 0; k++) {
@@ -210,7 +220,7 @@ export function buildPlan(date: string, s: Settings = getSettings(), opts: { noP
   if (lessons.length === 0 && !base.note) base.note = { en: "You have finished every available lesson. Reviews only today.", sr: "Završio si sve dostupne lekcije. Danas samo ponavljanje." };
   // practice fill never adds voice: on a V day the spare time goes to T/E drills
   const fillTracks: Track[] = tracks.includes("V") ? [...new Set<Track>([...tracks.filter((t) => t !== "V"), "T", "E"])] : tracks;
-  const practice = practiceFill(fillTracks, s.focusMinutes - lessons.reduce((a, l) => a + l.minutes, 0), date);
+  const practice = practiceFill(fillTracks, target - lessons.reduce((a, l) => a + l.minutes, 0), date);
   return { ...base, focusUsed: tracks, lessons, maintenance: maintenance(), practice: practice.length ? practice : undefined };
 }
 
@@ -227,7 +237,50 @@ export function getPlan(date: string): DayPlan {
   }
   const st = lessonStatuses();
   for (const l of plan.lessons) l.status = st.get(l.id)?.status ?? "new";
+  plan.catchUpTest = plan.kind === "test" ? null : catchUpTest(date);
   return plan;
+}
+
+/**
+ * The most recent earlier day with lesson work on `tracks`: if time on task was more than
+ * twice the estimate of the lessons worked on (calibration 2026-11-17: E-002 took 59 min
+ * against 12, and then nothing for four days), that day is returned.
+ */
+export function slowLastTime(tracks: Track[], date: string): { date: string; actual: number; est: number } | null {
+  const c = getCurriculum();
+  const rows = getDb()
+    .prepare("SELECT date, lesson_id, detail FROM events WHERE kind = 'exercise_done' AND date < ? AND lesson_id IS NOT NULL ORDER BY date DESC")
+    .all(date) as { date: string; lesson_id: string; detail: string }[];
+  const mine = rows.filter((r) => {
+    const l = c.byId.get(r.lesson_id);
+    return l && tracks.includes(l.track) && (JSON.parse(r.detail) as { context?: string }).context === "lesson";
+  });
+  if (!mine.length) return null;
+  const last = mine[0].date;
+  const day = mine.filter((r) => r.date === last);
+  const ms = day.reduce((a, r) => a + ((JSON.parse(r.detail) as { ms?: number | null }).ms ?? 0), 0);
+  const est = [...new Set(day.map((r) => r.lesson_id))].reduce((a, id) => a + (c.byId.get(id)?.minutes ?? 0), 0);
+  const actual = Math.round(ms / 60000);
+  return est > 0 && actual > 2 * est ? { date: last, actual, est } : null;
+}
+
+/**
+ * A missed Sunday test does not vanish and does not pile up: during the following week
+ * Today offers it once ("take it now" or "skip"). Only last week's; older ones are gone.
+ */
+export function catchUpTest(date: string): DayPlan["catchUpTest"] {
+  const { monday } = isoWeek(date);
+  const sunday = addDays(monday, -1);
+  if (date <= sunday) return null;
+  const db = getDb();
+  const sched = getSettings().schedule[weekdayOf(sunday)];
+  if (!sched.includes("test")) return null;
+  const taken = db.prepare("SELECT 1 FROM attempts WHERE context = 'test' AND date >= ? AND date <= ? LIMIT 1").get(sunday, date);
+  const skipped = db.prepare("SELECT 1 FROM events WHERE kind = 'test_skip' AND json_extract(detail, '$.sunday') = ? LIMIT 1").get(sunday);
+  if (taken || skipped) return null;
+  const t = weeklyTest(sunday);
+  if (!t.exercises.length) return null;
+  return { sunday, week: isoWeek(sunday).week, exercises: t.exercises };
 }
 
 /** Rebuild one day's plan with/without the "no piano today" override (the weekly schedule is untouched). */

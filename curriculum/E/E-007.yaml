@@ -73,10 +73,10 @@ exercises:
     gen: {kind: interval-ear, intervals: [P4, A4, P5], direction: up}
   - id: E-007-4
     type: generated
-    prompt: {en: "All wide intervals, any direction", sr: "Svi široki intervali, bilo koji smer"}
+    prompt: {en: "All wide intervals, up or down", sr: "Svi široki intervali, naviše ili naniže"}
     count: 8
     pass: 0.7
-    gen: {kind: interval-ear, intervals: [A4, m6, M6, m7, M7], direction: mixed}
+    gen: {kind: interval-ear, intervals: [A4, m6, M6, m7, M7], direction: melodic}
   - id: E-007-5
     type: generated
     prompt: {en: "Echo the leap on the keys", sr: "Odsviraj skok na klavijaturi"}

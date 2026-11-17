@@ -9,7 +9,7 @@ import { gradeSing, type MidiEvent } from "../grading";
 import { vocalItem, gradeByEar, lyricsStats } from "../projects";
 import { getRecording, bestAnalysis } from "./recordings";
 import { parseNote, toMidi } from "../music/pitch";
-import { isoWeek } from "./planner";
+import { isoWeek, todayIn } from "./planner";
 export { isoWeek };
 
 // One project per ISO week, rotating composition -> lyrics -> vocal -> by-ear.
@@ -28,7 +28,7 @@ export interface ProjectRow {
   project_id: string;
   kind: Kind;
   assigned_at: number;
-  status: "open" | "submitted" | "graded";
+  status: "open" | "submitted" | "graded" | "skipped";
   locale: string | null;
   submission: string | null;
   submitted_at: number | null;
@@ -47,6 +47,31 @@ function rowOf(id: string): ProjectRow | undefined {
 
 export function projectDef(projectId: string): Project | undefined {
   return getCurriculum().projects.find((p) => p.id === projectId);
+}
+
+/**
+ * A project left open past its week: the newest one is offered again ("continue this week"
+ * or "skip") instead of a new one; older ones are skipped quietly, so there is never a backlog.
+ */
+export function overdueProject(date: string): ProjectRow | null {
+  const { week } = isoWeek(date);
+  const db = getDb();
+  if (db.prepare("SELECT 1 FROM projects WHERE week = ?").get(week)) return null;
+  const open = db.prepare("SELECT * FROM projects WHERE week < ? AND status = 'open' AND submitted_at IS NULL ORDER BY week DESC").all(week) as ProjectRow[];
+  for (const old of open.slice(1)) db.prepare("UPDATE projects SET status = 'skipped', updated_at = ? WHERE id = ?").run(now(), old.id);
+  return open[0] ?? null;
+}
+
+/** Decide about an overdue project: carry it into this week, or skip it (a new one is assigned). */
+export function resolveOverdue(id: string, action: "continue" | "skip", date: string): void {
+  const db = getDb();
+  const row = rowOf(id);
+  if (!row || row.status !== "open") throw new Error("no such open project");
+  const { week } = isoWeek(date);
+  if (action === "continue") {
+    if (db.prepare("SELECT 1 FROM projects WHERE week = ?").get(week)) throw new Error("this week already has a project");
+    db.prepare("UPDATE projects SET week = ?, updated_at = ? WHERE id = ?").run(week, now(), id);
+  } else db.prepare("UPDATE projects SET status = 'skipped', updated_at = ? WHERE id = ?").run(now(), id);
 }
 
 /** The project for the week containing `date`, assigned on first request. */
@@ -130,6 +155,8 @@ export async function submitProject(id: string, body: SubmissionBody) {
   if (!def) throw new Error(`project ${row.project_id} is not in the curriculum`);
   if (def.kind !== body.kind) throw new Error(`project is ${def.kind}, got ${body.kind}`);
   const self = clampSelf(def, body.self);
+  // a late submission of last week's project counts as continuing it this week (no second project)
+  if (row.status === "open" && overdueProject(todayIn())?.id === row.id) resolveOverdue(row.id, "continue", todayIn());
   const submittedAt = now();
   let auto: Record<string, unknown> = {};
   let reviewReq: ReviewRequest | null = null;

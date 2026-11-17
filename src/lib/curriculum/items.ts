@@ -558,7 +558,8 @@ function genItem(ex: Extract<Exercise, { type: "generated" }>, g: Gen, rng: Rng,
       const range = (g.range ?? ["C3", "C5"]) as [string, string];
       for (let t = 0; t < 200; t++) {
         const iv = rng.pick(g.intervals);
-        const dir = g.direction === "mixed" ? rng.pick(["up", "down", "harmonic"] as const) : g.direction;
+        // melodic = up or down at random; mixed also includes harmonic (E-012 onward: melodic before harmonic)
+        const dir = g.direction === "mixed" ? rng.pick(["up", "down", "harmonic"] as const) : g.direction === "melodic" ? rng.pick(["up", "down"] as const) : g.direction;
         const a = randomNote(rng, range);
         let b: Note;
         try {

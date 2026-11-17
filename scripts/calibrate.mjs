@@ -14,13 +14,14 @@ const t = j.totals;
 console.log(`music-trainer calibration (${j.generatedAt})`);
 console.log(`placement: ${j.placement.finished ? "done" : "not done"}${j.placement.pending.length ? `, pending: ${j.placement.pending.join(", ")}` : ""}`);
 console.log(`active days ${t.daysActive} · lessons passed ${t.lessonsPassed} (+${t.lessonsSkippedByPlacement} skipped by placement) · submissions ${t.submissions} · ~${t.minutes} min · abandoned ${t.abandoned} (+${t.browsed ?? 0} browsed) · no-piano days ${t.noPianoDays} · voice-rest days ${t.voiceRestDays}`);
+if (t.provisional?.length) console.log(`provisional passes (a drill hit the 2-rounds cap and went to SRS): ${t.provisional.join(", ")}`);
 console.log("\npace (actual / estimated minutes, passed lessons):");
 for (const [k, v] of Object.entries(j.pace)) console.log(`  ${k}: ${v.lessons} lessons, ${v.actual} / ${v.est} min = x${v.ratio}`);
 console.log("\nlessons:");
 console.log("  id      status    est  actual  subs  pass%  retries  abandoned  hardest");
 for (const l of j.lessons)
   console.log(
-    `  ${l.id.padEnd(7)} ${l.status.padEnd(8)} ${String(l.estMin).padStart(4)} ${String(l.actualMin ?? "-").padStart(7)} ${String(l.submissions).padStart(5)} ${String(l.passRate == null ? "-" : Math.round(l.passRate * 100)).padStart(6)} ${String(l.retries).padStart(8)} ${String(l.abandoned).padStart(10)}  ${l.hardest.map((h) => `${h.id}(${h.retries})`).join(" ")}`,
+    `  ${l.id.padEnd(7)} ${l.status.padEnd(8)} ${String(l.estMin).padStart(4)} ${String(l.actualMin ?? "-").padStart(7)} ${String(l.submissions).padStart(5)} ${String(l.passRate == null ? "-" : Math.round(l.passRate * 100)).padStart(6)} ${String(l.retries).padStart(8)} ${String(l.abandoned).padStart(10)}  ${l.hardest.map((h) => `${h.id}(${h.retries})`).join(" ")}${l.deferred?.length ? `  deferred: ${l.deferred.join(" ")}` : ""}`,
   );
 console.log("\ndays:");
 for (const d of j.days)

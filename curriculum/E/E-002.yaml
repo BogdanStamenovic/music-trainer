@@ -68,11 +68,6 @@ exercises:
     prompt: {en: "Seconds and thirds, descending", sr: "Sekunde i terce, naniže"}
     count: 6
     gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: down}
-  - id: E-002-5
-    type: generated
-    prompt: {en: "Seconds and thirds, both notes together", sr: "Sekunde i terce, oba tona zajedno"}
-    count: 6
-    gen: {kind: interval-ear, intervals: [m2, M2, m3, M3], direction: harmonic}
   - id: E-002-6
     type: generated
     prompt: {en: "Echo the two notes on the keys", sr: "Odsviraj oba tona na klavijaturi"}
