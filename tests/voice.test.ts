@@ -73,7 +73,9 @@ describe("voice: recordings, grading, safety", async () => {
     const { row } = await saveRecording({ id: "rec-test-0002", date: "2026-11-11", lessonId: "V-001", exerciseId: pitchEx.id, itemId: item.id, params: { targets: [{ midi: item.targets[0] }], pass_cents: 50 } }, wav(hz, 3));
     const r = submit({ uuid: "s-2", date: "2026-11-11", context: "lesson", lessonId: "V-001", exerciseId: pitchEx.id, seed: "seed2", count: 1, ctx: { voiceRange: [55, 60] },
       responses: [{ itemId: item.id, response: { kind: "sing", recordingId: row.id, analysis: null } }] });
-    expect(r.items[0].score).toBeLessThan(0.5);
+    // pitch rule: 100 c off with tolerance 50 -> 0.5; a steady hold no longer adds a second penalty
+    expect(r.items[0].pass).toBe(false);
+    expect(r.items[0].score).toBeLessThanOrEqual(0.55);
   });
 
   it("voice-score down: recording kept pending, browser analysis attached and used for grading", async () => {

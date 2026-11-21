@@ -79,8 +79,17 @@ describe("sing grading", () => {
     expect(gradeSing(sing({ targets: [60, 62] }), { analysis: { tracker: "t", notes: [note(0, 0)] } }).score).toBe(0.5);
     expect(gradeSing(sing({}), { analysis: null, reason: "nothing-voiced" }).score).toBe(0);
   });
-  it("sustain shortfall scales the last note", () => {
-    expect(gradeSing(sing({ sustain: 4 }), { analysis: { tracker: "t", notes: [note(0, 0, 2)] } }).score).toBe(0.5);
+  it("sustain shortfall costs at most HOLD_WEIGHT (0.6), in proportion", () => {
+    expect(gradeSing(sing({ sustain: 4 }), { analysis: { tracker: "t", notes: [note(0, 0, 2)] } }).score).toBe(0.7);
+    expect(gradeSing(sing({ sustain: 4 }), { analysis: { tracker: "t", notes: [note(0, 0, 0)] } }).score).toBe(0.4);
+  });
+  it("hold uses held_s (steadiness) when present, not time near the target", () => {
+    // voice-score-40's case: a steady 5.2 s hold 54 c off (tol 50, 5 s) scored 0.22 via sustain_s
+    const n = { ...note(0, 54, 0.4), held_s: 5.2 };
+    expect(gradeSing(sing({ sustain: 5 }), { analysis: { tracker: "t", notes: [n] } }).score).toBeCloseTo(0.96, 2);
+    // wandering +/-40 c: near the target the whole time, but not steady
+    const w = { ...note(0, 10, 5.2), held_s: 1.5 };
+    expect(gradeSing(sing({ sustain: 5 }), { analysis: { tracker: "t", notes: [w] } }).score).toBeLessThan(0.8);
   });
   it("octave offset only counts when not octave-agnostic", () => {
     expect(gradeSing(sing({}), { analysis: { tracker: "t", notes: [note(0, 0, 2, 1)] } }).score).toBe(1);

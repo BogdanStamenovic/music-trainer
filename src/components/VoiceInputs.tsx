@@ -4,6 +4,7 @@ import type { SingItem, RangeItem } from "@/lib/curriculum/items";
 import { takeQuality, type Response, type VoiceAnalysis } from "@/lib/grading";
 import { record, analyzeTake } from "@/lib/client/voice";
 import { midi } from "@/lib/client/midi";
+import { useMidiState } from "./MidiStatus";
 import { useI18n } from "@/lib/client/i18n";
 import { midiToNote, noteName, parseNote, toMidi } from "@/lib/music/pitch";
 
@@ -49,7 +50,17 @@ export function SingInput({ item, meta, onSubmit, disabled }: { item: SingItem; 
   const [url, setUrl] = useState<string | null>(null);
   const beatS = item.tempo ? 60 / item.tempo : 1;
   const expected = item.layout ? item.layout.reduce((a, e) => a + e.beats, 0) * beatS : item.beats ? item.beats.reduce((a, b) => a + b, 0) * beatS : item.sustain ?? 2;
+  // The reference must have been heard before a take (iPhone: Web Audio can be silent).
+  const m = useMidiState();
+  const [openedAt] = useState(() => Date.now());
+  const [warnRef, setWarnRef] = useState(false);
+  const heard = !!m.lastPlay && m.lastPlay.at >= openedAt - 50 && m.lastPlay.audible;
   const go = async () => {
+    if (item.play && !heard && !warnRef) {
+      setWarnRef(true);
+      return;
+    }
+    setWarnRef(false);
     // voice-score accepts up to 60 s
     const blob = await rec.start(Math.min(58, expected + 4));
     if (!blob) return;
@@ -96,6 +107,11 @@ export function SingInput({ item, meta, onSubmit, disabled }: { item: SingItem; 
         </div>
       ) : null}
       {rec.state === "recording" ? <Meter level={rec.level} /> : null}
+      {warnRef && !heard ? (
+        <p className="warn small" data-testid="ref-not-heard">
+          ⚠ {t("refNotHeard")}
+        </p>
+      ) : null}
       {rec.err ? <p className="bad small">{t("micDenied")} ({rec.err})</p> : null}
       {noVoice ? <p className="bad small" data-testid="no-voice">{t("noVoice")}</p> : null}
       {url ? (

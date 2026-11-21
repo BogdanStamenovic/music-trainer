@@ -5,6 +5,7 @@
 //     voice-score-lite (same SwiftF0 model, same metric code), loaded lazily
 //  3. offline -> keep the take in IndexedDB and upload it (with the browser analysis) later
 
+import { setAudioSession } from "./audio";
 import type { VoiceAnalysis } from "../grading";
 
 export interface VoiceParams {
@@ -25,6 +26,7 @@ export interface AnalyzeOutcome {
 // ---------- microphone ----------
 let stream: MediaStream | null = null;
 export async function mic(): Promise<MediaStream> {
+  setAudioSession("play-and-record"); // iOS: keep playback and the mic together (unverified on device)
   if (stream && stream.getTracks().every((t) => t.readyState === "live")) return stream;
   // processing off: echo cancellation / noise suppression / AGC distort pitch and level
   stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 } });
@@ -63,6 +65,7 @@ export async function record(maxSeconds: number, onLevel?: (v: number) => void):
   const timer = window.setTimeout(() => rec.state === "recording" && rec.stop(), maxSeconds * 1000);
   const done = new Promise<Take>((res) => {
     rec.onstop = () => {
+      setAudioSession("playback");
       clearInterval(meter);
       clearTimeout(timer);
       void ac.close();

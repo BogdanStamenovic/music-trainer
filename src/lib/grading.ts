@@ -29,7 +29,8 @@ export interface VoiceNote {
   index: number;
   target_midi: number | null;
   cents_error: number | null;
-  sustain_s: number | null;
+  sustain_s: number | null; // time within pass_cents of the TARGET (accuracy and hold mixed)
+  held_s?: number | null; // voice-score >= 0.3.0: time within pass_cents of the note's own pitch (steadiness)
   voiced_ratio?: number | null;
   octave_offset?: number | null;
   sung_note?: string | null;
@@ -271,11 +272,19 @@ export function exerciseScore(scores: number[]): number {
 
 /**
  * Sung notes vs targets, from voice-score metrics. Per target: full credit within
- * `tolerance` cents of the median sung pitch, linearly down to 0 at 3x tolerance;
- * a held note shorter than the required sustain scales down proportionally. A
+ * `tolerance` cents of the median sung pitch, linearly down to 0 at 3x tolerance.
+ * A held note shorter than the required sustain loses up to HOLD_WEIGHT of that,
+ * in proportion. The hold is `held_s` (steadiness on his own pitch) when the
+ * analysis has it: `sustain_s` counts only time near the target, which put pitch
+ * error into the hold a second time (voice-score-40, 2026-11-21: a steady hold 54 c
+ * off scored 0.22, while a take wandering +/-40 c passed). Capping the hold penalty
+ * keeps "stop a little early rather than squeeze" (V-008-5) from costing ~45%. A
  * target with no matching sung note scores 0. This is a screen for "clearly on/off
  * pitch", not a fine judgement: pitch trackers have their own error.
  */
+/** Share of a sung note's score that depends on holding it for the full `sustain`. */
+export const HOLD_WEIGHT = 0.6;
+
 export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; reason?: string }) {
   const a = r.analysis;
   if (!a) return { score: 0, detail: { reason: r.reason ?? "no analysis" } };
@@ -297,8 +306,9 @@ export function gradeSing(item: SingItem, r: { analysis: VoiceAnalysis | null; r
     else if (item.octaveAgnostic && off !== phraseOffset) c += 1200 * Math.abs(off - phraseOffset);
     let sc = c <= item.tolerance ? 1 : Math.max(0, 1 - (c - item.tolerance) / (2 * item.tolerance));
     const need = item.sustain && i === item.targets.length - 1 ? item.sustain : 0;
-    if (need && (n.sustain_s ?? 0) < need) sc *= Math.max(0, (n.sustain_s ?? 0) / need);
-    return { target: t, score: Math.round(sc * 1000) / 1000, cents: n.cents_error, sustain: n.sustain_s };
+    const held = n.held_s ?? n.sustain_s ?? 0;
+    if (need && held < need) sc *= 1 - HOLD_WEIGHT * (1 - Math.max(0, held / need));
+    return { target: t, score: Math.round(sc * 1000) / 1000, cents: n.cents_error, sustain: n.held_s ?? n.sustain_s };
   });
   return { score: per.reduce((s, p) => s + p.score, 0) / per.length, detail: { tracker: a.tracker, notes: per } };
 }

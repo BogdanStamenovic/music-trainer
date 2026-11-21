@@ -3,7 +3,7 @@
 // sustain pedal (CC64), timestamps in the performance.now() domain.
 // Output: send playback to the piano (Arius) when available, else Web Audio.
 
-import { synthNote, unlockAudio } from "./audio";
+import { synthNote, unlockAudio, audioReady, isIOS, playViaElement, stopElement } from "./audio";
 import type { MidiEvent } from "../grading";
 import type { PlaySpec } from "../curriculum/items";
 
@@ -29,6 +29,8 @@ export class MidiManager {
   private changeListeners = new Set<() => void>();
   private muteUntil = 0; // ignore echo from the piano while we are playing to it
   private timers: number[] = [];
+  /** The last reference playback: when it started and whether it could be heard (see SingInput). */
+  lastPlay: { at: number; audible: boolean } | null = null;
   /** performance.now() of the last message from hardware (or an on-screen key); 0 = none yet. */
   lastActivity = 0;
   private pedalDown = false;
@@ -204,6 +206,7 @@ export class MidiManager {
   }
 
   stop() {
+    stopElement();
     this.timers.forEach((t) => clearTimeout(t));
     this.timers = [];
     const out = this.output();
@@ -225,9 +228,21 @@ export class MidiManager {
           out.send([0x80, n, 0], now + (e.at + e.dur) * 1000);
         }
       if (opts.muteInput !== false) this.muteUntil = now + total * 1000 + 250;
+      this.lastPlay = { at: Date.now(), audible: true };
     } else if (this.playback !== "midi") {
-      for (const e of events) for (const n of e.notes) synthNote(n, e.at, e.dur, (e.vel ?? 80) / 115);
-    }
+      if (isIOS()) {
+        const at = Date.now();
+        this.lastPlay = { at, audible: false };
+        void playViaElement(events).then((ok) => {
+          if (this.lastPlay?.at === at) this.lastPlay = { at, audible: ok };
+          this.emitChange();
+        });
+      } else {
+        for (const e of events) for (const n of e.notes) synthNote(n, e.at, e.dur, (e.vel ?? 80) / 115);
+        this.lastPlay = { at: Date.now(), audible: audioReady() };
+      }
+    } else this.lastPlay = { at: Date.now(), audible: false };
+    this.emitChange();
     return new Promise((res) => {
       this.timers.push(window.setTimeout(res, total * 1000 + 100));
     });
