@@ -20,6 +20,12 @@ ENV_FILE="$CONF_DIR/env"
 UNIT="$HOME/.config/systemd/user/$NAME.service"
 PORT=3310
 TS_PORT=8448
+# Root is nearly full (2026-11-21: 720 MB free); npm's download cache (~700 MB after a
+# build) goes to the offload volume when it is mounted instead of ~/.npm on root.
+if mountpoint -q /mnt/offload 2>/dev/null; then
+  export npm_config_cache=/mnt/offload/music-trainer/npm-cache
+  mkdir -p "$npm_config_cache"
+fi
 # music21 worker venv (~270 MB): on the ext4 loop image on the big disk, never on the
 # nearly full root by default.
 OFFLOAD=/mnt/offload/music-trainer
