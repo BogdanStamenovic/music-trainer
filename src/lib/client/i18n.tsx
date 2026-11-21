@@ -124,7 +124,7 @@ const D = {
   overdueProjectText: ["No problem. Keep it as this week's project, or skip it and get a new one. There's only ever one project at a time.", "Nema problema. Zadrži ga kao projekat za ovu nedelju, ili ga preskoči i dobij novi. Uvek postoji samo jedan projekat."],
   overdueContinue: ["Continue it this week", "Nastavi ga ove nedelje"],
   overdueSkip: ["Skip it, give me a new one", "Preskoči, daj mi novi"],
-  refNotHeard: ["The reference note hasn't played yet (phones can stay silent until you tap). Tap ▶ Replay and listen first, then Record. Tap Record again to sing without it.", "Referentni ton još nije zvučao (telefon zna da ćuti dok ne dodirneš). Dodirni ▶ Pusti ponovo i prvo slušaj, pa Snimi. Dodirni Snimi ponovo da pevaš bez njega."],
+  refNotHeard: ["The reference note hasn't played yet (phones can stay silent until you tap). Tap ▶ Replay and listen first, then Record. Tap Record again to sing without it.", "Referentni ton još nije zvučao (telefon zna da ćuti dok ne dodirneš). Dodirni ▶ Pusti ponovo i prvo slušaj, pa Snimaj. Dodirni Snimaj ponovo da pevaš bez njega."],
   yourAnswer: ["your answer", "tvoj odgovor"],
   checkOnPiano: ["Check on the piano: play", "Proveri na klaviru, odsviraj"],
   thenCompare: [", then compare with", ", pa uporedi sa"],
